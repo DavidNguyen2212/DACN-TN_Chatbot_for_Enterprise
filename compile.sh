@@ -16,13 +16,13 @@ fi
 
 # Compilation command
 if [ "$1" = "en" ] || [ "$2" = "en" ]; then
-  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape --jobname=\"document\" \"\def\FOMEN{}\input{$CURRENT_DIR/document.tex}\""
+  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape --jobname=\"main\" \"\def\FOMEN{}\input{$CURRENT_DIR/main.tex}\""
 else
-  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape \"$CURRENT_DIR/document.tex\""
+  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape \"$CURRENT_DIR/main.tex\""
 fi
 
 if $USE_LATEXMK; then
-  compile="latexmk -pdf -shell-escape -interaction=nonstopmode \"$CURRENT_DIR/document.tex\""
+  compile="latexmk -pdf -shell-escape -interaction=nonstopmode \"$CURRENT_DIR/main.tex\""
 fi
 
 # Run the compilation
@@ -35,7 +35,7 @@ fi
 
 # Run bibtex if not using latexmk
 if ! $USE_LATEXMK; then
-  bibtex "$CURRENT_DIR/document"
+  bibtex "$CURRENT_DIR/main"
   RETVAL="$?"
   if [[ "${RETVAL}" -ne 0 ]] ; then
       echo "bibtex run failed"
