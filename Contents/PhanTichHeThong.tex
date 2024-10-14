@@ -1,0 +1,412 @@
+\section{Phân tích hệ thống}
+\subsection{Stakeholders}
+\subsubsection{Đội phát triển phần mềm}
+
+Nhóm phát triển phần mềm chịu trách nhiệm xây dựng, thử nghiệm và triển khai sản phẩm theo các yêu cầu được cung cấp.
+
+\begin{itemize}
+    \item \textbf{Nhu cầu:}
+    \begin{itemize}
+        \item Nhóm cần có phạm vi dự án và các yêu cầu được xác định rõ ràng để đảm bảo lập kế hoạch hiệu quả và đồng nhất với các mục tiêu được đặt ra.
+        \item Nhóm cần được tạo điều kiện tiếp cận các công cụ và công nghệ cần thiết để thực hiện nhiệm vụ của mình một cách hiệu quả và sáng tạo.
+    \end{itemize}
+    \item \textbf{Ảnh hưởng:} Nhóm phát triển có ảnh hưởng lớn do nhóm tham gia trực tiếp vào quá trình thực hiện dự án. Công việc của nhóm tác động trực tiếp đến chất lượng và chức năng của sản phẩm cuối cùng, khiến cho sự đóng góp và sự hài lòng của nhóm phát triển quan trọng đối với sự thành công của dự án.
+\end{itemize}
+
+\subsubsection{Các doanh nghiệp khách hàng}
+
+Đây là những doanh nghiệp sử dụng hệ thống để tạo và triển khai chatbot AI trên trang web của họ.
+
+\begin{itemize}
+    \item \textbf{Nhu cầu:}
+    \begin{itemize}
+        \item Khách hàng cần một giao diện trực quan và tích hợp liền mạch để tăng hiệu quả và giảm thiểu thời gian triển khai.
+        \item Chatbot cần có khả năng tùy chỉnh giao diện để phù hợp với nhận diện thương hiệu của khách hàng.
+        \item Chức năng của chatbot cần đáng tin cậy và hiệu suất cao để duy trì sự hài lòng của người dùng.
+        \item Hệ thống cần đảm bảo bảo vệ dữ liệu và tuân thủ các quy định liên quan.
+        \item Cần có kênh hỗ trợ nhanh chóng và tài liệu hướng dẫn chi tiết giúp khách hàng sử dụng nền tảng một cách hiệu quả.
+        \item Giá cả rõ ràng và hợp lý giúp khách hàng quản lý ngân sách hợp lý.
+    \end{itemize}
+    \item \textbf{Ảnh hưởng:} Các công ty khách hàng có ảnh hưởng lớn vì các yêu cầu của họ định hình mạnh mẽ các tính năng và chức năng của sản phẩm. Phản hồi và nhu cầu của họ định hình nên hướng phát triển của hệ thống.
+\end{itemize}
+
+\subsubsection{Người dùng cuối (Khách hàng của các doanh nghiệp khách hàng)}
+
+Đây là những cá nhân tương tác với chatbot trên trang web của khách hàng nhằm tìm kiếm thông tin hoặc có nhu cầu hỗ trợ.
+
+\begin{itemize}
+    \item \textbf{Nhu cầu:}
+    \begin{itemize}
+        \item Chatbot cần có khả năng phản hồi nhanh chóng và chính xác cho các truy vấn.
+        \item Tương tác với chatbot được cá nhân hóa, cải thiện mức độ tương tác và trải nghiệm của người dùng.
+        \item Hệ thống cần đảm bảo quyền riêng tư và bảo mật dữ liệu của người dùng.
+        \item Có khả năng chuyển đối tượng giao tiếp AI qua con người để đảm bảo hỗ trợ toàn diện.
+    \end{itemize}
+    \item \textbf{Ảnh hưởng:} Người dùng cuối có ảnh hưởng trực tiếp thấp nhưng tác động gián tiếp đến dự án thông qua hành vi sử dụng và phản hồi của họ, thông tin này cũng sẽ định hình cho các cải tiến của hệ thống.
+\end{itemize}
+
+\subsubsection{Nhóm hỗ trợ khách hàng tại doanh nghiệp khách hàng}
+
+Các nhóm này xử lý các yêu cầu phức tạp của khách hàng và quản lý các tương tác được chuyển tiếp từ chatbot.
+
+\begin{itemize}
+    \item \textbf{Nhu cầu:}
+    \begin{itemize}
+        \item Hệ thống có khả năng chuyển đổi liền mạch giữa chatbot và các tác nhân con người để duy trì chất lượng dịch vụ.
+        \item Cho phép truy cập vào lịch sử hội thoại và phân tích, từ đó hiểu các vấn đề của khách hàng và cải thiện dịch vụ.
+        \item Cần có công cụ giám sát hiệu suất chatbot để đảm bảo chatbot hoạt động tối ưu.
+        \item Cần có hình thức đào tạo phù hợp đảm bảo rằng nhóm hỗ trợ có thể tận dụng tối đa khả năng của hệ thống.
+    \end{itemize}
+    \item \textbf{Ảnh hưởng:} Các nhóm hỗ trợ khách hàng có ảnh hưởng trung bình vì phản hồi và kinh nghiệm của họ ảnh hưởng đến khả năng sử dụng và hiệu quả của hệ thống.
+\end{itemize}
+
+\subsubsection{Quản trị viên hệ thống (nội bộ và phía khách hàng)}
+
+Quản trị viên hệ thống chịu trách nhiệm quản lý cấu hình, bảo trì và bảo mật hệ thống.
+
+\begin{itemize}
+    \item \textbf{Nhu cầu:}
+    \begin{itemize}
+        \item Quyền kiểm soát quản trị và bảng thông tin toàn diện, đầy đủ là cần thiết để quản lý hệ thống hiệu quả.
+        \item Hệ thống có tính ổn định và thời gian hoạt động cao là rất quan trọng.
+        \item Hệ thống phải có khả năng mở rộng và hoạt động tối ưu khi mức sử dụng tăng lên.
+        \item Việc tuân thủ các chính sách bảo mật và công nghệ thông tin là cần thiết để bảo vệ dữ liệu nhạy cảm và duy trì tính toàn vẹn của hệ thống.
+    \end{itemize}
+    \item \textbf{Ảnh hưởng:} Quản trị viên hệ thống có ảnh hưởng cao do vai trò quan trọng của họ trong việc triển khai kỹ thuật và đảm bảo tuân thủ các tiêu chuẩn bảo mật.
+\end{itemize}
+
+\subsubsection{Nhóm đào tạo và hỗ trợ}
+
+Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đào tạo và hỗ trợ liên tục cho các công ty khách hàng.
+
+\begin{itemize}
+    \item \textbf{Nhu cầu:}
+    \begin{itemize}
+        \item Phát triển tài liệu hướng dẫn toàn diện, chi tiết giúp khách hàng hiểu và sử dụng nền tảng hiệu quả.
+        \item Giải quyết hiệu quả các vấn đề và thắc mắc: Hỗ trợ nhanh chóng và hiệu quả là điều cần thiết để duy trì lòng tin của khách hàng.
+        \item Thu thập phản hồi để cải tiến liên tục: Thu thập phản hồi giúp tinh chỉnh các quy trình đào tạo và hỗ trợ.
+    \end{itemize}
+    \item \textbf{Ảnh hưởng:} Các nhóm đào tạo và hỗ trợ có ảnh hưởng từ thấp đến trung bình, chủ yếu thông qua tác động của họ đến tỷ lệ áp dụng và sự hài lòng của khách hàng thông qua hiệu quả đào tạo.
+\end{itemize}
+
+
+\subsection{Yêu cầu chức năng}
+
+\subsubsection{Quản lý tài khoản công ty}
+
+\paragraph{Đăng ký và xác thực}
+\begin{itemize}
+    \item Hệ thống sẽ cung cấp quy trình đăng ký tài khoản mới an toàn cho các công ty.
+    \item Hệ thống sẽ yêu cầu xác minh địa chỉ email trong quá trình đăng ký.
+    \item Hệ thống sẽ hỗ trợ chức năng đăng nhập an toàn bằng tên người dùng/email và mật khẩu.
+\end{itemize}
+
+\paragraph{Quản lý hồ sơ}
+\begin{itemize}
+    \item Hệ thống sẽ cho phép quản trị viên công ty quản lý thông tin chi tiết về hồ sơ công ty (tên, logo, thông tin liên hệ…).
+    \item Hệ thống sẽ cho phép quản trị viên công ty quản lý vai trò và quyền của người dùng trong tài khoản công ty của họ.
+    \item Hệ thống sẽ cho phép công ty cập nhật hồ sơ cá nhân và cài đặt tài khoản của họ.
+    \item Hệ thống sẽ cho phép người dùng đặt lại mật khẩu an toàn.
+\end{itemize}
+
+\subsubsection{Tạo và tùy chỉnh chatbot}
+
+\paragraph{Cung cấp và quản lý tri thức}
+\begin{itemize}
+    \item Hệ thống sẽ cho phép các công ty tải dữ liệu của riêng họ lên, ví dụ như tài liệu, các câu hỏi thường gặp (FAQs) hay thông tin sản phẩm.
+    \item Hệ thống sẽ hỗ trợ nhiều định dạng tệp để tải dữ liệu lên, chẳng hạn như PDF, DOCX, TXT và CSV.
+    \item Hệ thống sẽ xử lý dữ liệu đã tải lên để tạo cơ sở tri thức cho chatbot.
+    \item Hệ thống sẽ cho phép các công ty thêm, chỉnh sửa hoặc xóa các tri thức thông qua giao diện.
+    \item Hệ thống sẽ cho phép phân loại và gắn thẻ nội dung cơ sở tri thức để truy vấn hiệu quả.
+\end{itemize}
+
+\paragraph{Tùy chỉnh giao diện và hành vi chatbot}
+\begin{itemize}
+    \item Hệ thống sẽ cho phép các công ty điều chỉnh giọng điệu và tính cách của chatbot (ví dụ: trang trọng, giản dị, thân thiện).
+    \item Hệ thống sẽ cho phép tùy chỉnh lời chào và phản hồi mặc định của chatbot.
+    \item Hệ thống sẽ cung cấp các tùy chọn để tùy chỉnh giao diện của chatbot, bao gồm màu sắc, logo, hình đại diện để phù hợp với thương hiệu của công ty.
+    \item Hệ thống sẽ cung cấp chức năng xem trước để xem các thay đổi trước khi triển khai.
+\end{itemize}
+
+\subsubsection{Đào tạo AI và xử lý ngôn ngữ tự nhiên}
+
+\paragraph{Đào tạo tự động}
+\begin{itemize}
+    \item Hệ thống sẽ tự động đào tạo mô hình AI bằng cách sử dụng dữ liệu công ty đã tải lên.
+    \item Hệ thống sẽ thông báo tiến độ trong quá trình đào tạo.
+\end{itemize}
+
+\paragraph{Xử lý ngôn ngữ tự nhiên}
+\begin{itemize}
+    \item Hệ thống sẽ hỗ trợ tiếng Việt cho cả đầu vào và phản hồi.
+    \item Mô hình AI sẽ sử dụng hiểu ngôn ngữ tự nhiên (Natural-language understanding) để nhận dạng chính xác ý định người dùng.
+    \item Hệ thống sẽ cho phép các công ty xác định các ý định cụ thể có liên quan đến doanh nghiệp của họ.
+\end{itemize}
+
+\subsubsection{Tích hợp với trang web doanh nghiệp}
+
+\paragraph{Tích hợp mã nhúng}
+\begin{itemize}
+    \item Hệ thống sẽ tạo mã nhúng JavaScript mà các công ty có thể chèn vào trang web của họ để triển khai chatbot.
+    \item Hệ thống sẽ cung cấp hướng dẫn từng bước để tích hợp chatbot với các nền tảng và trình xây dựng trang web phổ biến như WordPress, Wix, Shopify.
+    \item Mã nhúng sẽ được tối ưu hóa để tác động tối thiểu đến hiệu suất của trang web.
+\end{itemize}
+
+\paragraph{Khả năng tương thích của nền tảng}
+\begin{itemize}
+    \item Giao diện chatbot phải tương thích với tất cả các trình duyệt web hiện đại (Chrome, Firefox, Safari, Edge).
+    \item Chatbot phải phản hồi và hoạt động chính xác trên nhiều thiết bị khác nhau, bao gồm máy tính để bàn, máy tính bảng và điện thoại di động.
+\end{itemize}
+
+\subsubsection{Bảng điều khiển quản lý Chatbot}
+
+\paragraph{Giám sát thời gian thực}
+\begin{itemize}
+    \item Hệ thống sẽ cung cấp bảng điều khiển để các công ty xem dữ liệu theo thời gian thực về việc sử dụng chatbot, bao gồm số lượng người dùng đang hoạt động và các cuộc trò chuyện đang diễn ra.
+    \item Hệ thống sẽ hiển thị các chỉ số hiệu suất chính (KPI) như thời gian phản hồi và mức độ tương tác của người dùng.
+\end{itemize}
+
+\paragraph{Phân tích và báo cáo}
+\begin{itemize}
+    \item Hệ thống sẽ tạo báo cáo phân tích chi tiết về các tương tác của chatbot, bao gồm tổng số cuộc trò chuyện, tỷ lệ giữ chân người dùng và các truy vấn phổ biến.
+    \item Hệ thống sẽ cho phép các công ty xuất báo cáo ở nhiều định dạng khác nhau (ví dụ: PDF, Excel).
+    \item Hệ thống sẽ cung cấp các công cụ trực quan hóa (biểu đồ, đồ thị) giúp trực quan hóa dữ liệu.
+\end{itemize}
+
+\paragraph{Nhật ký hội thoại}
+\begin{itemize}
+    \item Hệ thống sẽ lưu trữ lịch sử cuộc trò chuyện một cách an toàn.
+    \item Hệ thống sẽ cho phép người dùng được ủy quyền tìm kiếm và lọc nhật ký hội thoại dựa trên phạm vi ngày, từ khóa hoặc chủ đề.
+    \item Hệ thống phải tuân thủ các quy định về quyền riêng tư liên quan đến việc lưu trữ và truy xuất các cuộc trò chuyện của người dùng.
+\end{itemize}
+
+\subsubsection{Tương tác với người dùng}
+
+\paragraph{Hỗ trợ đa phương tiện}
+\begin{itemize}
+    \item Chatbot phải có khả năng gửi và nhận nội dung đa phương tiện, bao gồm hình ảnh, video và đường dẫn (hyperlinks).
+\end{itemize}
+
+\paragraph{Đối thoại theo ngữ cảnh}
+\begin{itemize}
+    \item Chatbot phải duy trì ngữ cảnh trong suốt phiên của người dùng để cho phép các cuộc trò chuyện diễn ra mạch lạc.
+    \item Chatbot phải có khả năng xử lý các câu hỏi tiếp theo và tham chiếu đến các tương tác trước đó.
+\end{itemize}
+
+\paragraph{Khôi phục và dự phòng}
+\begin{itemize}
+    \item Chatbot phải cung cấp các phản hồi mặc định phù hợp khi không hiểu nội dung đầu vào của người dùng.
+    \item Chatbot phải cung cấp các tùy chọn để người dùng diễn đạt lại truy vấn của họ hoặc cung cấp thêm thông tin.
+\end{itemize}
+
+\subsubsection{Phối hợp với con người}
+
+\paragraph{Tích hợp với nhân viên hỗ trợ trực tiếp}
+\begin{itemize}
+    \item Hệ thống sẽ cho phép chuyển giao liền mạch các cuộc trò chuyện từ chatbot sang nhân viên hỗ trợ con người khi cần thiết.
+    \item Hệ thống sẽ thông báo cho nhân viên hỗ trợ theo thời gian thực khi cần chuyển giao.
+    \item Hệ thống sẽ cung cấp cho nhân viên lịch sử cuộc trò chuyện trước khi chuyển giao để đảm bảo duy trì ngữ cảnh.
+\end{itemize}
+
+\paragraph{Đặt lịch hẹn}
+\begin{itemize}
+    \item Hệ thống sẽ cho phép các công ty cài đặt lịch làm việc của nhân viên để hỗ trợ con người.
+    \item Chatbot sẽ thông báo cho người dùng về lịch làm việc của nhân viên và thời gian phản hồi ước tính.
+    \item Ngoài giờ làm việc, chatbot sẽ đề nghị hẹn lịch hoặc cung cấp các thông tin liên hệ.
+\end{itemize}
+
+\subsubsection{Thông báo và cảnh báo}
+
+\begin{itemize}
+    \item Hệ thống sẽ gửi email hoặc thông báo đến doanh nghiệp khi cần thiết (hoàn thành đào tạo AI, nhắc gia hạn đăng ký).
+    \item Hệ thống sẽ cho phép các công ty tùy chỉnh phương thức thông báo.
+    \item Hệ thống sẽ cho phép các công ty thiết lập cảnh báo dựa trên số liệu hiệu suất (ví dụ: lưu lượng truy cập cao, tỷ lệ lỗi).
+    \item Hệ thống sẽ lập tức cảnh báo trong trường hợp hệ thống ngừng hoạt động hoặc các sự cố nghiêm trọng.
+\end{itemize}
+
+\subsubsection{Hỗ trợ doanh nghiệp}
+\begin{itemize}
+    \item Hệ thống sẽ cung cấp một trung tâm trợ giúp toàn diện với các tài liệu, câu hỏi thường gặp và hướng dẫn sử dụng nền tảng.
+    \item Hệ thống sẽ bao gồm chức năng tìm kiếm để giúp người dùng tìm thông tin hỗ trợ có liên quan một cách nhanh chóng.
+    \item Hệ thống sẽ cung cấp nhiều kênh hỗ trợ khách hàng, bao gồm trò chuyện trực tiếp, email và hỗ trợ qua điện thoại.
+\end{itemize}
+
+\subsubsection{Quản lý thanh toán}
+
+\paragraph{Gói giá linh hoạt}
+\begin{itemize}
+    \item Hệ thống sẽ cung cấp nhiều cấp đăng ký với các tính năng và giới hạn sử dụng khác nhau.
+    \item Hệ thống sẽ cho phép các công ty nâng cấp hoặc hạ cấp các gói đăng ký của họ khi cần.
+\end{itemize}
+
+\paragraph{Xử lý thanh toán}
+\begin{itemize}
+    \item Hệ thống sẽ tích hợp với các cổng thanh toán an toàn để xử lý các giao dịch bằng nhiều phương thức thanh toán khác nhau.
+    \item Hệ thống sẽ hỗ trợ thanh toán định kỳ tự động cho các lần gia hạn đăng ký.
+\end{itemize}
+
+\paragraph{Theo dõi việc sử dụng và lập hóa đơn}
+\begin{itemize}
+    \item Hệ thống sẽ tạo hóa đơn và cung cấp hồ sơ giao dịch mà các công ty có thể truy cập.
+    \item Hệ thống sẽ theo dõi các số liệu sử dụng ảnh hưởng đến việc thanh toán, chẳng hạn như số lần tương tác hoặc dung lượng lưu trữ dữ liệu đã sử dụng.
+\end{itemize}
+
+\subsection{Yêu cầu phi chức năng}
+
+\subsubsection{Hiệu suất}
+
+\paragraph{Thời gian phản hồi}
+\begin{itemize}
+    \item Hệ thống phải đảm bảo rằng chatbot phản hồi người dùng trong vòng trung bình 3 giây trong điều kiện tải bình thường.
+    \item Hệ thống phải duy trì thời gian phản hồi tối đa là 5 giây trong thời gian tải cao điểm.
+\end{itemize}
+
+\paragraph{Thông lượng}
+\begin{itemize}
+    \item Hệ thống phải hỗ trợ ít nhất 500 người dùng đồng thời mà không làm giảm hiệu suất.
+    \item Hệ thống phải xử lý 100 giao dịch mỗi giây (TPS) trong thời gian sử dụng cao điểm.
+\end{itemize}
+
+\paragraph{Khả năng mở rộng}
+\begin{itemize}
+    \item Hệ thống phải có khả năng mở rộng để đáp ứng mức tăng 25\% về số lượng công ty khách hàng hàng năm mà không cần thiết kế lại đáng kể.
+    \item Hệ thống phải tự động mở rộng tài nguyên (tính toán, lưu trữ) dựa trên nhu cầu thời gian thực.
+\end{itemize}
+
+\paragraph{Tính khả dụng}
+\begin{itemize}
+    \item Hệ thống phải có thời gian hoạt động ít nhất là 99\%, không bao gồm bảo trì theo lịch trình.
+    \item Thời gian bảo trì theo lịch trình không được vượt quá 6 giờ mỗi tháng và phải được thông báo cho khách hàng trước ít nhất 24 giờ.
+\end{itemize}
+
+\subsubsection{Bảo mật}
+
+\paragraph{Xác thực và ủy quyền}
+\begin{itemize}
+    \item Hệ thống phải thực thi các chính sách mật khẩu mạnh (yêu cầu về độ dài tối thiểu, độ phức tạp).
+    \item Hệ thống phải hỗ trợ xác thực đa yếu tố (MFA) cho tất cả tài khoản người dùng.
+    \item Kiểm soát truy cập dựa trên vai trò (RBAC) phải được triển khai để hạn chế quyền truy cập dựa trên vai trò của người dùng.
+\end{itemize}
+
+\paragraph{Bảo mật dữ liệu}
+\begin{itemize}
+    \item Tất cả dữ liệu đang truyền đi phải được mã hóa bằng các giao thức tiêu chuẩn của ngành từ TLS 1.2 trở lên.
+    \item Dữ liệu nhạy cảm khi lưu trữ phải được mã hóa nếu có thể hoặc được lưu trữ an toàn bằng biện pháp kiểm soát truy cập.
+    \item Hệ thống phải triển khai các đánh giá bảo mật và quét lỗ hổng thường xuyên.
+    \item Hệ thống phải tuân thủ các quy định bảo vệ dữ liệu cơ bản áp dụng cho khu vực mà hệ thống hoạt động.
+    \item Hệ thống phải cung cấp chính sách bảo mật nêu rõ các hoạt động xử lý dữ liệu.
+\end{itemize}
+
+\paragraph{Phản hồi sự cố}
+\begin{itemize}
+    \item Hệ thống sẽ có kế hoạch phản hồi sự cố để giải quyết các vi phạm bảo mật hoặc rò rỉ dữ liệu.
+    \item Các sự cố bảo mật sẽ được báo cáo cho các khách hàng bị ảnh hưởng trong vòng 72 giờ kể từ khi phát hiện.
+\end{itemize}
+
+\subsubsection{Khả năng sử dụng}
+
+\paragraph{Giao diện người dùng}
+\begin{itemize}
+    \item Hệ thống phải có giao diện thân thiện với người dùng, tập trung vào tính dễ sử dụng cho người dùng không chuyên.
+    \item Giao diện phải nhất quán và trực quan, tuân theo các nguyên tắc cơ bản.
+\end{itemize}
+
+\paragraph{Khả năng truy cập}
+\begin{itemize}
+    \item Hệ thống phải tuân thủ các tiêu chuẩn về khả năng truy cập WCAG 2.0 A để hỗ trợ người dùng khuyết tật.
+    \item Các yếu tố tương tác chính có thể được thực hiện thông qua bàn phím.
+\end{itemize}
+
+\paragraph{Trợ giúp và tài liệu hướng dẫn}
+\begin{itemize}
+    \item Hệ thống sẽ cung cấp tài liệu hướng dẫn và các câu hỏi thường gặp có thể truy cập từ bên trong nền tảng.
+    \item Tài liệu phải rõ ràng và được cập nhật để phản ánh hệ thống hiện tại.
+\end{itemize}
+
+\subsubsection{Độ tin cậy}
+
+\paragraph{Khả năng chịu lỗi}
+\begin{itemize}
+    \item Hệ thống sẽ tiếp tục hoạt động bình thường trong trường hợp các thành phần không quan trọng bị lỗi.
+    \item Hệ thống sẽ ghi lại lỗi và thông báo cho người quản trị trong trường hợp lỗi nghiêm trọng.
+\end{itemize}
+
+\paragraph{Sao lưu và phục hồi}
+\begin{itemize}
+    \item Hệ thống sẽ thực hiện sao lưu tự động hàng tuần tất cả dữ liệu quan trọng.
+    \item Trong trường hợp xảy ra lỗi, hệ thống sẽ có thể khôi phục dữ liệu về điểm sao lưu cuối cùng trong vòng 8 giờ.
+    \item Các bản sao lưu sẽ được lưu trữ an toàn và được bảo vệ khỏi truy cập trái phép.
+\end{itemize}
+
+\paragraph{Xử lý lỗi}
+\begin{itemize}
+    \item Hệ thống sẽ xử lý lỗi một cách nhẹ nhàng, cung cấp thông báo thân thiện với người dùng mà không tiết lộ chi tiết kỹ thuật.
+    \item Tất cả các lỗi quan trọng sẽ được ghi lại để phục vụ mục đích khắc phục sự cố.
+\end{itemize}
+
+\subsubsection{Khả năng bảo trì}
+
+\paragraph{Tính mô-đun}
+\begin{itemize}
+    \item Hệ thống sẽ được thiết kế mô-đun hóa khi có thể, để tạo điều kiện thuận lợi cho việc mở rộng và bảo trì.
+    \item Mã nguồn được sắp xếp hợp lý và ghi chú đầy đủ để thuận tiện bảo trì.
+\end{itemize}
+
+\paragraph{Kiểm thử}
+\begin{itemize}
+    \item Hệ thống sẽ có các bài kiểm thử tự động cho các chức năng chính.
+    \item Kiểm thử tích hợp sẽ được thực hiện trước khi triển khai.
+\end{itemize}
+
+\subsubsection{Tính di động}
+
+\paragraph{Độc lập với nền tảng}
+\begin{itemize}
+    \item Hệ thống sẽ sử dụng các công nghệ được hỗ trợ rộng rãi để đảm bảo khả năng tương thích trên các nền tảng phổ biến.
+    \item Mã nhúng chatbot sẽ hoạt động chính xác trên các môi trường web.
+\end{itemize}
+
+\paragraph{Khả năng tương thích với trình duyệt}
+\begin{itemize}
+    \item Giao diện chatbot sẽ tương thích với các phiên bản mới nhất của các trình duyệt web chính.
+    \item Hệ thống sẽ được thử nghiệm trên Chrome, Edge và Firefox.
+\end{itemize}
+
+\subsubsection{Yêu cầu về mặt pháp lý}
+
+\paragraph{Quyền riêng tư dữ liệu}
+\begin{itemize}
+    \item Hệ thống chỉ thu thập dữ liệu cá nhân cần thiết và thông báo cho người dùng về các hoạt động thu thập dữ liệu.
+    \item Người dùng phải đồng ý thu thập dữ liệu khi cần thiết.
+\end{itemize}
+
+\paragraph{Kiểm toán và báo cáo}
+\begin{itemize}
+    \item Hệ thống phải lưu giữ nhật ký cơ bản về các hành động của quản trị viên.
+    \item Nhật ký phải được lưu giữ trong ít nhất 6 tháng.
+\end{itemize}
+
+\paragraph{Sở hữu trí tuệ}
+\begin{itemize}
+    \item Hệ thống phải đảm bảo tất cả phần mềm và nội dung của bên thứ ba đều có giấy phép phù hợp.
+\end{itemize}
+
+\subsubsection{Đạo đức}
+
+\paragraph{Minh bạch AI}
+\begin{itemize}
+    \item Chatbot sẽ thông báo cho người dùng rằng họ đangtương tác với trợ lý AI.
+    \item Chatbot không được đánh lừa người dùng nghĩ rằng đó là con người.
+\end{itemize}
+
+\paragraph{Bảo vệ người dùng}
+\begin{itemize}
+    \item Chatbot phải tránh tạo ra các nội dung nhạy cảm, gây khó chịu.
+    \item Chatbot phải khuyên người dùng không chia sẻ thông tin cá nhân nhạy cảm.
+    \item Hệ thống sẽ cung cấp phương pháp để người dùng báo cáo các phản hồi không phù hợp.
+\end{itemize}
+\subsection{Biểu đồ Use case}
+Vẽ biểu đồ use case và use case scenario
+\subsection{Biểu đồ Activity}
+\subsection{Biểu đồ Sequence}
+\subsection{Biểu đồ Class}
