@@ -42,7 +42,7 @@ jobs:
       - name: Commit and Push PDF to Repository
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
-          git add main.pdf
+          git add document.pdf
           git commit -m "Successfully compiled master-PDF document!"
           git push origin master
         env:

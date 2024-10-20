@@ -16,13 +16,13 @@ fi
 
 # Compilation command
 if [ "$1" = "en" ] || [ "$2" = "en" ]; then
-  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape --jobname=\"main\" \"\def\FOMEN{}\input{$CURRENT_DIR/main.tex}\""
+  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape --jobname=document '\def\FOMEN{}\input{$CURRENT_DIR/main.tex}'"
 else
-  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape \"$CURRENT_DIR/main.tex\""
+  compile="$CMD_LATEX -interaction=nonstopmode --shell-escape --jobname=document $CURRENT_DIR/main.tex"
 fi
 
 if $USE_LATEXMK; then
-  compile="latexmk -pdf -shell-escape -interaction=nonstopmode \"$CURRENT_DIR/main.tex\""
+  compile="latexmk -pdf -shell-escape -interaction=nonstopmode $CURRENT_DIR/main.tex"
 fi
 
 # Run the compilation
@@ -31,6 +31,11 @@ RETVAL="$?"
 if [[ "${RETVAL}" -ne 0 ]] ; then
     echo "First compilation failed"
     exit ${RETVAL}
+fi
+
+# Rename PDF if latexmk is used
+if $USE_LATEXMK; then
+  mv "$CURRENT_DIR/main.pdf" "$CURRENT_DIR/document.pdf"
 fi
 
 # Run bibtex if not using latexmk
@@ -61,24 +66,7 @@ if ! $USE_LATEXMK; then
 fi
 
 # Cleanup
-rm ./*.bbl 2> /dev/null
-rm ./*.blg 2> /dev/null
-rm ./*.aux 2> /dev/null
-rm ./*.bcf 2> /dev/null
-rm ./*.ilg 2> /dev/null
-rm ./*.lof 2> /dev/null
-rm ./*.log 2> /dev/null
-rm ./*.lot 2> /dev/null
-rm ./*.nlo 2> /dev/null
-rm ./*.nls* 2> /dev/null
-rm ./*.out 2> /dev/null
-rm ./*.toc 2> /dev/null
-rm ./*.run.xml 2> /dev/null
-rm ./*.lot 2> /dev/null
-rm ./*.sub 2> /dev/null
-rm ./*.suc 2> /dev/null
-rm ./*.syc 2> /dev/null
-rm ./*.sym 2> /dev/null
+rm -f ./*.{bbl,blg,aux,bcf,ilg,lof,log,lot,nlo,nls,out,toc,run.xml,sub,suc,syc,sym}
 
 echo "PDF Compile: Success"
 exit 0
