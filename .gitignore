@@ -9,4 +9,6 @@
 *.toc
 *.lof
 *.out
+*.fdb_latexmk
+*.fls
 main.pdf
