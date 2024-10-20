@@ -1,0 +1,1242 @@
+PWD d:\DACN
+INPUT C:\Users\DELL\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT d:\DACN\main.tex
+OUTPUT main.log
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\vntex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\vntex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5enc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5enc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5enc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5enc.dfu
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5enc.dfu
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5enc.dfu
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5cmr.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5cmr.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5cmr.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\vnr\vnr10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\vncaps.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\vncaps.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\vncaps.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\mathptmx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\mathptmx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\a4wide\a4wide.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\a4wide\a4wide.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ntgclass\a4.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ntgclass\a4.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\epsfig.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\epsfig.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\latexsym.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\latexsym.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\hhline.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\hhline.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ulem\ulem.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ulem\ulem.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\latex-fonts\lasy6.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\svg\svg.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\svg\svg.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrbase.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrbase.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlfile.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlfile.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlfile-hook.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlfile-hook.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlogo.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlogo.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\shellesc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\shellesc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ifplatform\ifplatform.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ifplatform\ifplatform.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\catchfile\catchfile.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\catchfile\catchfile.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifluatex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifluatex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transparent.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transparent.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transparent-nometadata.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transparent-nometadata.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeyslibraryfiltered.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\multicol.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\multicol.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\longtable.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\longtable.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amscd.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amscd.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\diagbox\diagbox.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\diagbox\diagbox.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\pict2e.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\pict2e.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\pict2e.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\pict2e.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\pict2e.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\p2e-pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\p2e-pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pict2e\p2e-pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\alltt.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\alltt.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\mdframed.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\mdframed.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\kvsetkeys\kvsetkeys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-abspage.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-abspage.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-base.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-base.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\needspace\needspace.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\needspace\needspace.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfint.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorerdf.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-1.mdf
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-1.mdf
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-1.mdf
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\ltcaption.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\ltcaption.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\subcaption.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\caption\subcaption.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage2e.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage2e.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpagemodern.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpagemodern.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\rotating.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\graphics\rotating.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\setspace\setspace.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\setspace\setspace.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\indentfirst.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\tools\indentfirst.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryarrows.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryarrows.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarysnakes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarysnakes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduledecorations.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.shapes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.shapes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.shapes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.shapes.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarybackgrounds.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarybackgrounds.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pdfescape\pdfescape.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\pdfescape\pdfescape.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hycolor\hycolor.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hycolor\hycolor.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\letltxmacro\letltxmacro.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\letltxmacro\letltxmacro.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\nameref.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\nameref.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\refcount\refcount.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\refcount\refcount.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\intcalc\intcalc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\intcalc\intcalc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\puenc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\puenc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\puenc.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\bitset\bitset.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\bitset\bitset.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\bigintcalc\bigintcalc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\bigintcalc\bigintcalc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\atbegshi\atbegshi.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\atbegshi-ltx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\atbegshi-ltx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.def
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\atveryend\atveryend.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\atveryend-ltx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\atveryend-ltx.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\vntex\t5ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT .\main.aux
+INPUT .\main.aux
+INPUT main.aux
+OUTPUT main.aux
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT .\main.out
+INPUT .\main.out
+INPUT main.out
+INPUT main.out
+OUTPUT main.pdf
+INPUT .\main.out
+INPUT .\main.out
+OUTPUT main.out
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omlztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omlztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omlztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omxztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omxztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omxztmcm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\ulasy.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\ulasy.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\base\ulasy.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\latex-fonts\lasy10.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\public\latex-fonts\lasy7.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT C:\Users\DELL\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\vntex\t5.enc
+INPUT .\Intro\LoiCamOn.tex
+INPUT .\Intro\LoiCamOn.tex
+INPUT .\Intro\LoiCamOn.tex
+INPUT .\Intro\LoiCamOn.tex
+INPUT Intro\LoiCamOn.tex
+INPUT .\Intro\LoiCamDoan.tex
+INPUT .\Intro\LoiCamDoan.tex
+INPUT .\Intro\LoiCamDoan.tex
+INPUT .\Intro\LoiCamDoan.tex
+INPUT Intro\LoiCamDoan.tex
+INPUT .\Intro\TomTat.tex
+INPUT .\Intro\TomTat.tex
+INPUT .\Intro\TomTat.tex
+INPUT .\Intro\TomTat.tex
+INPUT Intro\TomTat.tex
+INPUT .\main.toc
+INPUT .\main.toc
+INPUT main.toc
+OUTPUT main.toc
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT .\main.lof
+INPUT .\main.lof
+INPUT main.lof
+OUTPUT main.lof
+INPUT .\main.lot
+INPUT .\main.lot
+INPUT main.lot
+OUTPUT main.lot
+INPUT .\Contents\GioiThieu.tex
+INPUT .\Contents\GioiThieu.tex
+INPUT .\Contents\GioiThieu.tex
+INPUT .\Contents\GioiThieu.tex
+INPUT Contents\GioiThieu.tex
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT .\Images\P1\da2.png
+INPUT .\Images\P1\da2.png
+INPUT .\Images\P1\da2.png
+INPUT .\Images\P1\da2.png
+INPUT .\Images\P1\da2.png
+INPUT .\Images\P1\da2.png
+INPUT .\Images\P1\da2.png
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmr8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmb8v.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\vntex\urwvn\utmri8v.tfm
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\P1\da3.jpg
+INPUT .\Images\P1\da3.jpg
+INPUT .\Images\P1\da3.jpg
+INPUT .\Images\P1\da3.jpg
+INPUT .\Images\P1\da3.jpg
+INPUT .\Images\P1\da3.jpg
+INPUT .\Images\P1\da3.jpg
+INPUT .\Images\P1\da1.png
+INPUT .\Images\P1\da1.png
+INPUT .\Images\P1\da1.png
+INPUT .\Images\P1\da1.png
+INPUT .\Images\P1\da1.png
+INPUT .\Images\P1\da1.png
+INPUT .\Images\P1\da1.png
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\base\8r.enc
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\NghienCuuThiTruong.tex
+INPUT .\Contents\NghienCuuThiTruong.tex
+INPUT .\Contents\NghienCuuThiTruong.tex
+INPUT .\Contents\NghienCuuThiTruong.tex
+INPUT Contents\NghienCuuThiTruong.tex
+INPUT .\Images\ahachatlanding.png
+INPUT .\Images\ahachatlanding.png
+INPUT .\Images\ahachatlanding.png
+INPUT .\Images\ahachatlanding.png
+INPUT .\Images\ahachatlanding.png
+INPUT .\Images\ahachatlanding.png
+INPUT .\Images\ahachatlanding.png
+INPUT .\Images\homeahachat.png
+INPUT .\Images\homeahachat.png
+INPUT .\Images\homeahachat.png
+INPUT .\Images\homeahachat.png
+INPUT .\Images\homeahachat.png
+INPUT .\Images\homeahachat.png
+INPUT .\Images\homeahachat.png
+INPUT .\Images\quanlypageahachat.png
+INPUT .\Images\quanlypageahachat.png
+INPUT .\Images\quanlypageahachat.png
+INPUT .\Images\quanlypageahachat.png
+INPUT .\Images\quanlypageahachat.png
+INPUT .\Images\quanlypageahachat.png
+INPUT .\Images\quanlypageahachat.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\quanlykichbanahachat.png
+INPUT .\Images\quanlykichbanahachat.png
+INPUT .\Images\quanlykichbanahachat.png
+INPUT .\Images\quanlykichbanahachat.png
+INPUT .\Images\quanlykichbanahachat.png
+INPUT .\Images\quanlykichbanahachat.png
+INPUT .\Images\quanlykichbanahachat.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\tinhnangahachat.png
+INPUT .\Images\tinhnangahachat.png
+INPUT .\Images\tinhnangahachat.png
+INPUT .\Images\tinhnangahachat.png
+INPUT .\Images\tinhnangahachat.png
+INPUT .\Images\tinhnangahachat.png
+INPUT .\Images\tinhnangahachat.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\landingfchat.png
+INPUT .\Images\landingfchat.png
+INPUT .\Images\landingfchat.png
+INPUT .\Images\landingfchat.png
+INPUT .\Images\landingfchat.png
+INPUT .\Images\landingfchat.png
+INPUT .\Images\landingfchat.png
+INPUT .\Images\fchatdashboard.png
+INPUT .\Images\fchatdashboard.png
+INPUT .\Images\fchatdashboard.png
+INPUT .\Images\fchatdashboard.png
+INPUT .\Images\fchatdashboard.png
+INPUT .\Images\fchatdashboard.png
+INPUT .\Images\fchatdashboard.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\tukhoafchat.png
+INPUT .\Images\tukhoafchat.png
+INPUT .\Images\tukhoafchat.png
+INPUT .\Images\tukhoafchat.png
+INPUT .\Images\tukhoafchat.png
+INPUT .\Images\tukhoafchat.png
+INPUT .\Images\tukhoafchat.png
+INPUT .\Images\chatfchat.png
+INPUT .\Images\chatfchat.png
+INPUT .\Images\chatfchat.png
+INPUT .\Images\chatfchat.png
+INPUT .\Images\chatfchat.png
+INPUT .\Images\chatfchat.png
+INPUT .\Images\chatfchat.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\featurefchat.png
+INPUT .\Images\featurefchat.png
+INPUT .\Images\featurefchat.png
+INPUT .\Images\featurefchat.png
+INPUT .\Images\featurefchat.png
+INPUT .\Images\featurefchat.png
+INPUT .\Images\featurefchat.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\uiTuDongChat.png
+INPUT .\Images\uiTuDongChat.png
+INPUT .\Images\uiTuDongChat.png
+INPUT .\Images\uiTuDongChat.png
+INPUT .\Images\uiTuDongChat.png
+INPUT .\Images\uiTuDongChat.png
+INPUT .\Images\uiTuDongChat.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\uiTuDongChat2.png
+INPUT .\Images\uiTuDongChat2.png
+INPUT .\Images\uiTuDongChat2.png
+INPUT .\Images\uiTuDongChat2.png
+INPUT .\Images\uiTuDongChat2.png
+INPUT .\Images\uiTuDongChat2.png
+INPUT .\Images\uiTuDongChat2.png
+INPUT .\Images\uiTuDongChat3.png
+INPUT .\Images\uiTuDongChat3.png
+INPUT .\Images\uiTuDongChat3.png
+INPUT .\Images\uiTuDongChat3.png
+INPUT .\Images\uiTuDongChat3.png
+INPUT .\Images\uiTuDongChat3.png
+INPUT .\Images\uiTuDongChat3.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\tinhnangtudongchat.png
+INPUT .\Images\tinhnangtudongchat.png
+INPUT .\Images\tinhnangtudongchat.png
+INPUT .\Images\tinhnangtudongchat.png
+INPUT .\Images\tinhnangtudongchat.png
+INPUT .\Images\tinhnangtudongchat.png
+INPUT .\Images\tinhnangtudongchat.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\PhanTichHeThong.tex
+INPUT .\Contents\PhanTichHeThong.tex
+INPUT .\Contents\PhanTichHeThong.tex
+INPUT .\Contents\PhanTichHeThong.tex
+INPUT Contents\PhanTichHeThong.tex
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\Diagram\Usecase.tex
+INPUT .\Contents\Diagram\Usecase.tex
+INPUT .\Contents\Diagram\Usecase.tex
+INPUT .\Contents\Diagram\Usecase.tex
+INPUT Contents\Diagram\Usecase.tex
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\General.svg
+INPUT .\Dg_UC\General.svg
+INPUT .\Dg_UC\General.svg
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT .\svg-inkscape\General_svg-tex.pdf_tex
+INPUT .\svg-inkscape\General_svg-tex.pdf_tex
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT .\svg-inkscape\General_svg-tex.pdf_tex
+INPUT .\svg-inkscape\General_svg-tex.pdf_tex
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT svg-inkscape\General_svg-tex.pdf_tex
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT .\svg-inkscape\General_svg-tex.pdf
+INPUT .\Dg_UC\ManageAccount.svg
+INPUT .\Dg_UC\ManageAccount.svg
+INPUT .\Dg_UC\ManageAccount.svg
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT svg-inkscape\ManageAccount_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\TrainingAndTuning.svg
+INPUT .\Dg_UC\TrainingAndTuning.svg
+INPUT .\Dg_UC\TrainingAndTuning.svg
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf_tex
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf_tex
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf_tex
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf_tex
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT svg-inkscape\TrainingAndTuning_svg-tex.pdf_tex
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT .\svg-inkscape\TrainingAndTuning_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\tichhop.png
+INPUT .\Dg_UC\tichhop.png
+INPUT .\Dg_UC\tichhop.png
+INPUT .\Dg_UC\tichhop.png
+INPUT .\Dg_UC\tichhop.png
+INPUT .\Dg_UC\tichhop.png
+INPUT .\Dg_UC\tichhop.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\Usecase Diagram-ChatbotManagement.drawio.svg
+INPUT .\Dg_UC\Usecase Diagram-ChatbotManagement.drawio.svg
+INPUT .\Dg_UC\Usecase Diagram-ChatbotManagement.drawio.svg
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotManagement.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\thongbaocanhbao.png
+INPUT .\Dg_UC\thongbaocanhbao.png
+INPUT .\Dg_UC\thongbaocanhbao.png
+INPUT .\Dg_UC\thongbaocanhbao.png
+INPUT .\Dg_UC\thongbaocanhbao.png
+INPUT .\Dg_UC\thongbaocanhbao.png
+INPUT .\Dg_UC\thongbaocanhbao.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\quanlythanhtoan.png
+INPUT .\Dg_UC\quanlythanhtoan.png
+INPUT .\Dg_UC\quanlythanhtoan.png
+INPUT .\Dg_UC\quanlythanhtoan.png
+INPUT .\Dg_UC\quanlythanhtoan.png
+INPUT .\Dg_UC\quanlythanhtoan.png
+INPUT .\Dg_UC\quanlythanhtoan.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\Usecase Diagram-ChatbotInteraction.drawio.svg
+INPUT .\Dg_UC\Usecase Diagram-ChatbotInteraction.drawio.svg
+INPUT .\Dg_UC\Usecase Diagram-ChatbotInteraction.drawio.svg
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-ChatbotInteraction.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_UC\Usecase Diagram-AppointmentManagement.drawio.svg
+INPUT .\Dg_UC\Usecase Diagram-AppointmentManagement.drawio.svg
+INPUT .\Dg_UC\Usecase Diagram-AppointmentManagement.drawio.svg
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Usecase Diagram-AppointmentManagement.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\Diagram\Activity.tex
+INPUT .\Contents\Diagram\Activity.tex
+INPUT .\Contents\Diagram\Activity.tex
+INPUT .\Contents\Diagram\Activity.tex
+INPUT Contents\Diagram\Activity.tex
+INPUT .\Dg_Activity\ManageAccount_Signup.svg
+INPUT .\Dg_Activity\ManageAccount_Signup.svg
+INPUT .\Dg_Activity\ManageAccount_Signup.svg
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT svg-inkscape\ManageAccount_Signup_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Signup_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\ManageAccount_Login.svg
+INPUT .\Dg_Activity\ManageAccount_Login.svg
+INPUT .\Dg_Activity\ManageAccount_Login.svg
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT svg-inkscape\ManageAccount_Login_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Login_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\ManageAccount_Profile.svg
+INPUT .\Dg_Activity\ManageAccount_Profile.svg
+INPUT .\Dg_Activity\ManageAccount_Profile.svg
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT svg-inkscape\ManageAccount_Profile_svg-tex.pdf_tex
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT .\svg-inkscape\ManageAccount_Profile_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\Activity Diagram-Integration.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Integration.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Integration.drawio.svg
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Integration.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\Activity Diagram-Report.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Report.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Report.drawio.svg
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Report.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\Activity Diagram-Chat.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Chat.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Chat.drawio.svg
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Chat.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\Activity Diagram-Notifications and Alerts.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Notifications and Alerts.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Notifications and Alerts.drawio.svg
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Notifications and Alerts.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\Activity Diagram-Subscription.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Subscription.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-Subscription.drawio.svg
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-Subscription.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\Activity Diagram-ReplyCustomerMessage.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-ReplyCustomerMessage.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-ReplyCustomerMessage.drawio.svg
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-ReplyCustomerMessage.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Dg_Activity\Activity Diagram-SendMessage.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-SendMessage.drawio.svg
+INPUT .\Dg_Activity\Activity Diagram-SendMessage.drawio.svg
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT .\svg-inkscape\Activity Diagram-SendMessage.drawio_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\Diagram\Sequence.tex
+INPUT .\Contents\Diagram\Sequence.tex
+INPUT .\Contents\Diagram\Sequence.tex
+INPUT .\Contents\Diagram\Sequence.tex
+INPUT Contents\Diagram\Sequence.tex
+INPUT .\Dg_Sequence\Payment.svg
+INPUT .\Dg_Sequence\Payment.svg
+INPUT .\Dg_Sequence\Payment.svg
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT .\svg-inkscape\Payment_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Payment_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT .\svg-inkscape\Payment_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Payment_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT svg-inkscape\Payment_svg-tex.pdf_tex
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT .\svg-inkscape\Payment_svg-tex.pdf
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\Diagram\Class.tex
+INPUT .\Contents\Diagram\Class.tex
+INPUT .\Contents\Diagram\Class.tex
+INPUT .\Contents\Diagram\Class.tex
+INPUT Contents\Diagram\Class.tex
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\ThietKeHeThong.tex
+INPUT .\Contents\ThietKeHeThong.tex
+INPUT .\Contents\ThietKeHeThong.tex
+INPUT .\Contents\ThietKeHeThong.tex
+INPUT Contents\ThietKeHeThong.tex
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\HienThuc.tex
+INPUT .\Contents\HienThuc.tex
+INPUT .\Contents\HienThuc.tex
+INPUT .\Contents\HienThuc.tex
+INPUT Contents\HienThuc.tex
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Contents\TongKet.tex
+INPUT .\Contents\TongKet.tex
+INPUT .\Contents\TongKet.tex
+INPUT .\Contents\TongKet.tex
+INPUT Contents\TongKet.tex
+INPUT .\Outro\TaiLieuThamKhao.tex
+INPUT .\Outro\TaiLieuThamKhao.tex
+INPUT .\Outro\TaiLieuThamKhao.tex
+INPUT .\Outro\TaiLieuThamKhao.tex
+INPUT Outro\TaiLieuThamKhao.tex
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Outro\PhuLuc.tex
+INPUT .\Outro\PhuLuc.tex
+INPUT .\Outro\PhuLuc.tex
+INPUT .\Outro\PhuLuc.tex
+INPUT Outro\PhuLuc.tex
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT .\Images\hcmut.png
+INPUT main.aux
+INPUT .\main.out
+INPUT .\main.out
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmb8v.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmb8v.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmr8v.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmr8v.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmri8v.pfb
+INPUT C:\Users\DELL\AppData\Local\Programs\MiKTeX\fonts\type1\vntex\urwvn\utmri8v.pfb

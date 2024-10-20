@@ -104,7 +104,6 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
 \paragraph{Quản lý hồ sơ}
 \begin{itemize}
     \item Hệ thống sẽ cho phép quản trị viên công ty quản lý thông tin chi tiết về hồ sơ công ty (tên, logo, thông tin liên hệ…).
-    \item Hệ thống sẽ cho phép quản trị viên công ty quản lý vai trò và quyền của người dùng trong tài khoản công ty của họ.
     \item Hệ thống sẽ cho phép công ty cập nhật hồ sơ cá nhân và cài đặt tài khoản của họ.
     \item Hệ thống sẽ cho phép người dùng đặt lại mật khẩu an toàn.
 \end{itemize}
@@ -118,6 +117,7 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
     \item Hệ thống sẽ xử lý dữ liệu đã tải lên để tạo cơ sở tri thức cho chatbot.
     \item Hệ thống sẽ cho phép các công ty thêm, chỉnh sửa hoặc xóa các tri thức thông qua giao diện.
     \item Hệ thống sẽ cho phép phân loại và gắn thẻ nội dung cơ sở tri thức để truy vấn hiệu quả.
+    \item Nếu được sự đồng ý của công ty, hệ thống có thể đọc nội dung trực tiếp từ trang web của họ để xây dựng và cập nhật cơ sở kiến thức cho chatbot.
 \end{itemize}
 
 \paragraph{Tùy chỉnh giao diện và hành vi chatbot}
@@ -140,7 +140,7 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
 \begin{itemize}
     \item Hệ thống sẽ hỗ trợ tiếng Việt cho cả đầu vào và phản hồi.
     \item Mô hình AI sẽ sử dụng hiểu ngôn ngữ tự nhiên (Natural-language understanding) để nhận dạng chính xác ý định người dùng.
-    \item Hệ thống sẽ cho phép các công ty xác định các ý định cụ thể có liên quan đến doanh nghiệp của họ.
+    \item Hệ thống sẽ cho phép các công ty xác định các intents và entities cụ thể có liên quan đến doanh nghiệp của họ.
 \end{itemize}
 
 \subsubsection{Tích hợp với trang web doanh nghiệp}
@@ -184,7 +184,7 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
 
 \paragraph{Hỗ trợ đa phương tiện}
 \begin{itemize}
-    \item Chatbot phải có khả năng gửi và nhận nội dung đa phương tiện, bao gồm hình ảnh, video và đường dẫn (hyperlinks).
+    \item Chatbot phải có khả năng nhận nội dung đa phương tiện, bao gồm hình ảnh, video và đường dẫn (hyperlinks).
 \end{itemize}
 
 \paragraph{Đối thoại theo ngữ cảnh}
@@ -259,6 +259,7 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
 \begin{itemize}
     \item Hệ thống phải đảm bảo rằng chatbot phản hồi người dùng trong vòng trung bình 3 giây trong điều kiện tải bình thường.
     \item Hệ thống phải duy trì thời gian phản hồi tối đa là 5 giây trong thời gian tải cao điểm.
+    \item Hệ thống sẽ xử lý hiệu quả việc trích xuất nội dung trang web để giảm thiểu tác động đến hiệu suất và tài nguyên của hệ thống.
 \end{itemize}
 
 \paragraph{Thông lượng}
@@ -405,8 +406,13 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
     \item Chatbot phải khuyên người dùng không chia sẻ thông tin cá nhân nhạy cảm.
     \item Hệ thống sẽ cung cấp phương pháp để người dùng báo cáo các phản hồi không phù hợp.
 \end{itemize}
+
 \subsection{Biểu đồ Use case}
-Vẽ biểu đồ use case và use case scenario
+\input{Contents/Diagram/Usecase}
 \subsection{Biểu đồ Activity}
+\input{Contents/Diagram/Activity}
 \subsection{Biểu đồ Sequence}
+\input{Contents/Diagram/Sequence}
+
 \subsection{Biểu đồ Class}
+\input{Contents/Diagram/Class}
