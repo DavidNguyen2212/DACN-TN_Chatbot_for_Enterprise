@@ -2,7 +2,7 @@
 \subsubsection{Biểu đồ use case tổng}
 \begin{figure}[H]
     \centering
-     \includesvg[width=1\textwidth]{Dg_UC/General.svg}
+     \includesvg[width=1\textwidth]{Dg_UC/Usecase Diagram-General.svg}
     \vspace{0.5cm}
     \caption{Biểu đồ use case tổng}
     \label{fig:enter-label}
@@ -200,7 +200,7 @@
 \subsubsubsection{Biểu đồ use case}
 \begin{figure}[H]
     \centering
-     \includesvg[width=1\textwidth]{Dg_UC/TrainingAndTuning.svg}
+     \includesvg[width=1\textwidth]{Dg_UC/Usecase Diagram-TrainingBot.svg}
     \vspace{0.5cm}
     \caption{Biểu đồ use case cho Đào tạo và tùy chỉnh chatbot}
     \label{fig:enter-label}
@@ -239,6 +239,7 @@
 	\caption{Use case scenario cho Tải dữ liệu tri thức}
 \end{table}
 
+\newpage
 \textbf{Cập nhật dữ liệu tri thức}
 \begin{table}[H]
 	\centering
@@ -316,6 +317,7 @@
 	\caption{Use case scenario cho Trích xuất nội dung từ website}
 \end{table}
 
+\newpage
 \textbf{Gán nhãn dữ liệu tri thức}
 \begin{table}[H]
 	\centering
@@ -342,6 +344,39 @@
 		\hline
 	\end{tabular}
 	\caption{Use case scenario cho Gán nhãn dữ liệu tri thức}
+\end{table}
+
+\textbf{So sánh chatbot}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|} 
+		\hline Use case name: & \multicolumn{3}{|l|}{So sánh chatbot} \\ 
+		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $12 / 11 / 2024$\\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép quản trị viên xem trước chatbot để quyết định có lưu các cài đặt không. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào mục "Gán nhãn tri thức". } \\ 
+		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+			Quản trị viên vừa thực hiện thay đổi với tri thức (thêm / xóa / sửa / đánh nhãn). 
+		} \\ 
+		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
+			Ra quyết định được có nên nâng cấp chatbot hay không. 
+		} \\ 
+		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+			1. Ấn vào nút "So sánh chatbot", trang so sánh hiển thị cho phép người dùng thấy 2 phiên bản cùng một lúc. \newline 
+			2. Quản trị viên nhập tin nhắn vào khung chat và xem 2 bot cùng trả lời. \newline 
+			3. Người dùng ấn "Lưu và training". 
+		} \\ 
+		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+			Không có.
+		} \\ 
+		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
+		\textbf{E1. Tại bước 3, người dùng ấn biểu tượng trở về. Thay đổi chưa được lưu, use-case kết thúc} \newline 
+		} \\ 
+		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline
+	\end{tabular}
+	\caption{Use case scenario cho Trích xuất nội dung từ website}
 \end{table}
 
 \textbf{Tùy chỉnh hành vi chatbot}
@@ -377,6 +412,7 @@
 	\caption{Use case scenario cho Tùy chỉnh hành vi chatbot.}
 \end{table}
 
+\newpage
 \textbf{Tùy chỉnh giao diện chatbot}
 \begin{table}[H]
 	\centering
@@ -394,7 +430,7 @@
 			Cập nhật hành vi chatbot thành công. 
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Quản trị viên chỉnh sửa màu nền, ảnh nền khung chat, phông chữ, ảnh đại diện chatbot, độ bo góc của các tin nhắn. \newline 
+			1. Quản trị viên chỉnh sửa màu nền, màu chữ, ảnh nền khung chat, phông chữ, ảnh đại diện chatbot, độ bo góc của các tin nhắn. \newline 
 			2. Quản trị viên xem trước các thay đổi. \newline
 			3. Quản trị viên nhấn "Lưu". \newline
 			4. Hệ thống lưu lại các thiết lập.
