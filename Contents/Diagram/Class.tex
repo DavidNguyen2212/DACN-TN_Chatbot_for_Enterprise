@@ -1,0 +1,1334 @@
+\subsubsection{Tầng dữ liệu (Data Layer)}
+\begin{figure}[p]
+    \thispagestyle{empty}
+    \centering
+    \rotatebox{90}{
+        \includegraphics[height=0.9\textwidth, width=0.9\textheight, keepaspectratio]{Dg_Class/class-entity.png}
+    }
+    \rotatebox{90}{
+        \parbox{\textwidth}{
+            \centering
+            \caption{Biểu đồ class các thực thể cho tầng dữ liệu}
+            \label{fig:enter-label}
+        }
+    }
+\end{figure}
+\textbf{Các lớp cơ sở (Base Classes)}
+
+\begin{itemize}
+    \item \textbf{BaseEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Là lớp trừu tượng cơ sở cho tất cả các entity, đảm bảo tính nhất quán của dữ liệu
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item id (UUID): Định danh cho mỗi entity
+            \item createdAt (DateTime): Thời điểm tạo bản ghi
+            \item updatedAt (DateTime): Thời điểm cập nhật cuối cùng
+            \item isActive (boolean): Trạng thái hoạt động của entity
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Theo dõi lịch sử thay đổi cơ bản
+            \item Cung cấp phương thức xác thực cơ bản
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{BaseUserEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý thông tin cơ bản của người dùng trong hệ thống
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item email (String): Địa chỉ email đăng nhập
+            \item passwordHash (String): Mật khẩu đã được mã hóa
+            \item fullName (String): Họ tên đầy đủ
+            \item lastLoginAt (DateTime): Thời điểm đăng nhập gần nhất
+            \item failedLoginAttempts (int): Số lần đăng nhập thất bại
+            \item status (UserStatus): Trạng thái tài khoản
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Xác thực email và mật khẩu
+            \item Quản lý trạng thái đăng nhập
+            \item Cung cấp các phương thức bảo mật
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Các lớp quản lý công ty và người dùng}
+
+\begin{itemize}
+    \item \textbf{CompanyEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý thông tin và cấu hình của các công ty sử dụng hệ thống
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item name (String): Tên công ty
+            \item domain (String): Tên miền công ty
+            \item logo (Image): Logo công ty
+            \item subscriptionType (SubscriptionType): Loại gói đăng ký
+            \item verificationStatus (VerificationStatus): Trạng thái xác thực
+            \item contactInfo (ContactInformation): Thông tin liên hệ
+            \item settings (CompanySettings): Cấu hình riêng
+            \item billingInfo (BillingInformation): Thông tin thanh toán
+            \item maxChatbots (Integer): Số lượng chatbot tối đa
+        \end{itemize}
+        \item \textit{Quan hệ (Relationships)}:
+        \begin{itemize}
+            \item chatbots (Set<ChatbotEntity>): Danh sách chatbot
+            \item agents (Set<AgentEntity>): Danh sách agent
+            \item admins (Set<SystemAdminEntity>): Danh sách admin
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Quản lý cấu hình và giới hạn sử dụng
+            \item Kiểm soát quyền truy cập và xác thực
+            \item Quản lý thanh toán và gói đăng ký
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{SystemAdminEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý các quản trị viên của hệ thống
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item companyId (UUID): ID công ty quản lý
+            \item permissions (Set<Permission>): Các quyền hạn trong hệ thống
+            \item lastActivityAt (DateTime): Thời điểm hoạt động cuối
+            \item loginHistory (List<LoginRecord>): Lịch sử đăng nhập
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Quản lý quyền hạn và phân quyền
+            \item Theo dõi hoạt động trong hệ thống
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{AgentEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý thông tin và hoạt động của nhân viên chăm sóc khách hàng
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item companyId (UUID): ID công ty
+            \item status (AgentStatus): Trạng thái làm việc
+            \item maxConcurrentChats (int): Số cuộc hội thoại tối đa
+            \item activeChats (int): Số cuộc hội thoại hiện tại
+            \item availability (AvailabilityStatus): Trạng thái khả dụng
+        \end{itemize}
+        \item \textit{Quan hệ}:
+        \begin{itemize}
+            \item schedule (ScheduleEntity): Lịch làm việc
+            \item conversations (Set<ConversationEntity>): Cuộc hội thoại
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Quản lý trạng thái và khả dụng
+            \item Điều phối các cuộc hội thoại
+            \item Quản lý lịch làm việc và nghỉ phép
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Các lớp quản lý lịch làm việc}
+
+\begin{itemize}
+    \item \textbf{ScheduleEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý lịch làm việc của nhân viên chăm sóc khách hàng
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item agentId (UUID): ID của nhân viên
+            \item timezone (String): Múi giờ làm việc
+            \item defaultHours (WorkingHours): Giờ làm việc mặc định
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Quản lý ca làm việc, hỗ trợ sắp xếp đặt lịch hẹn với nhân viên 
+            \item Xử lý ngày nghỉ phép
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Các lớp quản lý Chatbot}
+
+\begin{itemize}
+    \item \textbf{ChatbotEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý thông tin và cấu hình của các chatbot trong hệ thống
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item companyId (UUID): ID công ty sở hữu
+            \item name (String): Tên chatbot
+            \item description (String): Mô tả chức năng
+            \item type (ChatbotType): Loại chatbot (FAQ, Customer Service, etc.)
+            \item status (ChatbotStatus): Trạng thái hoạt động
+            \item trainingStatus (TrainingStatus): Trạng thái huấn luyện
+            \item personality (PersonalityConfig): Cấu hình tính cách
+            \item appearance (AppearanceConfig): Cấu hình giao diện
+            \item settings (ChatbotSettings): Thiết lập chung
+            \item integrationConfig (IntegrationConfig): Cấu hình tích hợp
+            \item metrics (ChatbotMetrics): Các chỉ số hoạt động
+        \end{itemize}
+        \item \textit{Quan hệ}:
+        \begin{itemize}
+            \item knowledgeBases (Set<KnowledgeBaseEntity>): Cơ sở kiến thức
+            \item conversations (Set<ConversationEntity>): Lịch sử hội thoại
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Quản lý trạng thái và cấu hình chatbot
+            \item Theo dõi hiệu suất chatbot
+            \item Theo dõi quá trình huấn luyện
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{KnowledgeBaseEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý nguồn kiến thức và dữ liệu training cho chatbot
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item chatbotId (UUID): ID của chatbot
+            \item name (String): Tên cơ sở kiến thức
+            \item description (String): Mô tả nội dung
+            \item type (KnowledgeBaseType): Loại kiến thức
+            \item status (KnowledgeBaseStatus): Trạng thái hoạt động
+            \item lastTrainingDate (DateTime): Thời điểm training gần nhất
+            \item vectorStore (VectorStoreConfig): Cấu hình lưu trữ vector
+        \end{itemize}
+        \item \textit{Quan hệ}:
+        \begin{itemize}
+            \item documents (Set<DocumentEntity>): Tài liệu training
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Quản lý và tổ chức tài liệu
+            \item Kiểm soát quá trình training
+            \item Đảm bảo chất lượng dữ liệu
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{DocumentEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý các tài liệu và nội dung training
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item knowledgeBaseId (UUID): ID cơ sở kiến thức
+            \item title (String): Tiêu đề tài liệu
+            \item content (String): Nội dung
+            \item type (DocumentType): Loại tài liệu
+            \item format (FileFormat): Định dạng file
+            \item fileSize (Long): Kích thước file
+            \item status (ProcessingStatus): Trạng thái xử lý
+            \item metadata (Map<String, Object>): Metadata
+            \item processingStatus (ProcessingStatus): Trạng thái xử lý
+            \item errorMessage (String): Thông báo lỗi
+            \item checksum (String): Mã kiểm tra
+            \item uploadedBy (UUID): Người tải lên
+        \end{itemize}
+        \item \textit{Quan hệ}:
+        \begin{itemize}
+            \item chunks (List<TextChunkEntity>): Các đoạn văn bản
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Xử lý và phân đoạn nội dung tài liệu
+            \item Kiểm tra tính hợp lệ của tài liệu
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Các lớp xử lý Ngôn ngữ tự nhiên}
+
+\begin{itemize}
+    \item \textbf{TextChunkEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý các đoạn văn bản đã được phân đoạn để xử lý
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item documentId (UUID): ID tài liệu gốc
+            \item content (String): Nội dung đoạn văn bản
+            \item startIndex (int): Vị trí bắt đầu trong tài liệu
+            \item endIndex (int): Vị trí kết thúc trong tài liệu
+            \item embedding (Embedding): Vector biểu diễn
+            \item relevanceScore (float): Điểm liên quan
+            \item tokenCount (int): Số lượng token
+        \end{itemize}
+        \item \textit{Quan hệ}:
+        \begin{itemize}
+            \item document (DocumentEntity): Tài liệu gốc
+            \item embedding (EmbeddingEntity): Vector embedding
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Tạo và quản lý embedding
+            \item Đánh giá độ liên quan
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{EmbeddingEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý các vector biểu diễn văn bản
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item textChunkId (UUID): ID đoạn văn bản
+            \item vector (float[]): Vector embedding
+            \item dimension (int): Số chiều vector
+            \item model (String): Mô hình tạo embedding
+            \item similarity (float): Độ tương đồng
+            \item quality (float): Chất lượng embedding
+            \item lastUpdated (DateTime): Thời điểm cập nhật
+            \item modelVersion (String): Phiên bản mô hình
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Tính toán độ tương đồng
+            \item Chuẩn hóa vector
+            \item Kiểm tra tính hợp lệ vector
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Các lớp quản lý Hội thoại}
+
+\begin{itemize}
+    \item \textbf{ConversationEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý các cuộc hội thoại giữa người dùng với chatbot hoặc nhân viên chăm sóc khách hàng
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item chatbotId (UUID): ID của chatbot
+            \item agentId (UUID): ID nhân viên
+            \item status (ConversationStatus): Trạng thái hội thoại
+            \item startTime (DateTime): Thời điểm bắt đầu
+            \item endTime (DateTime): Thời điểm kết thúc
+        \end{itemize}
+        \item \textit{Quan hệ}:
+        \begin{itemize}
+            \item messages (List<MessageEntity>): Danh sách tin nhắn
+            \item agent (AgentEntity): Nhân viên phụ trách
+            \item chatbot (ChatbotEntity): Chatbot xử lý
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Quản lý luồng hội thoại
+            \item Chuyển giao hội thoại giữa chatbot và nhân viên
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{MessageEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý các tin nhắn trong hội thoại
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item conversationId (UUID): ID cuộc hội thoại
+            \item content (String): Nội dung tin nhắn
+            \item senderType (SenderType): Loại người gửi
+            \item sendAt (DateTime): Thời điểm gửi
+            \item status (MessageStatus): Trạng thái tin nhắn
+            \item attachments (List<Attachment>): Tệp đính kèm
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Xử lý và lưu trữ tin nhắn
+            \item Quản lý tệp đính kèm
+            \item Theo dõi trạng thái gửi nhận
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Các lớp phân tích và thống kê}
+
+\begin{itemize}
+    \item \textbf{AnalyticsEntity}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý và theo dõi các chỉ số phân tích trong hệ thống
+        \item \textit{Thuộc tính chính}:
+        \begin{itemize}
+            \item entityType (EntityType): Loại đối tượng được phân tích
+            \item entityId (UUID): ID đối tượng
+            \item metrics (Map<String, Double>): Các chỉ số đo lường
+            \item period (TimePeriod): Khoảng thời gian thống kê
+            \item timestamp (DateTime): Thời điểm ghi nhận
+            \item status (AnalyticsStatus): Trạng thái xử lý
+        \end{itemize}
+        \item \textit{Các loại chỉ số chính}:
+        \begin{itemize}
+            \item \textbf{Chatbot Metrics}:
+            \begin{itemize}
+                \item totalConversations: Tổng số cuộc hội thoại
+                \item averageResponseTime: Thời gian phản hồi trung bình
+                \item handoffRate: Tỷ lệ chuyển giao cho agent
+                \item activeUsers: Số người dùng hoạt động
+                \item peakUsageTime: Thời điểm sử dụng cao điểm
+            \end{itemize}
+            \item \textbf{Agent Metrics}:
+            \begin{itemize}
+                \item handledConversations: Số cuộc hội thoại đã xử lý
+                \item averageHandlingTime: Thời gian xử lý trung bình
+                \item firstResponseTime: Thời gian phản hồi đầu tiên
+                \item resolutionRate: Tỷ lệ giải quyết vấn đề
+                \item onlineTime: Thời gian trực tuyến
+            \end{itemize}
+            \item \textbf{Knowledge Base Metrics}:
+            \begin{itemize}
+                \item totalDocuments: Tổng số tài liệu
+                \item averageProcessingTime: Thời gian xử lý trung bình
+                \item queryAccuracy: Độ chính xác truy vấn
+                \item contentCoverage: Độ bao phủ nội dung
+                \item updateFrequency: Tần suất cập nhật
+                \item searchLatency: Độ trễ tìm kiếm
+                \item embeddingQuality: Chất lượng embedding
+            \end{itemize}
+        \end{itemize}
+        \item \textit{Quan hệ}:
+        \begin{itemize}
+            \item relatedEntities (Map<EntityType, UUID>): Các entity liên quan
+            \item alerts (Set<AlertConfig>): Cấu hình cảnh báo
+        \end{itemize}
+        \item \textit{Chức năng chính}:
+        \begin{itemize}
+            \item Tự động thu thập chỉ số theo thời gian thực
+            \item Ghi nhận các sự kiện quan trọng
+            \item Theo dõi các chỉ số hiệu suất (KPI)
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Các Repository trong hệ thống}
+\begin{figure}[p]
+    \thispagestyle{empty}
+    \centering
+    \rotatebox{90}{
+        \includegraphics[height=0.9\textwidth, width=0.9\textheight, keepaspectratio]{Dg_Class/class-repository.png}
+    }
+    \rotatebox{90}{
+        \parbox{\textwidth}{
+            \centering
+            \caption{Biểu đồ class các repository cho tầng dữ liệu}
+            \label{fig:enter-label}
+        }
+    }
+\end{figure}
+\begin{itemize}
+    \item \textbf{IBaseRepository<T extends BaseEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Interface cơ sở định nghĩa các thao tác CRUD chung
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findById(UUID): Optional<T>
+                    \begin{itemize}
+                        \item Tìm kiếm một đối tượng theo ID
+                    \end{itemize}
+                \item findAll(): List<T>
+                    \begin{itemize}
+                        \item Lấy danh sách tất cả các đối tượng
+                    \end{itemize}
+                \item save(T): T
+                    \begin{itemize}
+                        \item Lưu một đối tượng mới vào cơ sở dữ liệu
+                    \end{itemize}
+                \item update(T): T
+                    \begin{itemize}
+                        \item Cập nhật thông tin của một đối tượng
+                    \end{itemize}
+                \item delete(UUID): void
+                    \begin{itemize}
+                        \item Xóa một đối tượng theo ID
+                    \end{itemize}
+                \item exists(UUID): boolean
+                    \begin{itemize}
+                        \item Kiểm tra sự tồn tại của một đối tượng theo ID
+                    \end{itemize}
+                \item count(): long
+                    \begin{itemize}
+                        \item Đếm tổng số đối tượng trong cơ sở dữ liệu
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IBaseUserRepository<T extends BaseUserEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Repository cơ sở cho các entity người dùng
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByEmail(String): Optional<T>
+                    \begin{itemize}
+                        \item Tìm kiếm người dùng theo địa chỉ email
+                    \end{itemize}
+                \item findByEmailAndCompanyId(String, UUID): Optional<T>
+                    \begin{itemize}
+                        \item Tìm kiếm người dùng theo email và ID công ty
+                    \end{itemize}
+                \item updatePassword(UUID, String): void
+                    \begin{itemize}
+                        \item Cập nhật mật khẩu cho người dùng
+                    \end{itemize}
+                \item updateLastLogin(UUID): void
+                    \begin{itemize}
+                        \item Cập nhật thời gian đăng nhập cuối cùng
+                    \end{itemize}
+                \item findByLastLoginBefore(DateTime): List<T>
+                    \begin{itemize}
+                        \item Tìm kiếm danh sách người dùng có thời gian đăng nhập cuối trước một thời điểm
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IAgentRepository extends IBaseUserRepository<AgentEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu nhân viên chăm sóc khách hàng
+        \item \textit{Các phương thức chuyên biệt}:
+            \begin{itemize}
+                \item findByCompanyId(UUID): List<AgentEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách nhân viên thuộc một công ty
+                    \end{itemize}
+                \item findByStatus(AgentStatus): List<AgentEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách nhân viên theo trạng thái hoạt động
+                    \end{itemize}
+                \item findAvailableAgents(UUID): List<AgentEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các nhân viên đang rảnh và có thể tiếp nhận công việc
+                    \end{itemize}
+                \item updateStatus(UUID, AgentStatus): void
+                    \begin{itemize}
+                        \item Cập nhật trạng thái hoạt động của nhân viên
+                    \end{itemize}
+                \item findBySchedule(DateTime): List<AgentEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm nhân viên theo lịch làm việc
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IChatbotRepository extends IBaseRepository<ChatbotEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu chatbot
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByCompanyId(UUID): List<ChatbotEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách chatbot thuộc một công ty
+                    \end{itemize}
+                \item findByStatus(ChatbotStatus): List<ChatbotEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách chatbot theo trạng thái hoạt động
+                    \end{itemize}
+                \item findByType(ChatbotType): List<ChatbotEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm chatbot theo loại
+                    \end{itemize}
+                \item updateStatus(UUID, ChatbotStatus): void
+                    \begin{itemize}
+                        \item Cập nhật trạng thái hoạt động của chatbot
+                    \end{itemize}
+                \item updateMetrics(UUID, ChatbotMetrics): void
+                    \begin{itemize}
+                        \item Cập nhật các chỉ số hoạt động của chatbot
+                    \end{itemize}
+                \item findActive(UUID): List<ChatbotEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các chatbot đang hoạt động
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IConversationRepository extends IBaseRepository<ConversationEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu cuộc hội thoại
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByChatbotId(UUID): List<ConversationEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các cuộc hội thoại của một chatbot cụ thể
+                    \end{itemize}
+                \item findByUserId(UUID): List<ConversationEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các cuộc hội thoại của một người dùng
+                    \end{itemize}
+                \item findByAgentId(UUID): List<ConversationEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các cuộc hội thoại được xử lý bởi một nhân viên
+                    \end{itemize}
+                \item findByStatus(ConversationStatus): List<ConversationEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách hội thoại theo trạng thái
+                    \end{itemize}
+                \item findActiveConversations(): List<ConversationEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các cuộc hội thoại đang diễn ra
+                    \end{itemize}
+                \item findByDateRange(DateTime, DateTime): List<ConversationEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các cuộc hội thoại trong khoảng thời gian
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IAnalyticsRepository extends IBaseRepository<AnalyticsEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu phân tích
+        \item \textit{Các phương thức truy vấn}:
+            \begin{itemize}
+                \item findByEntityTypeAndId(EntityType, UUID): List<AnalyticsEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm dữ liệu phân tích theo loại đối tượng và ID
+                    \end{itemize}
+                \item findByPeriod(TimePeriod): List<AnalyticsEntity>
+                    \begin{itemize}
+                        \item Lấy dữ liệu phân tích trong một khoảng thời gian
+                    \end{itemize}
+                \item findByMetricKey(String): List<AnalyticsEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm dữ liệu phân tích theo chỉ số cụ thể
+                    \end{itemize}
+                \item aggregateMetrics(EntityType, TimePeriod): Map<String, Double>
+                    \begin{itemize}
+                        \item Tổng hợp các chỉ số theo loại đối tượng và thời gian
+                    \end{itemize}
+                \item updateMetrics(UUID, Map<String, Double>): void
+                    \begin{itemize}
+                        \item Cập nhật các chỉ số phân tích cho một đối tượng
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IKnowledgeBaseRepository extends IBaseRepository<KnowledgeBaseEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu cơ sở kiến thức
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByChatbotId(UUID): List<KnowledgeBaseEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm cơ sở kiến thức của một chatbot cụ thể
+                    \end{itemize}
+                \item findByStatus(KnowledgeBaseStatus): List<KnowledgeBaseEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách cơ sở kiến thức theo trạng thái
+                    \end{itemize}
+                \item findByType(KnowledgeBaseType): List<KnowledgeBaseEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm cơ sở kiến thức theo loại
+                    \end{itemize}
+                \item updateStatus(UUID, KnowledgeBaseStatus): void
+                    \begin{itemize}
+                        \item Cập nhật trạng thái của cơ sở kiến thức
+                    \end{itemize}
+                \item updateLastTrainingDate(UUID, DateTime): void
+                    \begin{itemize}
+                        \item Cập nhật thời gian huấn luyện gần nhất
+                    \end{itemize}
+                \item findPendingTraining(): List<KnowledgeBaseEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các cơ sở kiến thức đang chờ huấn luyện
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{IMessageRepository extends IBaseRepository<MessageEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu tin nhắn
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByConversationId(UUID): List<MessageEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách tin nhắn trong một cuộc hội thoại
+                    \end{itemize}
+                \item findBySenderType(SenderType): List<MessageEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm tin nhắn theo loại người gửi
+                    \end{itemize}
+                \item findByDateRange(UUID, DateTime, DateTime): List<MessageEntity>
+                    \begin{itemize}
+                        \item Lấy tin nhắn trong khoảng thời gian cụ thể
+                    \end{itemize}
+                \item findLatestMessages(UUID, int): List<MessageEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách tin nhắn mới nhất của một cuộc hội thoại
+                    \end{itemize}
+                \item countByConversationId(UUID): long
+                    \begin{itemize}
+                        \item Đếm số lượng tin nhắn trong một cuộc hội thoại
+                    \end{itemize}
+                \item findByStatus(MessageStatus): List<MessageEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm tin nhắn theo trạng thái
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IDocumentRepository extends IBaseRepository<DocumentEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu tài liệu
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByKnowledgeBaseId(UUID): List<DocumentEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm tài liệu thuộc một cơ sở kiến thức
+                    \end{itemize}
+                \item findByType(DocumentType): List<DocumentEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách tài liệu theo loại
+                    \end{itemize}
+                \item findByStatus(String): List<DocumentEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm tài liệu theo trạng thái
+                    \end{itemize}
+                \item updateStatus(UUID, String): void
+                    \begin{itemize}
+                        \item Cập nhật trạng thái của tài liệu
+                    \end{itemize}
+                \item findByUploadedBy(UUID): List<DocumentEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm tài liệu theo người tải lên
+                    \end{itemize}
+                \item findPendingProcessing(): List<DocumentEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách tài liệu đang chờ xử lý
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IEmbeddingRepository extends IBaseRepository<EmbeddingEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu vector embedding
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByTextChunkId(UUID): Optional<EmbeddingEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm vector embedding của một đoạn văn bản
+                    \end{itemize}
+                \item findSimilar(float[], int): List<EmbeddingEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm các vector embedding tương đồng nhất
+                    \end{itemize}
+                \item findByModel(String): List<EmbeddingEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm vector embedding theo mô hình tạo ra
+                    \end{itemize}
+                \item updateSimilarity(UUID, float): void
+                    \begin{itemize}
+                        \item Cập nhật độ tương đồng của vector embedding
+                    \end{itemize}
+                \item findByDimension(int): List<EmbeddingEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm vector embedding theo số chiều
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+
+    \item \textbf{IScheduleRepository extends IBaseRepository<ScheduleEntity>}
+    \begin{itemize}
+        \item \textit{Mục đích}: Quản lý truy xuất dữ liệu lịch làm việc
+        \item \textit{Các phương thức chính}:
+            \begin{itemize}
+                \item findByAgentId(UUID): Optional<ScheduleEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm lịch làm việc của một nhân viên
+                    \end{itemize}
+                \item findByDateRange(DateTime, DateTime): List<ScheduleEntity>
+                    \begin{itemize}
+                        \item Lấy danh sách lịch làm việc trong khoảng thời gian
+                    \end{itemize}
+                \item findAvailableAgents(DateTime): List<UUID>
+                    \begin{itemize}
+                        \item Tìm kiếm các nhân viên rảnh tại một thời điểm
+                    \end{itemize}
+                \item findConflicts(ScheduleRequest): List<Conflict>
+                    \begin{itemize}
+                        \item Kiểm tra xung đột lịch làm việc
+                    \end{itemize}
+                \item findByWorkingHours(TimeRange): List<ScheduleEntity>
+                    \begin{itemize}
+                        \item Tìm kiếm lịch làm việc theo khung giờ
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Tầng dịch vụ (Business Layer)}
+\begin{figure}[p]
+    \thispagestyle{empty}
+    \centering
+    \rotatebox{90}{
+        \includegraphics[height=0.9\textwidth, width=0.9\textheight, keepaspectratio]{Dg_Class/class-business.png}
+    }
+    \rotatebox{90}{
+        \parbox{\textwidth}{
+            \centering
+            \caption{Biểu đồ class cho tầng dịch vụ}
+            \label{fig:enter-label}
+        }
+    }
+\end{figure}
+\textbf{BaseService}
+\begin{itemize}
+    \item \textbf{BaseService<T, D>}
+    \textit{Service cơ sở cung cấp các thao tác CRUD chung cho hệ thống}
+    \begin{itemize}
+        \item \textit{Phương thức}:
+        \begin{itemize}
+            \item create(D dto): UUID
+            \small{Tạo mới một đối tượng từ DTO và trả về ID}
+            
+            \item update(UUID id, D dto): void
+            \small{Cập nhật thông tin đối tượng hiện có}
+            
+            \item delete(UUID id): void
+            \small{Xóa đối tượng khỏi hệ thống}
+            
+            \item getById(UUID id): D
+            \small{Lấy thông tin đối tượng theo ID}
+            
+            \item getAll(PageRequest page): PagedList<D>
+            \small{Lấy danh sách đối tượng theo phân trang}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{CompanyService}
+\begin{itemize}
+    \item \textbf{CompanyService}
+    \textit{Quản lý thông tin và hoạt động của công ty trong hệ thống}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item companyRepository: ICompanyRepository
+            \small{Kho lưu trữ và truy xuất dữ liệu công ty}
+            
+            \item authService: AuthService
+            \small{Dịch vụ xử lý xác thực và phân quyền}
+            
+            \item emailService: EmailService
+            \small{Dịch vụ gửi và quản lý email}
+            
+            \item subscriptionManager: SubscriptionManager
+            \small{Quản lý gói đăng ký}
+            
+            \item billingService: BillingService
+            \small{Xử lý thanh toán và thông tin hóa đơn}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item register(CompanyRegistrationDTO): UUID
+            \small{Đăng ký công ty mới vào hệ thống}
+            
+            \item verifyEmail(String token): void
+            \small{Xác thực email công ty}
+            
+            \item updateSubscription(UUID, SubscriptionDTO): void
+            \small{Cập nhật thông tin gói đăng ký của công ty}
+            
+            \item getAnalytics(UUID): CompanyAnalyticsDTO
+            \small{Lấy dữ liệu phân tích của công ty}
+            
+            \item resetPassword(email: String, newPassword: String, confirmPassword: String): void
+            \small{Đặt lại mật khẩu cho tài khoản công ty}
+            
+            \item updateSettings(UUID, CompanySettingsDTO): void
+            \small{Cập nhật các cài đặt của công ty}
+            
+            \item getBillingInfo(UUID): Result<BillingInfoDTO>
+            \small{Lấy thông tin thanh toán của công ty}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item validateCompanyData(CompanyRegistrationDTO): ValidationResult
+            \small{Kiểm tra tính hợp lệ của dữ liệu đăng ký công ty}
+            
+            \item processRegistration(CompanyEntity): UUID
+            \small{Xử lý quá trình đăng ký công ty}
+            
+            \item sendVerificationEmail(String): void
+            \small{Gửi email xác thực cho công ty}
+            
+            \item handleSubscriptionChange(UUID, SubscriptionDTO): void
+            \small{Xử lý thay đổi gói đăng ký}
+            
+            \item validateSubscriptionLimits(UUID): ValidationResult
+            \small{Kiểm tra giới hạn của gói đăng ký}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{ChatbotService}
+\begin{itemize}
+    \item \textbf{ChatbotService}
+    \textit{Quản lý hoạt động và tương tác của chatbot trong hệ thống}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item chatbotRepository: IChatbotRepository
+            \small{Kho lưu trữ và quản lý dữ liệu chatbot}
+            
+            \item knowledgeBaseService: IKnowledgeBaseService
+            \small{Quản lý cơ sở kiến thức cho chatbot}
+            
+            \item aiService: AIService
+            \small{Xử lý các tác vụ trí tuệ nhân tạo}
+            
+            \item integrationManager: IntegrationManager
+            \small{Quản lý tích hợp chatbot}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item deploy(UUID): DeploymentDTO
+            \small{Triển khai chatbot lên hệ thống}
+            
+            \item customize(UUID, ChatbotCustomizationDTO): void
+            \small{Tùy chỉnh giao diện và cấu hình chatbot}
+            
+            \item train(UUID): TrainingStatus
+            \small{Huấn luyện chatbot với dữ liệu mới}
+            
+            \item processMessage(UUID, MessageDTO): ResponseDTO
+            \small{Xử lý tin nhắn và tạo phản hồi từ chatbot}
+            
+            \item getPerformanceMetrics(UUID): ChatbotMetricsDTO
+            \small{Lấy các chỉ số hiệu suất của chatbot}
+            
+            \item getTrainingStatus(UUID): TrainingStatus
+            \small{Kiểm tra trạng thái huấn luyện của chatbot}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item validateDeploymentRequirements(UUID): ValidationResult
+            \small{Kiểm tra điều kiện triển khai chatbot}
+            
+            \item generateIntegrationCode(ChatbotEntity): String
+            \small{Tạo mã tích hợp cho chatbot}
+            
+            \item updateDeploymentStatus(UUID): void
+            \small{Cập nhật trạng thái triển khai của chatbot}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{ConversationService}
+\begin{itemize}
+    \item \textbf{ConversationService}
+    \textit{Quản lý và xử lý các cuộc hội thoại giữa người dùng, chatbot và nhân viên chăm sóc khách hàng}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item conversationRepository: IConversationRepository
+            \small{Kho lưu trữ và quản lý dữ liệu cuộc hội thoại}
+            
+            \item chatbotService: ChatbotService
+            \small{Xử lý tương tác với chatbot}
+            
+            \item agentService: AgentService
+            \small{Quản lý tương tác với nhân viên chăm sóc khách hàng}
+            
+            \item analyticsService: AnalyticsService
+            \small{Phân tích và thống kê dữ liệu hội thoại}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item startConversation(UUID): UUID
+            \small{Khởi tạo một cuộc hội thoại mới}
+            
+            \item handleMessage(UUID, MessageDTO): ResponseDTO
+            \small{Xử lý tin nhắn trong cuộc hội thoại}
+            
+            \item transferToAgent(UUID): void
+            \small{Chuyển cuộc hội thoại sang nhân viên chăm sóc khách hàng}
+            
+            \item endConversation(UUID): void
+            \small{Kết thúc cuộc hội thoại}
+            
+            \item getHistory(UUID): List<MessageDTO>
+            \small{Lấy lịch sử tin nhắn của cuộc hội thoại}
+            
+            \item getAnalytics(UUID): ConversationAnalyticsDTO
+            \small{Lấy thông tin phân tích của cuộc hội thoại}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item processMessage(MessageDTO): ProcessedMessageDTO
+            \small{Xử lý và phân tích nội dung tin nhắn}
+            
+            \item determineResponseType(Context): ResponseType
+            \small{Xác định loại phản hồi phù hợp}
+            
+            \item handleAgentTransfer(UUID): void
+            \small{Xử lý quá trình chuyển giao cho nhân viên chăm sóc khách hàng}
+            
+            \item validateTransferEligibility(UUID): ValidationResult
+            \small{Kiểm tra điều kiện chuyển giao cuộc hội thoại}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{AIService}
+\begin{itemize}
+    \item \textbf{AIService}
+    \textit{Quản lý và xử lý các tác vụ trí tuệ nhân tạo trong hệ thống}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item modelRepository: IModelRepository
+            \small{Kho lưu trữ và quản lý các mô hình AI}
+            
+            \item embeddingService: EmbeddingService
+            \small{Dịch vụ tạo và quản lý vector nhúng}
+            
+            \item vectorDB: VectorDB
+            \small{Cơ sở dữ liệu vector cho tìm kiếm ngữ nghĩa}
+            
+            \item modelConfig: AIModelConfig
+            \small{Cấu hình cho các mô hình AI}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item trainModel(UUID, TrainingConfig): TrainingStatus
+            \small{Huấn luyện mô hình AI với cấu hình được chỉ định}
+            
+            \item generateResponse(UUID, Context): AIResponse
+            \small{Tạo phản hồi từ mô hình AI dựa trên ngữ cảnh}
+            
+            \item analyzeIntent(String): Intent
+            \small{Phân tích ý định từ văn bản đầu vào}
+            
+            \item updateModel(UUID, ModelConfig): void
+            \small{Cập nhật cấu hình cho mô hình AI}
+            
+            \item getModelMetrics(UUID): ModelMetrics
+            \small{Lấy các chỉ số hiệu suất của mô hình}
+            
+            \item validateResponse(AIResponse): Result<ValidationResult>
+            \small{Kiểm tra tính hợp lệ của phản hồi AI}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item preprocessInput(String): ProcessedInput
+            \small{Tiền xử lý dữ liệu đầu vào}
+            
+            \item validateResponse(AIResponse): ValidationResult
+            \small{Kiểm tra chất lượng phản hồi từ AI}
+            
+            \item updateModelMetrics(UUID): void
+            \small{Cập nhật các chỉ số theo dõi hiệu suất mô hình}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{KnowledgeBaseService}
+\begin{itemize}
+    \item \textbf{KnowledgeBaseService}
+    \textit{Quản lý và xử lý cơ sở kiến thức cho hệ thống chatbot}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item knowledgeBaseRepository: IKnowledgeBaseRepository
+            \small{Kho lưu trữ và quản lý dữ liệu cơ sở kiến thức}
+            
+            \item documentProcessor: DocumentProcessor
+            \small{Xử lý và phân tích tài liệu}
+            
+            \item embeddingService: EmbeddingService
+            \small{Tạo và quản lý các vector nhúng cho nội dung}
+            
+            \item searchEngine: SearchEngine
+            \small{Công cụ tìm kiếm và truy xuất thông tin}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item uploadContent(UUID, ContentUploadDTO): UUID
+            \small{Tải lên nội dung mới vào cơ sở kiến thức}
+            
+            \item processContent(UUID): ProcessingStatus
+            \small{Xử lý nội dung đã tải lên}
+            
+            \item updateContent(UUID, ContentUpdateDTO): void
+            \small{Cập nhật nội dung trong cơ sở kiến thức}
+            
+            \item deleteContent(UUID): void
+            \small{Xóa nội dung khỏi cơ sở kiến thức}
+            
+            \item searchContent(UUID, SearchQueryDTO): List<DocumentDTO>
+            \small{Tìm kiếm nội dung trong cơ sở kiến thức}
+            
+            \item importFromWebsite(UUID, WebsiteImportDTO): ImportStatus
+            \small{Nhập nội dung từ website vào cơ sở kiến thức}
+            
+            \item validateContent(UUID): ValidationResult
+            \small{Kiểm tra tính hợp lệ của nội dung}
+            
+            \item generateEmbeddings(UUID): void
+            \small{Tạo vector nhúng cho nội dung}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item validateFileFormat(File): ValidationResult
+            \small{Kiểm tra định dạng tệp tin}
+            
+            \item processDocument(Document): DocumentProcessorService
+            \small{Xử lý và phân tích tài liệu}
+            
+            \item generateEmbeddings(Content): List<Embedding>
+            \small{Tạo các vector nhúng cho nội dung}
+            
+            \item indexContent(ProcessedContent): void
+            \small{Đánh chỉ mục cho nội dung đã xử lý}
+            
+            \item updateSearchIndex(UUID): void
+            \small{Cập nhật chỉ mục tìm kiếm}
+            
+            \item optimizeSearchIndex(): void
+            \small{Tối ưu hóa chỉ mục tìm kiếm}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{DocumentProcessorService}
+\begin{itemize}
+    \item \textbf{DocumentProcessorService}
+    \textit{Xử lý và phân tích tài liệu để chuẩn bị cho cơ sở kiến thức}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item textExtractor: TextExtractor
+            \small{Trích xuất văn bản từ các định dạng tài liệu khác nhau}
+            
+            \item contentAnalyzer: ContentAnalyzer
+            \small{Phân tích nội dung và cấu trúc văn bản}
+            
+            \item formatValidator: FormatValidator
+            \small{Kiểm tra và xác thực định dạng tài liệu}
+            
+            \item chunkManager: ChunkManager
+            \small{Quản lý việc phân đoạn văn bản thành các phần nhỏ}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item processDocument(File): ProcessedDocument
+            \small{Xử lý toàn bộ tài liệu và tạo kết quả cuối cùng}
+            
+            \item extractText(File): ExtractedText
+            \small{Trích xuất nội dung văn bản từ tài liệu}
+            
+            \item analyzeContent(Text): AnalyzedContent
+            \small{Phân tích nội dung và cấu trúc của văn bản}
+            
+            \item generateChunks(Text): List<TextChunk>
+            \small{Tạo các đoạn văn bản nhỏ để xử lý}
+            
+            \item validateDocument(File): ValidationResult
+            \small{Kiểm tra tính hợp lệ của tài liệu}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item validateFormat(File): boolean
+            \small{Kiểm tra định dạng tài liệu có hợp lệ}
+            
+            \item cleanText(String): String
+            \small{Làm sạch và chuẩn hóa văn bản}
+            
+            \item optimizeChunkSize(Text): int
+            \small{Tối ưu kích thước của các đoạn văn bản}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{EmbeddingService}
+\begin{itemize}
+    \item \textbf{EmbeddingService}
+    \textit{Quản lý và xử lý vector nhúng cho dữ liệu văn bản}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item -embeddingRepository: IEmbeddingRepository
+            \small{Kho lưu trữ và quản lý các vector nhúng}
+            
+            \item -modelProvider: EmbeddingModelProvider
+            \small{Cung cấp mô hình tạo vector nhúng}
+            
+            \item -vectorDatabase: VectorDatabase
+            \small{Cơ sở dữ liệu lưu trữ và tìm kiếm vector}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item generateEmbeddings(Text): List<Embedding>
+            \small{Tạo vector nhúng từ văn bản đầu vào}
+            
+            \item +compareEmbeddings(Embedding, Embedding): SimilarityScore
+            \small{Tính độ tương đồng giữa hai vector nhúng}
+            
+            \item +storeEmbeddings(UUID, List<Embedding>): void
+            \small{Lưu trữ danh sách vector nhúng vào cơ sở dữ liệu}
+            
+            \item +updateEmbeddings(UUID): void
+            \small{Cập nhật vector nhúng cho một đối tượng cụ thể}
+            
+            \item +validateEmbeddings(List<Embedding>): ValidationResult
+            \small{Kiểm tra tính hợp lệ của danh sách vector nhúng}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item -optimizeEmbeddings(List<Embedding>): OptimizedEmbeddings
+            \small{Tối ưu hóa các vector nhúng để cải thiện hiệu suất}
+            
+            \item -validateDimensions(Embedding): boolean
+            \small{Kiểm tra kích thước của vector nhúng có phù hợp}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{AgentService}
+\begin{itemize}
+    \item \textbf{AgentService}
+    \textit{Quản lý hoạt động và phân công của nhân viên chăm sóc khách hàng trong hệ thống}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item -agentRepository: IAgentRepository
+            \small{Kho lưu trữ và quản lý thông tin nhân viên}
+            
+            \item -authService: AuthService
+            \small{Xử lý xác thực và phân quyền cho nhân viên}
+            
+            \item -scheduleService: ScheduleService
+            \small{Quản lý lịch làm việc của nhân viên}
+            
+            \item -notificationService: NotificationService
+            \small{Gửi thông báo đến nhân viên}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item +createAgent(AgentCreateDTO): UUID
+            \small{Tạo mới tài khoản nhân viên}
+            
+            \item +updateAgent(UUID, AgentUpdateDTO): void
+            \small{Cập nhật thông tin nhân viên}
+            
+            \item +deactivateAgent(UUID): void
+            \small{Vô hiệu hóa tài khoản nhân viên}
+            
+            \item +assignConversation(UUID, UUID): void
+            \small{Phân công cuộc hội thoại cho nhân viên}
+            
+            \item +transferConversation(UUID, UUID): void
+            \small{Chuyển giao cuộc hội thoại giữa các nhân viên}
+            
+            \item +setSchedule(UUID, ScheduleDTO): void
+            \small{Thiết lập lịch làm việc cho nhân viên}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item -calculateOptimalAssignment(): AssignmentResult
+            \small{Tính toán phân công tối ưu cho nhân viên}
+            
+            \item -updateAgentMetrics(UUID): void
+            \small{Cập nhật các chỉ số hiệu suất của nhân viên}
+            
+            \item -notifyAgent(UUID, Notification): void
+            \small{Gửi thông báo đến nhân viên cụ thể}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{ScheduleService}
+\begin{itemize}
+    \item \textbf{ScheduleService}
+    \textit{Quản lý lịch làm việc và thời gian của nhân viên}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item -scheduleRepository: IScheduleRepository
+            \small{Kho lưu trữ và quản lý dữ liệu lịch làm việc}
+            
+            \item -notificationService: NotificationService
+            \small{Gửi thông báo liên quan đến lịch làm việc}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item +setSchedule(UUID agentId, ScheduleDTO schedule): void
+            \small{Thiết lập lịch làm việc cho nhân viên}
+            
+            \item +updateSchedule(UUID agentId, ScheduleUpdateDTO update): void
+            \small{Cập nhật lịch làm việc hiện tại}
+            
+            \item +getSchedule(UUID agentId): ScheduleDTO
+            \small{Lấy thông tin lịch làm việc của nhân viên}
+            
+            \item +addTimeOff(UUID agentId, TimeOffDTO timeOff): void
+            \small{Thêm thời gian nghỉ cho nhân viên}
+            
+            \item +cancelTimeOff(UUID agentId, UUID timeOffId): void
+            \small{Hủy thời gian nghỉ đã đăng ký}
+            
+            \item +getAvailableAgents(DateTime time): AgentAvailabilityDTO
+            \small{Lấy danh sách nhân viên có sẵn tại một thời điểm}
+            
+            \item +checkAvailability(UUID agentId, DateTime time): boolean
+            \small{Kiểm tra tình trạng sẵn sàng của nhân viên}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item -validateSchedule(Schedule): ValidationResult
+            \small{Kiểm tra tính hợp lệ của lịch làm việc}
+            
+            \item -checkConflicts(UUID, Schedule): List<Conflict>
+            \small{Kiểm tra xung đột trong lịch làm việc}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{AnalyticsService}
+\begin{itemize}
+    \item \textbf{AnalyticsService}
+    \textit{Quản lý và xử lý dữ liệu phân tích trong hệ thống}
+    \begin{itemize}
+        \item \textit{Phụ thuộc}:
+        \begin{itemize}
+            \item -analyticsRepository: IAnalyticsRepository
+            \small{Kho lưu trữ và quản lý dữ liệu phân tích}
+            
+            \item -alertManager: AlertManager
+            \small{Quản lý và gửi cảnh báo dựa trên các ngưỡng đã thiết lập}
+        \end{itemize}
+        
+        \item \textit{Phương thức công khai}:
+        \begin{itemize}
+            \item +collectMetrics(UUID, MetricType): void
+            \small{Thu thập các chỉ số theo loại được chỉ định}
+            
+            \item +setAlerts(UUID, List<AlertRule>): void
+            \small{Thiết lập các quy tắc cảnh báo}
+            
+            \item +generateReport(ReportRequest): Report
+            \small{Tạo báo cáo phân tích theo yêu cầu}
+        \end{itemize}
+        
+        \item \textit{Phương thức nội bộ}:
+        \begin{itemize}
+            \item -processMetrics(RawMetrics): ProcessedMetrics
+            \small{Xử lý và chuyển đổi dữ liệu thô thành metric có ý nghĩa}
+            
+            \item -validateMetrics(MetricsData): ValidationResult
+            \small{Kiểm tra tính hợp lệ của dữ liệu metric}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
