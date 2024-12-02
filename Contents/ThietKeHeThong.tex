@@ -371,5 +371,263 @@ Quản lý các cuộc hội thoại.
 \end{itemize}
 
 \subsection{Giao diện}
-Bản đồ các giao diện của phần mềm
-Chi tiết từng giao diện 
+\subsubsection{Lược đồ Screen-flow}
+Lược đồ này cung cấp cái nhìn tổng quan về trải nghiệm người dùng: cách các trang giao diện kết nối với nhau, thứ tự hiển thị, và ai là người kiểm soát trang giao diện đó (phân chia vai trò). Cụ thể, quản trị viên và các nhân viên chăm sóc khách hàng quản lý hầu hết các trang, và người dùng khi tiếp cận với trang web doanh nghiệp, chỉ cần tương tác với chatbot popup là đủ.
+
+\begin{figure}[H]
+	\centering
+	\includesvg[width=\textwidth]{Figma/Screens-Flow-Diagram.svg}
+	\vspace{0.5cm}
+	\caption{Lược đồ Screen-flow}
+	\label{fig:enter-label}
+\end{figure}
+
+\newpage
+\subsubsection{Logo ứng dụng}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{Figma/logo.png}
+	\vspace{0.5cm}
+	\caption{Logo của ứng dụng CoolChat}
+	\label{fig:enter-label}
+\end{figure}
+
+% Định dạng tùy chỉnh a), b), c)
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+\begin{enumerate}
+	\item \textbf{Tên ứng dụng}
+	\begin{itemize}
+		\item Ứng dụng được triển khai có tên là CoolChat.
+		\item CoolChat hướng đến viêc trở thành thương hiệu số 1 Việt Nam trong công cuộc đồng hành cùng các doanh nghiệp trên hành trình tư vấn và chăm sóc khách hàng của họ.
+	\end{itemize}
+	
+	\item \textbf{Biểu tượng}
+	
+	Hình 67 cung cấp hình ảnh logo đầy đủ của ứng dụng cung cấp chatbot CoolChat.
+	\begin{itemize}
+		\item Logo là hình ảnh một biểu tượng chatbot được cách điệu một cách hiện đại và trẻ trung. Màu xanh dương được sử dụng làm màu chủ đạo, mang đến cảm giác tươi mát, tin cậy và chuyên nghiệp.
+		\item Slogan "Make it cool": CoolChat cam kết mang đến những trải nghiệm giao tiếp thú vị và mới mẻ cho người dùng trong lĩnh vực giao tiếp và tư vấn trực tuyến.
+	\end{itemize}
+	
+\end{enumerate}
+
+% Trở về định dạng mặc định 1., 2., 3.
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+\subsubsection{Trang đăng ký}
+\setlength{\fboxsep}{0pt}
+\begin{figure}[H]
+	\centering
+	\fbox{\includesvg[width=\textwidth]{Figma/Signup - STEP 1.svg}}
+	\vspace{0.5cm}
+	\caption{Trang đăng ký}
+	\label{fig:enter-label}
+\end{figure}
+
+Giao diện Đăng ký cung cấp một biểu mẫu để người dùng điền các thông tin cá nhân cần thiết và đặt mật khẩu cho tài khoản. Bố cục của trang đơn giản và chia làm 3 phần chính:
+
+% Định dạng tùy chỉnh a), b), c)
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+\begin{enumerate}
+	\item \textbf{Tiêu đề}
+	\begin{itemize}
+		\item Logo của ứng dụng được đặt lên đầu tiên nhằm khắc ghi nhận diện thương hiệu vào tâm trí người dùng.
+		\item Phần lời dẫn nhằm giới thiệu mục tiêu của ứng dụng và nhấn mạnh sự tiện lợi CoolChat đem lại khi người sử dụng tiếp cận.
+	\end{itemize}
+	
+	\item \textbf{Biểu mẫu}
+	\begin{itemize}
+		\item Cho phép người dùng điền các thông tin cá nhân cần thiết: tên, số điện thoại, email doanh nghiệp, vai trò.
+		\item Yêu cầu người dùng đặt mật khẩu và xác nhận mật khẩu lần nữa.
+		\item Đề nghị người dùng đồng ý với các điều khoản và chính sách khi sử dụng dịch vụ.
+	\end{itemize}
+	
+	\item \textbf{Điều hướng}
+	\begin{itemize}
+		\item Nút màu xanh 'Tạo tài khoản mới' giúp người dùng hoàn thành bước đăng ký sau khi đã điền xong biểu mẫu.
+		\item Người dùng có thể điều hướng sang trang đăng nhập nếu đã có sẵn tài khoản trước đó.
+	\end{itemize}
+	
+\end{enumerate}
+
+% Trở về định dạng mặc định 1., 2., 3.
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+
+\subsubsection{Trang đăng nhập}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includesvg[width=\textwidth]{Figma/Login.svg}}
+	\vspace{0.5cm}
+	\caption{Trang đăng nhập}
+	\label{fig:enter-label}
+\end{figure}
+
+Giao diện Đăng nhập cung cấp cho người sử dụng nhiều phương thức khác nhau để truy cập tài khoản. Cụ thể:
+\begin{itemize}
+	\item Qua Google nếu tài khoản của bạn có vai trò admin.
+	\item Qua Google nếu tài khoản của bạn có vai trò nhân viên chăm sóc khách hàng.
+	\item Qua tài khoản và mật khẩu.
+\end{itemize}
+
+Với cách thức thứ ba, người dùng có thể lấy lại mật khẩu qua lựa chọn 'Quên mật khẩu' bên dưới ô nhập email. Ngoài ra, người sử dụng cũng quay về được trang Đăng ký nếu muốn.
+
+\subsubsection{Trang đào tạo chatbot}
+Giao diện này gồm hai tiểu phần: Gán nhãn tri thức và cập nhật tri thức.
+\subsubsubsection{Gán nhãn tri thức}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/GNTT.png}}
+	\vspace{0.5cm}
+	\caption{Mục gán nhãn tri thức}
+	\label{fig:enter-label}
+\end{figure}
+
+Giao diện Gán nhãn tri thức cung cấp cho người sử dụng một bảng liệt kê các tài liệu tri thức dành cho chatbot. Các chú thích dành cho quản trị viên nằm ở bên dưới - cung cấp thông tin ưu tiên thứ tự truy xuất cho chatbot khi trả lời một câu hỏi. Hai nút thao tác:
+\begin{itemize}
+	\item So sánh chatbot (màu đỏ): sử dụng khi quản trị viên muốn so sánh câu trả lời của chatbot cũ và mới (do thay đổi tài liệu, thứ tự ưu tiên, phong cách trả lời...) 
+	\item Lưu và training (màu xanh): nhấn nút này khi quản trị viên muốn cập nhật và training ngay chatbot mà không cần so sánh.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/SSCB.png}}
+	\vspace{0.5cm}
+	\caption{So sánh chatbot}
+	\label{fig:enter-label}
+\end{figure}
+
+\subsubsubsection{Cập nhật tri thức}
+Giao diện Cập nhật tri thức cung cấp cho người sử dụng nhiều phương thức để thêm, xóa, sửa tài liệu tri thức dành cho chatbot. Hiện tại CoolChat hỗ trợ ba phương tiện tri thức:
+\begin{itemize}
+	\item Tệp (mục Tải lên phương tiện): hỗ trợ các loại tệp pdf, doc, docx, và txt.
+	\item Nhập từ bàn phím (ô Nhập tri thức): tự nhập hướng dẫn cho chatbot, sau đó các hướng dẫn sẽ được lưu ở dạng txt.
+	\item Trích xuất từ web (ô Nhập tri thức web): cần thiết khi không có sẵn tài liệu hoặc muốn lấy thông tin từ một trang web cụ thể.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/GNTT2.png}}
+	\vspace{0.5cm}
+	\caption{Mục cập nhật tri thức}
+	\label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Trang tùy chỉnh chatbot}
+Giao diện này gồm hai tiểu phần: Cấu hình hiển thị và tích hợp AI.
+\subsubsubsection{Cấu hình hiển thị}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/CHHT1.png}}
+	\vspace{0.5cm}
+	\caption{Cấu hình hiển thị: Giao diện}
+	\label{fig:enter-label}
+\end{figure}
+
+Giao diện Cấu hình hiển thị cung cấp cho người sử dụng giao diện động linh hoạt chuyển đổi giữa hai loại cấu hình: Giao diện (Hình 73) và Phong cách (Hình 74). 
+\begin{itemize}
+	\item Về giao diện: ảnh đại diện, ảnh nền chat, tên hiển thị, phông chữ, tiêu đề phụ, độ bo góc của tin nhắn, màu nền, màu nền chat đều là các yếu tố có thể thay đổi bởi quản trị viên. Điều này mục đích tạo điểm nhấn và nhận diện thương hiệu trong mắt khách hàng.
+	
+	Quản trị viên hoàn toàn xem trước được cấu hình (nút màu xanh "Xem trước") sau đó nhấn "Lưu cấu hình" (nút màu đỏ).
+	\item Về phong cách: Tạo ra trải nghiệm riêng biệt về doanh nghiệp trong quá trình tư vấn thông qua:
+	\begin{itemize}
+		\item Tông giọng bot: có 4 tông giọng có sẵn, và có thể nhiều hơn trong tương lai.
+		\item Tin nhắc mặc định: lời chào đầu, lời tạm biệt, và lời chuyển giao. 
+	\end{itemize}
+	
+	Quản trị viên có thể xem chatbot ngay tại giao diện này sau khi lưu các thay đổi bằng nút "Xem chatbot".
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/CHHT2.png}}
+	\vspace{0.5cm}
+	\caption{Cấu hình hiển thị: Phong cách}
+	\label{fig:enter-label}
+\end{figure}
+
+\subsubsubsection{Tích hợp AI}
+Chatbot có thể kết nối được với nền tảng mạng xã hội (facebook chính thức của doanh nghiệp) hoặc trang web đều được. 
+\begin{itemize}
+	\item Kết nối facebook: Qua nút "Kết nối tới facebook".
+	\item Kết nối trang web: Sao chép mã nguồn từ tab mã nhúng và đưa vào mã nguồn trang web của doanh nghiệp.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/THAIFB.png}}
+	\vspace{0.5cm}
+	\caption{Tích hợp qua Facebook}
+	\label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/THAIMN.png}}
+	\vspace{0.5cm}
+	\caption{Tích hợp qua mã nhúng}
+	\label{fig:enter-label}
+\end{figure}
+
+
+\subsubsection{Trang Cài đặt}
+Giao diện này gồm hai tiểu phần: Tài khoản và thông báo - cảnh báo.
+\subsubsubsection{Tài khoản}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/CDTK1.png}}
+	\vspace{0.5cm}
+	\caption{Tài khoản: Cá nhân}
+	\label{fig:enter-label}
+\end{figure}
+
+Giao diện Tài khoản cung cấp cho người sử dụng giao diện động linh hoạt chuyển đổi giữa hai loại cài đặt: Cá nhân (Hình 77) và Mật khẩu (Hình 78). 
+\begin{itemize}
+	\item Cá nhân: hiển thị ảnh đại diện, họ và tên, số điện thoại, email và vai trò của người dùng. Email và vai trò là hai thành phần không thể thay đổi.
+	
+	Người dùng có thể lưu cài đặt (nút đỏ "Hủy bỏ") hoặc ấn "Lưu" (nút màu xanh) để thiết lập thông tin mới.
+	\item Mật khẩu: Cho phép người dùng đổi mật khẩu một cách chủ động. Hệ thống yêu cầu nhập cả mật khẩu hiện tại và mật khẩu mới mới có thể thay đổi được mật khẩu.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/CDTK2.png}}
+	\vspace{0.5cm}
+	\caption{Tài khoản: Mật khẩu}
+	\label{fig:enter-label}
+\end{figure}
+
+\subsubsubsection{Thông báo và cảnh báo}
+Quản trị viên có quyền lựa chọn cách thức nhận thông báo, cảnh báo trong tab "Chung". Hiện tại có 3 phương thức: 
+\begin{itemize}
+	\item Email.
+	\item Trong chính ứng dụng CoolChat.
+	\item SMS (số điện thoại).
+\end{itemize}
+
+Các ngưỡng cảnh báo có thể tắt / bật theo mong muốn của quản trị viên, đồng thời quản trị viên thiết lập được ngưỡng của các thông số sau: cảnh báo sử dụng token, bộ nhớ đã dùng, cảnh báo lưu lượng truy cập.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/TB-CB1.png}}
+	\vspace{0.5cm}
+	\caption{Thông báo và cảnh báo: Chung}
+	\label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{Figma/TB-CB2.png}}
+	\vspace{0.5cm}
+	\caption{Thông báo và cảnh báo: Thiết lập ngưỡng}
+	\label{fig:enter-label}
+\end{figure}
+
+
+
+
+
+
