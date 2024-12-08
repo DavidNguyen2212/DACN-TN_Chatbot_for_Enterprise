@@ -325,7 +325,7 @@ Chatbot có thể kết nối được với nền tảng mạng xã hội (face
 	\label{fig:enter-label}
 \end{figure}
 
-Giao diện trang Hội thoại sẽ bao gồm theo thứ tự từ trên xuống dưới và trái sang phải:
+Giao diện trang Hội thoại để hiển thị danh sách các cuộc hội thoại, giao diện bao gồm theo thứ tự từ trên xuống dưới và trái sang phải:
 \begin{itemize}
     \item Một nút để xem tất cả cuộc hội thoại và một nút để xem các cuộc hội thoại được gán nhãn cần hỗ trợ.
     \item Thanh tìm kiếm và nút lọc giúp người dùng đi đến cuộc hội thoại cần tìm một cách nhanh nhất.
@@ -342,6 +342,7 @@ Khi ấn vào một cuộc hội thoại, màn hình sẽ chuyển đến giao d
 	\label{fig:enter-label}
 \end{figure}
 
+Giao diện gồm có một cửa sổ chat với các tin nhắn hiển thị ở phần trung tâm, mỗi tin nhắn sẽ có nội dung, người gửi và thời gian. Đầu cửa sổ chat gồm có nút quay lại, tên khách hàng, loại hội thoại, nút bật/tắt tính năng tự động chat và nút tùy chọn khác. Đáy cửa sổ chat gồm có nút tải ảnh lên, khung nhập nội dung chat và nút gửi.
 \subsubsection{Trang Báo cáo}
 \begin{figure}[H]
 	\centering
@@ -351,6 +352,14 @@ Khi ấn vào một cuộc hội thoại, màn hình sẽ chuyển đến giao d
 	\label{fig:enter-label}
 \end{figure}
 
+Giao diện trang Báo cáo để hiển thị một cái nhìn phân tích thông kê về việc sử dụng của chatbot của doanh nghiệp, giao diện gồm có:
+\begin{itemize}
+	\item Nút xuất dùng để xuất báo cáo ra tệp pdf hoặc xlsx. Khi ấn vào màn hình sẽ hiển lên bản xem trước của báo cáo.
+	\item Bên dưới sẽ là thống kê số liệu của 4 số liệu quan trọng bao gồm tổng số cuộc hội thoại, yêu cầu hỗ trợ chưa được xử lý, lịch hẹn trong tương lai, tỷ lệ giữ chân khách hàng. Mỗi số liệu sẽ được biểu thị con số và số phần trăm tăng giảm so với một khoảng thời gian.
+	\item Biểu đổ thống kê số cuộc hội thoại theo thời gian.
+	\item Bảng số cuộc hội thoại theo vị trí.
+	\item Bảng số cuộc hội thoại theo thiết bị.
+\end{itemize}
 \subsubsection{Trang Thanh toán}
 \begin{figure}[H]
 	\centering
@@ -360,6 +369,11 @@ Khi ấn vào một cuộc hội thoại, màn hình sẽ chuyển đến giao d
 	\label{fig:enter-label}
 \end{figure}
 
+Giao diện trang Thanh toán gồm 2 phần:
+\begin{itemize}
+	\item Phần Đang sử dụng: biểu thị gói dịch vụ đang sử dụng với số credit tiêu thụ hiện tại được thể hiện trên thanh phần trăm cũng như thời gian của gói.
+	\item Biểu phí các gói dịch vụ bao gồm tên gói, giá tiền, số credit, tính năng, nút đăng ký và nút dùng thử.
+\end{itemize}
 \subsubsection{Trang Cài đặt}
 Giao diện này gồm hai tiểu phần: Tài khoản và thông báo - cảnh báo.
 \subsubsubsection{Tài khoản}
@@ -421,6 +435,18 @@ Các ngưỡng cảnh báo có thể tắt / bật theo mong muốn của quản
 	\label{fig:enter-label}
 \end{figure}
 
+Giao diện Lịch hẹn giúp nhân viên CSKH quản lý được các lịch hẹn, giao diện gồm có một thanh tìm kiếm, một nút lọc dữ liệu và một bảng danh sách các lịch hẹn với các trường mã, tên, số điện thoại, lời nhắn, thời gian hẹn và trạng thái, cùng với bên dưới là thanh phân trang cho bảng dữ liệu.
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.5\linewidth]{Figma/lich_hen_detail.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện trang Lịch hẹn chi tiết}
+	\label{fig:enter-label}
+\end{figure}
+
+Khi ấn vào một lịch hẹn, ta có thể xem các thông tin chi tiết của lịch hẹn đó. Trong popup chi tiết, sẽ có nút Hỗ trợ để điều hướng người dùng đến đoạn chat.
+
 \subsubsection{Giao diện phía khách hàng}
 \begin{figure}[H]
 	\centering
@@ -429,6 +455,8 @@ Các ngưỡng cảnh báo có thể tắt / bật theo mong muốn của quản
 	\caption{Giao diện phía khách hàng}
 	\label{fig:enter-label}
 \end{figure}
+
+Khách hàng sẽ sử dụng chatbot thông qua một popup nằm ở góc phải dưới cùng của trang web mà doanh nghiệp tích hợp. Ban đầu nó chỉ là một nút tròn. Khi khách hàng bấm vào thì sẽ bật ra cửa sổ chat, ở đó người dùng có thể nhắn tin, tải ảnh, yêu cầu hỗ trợ và đặt lịch hẹn.
 
 \subsection{Cơ sở dữ liệu}
 \begin{figure}[p]

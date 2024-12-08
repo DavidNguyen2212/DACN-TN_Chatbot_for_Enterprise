@@ -1,11 +1,68 @@
 \section{Hiện thực}
 \subsection{Công nghệ}
 \subsubsection{Frontent}
-\paragraph{ReactJS}
-\paragraph{Vite}
-\paragraph{NextUI}
-\paragraph{TailwindCSS}
+\subsubsubsection{ReactJS}
+React (hay còn được gọi là React.js hoặc ReactJS) là một thư viện JavaScript front-end mã nguồn mở và miễn phí để xây dựng giao diện người dùng dựa trên các thành phần UI riêng lẻ. Nó được phát triển và duy trì bởi Meta (trước đây là Facebook) và cộng đồng các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở để phát triển các ứng dụng SPA (Single page application), thiết bị di động hoặc ứng dụng được kết xuất bằng máy chủ với các thư viện khác như Next.js. Tuy nhiên, React chỉ hướng tới việc quản lý trạng thái và hiển thị trạng thái đó cho DOM, vì vậy việc tạo ứng dụng bằng React thường yêu cầu sử dụng thêm các thư viện bổ sung để thực hiện định tuyến trang, cũng như thêm một số chức năng ở phía máy khách.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{Images/react_logo.png}
+	\vspace{0.5cm}
+	\caption{Logo React}
+	\label{fig:enter-label}
+\end{figure}
+
+Nhóm chọn ReactJS vì những lý do sau:
+\begin{itemize}
+    \item Hiệu suất cao nhờ Virtual DOM.
+    \item Component-based Architecture: React chia UI thành các thành phần (components) nhỏ, tái sử dụng được.
+    \item Thư viện lớn và cộng đồng mạnh.
+    \item JSX (JavaScript XML): JSX giúp lập trình viên viết mã dễ dàng và trực quan hơn bằng cách kết hợp JavaScript với cú pháp HTML.
+    \item Tích hợp dễ dàng với công nghệ khác: React có thể tích hợp với bất kỳ backend nào (Node.js, Django, Spring Boot, v.v.) thông qua API, hỗ trợ cả RESTful API và GraphQL.
+    \item Dễ học: Với kiến thức cơ bản về JavaScript, lập trình viên có thể nhanh chóng làm quen với React.
+\end{itemize}
+
+\subsubsubsection{Vite}
+Vite là một công cụ xây dựng (build tool) hiện đại, được phát triển bởi Evan You, người sáng lập Vue.js. Vite được thiết kế để cải thiện trải nghiệm phát triển frontend bằng cách cung cấp tốc độ cao và hiệu quả vượt trội so với các công cụ truyền thống như Webpack.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{Images/vite_logo.png}
+	\vspace{0.5cm}
+	\caption{Logo Vite}
+	\label{fig:enter-label}
+\end{figure}
+
+Nhóm chọn Vite vì những lý do sau:
+\begin{itemize}
+    \item Tốc độ khởi chạy cực nhanh bằng cách sử dụng ES Modules (ESM) và native browser support.
+    \item HMR (Hot Module Replacement) hiệu suất cao: Vite có cơ chế HMR được tối ưu hóa, chỉ tải lại các module thực sự thay đổi. 
+    \item Build nhanh chóng với Rollup.
+    \item Tương thích đa framework: ở đây nhóm kết hợp với thư viện React qua plugin @vitejs/plugin-react.
+    \item Cấu hình đơn giản.
+    \item Hỗ trợ plugin phong phú.
+
+\end{itemize}
+\subsubsubsection{NextUI}
+NextUI là một thư viện giao diện người dùng (UI library) hiện đại được thiết kế để xây dựng các ứng dụng web với phong cách đẹp mắt và hiệu năng cao. NextUI sử dụng React làm nền tảng, giúp lập trình viên dễ dàng tạo ra các thành phần giao diện (components) tái sử dụng và nhanh chóng.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{Images/nextui_logo.png}
+	\vspace{0.5cm}
+	\caption{Logo NextUI}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsubsection{TailwindCSS}
+Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên xây dựng giao diện trực tiếp bằng cách sử dụng các lớp tiện ích (utility classes) thay vì viết mã CSS tùy chỉnh. Framework này không cung cấp các thành phần giao diện dựng sẵn mà tập trung vào việc tối ưu hóa quá trình tạo và tùy chỉnh giao diện.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{Images/tailwindcss_logo.png}
+	\vspace{0.5cm}
+	\caption{Logo TailwindCSS}
+	\label{fig:enter-label}
+\end{figure}
 \subsubsection{Backend}
 \subsubsection{AI}
 \paragraph{Mô hình Gemini-1.5-Flash}
