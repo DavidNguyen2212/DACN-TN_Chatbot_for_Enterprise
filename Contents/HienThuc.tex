@@ -65,10 +65,253 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \end{figure}
 \subsubsection{Backend}
 \subsubsection{AI}
+\paragraph{Mô hình Gemini-1.5-Flash}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	Gemini-1.5-Flash là một bước tiến trong lĩnh vực trí tuệ nhân tạo (AI) và xử lý ngôn ngữ tự nhiên (NLP), được phát triển bởi OpenAI. Đây là một phiên bản cải tiến từ dòng mô hình Gemini, tích hợp các kỹ thuật tối ưu hóa mới để tăng tốc độ xử lý và giảm tài nguyên tiêu thụ. Công nghệ này được tạo ra nhằm giải quyết nhu cầu ngày càng cao về hiệu suất và khả năng mở rộng của các dịch vụ dựa trên AI, đặc biệt là trong các ứng dụng chatbot và tương tác người-máy.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{Images/gemini.png}
+		\vspace{0.5cm}
+		\caption{Mô hình ngôn ngữ lớn Gemini-1.5-flash}
+		\label{fig:enter-label}
+	\end{figure}
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	Gemini-1.5-Flash cung cấp các tính năng nổi bật như:
+	\begin{itemize}
+		\item Xử lý ngôn ngữ tự nhiên nâng cao: Khả năng hiểu và tạo ngôn ngữ tự nhiên một cách chính xác và linh hoạt.
+		\item Hiệu năng cao: Cơ chế “Flash” giúp cải thiện tốc độ xử lý lên đến 2-3 lần so với các phiên bản trước.
+		\item Tối ưu hóa tài nguyên: Giảm đáng kể chi phí tính toán và sử dụng bộ nhớ, phù hợp với các ứng dụng đám mây.
+		\item Tích hợp dễ dàng: Dễ dàng triển khai vào các nền tảng đám mây và hệ thống hiện có thông qua API hoặc SDK.
+		\item Hỗ trợ đa ngôn ngữ: Có khả năng làm việc với nhiều ngôn ngữ, giúp mở rộng phạm vi ứng dụng trên toàn cầu.
+	\end{itemize}
+	
+	Ưu điểm:
+	\begin{itemize}
+		\item Hiệu suất cao: Tăng tốc độ phản hồi, giảm độ trễ trong giao tiếp với người dùng.
+		\item Tiết kiệm tài nguyên: Thích hợp với các dịch vụ đám mây nhờ khả năng tối ưu hóa tài nguyên tính toán.
+		\item Tính ứng dụng cao: Đáp ứng nhiều kịch bản sử dụng, từ hỗ trợ khách hàng, tạo nội dung đến giáo dục.
+		\item Bảo mật và kiểm soát: Hỗ trợ cơ chế kiểm soát quyền truy cập và bảo mật dữ liệu, đảm bảo tính an toàn cho người dùng.
+	\end{itemize}
+	
+	Nhược điểm: 
+	\begin{itemize}
+		\item Chi phí triển khai ban đầu cao: Đòi hỏi sự đầu tư đáng kể vào hạ tầng và tích hợp.
+		\item Hạn chế trong ngữ cảnh phức tạp: Dù hiệu suất tốt, đôi khi có thể gặp khó khăn trong việc xử lý ngữ cảnh cực kỳ phức tạp hoặc đặc thù.
+		\item Phụ thuộc vào kết nối: Yêu cầu môi trường kết nối đám mây ổn định để hoạt động hiệu quả.
+	\end{itemize}
+	
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Các thông số trong bảng sau được trích từ bài báo của White và cộng sự (2024) \cite{livebench}.
+	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+		\hline
+		\textbf{Model} & \textbf{Global Average (point)} & \textbf{Reasoning Average (point)} & \textbf{Language Average (point)} & \textbf{Instruction Following (point)} \\ 
+		\hline
+		Gemini-1.5-flash-002 & 47.84 & 47.00 & 27.92 & 78.76 \\ 
+		\hline
+		Meta-Llama-3.1-8B-Instruct-Turbo & 25.83 & 14.33 & 18.08 & 54.90 \\ 
+		\hline
+		GPT-4o-2024-08-06 & 53.77 & 53.92 & 47.59 & 68.58 \\ 
+		\hline
+		Gemini-1.5-pro-002 & 53.52 & 48.58 & 43.29 & 70.78 \\ 
+		\hline
+		GPT-4o-mini & 40.25 & 32.75 & 28.61 & 56.80 \\ 
+		\hline
+	\end{longtable}
+	
+	trong đó:
+	\begin{itemize}
+		\item Global Average (Hiệu suất tổng thể): Phản ánh hiệu suất tổng thể của model trong mọi khía cạnh. Điều này quan trọng vì chatbot chăm sóc khách hàng cần xử lý đa dạng yêu cầu, từ ngôn ngữ đến dữ liệu phân tích, dù không nhất thiết phải xuất sắc ở tất cả.
+		
+		\item Reasoning Average (Khả năng suy luận): Khả năng suy luận rất quan trọng vì chatbot cần hiểu ngữ cảnh, giải quyết vấn đề của khách hàng và đưa ra câu trả lời hợp lý. Ví dụ, khi khách hàng trình bày một vấn đề, chatbot phải phân tích đúng và đề xuất giải pháp.
+		
+		\item Language Average (Khả năng xử lý ngôn ngữ): Đây là yếu tố cốt lõi cho chatbot chăm sóc khách hàng, vì chatbot cần giao tiếp tự nhiên, hiểu câu hỏi của khách hàng, và trả lời một cách rõ ràng và chính xác.
+		
+		\item IF Average (Instruction Following - Khả năng làm theo hướng dẫn): Đảm bảo rằng chatbot có thể hiểu và tuân theo các yêu cầu cụ thể từ khách hàng, chẳng hạn như "Liệt kê danh sách điểm đến" hoặc "Cập nhật thông tin liên lạc".
+	\end{itemize}
+	
+	Với Instruction Following cao nhất (78.76), Gemini-1.5-flash-002 đảm bảo chatbot có thể hiểu và đáp ứng chính xác yêu cầu của khách hàng, yếu tố quan trọng nhất cho chăm sóc khách hàng. Reasoning: Đạt mức cao (47.00), đủ để xử lý các tình huống cần suy luận.
+	Language: Mặc dù thấp hơn các model khác, nhưng có thể khắc phục bằng cách huấn luyện thêm hoặc sử dụng tập dữ liệu tùy chỉnh. So với GPT-4o-2024-08-06, GPT-4o-mini, hoặc Gemini-1.5-pro-002, Gemini-1.5-flash-002 có tiềm năng tiết kiệm chi phí triển khai hơn nhờ kích thước nhỏ hơn và khả năng xử lý tập trung vào Instruction Following.
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	Gemini-1.5-Flash là mô hình phù hợp nhất cho dự án xây dựng dịch vụ cung cấp chatbot đám mây nhờ:
+	\begin{itemize}
+		\item Hiệu năng vượt trội: Khả năng phản hồi nhanh và mượt mà giúp cải thiện trải nghiệm người dùng.
+		\item Tối ưu chi phí vận hành: Với khả năng sử dụng tài nguyên hiệu quả, Gemini-1.5-Flash giúp giảm chi phí vận hành trên nền tảng đám mây (chi phí thấp nhất trong các model đối thủ).
+		\item Khả năng mở rộng: Hỗ trợ xử lý đồng thời nhiều yêu cầu, phù hợp với các dịch vụ có quy mô lớn.
+		\item Đa dạng ứng dụng: Thích hợp cho nhiều ngành công nghiệp, từ thương mại, giáo dục, y tế đến tài chính, giúp tăng tính cạnh tranh của dịch vụ.
+		\item Dễ dàng triển khai: Hỗ trợ công cụ và giao thức tích hợp mạnh mẽ, giảm thời gian và công sức phát triển, không cần các kỹ thuật onpremise hosting như Llama3.1.
+	\end{itemize}
+	
+\end{enumerate}
+% Trở về định dạng mặc định 1., 2., 3.
+\renewcommand{\labelenumi}{\arabic{enumi}.}
 
-Kỹ thuật, công nghệ, tóm tắt mô tả
 
-Vẽ, Mô tả kiến trúc khi hiện thực, thành phần chức năng gì khi tương tác vs nhau
+\paragraph{LangChain}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	LangChain là một framework mã nguồn mở, được phát triển nhằm tối ưu hóa việc xây dựng ứng dụng sử dụng Large Language Models (LLMs) như GPT-4 hoặc các mô hình tương tự. Ra đời vào năm 2022 bởi Harrison Chase, LangChain tập trung vào việc đơn giản hóa các quy trình tích hợp LLMs vào ứng dụng bằng cách cung cấp các công cụ hỗ trợ lập trình viên xử lý luồng hội thoại, quản lý bộ nhớ, và truy cập dữ liệu ngoài. LangChain đã nhanh chóng trở thành một công cụ phổ biến trong lĩnh vực AI nhờ khả năng trừu tượng hóa nhiều thành phần phức tạp khi làm việc với LLMs.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{Images/langchain.png}
+		\vspace{0.5cm}
+		\caption{Framework LangChain}
+		\label{fig:enter-label}
+	\end{figure}
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	LangChain cung cấp một bộ công cụ mạnh mẽ để xây dựng ứng dụng sử dụng LLMs, bao gồm:
+	\begin{itemize}
+		\item Kết nối với LLMs: Dễ dàng tích hợp với GPT (OpenAI), Hugging Face, hay các mô hình khác.
+		\item Bộ nhớ (Memory): Quản lý ngữ cảnh trong các cuộc hội thoại dài, giúp ứng dụng "ghi nhớ" thông tin người dùng cung cấp.
+		\item Kết nối dữ liệu bên ngoài: Tích hợp với cơ sở dữ liệu, API, hoặc tìm kiếm qua tài liệu để tăng tính chính xác và cá nhân hóa phản hồi.
+		\item Chain: Tạo các chuỗi thao tác (pipeline) để xử lý dữ liệu đầu vào và kết hợp nhiều mô hình AI khác nhau.
+		\item Agent: Xây dựng các tác nhân (agents) tự động thực hiện nhiệm vụ như tìm kiếm thông tin hoặc phân tích dữ liệu.
+		\item Tool: Hỗ trợ phát triển các công cụ tự động xử lý nhiều loại dữ liệu, từ văn bản đến bảng tính.
+	\end{itemize}
+	
+	Ưu điểm:
+	\begin{itemize}
+		\item Tính linh hoạt cao: LangChain có thể tích hợp với nhiều loại LLMs và công cụ khác nhau, giúp tùy chỉnh dễ dàng cho từng dự án.
+		\item Quản lý ngữ cảnh tốt: Bộ nhớ giúp duy trì ngữ cảnh trong các ứng dụng hội thoại, nâng cao trải nghiệm người dùng.
+		\item Tăng cường khả năng truy xuất thông tin: LangChain cho phép truy cập dữ liệu bên ngoài, làm cho các chatbot thông minh và thực tế hơn.
+		\item Hỗ trợ phát triển nhanh: Cung cấp thư viện API và công cụ phát triển toàn diện, giúp rút ngắn thời gian xây dựng ứng dụng.
+		\item Mã nguồn mở: Cộng đồng phát triển mạnh mẽ, tài liệu đầy đủ và được cập nhật liên tục.
+	\end{itemize}
+	
+	Nhược điểm:
+	\begin{itemize}
+		\item Độ phức tạp: Đối với người mới tiếp cận, việc làm quen với các khái niệm như Chain, Memory, hay Agent có thể mất thời gian.
+		\item Phụ thuộc vào LLMs: Hiệu suất của LangChain phụ thuộc vào các mô hình AI mà nó tích hợp, có thể bị giới hạn bởi chi phí hoặc năng lực của LLM.
+		\item Khả năng mở rộng: Khi ứng dụng lớn, việc quản lý bộ nhớ và xử lý luồng dữ liệu có thể trở nên phức tạp, đòi hỏi tối ưu hóa kỹ thuật.
+	\end{itemize}
+	
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\raggedright\arraybackslash}m{5.5cm}|>{\raggedright\arraybackslash}m{5.5cm}|}
+		\hline
+		\textbf{Tiêu chí} & \textbf{LangChain} & \textbf{LlamaIndex} \\ 
+		\hline
+		\textbf{Ngôn ngữ hỗ trợ} & Python và TypeScript/JavaScript với mức độ phát triển mạnh mẽ; cập nhật thường xuyên trên cả hai nền tảng & Python là trọng tâm phát triển; TypeScript ít được cập nhật hơn và chậm so với phiên bản Python \\ 
+		\hline
+		\textbf{Chức năng chính} & Hỗ trợ xây dựng workflow phức tạp với các LLM, cung cấp công cụ quản lý chain, memory, agent và tích hợp các công nghệ khác như Pinecone, Weaviate & Tập trung vào quản lý và truy xuất dữ liệu phi cấu trúc thông qua index thông minh, hỗ trợ nhiều loại index như tree, list, và vector \\ 
+		\hline
+		\textbf{Khả năng mở rộng} & Tốt, hỗ trợ tích hợp đa dạng các công nghệ backend (ví dụ: vector DB, API, công cụ tìm kiếm) & Mở rộng tốt, nhưng thiên về xử lý và truy xuất dữ liệu với cấu trúc index hiện có \\ 
+		\hline
+		\textbf{Tính dễ sử dụng} & Giao diện API thân thiện, tài liệu chi tiết, cộng đồng lớn hỗ trợ tích cực & Đơn giản khi làm việc với dữ liệu phi cấu trúc, nhưng yêu cầu kiến thức nền tảng về cấu trúc index \\ 
+		\hline
+		\textbf{Hiệu suất} & Cao khi làm việc với workflow phức tạp, nhờ khả năng quản lý memory và agents hiệu quả & Cao khi làm việc với dữ liệu phi cấu trúc và truy vấn qua index; tuy nhiên, hiệu suất có thể giảm nếu dữ liệu quá lớn \\ 
+		\hline
+	\end{longtable}
+	
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	LangChain là lựa chọn lý tưởng cho dự án xây dựng dịch vụ cung cấp chatbot đám mây nhờ:
+	\begin{itemize}
+		\item Khả năng quản lý ngữ cảnh: Với tính năng Memory, LangChain giúp chatbot ghi nhớ và xử lý các cuộc hội thoại dài mà không mất ngữ cảnh, mang lại trải nghiệm tự nhiên cho người dùng.
+		\item Tích hợp dữ liệu khách hàng: LangChain cho phép truy cập tài liệu và cơ sở dữ liệu của từng khách hàng (RAG - Retrieval-Augmented Generation), giúp cá nhân hóa phản hồi và tăng tính chính xác.
+		\item Xây dựng nhanh và hiệu quả: Với các tính năng như Chain và Tool, LangChain giảm đáng kể thời gian phát triển, giúp triển khai dịch vụ nhanh hơn.
+		\item Khả năng mở rộng đa dạng: LangChain hỗ trợ tích hợp với các mô hình LLMs khác nhau, giúp dễ dàng tùy chỉnh dịch vụ theo yêu cầu của từng khách hàng, đồng thời, framework này cung cấp cập nhật liên tục trên cả 2 ngôn ngữ Python và Typescript, giúp các lập trình viên có đa dạng lựa chọn và không lo ngại vấn đề cập nhật phiên bản trên hai ngôn ngữ lập trình.
+		\item Phù hợp với mô hình SaaS (Software-as-a-Service): Dễ dàng triển khai trên đám mây và tối ưu chi phí, phù hợp cho hệ thống chatbot đa khách hàng.
+	\end{itemize}
+	
+\end{enumerate}
+% Trở về định dạng mặc định 1., 2., 3.
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+\paragraph{Pinecone Vector Database}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	Pinecone là một nền tảng cơ sở dữ liệu vector được phát triển bởi công ty Pinecone Systems, Inc., ra mắt vào năm 2021. Công nghệ này được thiết kế để giải quyết nhu cầu lưu trữ và tìm kiếm hiệu quả trong các ứng dụng sử dụng biểu diễn dữ liệu dưới dạng vector (vector embeddings). Pinecone tập trung vào việc đơn giản hóa quy trình triển khai hệ thống tìm kiếm vector, hỗ trợ các ứng dụng AI như tìm kiếm ngữ nghĩa, gợi ý nội dung, và chatbot.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{Images/pinecone.jpg}
+		\vspace{0.5cm}
+		\caption{Hệ cơ sở dữ liệu vector Pinecone}
+		\label{fig:enter-label}
+	\end{figure}
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	Pinecone cung cấp các tính năng nổi bật giúp nó trở thành lựa chọn hàng đầu cho hệ thống cơ sở dữ liệu vector trên thị trường hiện tại:
+	\begin{itemize}
+		\item Tìm kiếm gần đúng (Approximate Nearest Neighbor - ANN): Cung cấp khả năng tìm kiếm nhanh chóng và chính xác các vector tương tự trong tập dữ liệu lớn.
+		\item Quản lý dữ liệu vector: Tự động hóa quy trình lưu trữ, cập nhật, và xóa vector.
+		\item Khả năng mở rộng (Scalability): Hỗ trợ xử lý các tập dữ liệu lớn với độ trễ thấp.
+		\item Tích hợp dễ dàng: Pinecone hỗ trợ tích hợp với các framework phổ biến như LangChain, Hugging Face, và OpenAI, giúp triển khai nhanh chóng trong các dự án AI.
+		\item Index tối ưu hóa: Hỗ trợ các cấu trúc dữ liệu index (như HNSW) để tăng tốc độ tìm kiếm vector.
+		\item Quản lý metadata: Lưu trữ và truy xuất thông tin bổ sung liên quan đến từng vector, giúp tăng tính linh hoạt trong ứng dụng.
+	\end{itemize}
+	
+	Ưu điểm:
+	\begin{itemize}
+		\item Hiệu suất cao: Tìm kiếm gần đúng với độ trễ thấp ngay cả khi làm việc với dữ liệu lớn.
+		\item Dịch vụ được quản lý hoàn toàn (Fully Managed): Không yêu cầu cấu hình và bảo trì phức tạp, tiết kiệm thời gian cho đội ngũ phát triển.
+		\item Khả năng tích hợp mạnh mẽ: Hỗ trợ các công cụ và framework AI phổ biến, giúp dễ dàng triển khai trong các ứng dụng học sâu và xử lý ngôn ngữ tự nhiên.
+		\item Tính sẵn sàng cao: Hoạt động ổn định trên môi trường đám mây với khả năng mở rộng dễ dàng.
+	\end{itemize}
+	
+	Nhược điểm:
+	\begin{itemize}
+		\item Chi phí: Pinecone có thể tốn kém hơn so với các giải pháp vector database tự quản lý hoặc mã nguồn mở.
+		\item Khả năng tùy chỉnh hạn chế: Là dịch vụ đám mây, người dùng ít quyền kiểm soát đối với cấu trúc nội bộ so với các giải pháp tự quản lý.
+		\item Phụ thuộc vào internet: Hiệu năng giảm khi tốc độ mạng không ổn định.
+	\end{itemize}
+	
+		
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+		\begin{longtable}{|>{\raggedright\arraybackslash}m{2cm}|>{\raggedright\arraybackslash}m{3cm}|>{\raggedright\arraybackslash}m{3cm}|>{\raggedright\arraybackslash}m{3cm}|>{\raggedright\arraybackslash}m{3cm}|}
+			\hline
+			\textbf{Tiêu chí} & \textbf{Pinecone} & \textbf{Weaviate} & \textbf{Milvus} & \textbf{ChromaDB} \\ 
+			\hline
+			\textbf{Loại hình triển khai} & Dịch vụ đám mây được quản lý hoàn toàn & Open-source, hỗ trợ đám mây và on-prem & Open-source, hỗ trợ Kubernetes & Open-source, cài đặt nhẹ, dành cho ứng dụng nhỏ \\ 
+			\hline
+			\textbf{Khả năng mở rộng} & Cao, tự động mở rộng & Cao, nhưng cần cấu hình thủ công & Cao, hỗ trợ Kubernetes & Hạn chế, phù hợp cho các ứng dụng nhỏ gọn \\ 
+			\hline
+			\textbf{Tính dễ sử dụng} & Thân thiện, triển khai nhanh & Dễ dàng nhưng cần kiến thức kỹ thuật & Yêu cầu kỹ năng cấu hình cao & Dễ sử dụng, cài đặt nhanh, tích hợp tốt với Python \\ 
+			\hline
+			\textbf{Quản lý metadata} & Có hỗ trợ đầy đủ & Hỗ trợ mạnh mẽ & Hỗ trợ cơ bản & Có hỗ trợ nhưng không mạnh mẽ như Pinecone \\ 
+			\hline
+			\textbf{Hiệu suất tìm kiếm} & Tốt với độ trễ thấp & Tốt, có thể tùy chỉnh & Tốt, hỗ trợ nhiều kiểu index & Tốt cho dữ liệu nhỏ, không tối ưu với dữ liệu lớn \\ 
+			\hline
+			\textbf{Chi phí} & Cao, do là dịch vụ SaaS & Miễn phí, nhưng cần chi phí triển khai & Miễn phí, cần chi phí hạ tầng & Miễn phí, yêu cầu ít tài nguyên \\ 
+			\hline
+		\end{longtable} 
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	Pinecone là lựa chọn hợp lý để lưu trữ dạng vector cho dự án xây dựng dịch vụ cung cấp chatbot đám mây nhờ:
+	\begin{itemize}
+		\item Tìm kiếm ngữ nghĩa nhanh chóng: Pinecone cho phép chatbot tìm kiếm thông tin liên quan dựa trên vector embeddings, tăng khả năng hiểu ngữ nghĩa và phản hồi chính xác.
+		\item Đơn giản hóa triển khai: Là một dịch vụ được quản lý hoàn toàn, Pinecone giảm đáng kể khối lượng công việc bảo trì và quản trị, cho phép tập trung phát triển ứng dụng.
+		\item Tích hợp dễ dàng với RAG (Retrieval-Augmented Generation): Tối ưu cho việc kết hợp dữ liệu bên ngoài, hỗ trợ khách hàng tải lên tài liệu và tích hợp vào quy trình hội thoại.
+		\item Mở rộng quy mô dịch vụ: Với khả năng xử lý dữ liệu lớn và tìm kiếm nhanh, Pinecone hỗ trợ mở rộng ứng dụng chatbot để phục vụ hàng ngàn người dùng đồng thời.
+		\item Quản lý metadata linh hoạt: Pinecone cho phép lưu trữ thông tin phụ trợ, giúp chatbot cung cấp phản hồi được cá nhân hóa dựa trên từng khách hàng.
+
+	\end{itemize}
+	
+\end{enumerate}
+% Trở về định dạng mặc định 1., 2., 3.
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+%Kỹ thuật, công nghệ, tóm tắt mô tả
+%
+%Vẽ, Mô tả kiến trúc khi hiện thực, thành phần chức năng gì khi tương tác vs nhau
 \subsection{Các tính năng}
 Hiện thực một vài tính năng của hệ thống
 
