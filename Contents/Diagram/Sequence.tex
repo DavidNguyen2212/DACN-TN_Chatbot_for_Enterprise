@@ -262,7 +262,7 @@ Các bước trong quá trình tương tác như sau:
 	\item Có một tùy chọn với điều kiện nhân viên CSKH muốn hỗ trợ khách hàng: nhân viên CSKH click Hỗ trợ với onClickSupportButton(), trang Lịch hẹn gọi switchToChatPage(id) đến hệ thống với biến id để mở trang hội thoại tương ứng, hệ thống mở trang Hội thoại với onOpen(chat), trang Hội thoại gọi hàm getChat(id) để lấy thông tin cuộc hội thoại, hệ thống trả về chat tương ứng.
 \end{itemize}
 \subsubsection{Đào tạo và tùy chỉnh chatbot}
-\paragraph{Tải dữ liệu tri thức}
+\subsubsubsection{Tải dữ liệu tri thức}
 \begin{figure}[H]
 	\centering
 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-LoadKnowledge.svg}
@@ -289,7 +289,7 @@ Các bước trong quá trình tương tác như sau:
 	\item Giao diện hiển thị các file đã tải lên thành công.
 \end{enumerate}
 
-\paragraph{Cập nhật dữ liệu tri thức}
+\subsubsubsection{Cập nhật dữ liệu tri thức}
 \begin{figure}[H]
 	\centering
 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-UpdateKnowledge.svg}
@@ -389,7 +389,7 @@ Các bước trong quá trình tương tác như sau:
 Cuối cùng, giao diện cập nhật hiển thị các hướng dẫn hiện có.
 
 
-\paragraph{Gán nhãn dữ liệu tri thức}
+\subsubsubsection{Gán nhãn dữ liệu tri thức}
 \begin{figure}[H]
 	\centering
 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-LabelKnowledge.svg}
@@ -415,7 +415,7 @@ Các bước trong quá trình tương tác như sau:
 	\item Giao diện hiển thị hạng mục mới của file.
 \end{enumerate}
 
-\paragraph{So sánh chatbot}
+\subsubsubsection{So sánh chatbot}
 \begin{figure}[H]
 	\centering
 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Compare.svg}
@@ -449,7 +449,7 @@ Các bước trong quá trình tương tác như sau:
 	\item Kết quả được trả về tiếp tục cho giao diện web, đồng thời khóa nút "So sánh chatbot" (disableButton(previewBtn))
  \end{enumerate}
 
-\paragraph{Tùy chỉnh chatbot}
+\subsubsubsection{Tùy chỉnh chatbot}
 \begin{figure}[H]
 	\centering
 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-AdjustBot.svg}

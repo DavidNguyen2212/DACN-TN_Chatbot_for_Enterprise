@@ -135,15 +135,28 @@ morekeywords={}
 %%%
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
+\usepackage{titlesec}
+
+% Định nghĩa subsubsubsection
+\titleclass{\subsubsubsection}{straight}[\subsubsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+
+% Định dạng hiển thị của subsubsubsection
+\titleformat{\subsubsubsection}
+{\normalfont\normalsize\bfseries} % Định dạng
+{\thesubsubsubsection}{1em}{}    % Số thứ tự và khoảng cách
+
+% Cấu hình khoảng cách của subsubsubsection
+\titlespacing*{\subsubsubsection}{0pt}{1.5ex plus 0.5ex}{1ex}
+
+% Cấu hình mục lục (TOC) cho subsubsubsection
+\usepackage{tocloft}
+\newcommand{\cftsubsubsubsectionfont}{}
+\newcommand{\cftsubsubsubsectionpagefont}{}
+
 \makeatletter
-\newcounter {subsubsubsection}[subsubsection]
-\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
-\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
-                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
-                                     {1.5ex \@plus .2ex}%
-                                     {\normalfont\normalsize\bfseries}}
-\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
-\newcommand*{\subsubsubsectionmark}[1]{}
+\newcommand\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
 \makeatother
 
 \everymath{\color{black}}%make in-line maths symbols blue to read/check easily
