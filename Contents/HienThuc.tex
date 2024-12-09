@@ -2,47 +2,146 @@
 \subsection{Công nghệ}
 \subsubsection{Frontent}
 \subsubsubsection{ReactJS}
-React (hay còn được gọi là React.js hoặc ReactJS) là một thư viện JavaScript front-end mã nguồn mở và miễn phí để xây dựng giao diện người dùng dựa trên các thành phần UI riêng lẻ. Nó được phát triển và duy trì bởi Meta (trước đây là Facebook) và cộng đồng các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở để phát triển các ứng dụng SPA (Single page application), thiết bị di động hoặc ứng dụng được kết xuất bằng máy chủ với các thư viện khác như Next.js. Tuy nhiên, React chỉ hướng tới việc quản lý trạng thái và hiển thị trạng thái đó cho DOM, vì vậy việc tạo ứng dụng bằng React thường yêu cầu sử dụng thêm các thư viện bổ sung để thực hiện định tuyến trang, cũng như thêm một số chức năng ở phía máy khách.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\linewidth]{Images/react_logo.png}
-	\vspace{0.5cm}
-	\caption{Logo React}
-	\label{fig:enter-label}
-\end{figure}
-
-Nhóm chọn ReactJS vì những lý do sau:
-\begin{itemize}
-    \item Hiệu suất cao nhờ Virtual DOM.
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	React (hay còn được gọi là React.js hoặc ReactJS) là một thư viện JavaScript front-end mã nguồn mở và miễn phí để xây dựng giao diện người dùng dựa trên các thành phần UI riêng lẻ. Nó được phát triển và duy trì bởi Meta (trước đây là Facebook) và cộng đồng các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở để phát triển các ứng dụng SPA (Single page application), thiết bị di động hoặc ứng dụng được kết xuất bằng máy chủ với các thư viện khác như Next.js. Tuy nhiên, React chỉ hướng tới việc quản lý trạng thái và hiển thị trạng thái đó cho DOM, vì vậy việc tạo ứng dụng bằng React thường yêu cầu sử dụng thêm các thư viện bổ sung để thực hiện định tuyến trang, cũng như thêm một số chức năng ở phía máy khách.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{Images/react_logo.png}
+		\vspace{0.5cm}
+		\caption{Logo React}
+		\label{fig:enter-label}
+	\end{figure}
+	
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	Sau đây là một số đặc điểm nổi bật của React:
+	\begin{itemize}
+		\item Component (Thành phần): Thành phần trong React là các đơn vị cấu trúc và logic độc
+		lập, tạo nên các phần tử UI. Mỗi thành phần có thể kết hợp cấu trúc HTML, styling CSS
+		và hành vi JavaScript. Thành phần nhận các thuộc tính (props) để cấu hình vẻ ngoài và
+		hành vi, giúp tăng khả năng tái sử dụng. Thành phần có thể đơn giản như một nút hoặc
+		phức tạp như một tiện ích chọn ngày hoặc biểu đồ tương tác.
+		\item JSX: JSX là một cú pháp giống HTML được sử dụng trong mã JavaScript của React. JSX
+		giúp việc hình dung cấu trúc UI trở nên trực quan hơn, tạo cảm giác gần gũi với HTML
+		hơn là gọi hàm JavaScript phức tạp. JSX cho phép nhúng biểu thức JavaScript trực tiếp
+		trong cấu trúc giống HTML, tạo ra nội dung tùy chỉnh dựa trên các biến và logic. JSX sau
+		cùng sẽ được biên dịch thành mã JavaScript thông thường bởi các công cụ như Babel.
+		\item Thuộc tính (Props): Thuộc tính là cơ chế chính để truyền dữ liệu từ thành phần cha sang
+		thành phần con trong React. Chúng tạo ra mối quan hệ rõ ràng giữa thành phần cha và
+		con, nơi thành phần cha quyết định những gì một thành phần con nên hiển thị hoặc cách
+		nó nên hoạt động. Props chỉ nên được đọc trong một thành phần, không nên sửa đổi chúng
+		trực tiếp để đảm bảo dòng chảy dữ liệu (data flow) dễ đoán. Công cụ như PropTypes hoặc
+		TypeScript có thể được sử dụng để kiểm tra kiểu của props, giúp phát hiện sớm các lỗi
+		tiềm ẩn.
+		\item State (Trạng thái): Trạng thái là dữ liệu được quản lý trong một thành phần, có thể kích
+		hoạt việc tái xây dựng thành phần khi được cập nhật. Trạng thái cho phép một thành
+		phần thay đổi vẻ ngoài hoặc hành vi theo thời gian phản ứng với tương tác của người dùng
+		hoặc các sự kiện khác. Trạng thái hoạt động như bộ nhớ ngắn hạn của thành phần cho
+		các giá trị mà nó cần theo dõi nội bộ. Khi trạng thái của một thành phần được cập nhật,
+		React sẽ biết rằng thành phần và UI của nó có thể cần phải thay đổi, kích hoạt một lần
+		tái hiển thị.
+	\end{itemize}
+	
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự React theo các tiêu chí cụ thể do nhóm tự đánh giá.
+	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+		\hline
+		\textbf{Tiêu chí} & \textbf{React} & \textbf{Angular} & \textbf{Vue} & \textbf{Svelte} \\ 
+		\hline
+		Learning curve & Trung bình & Khó & Dễ & Trung bình \\ 
+		\hline
+		Tốc độ & Nhanh & Nhanh & Nhanh & Nhanh nhất \\ 
+		\hline
+		Kích thước & Lớn & Lớn & Nhỏ  & Nhỏ \\ 
+		\hline
+		Cộng đồng & Lớn & Lớn & Phát triển & Nhỏ \\ 
+		\hline
+		Tài liệu & Xuất sắc & Tốt & Tốt & Tốt \\ 
+		\hline
+		Khả năng mở rộng & Tốt & Tốt & Tốt & Tốt \\ 
+		\hline
+	\end{longtable}
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	Nhóm đã lựa chọn công nghệ React vì những lý do sau:
+	\begin{itemize}
+	\item Hiệu suất cao nhờ Virtual DOM.
     \item Component-based Architecture: React chia UI thành các thành phần (components) nhỏ, tái sử dụng được.
     \item Thư viện lớn và cộng đồng mạnh.
     \item JSX (JavaScript XML): JSX giúp lập trình viên viết mã dễ dàng và trực quan hơn bằng cách kết hợp JavaScript với cú pháp HTML.
     \item Tích hợp dễ dàng với công nghệ khác: React có thể tích hợp với bất kỳ backend nào (Node.js, Django, Spring Boot, v.v.) thông qua API, hỗ trợ cả RESTful API và GraphQL.
     \item Dễ học: Với kiến thức cơ bản về JavaScript, lập trình viên có thể nhanh chóng làm quen với React.
-\end{itemize}
+	\end{itemize}
+	
+\end{enumerate}
 
 \subsubsubsection{Vite}
-Vite là một công cụ xây dựng (build tool) hiện đại, được phát triển bởi Evan You, người sáng lập Vue.js. Vite được thiết kế để cải thiện trải nghiệm phát triển frontend bằng cách cung cấp tốc độ cao và hiệu quả vượt trội so với các công cụ truyền thống như Webpack.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\linewidth]{Images/vite_logo.png}
-	\vspace{0.5cm}
-	\caption{Logo Vite}
-	\label{fig:enter-label}
-\end{figure}
-
-Nhóm chọn Vite vì những lý do sau:
-\begin{itemize}
-    \item Tốc độ khởi chạy cực nhanh bằng cách sử dụng ES Modules (ESM) và native browser support.
-    \item HMR (Hot Module Replacement) hiệu suất cao: Vite có cơ chế HMR được tối ưu hóa, chỉ tải lại các module thực sự thay đổi. 
-    \item Build nhanh chóng với Rollup.
-    \item Tương thích đa framework: ở đây nhóm kết hợp với thư viện React qua plugin @vitejs/plugin-react.
-    \item Cấu hình đơn giản.
-    \item Hỗ trợ plugin phong phú.
-
-\end{itemize}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	Vite là một công cụ xây dựng (build tool) hiện đại, được phát triển bởi Evan You, người sáng lập Vue.js. Vite được thiết kế để cải thiện trải nghiệm phát triển frontend bằng cách cung cấp tốc độ cao và hiệu quả vượt trội so với các công cụ truyền thống như Webpack.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{Images/vite_logo.png}
+		\vspace{0.5cm}
+		\caption{Logo Vite}
+		\label{fig:enter-label}
+	\end{figure}
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	Vite gồm có 2 thành phần quan trọng:
+	\begin{itemize}
+		\item Dev server (Máy chủ phát triển): Cung cấp các tính năng nâng cao phong phú cho
+		các module ES gốc, chẳng hạn như tính năng Hot Module Replacement (HMR) cực
+		kỳ nhanh.
+		\item Lệnh build: Đóng gói mã bằng Rollup, được cấu hình sẵn để xuất các tài nguyên tĩnh
+		được tối ưu hóa cao cho môi trường production.
+	\end{itemize}
+	
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
+	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+		\hline
+		\textbf{Tiêu chí} & \textbf{Webpack} & \textbf{Parcel} & \textbf{Vite} \\ 
+		\hline
+		Learning curve & Khó & Dễ & Dễ nhất  \\ 
+		\hline
+		Tốc độ & Chậm & Nhanh & Nhanh nhất \\ 
+		\hline
+		Kích thước & Lớn nhất & Lớn & Nhỏ nhất   \\ 
+		\hline
+		Cộng đồng & Lớn nhất & Phát triển & Nhỏ  \\ 
+		\hline
+		Tài liệu & Tốt & Tốt & Tốt \\ 
+		\hline
+		Khả năng mở rộng & Tốt & Tốt & Tốt \\ 
+		\hline
+	\end{longtable}
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	Nhóm chọn Vite vì những lý do sau:
+	\begin{itemize}
+		\item Tốc độ khởi chạy cực nhanh bằng cách sử dụng ES Modules (ESM) và native browser support.
+		\item HMR (Hot Module Replacement) hiệu suất cao: Vite có cơ chế HMR được tối ưu hóa, chỉ tải lại các module thực sự thay đổi. 
+		\item Build nhanh chóng với Rollup.
+		\item Tương thích đa framework: ở đây nhóm kết hợp với thư viện React qua plugin @vitejs/plugin-react.
+		\item Cấu hình đơn giản.
+		\item Hỗ trợ plugin phong phú.
+	\end{itemize}
+	
+\end{enumerate}
 \subsubsubsection{NextUI}
 NextUI là một thư viện giao diện người dùng (UI library) hiện đại được thiết kế để xây dựng các ứng dụng web với phong cách đẹp mắt và hiệu năng cao. NextUI sử dụng React làm nền tảng, giúp lập trình viên dễ dàng tạo ra các thành phần giao diện (components) tái sử dụng và nhanh chóng.
 
@@ -313,5 +412,103 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 %
 %Vẽ, Mô tả kiến trúc khi hiện thực, thành phần chức năng gì khi tương tác vs nhau
 \subsection{Các tính năng}
-Hiện thực một vài tính năng của hệ thống
+\subsubsection{Trang Đích}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/landing_imple_1.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện trang đích được hiện thực - ảnh 1}
+	\label{fig:enter-label}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/landing_imple_2.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện trang đích được hiện thực - ảnh 2}
+	\label{fig:enter-label}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/landing_imple_3.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện trang đích được hiện thực - ảnh 3}
+	\label{fig:enter-label}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/landing_imple_4.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện trang đích được hiện thực - ảnh 4}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Trang Xác thực}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/login_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện đăng nhập được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/signup_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện đăng ký được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/forgotpassword_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện quên mật khẩu được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Trang Đào tạo chatbot}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/chatbottraining_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện đào tạo chatbot được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Trang Tùy chỉnh chatbot}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/chatboteditting_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện tùy chỉnh chatbot được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Trang Hội thoại}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/chat_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện hội thoại được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Trang Báo cáo}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/report_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện báo cáo được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Trang Thanh toán}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/subscription_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện thanh toán được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Trang Cài đặt}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/setting_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện cài đặt được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
 
