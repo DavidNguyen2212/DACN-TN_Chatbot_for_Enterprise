@@ -163,6 +163,247 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 	\label{fig:enter-label}
 \end{figure}
 \subsubsection{Backend}
+
+\subsubsubsection{Django và Django REST Framework}
+\begin{enumerate}
+    \item \textbf{Giới thiệu}
+    
+    Django là một khung phát triển web mã nguồn mở được xây dựng trên ngôn ngữ lập trình Python, vận hành theo kiến trúc MVT (Model-View-Template). Trong đó, Django REST Framework (DRF) là một phần mở rộng chuyên biệt, cung cấp một bộ công cụ toàn diện để xây dựng và phát triển các giao diện lập trình ứng dụng web (Web API). Sự kết hợp giữa hai công nghệ này đã được cộng đồng phát triển phần mềm áp dụng rộng rãi trong việc xây dựng các hệ thống backend cho các ứng dụng web hiện đại, đặc biệt là trong các dự án đòi hỏi khả năng mở rộng cao và bảo mật mạnh mẽ.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Images/django_logo.png}
+        \vspace{0.5cm}
+        \caption{Logo Django}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \item \textbf{Đặc điểm công nghệ}
+    
+    Django và Django REST Framework cung cấp các tính năng quan trọng và thiết yếu cho phát triển web hiện đại:
+    \begin{itemize}
+        \item Hệ thống ORM (Object-Relational Mapping): Cung cấp một lớp trừu tượng cho phép tương tác với cơ sở dữ liệu thông qua Python, loại bỏ sự cần thiết của việc viết các câu truy vấn SQL trực tiếp và đảm bảo tính độc lập với hệ quản trị cơ sở dữ liệu.
+        
+        \item Hệ thống xác thực và phân quyền (Authentication và Authorization): Triển khai các cơ chế bảo mật đa tầng, bao gồm hệ thống xác thực người dùng tích hợp và hỗ trợ JWT (JSON Web Tokens) cho việc xác thực API, cùng với khả năng tùy chỉnh các quyền truy cập chi tiết.
+        
+        \item Cơ chế Serialization: Cung cấp cơ chế toàn diện để chuyển đổi các cấu trúc dữ liệu phức tạp như queryset và model instance thành các định dạng dữ liệu phổ biến như JSON hoặc XML, cũng như hỗ trợ quá trình chuyển đổi ngược lại.
+        
+        \item ViewSets và Routers: Tự động hóa việc tạo và quản lý các API endpoints cho các thao tác CRUD (Create, Read, Update, Delete), tối ưu hóa quy trình phát triển và đảm bảo tính nhất quán của API.
+        
+        \item Giao diện quản trị (Admin Interface): Tự động sinh ra giao diện quản trị web đầy đủ tính năng dựa trên các model đã định nghĩa, cho phép quản lý dữ liệu một cách trực quan và hiệu quả.
+        
+        \item Hệ thống Middleware: Cung cấp cơ chế xử lý request/response linh hoạt, cho phép thực hiện các tác vụ như bảo mật, ghi log, và xử lý phiên làm việc một cách module hóa.
+    \end{itemize}
+
+    \item \textbf{So sánh các công nghệ tương tự trên thị trường}
+
+    \begin{longtable}{|>{\raggedright\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+        \hline
+        \textbf{Tiêu chí} & \textbf{Django + DRF} & \textbf{Express.js} & \textbf{Spring Boot} & \textbf{FastAPI} \\ 
+        \hline
+        Ngôn ngữ nền tảng & Python & JavaScript/Node.js & Java & Python \\
+        \hline
+        Tốc độ phát triển & Cao & Trung bình-Cao & Thấp-Trung bình & Cao \\ 
+        \hline
+        Hiệu suất & Tốt & Rất tốt & Xuất sắc & Xuất sắc \\ 
+        \hline
+        Tính năng tích hợp sẵn & Rất nhiều & Ít & Nhiều & Trung bình \\ 
+        \hline
+        Quy mô cộng đồng & Lớn & Rất lớn & Rất lớn & Đang phát triển \\ 
+        \hline
+        Độ phức tạp & Cao & Thấp & Rất cao & Trung bình \\ 
+        \hline
+        Khả năng mở rộng & Tốt & Rất tốt & Xuất sắc & Tốt \\ 
+        \hline
+        Hỗ trợ doanh nghiệp & Tốt & Tốt & Xuất sắc & Đang phát triển \\
+        \hline
+        Tài liệu & Đầy đủ & Phong phú & Rất chi tiết & Tốt \\
+        \hline
+    \end{longtable}
+
+    \item \textbf{Cơ sở lựa chọn Django và DRF cho dự án}
+
+    Dựa trên phân tích kỹ thuật và yêu cầu dự án, Django và Django REST Framework được lựa chọn vì những ưu điểm sau:
+    \begin{itemize}
+        \item \textbf{Tính toàn diện}: Cung cấp hệ sinh thái hoàn chỉnh với các tính năng tích hợp sẵn như hệ thống xác thực, phân quyền, và giao diện quản trị, giảm thiểu thời gian phát triển.
+        
+        \item \textbf{Bảo mật cao cấp}: Tích hợp các cơ chế bảo mật mặc định như bảo vệ trước XSS, CSRF, SQL injection.
+        
+        \item \textbf{ORM mạnh mẽ}: Cung cấp lớp trừu tượng database với PostgreSQL tối ưu hóa, hỗ trợ các truy vấn phức tạp.
+        
+        \item \textbf{REST API}: DRF cung cấp các công cụ và quy ước chuẩn hóa cho việc phát triển RESTful API, đảm bảo tính nhất quán và dễ bảo trì.
+        
+        \item \textbf{Khả năng mở rộng}: Hỗ trợ tốt việc mở rộng ứng dụng thông qua các cơ chế caching, database optimization và microservices architecture.
+        
+        \item \textbf{Hệ sinh thái phong phú}: Cộng đồng lớn mạnh với nhiều package chất lượng cao, tài liệu chi tiết và cộng đồng hỗ trợ tích cực.
+        
+        \item \textbf{Tích hợp CI/CD}: Tích hợp dễ dàng với các nền tảng triển khai hiện đại như Heroku, Docker và các dịch vụ đám mây khác.
+    \end{itemize}
+
+\end{enumerate}
+
+\subsubsubsection{PostgreSQL}
+\begin{enumerate}
+    \item \textbf{Giới thiệu}
+    
+    PostgreSQL là một hệ quản trị cơ sở dữ liệu quan hệ đối tượng mã nguồn mở, được phát triển và duy trì bởi cộng đồng toàn cầu. Hệ thống này nổi bật với kiến trúc mạnh mẽ, độ tin cậy cao, và khả năng xử lý khối lượng lớn dữ liệu phức tạp. PostgreSQL không chỉ hỗ trợ đầy đủ các tính năng của cơ sở dữ liệu quan hệ truyền thống theo chuẩn ACID (Atomicity, Consistency, Isolation, Durability), mà còn cung cấp khả năng lưu trữ và truy vấn hiệu quả các dữ liệu phi quan hệ như JSON/JSONB, hình học (geometric data), và mảng đa chiều (multidimensional arrays). Đặc biệt, hệ thống này còn hỗ trợ các tính năng nâng cao như materialized views, table inheritance, và multi-version concurrency control (MVCC).
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Images/postgresql_logo.png}
+        \vspace{0.5cm}
+        \caption{Logo PostgreSQL}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \item \textbf{Đặc điểm công nghệ}
+    
+    PostgreSQL cung cấp một tập hợp các tính năng đáp ứng nhu cầu phát triển ứng dụng hiện đại:
+    \begin{itemize}
+        \item Tuân thủ nguyên tắc ACID: Đảm bảo tính toàn vẹn và nhất quán của dữ liệu thông qua bốn thuộc tính: Nguyên tử (Atomicity), Nhất quán (Consistency), Độc lập (Isolation), và Bền vững (Durability). Điều này đặc biệt quan trọng trong các ứng dụng tài chính và thương mại điện tử.
+        
+        \item Xử lý dữ liệu JSON nâng cao: Hỗ trợ hai kiểu dữ liệu JSON và JSONB (Binary JSON), cho phép lưu trữ, truy vấn và lập chỉ mục dữ liệu phi cấu trúc một cách hiệu quả. JSONB đặc biệt tối ưu cho các thao tác tìm kiếm và truy vấn phức tạp.
+        
+        \item Tìm kiếm văn bản toàn văn (Full-text Search): Cung cấp công cụ tìm kiếm văn bản mạnh mẽ với hỗ trợ đa ngôn ngữ, từ điển tùy chỉnh, xếp hạng kết quả (ranking), và đánh chỉ mục tìm kiếm nâng cao (GiST và GIN indexes).
+        
+        \item Quản lý đồng thời (Concurrency Control): Triển khai cơ chế MVCC (Multi-Version Concurrency Control) cho phép xử lý hiệu quả hàng nghìn người dùng đồng thời mà không ảnh hưởng đến hiệu suất hệ thống.
+        
+        \item Khả năng mở rộng: Hỗ trợ nhiều giải pháp mở rộng như table partitioning, parallel query processing, và logical replication cho các tập dữ liệu lớn lên đến hàng terabyte.
+        
+        \item Bảo mật nâng cao (Advanced Security): Cung cấp hệ thống kiểm soát truy cập chi tiết, mã hóa dữ liệu cấp cột, và xác thực mạnh mẽ với nhiều phương thức.
+        
+        \item Tính sẵn sàng cao (High Availability): Hỗ trợ sao chép dữ liệu theo luồng (streaming replication), khôi phục theo thời điểm xác định (point-in-time recovery), và các giải pháp chuyển đổi dự phòng tự động (automatic failover) để đảm bảo tính liên tục của dịch vụ.
+    \end{itemize}
+
+    \item \textbf{So sánh các công nghệ tương tự trên thị trường}
+
+    \begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+        \hline
+        \textbf{Tiêu chí} & \textbf{PostgreSQL} & \textbf{MySQL} & \textbf{MongoDB} \\ 
+        \hline
+        ACID Compliance & Hoàn toàn & Một phần & Một phần \\ 
+        \hline
+        Hiệu suất & Tốt & Tốt & Rất tốt \\ 
+        \hline
+        Tính năng & Nhiều & Trung bình & Nhiều \\ 
+        \hline
+        Độ phức tạp & Cao & Trung bình & Thấp \\ 
+        \hline
+        Khả năng mở rộng & Tốt & Tốt & Xuất sắc \\ 
+        \hline
+    \end{longtable}
+
+    \item \textbf{Cơ sở lựa chọn PostgreSQL cho dự án}
+
+    PostgreSQL được lựa chọn làm hệ quản trị cơ sở dữ liệu chính cho dự án dựa trên các yếu tố sau:
+    \begin{itemize}
+        \item \textbf{Khả năng tích hợp:}
+        \begin{itemize}
+            \item Tương thích cao với Django ORM, cho phép tận dụng tối đa các tính năng của Django và DRF
+            \item Hỗ trợ trên nền tảng Heroku thông qua Heroku Postgres
+            \item Khả năng tích hợp liền mạch với các công cụ phát triển và triển khai
+        \end{itemize}
+        
+        \item \textbf{Khả năng xử lý dữ liệu đa dạng:}
+        \begin{itemize}
+            \item Hỗ trợ JSON/JSONB mạnh mẽ, tối ưu cho việc lưu trữ và truy vấn dữ liệu chatbot
+            \item Hỗ trợ full-text search cho tính năng tìm kiếm nội dung
+            \item Khả năng xử lý hiệu quả cả dữ liệu có cấu trúc và phi cấu trúc
+        \end{itemize}
+        
+        \item \textbf{Tính bền vững:}
+        \begin{itemize}
+            \item Cộng đồng phát triển lớn và tích cực
+            \item Tài liệu kỹ thuật phong phú và cập nhật thường xuyên
+            \item Giấy phép mã nguồn mở cho phép sử dụng miễn phí và tùy chỉnh
+        \end{itemize}
+        
+        \item \textbf{Khả năng mở rộng:}
+        \begin{itemize}
+            \item Hỗ trợ mở rộng theo chiều ngang (horizontal scaling) bằng phân vùng dữ liệu
+            \item Khả năng xử lý hiệu quả khi khối lượng dữ liệu tăng
+            \item Dễ dàng nâng cấp và mở rộng tính năng
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+\subsubsubsection{Heroku}
+\begin{enumerate}
+    \item \textbf{Giới thiệu}
+    
+    Heroku là một nền tảng điện toán đám mây theo mô hình Platform as a Service (PaaS), được phát triển bởi Salesforce, cung cấp môi trường toàn diện cho việc xây dựng, triển khai và vận hành các ứng dụng hiện đại. Nền tảng này nổi bật với kiến trúc container-based linh hoạt (sử dụng Dynos), hệ thống tự động hóa cao, và khả năng tích hợp liền mạch với các quy trình phát triển liên tục. Heroku hỗ trợ đa dạng các ngôn ngữ lập trình phổ biến như Python, Node.js, Ruby, Java và PHP, đồng thời cung cấp hệ sinh thái phong phú các add-ons cho các dịch vụ bổ sung như cơ sở dữ liệu, caching và phân tích.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Images/heroku_logo.png}
+        \vspace{0.5cm}
+        \caption{Logo Heroku}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \item \textbf{Đặc điểm công nghệ}
+    
+    Heroku cung cấp các tính năng then chốt cho phát triển và vận hành ứng dụng hiện đại:
+    \begin{itemize}
+        \item \textbf{Hệ thống Dyno}: Kiến trúc container độc lập, cho phép cô lập tài nguyên và khả năng mở rộng linh hoạt. Mỗi dyno là một container Linux nhẹ, tối ưu cho việc chạy các microservice.
+        
+        \item \textbf{Hệ sinh thái Add-ons}: Marketplace tích hợp sẵn với hơn 150 dịch vụ bổ sung từ bên thứ ba, bao gồm PostgreSQL, Redis, Elasticsearch và các công cụ monitoring/logging chuyên nghiệp.
+        
+        \item \textbf{Tích hợp Git}: Hỗ trợ triển khai tự động thông qua Git, tích hợp với GitHub Actions và các pipeline CI/CD phổ biến.
+        
+        \item \textbf{Tự động mở rộng}: Cơ chế tự động điều chỉnh tài nguyên dựa trên thông số thời gian thực, đảm bảo hiệu suất ứng dụng trong mọi tình huống tải.
+        
+        \item \textbf{Công cụ dòng lệnh} (CLI Tools): Bộ công cụ dòng lệnh toàn diện cho phép quản lý, giám sát và debug ứng dụng từ môi trường phát triển đến production.
+    \end{itemize}
+
+    \item \textbf{So sánh các công nghệ tương tự trên thị trường}
+
+    \begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+        \hline
+        \textbf{Tiêu chí} & \textbf{Heroku} & \textbf{AWS} & \textbf{Google Cloud} \\ 
+        \hline
+        Độ phức tạp & Thấp & Cao & Cao \\ 
+        \hline
+        Chi phí khởi đầu & Thấp & Cao & Trung bình \\ 
+        \hline
+        Khả năng tùy biến & Trung bình & Cao & Cao \\ 
+        \hline
+        Dễ sử dụng & Cao & Thấp & Trung bình \\ 
+        \hline
+        Tự động hóa & Cao & Cao & Cao \\ 
+        \hline
+        Hỗ trợ kỹ thuật & Tốt & Xuất sắc & Xuất sắc \\ 
+        \hline
+    \end{longtable}
+
+    \item \textbf{Cơ sở lựa chọn Heroku cho dự án}
+
+    Heroku được lựa chọn làm nền tảng triển khai dựa trên các ưu điểm sau:
+    \begin{itemize}
+        \item \textbf{Tích hợp công nghệ tối ưu:}
+        \begin{itemize}
+            \item Hỗ trợ tích hợp Django và PostgreSQL
+            \item Tích hợp liền mạch với quy trình CI/CD thông qua Git
+            \item Cung cấp các add-ons chuyên biệt cho monitoring và logging
+        \end{itemize}
+        
+        \item \textbf{Tối ưu hóa quy trình phát triển:}
+        \begin{itemize}
+            \item Triển khai tự động với zero-downtime deployment
+            \item Loại bỏ nhu cầu quản trị server thủ công
+            \item Môi trường phát triển đồng nhất
+        \end{itemize}
+        
+        \item \textbf{Hiệu quả về chi phí và vận hành:}
+        \begin{itemize}
+            \item Mô hình định giá linh hoạt
+            \item Tự động mở rộng theo nhu cầu thực tế
+            \item Chứng chỉ SSL/TLS tự động và miễn phí
+        \end{itemize}
+    \end{itemize}
+
+\end{enumerate}
+
 \subsubsection{AI}
 \subsubsubsection{Mô hình Gemini-1.5-Flash}
 \renewcommand{\labelenumi}{\alph{enumi})}

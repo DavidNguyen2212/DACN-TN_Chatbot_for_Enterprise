@@ -10,19 +10,31 @@
 
 \textbf{Mô tả}: Biểu đồ tuần tự Đăng ký mô tả sự tương tác giữa các thực thể sau:
 \begin{itemize}
-	\item Actor: Nhân viên (gồm cả quản trị viên và nhân viên chăm sóc khách hàng).
-	\item Giao diện trang web (Web interface).
-	\item Hệ thống.
+	\item Actor: Người dùng
+	\item Giao diện trang web (Web interface)
+	\item Hệ thống
 \end{itemize}
+
 Các bước trong quá trình tương tác như sau:
 \begin{enumerate}
-	\item Nhân viên ấn nút Đăng ký để tạo tài khoản mới.
-	\item Giao diện hiển thị trang Đăng ký.
-	\item Sau khi điền thông tin cần thiết, nhân viên ấn nút "Tạo tài khoản mới". (gọi phương thức onClickSignupButton() của giao diện web)
-	\item Một yêu cầu xử lý (phương thức handleSignup() của hệ thống) được gọi. Hàm này gửi cho người dùng email xác minh.
-	\item Nhân viên click vào email này (gọi phương thức onClickVerify() của hệ thống) để xác minh.
-	\item Hệ thống gửi mã thông báo thành công về giao diện web.
-	\item Nhân viên sẽ được chuyển về trang chủ (đã có tài khoản).
+	\item Người dùng truy cập trang đăng ký.
+	\item Giao diện hiển thị hai lựa chọn: "Tạo tổ chức mới" hoặc "Tham gia tổ chức".
+	
+	\item[3.] \textbf{Luồng tạo tổ chức mới:}
+	\item[3a.] Người dùng chọn "Tạo tổ chức mới".
+	\item[3b.] Người dùng điền thông tin tổ chức và thông tin cá nhân.
+	\item[3c.] Gửi yêu cầu tạo tổ chức.
+	
+	\item[3.] \textbf{Luồng tham gia tổ chức:}
+	\item[3a.] Người dùng chọn "Tham gia tổ chức".
+	\item[3b.] Người dùng nhập mã mời và thông tin cá nhân.
+	\item[3c.] Gửi yêu cầu tham gia tổ chức.
+	
+	\item[4.] Hệ thống gửi email xác minh cho người dùng.
+	\item[5.] Người dùng xác minh email.
+	\item[6.] Hệ thống xác thực và lưu thông tin người dùng.
+	\item[7.] Hệ thống gán vai trò tương ứng.
+	\item[8.] Giao diện nhận thông báo thành công và chuyển hướng người dùng đến trang chính theo vai trò.
 \end{enumerate}
 
 
