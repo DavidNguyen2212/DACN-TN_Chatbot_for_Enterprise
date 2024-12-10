@@ -8,13 +8,17 @@
     \label{fig:enter-label}
 \end{figure}
 
-\textbf{Mô tả}: Biểu đồ hoạt động Đăng ký gồm 2 swimlane: User và hệ thống.
+\textbf{Mô tả}: Biểu đồ hoạt động Đăng ký gồm 2 swimlane: User và Hệ thống.
 
-Đầu tiên, nhân viên chọn vào nút "Đăng ký" ở trang chủ. Tại trang đăng ký, nhân viên cần điền đủ các thông tin: họ tên, số điện thoại, email, mật khẩu và vai trò của mình và ấn nút "Tạo tài khoản mới". 
+Đầu tiên, người dùng truy cập trang đăng ký/đăng nhập và được presented với hai lựa chọn: "Tạo tổ chức mới" hoặc "Tham gia tổ chức". 
 
-Một email xác minh sẽ được gửi đến email của nhân viên. Khi ấn vào link này, hệ thống sẽ xác minh đây đúng là email nhân viên dùng để tạo tài khoản, đồng thời lưu dữ liệu người dùng mới.
+Nếu chọn "Tạo tổ chức mới", người dùng cần điền các thông tin tổ chức như tên tổ chức, email domain và thông tin cá nhân bao gồm họ tên, email, mật khẩu. Hệ thống sẽ tự động gán người dùng làm chủ sở hữu tổ chức.
 
-Sau khi hoàn tất, nhân viên sẽ được điều hướng về trang chủ (đã có tài khoản).
+Nếu chọn "Tham gia tổ chức", người dùng cần nhập mã mời hoặc truy cập qua link mời, sau đó điền thông tin cá nhân. Vai trò của người dùng sẽ được xác định theo cấu hình trong lời mời.
+
+Sau khi điền thông tin, hệ thống sẽ gửi email xác minh đến địa chỉ email đã đăng ký. Người dùng cần xác minh email bằng cách nhấp vào link trong thư. Hệ thống sẽ xác thực email và lưu trữ thông tin người dùng vào cơ sở dữ liệu.
+
+Khi hoàn tất quá trình đăng ký, người dùng sẽ được điều hướng đến trang chính với các chức năng tương ứng với vai trò được phân trong tổ chức.
 
 \subsubsubsection{Đăng nhập}
 \begin{figure}[H]

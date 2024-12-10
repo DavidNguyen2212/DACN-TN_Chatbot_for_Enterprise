@@ -25,29 +25,41 @@
 	\begin{tabular}{|l|l|l|l|} 
 		\hline Use case name: & \multicolumn{3}{|l|}{Đăng ký tài khoản mới} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
-		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $10 / 11 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, quản trị viên) } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên đăng ký tài khoản mới. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Đăng ký". } \\ 
-		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên cần chuẩn bị email doanh nghiệp. } \\ 
-		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Đăng ký thành công tài khoản. } \\ 
+		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $09 / 12 / 2024$\\ 
+		\hline Actors: & \multicolumn{3}{|l|}{Người dùng} \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{Cho phép người dùng đăng ký tài khoản mới và tham gia vào tổ chức.} \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào nút "Đăng ký".} \\ 
+		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{
+			- Đối với tạo tổ chức mới: Người dùng cần chuẩn bị thông tin tổ chức. \newline
+			- Đối với tham gia tổ chức: Người dùng cần có mã mời.
+		} \\ 
+		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{Đăng ký thành công tài khoản và tham gia vào tổ chức.} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{
-			1. Nhân viên điền đầy đủ thông tin trong trang đăng ký. \newline
-			2. Nhân viên đồng ý với các điều khoản khi tạo tài khoản. \newline
-			3. Nhân viên ấn nút "Đăng ký". \newline
-			4. Hệ thống gửi một mail xác nhận cho email của người đăng ký. \newline
-			5. Người dùng mở mail và ấn vào link xác minh. \newline
-			6. Hệ thống xác minh và lưu dữ liệu người dùng vào database.\newline
-			7. Nhân viên được chuyển đến trang chính (Tùy chỉnh chatbot - đối với quản trị viên, Hội thoại - đối với Nhân viên chăm sóc khách hàng). 
-		} \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+			1. Người dùng truy cập trang đăng ký/đăng nhập. \newline
+			2. Người dùng chọn một trong hai lựa chọn: \newline
+			\hspace{0.5cm}A. Tạo tổ chức mới: \newline
+                \hspace{1cm}A1. Điền thông tin tổ chức. \newline
+                \hspace{1cm}A2. Điền thông tin cá nhân. \newline
+                \hspace{1cm}A3. Hệ thống tự động gán vai trò chủ sở hữu. \newline
+			\hspace{0.5cm}B. Tham gia tổ chức: \newline
+                \hspace{1cm}B1. Nhập mã mời nhận từ email. \newline
+                \hspace{1cm}B2. Điền thông tin cá nhân. \newline
+                \hspace{1cm}B3. Hệ thống gán vai trò theo định nghĩa trong lời mời. \newline
+			3. Hệ thống gửi email xác nhận. \newline
+			4. Người dùng xác minh email qua link trong thư. \newline
+			5. Hệ thống xác minh và lưu thông tin vào cơ sở dữ liệu. \newline
+			6. Người dùng được chuyển đến trang chính theo vai trò được phân.
+        } \\ 
+		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có.} \\ 
 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
-			\textbf{E1. Tại bước 3, hệ thống hiển thị cảnh báo "Email này đã được sử dụng".} \newline
-			hoặc "Email này không thuộc doanh nghiệp đã đăng ký". \newline
-			\hspace{2cm}3.1. Nhân viên sử dụng một email khác. \newline
-			\hspace{2cm}3.2. Use case tiếp tục bước 4. 
+			\textbf{E1. Tại bước 2A, thông tin tổ chức đã tồn tại:} \newline
+			\hspace{0.5cm}2A.1. Hệ thống hiển thị thông báo lỗi. \newline
+			\hspace{0.5cm}2A.2. Người dùng nhập thông tin khác hoặc chọn tham gia tổ chức. \newline
+			\textbf{E2. Tại bước 2B, mã mời không hợp lệ hoặc hết hạn:} \newline
+			\hspace{0.5cm}2B.1. Hệ thống hiển thị thông báo lỗi. \newline
+			\hspace{0.5cm}2B.2. Người dùng nhập mã mời khác hoặc liên hệ quản trị viên.
 		} \\ 
-		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có.} \\ 
 		\hline
 	\end{tabular}
 	\caption{Use case scenario cho Đăng ký tài khoản mới}
