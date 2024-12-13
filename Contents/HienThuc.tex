@@ -12,7 +12,7 @@
 		\centering
 		\includegraphics[width=0.3\linewidth]{Images/react_logo.png}
 		\vspace{0.5cm}
-		\caption{Logo React}
+		\caption{Logo React - Nguồn: Internet}
 		\label{fig:enter-label}
 	\end{figure}
 	
@@ -93,7 +93,7 @@
 		\centering
 		\includegraphics[width=0.3\linewidth]{Images/vite_logo.png}
 		\vspace{0.5cm}
-		\caption{Logo Vite}
+		\caption{Logo Vite - Nguồn Internet}
 		\label{fig:enter-label}
 	\end{figure}
 	
@@ -142,6 +142,74 @@
 	\end{itemize}
 	
 \end{enumerate}
+\subsubsubsection{Vercel}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	Vercel là nền tảng đám mây giúp triển khai các ứng dụng web frontend hiện đại một cách dễ dàng và nhanh chóng. Nó hỗ trợ các framework phổ biến như React.js, Next.js, Vue.js, Angular và Svelte. Vercel cung cấp giải pháp Serverless Deployment, đảm bảo ứng dụng luôn sẵn sàng với hiệu suất cao.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{Images/vercel_logo.png}
+		\vspace{0.5cm}
+		\caption{Logo Vercel - Nguồn: Internet}
+		\label{fig:enter-label}
+	\end{figure}
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	Vercel có các tính năng nổi bật như:
+	\begin{itemize}
+		\item Tự động triển khai: Tích hợp với GitHub, GitLab, Bitbucket để triển khai tự động.
+		\item Xây dựng không máy chủ (Serverless): Chạy ứng dụng mà không cần quản lý máy chủ vật lý.
+		\item CDN Toàn cầu: Ứng dụng được phân phối nhanh chóng thông qua mạng CDN toàn cầu.
+		\item Domain và SSL: Cung cấp tên miền tùy chỉnh và chứng chỉ SSL miễn phí.
+		\item Phân nhánh (Branch Deployments): Tạo các môi trường preview cho từng nhánh trong dự án.
+		\item Khả năng mở rộng: 
+		\begin{itemize}
+			\item Auto Scaling: Vercel tự động mở rộng dịch vụ khi lưu lượng truy cập tăng
+			\item Edge Functions: Xử lý yêu cầu nhanh chóng ở rìa mạng (edge) để giảm độ trễ.
+		\end{itemize}
+	\end{itemize}
+	
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
+	\begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+		\hline
+		\textbf{Tiêu chí} & \textbf{Vercel} & \textbf{Netlify} & \textbf{Render} \\ 
+		\hline
+		Triển khai & Serverless, tự động với Git & Tự động, dễ tích hợp Git & Serverless, dễ triển khai \\ 
+		\hline
+		Hỗ trợ framework & Next.js, React.js, Vue.js & React.js, Angular,... & Fullstack, tùy chọn đa ngôn ngữ \\ 
+		\hline
+		CDN toàn cầu & Có & Có & Không tích hợp sẵn   \\ 
+		\hline
+		Tích hợp Git & Tự động với GitHub, GitLab & GitHub, GitLab, Bitbucket & GitHub, GitLab  \\ 
+		\hline
+		Domain và SSL & Miễn phí & Miễn phí & Miễn phí \\ 
+		\hline
+		Tính năng đặc biệt & Edge Functions, ISR, Preview & Serverless Functions & Background Jobs, WebSockets \\ 
+		\hline
+		Giá cả & Miễn phí, trả phí theo yêu cầu & Miễn phí, trả phí nâng cao & Miễn phí, trả phí mở rộng \\ 
+		\hline
+		Khả năng mở rộng & Tự động & Tự động & Tự động \\ 
+		\hline
+	\end{longtable}
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	Nhóm chọn Vercel vì những lý do sau:
+	\begin{itemize}
+		\item Tối ưu hóa React.js: Vercel hỗ trợ mạnh mẽ Next.js, framework hàng đầu cho React.js.
+		\item Dễ sử dụng: Cung cấp giao diện người dùng đơn giản, dễ thao tác cho cả người mới bắt đầu và chuyên gia.
+		\item Hiệu suất cao: CDN toàn cầu giúp tải nhanh ứng dụng trên toàn thế giới.
+		\item Bảo mật: Chứng chỉ SSL miễn phí giúp bảo vệ dữ liệu.
+		\item Triển khai liên tục: Mỗi lần cập nhật mã nguồn sẽ tự động triển khai, giúp rút ngắn chu kỳ phát triển phần mềm.
+	\end{itemize}
+	
+\end{enumerate}
 \subsubsubsection{NextUI}
 NextUI là một thư viện giao diện người dùng (UI library) hiện đại được thiết kế để xây dựng các ứng dụng web với phong cách đẹp mắt và hiệu năng cao. NextUI sử dụng React làm nền tảng, giúp lập trình viên dễ dàng tạo ra các thành phần giao diện (components) tái sử dụng và nhanh chóng.
 
@@ -149,7 +217,7 @@ NextUI là một thư viện giao diện người dùng (UI library) hiện đ�
 	\centering
 	\includegraphics[width=0.3\linewidth]{Images/nextui_logo.png}
 	\vspace{0.5cm}
-	\caption{Logo NextUI}
+	\caption{Logo NextUI - Nguồn: Internet}
 	\label{fig:enter-label}
 \end{figure}
 \subsubsubsection{TailwindCSS}
@@ -159,7 +227,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 	\centering
 	\includegraphics[width=0.3\linewidth]{Images/tailwindcss_logo.png}
 	\vspace{0.5cm}
-	\caption{Logo TailwindCSS}
+	\caption{Logo TailwindCSS - Nguồn: Internet}
 	\label{fig:enter-label}
 \end{figure}
 \subsubsection{Backend}
@@ -174,7 +242,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
         \centering
         \includegraphics[width=0.5\linewidth]{Images/django_logo.png}
         \vspace{0.5cm}
-        \caption{Logo Django}
+        \caption{Logo Django - Nguồn: Internet}
         \label{fig:enter-label}
     \end{figure}
 
@@ -252,7 +320,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
         \centering
         \includegraphics[width=0.5\linewidth]{Images/postgresql_logo.png}
         \vspace{0.5cm}
-        \caption{Logo PostgreSQL}
+        \caption{Logo PostgreSQL - Nguồn: Internet}
         \label{fig:enter-label}
     \end{figure}
 
@@ -337,7 +405,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
         \centering
         \includegraphics[width=0.5\linewidth]{Images/heroku_logo.png}
         \vspace{0.5cm}
-        \caption{Logo Heroku}
+        \caption{Logo Heroku - Nguồn: Internet}
         \label{fig:enter-label}
     \end{figure}
 
@@ -416,7 +484,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 		\centering
 		\includegraphics[width=0.6\textwidth]{Images/gemini.png}
 		\vspace{0.5cm}
-		\caption{Mô hình ngôn ngữ lớn Gemini-1.5-flash}
+		\caption{Mô hình ngôn ngữ lớn Gemini-1.5-flash - Nguồn: Internet}
 		\label{fig:enter-label}
 	\end{figure}
 	
@@ -506,7 +574,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 		\centering
 		\includegraphics[width=0.6\textwidth]{Images/langchain.png}
 		\vspace{0.5cm}
-		\caption{Framework LangChain}
+		\caption{Framework LangChain - Nguồn: Internet}
 		\label{fig:enter-label}
 	\end{figure}
 	
@@ -582,7 +650,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 		\centering
 		\includegraphics[width=0.6\textwidth]{Images/pinecone.jpg}
 		\vspace{0.5cm}
-		\caption{Hệ cơ sở dữ liệu vector Pinecone}
+		\caption{Hệ cơ sở dữ liệu vector Pinecone - Nguồn: Internet}
 		\label{fig:enter-label}
 	\end{figure}
 	
@@ -654,6 +722,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 %Vẽ, Mô tả kiến trúc khi hiện thực, thành phần chức năng gì khi tương tác vs nhau
 \subsection{Các tính năng}
 \subsubsection{Trang Đích}
+Giao diện trang đích sẽ được hiển thị với mọi người dùng. Nội dung sẽ hiển thị các thông tin quan trọng và cần thiết nhất của của hệ thống, giúp người dùng hình dung được giá trị mà hệ thống mang lại.
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=1\textwidth]{Figma/landing_imple_1.png}}
@@ -682,14 +751,33 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 	\caption{Giao diện trang đích được hiện thực - ảnh 4}
 	\label{fig:enter-label}
 \end{figure}
+
+Ngoài ra, người dùng có thể chọn ngôn ngữ theo tiếng Việt hoặc tiếng Anh.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/landing_english.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện trang đích phiên bản tiếng Anh được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
 \subsubsection{Trang Xác thực}
+Hệ thống sẽ cung cấp các chức năng xác thực như đăng nhập, tạo tổ chức, tham gia tổ chức, quên mật khẩu cho ba loại người dùng là chủ sở hữu tổ chức, quản trị viên tổ chức và nhân viên chăm sóc khách hàng.
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=0.9\textwidth]{Figma/login_imple.png}}
 	\vspace{0.5cm}
-	\caption{Giao diện đăng nhập được hiện thực}
+	\caption{Giao diện đăng nhập được hiện thực - Tiếp tục với Google}
 	\label{fig:enter-label}
 \end{figure}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/login_imple1.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện đăng nhập được hiện thực - Dùng tài khoản CoolChat}
+	\label{fig:enter-label}
+\end{figure}
+
+Đối với giao diện đăng ký, người dùng có thể chọn tạo một tổ chức mới hoặc tham gia một tổ chức đã tồn tại sử dụng mã giới thiệu được gửi qua địa chỉ email.
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=0.9\textwidth]{Figma/signup_imple.png}}
@@ -699,17 +787,69 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \end{figure}
 \begin{figure}[H]
 	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/signup_imple_create.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện tạo tổ chức được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+
+Khi người dùng điền các thông tin để tạo tổ chức và bấm tạo tổ chức mới, người dùng sẽ nhận một địa chỉ email để xác minh tài khoản.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/signup_imple_create_email.png}}
+	\vspace{0.5cm}
+	\caption{Email để xác minh tài khoản khi đăng ký tạo tổ chức}
+	\label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/signup_imple_join.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện tham gia tổ chức được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
 	\fbox{\includegraphics[width=0.9\textwidth]{Figma/forgotpassword_imple.png}}
 	\vspace{0.5cm}
 	\caption{Giao diện quên mật khẩu được hiện thực}
 	\label{fig:enter-label}
 \end{figure}
+
+Khi người dùng nhập email và chọn tìm kiếm, người dùng sẽ nhận một email để đặt lại mật khẩu cho tài khoản.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/forgotpassword_imple_email.png}}
+	\vspace{0.5cm}
+	\caption{Email để đặt lại mật khẩu khi quên mật khẩu}
+	\label{fig:enter-label}
+\end{figure}
+
+Khi ấn vào liên kết được gửi trong email, người dùng sẽ phải thực hiện nhập mật khẩu mới và xác nhận mật khẩu để được cập nhật mật khẩu mới.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=0.9\textwidth]{Figma/forgotpassword_imple_reset.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện đặt lại mật khẩu được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+
 \subsubsection{Trang Đào tạo chatbot}
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=1\textwidth]{Figma/chatbottraining_imple.png}}
 	\vspace{0.5cm}
 	\caption{Giao diện đào tạo chatbot được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/chatbot_comparison_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện so sánh chatbot được hiện thực}
 	\label{fig:enter-label}
 \end{figure}
 \subsubsection{Trang Tùy chỉnh chatbot}
@@ -728,6 +868,14 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 	\caption{Giao diện hội thoại được hiện thực}
 	\label{fig:enter-label}
 \end{figure}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/chat_detail_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện chi tiết hội thoại được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
 \subsubsection{Trang Báo cáo}
 \begin{figure}[H]
 	\centering
@@ -744,12 +892,21 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 	\caption{Giao diện thanh toán được hiện thực}
 	\label{fig:enter-label}
 \end{figure}
+\subsubsection{Trang Tổ chức}
 \subsubsection{Trang Cài đặt}
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=1\textwidth]{Figma/setting_imple.png}}
 	\vspace{0.5cm}
 	\caption{Giao diện cài đặt được hiện thực}
+	\label{fig:enter-label}
+\end{figure}
+\subsubsection{Chatbot phía khách hàng}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1\textwidth]{Figma/chatbot_imple.png}}
+	\vspace{0.5cm}
+	\caption{Giao diện chatbot phía khách hàng}
 	\label{fig:enter-label}
 \end{figure}
 
