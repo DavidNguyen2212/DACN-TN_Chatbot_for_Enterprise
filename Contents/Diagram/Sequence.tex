@@ -180,6 +180,24 @@ Các bước trong quá trình tương tác như sau:
     \caption{Biểu đồ sequence cho Quản lý thanh toán}
     \label{fig:enter-label}
 \end{figure}
+\textbf{Mô tả: }
+\begin{itemize}
+	\item Người dùng điều hướng đến trang thanh toán.
+	\item Trang thanh toán sẽ gọi hàm getAvailablePlan() đến hệ thống để lấy các gói dịch vụ.
+	\item Hệ thống trả về danh sách các gói dịch vụ và hiển thị với người dùng.
+	\item Người dùng chọn một gói dịch vụ.
+	\item Trang thanh toán gọi hàm selectPlan() đến hệ thống.
+	\item Hệ thống gọi hàm initiatePayment() đến hệ thống thanh toán.
+	\item Hệ thống thanh toán trả về giao diện và giao diện trả về người dùng form thanh thanh toán.
+	\item Người dùng thực hiện nhập các thông tin và submit.
+	\item Trang thanh toán gọi hàm submitForm() đến hệ thống thanh toán.
+	\item Hệ thống thanh toán tự gọi hàm processPayment() để tiến hành quá trình thanh toán.
+	\item Tiếp theo ngừi dùng có thể gặp 2 tình huống
+	\begin{itemize}
+		\item Nếu thanh toán thành công: hệ thống thanh toán trả về hệ thống phản hồi thành công. Hệ thống gọi hàm updatePlan() để cập nhật và trả về phản hồi thành công cho giao diện và hiển thị với người dùng.
+		\item Nếu thnah toán thất bại: phản hồi thất bại sẽ được truyền từ hệ thống thanh toán đến hệ thống rồi đến giao diện rồi sẽ hiển thị đến người dùng.
+	\end{itemize}
+\end{itemize}
 \subsubsection{Tương tác với chatbot}
 \subsubsubsection{Phản hồi tin nhắn khách hàng}
 \begin{figure}[H]
