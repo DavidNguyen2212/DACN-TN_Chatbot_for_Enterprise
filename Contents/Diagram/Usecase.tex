@@ -35,30 +35,34 @@
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{Đăng ký thành công tài khoản và tham gia vào tổ chức.} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{
-			1. Người dùng truy cập trang đăng ký/đăng nhập. \newline
-			2. Người dùng chọn một trong hai lựa chọn: \newline
-			\hspace{0.5cm}A. Tạo tổ chức mới: \newline
+            1. Người dùng truy cập trang đăng ký/đăng nhập. \newline
+            2. Người dùng chọn một trong hai lựa chọn: \newline
+            \hspace{0.5cm}A. Tạo tổ chức mới: \newline
                 \hspace{1cm}A1. Điền thông tin tổ chức. \newline
                 \hspace{1cm}A2. Điền thông tin cá nhân. \newline
-                \hspace{1cm}A3. Hệ thống tự động gán vai trò chủ sở hữu. \newline
-			\hspace{0.5cm}B. Tham gia tổ chức: \newline
+                \hspace{1cm}A3. Hệ thống gửi email xác nhận. \newline
+                \hspace{1cm}A4. Người dùng xác minh email qua link trong thư. \newline
+                \hspace{1cm}A5. Hệ thống xác minh và lưu thông tin vào cơ sở dữ liệu. \newline
+                \hspace{1cm}A6. Hệ thống tự động gán vai trò quản trị viên. \newline
+            \hspace{0.5cm}B. Tham gia tổ chức: \newline
                 \hspace{1cm}B1. Nhập mã mời nhận từ email. \newline
                 \hspace{1cm}B2. Điền thông tin cá nhân. \newline
-                \hspace{1cm}B3. Hệ thống gán vai trò theo định nghĩa trong lời mời. \newline
-			3. Hệ thống gửi email xác nhận. \newline
-			4. Người dùng xác minh email qua link trong thư. \newline
-			5. Hệ thống xác minh và lưu thông tin vào cơ sở dữ liệu. \newline
-			6. Người dùng được chuyển đến trang chính theo vai trò được phân.
+                \hspace{1cm}B3. Hệ thống xác thực mã mời và lưu thông tin. \newline
+                \hspace{1cm}B4. Hệ thống gán vai trò theo định nghĩa trong lời mời. \newline
+            3. Người dùng được chuyển đến trang chính theo vai trò được phân.
         } \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có.} \\ 
-		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
-			\textbf{E1. Tại bước 2A, thông tin tổ chức đã tồn tại:} \newline
-			\hspace{0.5cm}2A.1. Hệ thống hiển thị thông báo lỗi. \newline
-			\hspace{0.5cm}2A.2. Người dùng nhập thông tin khác hoặc chọn tham gia tổ chức. \newline
-			\textbf{E2. Tại bước 2B, mã mời không hợp lệ hoặc hết hạn:} \newline
-			\hspace{0.5cm}2B.1. Hệ thống hiển thị thông báo lỗi. \newline
-			\hspace{0.5cm}2B.2. Người dùng nhập mã mời khác hoặc liên hệ quản trị viên.
-		} \\ 
+        \hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có.} \\ 
+        \hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
+            \textbf{E1. Tại bước A1, thông tin tổ chức đã tồn tại:} \newline
+            \hspace{0.5cm}A1.1. Hệ thống hiển thị thông báo lỗi. \newline
+            \hspace{0.5cm}A1.2. Người dùng nhập thông tin khác hoặc chọn tham gia tổ chức. \newline
+            \textbf{E2. Tại bước B1, mã mời không hợp lệ hoặc hết hạn:} \newline
+            \hspace{0.5cm}B1.1. Hệ thống hiển thị thông báo lỗi. \newline
+            \hspace{0.5cm}B1.2. Người dùng nhập mã mời khác hoặc liên hệ quản trị viên. \newline
+            \textbf{E3. Tại bước A4, người dùng không xác minh email:} \newline
+            \hspace{0.5cm}A4.1. Hệ thống hiển thị thông báo yêu cầu xác minh. \newline
+            \hspace{0.5cm}A4.2. Người dùng có thể yêu cầu gửi lại email xác minh.
+        } \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có.} \\ 
 		\hline
 	\end{tabular}
