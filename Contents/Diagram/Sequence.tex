@@ -2,7 +2,7 @@
 \subsubsubsection{Đăng ký}
 \begin{figure}[H]
 	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Signup.svg}
+	\includegraphics[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Signup.png}
 	\vspace{0.5cm}
 	\caption{Biểu đồ sequence cho Đăng ký}
 	\label{fig:enter-label}
@@ -17,24 +17,30 @@
 
 Các bước trong quá trình tương tác như sau:
 \begin{enumerate}
-	\item Người dùng truy cập trang đăng ký.
-	\item Giao diện hiển thị hai lựa chọn: "Tạo tổ chức mới" hoặc "Tham gia tổ chức".
-	
-	\item[3.] \textbf{Luồng tạo tổ chức mới:}
-	\item[3a.] Người dùng chọn "Tạo tổ chức mới".
-	\item[3b.] Người dùng điền thông tin tổ chức và thông tin cá nhân.
-	\item[3c.] Gửi yêu cầu tạo tổ chức.
-	
-	\item[3.] \textbf{Luồng tham gia tổ chức:}
-	\item[3a.] Người dùng chọn "Tham gia tổ chức".
-	\item[3b.] Người dùng nhập mã mời và thông tin cá nhân.
-	\item[3c.] Gửi yêu cầu tham gia tổ chức.
-	
-	\item[4.] Hệ thống gửi email xác minh cho người dùng.
-	\item[5.] Người dùng xác minh email.
-	\item[6.] Hệ thống xác thực và lưu thông tin người dùng.
-	\item[7.] Hệ thống gán vai trò tương ứng.
-	\item[8.] Giao diện nhận thông báo thành công và chuyển hướng người dùng đến trang chính theo vai trò.
+    \item Người dùng truy cập trang đăng ký.
+    \item Giao diện hiển thị hai lựa chọn: "Tạo tổ chức mới" hoặc "Tham gia tổ chức".
+    
+    \item[3.] \textbf{Luồng tạo tổ chức mới:}
+    \item[3a.] Người dùng chọn "Tạo tổ chức mới".
+    \item[3b.] Người dùng điền thông tin tổ chức và thông tin cá nhân.
+    \item[3c.] Gửi yêu cầu tạo tổ chức.
+    \item[3d.] Hệ thống gửi email xác minh cho người dùng.
+    \item[3e.] Người dùng xác minh email.
+    \item[3f.] Hệ thống xác thực và lưu thông tin người dùng và tổ chức.
+    
+    \item[4.] \textbf{Luồng tham gia tổ chức:}
+    \item[4a.] Người dùng chọn "Tham gia tổ chức".
+    \item[4b.] Người dùng nhập mã mời và thông tin cá nhân.
+    \item[4c.] Gửi yêu cầu tham gia tổ chức.
+    \item[4d.] Hệ thống xác thực mã mời và lưu thông tin người dùng.
+    
+    \item[5.] Hệ thống gán vai trò tương ứng:
+    \begin{itemize}
+        \item Người tạo tổ chức được gán vai trò quản trị viên
+        \item Người tham gia được gán vai trò theo mã mời
+    \end{itemize}
+    
+    \item[6.] Giao diện nhận thông báo thành công và chuyển hướng người dùng đến trang chính theo vai trò.
 \end{enumerate}
 
 
