@@ -54,11 +54,11 @@
 \newtheorem{lemma}[proposition]{{\bf Bổ đề}}
 \theoremstyle{definition}
 \newtheorem{exer}{Bài toán}
-\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
 % Remove page number in contents page. 
-\addtocontents{lof}{\protect\thispagestyle{empty}}
+%\addtocontents{lof}{\protect\thispagestyle{empty}}
 % Remove page number in list of figure page. 
-\addtocontents{lot}{\protect\thispagestyle{empty}}
+%\addtocontents{lot}{\protect\thispagestyle{empty}}
 % Remove page number in list of table page. 
 \def\thesislayout{	% A4: 210 × 297
 	\geometry{
@@ -103,7 +103,7 @@ morekeywords={}
 }
 %\usepackage{fancyhdr}
 \setlength{\headheight}{40pt}
-\pagestyle{fancy}
+%\pagestyle{fancy}
 \fancyhead{} % clear all header fields
 \renewcommand{\footruleskip}{1mm}
 
@@ -248,9 +248,11 @@ morekeywords={}
 {\Large THÀNH PHỐ HỒ CHÍ MINH, THÁNG 12/2024 }
 \end{center}
 \end{titlepage}
-%\thispagestyle{empty}
-\newpage
+
+%\newpage
 %%%%%%%%%%%%%%%%%INTRO%%%%%%%%%%%%%%%%%%%
+\clearpage
+%\thispagestyle{empty}
 \section*{Chữ ký giảng viên hướng dẫn}
 \thispagestyle{empty}
 \vspace{3cm}
@@ -264,20 +266,22 @@ morekeywords={}
 \end{flushleft}
 
 \clearpage
-\pagenumbering{arabic}
+\pagenumbering{roman}
+\pagestyle{plain}
 
 \input{Intro/LoiCamOn}
 \input{Intro/LoiCamDoan}
 \input{Intro/TomTat}
 \newpage
+
 \tableofcontents
-\newpage
+\clearpage
 \listoffigures
-\newpage
 \listoftables
 \newpage
+\pagenumbering{arabic}
 \setcounter{page}{1}
-
+\pagestyle{fancy}
 %%%%%%%%%%%%%%%%%CONTENTS%%%%%%%%%%%%%%%%%%%
 \input{Contents/GioiThieu}
 % \newpage
