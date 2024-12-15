@@ -43,7 +43,7 @@
                 \hspace{1cm}A3. Hệ thống gửi email xác nhận. \newline
                 \hspace{1cm}A4. Người dùng xác minh email qua link trong thư. \newline
                 \hspace{1cm}A5. Hệ thống xác minh và lưu thông tin vào cơ sở dữ liệu. \newline
-                \hspace{1cm}A6. Hệ thống tự động gán vai trò quản trị viên. \newline
+                \hspace{1cm}A6. Hệ thống tự động gán vai trò nhân viên quản lý. \newline
             \hspace{0.5cm}B. Tham gia tổ chức: \newline
                 \hspace{1cm}B1. Nhập mã mời nhận từ email. \newline
                 \hspace{1cm}B2. Điền thông tin cá nhân. \newline
@@ -58,7 +58,7 @@
             \hspace{0.5cm}A1.2. Người dùng nhập thông tin khác hoặc chọn tham gia tổ chức. \newline
             \textbf{E2. Tại bước B1, mã mời không hợp lệ hoặc hết hạn:} \newline
             \hspace{0.5cm}B1.1. Hệ thống hiển thị thông báo lỗi. \newline
-            \hspace{0.5cm}B1.2. Người dùng nhập mã mời khác hoặc liên hệ quản trị viên. \newline
+            \hspace{0.5cm}B1.2. Người dùng nhập mã mời khác hoặc liên hệ nhân viên quản lý. \newline
             \textbf{E3. Tại bước A4, người dùng không xác minh email:} \newline
             \hspace{0.5cm}A4.1. Hệ thống hiển thị thông báo yêu cầu xác minh. \newline
             \hspace{0.5cm}A4.2. Người dùng có thể yêu cầu gửi lại email xác minh.
@@ -77,7 +77,7 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Đăng nhập} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $10 / 11 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, quản trị viên) } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, nhân viên quản lý) } \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên đăng nhập với tài khoản đã tạo. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Đăng nhập". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã đăng ký thành công trước đó. } \\ 
@@ -115,7 +115,7 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Quên mật khẩu} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $10 / 11 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, quản trị viên) } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, nhân viên quản lý) } \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên lấy lại mật khẩu khi quên. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Quên mật khẩu". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã đăng ký thành công trước đó. } \\ 
@@ -151,7 +151,7 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Chỉnh sửa hồ sơ cá nhân} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $10 / 11 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|p{12cm}|}{Nhân viên (gồm nhân viên chăm sóc khách hàng, quản trị viên)} \\ 
+		\hline Actors: & \multicolumn{3}{|p{12cm}|}{Nhân viên (gồm nhân viên chăm sóc khách hàng, nhân viên quản lý)} \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên chỉnh sửa các thông tin cá nhân. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào tab "Cá nhân" của mục "Tài khoản". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã ấn vào nút "Cài đặt" trên sidebar. } \\ 
@@ -183,7 +183,7 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Đổi mật khẩu} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, quản trị viên) } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, nhân viên quản lý) } \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên chủ động thay đổi mật khẩu. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào tab "Mật khẩu" của mục "Tài khoản". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã ấn vào nút "Cài đặt" trên sidebar. } \\ 
@@ -231,16 +231,16 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Tải dữ liệu tri thức} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép công ty nạp dữ liệu huấn luyện chatbot. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Quản trị viên đã đăng nhập thành công. \newline 
-			Quản trị viên đã chuẩn bị các dữ liệu huấn luyện. 
+			Chủ sở hữu hoặc Nhân viên quản lý đã đăng nhập thành công. \newline 
+			Người dùng đã chuẩn bị các dữ liệu huấn luyện. 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Tải dữ liệu lên thành công. } \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Quản trị viên ấn vào biểu tượng tải file để tải tài liệu lên. \newline 
+			1. Người dùng ấn vào biểu tượng tải file để tải tài liệu lên. \newline 
 			2. Hệ thống kiểm tra định dạng và loại bỏ các file không đúng định dạng. \newline 
 			3. Hệ thống hiển thị danh sách các file đã nhận lên trang web. 
 		} \\ 
@@ -263,17 +263,17 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Cập nhật dữ liệu tri thức} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép quản trị viên chỉnh sửa tri thức của chatbot. } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý chỉnh sửa tri thức của chatbot. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Quản trị viên đăng nhập thành công. 
+			Nhân viên quản lý đăng nhập thành công. 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
 			Cập nhật dữ liệu tri thức thành công. 
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Quản trị viên ấn vào biểu tượng tải file để tải tài liệu mới lên. \newline 
+			1. Nhân viên quản lý ấn vào biểu tượng tải file để tải tài liệu mới lên. \newline 
 			2. Hệ thống kiểm tra định dạng và loại bỏ các file không đúng định dạng. \newline 
 			3. Hệ thống hiển thị danh sách các file đã nhận lên trang web. 
 		} \\ 
@@ -302,18 +302,18 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Trích xuất nội dung từ website} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép quản trị viên thêm website làm tri thức cho chatbot. } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thêm website làm tri thức cho chatbot. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Quản trị viên đăng nhập thành công. 
+			Nhân viên quản lý đăng nhập thành công. 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
 			Cập nhật tri thức website thành công. 
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
 			1. Ấn vào biểu tượng Thêm, popup hiện ra cho phép người dùng nhập địa chỉ website. \newline 
-			2. Quản trị viên nhập địa chỉ và ấn "OK". \newline 
+			2. Nhân viên quản lý nhập địa chỉ và ấn "OK". \newline 
 			3. Hệ thống lưu địa chỉ mới. 
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
@@ -341,17 +341,17 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Gán nhãn dữ liệu tri thức} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép quản trị viên thêm nhãn cho các dữ liệu tri thức. } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thêm nhãn cho các dữ liệu tri thức. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Quản trị viên đăng nhập thành công. 
+			Nhân viên quản lý đăng nhập thành công. 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
 			Cập nhật nhãn tri thức cho tài liệu thành công. 
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Quản trị viên kéo thả tệp vào nhãn tương ứng. \newline 
+			1. Nhân viên quản lý kéo thả tệp vào nhãn tương ứng. \newline 
 			2. Hệ thống lưu các nhãn cho các tệp. 
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
@@ -369,18 +369,18 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{So sánh chatbot} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $12 / 11 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép quản trị viên xem trước chatbot để quyết định có lưu các cài đặt không. } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý xem trước chatbot để quyết định có lưu các cài đặt không. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào mục "Gán nhãn tri thức". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Quản trị viên vừa thực hiện thay đổi với tri thức (thêm / xóa / sửa / đánh nhãn). 
+			Nhân viên quản lý vừa thực hiện thay đổi với tri thức (thêm / xóa / sửa / đánh nhãn). 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
 			Ra quyết định được có nên nâng cấp chatbot hay không. 
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
 			1. Ấn vào nút "So sánh chatbot", trang so sánh hiển thị cho phép người dùng thấy 2 phiên bản cùng một lúc. \newline 
-			2. Quản trị viên nhập tin nhắn vào khung chat và xem 2 bot cùng trả lời. \newline 
+			2. Nhân viên quản lý nhập tin nhắn vào khung chat và xem 2 bot cùng trả lời. \newline 
 			3. Người dùng ấn "Lưu và training". 
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
@@ -402,11 +402,11 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Tùy chỉnh hành vi chatbot} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép quản trị viên thay đổi một số đặc điểm ứng xử của chatbot. } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thay đổi một số đặc điểm ứng xử của chatbot. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh hành vi và giao diện". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Quản trị viên đăng nhập thành công. 
+			Nhân viên quản lý đăng nhập thành công. 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
 			Cập nhật hành vi chatbot thành công. 
@@ -414,8 +414,8 @@
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
 			1. Chỉnh sửa tin nhắn mặc định (lời chào, tạm biệt, câu cửa miệng) của chatbot. \newline 
 			2. Lựa chọn tông giọng cho chatbot (nghiêm túc / vui vẻ / thông thường). \newline 
-			3. Quản trị viên xem trước các thay đổi. \newline
-			4. Quản trị viên nhấn "Lưu". \newline
+			3. Nhân viên quản lý xem trước các thay đổi. \newline
+			4. Nhân viên quản lý nhấn "Lưu". \newline
 			5. Hệ thống lưu lại các thiết lập.
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
@@ -436,19 +436,19 @@
 		\hline Use case name: & \multicolumn{3}{|l|}{Tùy chỉnh giao diện chatbot} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Quản trị viên } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép quản trị viên thay đổi một số đặc điểm giao diện của chatbot. } \\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thay đổi một số đặc điểm giao diện của chatbot. } \\ 
 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh hành vi và giao diện". } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Quản trị viên đăng nhập thành công. 
+			Nhân viên quản lý đăng nhập thành công. 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
 			Cập nhật hành vi chatbot thành công. 
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Quản trị viên chỉnh sửa màu nền, màu chữ, ảnh nền khung chat, phông chữ, ảnh đại diện chatbot, độ bo góc của các tin nhắn. \newline 
-			2. Quản trị viên xem trước các thay đổi. \newline
-			3. Quản trị viên nhấn "Lưu". \newline
+			1. Nhân viên quản lý chỉnh sửa màu nền, màu chữ, ảnh nền khung chat, phông chữ, ảnh đại diện chatbot, độ bo góc của các tin nhắn. \newline 
+			2. Nhân viên quản lý xem trước các thay đổi. \newline
+			3. Nhân viên quản lý nhấn "Lưu". \newline
 			4. Hệ thống lưu lại các thiết lập.
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
@@ -484,26 +484,26 @@ Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \
 \hline
 Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
 \hline
-Actors: & \multicolumn{3}{|l|}{Quản trị viên doanh nghiệp} \\
+Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý doanh nghiệp} \\
 \hline
-Description: & \multicolumn{3}{|p{12cm}|}{Quản trị viên doanh nghiệp tạo đoạn mã nhúng và gắn vào website để có thể tích hợp chatbot vào website của họ.} \\
+Description: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý doanh nghiệp tạo đoạn mã nhúng và gắn vào website để có thể tích hợp chatbot vào website của họ.} \\
 \hline
-Trigger: & \multicolumn{3}{|p{12cm}|}{Quản trị viên muốn tạo mã nhúng để tích hợp chatbot vào website.} \\
+Trigger: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý muốn tạo mã nhúng để tích hợp chatbot vào website.} \\
 \hline
 Preconditions: & \multicolumn{3}{|p{12cm}|}{
-- Quản trị viên đã đăng nhập vào hệ thống. \newline
+- Nhân viên quản lý đã đăng nhập vào hệ thống. \newline
 - Doanh nghiệp đã đăng ký dịch vụ chatbot.
 } \\
 \hline
 Postconditions: & \multicolumn{3}{|p{12cm}|}{Đoạn mã nhúng được tạo thành công và sẵn sàng để tích hợp.} \\
 \hline
 Normal Flows: & \multicolumn{3}{|p{12cm}|}{
-1. Quản trị viên đăng nhập vào hệ thống quản lý chatbot. \newline
+1. Nhân viên quản lý đăng nhập vào hệ thống quản lý chatbot. \newline
 2. Điều hướng tới trang “Tùy chỉnh chatbot”. \newline
 3. Xem trước kích thước, màu sắc, vị trí hiển thị của chatbot. \newline
 4. Nhấn nút "Tạo mã nhúng". \newline
 5. Hệ thống tạo và hiển thị đoạn mã nhúng. \newline
-6. Quản trị viên sao chép đoạn mã này để gán vào website.
+6. Nhân viên quản lý sao chép đoạn mã này để gán vào website.
 }\\
 \hline
 Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
@@ -542,26 +542,26 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
         \hline
-        Actors: & \multicolumn{3}{|l|}{Nhân viên cấp cao} \\
+        Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\
         \hline
-        Description: & \multicolumn{3}{|p{12cm}|}{Cho phép Nhân viên cấp cao xem báo cáo thống kê về hệ thống chatbot của mình.} \\ 
+        Description: & \multicolumn{3}{|p{12cm}|}{Cho phép nhân viên quản lý xem báo cáo thống kê về hệ thống chatbot của mình.} \\ 
         \hline
         Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn "Báo cáo" trên thanh điều hướng.} \\
         \hline
-        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Nhân viên cấp cao có tài khoản trên website. \newline
-        - Nhân viên cấp cao đã đăng nhập thành công vào hệ thống. \newline
-        - Thiết bị của Nhân viên cấp cao có kết nối mạng và kết nối với hệ thống. \newline
-        - Nhân viên cấp cao có quyền thực hiện chức năng.} \\
+        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Nhân viên quản lý có tài khoản trên website. \newline
+        - Nhân viên quản lý đã đăng nhập thành công vào hệ thống. \newline
+        - Thiết bị của nhân viên quản lý có kết nối mạng và kết nối với hệ thống. \newline
+        - Nhân viên quản lý có quyền thực hiện chức năng.} \\
         \hline
         Postconditions: & \multicolumn{3}{|p{12cm}|}{Hệ thống hiển thị các thông số và biểu đồ thống kê.} \\
         \hline
-        Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Nhân viên cấp cao chọn "Báo cáo" trên thanh điều hướng. \newline
+        Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Nhân viên quản lý chọn "Báo cáo" trên thanh điều hướng. \newline
         2. Hệ thống hiển thị các thông số và báo cáo thống kê.}\\
         \hline
         Alternative Flows: & \multicolumn{3}{|p{12cm}|}{\textbf{A1: Sau bước 2} \newline
-        3.1. Nhân viên cấp cao chọn "Lọc".\newline
+        3.1. Nhân viên quản lý chọn "Lọc".\newline
         3.2. Hệ thống hiển thị các thông số cho phép của bộ lọc.\newline
-        3.3. Nhân viên cấp cao chọn một thông số.\newline
+        3.3. Nhân viên quản lý chọn một thông số.\newline
         Tiếp tục bước 2 trong Normal flows.
         } \\
         \hline
@@ -584,31 +584,31 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
         \hline
-        Actors: & \multicolumn{3}{|l|}{Nhân viên cấp cao} \\
+        Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\
         \hline
-        Description: & \multicolumn{3}{|p{12cm}|}{Cho phép Nhân viên cấp cao xuất báo cáo thống kê về hệ thống chatbot của mình ra file pdf hoặc excel.} \\ 
+        Description: & \multicolumn{3}{|p{12cm}|}{Cho phép nhân viên quản lý xuất báo cáo thống kê về hệ thống chatbot của mình ra file pdf hoặc excel.} \\ 
         \hline
         Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn "Xuất báo cáo" trong giao diện Xem báo cáo.} \\
         \hline
-        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Nhân viên cấp cao có tài khoản trên website. \newline
-        - Nhân viên cấp cao đã đăng nhập thành công vào hệ thống. \newline
-        - Thiết bị của Nhân viên cấp cao có kết nối mạng và kết nối với hệ thống. \newline
-        - Nhân viên cấp cao có quyền thực hiện chức năng.} \\
+        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Nhân viên quản lý có tài khoản trên website. \newline
+        - Nhân viên quản lý đã đăng nhập thành công vào hệ thống. \newline
+        - Thiết bị của nhân viên quản lý có kết nối mạng và kết nối với hệ thống. \newline
+        - Nhân viên quản lý có quyền thực hiện chức năng.} \\
         \hline
-        Postconditions: & \multicolumn{3}{|p{12cm}|}{File báo cáo được tạo và tải về thiết bị của Nhân viên cấp cao.} \\
+        Postconditions: & \multicolumn{3}{|p{12cm}|}{File báo cáo được tạo và tải về thiết bị của nhân viên quản lý.} \\
         \hline
-        Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Nhân viên cấp cao chọn "Xuất báo cáo" trong giao diện Xem báo cáo.\newline
-        2. Hệ thống hiển thị hai loại tệp (pdf, excel) cho Nhân viên cấp cao chọn.\newline
-        3. Nhân viên cấp cao chọn một loại tệp và chọn "Xem trước".\newline
+        Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Nhân viên quản lý chọn "Xuất báo cáo" trong giao diện Xem báo cáo.\newline
+        2. Hệ thống hiển thị hai loại tệp (pdf, excel) cho nhân viên quản lý chọn.\newline
+        3. Nhân viên quản lý chọn một loại tệp và chọn "Xem trước".\newline
         4. Hệ thống hiển thị chế độ xem trước file.\newline
-        5. Nhân viên cấp cao chọn "Tải xuống". \newline
-        6. File báo cáo được tải về thiết bị của Nhân viên cấp cao.}\\
+        5. Nhân viên quản lý chọn "Tải xuống". \newline
+        6. File báo cáo được tải về thiết bị của nhân viên quản lý.}\\
         \hline
         Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Exceptions: & \multicolumn{3}{|p{12cm}|}{
         \textbf{E1: Tại bước 5} \newline
-        5.1. Nhân viên cấp cao chọn "Hủy bỏ".\newline
+        5.1. Nhân viên quản lý chọn "Hủy bỏ".\newline
         5.2. Hệ thống đóng chế độ xem trước file.\newline
         Use case dừng lại.
         } \\
@@ -694,11 +694,11 @@ Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \
 \hline
 Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
 \hline
-Actors: & \multicolumn{3}{|l|}{Quản trị viên doanh nghiệp} \\
+Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý doanh nghiệp} \\
 \hline
 Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp có thể chọn cách họ muốn nhận thông báo và cảnh báo liên quan đến hệ thống chatbot.} \\
 \hline
-Trigger: & \multicolumn{3}{|p{12cm}|}{Quản trị viên muốn thay đổi phương thức nhận thông báo và cảnh báo.} \\
+Trigger: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý muốn thay đổi phương thức nhận thông báo và cảnh báo.} \\
 \hline
 Preconditions: & \multicolumn{3}{|p{12cm}|}{Người dùng đã đăng nhập vào hệ thống.} \\
 \hline
@@ -738,11 +738,11 @@ Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \
 \hline
 Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
 \hline
-Actors: & \multicolumn{3}{|l|}{Quản trị viên doanh nghiệp} \\
+Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý doanh nghiệp} \\
 \hline
 Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp có thể thiết lập ngưỡng cảnh báo cho việc sử dụng token LLM và lưu lượng truy cập.} \\
 \hline
-Trigger: & \multicolumn{3}{|p{12cm}|}{Quản trị viên muốn thay đổi ngưỡng cảnh báo cho việc sử dụng token LLM và lưu lượng truy cập.} \\
+Trigger: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý muốn thay đổi ngưỡng cảnh báo cho việc sử dụng token LLM và lưu lượng truy cập.} \\
 \hline
 Preconditions: & \multicolumn{3}{|p{12cm}|}{Người dùng đã đăng nhập vào hệ thống.} \\
 \hline
