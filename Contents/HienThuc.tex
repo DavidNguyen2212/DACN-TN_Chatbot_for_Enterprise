@@ -1,4 +1,22 @@
 \section{Hiện thực}
+\subsection{Lược đồ tổng quan}
+Lược đồ này cung cấp góc nhìn tổng quát về cách các công nghệ được ứng dụng trong hệ thống dịch vụ chatbot, bao gồm Frontend (nhân viên và người dùng), Backend, AI, và hệ cơ sở dữ liệu (SQL và Vector). Có hai luồng đi chính được mô tả trên hình:
+\begin{enumerate}
+	\item Luồng thứ nhất (các mũi tên có dòng miêu tả bắt đầu bằng chữ số 1): quy trình thực hiện lưu và đánh chỉ mục dữ liệu tri thức.
+	\item Luồng thứ hai (các mũi tên có dòng miêu tả bắt đầu bằng chữ số 2): quy trình giao tiếp giữa người dùng thực tế và chatbot của doanh nghiệp. 
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Dg_System/Hethong.png}
+	\vspace{0.5cm}
+	\caption{Lược đồ tổng quan về mối quan hệ giữa các công nghệ của hệ thống}
+	\label{fig:enter-label}
+\end{figure}
+
+Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao thức REST API (Post, HTTP API) và Websocket. Các hệ cơ sở dữ liệu sẽ đảm nhận các nhiệm vụ đọc, ghi những loại dữ liệu khác nhau. Ngoài ra, Django Server sử dụng Redis Caching Server để tăng tốc việc truy xuất dữ liệu sẵn có.
+
+
 \subsection{Công nghệ}
 \subsubsection{Frontent}
 \subsubsubsection{ReactJS}
