@@ -3,14 +3,131 @@
     \textbf{STT} & \textbf{Tên chức năng} & \textbf{Các bước thực hiện} & \textbf{Kết quả mong muốn} & \textbf{Kết quả} \\
     \hline
     1 & 
-    Hiển thị danh sách các tri thức & 
+    Hiển thị danh sách các hội thoại & 
     Tiền điều kiện:
     \begin{itemize}
-        \item Đã đăng nhập vào hệ thống với vai trò (Chủ sở hữu/Quản trị viên)
-        \item Đã nhấn chọn tab "Đào tạo chatbot" trên màn hình
+        \item Đã đăng nhập vào hệ thống
+        \item Đang ở trang "Hội thoại"
     \end{itemize}
     Các bước thực hiện: Không
     & 
-    Quan sát được trang đầu của danh sách các tri thức theo kích thước trang ban đầu là 10 với các thông tin cụ thể tương ứng cho  từng tri thức& Đạt \\
+    Quan sát được trang đầu của danh sách các hội thoại theo kích thước trang ban đầu là 10 với các thông tin cụ thể tương ứng cho từng hội thoại, tuy nhiên với vai trò Nhân viên chỉ hiện các hội thoại đã hoặc đang được gán cho bản thân& Đạt \\
+    \hline
+    2 & 
+    Tìm kiếm và lọc hội thoại & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống
+        \item Đang ở trang "Hội thoại"
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Tìm kiếm theo tên hội thoại
+        \item Áp dụng các bộ lọc
+    \end{enumerate}
+    & 
+    Quan sát được trang đầu của danh sách các hội thoại tương ứng với bộ lọc theo kích thước trang ban đầu là 10 và các thông tin cụ thể tương ứng cho từng hội thoại & Đạt \\
+    \hline
+    3 & 
+    Xem danh sách hội thoại cần hỗ trợ & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Hội thoại"
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Cần hỗ trợ
+    \end{enumerate}
+    & 
+    Quan sát được trang đầu của danh sách các hội thoại cần hỗ trợ theo kích thước trang ban đầu là 10 và các thông tin cụ thể tương ứng cho từng hội thoại & Đạt \\
+    \hline
+    4 & 
+    Xem chi tiết hội thoại & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống
+        \item Đang ở trang "Hội thoại"
+        \item Danh sách hội thoại không rỗng
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào một hội thoại cần xem
+    \end{enumerate}
+    & 
+    Quan sát được các thông tin của cuộc hội thoại của cũng lịch sử toàn bộ tin nhắn & Đạt \\
+    \hline
+    5 & 
+    Nhắn tin với khách hàng& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở trang chi tiết của một cuộc hội thoại cần hỗ trợ
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Nhập tin nhắn dưới khung chat và chọn Gửi
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Ngay lập tức tin nhắn được gửi và hiển thị lên màn hình ở cả nhân viên và khách hàng
+    \end{enumerate} & Đạt \\
+    \hline
+    6 & 
+    Bật chế độ tự động chat & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống
+        \item Đang ở trang chi tiết của một cuộc hội thoại cần hỗ trợ
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Bật chế độ chat tự động
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị thông báo thành công, hội thoại hiển thị tin nhắn thông báo cho khách hàng và cuộc hội thoại đã chuyển sang chế độ tự động chat
+    \end{enumerate} & Đạt \\
+    \hline
+    7 & 
+    Thay đổi nhân viên CSKH & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang chi tiết của một cuộc hội thoại cần hỗ trợ và được gán cho một nhân viên
+        \item Tổ chức có ít nhất 2 nhân viên
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào dấu ba chấm
+        \item Chọn một nhân viên khác để thay đổi
+        \item Chọn Xác nhận
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị thanh thông tin bên phải 
+        \item Màn hình hiển thị cửa sổ xác nhận
+        \item Màn hình hiển thị thông báo thành công và cuộc hội thoại được gán cho nhân viên mới, đồng thời tin nhắn thông báo được gửi cho khách hàng
+    \end{enumerate} & Đạt \\
+    \hline
+    8 & 
+    Đóng cuộc hội thoại & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống
+        \item Đang ở trang chi tiết của một cuộc hội thoại
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào dấu ba chấm
+        \item Chọn Đóng
+        \item Chọn Xác nhận
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị thanh thông tin bên phải 
+        \item Màn hình hiển thị cửa sổ xác nhận
+        \item Màn hình hiển thị thông báo thành công và cuộc hội thoại được đóng, đồng thời gửi tin nhắn đến khách hàng, khách hàng sẽ phải khởi tạo cuộc trò chuyện mới để tiếp tục
+    \end{enumerate} & Đạt \\
     \hline
 \end{longtable}
