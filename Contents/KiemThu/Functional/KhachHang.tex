@@ -1,16 +1,59 @@
-\begin{longtable}{|c|m{3.5cm}|m{5.5cm}|m{3.5cm}|c|}
+\begin{longtable}{|c|m{2.5cm}|m{5.5cm}|m{4.5cm}|c|}
     \hline
     \textbf{STT} & \textbf{Tên chức năng} & \textbf{Các bước thực hiện} & \textbf{Kết quả mong muốn} & \textbf{Kết quả} \\
     \hline
     1 & 
-    Hiển thị danh sách các tri thức & 
+    Nhắn tin với chatbot & 
     Tiền điều kiện:
     \begin{itemize}
-        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
-        \item Đang ở trang "Đào tạo chatbot"
+        \item Đang ở trang web của tổ chức có tích hợp CoolChat chatbot
     \end{itemize}
-    Các bước thực hiện: Không
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào nút mở hộp chat
+        \item Nhập nội dung tin nhắn vào khung chat và chọn Gửi
+    \end{enumerate}
     & 
-    Quan sát được trang đầu của danh sách các tri thức theo kích thước trang ban đầu là 10 với các thông tin cụ thể tương ứng cho  từng tri thức& Đạt \\
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị hộp chat, chatbot gửi tin nhắn chào
+        \item Màn hình hiển thị tin nhắn của khách hàng, đồng thời khởi chạy và gửi lại tin nhắn tự động từ chatbot
+    \end{enumerate}& Đạt \\
+    \hline
+    2 & 
+    Gửi yêu cầu hỗ trợ & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đang ở trang web của tổ chức có tích hợp CoolChat chatbot
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào nút mở hộp chat
+        \item Chọn nút gửi yêu cầu hỗ trợ
+        \item Điền thông tin và chọn Kết nối
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị hộp chat, chatbot gửi tin nhắn chào
+        \item Màn hình hiển thị cửa sổ để điền thông tin khách hàng
+        \item Màn hình đóng cửa số, hiển thị tin nhắn chuyển giao và tên nhân viên hỗ trợ, tính năng tự động chat dừng lại, đồng thời nhân viên sẽ nhận đoạn chat này và liên hệ được với khách hàng qua tin nhắn
+    \end{enumerate}& Đạt \\
+    \hline
+    3 & 
+    Nhắn tin với nhân viên & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Khách hàng: Đang ở trang web của tổ chức có tích hợp CoolChat chatbot và hộp chat được mở, cuộc hội thoại ở chế độ Hỗ trợ
+        \item Nhân viên: Đã đăng nhập vào hệ thống và ở trang chi tiết của hội thoại với khách hàng trên
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Khách hàng: Nhập nội dung tin nhắn vào khung chat và chọn Gửi
+        \item Nhân viên: Nhập nội dung tin nhắn vào khung chat và chọn Gửi
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình của khách hàng và nhân viên đều hiển thị tin nhắn của khách hàng
+        \item Màn hình của khách hàng và nhân viên đều hiển thị tin nhắn của nhân viên
+    \end{enumerate}& Đạt \\
     \hline
 \end{longtable}

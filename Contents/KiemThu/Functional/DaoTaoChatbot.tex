@@ -1,4 +1,4 @@
-\begin{longtable}{|c|m{3.5cm}|m{5.5cm}|m{3.5cm}|c|}
+\begin{longtable}{|c|m{2.5cm}|m{5.5cm}|m{4.5cm}|c|}
     \hline
     \textbf{STT} & \textbf{Tên chức năng} & \textbf{Các bước thực hiện} & \textbf{Kết quả mong muốn} & \textbf{Kết quả} \\
     \hline
@@ -87,5 +87,150 @@
         \item Màn hình hiển thị mục Nhập tri thức web
         \item Màn hình hiển thị thông báo thành công và tri thức mới dạng website được thêm vào 
     \end{enumerate}  & Đạt \\
+    \hline
+    6 & 
+    Đào tạo tri thức & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+        \item Tồn tại sự thay đổi tri thức (thêm, xóa, chỉnh sửa)
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Lưu và Đào tạo
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình thông báo Đang chờ đào tạo, tất cả các tri thức bị xóa tạm thời sẽ được xóa, còn lại chuyển sang trạng thái chờ đến khi thành công, tất cả tri thức có trạng thái đã đào tạo và hiển thị thông báo thành công
+    \end{enumerate}  & Đạt \\
+    \hline
+    7 & 
+    Chỉnh sửa thông tin tri thức & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+        \item Tồn tại ít nhất một tri thức
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Chỉnh sửa một tri thức
+        \item Điền các thông tin và chọn Lưu
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị cửa sổ chỉnh sửa
+        \item Màn hình hiển thị thông báo thành công và tri thức được cập nhật 
+    \end{enumerate}  & Đạt \\
+    \hline
+    8 & 
+    Xóa tri thức & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+        \item Tồn tại ít nhất một tri thức
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Xóa một tri thức
+        \item Chọn Xác nhận
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị cửa sổ xác nhận
+        \item Màn hình hiển thị thông báo thành công, nếu tri thức có trạng thái Chưa đào tạo thì bị xóa ngay, còn lại sẽ được đưa vào danh sách xóa tạm thời và sẽ được xóa khi chọn Lưu và Đào tạo 
+    \end{enumerate}  & Đạt \\
+    \hline
+    9 & 
+    Khôi phục tri thức & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+        \item Tồn tại ít nhất một tri thức nằm trong danh sách xóa tạm thời
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Khôi phục một tri thức bị xóa tạm thời
+        \item Chọn Xác nhận
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị cửa sổ xác nhận
+        \item Màn hình hiển thị thông báo thành công, tri thức được khôi phục
+    \end{enumerate}  & Đạt \\
+    \hline
+    10 & 
+    Chỉnh sửa độ ưu tiên & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+        \item Tồn tại ít nhất một tri thức
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Thay đổi độ ưu tiên của một hoặc nhiều tri thức
+        \item Chọn Lưu và đào tạo
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình cho phép chọn nút đào tạo
+        \item Màn hình thông báo Cập nhật thành công và Đang chờ đào tạo, tất cả các tri thức bị xóa tạm thời sẽ được xóa, còn lại chuyển sang trạng thái chờ đến khi thành công, tất cả tri thức có trạng thái đã đào tạo và hiển thị thông báo thành công
+    \end{enumerate}  & Đạt \\
+    \hline
+    11 & 
+    Tải xuống tri thức dạng tập tin hoặc văn bản & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+        \item Tồn tại ít nhất một tri thức dạng tập tin hoặc văn bản
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Tải xuống một tri thức dạng tập tin/văn bản
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Đối với loại tệp txt và pdf, màn hình hiển thị bản xem trước, còn loại tệp docx sẽ được tải xuống thiết bị ngay
+    \end{enumerate}  & Đạt \\
+    \hline
+    12 & 
+    Xem thông tin tri thức dạng website & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+        \item Tồn tại ít nhất một tri thức dạng website
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Xem tri thức dạng website
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị thông tin của tri thức đó
+    \end{enumerate}  & Đạt \\
+    \hline
+    13 & 
+    Chat thử với chatbot & 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
+        \item Đang ở trang "Đào tạo chatbot"
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào nút mở hộp chat
+        \item Nhập nội dung tin nhắn vào khung chat và chọn Gửi
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị hộp chat
+        \item Màn hình hiển thị tin nhắn đã gửi, đồng thời khởi chạy và gửi lại tin nhắn tự động từ chatbot
+    \end{enumerate}& Đạt \\
     \hline
     \end{longtable}

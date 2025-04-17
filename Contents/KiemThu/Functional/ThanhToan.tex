@@ -1,16 +1,141 @@
-\begin{longtable}{|c|m{3.5cm}|m{5.5cm}|m{3.5cm}|c|}
+\begin{longtable}{|c|m{2.5cm}|m{5.5cm}|m{4.5cm}|c|}
     \hline
     \textbf{STT} & \textbf{Tên chức năng} & \textbf{Các bước thực hiện} & \textbf{Kết quả mong muốn} & \textbf{Kết quả} \\
     \hline
     1 & 
-    Hiển thị danh sách các tri thức & 
+    Hiển thị thông tin sử dụng của gói hiện tại & 
     Tiền điều kiện:
     \begin{itemize}
         \item Đã đăng nhập vào hệ thống với vai trò Chủ sở hữu/Quản trị viên
-        \item Đang ở trang "Thanh toán""
+        \item Đang ở trang "Thanh toán"
     \end{itemize}
     Các bước thực hiện: Không
     & 
-    Quan sát được trang đầu của danh sách các tri thức theo kích thước trang ban đầu là 10 với các thông tin cụ thể tương ứng cho  từng tri thức& Đạt \\
+    Quan sát được các thông tin như tên gói, hạn sử dụng và các thông số đã sử dụng của gói hiện tại& Đạt \\
+    \hline
+    2 & 
+    Xem thông tin các gói đăng ký và bổ sung& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở trang "Thanh toán"
+    \end{itemize}
+    Các bước thực hiện: Không
+    & 
+        Màn hình hiển thị thông tin của các gói đăng ký và bổ sung, đồng thời cho phép mua những gói có thể mua
+     & Đạt \\
+    \hline
+    3 & 
+    Mua gói đăng ký& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở trang "Thanh toán"
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn thời hạn của một gói (tháng/năm)
+        \item Chọn mua
+        \item Quét mã QR và thanh toán
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiện thị thông tin và giá tiền tương ứng
+        \item Màn hình chuyển hướng đến trang thanh toán của PayOS hiển thị thông tin đơn hàng và mã QR
+        \item Màn hình hiển thị thành công và quay về trang Thanh toán, các thông tin mới được cập nhật
+    \end{enumerate} & Đạt \\
+    \hline
+    4 & 
+    Mua gói bổ sung& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở trang "Thanh toán"
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn số lượng của một gói và chọn Mua
+        \item Quét mã QR và thanh toán
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình chuyển hướng đến trang thanh toán của PayOS hiển thị thông tin đơn hàng và mã QR
+        \item Màn hình hiển thị thành công và quay về trang Thanh toán, các thông tin mới được cập nhật
+    \end{enumerate} & Đạt \\
+    \hline
+    5 & 
+    Gia hạn gói đăng ký& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở trang "Thanh toán"
+        \item Gói đăng ký hiện tại vẫn còn hạn
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Gia hạn
+        \item Chọn thời gian gia hạn (tháng/năm) và chọn Xác nhận
+        \item Quét mã QR và thanh toán
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị cửa sổ Gia hạn
+        \item Màn hình chuyển hướng đến trang thanh toán của PayOS hiển thị thông tin đơn hàng và mã QR
+        \item Màn hình hiển thị thành công và quay về trang Thanh toán, các thông tin mới được cập nhật
+    \end{enumerate} & Đạt \\
+    \hline
+    6 & 
+    Xem lịch sử thanh toán& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở trang "Thanh toán"
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn Lịch sử thanh toán
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình hiển thị danh sách các lần thanh toán với các thông tin tương ứng, nếu hóa đơn đang chờ thì hiển thị nút để dẫn đến link thanh toán
+    \end{enumerate} & Đạt \\
+    \hline
+    7 & 
+    Thanh toán hóa đơn đang chờ& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở mục Lịch sử thanh toán ở trang "Thanh toán"
+        \item Tồn tại hóa đơn ở trạng thái đang chờ
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào link của một hóa đơn đang chờ
+        \item Quét mã QR và thanh toán
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình chuyển hướng đến trang thanh toán của PayOS hiển thị thông tin đơn hàng và mã QR
+        \item Màn hình hiển thị thành công và quay về trang Thanh toán, các thông tin mới được cập nhật
+    \end{enumerate} & Đạt \\
+    \hline
+    8 & 
+    Hủy hóa đơn đang chờ& 
+    Tiền điều kiện:
+    \begin{itemize}
+        \item Đã đăng nhập vào hệ thống với vai trò Nhân viên CSKH
+        \item Đang ở mục Lịch sử thanh toán ở trang "Thanh toán"
+        \item Tồn tại hóa đơn ở trạng thái đang chờ
+    \end{itemize}
+    Các bước thực hiện: 
+    \begin{enumerate}[label=\arabic*.]
+        \item Chọn vào link của một hóa đơn đang chờ
+        \item Chọn Hủy và xác nhận
+    \end{enumerate}
+    & 
+    \begin{enumerate}[label=\arabic*.]
+        \item Màn hình chuyển hướng đến trang thanh toán của PayOS hiển thị thông tin đơn hàng và mã QR
+        \item Màn hình hiển thị hủy thành công và quay về trang Thanh toán, các thông tin mới được cập nhật
+    \end{enumerate} & Đạt \\
     \hline
 \end{longtable}
