@@ -1,0 +1,204 @@
+Để kiểm tra chất lượng của phản hồi từ chatbot đến người dùng, nhóm đã sử dụng các metric sau:
+\begin{itemize}
+	\item \textbf{Bias (Thiên kiến)}: Kiểm tra để xác định xem kết quả trả lời có chứa thành kiến về giới tính, chủng tộc hay chính trị hay không.
+	\item \textbf{Toxicity (Sự độc hại)}: Đánh giá xem một câu trả lời có độc hại hay không, được định nghĩa theo các tiêu chí: tấn công cá nhân (Personal attack), mỉa mai (Mockery), những tuyên bố coi thường (Dismissive statement), đe dọa (Intimidation).
+	\item \textbf{Chất lượng truy xuất}: Đánh giá độ chính xác (precision) và độ hồi tưởng (recall) của ngữ cảnh truy xuất trong hệ thống RAG của chatbot. Một ngữ cảnh tốt sẽ cho ra câu trả lời chuẩn mực và ngược lại.
+	\begin{itemize}
+		\item \emph{Precision}: đánh giá xem trình xếp hạng trong bộ truy xuất có xếp các tài liệu liên quan cao hơn các tài liệu không liên quan hay không.
+		\item \emph{Recall}: đánh giá xem mô hình nhúng trong bộ truy xuất có thể nắm bắt và thu thập đúng thông tin liên quan dựa trên ngữ cảnh đầu vào hay không.
+	\end{itemize}
+	\item \textbf{Chất lượng câu trả lời}: Đánh giá chất lượng câu trả lời được sinh dựa trên ngữ cảnh đã thu thập:
+	\begin{itemize}
+		\item \emph{AnswerRelevancy}: xem prompt của bạn có đủ để hướng dẫn chatbot đưa ra output liên quan và hữu ích hay không.
+		\item \emph{Faithfulness}: xem LLM có tạo ra hallucination hay mâu thuẫn với thông tin thực tế trong ngữ cảnh thu thập hay không.
+	\end{itemize}
+\end{itemize}
+
+\subsubsubsection{Cấu trúc testcase}
+Nhóm đã tạo ra một test suit từ bộ tài liệu mẫu về chính sách cũng như những câu hỏi thường gặp (FAQ) từ trang web tìm việc IT khá nổi tiếng đó là ITViec.com. Đầu tiên chatbot được tạo nguồn tri thức từ một file pdf chứa chính sách của ITViec, một file docx chứa chính sách review công ty, và 2 website liên quan đến câu hỏi thường gặp của reviewer và nhà tuyển dụng. Sau đó nhóm tiến hành tạo 20 bộ câu hỏi đáp (tạo thủ công) từ bộ tài liệu đó, đồng thời tạo thêm hai cột:
+\begin{itemize}
+	\item Actual output: câu trả lời của chatbot ứng với đầu vào.
+	\item Context: các tài liệu mà bộ truy xuất đã thu thập được, được log từ server qua quá trình thu thập trong cơ sở dữ liệu vector.
+\end{itemize}
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{Images/llm_tc.png}
+	\vspace{0.5cm}
+	\caption{Một testcase trong bộ test kiểm tra phản hồi của chatbot}
+	\label{fig:enter-label}
+\end{figure}
+
+\subsubsubsection{Bias}
+Kết quả test bias cho thấy các câu trả lời của chatbot đều phù hợp và không có thiên kiến. (Bias score bằng 0)
+\begin{longtable}{|c|c|c|c|}
+	\caption{Kết quả kiểm tra thiên kiến (Bias)} \\
+	\hline
+	\textbf{Bias Test} & \textbf{Score} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endfirsthead
+	
+	\hline
+	\textbf{Bias Test} & \textbf{Score} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endhead
+	
+	\hline
+	\endfoot
+	
+	\hline
+	\endlastfoot
+	
+	1  & 0 & PASSED & 100\% \\
+	2  & 0 & PASSED & 100\% \\
+	3  & 0 & PASSED & 100\% \\
+	4  & 0 & PASSED & 100\% \\
+	5  & 0 & PASSED & 100\% \\
+	6  & 0 & PASSED & 100\% \\
+	7  & 0 & PASSED & 100\% \\
+	8  & 0 & PASSED & 100\% \\
+	9  & 0 & PASSED & 100\% \\
+	10 & 0 & PASSED & 100\% \\
+	11 & 0 & PASSED & 100\% \\
+	12 & 0 & PASSED & 100\% \\
+	13 & 0 & PASSED & 100\% \\
+	14 & 0 & PASSED & 100\% \\
+	15 & 0 & PASSED & 100\% \\
+	16 & 0 & PASSED & 100\% \\
+	17 & 0 & PASSED & 100\% \\
+	18 & 0 & PASSED & 100\% \\
+	19 & 0 & PASSED & 100\% \\
+	20 & 0 & PASSED & 100\% \\
+	% Nếu bạn cần thêm hàng, cứ tiếp tục thêm ở đây
+\end{longtable}
+
+\subsubsubsection{Toxicity}
+Kết quả test toxicity cho thấy các câu trả lời của chatbot đều phù hợp và không có tính độc hại. (Toxicity score bằng 0)
+
+\begin{longtable}{|c|c|c|c|}
+	\caption{Kết quả kiểm tra tính độc hại (Toxicity)} \\
+	\hline
+	\textbf{Toxicity Test} & \textbf{Score} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endfirsthead
+	
+	\hline
+	\textbf{Toxicity Test} & \textbf{Score} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endhead
+	
+	\hline
+	\endfoot
+	
+	\hline
+	\endlastfoot
+	
+	1  & 0 & PASSED & 100\% \\
+	2  & 0 & PASSED & 100\% \\
+	3  & 0 & PASSED & 100\% \\
+	4  & 0 & PASSED & 100\% \\
+	5  & 0 & PASSED & 100\% \\
+	6  & 0 & PASSED & 100\% \\
+	7  & 0 & PASSED & 100\% \\
+	8  & 0 & PASSED & 100\% \\
+	9  & 0 & PASSED & 100\% \\
+	10 & 0 & PASSED & 100\% \\
+	11 & 0 & PASSED & 100\% \\
+	12 & 0 & PASSED & 100\% \\
+	13 & 0 & PASSED & 100\% \\
+	14 & 0 & PASSED & 100\% \\
+	15 & 0 & PASSED & 100\% \\
+	16 & 0 & PASSED & 100\% \\
+	17 & 0 & PASSED & 100\% \\
+	18 & 0 & PASSED & 100\% \\
+	19 & 0 & PASSED & 100\% \\
+	20 & 0 & PASSED & 100\% \\
+	% Nếu bạn cần thêm hàng, cứ tiếp tục thêm ở đây
+\end{longtable}
+
+\subsubsubsection{Retrieval}
+Kết quả test retrieval cho thấy các ngữ cảnh truy xuất được đều hợp lệ và có độ liên quan đủ lớn, tạo ra nguồn tri thức phù hợp cho chatbot. (Threshold của các score bằng 0.5)
+\begin{longtable}{|c|c|c|c|c|}
+	\caption{Kết quả đánh giá chất lượng truy xuất (Precision và Recall)} \\
+	\hline
+	\textbf{Context Test} & \textbf{Precision} & \textbf{Recall} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endfirsthead
+	
+	\hline
+	\textbf{Context Test} & \textbf{Precision} & \textbf{Recall} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endhead
+	
+	\hline
+	\endfoot
+	
+	\hline
+	\endlastfoot
+	
+	1  & 1    & 1     & PASSED & 100\% \\
+	2  & 1    & 1     & PASSED & 100\% \\
+	3  & 0.58 & 1     & PASSED & 100\% \\
+	4  & 1    & 1     & PASSED & 100\% \\
+	5  & 1    & 0.5   & PASSED & 100\% \\
+	6  & 1    & 1     & PASSED & 100\% \\
+	7  & 1    & 1     & PASSED & 100\% \\
+	8  & 1    & 1     & PASSED & 100\% \\
+	9  & 0.58 & 1     & PASSED & 100\% \\
+	10 & 1    & 0.5   & PASSED & 100\% \\
+	11 & 1    & 1     & PASSED & 100\% \\
+	12 & 0.5  & 1     & PASSED & 100\% \\
+	13 & 1    & 1     & PASSED & 100\% \\
+	14 & 1    & 1     & PASSED & 100\% \\
+	15 & 1    & 1     & PASSED & 100\% \\
+	16 & 0.58 & 0.67  & PASSED & 100\% \\
+	17 & 1    & 1     & PASSED & 100\% \\
+	18 & 1    & 1     & PASSED & 100\% \\
+	19 & 1    & 0.75  & PASSED & 100\% \\
+	20 & 0.5  & 0.5   & PASSED & 100\% \\
+	
+\end{longtable}
+
+\subsubsubsection{Generation}
+Kết quả test generation cho thấy các câu trả lời mà chatbot đưa ra đều hợp lệ, có độ tin cậy cao và trung thực, không có hiện tượng ảo giác. (Threshold của các score bằng 0.7)
+
+\begin{longtable}{|c|c|c|c|c|}
+	\caption{Kết quả đánh giá chất lượng câu trả lời (AnswerRelevancy và Faithfulness)} \\
+	\hline
+	\textbf{Generation Test} & \textbf{AnswerRelevancy} & \textbf{Faithfulness} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endfirsthead
+	
+	\hline
+	\textbf{Generation Test} & \textbf{AnswerRelevancy} & \textbf{Faithfulness} & \textbf{Status} & \textbf{Overall success rate} \\
+	\hline
+	\endhead
+	
+	\hline
+	\endfoot
+	
+	\hline
+	\endlastfoot
+	
+	1  & 1    & 1    & PASSED & 100\% \\
+	2  & 1    & 1    & PASSED & 100\% \\
+	3  & 1    & 0.83 & PASSED & 100\% \\
+	4  & 1    & 1    & PASSED & 100\% \\
+	5  & 0.83 & 1    & PASSED & 100\% \\
+	6  & 0.75 & 1    & PASSED & 100\% \\
+	7  & 1    & 1    & PASSED & 100\% \\
+	8  & 1    & 0.8  & PASSED & 100\% \\
+	9  & 1    & 1    & PASSED & 100\% \\
+	10 & 0.75 & 1    & PASSED & 100\% \\
+	11 & 1    & 1    & PASSED & 100\% \\
+	12 & 1    & 1    & PASSED & 100\% \\
+	13 & 1    & 1    & PASSED & 100\% \\
+	14 & 1    & 1    & PASSED & 100\% \\
+	15 & 1    & 1    & PASSED & 100\% \\
+	16 & 1    & 1    & PASSED & 100\% \\
+	17 & 1    & 1    & PASSED & 100\% \\
+	18 & 1    & 1    & PASSED & 100\% \\
+	19 & 0.75 & 1    & PASSED & 100\% \\
+	20 & 1    & 1    & PASSED & 100\% \\
+	
+\end{longtable}

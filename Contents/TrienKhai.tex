@@ -1,3 +1,4 @@
+
 \section{Triển khai và vận hành}
 \subsection{Triển khai Frontend}
 \textbf{Bước 1: Đăng nhập Vercel}
@@ -75,3 +76,184 @@ Màn hình hiển thị Domain cho dự án. Trang này sẽ có thể thấy b�
     \caption{Quản lý các phiên bản trên Vercel}
     \label{fig:enter-label}
 \end{figure}
+
+\subsection{AI Service}
+\subsubsection{Đóng gói}
+
+\lstdefinelanguage{Dockerfile}{
+	keywords={FROM,RUN,CMD,ENV,WORKDIR,COPY,EXPOSE},
+	sensitive=true,
+	comment=[l]{\#},
+	morestring=[b]",
+}
+Dockerfile này được thiết kế để xây dựng một image Docker cho service, sử dụng Ubuntu 22.04 làm base image. 
+
+Chúng tôi bắt đầu bằng việc thiết lập các biến môi trường như múi giờ (TZ=Asia/Ho\_Chi\_Minh) và các cấu hình Python để tối ưu hóa output và quản lý bytecode. Các gói hệ thống cần thiết như python3, pip, và các công cụ biên dịch (build-essential, gcc, g++) được cài đặt qua apt-get để hỗ trợ các dependency phức tạp. UV Package Manager được sử dụng để quản lý và cài đặt dependency từ file pyproject.toml và uv.lock, đảm bảo tính nhất quán. Mã nguồn ứng dụng được sao chép vào thư mục /app. 
+
+Cuối cùng, ứng dụng được chạy bằng Uvicorn trên cổng 8000.
+% Cấu hình style chung
+\lstset{
+	language=Dockerfile,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{gray}\itshape,
+	stringstyle=\color{purple},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+}
+
+% Trong phần thân tài liệu:
+\begin{lstlisting}
+	# syntax=docker/dockerfile:1.4
+	FROM ubuntu:22.04
+	ENV DEBIAN_FRONTEND=noninteractive
+	ENV TZ=Asia/Ho_Chi_Minh
+	ENV PATH="/root/.local/bin:$PATH"
+	ENV PYTHONUNBUFFERED=1  
+	ENV PYTHONDONTWRITEBYTECODE=1   
+	RUN apt-get update && apt-get install -y \
+	wget \
+	curl \
+	tzdata \
+	python3 \
+	python3-pip \
+	build-essential \
+	python3-dev \
+	gcc \
+	g++ \
+	pkg-config \
+	libssl-dev \
+	libffi-dev \
+	&& apt-get clean && rm -rf /var/lib/apt/lists/*
+	RUN python3 -m pip install --upgrade pip setuptools wheel
+	RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+	WORKDIR /app
+	COPY pyproject.toml uv.lock ./
+	RUN uv sync --frozen
+	COPY . .
+	EXPOSE 8000
+	CMD [".venv/bin/uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "8000"]
+\end{lstlisting}
+\subsubsection{Triển khai}
+Nhóm xây dựng workflow “Build, Push and Deploy AI Service” được cấu hình để tự động hoá quy trình xây dựng ứng dụng. 
+
+Quy trình này bao gồm: đẩy image Docker lên Docker Hub và triển khai lên dịch vụ Render mỗi khi có thay đổi trên nhánh master hoặc khi tạo tag theo định dạng vX.Y.Z. 
+
+Khi có commit hoặc pull request vào master, job build-and-push sẽ checkout mã nguồn, đăng nhập vào Docker Hub, sinh metadata (sha ngắn, semver và tag latest) rồi build và đẩy image. Sau khi build xong, job deploy (chỉ chạy trên nhánh master hoặc trên tag) sẽ xác định tag cần deploy, đợi Docker Hub sẵn sàng rồi gọi API của Render để kích hoạt triển khai mới.
+
+% Định nghĩa ngôn ngữ YAML cho listings
+\lstdefinelanguage{yaml}{
+	morekeywords={name,on,push,branches,tags,pull_request,jobs,runs-on,steps,uses,with,env,run,runs-on,needs,context},
+	sensitive=true,
+	comment=[l]{\#},
+	morestring=[b]",
+	morestring=[s]{'}{'},  
+	alsoletter={-}   
+}
+
+% Style chung cho listings
+\lstset{
+	language=yaml,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{gray}\itshape,
+	stringstyle=\color{purple},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+}
+
+% Trong phần thân tài liệu, chèn YAML:
+\begin{lstlisting}[language=yaml,caption={GitHub Actions workflow}]
+	name: Build, Push and Deploy AI Service
+	
+	on:
+		push:
+			branches: [ master ]
+			tags: [ 'v*' ]
+	pull_request:
+		branches: [ master ]
+	
+	jobs:
+		build-and-push:
+		runs-on: ubuntu-latest
+		steps:
+			- name: Checkout code
+				uses: actions/checkout@v3
+			
+			- name: Docker Hub Login
+				uses: docker/login-action@v2
+				with:
+					username: ${{ secrets.DOCKER_USERNAME }}
+					password: ${{ secrets.DOCKER_PASSWORD }}
+			
+			- name: Generate Docker Metadata
+				id: meta
+				uses: docker/metadata-action@v4
+				with:
+				images: davidnguyen7603/coolchatai
+				tags: |
+					type=sha,format=short
+					type=semver,pattern={{version}}
+					type=raw,value=latest,enable={{is_default_branch}}
+				
+			- name: Build and Push Image
+				uses: docker/build-push-action@v4
+				with:
+					context: .
+					push: ${{ github.event_name != 'pull_request' }}
+					tags: ${{ steps.meta.outputs.tags }}
+					labels: ${{ steps.meta.outputs.labels }}
+	
+		deploy:
+			runs-on: ubuntu-latest
+			needs: build-and-push
+			if: ${{ github.event_name != 'pull_request' && (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')) }}
+			steps:
+			- name: Checkout code
+			uses: actions/checkout@v3
+			
+			- name: Deploy to Render
+			env:
+			RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+			RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+			IMAGE_NAME: davidnguyen7603/coolchatai
+			run: |
+			# Determine which tag to deploy: semver tag on git-tag, otherwise "latest"
+			if [[ "${GITHUB_REF}" =~ ^refs/tags/v([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+				DEPLOY_TAG="${BASH_REMATCH[1]}"
+			elif [[ "${GITHUB_REF}" == "refs/heads/master" ]]; then
+				DEPLOY_TAG="latest"
+			else
+				echo "Unexpected ref ${GITHUB_REF}"
+				exit 1
+			fi
+			
+			echo "Deploying image ${IMAGE_NAME}:${DEPLOY_TAG}"
+			# Wait until Docker Hub has that tag
+			until docker pull "${IMAGE_NAME}:${DEPLOY_TAG}" >/dev/null 2>&1; do
+				echo "  ...waiting for ${IMAGE_NAME}:${DEPLOY_TAG} to appear on Docker Hub"
+				sleep 5
+			done
+			
+			# Trigger Render deploy
+			HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
+				-X POST "https://api.render.com/v1/services/${RENDER_SERVICE_ID}/deploys" \
+				-H "Authorization: Bearer ${RENDER_API_KEY}" \
+				-H "Content-Type: application/json" \
+				-d "{\"imageRef\":\"docker.io/${IMAGE_NAME}:${DEPLOY_TAG}\",\"clearCache\":\"clear\"}")
+			if [ "${HTTP_STATUS}" -ne 201 ]; then
+				echo "Deploy failed with status ${HTTP_STATUS}"
+				echo "--- response body ---"
+				cat response.txt
+				exit 1
+			fi
+			
+			echo "Deploy triggered for ${IMAGE_NAME}:${DEPLOY_TAG}"
+\end{lstlisting}
