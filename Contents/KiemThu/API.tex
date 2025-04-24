@@ -1,0 +1,273 @@
+\subsubsubsection{Tổng quan về công cụ và cấu trúc kiểm thử}
+
+\textbf{Công cụ kiểm thử}
+
+Quá trình kiểm thử cho backend của hệ thống được xây dựng dựa trên nền tảng khung kiểm thử tích hợp sẵn có của Django, cụ thể là các lớp cơ sở như \texttt{django.test.TestCase} và \texttt{django.test.APITestCase}. Tuy nhiên, để tăng cường hiệu quả và tính linh hoạt, nhóm đã lựa chọn tích hợp và thực thi các bộ kiểm thử thông qua thư viện \texttt{pytest}, kết hợp với plugin \texttt{pytest-django}. 
+
+\texttt{Pytest-django} đóng vai trò cầu nối quan trọng, cho phép \texttt{pytest} tương tác và quản lý ngữ cảnh của ứng dụng Django, bao gồm cơ sở dữ liệu, cấu hình và các thành phần khác trong quá trình chạy kiểm thử. Việc áp dụng \texttt{pytest} mang lại nhiều ưu điểm đáng kể so với trình chạy kiểm thử mặc định của Django:
+\begin{itemize}
+    \item Cú pháp viết kiểm thử ngắn gọn hơn
+    \item Cơ chế fixture mạnh mẽ giúp quản lý tài nguyên và trạng thái kiểm thử hiệu quả
+    \item Khả năng tự động phát hiện các bài kiểm thử linh hoạt
+\end{itemize}
+
+\textbf{Cấu trúc tổ chức kiểm thử}
+
+Về mặt tổ chức, cấu trúc các bài kiểm thử tuân thủ chặt chẽ theo nguyên tắc mô-đun hóa được khuyến nghị bởi Django. Cụ thể, các bộ kiểm thử được phân chia và đặt trong một thư mục \texttt{tests} riêng biệt bên trong mỗi ứng dụng của dự án, bao gồm \texttt{authentication}, \texttt{chat}, \texttt{chatbot}, \texttt{document}, \texttt{organization}, và \texttt{subscription}.
+
+Bên trong mỗi thư mục \texttt{tests}, các tệp kiểm thử được đặt tên theo quy ước, phản ánh thành phần cụ thể đang được kiểm thử:
+\begin{itemize}
+    \item \texttt{test\_models.py}: Tập trung vào việc xác minh logic và ràng buộc của các mô hình dữ liệu
+    \item \texttt{test\_serializers.py}: Đảm bảo tính đúng đắn của quá trình tuần tự hóa (serialization) và giải tuần tự hóa (deserialization) dữ liệu
+    \item \texttt{test\_views.py}: Chịu trách nhiệm kiểm tra logic xử lý yêu cầu và phản hồi của các giao diện lập trình ứng dụng (API views)
+    \item \texttt{test\_utils.py}: Dùng để kiểm thử các hàm tiện ích phụ trợ
+\end{itemize}
+
+Cách tổ chức này không chỉ giúp tăng cường tính rõ ràng, dễ quản lý mà còn thuận lợi cho việc bảo trì và mở rộng bộ kiểm thử trong tương lai khi hệ thống phát triển.
+
+\subsubsubsection{Các phương pháp kiểm thử phần mềm}
+
+Trong quá trình phát triển hệ thống chatbot, các phương pháp kiểm thử phần mềm đã được áp dụng nhằm đảm bảo chất lượng, độ tin cậy và tính chính xác của ứng dụng. Các phương pháp chính bao gồm kiểm thử đơn vị và kiểm thử tích hợp.
+
+\paragraph{Kiểm thử đơn vị (Unit Testing)}
+Kiểm thử đơn vị tập trung vào việc xác minh tính chính xác của từng thành phần phần mềm nhỏ nhất (đơn vị) một cách riêng lẻ, cô lập khỏi các thành phần khác. Trong phạm vi dự án, kiểm thử đơn vị được thực hiện chủ yếu trên các lớp đối tượng sau:
+\begin{itemize}
+    \item \textit{Models}: Xác minh logic nghiệp vụ, quy tắc xác thực dữ liệu (validation logic) và các phương thức tùy chỉnh được định nghĩa bên trong các model (ví dụ: phương thức \texttt{is\_valid()} trong model \texttt{EmailVerificationToken} và \texttt{PasswordResetToken}). Công cụ \texttt{django.test.TestCase} thường được sử dụng cho mục đích này.
+    \item \textit{Serializers}: Kiểm tra logic xác thực dữ liệu đầu vào, tính chính xác của quá trình tuần tự hóa và giải tuần tự hóa, đảm bảo dữ liệu được chuyển đổi phù hợp giữa tầng trình diễn (client) và tầng dữ liệu. \texttt{django.test.TestCase} cũng là công cụ phổ biến cho loại kiểm thử này.
+    \item \textit{Hàm tiện ích và Dịch vụ (Utils/Services)}: Kiểm tra các hàm tiện ích và các khối logic nghiệp vụ được tách biệt khỏi controllers, ví dụ như các hàm thực hiện chức năng gửi email (\texttt{send\_verification\_email}, \texttt{send\_password\_reset\_email}). Để cô lập đơn vị đang được kiểm thử khỏi các thành phần phụ thuộc bên ngoài (như hệ thống gửi email thực tế), kỹ thuật mocking với \texttt{unittest.mock.patch} được áp dụng.
+\end{itemize}
+
+\paragraph{Kiểm thử tích hợp (Integration Testing)}
+Kiểm thử tích hợp nhằm mục đích xác minh sự tương tác và phối hợp hoạt động chính xác giữa các thành phần khác nhau của hệ thống. Trong dự án này, kiểm thử tích hợp đặc biệt tập trung vào việc kiểm tra các API endpoints. Sử dụng \texttt{rest\_framework.test.APITestCase} và \texttt{rest\_framework.test.APIClient}, các bài kiểm thử tích hợp mô phỏng các yêu cầu HTTP (GET, POST, PATCH, DELETE) gửi đến các API endpoints. Quá trình kiểm thử tập trung đánh giá các khía cạnh sau:
+\begin{itemize}
+    \item Mã trạng thái HTTP (\texttt{response.status\_code}) được trả về có phù hợp với kịch bản yêu cầu hay không.
+    \item Nội dung dữ liệu trong phần thân phản hồi (\texttt{response.data}) có chính xác và đầy đủ theo thiết kế API hay không.
+    \item Trạng thái của hệ thống trong cơ sở dữ liệu có được cập nhật đúng đắn sau khi thực thi yêu cầu hay không (ví dụ: một đối tượng người dùng mới được tạo, một token xác thực được đánh dấu là đã sử dụng, trạng thái gói dịch vụ của người dùng thay đổi).
+    \item Các dịch vụ hoặc hàm liên quan có được gọi thực thi đúng như mong đợi hay không (ví dụ: sử dụng mock object để xác minh hàm gửi email \texttt{mock\_send\_email.assert\_called\_once()}).
+    \item Cơ chế phân quyền (permissions) hoạt động chính xác, đảm bảo người dùng chỉ có thể truy cập tài nguyên và thực hiện hành động phù hợp với vai trò được gán (ví dụ: phân biệt quyền giữa chủ sở hữu tổ chức (owner), quản trị viên (admin) và thành viên (member)).
+\end{itemize}
+
+\subsubsubsection{Kết quả Kiểm thử và Ví dụ}
+
+\paragraph{Kết quả kiểm thử}
+Kết quả thực thi bộ kiểm thử tự động cho các ứng dụng (apps) thành phần của hệ thống được tổng hợp trong Bảng \ref{tab:test_statistics_detailed}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Thống kê kết quả kiểm thử theo ứng dụng}
+    \label{tab:test_statistics_detailed}
+    \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Ứng dụng (Application)} & \textbf{Tổng số} & \textbf{Thành công (Pass)} & \textbf{Thất bại (Fail)} \\
+        \midrule
+        \texttt{authentication} &  38 &  38 & 0 \\
+        \texttt{chat}           &  28 &  28 & 0 \\
+        \texttt{chatbot}        &  32 &  32 & 0 \\
+        \texttt{document}       &  46 &  46 & 0 \\
+        \texttt{organization}   &  52 &  52 & 0 \\
+        \texttt{reports}        &  29 &  29 & 0 \\
+        \texttt{subscription}   &  59 &  59 & 0 \\
+        \midrule
+        \textbf{Tổng cộng}      & \textbf{284} & \textbf{284} & \textbf{0} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\textbf{Ví dụ Kiểm thử Tiêu biểu}
+
+\paragraph{Kiểm thử lớp Model}
+Kiểm thử ở tầng Model đóng vai trò then chốt trong việc đảm bảo tính toàn vẹn dữ liệu và sự đúng đắn của logic nghiệp vụ được định nghĩa trong các lớp này. Hoạt động kiểm thử này bao gồm việc xác minh các quy tắc xác thực dữ liệu nếu có, kiểm tra hoạt động của các phương thức tùy chỉnh như phương thức biểu diễn chuỗi (\texttt{\_\_str\_\_}), và đảm bảo các thuộc tính của đối tượng được quản lý chính xác trong các tình huống khác nhau như khởi tạo, cập nhật hay truy vấn.
+
+Ví dụ, xem xét việc kiểm thử cho model \texttt{Conversation}, đại diện cho một cuộc hội thoại trong hệ thống. Các bài kiểm thử cần đảm bảo rằng một đối tượng \texttt{Conversation} có thể được khởi tạo chính xác với các giá trị thuộc tính ban đầu, phương thức biểu diễn chuỗi trả về thông tin nhận dạng hữu ích, và logic sắp xếp hoạt động đúng như định nghĩa.
+
+\begin{lstlisting}[language=Python, caption={Ví dụ kiểm thử việc khởi tạo đối tượng Conversation (coolchat\_be/conversations/tests/test\_models.py)}, label={lst:test_conversation_creation}]
+import pytest
+from django.utils import timezone
+from coolchat_be.organizations.tests.factories import OrganizationFactory
+from coolchat_be.users.tests.factories import UserFactory
+from ..models import Conversation
+from .factories import ConversationFactory
+
+# pytest.mark.django_db is implied or configured in pytest.ini
+class TestConversationModel:
+    """Test suite for the Conversation model."""
+
+    def test_create_conversation(self, db): # db fixture from pytest-django
+        """Test creating a conversation object."""
+        # Use factories to create dependent data
+        organization = OrganizationFactory()
+        user = UserFactory()
+
+        # Initialize a Conversation object
+        conversation = Conversation.objects.create(
+            organization=organization,
+            customer_email="test@example.com",
+            customer_name="Test Customer",
+            customer_session_id="test-session-id",
+            agent=user, # Can assign an agent when creating
+            mode="AI",  # Assuming there's a mode attribute
+        )
+
+        # Verify the basic attributes of the newly created object
+        assert conversation.id is not None
+        assert conversation.organization == organization
+        assert conversation.customer_email == "test@example.com"
+        assert conversation.customer_name == "Test Customer"
+        assert conversation.agent == user
+        assert conversation.is_active is True # Default value assumption
+        assert conversation.mode == "AI"
+
+    # (Other test cases such as test_conversation_string_representation,
+    #  test_conversation_ordering can be added here...)
+
+\end{lstlisting}
+
+Đoạn mã trên minh họa việc sử dụng các factory (\texttt{OrganizationFactory}, \texttt{UserFactory}) để tạo các đối tượng liên quan cần thiết trước khi khởi tạo đối tượng \texttt{Conversation}. Sau đó, các câu lệnh \texttt{assert} được dùng để kiểm tra xem các thuộc tính của đối tượng mới tạo có đúng với giá trị đã cung cấp hoặc giá trị mặc định hay không. Các bài kiểm thử khác trong cùng lớp \texttt{TestConversationModel} sẽ tiếp tục kiểm tra các khía cạnh khác như phương thức \texttt{\_\_str\_\_} và logic sắp xếp dữ liệu. Cách tiếp cận này giúp đảm bảo model hoạt động ổn định và chính xác theo yêu cầu thiết kế.
+
+\paragraph{Kiểm thử lớp Serializer}
+Quá trình kiểm thử tập trung vào việc: (1) Xác minh dữ liệu đầu ra khi tuần tự hóa, đảm bảo đủ trường và đúng giá trị, kể cả các trường tùy chỉnh. (2) Kiểm tra khả năng xử lý và xác thực dữ liệu đầu vào khi giải tuần tự hóa.
+
+Đoạn mã sau minh họa kiểm thử quá trình tuần tự hóa cho \texttt{DocumentSerializer}, kiểm tra các trường thông thường và trường tùy chỉnh như định dạng kích thước file.
+
+% Thêm label cho lstlisting
+\begin{lstlisting}[language=Python, caption={Ví dụ kiểm thử lớp DocumentSerializer (coolchat\_be/documents/tests/test\_serializers.py)}, label={lst:test_document_serializer}]
+import pytest
+from rest_framework.test import APIRequestFactory
+from coolchat_be.documents.models import Document
+from coolchat_be.documents.serializers import DocumentSerializer
+from .factories import DocumentFactory, URLDocumentFactory
+
+@pytest.mark.django_db
+class TestDocumentSerializer:
+    def test_document_serialization(self):
+        """Test the serialization of a Document object."""
+        document = DocumentFactory()
+        request = APIRequestFactory().get("/") # Context if needed
+        serializer = DocumentSerializer(document, context={"request": request})
+        data = serializer.data
+
+        # Check basic fields
+        assert data["id"] == document.id
+        assert data["filename"] == document.filename
+        # Check custom fields
+        assert "download_url" in data
+        assert "file_size_display" in data
+
+    def test_file_size_display(self):
+        """Test the file size display format (custom field)."""
+        doc1 = DocumentFactory(size=500)
+        assert DocumentSerializer(doc1).data["file_size_display"] == "500.0 B"
+        doc2 = DocumentFactory(size=1500)
+        assert DocumentSerializer(doc2).data["file_size_display"] == "1.5 KB"
+        doc3 = DocumentFactory(size=1500000)
+        assert DocumentSerializer(doc3).data["file_size_display"] == "1.4 MB" # Need to check rounding logic
+
+    def test_url_download_url(self):
+        """Test the download_url field for URL type documents."""
+        url_doc = URLDocumentFactory(url="https://example.com/doc")
+        assert DocumentSerializer(url_doc).data["download_url"] == "https://example.com/doc"
+
+\end{lstlisting}
+
+Trong Liệt kê \ref{lst:test_document_serializer}, các đối tượng mẫu được tạo bằng factory, sau đó \texttt{serializer.data} được dùng để kiểm tra kết quả tuần tự hóa. Các bài kiểm thử riêng biệt như \texttt{test\_file\_size\_display} đặc biệt hữu ích để xác minh logic của các trường tính toán hoặc tùy chỉnh trong serializer.
+
+\paragraph{Kiểm thử API (API Endpoint Testing)}
+Kiểm thử các API endpoints là một phần quan trọng trong kiểm thử tích hợp, nhằm xác minh tính đúng đắn của giao diện giao tiếp giữa frontend và backend. Quá trình này bao gồm việc mô phỏng các yêu cầu HTTP đến các endpoint đã định nghĩa và kiểm tra không chỉ phản hồi trực tiếp mà còn cả các tác động lên trạng thái hệ thống.
+
+Một ví dụ điển hình là kiểm thử endpoint đăng ký người dùng mới (\texttt{/api/v1/auth/register/}). Sử dụng các công cụ như \texttt{rest\_framework.test.APIClient} (được cung cấp bởi \texttt{APITestCase} hoặc thông qua \texttt{pytest-django}), một yêu cầu HTTP POST được gửi đến endpoint này, mang theo dữ liệu đăng ký hợp lệ. Bài kiểm thử sẽ xác minh nhiều khía cạnh: mã trạng thái HTTP trả về (ví dụ: \texttt{201 CREATED}), sự thay đổi trong cơ sở dữ liệu (ví dụ: một đối tượng \texttt{User} mới được tạo, một \texttt{EmailVerificationToken} tương ứng được sinh ra), và việc các dịch vụ bên ngoài được gọi đúng như mong đợi (ví dụ: hàm gửi email xác thực). Kỹ thuật mocking, chẳng hạn sử dụng decorator \texttt{@patch} của thư viện \texttt{unittest.mock}, thường được áp dụng để cô lập và kiểm tra việc gọi các thành phần phụ thuộc này mà không cần thực thi chúng thực sự.
+
+\begin{lstlisting}[language=Python, caption={Ví dụ kiểm thử API đăng ký (coolchat\_be/authentication/tests/test\_views.py)}, label={lst:test_register_api}]
+from unittest.mock import patch
+from django.urls import reverse
+from rest_framework import status
+from rest_framework.test import APITestCase
+from coolchat_be.users.models import User
+from coolchat_be.authentication.models import EmailVerificationToken
+# (Other imports if needed)
+
+class RegisterViewTests(APITestCase):
+    @patch("coolchat_be.authentication.views.send_verification_email")
+    def test_register_create_organization(self, mock_send_email):
+        """Test user registration with creating a new organization."""
+        url = reverse("api:authentication:register")
+        data = {
+            "email": "test@example.com",
+            "password": "StrongPassword123!",
+            "password2": "StrongPassword123!",
+            "organization_action": "create",
+            "name": "Test Organization",
+            "description": "Test Organization Description",
+            "contact_email": "contact@example.com",
+            "user_name": "Test User",
+            "user_phone": "+84900000123",
+        }
+
+        response = self.client.post(url, data, format="json")
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+        # Check that the user was created in the database
+        self.assertTrue(User.objects.filter(email="test@example.com").exists())
+        user = User.objects.get(email="test@example.com")
+
+        # Check that the email verification token was created
+        self.assertTrue(EmailVerificationToken.objects.filter(user=user).exists())
+
+        # Check that the email sending function was called (through mock)
+        mock_send_email.assert_called_once()
+\end{lstlisting}
+
+Tương tự, việc kiểm thử các endpoint truy vấn dữ liệu (ví dụ: sử dụng phương thức GET) cũng rất quan trọng. Chẳng hạn, khi kiểm thử endpoint lấy danh sách các cuộc hội thoại (\texttt{/api/v1/chat/conversations/}), bài kiểm thử cần đảm bảo rằng API trả về đúng mã trạng thái (\texttt{200 OK}), cấu trúc dữ liệu phản hồi chính xác, và quan trọng hơn là tuân thủ các quy tắc về phân quyền và tách biệt dữ liệu. Cụ thể, API chỉ nên trả về các cuộc hội thoại thuộc về tổ chức (organization) mà người dùng đã được xác thực là thành viên, đảm bảo tính riêng tư và bảo mật dữ liệu giữa các tổ chức khác nhau. Việc sử dụng các thư viện như \texttt{factory-boy} để tạo dữ liệu kiểm thử đa dạng giúp quá trình kiểm thử này trở nên hiệu quả và đáng tin cậy.
+
+\begin{lstlisting}[language=Python, caption={Ví dụ kiểm thử API lấy danh sách Conversation (coolchat\_be/chat/tests/test\_views.py)}, label={lst:test_list_conversations_api}]
+import pytest
+from django.urls import reverse
+from rest_framework import status
+from rest_framework.test import APIClient
+from coolchat_be.users.tests.factories import UserFactory
+from coolchat_be.organizations.tests.factories import OrganizationFactory, OrganizationMemberFactory
+from .factories import ConversationFactory 
+
+# Using pytest fixture and marker (can be configured in pytest.ini)
+@pytest.mark.django_db
+class TestConversationViewSet:
+    @pytest.fixture
+    def api_client(self):
+        """Fixture providing an authenticated APIClient."""
+        client = APIClient()
+        # Create necessary data: user, organization, and membership
+        self.user = UserFactory()
+        self.organization = OrganizationFactory()
+        OrganizationMemberFactory(user=self.user, organization=self.organization)
+        # Mock authentication for client
+        client.force_authenticate(user=self.user)
+        return client
+
+    def test_list_conversations(self, api_client):
+        """Test retrieving the list of conversations."""
+        # Create 3 conversations belonging to the user's organization
+        ConversationFactory.create_batch(
+            3,
+            organization=self.organization,
+            # with_messages=True, # Optional to create related messages
+        )
+        # Create 1 conversation belonging to another organization (should not be returned)
+        other_org = OrganizationFactory()
+        ConversationFactory(organization=other_org)
+
+        url = reverse("api:chat:conversation-list") # Ensure correct URL name
+        response = api_client.get(url)
+
+        # Verify results
+        assert response.status_code == status.HTTP_200_OK
+        # Check that only 3 conversations from the correct organization are returned
+        # Assuming API returns paginated data according to DRF defaults
+        assert len(response.data["results"]) == 3
+        # Check other information in the response if needed
+        assert "assigned_count" in response.data # Example of checking a meta data field
+        # (Other assertions...)
+
+        # Check the content of each conversation if needed
+        for conv_data in response.data["results"]:
+            assert conv_data["organization"]["id"] == str(self.organization.id) # Check organization_id
+\end{lstlisting}
