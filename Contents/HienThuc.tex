@@ -18,7 +18,7 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 
 
 \subsection{Công nghệ}
-\subsubsection{Frontent}
+\subsubsection{Frontend}
 \subsubsubsection{ReactJS}
 \renewcommand{\labelenumi}{\alph{enumi})}
 \begin{enumerate}
@@ -250,245 +250,300 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \end{figure}
 \subsubsection{Backend}
 
-\subsubsubsection{Django và Django REST Framework}
-\begin{enumerate}
-    \item \textbf{Giới thiệu}
-    
-    Django là một khung phát triển web mã nguồn mở được xây dựng trên ngôn ngữ lập trình Python, vận hành theo kiến trúc MVT (Model-View-Template). Trong đó, Django REST Framework (DRF) là một phần mở rộng chuyên biệt, cung cấp một bộ công cụ toàn diện để xây dựng và phát triển các giao diện lập trình ứng dụng web (Web API). Sự kết hợp giữa hai công nghệ này đã được cộng đồng phát triển phần mềm áp dụng rộng rãi trong việc xây dựng các hệ thống backend cho các ứng dụng web hiện đại, đặc biệt là trong các dự án đòi hỏi khả năng mở rộng cao và bảo mật mạnh mẽ.
+\subsubsubsection{Django và Django REST Framework (DRF)}
+
+\begin{enumerate}[label=\arabic*., font=\bfseries]
+    \item Giới thiệu
+
+    Django là một framework phát triển web bậc cao, mã nguồn mở, được xây dựng trên ngôn ngữ lập trình Python, tuân thủ theo biến thể của kiến trúc MVC (Model-View-Controller) là MVT (Model-View-Template). Kiến trúc này phân tách rõ ràng giữa logic nghiệp vụ, logic xử lý yêu cầu và phản hồi, và logic trình bày, thúc đẩy việc phát triển module hóa và tái sử dụng mã nguồn. Django REST Framework là một bộ công cụ mạnh mẽ và linh hoạt được xây dựng dựa trên Django, chuyên biệt hóa cho việc xây dựng các giao diện lập trình ứng dụng Web. Sự kết hợp giữa Django và DRF không chỉ được cộng đồng phát triển phần mềm quốc tế công nhận về hiệu quả và tính bảo mật, mà còn đặc biệt phù hợp cho việc xây dựng backend của các ứng dụng phức tạp như hệ thống chatbot, nơi đòi hỏi khả năng mở rộng, quản lý dữ liệu linh hoạt và tích hợp dễ dàng với các dịch vụ khác.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Images/django_logo.png}
-        \vspace{0.5cm}
-        \caption{Logo Django - Nguồn: Internet}
-        \label{fig:enter-label}
+        \includegraphics[width=0.4\linewidth]{Images/django_logo.png}
+        \vspace{0.3cm}
+        \caption{Logo chính thức của Django Framework}
+        \label{fig:django_logo}
     \end{figure}
 
-    \item \textbf{Đặc điểm công nghệ}
-    
-    Django và Django REST Framework cung cấp các tính năng quan trọng và thiết yếu cho phát triển web hiện đại:
+    \item Đặc điểm Công nghệ Nổi bật
+
+    Django và DRF cung cấp một hệ sinh thái tính năng toàn diện, đáp ứng các yêu cầu khắt khe của phát triển web hiện đại:
     \begin{itemize}
-        \item Hệ thống ORM (Object-Relational Mapping): Cung cấp một lớp trừu tượng cho phép tương tác với cơ sở dữ liệu thông qua Python, loại bỏ sự cần thiết của việc viết các câu truy vấn SQL trực tiếp và đảm bảo tính độc lập với hệ quản trị cơ sở dữ liệu.
-        
-        \item Hệ thống xác thực và phân quyền (Authentication và Authorization): Triển khai các cơ chế bảo mật đa tầng, bao gồm hệ thống xác thực người dùng tích hợp và hỗ trợ JWT (JSON Web Tokens) cho việc xác thực API, cùng với khả năng tùy chỉnh các quyền truy cập chi tiết.
-        
-        \item Cơ chế Serialization: Cung cấp cơ chế toàn diện để chuyển đổi các cấu trúc dữ liệu phức tạp như queryset và model instance thành các định dạng dữ liệu phổ biến như JSON hoặc XML, cũng như hỗ trợ quá trình chuyển đổi ngược lại.
-        
-        \item ViewSets và Routers: Tự động hóa việc tạo và quản lý các API endpoints cho các thao tác CRUD (Create, Read, Update, Delete), tối ưu hóa quy trình phát triển và đảm bảo tính nhất quán của API.
-        
-        \item Giao diện quản trị (Admin Interface): Tự động sinh ra giao diện quản trị web đầy đủ tính năng dựa trên các model đã định nghĩa, cho phép quản lý dữ liệu một cách trực quan và hiệu quả.
-        
-        \item Hệ thống Middleware: Cung cấp cơ chế xử lý request/response linh hoạt, cho phép thực hiện các tác vụ như bảo mật, ghi log, và xử lý phiên làm việc một cách module hóa.
+        \item \textbf{Hệ thống Object-Relational Mapping:} Cung cấp một lớp trừu tượng hóa mạnh mẽ, cho phép tương tác với cơ sở dữ liệu (như PostgreSQL, MySQL, SQLite) thông qua các đối tượng Python thay vì viết truy vấn SQL thủ công. Điều này giúp đơn giản hóa đáng kể việc thao tác dữ liệu, tăng cường tính độc lập với hệ quản trị cơ sở dữ liệu cụ thể và giảm thiểu lỗi liên quan đến SQL injection.
+        \item \textbf{Hệ thống xác thực và phân quyền:} Tích hợp sẵn cơ chế xác thực người dùng mạnh mẽ (bao gồm quản lý phiên, mật khẩu băm) và hệ thống phân quyền linh hoạt dựa trên quyền hoặc nhóm. DRF mở rộng khả năng này với hỗ trợ các phương thức xác thực API phổ biến như Token Authentication và JWT, cùng với các lớp phân quyền tùy chỉnh cao.
+        \item \textbf{Cơ chế tuần tự hóa:} DRF cung cấp cơ chế \texttt{serializers} hiệu quả để chuyển đổi các kiểu dữ liệu phức tạp của Python (ví dụ: queryset, model instance) thành các định dạng dữ liệu chuẩn như JSON hoặc XML để truyền qua API, và ngược lại để phân tích cú pháp và xác thực dữ liệu đầu vào.
+        \item \textbf{ViewSets và Routers:} Tự động hóa việc ánh xạ các URL tới logic xử lý cho các thao tác CRUD (Create, Read, Update, Delete) thông qua ViewSets và Routers, giúp giảm thiểu mã lặp lại và đảm bảo tính nhất quán cấu trúc API theo chuẩn RESTful.
+        \item \textbf{Giao diện quản trị tự động:} Một trong những tính năng đặc trưng của Django là khả năng tự động tạo ra một giao diện quản trị web (admin site) đầy đủ chức năng dựa trên các model dữ liệu đã định nghĩa, cho phép quản lý dữ liệu ứng dụng một cách trực quan mà không cần phát triển thêm.
+        \item \textbf{Hệ thống Middleware:} Cung cấp một kiến trúc hook linh hoạt trong chu trình xử lý request/response, cho phép can thiệp để thực hiện các tác vụ xuyên suốt như bảo mật (ví dụ: CSRF protection), quản lý phiên, ghi log, nén dữ liệu một cách module hóa.
     \end{itemize}
 
-    \item \textbf{So sánh các công nghệ tương tự trên thị trường}
+    \item So sánh với các Framework Backend Tương tự
 
-    \begin{longtable}{|>{\raggedright\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+    \begin{longtable}{|>{\raggedright\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
+        \caption{So sánh Django/DRF với các framework backend phổ biến}\\
         \hline
-        \textbf{Tiêu chí} & \textbf{Django + DRF} & \textbf{Express.js} & \textbf{Spring Boot} & \textbf{FastAPI} \\ 
+        \textbf{Tiêu chí} & \textbf{Django + DRF} & \textbf{Express.js (Node.js)} & \textbf{Spring Boot (Java)} & \textbf{FastAPI (Python)} \\
+        \hline \endfirsthead
+        \multicolumn{5}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Tiếp tục}} \\
         \hline
-        Ngôn ngữ nền tảng & Python & JavaScript/Node.js & Java & Python \\
+        \textbf{Tiêu chí} & \textbf{Django + DRF} & \textbf{Express.js (Node.js)} & \textbf{Spring Boot (Java)} & \textbf{FastAPI (Python)} \\
+        \hline \endhead
+        \hline \multicolumn{5}{r}{{Tiếp tục ở trang sau}} \\ \endfoot
+        \hline \endlastfoot
+        Ngôn ngữ nền tảng & Python & JavaScript & Java & Python \\
         \hline
-        Tốc độ phát triển & Cao & Trung bình-Cao & Thấp-Trung bình & Cao \\ 
+        Kiến trúc & MVT (Batteries-included) & Tối giản (Minimalist) & MVC (Comprehensive) & Tối giản, Hiện đại \\
         \hline
-        Hiệu suất & Tốt & Rất tốt & Xuất sắc & Xuất sắc \\ 
+        Tốc độ phát triển ban đầu & Rất cao & Cao & Trung bình & Rất cao \\
         \hline
-        Tính năng tích hợp sẵn & Rất nhiều & Ít & Nhiều & Trung bình \\ 
+        Hiệu năng (Raw Performance) & Tốt & Rất tốt & Xuất sắc & Xuất sắc (Async) \\
         \hline
-        Quy mô cộng đồng & Lớn & Rất lớn & Rất lớn & Đang phát triển \\ 
+        Tính năng tích hợp sẵn & Rất nhiều (ORM, Admin, Auth) & Rất ít (Middleware-based) & Nhiều (DI, Security, Data) & Trung bình (Validation, Async) \\
         \hline
-        Độ phức tạp & Cao & Thấp & Rất cao & Trung bình \\ 
+        Hệ sinh thái & Lớn, Trưởng thành & Rất lớn & Rất lớn, Doanh nghiệp & Đang phát triển nhanh \\
         \hline
-        Khả năng mở rộng & Tốt & Rất tốt & Xuất sắc & Tốt \\ 
+        Độ phức tạp học & Trung bình-Cao & Thấp-Trung bình & Cao-Rất cao & Thấp-Trung bình \\
         \hline
-        Hỗ trợ doanh nghiệp & Tốt & Tốt & Xuất sắc & Đang phát triển \\
+        Khả năng mở rộng & Tốt & Rất tốt & Xuất sắc & Rất tốt (Async) \\
         \hline
-        Tài liệu & Đầy đủ & Phong phú & Rất chi tiết & Tốt \\
+        Tài liệu \& Cộng đồng & Rất tốt & Xuất sắc & Rất tốt & Tốt, Tích cực \\
         \hline
     \end{longtable}
+    Django/DRF nổi bật với triết lý "batteries-included", cung cấp nhiều thành phần thiết yếu, giúp đẩy nhanh tốc độ phát triển ban đầu, đặc biệt với các ứng dụng yêu cầu tính năng quản trị và ORM phức tạp. Mặc dù FastAPI có hiệu năng thô cao hơn nhờ kiến trúc bất đồng bộ, Django vẫn đáp ứng tốt yêu cầu hiệu năng cho đa số ứng dụng web, bao gồm cả hệ thống chatbot, và có hệ sinh thái trưởng thành hơn.
 
-    \item \textbf{Cơ sở lựa chọn Django và DRF cho dự án}
+    \item Cơ sở Lựa chọn Django và DRF cho Dự án
 
-    Dựa trên phân tích kỹ thuật và yêu cầu dự án, Django và Django REST Framework được lựa chọn vì những ưu điểm sau:
+    Việc lựa chọn Django và DRF làm nền tảng backend cho dự án chatbot tư vấn khách hàng dựa trên các luận điểm sau:
     \begin{itemize}
-        \item \textbf{Tính toàn diện}: Cung cấp hệ sinh thái hoàn chỉnh với các tính năng tích hợp sẵn như hệ thống xác thực, phân quyền, và giao diện quản trị, giảm thiểu thời gian phát triển.
-        
-        \item \textbf{Bảo mật cao cấp}: Tích hợp các cơ chế bảo mật mặc định như bảo vệ trước XSS, CSRF, SQL injection.
-        
-        \item \textbf{ORM mạnh mẽ}: Cung cấp lớp trừu tượng database với PostgreSQL tối ưu hóa, hỗ trợ các truy vấn phức tạp.
-        
-        \item \textbf{REST API}: DRF cung cấp các công cụ và quy ước chuẩn hóa cho việc phát triển RESTful API, đảm bảo tính nhất quán và dễ bảo trì.
-        
-        \item \textbf{Khả năng mở rộng}: Hỗ trợ tốt việc mở rộng ứng dụng thông qua các cơ chế caching, database optimization và microservices architecture.
-        
-        \item \textbf{Hệ sinh thái phong phú}: Cộng đồng lớn mạnh với nhiều package chất lượng cao, tài liệu chi tiết và cộng đồng hỗ trợ tích cực.
-        
-        \item \textbf{Tích hợp CI/CD}: Tích hợp dễ dàng với các nền tảng triển khai hiện đại như Heroku, Docker và các dịch vụ đám mây khác.
+        \item \textbf{Tính toàn diện và phát triển nhanh:} Hệ sinh thái "batteries-included" với ORM, Admin, Authentication tích hợp sẵn giúp giảm thiểu đáng kể thời gian và công sức phát triển các thành phần cơ bản, cho phép tập trung vào logic nghiệp vụ cốt lõi của chatbot.
+        \item \textbf{Bảo mật mặc định mạnh mẽ:} Cung cấp các cơ chế phòng chống hiệu quả các lỗ hổng phổ biến như XSS (Cross-Site Scripting), CSRF (Cross-Site Request Forgery), SQL injection, là yếu tố then chốt cho một ứng dụng xử lý dữ liệu người dùng.
+        \item \textbf{ORM linh hoạt và mạnh mẽ:} Django ORM tích hợp mượt mà với PostgreSQL, hỗ trợ các kiểu dữ liệu nâng cao (như JSONField) và các truy vấn phức tạp, rất phù hợp để quản lý dữ liệu hội thoại và hồ sơ người dùng đa dạng của chatbot.
+        \item \textbf{Xây dựng RESTful API chuyên nghiệp:} DRF cung cấp một khung làm việc chuẩn hóa, dựa trên class-based views, serializers, và permissions, giúp xây dựng các API nhất quán, dễ bảo trì và dễ dàng tích hợp với frontend hoặc các dịch vụ bên ngoài.
+        \item \textbf{Khả năng mở rộng và cộng đồng lớn:} Django có kiến trúc hỗ trợ tốt cho việc mở rộng quy mô (ví dụ: caching, tối ưu hóa cơ sở dữ liệu) và được hỗ trợ bởi một cộng đồng lớn mạnh, cung cấp nhiều thư viện bên thứ ba chất lượng, tài liệu chi tiết và diễn đàn hỗ trợ tích cực.
     \end{itemize}
 
 \end{enumerate}
 
-\subsubsubsection{PostgreSQL}
-\begin{enumerate}
-    \item \textbf{Giới thiệu}
-    
-    PostgreSQL là một hệ quản trị cơ sở dữ liệu quan hệ đối tượng mã nguồn mở, được phát triển và duy trì bởi cộng đồng toàn cầu. Hệ thống này nổi bật với kiến trúc mạnh mẽ, độ tin cậy cao, và khả năng xử lý khối lượng lớn dữ liệu phức tạp. PostgreSQL không chỉ hỗ trợ đầy đủ các tính năng của cơ sở dữ liệu quan hệ truyền thống theo chuẩn ACID (Atomicity, Consistency, Isolation, Durability), mà còn cung cấp khả năng lưu trữ và truy vấn hiệu quả các dữ liệu phi quan hệ như JSON/JSONB, hình học (geometric data), và mảng đa chiều (multidimensional arrays). Đặc biệt, hệ thống này còn hỗ trợ các tính năng nâng cao như materialized views, table inheritance, và multi-version concurrency control (MVCC).
+% --- PostgreSQL ---
+\subsubsubsection{Hệ Quản trị Cơ sở dữ liệu PostgreSQL}
 
-    \begin{figure}[H]
+\begin{enumerate}[label=\arabic*., font=\bfseries]
+    \item Giới thiệu
+
+    PostgreSQL, thường được gọi là "Postgres", là một hệ quản trị cơ sở dữ liệu quan hệ đối tượng (Object-Relational Database Management System - ORDBMS) mã nguồn mở tiên tiến. Được phát triển và bảo trì bởi một cộng đồng toàn cầu đa dạng trong hơn 30 năm, PostgreSQL nổi bật với kiến trúc vững chắc, độ tin cậy đã được kiểm chứng, tính toàn vẹn dữ liệu cao và sự tuân thủ chặt chẽ các chuẩn SQL. Không chỉ hỗ trợ đầy đủ các tính năng của cơ sở dữ liệu quan hệ truyền thống và đảm bảo các thuộc tính ACID (Atomicity, Consistency, Isolation, Durability), PostgreSQL còn cung cấp các khả năng xử lý dữ liệu phức tạp và phi cấu trúc mạnh mẽ, bao gồm hỗ trợ kiểu dữ liệu JSON/JSONB, dữ liệu không gian với PostGIS extension, và tìm kiếm toàn văn (full-text search). Các tính năng nâng cao như materialized views, table inheritance, và cơ chế kiểm soát tương tranh đa phiên bản (Multi-Version Concurrency Control - MVCC) làm cho PostgreSQL trở thành lựa chọn hàng đầu cho nhiều ứng dụng đòi hỏi cao.
+
+    \begin{figure}[htbp]
         \centering
-        \includegraphics[width=0.5\linewidth]{Images/postgresql_logo.png}
-        \vspace{0.5cm}
-        \caption{Logo PostgreSQL - Nguồn: Internet}
-        \label{fig:enter-label}
+        \includegraphics[width=0.35\linewidth]{Images/postgresql_logo.png} % Điều chỉnh width nếu cần
+        \vspace{0.3cm}
+        \caption{Logo chính thức của PostgreSQL}
+        \label{fig:postgresql_logo}
     \end{figure}
 
-    \item \textbf{Đặc điểm công nghệ}
-    
-    PostgreSQL cung cấp một tập hợp các tính năng đáp ứng nhu cầu phát triển ứng dụng hiện đại:
+    \item Đặc điểm Công nghệ Nổi bật
+
+    PostgreSQL cung cấp một loạt các tính năng mạnh mẽ, đáp ứng nhu cầu đa dạng của các ứng dụng hiện đại:
     \begin{itemize}
-        \item Tuân thủ nguyên tắc ACID: Đảm bảo tính toàn vẹn và nhất quán của dữ liệu thông qua bốn thuộc tính: Nguyên tử (Atomicity), Nhất quán (Consistency), Độc lập (Isolation), và Bền vững (Durability). Điều này đặc biệt quan trọng trong các ứng dụng tài chính và thương mại điện tử.
-        
-        \item Xử lý dữ liệu JSON nâng cao: Hỗ trợ hai kiểu dữ liệu JSON và JSONB (Binary JSON), cho phép lưu trữ, truy vấn và lập chỉ mục dữ liệu phi cấu trúc một cách hiệu quả. JSONB đặc biệt tối ưu cho các thao tác tìm kiếm và truy vấn phức tạp.
-        
-        \item Tìm kiếm văn bản toàn văn (Full-text Search): Cung cấp công cụ tìm kiếm văn bản mạnh mẽ với hỗ trợ đa ngôn ngữ, từ điển tùy chỉnh, xếp hạng kết quả (ranking), và đánh chỉ mục tìm kiếm nâng cao (GiST và GIN indexes).
-        
-        \item Quản lý đồng thời (Concurrency Control): Triển khai cơ chế MVCC (Multi-Version Concurrency Control) cho phép xử lý hiệu quả hàng nghìn người dùng đồng thời mà không ảnh hưởng đến hiệu suất hệ thống.
-        
-        \item Khả năng mở rộng: Hỗ trợ nhiều giải pháp mở rộng như table partitioning, parallel query processing, và logical replication cho các tập dữ liệu lớn lên đến hàng terabyte.
-        
-        \item Bảo mật nâng cao (Advanced Security): Cung cấp hệ thống kiểm soát truy cập chi tiết, mã hóa dữ liệu cấp cột, và xác thực mạnh mẽ với nhiều phương thức.
-        
-        \item Tính sẵn sàng cao (High Availability): Hỗ trợ sao chép dữ liệu theo luồng (streaming replication), khôi phục theo thời điểm xác định (point-in-time recovery), và các giải pháp chuyển đổi dự phòng tự động (automatic failover) để đảm bảo tính liên tục của dịch vụ.
+        \item \textbf{Tuân thủ ACID và độ tin cậy cao:} Đảm bảo tính toàn vẹn dữ liệu ở mức độ cao nhất thông qua việc thực thi nghiêm ngặt các thuộc tính ACID, cực kỳ quan trọng cho các giao dịch trong hệ thống chatbot (ví dụ: cập nhật trạng thái hội thoại, lưu trữ thông tin khách hàng).
+        \item \textbf{Xử lý Dữ liệu JSON/JSONB nâng cao:} Cung cấp hỗ trợ gốc cho kiểu dữ liệu JSON và định dạng nhị phân tối ưu hóa JSONB. JSONB cho phép lập chỉ mục (indexing) hiệu quả trên dữ liệu JSON, giúp truy vấn nhanh chóng các cấu trúc dữ liệu phi cấu trúc hoặc bán cấu trúc, rất phù hợp để lưu trữ lịch sử hội thoại, metadata hoặc các thuộc tính linh hoạt của người dùng.
+        \item \textbf{Tìm kiếm Toàn văn (Full-Text Search):} Tích hợp sẵn cơ chế tìm kiếm văn bản mạnh mẽ, hỗ trợ nhiều ngôn ngữ, stemming (chuẩn hóa từ), quản lý từ điển đồng nghĩa (thesaurus), xếp hạng kết quả tìm kiếm (ranking), và các kiểu chỉ mục chuyên biệt (GIN, GiST) để tăng tốc độ tìm kiếm trong các tập dữ liệu văn bản lớn (ví dụ: tìm kiếm trong kho tri thức của chatbot).
+        \item \textbf{Kiểm soát Tương tranh Đa phiên bản (MVCC):} Sử dụng cơ chế MVCC, cho phép các giao dịch đọc không bị chặn bởi các giao dịch ghi và ngược lại. Điều này giúp tăng đáng kể khả năng xử lý đồng thời (concurrency), cho phép hệ thống chatbot phục vụ nhiều người dùng cùng lúc mà không làm giảm hiệu năng.
+        \item \textbf{Khả năng Mở rộng (Extensibility):} PostgreSQL có tính mở rộng cao thông qua các extensions (ví dụ: PostGIS cho dữ liệu địa lý), kiểu dữ liệu tùy chỉnh, hàm tùy chỉnh, và hỗ trợ các kỹ thuật scaling như phân vùng bảng (table partitioning), truy vấn song song (parallel query), và sao chép dữ liệu (replication).
+        \item \textbf{Bảo mật Đa lớp:} Cung cấp các tính năng bảo mật mạnh mẽ như kiểm soát truy cập dựa trên vai trò (role-based access control), mã hóa dữ liệu ở tầng cột (column-level encryption), mã hóa kết nối SSL/TLS, và các phương thức xác thực đa dạng.
     \end{itemize}
 
-    \item \textbf{So sánh các công nghệ tương tự trên thị trường}
+    \item So sánh với các Hệ Quản trị Cơ sở dữ liệu Tương tự
 
-    \begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+    \begin{longtable}{|>{\raggedright\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
+        \caption{So sánh PostgreSQL với các hệ quản trị CSDL khác}\\
         \hline
-        \textbf{Tiêu chí} & \textbf{PostgreSQL} & \textbf{MySQL} & \textbf{MongoDB} \\ 
+        \textbf{Tiêu chí} & \textbf{PostgreSQL} & \textbf{MySQL} & \textbf{MongoDB (NoSQL)} & \textbf{SQLite} \\
+        \hline \endfirsthead
+        \multicolumn{5}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Tiếp tục}} \\
         \hline
-        ACID Compliance & Hoàn toàn & Một phần & Một phần \\ 
+        \textbf{Tiêu chí} & \textbf{PostgreSQL} & \textbf{MySQL} & \textbf{MongoDB (NoSQL)} & \textbf{SQLite} \\
+        \hline \endhead
+        \hline \multicolumn{5}{r}{{Tiếp tục ở trang sau}} \\ \endfoot
+        \hline \endlastfoot
+        Loại CSDL & ORDBMS (Quan hệ đối tượng) & RDBMS (Quan hệ) & Document (NoSQL) & RDBMS (File-based) \\
         \hline
-        Hiệu suất & Tốt & Tốt & Rất tốt \\ 
+        Tuân thủ ACID & Đầy đủ & Đầy đủ (với InnoDB) & Từng phần (cải thiện gần đây) & Đầy đủ \\
         \hline
-        Tính năng & Nhiều & Trung bình & Nhiều \\ 
+        Hỗ trợ JSON & Rất mạnh (JSONB, indexing) & Tốt (JSON type) & Native (BSON) & Hỗ trợ cơ bản (JSON1 ext) \\
         \hline
-        Độ phức tạp & Cao & Trung bình & Thấp \\ 
+        Tính năng nâng cao & Rất nhiều (MVCC, FTS, GIS) & Nhiều (Replication, Clustering) & Schema linh hoạt, Sharding & Đơn giản, Nhúng \\
         \hline
-        Khả năng mở rộng & Tốt & Tốt & Xuất sắc \\ 
+        Hiệu năng (chung) & Rất tốt (đặc biệt với tải phức tạp) & Rất tốt (đặc biệt với tải đọc nhiều) & Xuất sắc (với workload phù hợp) & Tốt (cho single-user/low-concurrency) \\
+        \hline
+        Khả năng mở rộng (Scale) & Tốt (Vertical, Replication, Partitioning) & Rất tốt (Replication, Clustering) & Xuất sắc (Horizontal Sharding) & Hạn chế (chủ yếu vertical) \\
+        \hline
+        Độ phức tạp quản trị & Trung bình-Cao & Trung bình & Trung bình & Rất thấp \\
+        \hline
+        Trường hợp sử dụng phù hợp & Ứng dụng phức tạp, cần tính toàn vẹn cao, dữ liệu đa dạng & Web apps phổ biến, CMS, e-commerce & Dữ liệu lớn, phi cấu trúc, cần scale ngang nhanh & Ứng dụng nhúng, mobile, testing, CSDL nhỏ \\
         \hline
     \end{longtable}
+    PostgreSQL nổi trội trong việc xử lý các truy vấn phức tạp và hỗ trợ các kiểu dữ liệu đa dạng, đặc biệt là JSONB, làm cho nó phù hợp hơn MySQL cho các ứng dụng cần lưu trữ và truy vấn dữ liệu bán cấu trúc như hội thoại chatbot. So với MongoDB, PostgreSQL cung cấp tính toàn vẹn dữ liệu mạnh mẽ hơn theo chuẩn ACID, mặc dù MongoDB có lợi thế về khả năng mở rộng ngang và schema linh hoạt.
 
-    \item \textbf{Cơ sở lựa chọn PostgreSQL cho dự án}
+    \item Cơ sở Lựa chọn PostgreSQL cho Dự án
 
-    PostgreSQL được lựa chọn làm hệ quản trị cơ sở dữ liệu chính cho dự án dựa trên các yếu tố sau:
+    PostgreSQL được chọn làm hệ quản trị cơ sở dữ liệu chính cho dự án chatbot này vì những lý do sau:
     \begin{itemize}
-        \item \textbf{Khả năng tích hợp:}
-        \begin{itemize}
-            \item Tương thích cao với Django ORM, cho phép tận dụng tối đa các tính năng của Django và DRF
-            \item Hỗ trợ trên nền tảng Heroku thông qua Heroku Postgres
-            \item Khả năng tích hợp liền mạch với các công cụ phát triển và triển khai
-        \end{itemize}
-        
-        \item \textbf{Khả năng xử lý dữ liệu đa dạng:}
-        \begin{itemize}
-            \item Hỗ trợ JSON/JSONB mạnh mẽ, tối ưu cho việc lưu trữ và truy vấn dữ liệu chatbot
-            \item Hỗ trợ full-text search cho tính năng tìm kiếm nội dung
-            \item Khả năng xử lý hiệu quả cả dữ liệu có cấu trúc và phi cấu trúc
-        \end{itemize}
-        
-        \item \textbf{Tính bền vững:}
-        \begin{itemize}
-            \item Cộng đồng phát triển lớn và tích cực
-            \item Tài liệu kỹ thuật phong phú và cập nhật thường xuyên
-            \item Giấy phép mã nguồn mở cho phép sử dụng miễn phí và tùy chỉnh
-        \end{itemize}
-        
-        \item \textbf{Khả năng mở rộng:}
-        \begin{itemize}
-            \item Hỗ trợ mở rộng theo chiều ngang (horizontal scaling) bằng phân vùng dữ liệu
-            \item Khả năng xử lý hiệu quả khi khối lượng dữ liệu tăng
-            \item Dễ dàng nâng cấp và mở rộng tính năng
-        \end{itemize}
+        \item \textbf{Tích hợp Tối ưu với Django:} Django ORM có sự hỗ trợ hạng nhất (first-class support) cho PostgreSQL, bao gồm các kiểu dữ liệu đặc thù như \texttt{JSONField}, \texttt{ArrayField}, giúp tận dụng tối đa sức mạnh của cả hai công nghệ.
+        \item \textbf{Khả năng Xử lý Dữ liệu Hội thoại Linh hoạt:} Hỗ trợ JSONB mạnh mẽ với khả năng lập chỉ mục và truy vấn hiệu quả là yếu tố then chốt để lưu trữ, phân tích và truy xuất lịch sử hội thoại, thông tin ngữ cảnh và các thuộc tính người dùng thay đổi linh hoạt của chatbot.
+        \item \textbf{Tính năng Tìm kiếm Toàn văn Tích hợp:} Cho phép xây dựng chức năng tìm kiếm trong cơ sở tri thức hoặc lịch sử hội thoại của chatbot một cách hiệu quả mà không cần tích hợp thêm giải pháp tìm kiếm bên ngoài phức tạp cho các nhu cầu cơ bản.
+        \item \textbf{Độ tin cậy và Tính Toàn vẹn Dữ liệu:} Đảm bảo ACID là yếu tố quan trọng để duy trì sự nhất quán của trạng thái hội thoại và thông tin người dùng, đặc biệt khi có nhiều tương tác đồng thời.
+        \item \textbf{Khả năng Mở rộng và Tính Bền vững:} PostgreSQL cung cấp các tùy chọn mở rộng quy mô khi cần thiết và được hỗ trợ bởi một cộng đồng mã nguồn mở lớn mạnh, đảm bảo sự phát triển liên tục, tài liệu phong phú và không bị phụ thuộc vào nhà cung cấp (vendor lock-in).
+        \item \textbf{Sẵn có trên Nền tảng Triển khai:} Dễ dàng tích hợp và quản lý trên các nền tảng PaaS như Heroku (thông qua Heroku Postgres) hoặc các nhà cung cấp đám mây lớn khác.
     \end{itemize}
 \end{enumerate}
 
-\subsubsubsection{Heroku}
-\begin{enumerate}
-    \item \textbf{Giới thiệu}
-    
-    Heroku là một nền tảng điện toán đám mây theo mô hình Platform as a Service (PaaS), được phát triển bởi Salesforce, cung cấp môi trường toàn diện cho việc xây dựng, triển khai và vận hành các ứng dụng hiện đại. Nền tảng này nổi bật với kiến trúc container-based linh hoạt (sử dụng Dynos), hệ thống tự động hóa cao, và khả năng tích hợp liền mạch với các quy trình phát triển liên tục. Heroku hỗ trợ đa dạng các ngôn ngữ lập trình phổ biến như Python, Node.js, Ruby, Java và PHP, đồng thời cung cấp hệ sinh thái phong phú các add-ons cho các dịch vụ bổ sung như cơ sở dữ liệu, caching và phân tích.
+% --- Redis ---
+\subsubsubsection{Redis (Remote Dictionary Server)}
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{Images/heroku_logo.png}
-        \vspace{0.5cm}
-        \caption{Logo Heroku - Nguồn: Internet}
-        \label{fig:enter-label}
-    \end{figure}
+\begin{enumerate}[label=\arabic*., font=\bfseries]
+    \item Giới thiệu
 
-    \item \textbf{Đặc điểm công nghệ}
-    
-    Heroku cung cấp các tính năng then chốt cho phát triển và vận hành ứng dụng hiện đại:
+    Redis là một kho lưu trữ cấu trúc dữ liệu trong bộ nhớ (in-memory data structure store) mã nguồn mở, hiệu năng cao, thường được sử dụng làm cơ sở dữ liệu key-value, bộ đệm (cache), và trình môi giới thông điệp (message broker). Redis nổi bật với tốc độ truy cập dữ liệu cực nhanh do hoạt động chủ yếu trên RAM, đồng thời hỗ trợ nhiều loại cấu trúc dữ liệu phức tạp (như strings, hashes, lists, sets, sorted sets) và cung cấp các tính năng như persistence (lưu trữ bền vững tùy chọn), replication (sao chép), và clustering (phân cụm).
+
+    \item Đặc điểm Công nghệ Nổi bật
     \begin{itemize}
-        \item \textbf{Hệ thống Dyno}: Kiến trúc container độc lập, cho phép cô lập tài nguyên và khả năng mở rộng linh hoạt. Mỗi dyno là một container Linux nhẹ, tối ưu cho việc chạy các microservice.
-        
-        \item \textbf{Hệ sinh thái Add-ons}: Marketplace tích hợp sẵn với hơn 150 dịch vụ bổ sung từ bên thứ ba, bao gồm PostgreSQL, Redis, Elasticsearch và các công cụ monitoring/logging chuyên nghiệp.
-        
-        \item \textbf{Tích hợp Git}: Hỗ trợ triển khai tự động thông qua Git, tích hợp với GitHub Actions và các pipeline CI/CD phổ biến.
-        
-        \item \textbf{Tự động mở rộng}: Cơ chế tự động điều chỉnh tài nguyên dựa trên thông số thời gian thực, đảm bảo hiệu suất ứng dụng trong mọi tình huống tải.
-        
-        \item \textbf{Công cụ dòng lệnh} (CLI Tools): Bộ công cụ dòng lệnh toàn diện cho phép quản lý, giám sát và debug ứng dụng từ môi trường phát triển đến production.
+        \item \textbf{Hiệu năng Cực cao:} Do lưu trữ dữ liệu trong bộ nhớ chính (RAM), Redis cho phép thực hiện hàng triệu thao tác đọc/ghi mỗi giây với độ trễ rất thấp (sub-millisecond latency), lý tưởng cho các tác vụ yêu cầu phản hồi nhanh.
+        \item \textbf{Hỗ trợ Đa dạng Cấu trúc Dữ liệu:} Ngoài cặp key-value đơn giản, Redis hỗ trợ các cấu trúc dữ liệu phong phú như lists (hàng đợi), sets (tập hợp duy nhất), sorted sets (tập hợp có thứ tự), hashes (đối tượng), bitmaps, hyperloglogs, và geospatial indexes.
+        \item \textbf{Bộ đệm (Caching):} Là trường hợp sử dụng phổ biến nhất, Redis giúp giảm tải đáng kể cho cơ sở dữ liệu chính bằng cách lưu trữ các dữ liệu thường xuyên truy cập (ví dụ: kết quả truy vấn CSDL, kết quả render trang, session người dùng) trong bộ nhớ.
+        \item \textbf{Quản lý Phiên (Session Management):} Cung cấp giải pháp lưu trữ session người dùng nhanh chóng và có khả năng mở rộng, thay thế cho việc lưu session trong CSDL quan hệ hoặc file hệ thống.
+        \item \textbf{Hàng đợi Tác vụ và Message Broker:} Có thể sử dụng Redis (đặc biệt là cấu trúc List hoặc Pub/Sub) để triển khai các hàng đợi tác vụ đơn giản hoặc hệ thống publish/subscribe cho giao tiếp giữa các thành phần của ứng dụng.
+        \item \textbf{Persistence Tùy chọn:} Hỗ trợ hai cơ chế lưu trữ dữ liệu xuống đĩa là RDB (snapshots định kỳ) và AOF (ghi lại mọi thao tác ghi), giúp đảm bảo dữ liệu không bị mất hoàn toàn khi khởi động lại server.
     \end{itemize}
 
-    \item \textbf{So sánh các công nghệ tương tự trên thị trường}
-
-    \begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+    \item So sánh với các Công nghệ Tương tự
+    \begin{longtable}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3.5cm}|}
+        \caption{So sánh Redis với Memcached}\\
         \hline
-        \textbf{Tiêu chí} & \textbf{Heroku} & \textbf{AWS} & \textbf{Google Cloud} \\ 
+        \textbf{Tiêu chí} & \textbf{Redis} & \textbf{Memcached} \\
+        \hline \endfirsthead
+        \multicolumn{3}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Tiếp tục}} \\
         \hline
-        Độ phức tạp & Thấp & Cao & Cao \\ 
+        \textbf{Tiêu chí} & \textbf{Redis} & \textbf{Memcached} \\
+        \hline \endhead
+        \hline \multicolumn{3}{r}{{Tiếp tục ở trang sau}} \\ \endfoot
+        \hline \endlastfoot
+        Loại hình & In-memory data structure store & In-memory key-value cache \\
         \hline
-        Chi phí khởi đầu & Thấp & Cao & Trung bình \\ 
+        Cấu trúc dữ liệu & Đa dạng (strings, lists, sets, hashes, etc.) & Chỉ key-value (strings) \\
         \hline
-        Khả năng tùy biến & Trung bình & Cao & Cao \\ 
+        Persistence & Có (RDB, AOF) & Không (chỉ cache) \\
         \hline
-        Dễ sử dụng & Cao & Thấp & Trung bình \\ 
+        Replication/Clustering & Có (Built-in) & Hạn chế (thường qua client-side) \\
         \hline
-        Tự động hóa & Cao & Cao & Cao \\ 
+        Hiệu năng (đơn giản Get/Set) & Rất cao & Rất cao (có thể nhỉnh hơn một chút) \\
         \hline
-        Hỗ trợ kỹ thuật & Tốt & Xuất sắc & Xuất sắc \\ 
+        Sử dụng bộ nhớ & Cao hơn (do tính năng) & Tối ưu hơn (cho cache đơn giản) \\
+        \hline
+        Tính năng bổ sung & Pub/Sub, Lua scripting, Transactions & Ít tính năng hơn \\
+        \hline
+        Trường hợp sử dụng & Caching, Session store, Message queue, Leaderboards, Real-time analytics & Caching đơn giản \\
         \hline
     \end{longtable}
+    Redis cung cấp bộ tính năng phong phú hơn Memcached, đặc biệt là khả năng persistence và hỗ trợ nhiều cấu trúc dữ liệu, làm cho nó linh hoạt hơn cho nhiều tác vụ ngoài caching đơn thuần.
 
-    \item \textbf{Cơ sở lựa chọn Heroku cho dự án}
-
-    Heroku được lựa chọn làm nền tảng triển khai dựa trên các ưu điểm sau:
+    \item Cơ sở Lựa chọn Redis cho Dự án
+    Redis được tích hợp vào kiến trúc backend của chatbot vì các lý do chính sau:
     \begin{itemize}
-        \item \textbf{Tích hợp công nghệ tối ưu:}
-        \begin{itemize}
-            \item Hỗ trợ tích hợp Django và PostgreSQL
-            \item Tích hợp liền mạch với quy trình CI/CD thông qua Git
-            \item Cung cấp các add-ons chuyên biệt cho monitoring và logging
-        \end{itemize}
-        
-        \item \textbf{Tối ưu hóa quy trình phát triển:}
-        \begin{itemize}
-            \item Triển khai tự động với zero-downtime deployment
-            \item Loại bỏ nhu cầu quản trị server thủ công
-            \item Môi trường phát triển đồng nhất
-        \end{itemize}
-        
-        \item \textbf{Hiệu quả về chi phí và vận hành:}
-        \begin{itemize}
-            \item Mô hình định giá linh hoạt
-            \item Tự động mở rộng theo nhu cầu thực tế
-            \item Chứng chỉ SSL/TLS tự động và miễn phí
-        \end{itemize}
+        \item \textbf{Tăng tốc Độ phản hồi:} Sử dụng Redis làm bộ đệm (cache) cho các truy vấn CSDL thường xuyên (ví dụ: thông tin cấu hình chatbot, dữ liệu người dùng hay truy cập), các phản hồi API phổ biến, giúp giảm độ trễ và cải thiện trải nghiệm người dùng cuối.
+        \item \textbf{Giảm tải Cơ sở dữ liệu:} Việc phục vụ các yêu cầu đọc từ cache Redis giúp giảm đáng kể số lượng truy vấn đến PostgreSQL, bảo vệ CSDL khỏi tình trạng quá tải, đặc biệt khi lượng người dùng tăng cao.
+        \item \textbf{Quản lý Trạng thái Hội thoại Tạm thời:} Có thể sử dụng Redis để lưu trữ các thông tin trạng thái tạm thời của phiên hội thoại (ví dụ: ngữ cảnh hiện tại, dữ liệu đang chờ xử lý), giúp duy trì luồng tương tác mượt mà mà không cần ghi liên tục vào CSDL chính.
+        \item \textbf{Hỗ trợ Hệ thống Hàng đợi (Optional):} Nếu cần xử lý các tác vụ bất đồng bộ (ví dụ: gửi thông báo, xử lý dữ liệu nền), Redis có thể đóng vai trò là một message broker đơn giản và hiệu quả khi tích hợp với các thư viện như Celery.
+        \item \textbf{Tích hợp Dễ dàng:} Có nhiều thư viện client chất lượng cao cho Python (ví dụ: \texttt{redis-py}) và dễ dàng tích hợp với Django (qua \texttt{django-redis}). Các nền tảng PaaS như Heroku cũng cung cấp Redis add-on tiện lợi.
+    \end{itemize}
+\end{enumerate}
+
+% --- Amazon S3 ---
+\subsubsubsection{Dịch vụ Lưu trữ Amazon S3 (Simple Storage Service)}
+
+\begin{enumerate}[label=\arabic*., font=\bfseries]
+    \item Giới thiệu
+
+    Amazon S3 (Simple Storage Service) là một dịch vụ lưu trữ đối tượng trên nền tảng đám mây của Amazon Web Services (AWS). S3 cung cấp khả năng lưu trữ và truy xuất dữ liệu với độ bền, tính sẵn sàng, hiệu năng và khả năng mở rộng hàng đầu trong ngành. Dịch vụ này được thiết kế để lưu trữ gần như không giới hạn số lượng đối tượng với kích thước từ vài byte đến hàng terabyte, phù hợp cho nhiều trường hợp sử dụng như lưu trữ website tĩnh, sao lưu và phục hồi dữ liệu, lưu trữ dữ liệu lớn, và đặc biệt là lưu trữ các tệp đa phương tiện cho các ứng dụng web và di động.
+
+    \item Đặc điểm Công nghệ Nổi bật
+    \begin{itemize}
+        \item \textbf{Độ bền và tính sẵn sàng cao:} Amazon S3 được thiết kế để đạt độ bền 99.999999999\% (11 số 9) cho các đối tượng, lưu trữ dữ liệu trên nhiều thiết bị và nhiều Availability Zones (AZs) khác nhau, đảm bảo an toàn và khả năng truy cập dữ liệu liên tục.
+        \item \textbf{Khả năng mở rộng gần như vô hạn:} Người dùng có thể lưu trữ lượng dữ liệu không giới hạn mà không cần lo lắng về việc quản lý hạ tầng lưu trữ vật lý. S3 tự động điều chỉnh quy mô để đáp ứng nhu cầu.
+        \item \textbf{Lớp lưu trữ đa dạng (Storage Classes):} Cung cấp nhiều lớp lưu trữ khác nhau (S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, S3 One Zone-IA, S3 Glacier Instant Retrieval, S3 Glacier Flexible Retrieval, S3 Glacier Deep Archive) với các mức giá và hiệu năng truy cập khác nhau, cho phép tối ưu chi phí dựa trên tần suất truy cập và yêu cầu về độ trễ.
+        \item \textbf{Bảo mật và quản lý truy cập mạnh mẽ:} Hỗ trợ mã hóa dữ liệu cả khi lưu trữ (at rest) và khi truyền (in transit), cùng với các cơ chế kiểm soát truy cập chi tiết thông qua IAM policies, bucket policies, Access Control Lists (ACLs), và điểm truy cập S3 (S3 Access Points).
+        \item \textbf{Quản lý vòng đời dữ liệu:} Cho phép tự động chuyển đổi đối tượng giữa các lớp lưu trữ khác nhau hoặc xóa đối tượng sau một khoảng thời gian nhất định để tối ưu chi phí và tuân thủ quy định.
+        \item \textbf{Tích hợp hệ sinh thái AWS:} Tích hợp chặt chẽ với hàng loạt dịch vụ AWS khác như EC2, CloudFront (CDN), Lambda, Athena, Redshift, phục vụ cho nhiều kiến trúc ứng dụng phức tạp.
+        \item \textbf{Hỗ trợ website tĩnh và CDN:} Có thể cấu hình S3 bucket để host một website tĩnh và dễ dàng tích hợp với Amazon CloudFront để phân phối nội dung trên toàn cầu với độ trễ thấp.
     \end{itemize}
 
+    \item So sánh với các Giải pháp Lưu trữ Tương tự
+	\begin{longtable}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+		\caption{So sánh Amazon S3 với các dịch vụ lưu trữ đối tượng khác}\\
+		\hline
+		\textbf{Tiêu chí} & \textbf{Amazon S3} & \textbf{Google Cloud Storage (GCS)} & \textbf{Azure Blob Storage} & \textbf{Self-hosting (e.g., MinIO)} \\ % 5 cells
+		\hline \endfirsthead
+		\multicolumn{5}{c}
+		{{\bfseries \tablename\ \thetable{} -- Tiếp tục}} \\
+		\hline
+		\textbf{Tiêu chí} & \textbf{Amazon S3} & \textbf{Google Cloud Storage (GCS)} & \textbf{Azure Blob Storage} & \textbf{Self-hosting (e.g., MinIO)} \\ % 5 cells
+		\hline \endhead
+		\hline \multicolumn{5}{r}{{Tiếp tục ở trang sau}} \\ \endfoot
+		\hline \endlastfoot
+		Nhà cung cấp & AWS & Google Cloud & Microsoft Azure & Tự quản lý \\
+		\hline
+		Độ bền & Rất cao (11 số 9) & Rất cao (11 số 9) & Rất cao (tùy chọn cấu hình) & Tùy thuộc hạ tầng \\
+		\hline
+		Tính sẵn sàng & Cao (tùy storage class) & Cao (tùy storage class) & Cao (tùy storage class) & Tùy thuộc hạ tầng \\
+		\hline
+		Chi phí & Cạnh tranh, trả theo sử dụng & Cạnh tranh, trả theo sử dụng & Cạnh tranh, trả theo sử dụng & Chi phí hạ tầng và vận hành \\
+		\hline
+		Hệ sinh thái & Rất lớn (AWS) & Lớn (GCP) & Lớn (Azure) & Hạn chế (tùy giải pháp) \\
+		\hline
+		Tính năng & Rất phong phú & Phong phú & Phong phú & Cơ bản đến nâng cao (tùy giải pháp) \\
+		\hline
+		Độ phức tạp quản trị & Thấp (dịch vụ quản lý) & Thấp (dịch vụ quản lý) & Thấp (dịch vụ quản lý) & Cao (tự quản lý hạ tầng) \\
+		\hline
+	\end{longtable}
+    Các nhà cung cấp đám mây lớn (AWS, GCP, Azure) đều cung cấp dịch vụ lưu trữ đối tượng mạnh mẽ và tương đồng về các tính năng cốt lõi. Lựa chọn thường phụ thuộc vào hệ sinh thái đám mây đang sử dụng, yêu cầu cụ thể về tính năng hoặc chi phí. Giải pháp tự host như MinIO mang lại sự kiểm soát cao hơn nhưng đòi hỏi chi phí đầu tư và vận hành hạ tầng đáng kể.
+
+    \item Cơ sở Lựa chọn Amazon S3 cho Dự án
+    Việc sử dụng Amazon S3 để lưu trữ các tệp tĩnh và dữ liệu người dùng trong dự án chatbot được dựa trên các lý do sau:
+    \begin{itemize}
+        \item \textbf{Khả năng lưu trữ mở rộng và tin cậy:} Đảm bảo khả năng lưu trữ các tệp đa phương tiện (ví dụ: hình ảnh sản phẩm, tài liệu hướng dẫn mà chatbot cung cấp, ảnh đại diện người dùng) hoặc các bản ghi log lớn một cách tin cậy và có thể mở rộng dễ dàng khi ứng dụng phát triển.
+        \item \textbf{Giảm tải cho server ứng dụng:} Việc phục vụ các tệp tĩnh (CSS, JavaScript, hình ảnh) trực tiếp từ S3 (thường kết hợp với CDN như CloudFront) giúp giảm tải đáng kể cho server ứng dụng Django, cải thiện hiệu năng và khả năng đáp ứng của backend.
+        \item \textbf{Chi phí hiệu quả:} Mô hình định giá trả theo dung lượng lưu trữ và lượng dữ liệu truyền đi giúp tối ưu chi phí, đặc biệt với các lớp lưu trữ chi phí thấp cho dữ liệu ít truy cập.
+        \item \textbf{Độ bền dữ liệu cao:} Đảm bảo an toàn cho các dữ liệu quan trọng như tệp người dùng tải lên hoặc các bản sao lưu dữ liệu.
+    \end{itemize}
 \end{enumerate}
+
+% --- PayOS ---
+\subsubsubsection{PayOS}
+
+\begin{enumerate}[label=\arabic*., font=\bfseries]
+    \item Giới thiệu
+
+    PayOS là một nhà cung cấp dịch vụ cổng thanh toán tại Việt Nam, cung cấp giải pháp tích hợp đa dạng các phương thức thanh toán trực tuyến phổ biến trong nước vào các ứng dụng web và di động. Dịch vụ này tập trung vào việc đơn giản hóa quy trình tích hợp thanh toán cho các doanh nghiệp và nhà phát triển, hỗ trợ các phương thức như thẻ ATM nội địa, thẻ tín dụng quốc tế, và các ví điện tử thông dụng tại Việt Nam. Trong bối cảnh dự án chatbot này, PayOS được lựa chọn để xử lý các giao dịch tài chính liên quan, ví dụ như quản lý gói đăng ký dịch vụ hoặc các thanh toán phát sinh khác.
+
+    \item Đặc điểm Công nghệ và Dịch vụ Nổi bật 
+    \begin{itemize}
+        \item \textbf{API tích hợp linh hoạt:} Cung cấp bộ giao diện lập trình ứng dụng (API) và tài liệu kỹ thuật (documentation) cho phép lập trình viên tích hợp cổng thanh toán vào backend (ví dụ: Django) để khởi tạo giao dịch, xử lý kết quả thanh toán, và truy vấn lịch sử giao dịch.
+        \item \textbf{Quy trình thanh toán an toàn:} Tuân thủ các tiêu chuẩn bảo mật ngành thanh toán (ví dụ: PCI DSS), áp dụng các cơ chế mã hóa và xác thực để bảo vệ thông tin giao dịch nhạy cảm.
+        \item \textbf{Giao diện thanh toán tùy chỉnh:} Cung cấp tùy chọn hiển thị cổng thanh toán dưới dạng redirect sang trang của PayOS hoặc tích hợp trực tiếp trên website/ứng dụng của người bán.
+        \item \textbf{Dashboard quản lý giao dịch:} Cung cấp giao diện quản trị cho phép theo dõi, quản lý các giao dịch, đối soát và rút tiền.
+    \end{itemize}
+	
+    \item Cơ sở Lựa chọn (hoặc xem xét) PayOS cho Dự án
+    Việc tích hợp PayOS vào hệ thống chatbot được cân nhắc dựa trên các yếu tố sau:
+    \begin{itemize}
+        \item \textbf{Phù hợp thị trường Việt Nam:} Cung cấp các phương thức thanh toán quen thuộc và được ưa chuộng bởi người dùng trong nước, tăng khả năng tiếp cận và tỷ lệ thành công của giao dịch.
+        \item \textbf{Đáp ứng nhu cầu chức năng:} Cung cấp các tính năng cần thiết cho việc xử lý thanh toán của dự án.
+        \item \textbf{Đơn giản hóa tích hợp:} Mục tiêu của các cổng thanh toán như PayOS là cung cấp API và quy trình tích hợp tương đối đơn giản, giúp giảm thời gian và độ phức tạp khi triển khai chức năng thanh toán.
+    \end{itemize}
+\end{enumerate}
+
 
 \subsubsection{AI}
 \subsubsubsection{Mô hình Gemini-1.5-Flash}
