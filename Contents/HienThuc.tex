@@ -16,12 +16,9 @@ Lược đồ này cung cấp góc nhìn tổng quát về cách các công ngh�
 \end{figure}
 
 Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao thức REST API (Post, HTTP API) và Websocket. Các hệ cơ sở dữ liệu sẽ đảm nhận các nhiệm vụ đọc, ghi những loại dữ liệu khác nhau. Ngoài ra, Django Server sử dụng Redis Caching Server để tăng tốc việc truy xuất dữ liệu sẵn có.
-
-
-\subsection{Công nghệ}
 \subsubsection{Frontend}
 \subsubsubsection{ReactJS}
-\renewcommand{\labelenumi}{\alph{enumi})}
+\renewcommand{\labelenumi}{\alph{enumi}}
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
@@ -161,74 +158,74 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 	\end{itemize}
 	
 \end{enumerate}
-\subsubsubsection{Vercel}
-\renewcommand{\labelenumi}{\alph{enumi})}
-\begin{enumerate}
-	\item \textbf{Giới thiệu}
+% \subsubsubsection{Vercel}
+% \renewcommand{\labelenumi}{\alph{enumi})}
+% \begin{enumerate}
+% 	\item \textbf{Giới thiệu}
 	
-	Vercel là nền tảng đám mây giúp triển khai các ứng dụng web frontend hiện đại một cách dễ dàng và nhanh chóng. Nó hỗ trợ các framework phổ biến như React.js, Next.js, Vue.js, Angular và Svelte. Vercel cung cấp giải pháp Serverless Deployment, đảm bảo ứng dụng luôn sẵn sàng với hiệu suất cao.
+% 	Vercel là nền tảng đám mây giúp triển khai các ứng dụng web frontend hiện đại một cách dễ dàng và nhanh chóng. Nó hỗ trợ các framework phổ biến như React.js, Next.js, Vue.js, Angular và Svelte. Vercel cung cấp giải pháp Serverless Deployment, đảm bảo ứng dụng luôn sẵn sàng với hiệu suất cao.
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.3\linewidth]{Images/vercel_logo.png}
-		\vspace{0.5cm}
-		\caption{Logo Vercel - Nguồn: Internet}
-		\label{fig:enter-label}
-	\end{figure}
+% 	\begin{figure}[H]
+% 		\centering
+% 		\includegraphics[width=0.3\linewidth]{Images/vercel_logo.png}
+% 		\vspace{0.5cm}
+% 		\caption{Logo Vercel - Nguồn: Internet}
+% 		\label{fig:enter-label}
+% 	\end{figure}
 	
-	\item \textbf{Đặc điểm công nghệ}
+% 	\item \textbf{Đặc điểm công nghệ}
 	
-	Vercel có các tính năng nổi bật như:
-	\begin{itemize}
-		\item Tự động triển khai: Tích hợp với GitHub, GitLab, Bitbucket để triển khai tự động.
-		\item Xây dựng không máy chủ (Serverless): Chạy ứng dụng mà không cần quản lý máy chủ vật lý.
-		\item CDN Toàn cầu: Ứng dụng được phân phối nhanh chóng thông qua mạng CDN toàn cầu.
-		\item Domain và SSL: Cung cấp tên miền tùy chỉnh và chứng chỉ SSL miễn phí.
-		\item Phân nhánh (Branch Deployments): Tạo các môi trường preview cho từng nhánh trong dự án.
-		\item Khả năng mở rộng: 
-		\begin{itemize}
-			\item Auto Scaling: Vercel tự động mở rộng dịch vụ khi lưu lượng truy cập tăng
-			\item Edge Functions: Xử lý yêu cầu nhanh chóng ở rìa mạng (edge) để giảm độ trễ.
-		\end{itemize}
-	\end{itemize}
+% 	Vercel có các tính năng nổi bật như:
+% 	\begin{itemize}
+% 		\item Tự động triển khai: Tích hợp với GitHub, GitLab, Bitbucket để triển khai tự động.
+% 		\item Xây dựng không máy chủ (Serverless): Chạy ứng dụng mà không cần quản lý máy chủ vật lý.
+% 		\item CDN Toàn cầu: Ứng dụng được phân phối nhanh chóng thông qua mạng CDN toàn cầu.
+% 		\item Domain và SSL: Cung cấp tên miền tùy chỉnh và chứng chỉ SSL miễn phí.
+% 		\item Phân nhánh (Branch Deployments): Tạo các môi trường preview cho từng nhánh trong dự án.
+% 		\item Khả năng mở rộng: 
+% 		\begin{itemize}
+% 			\item Auto Scaling: Vercel tự động mở rộng dịch vụ khi lưu lượng truy cập tăng
+% 			\item Edge Functions: Xử lý yêu cầu nhanh chóng ở rìa mạng (edge) để giảm độ trễ.
+% 		\end{itemize}
+% 	\end{itemize}
 	
-	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+% 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
 	
-	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
-	\begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
-		\hline
-		\textbf{Tiêu chí} & \textbf{Vercel} & \textbf{Netlify} & \textbf{Render} \\ 
-		\hline
-		Triển khai & Serverless, tự động với Git & Tự động, dễ tích hợp Git & Serverless, dễ triển khai \\ 
-		\hline
-		Hỗ trợ framework & Next.js, React.js, Vue.js & React.js, Angular,... & Fullstack, tùy chọn đa ngôn ngữ \\ 
-		\hline
-		CDN toàn cầu & Có & Có & Không tích hợp sẵn   \\ 
-		\hline
-		Tích hợp Git & Tự động với GitHub, GitLab & GitHub, GitLab, Bitbucket & GitHub, GitLab  \\ 
-		\hline
-		Domain và SSL & Miễn phí & Miễn phí & Miễn phí \\ 
-		\hline
-		Tính năng đặc biệt & Edge Functions, ISR, Preview & Serverless Functions & Background Jobs, WebSockets \\ 
-		\hline
-		Giá cả & Miễn phí, trả phí theo yêu cầu & Miễn phí, trả phí nâng cao & Miễn phí, trả phí mở rộng \\ 
-		\hline
-		Khả năng mở rộng & Tự động & Tự động & Tự động \\ 
-		\hline
-	\end{longtable}
+% 	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
+% 	\begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+% 		\hline
+% 		\textbf{Tiêu chí} & \textbf{Vercel} & \textbf{Netlify} & \textbf{Render} \\ 
+% 		\hline
+% 		Triển khai & Serverless, tự động với Git & Tự động, dễ tích hợp Git & Serverless, dễ triển khai \\ 
+% 		\hline
+% 		Hỗ trợ framework & Next.js, React.js, Vue.js & React.js, Angular,... & Fullstack, tùy chọn đa ngôn ngữ \\ 
+% 		\hline
+% 		CDN toàn cầu & Có & Có & Không tích hợp sẵn   \\ 
+% 		\hline
+% 		Tích hợp Git & Tự động với GitHub, GitLab & GitHub, GitLab, Bitbucket & GitHub, GitLab  \\ 
+% 		\hline
+% 		Domain và SSL & Miễn phí & Miễn phí & Miễn phí \\ 
+% 		\hline
+% 		Tính năng đặc biệt & Edge Functions, ISR, Preview & Serverless Functions & Background Jobs, WebSockets \\ 
+% 		\hline
+% 		Giá cả & Miễn phí, trả phí theo yêu cầu & Miễn phí, trả phí nâng cao & Miễn phí, trả phí mở rộng \\ 
+% 		\hline
+% 		Khả năng mở rộng & Tự động & Tự động & Tự động \\ 
+% 		\hline
+% 	\end{longtable}
 	
-	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+% 	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
 	
-	Nhóm chọn Vercel vì những lý do sau:
-	\begin{itemize}
-		\item Tối ưu hóa React.js: Vercel hỗ trợ mạnh mẽ Next.js, framework hàng đầu cho React.js.
-		\item Dễ sử dụng: Cung cấp giao diện người dùng đơn giản, dễ thao tác cho cả người mới bắt đầu và chuyên gia.
-		\item Hiệu suất cao: CDN toàn cầu giúp tải nhanh ứng dụng trên toàn thế giới.
-		\item Bảo mật: Chứng chỉ SSL miễn phí giúp bảo vệ dữ liệu.
-		\item Triển khai liên tục: Mỗi lần cập nhật mã nguồn sẽ tự động triển khai, giúp rút ngắn chu kỳ phát triển phần mềm.
-	\end{itemize}
+% 	Nhóm chọn Vercel vì những lý do sau:
+% 	\begin{itemize}
+% 		\item Tối ưu hóa React.js: Vercel hỗ trợ mạnh mẽ Next.js, framework hàng đầu cho React.js.
+% 		\item Dễ sử dụng: Cung cấp giao diện người dùng đơn giản, dễ thao tác cho cả người mới bắt đầu và chuyên gia.
+% 		\item Hiệu suất cao: CDN toàn cầu giúp tải nhanh ứng dụng trên toàn thế giới.
+% 		\item Bảo mật: Chứng chỉ SSL miễn phí giúp bảo vệ dữ liệu.
+% 		\item Triển khai liên tục: Mỗi lần cập nhật mã nguồn sẽ tự động triển khai, giúp rút ngắn chu kỳ phát triển phần mềm.
+% 	\end{itemize}
 	
-\end{enumerate}
+% \end{enumerate}
 \subsubsubsection{NextUI}
 NextUI là một thư viện giao diện người dùng (UI library) hiện đại được thiết kế để xây dựng các ứng dụng web với phong cách đẹp mắt và hiệu năng cao. NextUI sử dụng React làm nền tảng, giúp lập trình viên dễ dàng tạo ra các thành phần giao diện (components) tái sử dụng và nhanh chóng.
 
