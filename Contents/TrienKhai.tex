@@ -77,6 +77,34 @@ Màn hình hiển thị Domain cho dự án. Trang này sẽ có thể thấy b�
     \label{fig:enter-label}
 \end{figure}
 
+\subsection{Triển khai Backend}
+
+Phần backend của ứng dụng chatbot tư vấn khách hàng được triển khai theo một chiến lược hiệu quả, tập trung vào việc khai thác hệ sinh thái Platform as a Service của Heroku. Cách tiếp cận này giúp đơn giản hóa đáng kể quy trình triển khai và quản lý hạ tầng, loại bỏ sự phức tạp thường gặp trong việc cấu hình máy chủ thủ công hoặc sử dụng các hệ thống container hóa như Docker. Thay vào đó, Heroku cho phép triển khai trực tiếp mã nguồn thông qua quy trình làm việc tích hợp chặt chẽ với hệ thống quản lý phiên bản Git. Việc lựa chọn Heroku cũng dựa trên trải nghiệm phát triển tốt và khả năng tích hợp dễ dàng với các dịch vụ bổ trợ cần thiết.
+
+\subsubsection*{Kiến trúc hạ tầng và dịch vụ}
+Ứng dụng tận dụng hệ thống "dyno" của Heroku để thực thi mã nguồn. Tệp \texttt{Procfile} trong thư mục gốc của dự án định nghĩa các loại tiến trình riêng biệt, cho phép phân bổ tài nguyên và quản lý chúng một cách độc lập:
+\begin{itemize}
+    \item \textbf{Tiến trình Web (\texttt{web}):} Chạy máy chủ ASGI (Asynchronous Server Gateway Interface) Uvicorn để xử lý các yêu cầu HTTP đến ứng dụng Django, phục vụ các tương tác của người dùng.
+    \item \textbf{Tiến trình Worker (\texttt{worker}):} Sử dụng Celery để thực thi các tác vụ nền bất đồng bộ. Các tác vụ này có thể bao gồm việc gửi email thông báo, xử lý các yêu cầu tính toán tốn thời gian, hoặc tương tác với các API bên ngoài mà không làm ảnh hưởng đến thời gian phản hồi của tiến trình web.
+    \item \textbf{Lệnh Release (\texttt{release}):} Bao gồm lệnh \texttt{python manage.py migrate}, được Heroku tự động thực thi trong giai đoạn phát hành (release phase) của quá trình triển khai. Điều này đảm bảo rằng mọi thay đổi về lược đồ cơ sở dữ liệu được áp dụng một cách nhất quán trước khi phiên bản mã nguồn mới bắt đầu tiếp nhận lưu lượng truy cập.
+\end{itemize}
+Kiến trúc đa tiến trình này cho phép ứng dụng xử lý hiệu quả đồng thời các yêu cầu web thời gian thực và các tác vụ nền đòi hỏi tài nguyên tính toán. Hệ thống cũng sử dụng dịch vụ cơ sở dữ liệu được quản lý, ví dụ như Heroku Postgres, để lưu trữ dữ liệu ứng dụng, với lược đồ được quản lý qua cơ chế migration của Django. Các thông tin cấu hình nhạy cảm và biến môi trường được quản lý an toàn thông qua cơ chế Config Vars của Heroku, tách biệt khỏi mã nguồn.
+
+Kiến trúc này cũng tạo điều kiện thuận lợi cho việc mở rộng ứng dụng theo chiều ngang bằng cách điều chỉnh số lượng dyno cho tiến trình \texttt{web} hoặc \texttt{worker} tùy theo nhu cầu tải. Bên cạnh đó, Heroku cung cấp các công cụ tích hợp sẵn để theo dõi hiệu năng ứng dụng và tập trung hóa bản ghi từ tất cả các dyno, hỗ trợ hiệu quả cho việc gỡ lỗi và giám sát hoạt động.
+
+\subsubsection*{Quy trình triển khai}
+
+Quy trình triển khai điển hình trên Heroku được tự động hóa và diễn ra như sau:
+\begin{enumerate}
+    \item \textbf{Phát triển và commit:} Nhà phát triển thực hiện các thay đổi trên mã nguồn và commit vào Git repository cục bộ.
+    \item \textbf{Đẩy lên Heroku:} Sử dụng lệnh \texttt{git push heroku <tên-nhánh>} (ví dụ: \texttt{git push heroku main}) để đẩy các thay đổi mã nguồn lên Git repository từ xa được liên kết với ứng dụng trên Heroku.
+    \item \textbf{Kích hoạt quy trình build:} Heroku nhận diện sự kiện push và tự động kích hoạt quy trình xây dựng ứng dụng, bao gồm việc cài đặt các thư viện phụ thuộc và chuẩn bị môi trường thực thi.
+    \item \textbf{Giai đoạn release:} Sau khi quá trình xây dựng thành công, Heroku thực thi các lệnh được định nghĩa trong phần \texttt{release} của \texttt{Procfile}.
+    \item \textbf{Khởi động lại dyno:} Các dyno đang chạy phiên bản cũ sẽ được dừng và các dyno mới được khởi tạo với mã nguồn và cấu hình đã được xây dựng thành công ở bước trước.
+    \item \textbf{Chuyển hướng lưu lượng:} Heroku tự động chuyển hướng lưu lượng truy cập HTTP đến các dyno mới vừa khởi động.
+\end{enumerate}
+Quy trình tự động hóa này giúp việc triển khai phiên bản mới diễn ra nhanh chóng, đáng tin cậy và giảm thiểu thời gian chết đối với hầu hết các ứng dụng web tiêu chuẩn, nhờ cơ chế chuyển đổi mượt mà của Heroku. Tuy nhiên, cần lưu ý rằng việc sử dụng PaaS như Heroku có thể đi kèm với chi phí vận hành cao hơn ở quy mô lớn và mức độ kiểm soát hạ tầng ít linh hoạt hơn so với giải pháp IaaS.
+
 \subsection{AI Service}
 \subsubsection{Đóng gói}
 

@@ -60,7 +60,40 @@ Cấu trúc mã nguồn Frontend như sau:
 	\caption{Cấu trúc mã nguồn Frontend}
 	\label{fig:enter-label}
 \end{figure}
+
+
 \subsubsubsection{Backend}
+Phần mã nguồn backend của hệ thống, được lưu trữ trong repository \texttt{CoolChat-BE}, được phát triển dựa trên framework Django, một framework web Python mạnh mẽ và phổ biến, cùng với Django REST Framework để xây dựng các API hiệu quả. Cấu trúc dự án được tổ chức theo mô hình "app-per-feature", giúp tăng tính module hoá, dễ quản lý và bảo trì.
+
+Cấu trúc thư mục chính của dự án backend (\texttt{coolchat\_be/}) bao gồm các ứng dụng (apps) Django riêng biệt, mỗi ứng dụng đảm nhiệm một nhóm chức năng cụ thể:
+\begin{itemize}
+    \item \texttt{authentication/}: Chịu trách nhiệm xử lý các quy trình liên quan đến xác thực và phân quyền người dùng (ví dụ: đăng nhập, đăng ký, quản lý token).
+    \item \texttt{users/}: Quản lý thông tin chi tiết của người dùng trong hệ thống.
+    \item \texttt{chat/}: Xử lý logic cốt lõi liên quan đến các phiên trò chuyện, bao gồm lưu trữ tin nhắn, trạng thái cuộc hội thoại.
+    \item \texttt{chatbot/}: Tích hợp và quản lý các chức năng liên quan đến chatbot, giao tiếp với dịch vụ AI và xử lý logic đặc thù của bot.
+    \item \texttt{document/}: Quản lý các tài liệu, văn bản hoặc cơ sở tri thức được sử dụng bởi chatbot để trả lời câu hỏi.
+    \item \texttt{organization/}: Quản lý thông tin về các tổ chức hoặc doanh nghiệp sử dụng hệ thống chatbot.
+    \item \texttt{subscription/}: Xử lý các vấn đề liên quan đến gói dịch vụ, đăng ký và thanh toán.
+    \item \texttt{reports/}: Chịu trách nhiệm tạo và quản lý các báo cáo, thống kê về hoạt động của chatbot và tương tác người dùng.
+\end{itemize}
+
+Bên cạnh các ứng dụng chức năng, cấu trúc dự án còn bao gồm các thư mục hỗ trợ quan trọng khác:
+\begin{itemize}
+    \item \texttt{core/}: Tập hợp các mã nguồn nền tảng và tiện ích dùng chung, bao gồm các lớp trừu tượng cơ sở, mixins, các hàm tiện ích, và các hằng số hoặc cấu hình cốt lõi. Mục đích của thư mục này là thúc đẩy tái sử dụng mã nguồn và đảm bảo tính nhất quán giữa các ứng dụng thành phần trong dự án.
+    \item \texttt{templates/}: Lưu trữ các tệp mẫu định dạng HTML, được Django sử dụng để tạo các phản hồi động phía máy chủ. Các mẫu này chủ yếu phục vụ cho việc kết xuất giao diện quản trị (Django Admin) và định dạng nội dung cho các email được hệ thống gửi đi.
+    \item \texttt{static/}: Tập hợp các tệp tĩnh như tệp CSS, mã JavaScript, và các tệp hình ảnh. Các tài sản này được sử dụng để định dạng và bổ trợ chức năng cho giao diện quản trị Django và các tài nguyên đã được xây dựng cần thiết để hiển thị thành phần chat widget.
+    \item \texttt{docs/}: Chứa tài liệu đặc tả API của hệ thống, tuân theo chuẩn OpenAPI (được trực quan hóa thông qua giao diện Swagger UI). Tài liệu này đóng vai trò then chốt, cung cấp hướng dẫn chi tiết cho đội ngũ phát triển frontend và các bên thứ ba trong việc tương tác và tích hợp với các API endpoints do backend cung cấp.
+\end{itemize}
+Ở cấp độ root repository \texttt{CoolChat-BE}, các tệp và thư mục cấu hình, quản lý môi trường và phụ thuộc cũng được tổ chức một cách khoa học:
+\begin{itemize}
+    \item \texttt{config/}: Thư mục chứa các tệp cấu hình chính của ứng dụng Django (ví dụ: \texttt{settings.py}, \texttt{urls.py} cấp dự án, \texttt{wsgi.py}, \texttt{asgi.py}).
+    \item \texttt{requirements/}: Thư mục chứa các tệp định nghĩa danh sách các gói thư viện Python phụ thuộc. Việc chia nhỏ tệp requirements theo môi trường (ví dụ: \texttt{base.txt}, \texttt{development.txt}, \texttt{production.txt}) giúp quản lý dependencies hiệu quả và đảm bảo môi trường triển khai nhất quán.
+    \item \texttt{manage.py}: Tệp tiện ích dòng lệnh chuẩn của Django, dùng để thực thi các tác vụ quản trị dự án (ví dụ: chạy server phát triển, tạo migrations, thực thi câu lệnh tùy chỉnh).
+    \item \texttt{.env}, \texttt{.env.example}: Các tệp dùng để quản lý biến môi trường, chứa các thông tin nhạy cảm như khóa API, thông tin kết nối cơ sở dữ liệu.
+\end{itemize}
+
+Ngoài ra, dự án còn có thư mục \texttt{widget/}, chứa mã nguồn cho thành phần widget trò chuyện có thể nhúng trực tiếp vào trang web của khách hàng. Mặc dù được đặt trong repository backend, cấu trúc bên trong của nó (\texttt{src/}, \texttt{components/}, \texttt{styles/}, \texttt{utils/}) gợi ý đây có thể là một ứng dụng frontend độc lập (ví dụ: xây dựng bằng JavaScript thuần hoặc một thư viện/framework nhẹ) được phát triển và đóng gói riêng biệt để dễ dàng tích hợp.
+
 \subsubsubsection{AI}
 Cấu trúc mã nguồn của dịch vụ AI như sau:
 \begin{itemize}
