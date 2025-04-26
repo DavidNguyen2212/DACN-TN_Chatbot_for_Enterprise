@@ -1,4 +1,4 @@
-\subsubsubsection{Tổng quan về công cụ và cấu trúc kiểm thử}
+\subsubsection{Tổng quan về công cụ và cấu trúc kiểm thử}
 
 \textbf{Công cụ kiểm thử}
 
@@ -25,11 +25,11 @@ Bên trong mỗi thư mục \texttt{tests}, các tệp kiểm thử được đ�
 
 Cách tổ chức này không chỉ giúp tăng cường tính rõ ràng, dễ quản lý mà còn thuận lợi cho việc bảo trì và mở rộng bộ kiểm thử trong tương lai khi hệ thống phát triển.
 
-\subsubsubsection{Các phương pháp kiểm thử phần mềm}
+\subsubsection{Các phương pháp kiểm thử phần mềm}
 
 Trong quá trình phát triển hệ thống chatbot, các phương pháp kiểm thử phần mềm đã được áp dụng nhằm đảm bảo chất lượng, độ tin cậy và tính chính xác của ứng dụng. Các phương pháp chính bao gồm kiểm thử đơn vị và kiểm thử tích hợp.
 
-\paragraph{Kiểm thử đơn vị (Unit Testing)}
+\subsubsubsection{Kiểm thử đơn vị (Unit Testing)}
 Kiểm thử đơn vị tập trung vào việc xác minh tính chính xác của từng thành phần phần mềm nhỏ nhất (đơn vị) một cách riêng lẻ, cô lập khỏi các thành phần khác. Trong phạm vi dự án, kiểm thử đơn vị được thực hiện chủ yếu trên các lớp đối tượng sau:
 \begin{itemize}
     \item \textit{Models}: Xác minh logic nghiệp vụ, quy tắc xác thực dữ liệu (validation logic) và các phương thức tùy chỉnh được định nghĩa bên trong các model (ví dụ: phương thức \texttt{is\_valid()} trong model \texttt{EmailVerificationToken} và \texttt{PasswordResetToken}). Công cụ \texttt{django.test.TestCase} thường được sử dụng cho mục đích này.
@@ -37,7 +37,7 @@ Kiểm thử đơn vị tập trung vào việc xác minh tính chính xác củ
     \item \textit{Hàm tiện ích và Dịch vụ (Utils/Services)}: Kiểm tra các hàm tiện ích và các khối logic nghiệp vụ được tách biệt khỏi controllers, ví dụ như các hàm thực hiện chức năng gửi email (\texttt{send\_verification\_email}, \texttt{send\_password\_reset\_email}). Để cô lập đơn vị đang được kiểm thử khỏi các thành phần phụ thuộc bên ngoài (như hệ thống gửi email thực tế), kỹ thuật mocking với \texttt{unittest.mock.patch} được áp dụng.
 \end{itemize}
 
-\paragraph{Kiểm thử tích hợp (Integration Testing)}
+\subsubsubsection{Kiểm thử tích hợp (Integration Testing)}
 Kiểm thử tích hợp nhằm mục đích xác minh sự tương tác và phối hợp hoạt động chính xác giữa các thành phần khác nhau của hệ thống. Trong dự án này, kiểm thử tích hợp đặc biệt tập trung vào việc kiểm tra các API endpoints. Sử dụng \texttt{rest\_framework.test.APITestCase} và \texttt{rest\_framework.test.APIClient}, các bài kiểm thử tích hợp mô phỏng các yêu cầu HTTP (GET, POST, PATCH, DELETE) gửi đến các API endpoints. Quá trình kiểm thử tập trung đánh giá các khía cạnh sau:
 \begin{itemize}
     \item Mã trạng thái HTTP (\texttt{response.status\_code}) được trả về có phù hợp với kịch bản yêu cầu hay không.
@@ -47,9 +47,9 @@ Kiểm thử tích hợp nhằm mục đích xác minh sự tương tác và ph�
     \item Cơ chế phân quyền (permissions) hoạt động chính xác, đảm bảo người dùng chỉ có thể truy cập tài nguyên và thực hiện hành động phù hợp với vai trò được gán (ví dụ: phân biệt quyền giữa chủ sở hữu tổ chức (owner), quản trị viên (admin) và thành viên (member)).
 \end{itemize}
 
-\subsubsubsection{Kết quả Kiểm thử và Ví dụ}
+\subsubsection{Kết quả Kiểm thử và Ví dụ}
 
-\paragraph{Kết quả kiểm thử}
+\subsubsubsection{Kết quả kiểm thử}
 Kết quả thực thi bộ kiểm thử tự động cho các ứng dụng (apps) thành phần của hệ thống được tổng hợp trong Bảng \ref{tab:test_statistics_detailed}.
 
 \begin{table}[htbp]
@@ -76,7 +76,7 @@ Kết quả thực thi bộ kiểm thử tự động cho các ứng dụng (app
 
 \textbf{Ví dụ Kiểm thử Tiêu biểu}
 
-\paragraph{Kiểm thử lớp Model}
+\subsubsubsection{Kiểm thử lớp Model}
 Kiểm thử ở tầng Model đóng vai trò then chốt trong việc đảm bảo tính toàn vẹn dữ liệu và sự đúng đắn của logic nghiệp vụ được định nghĩa trong các lớp này. Hoạt động kiểm thử này bao gồm việc xác minh các quy tắc xác thực dữ liệu nếu có, kiểm tra hoạt động của các phương thức tùy chỉnh như phương thức biểu diễn chuỗi (\texttt{\_\_str\_\_}), và đảm bảo các thuộc tính của đối tượng được quản lý chính xác trong các tình huống khác nhau như khởi tạo, cập nhật hay truy vấn.
 
 Ví dụ, xem xét việc kiểm thử cho model \texttt{Conversation}, đại diện cho một cuộc hội thoại trong hệ thống. Các bài kiểm thử cần đảm bảo rằng một đối tượng \texttt{Conversation} có thể được khởi tạo chính xác với các giá trị thuộc tính ban đầu, phương thức biểu diễn chuỗi trả về thông tin nhận dạng hữu ích, và logic sắp xếp hoạt động đúng như định nghĩa.
@@ -125,7 +125,7 @@ class TestConversationModel:
 
 Đoạn mã trên minh họa việc sử dụng các factory (\texttt{OrganizationFactory}, \texttt{UserFactory}) để tạo các đối tượng liên quan cần thiết trước khi khởi tạo đối tượng \texttt{Conversation}. Sau đó, các câu lệnh \texttt{assert} được dùng để kiểm tra xem các thuộc tính của đối tượng mới tạo có đúng với giá trị đã cung cấp hoặc giá trị mặc định hay không. Các bài kiểm thử khác trong cùng lớp \texttt{TestConversationModel} sẽ tiếp tục kiểm tra các khía cạnh khác như phương thức \texttt{\_\_str\_\_} và logic sắp xếp dữ liệu. Cách tiếp cận này giúp đảm bảo model hoạt động ổn định và chính xác theo yêu cầu thiết kế.
 
-\paragraph{Kiểm thử lớp Serializer}
+\subsubsubsection{Kiểm thử lớp Serializer}
 Quá trình kiểm thử tập trung vào việc: (1) Xác minh dữ liệu đầu ra khi tuần tự hóa, đảm bảo đủ trường và đúng giá trị, kể cả các trường tùy chỉnh. (2) Kiểm tra khả năng xử lý và xác thực dữ liệu đầu vào khi giải tuần tự hóa.
 
 Đoạn mã sau minh họa kiểm thử quá trình tuần tự hóa cho \texttt{DocumentSerializer}, kiểm tra các trường thông thường và trường tùy chỉnh như định dạng kích thước file.
@@ -172,7 +172,7 @@ class TestDocumentSerializer:
 
 Trong Liệt kê \ref{lst:test_document_serializer}, các đối tượng mẫu được tạo bằng factory, sau đó \texttt{serializer.data} được dùng để kiểm tra kết quả tuần tự hóa. Các bài kiểm thử riêng biệt như \texttt{test\_file\_size\_display} đặc biệt hữu ích để xác minh logic của các trường tính toán hoặc tùy chỉnh trong serializer.
 
-\paragraph{Kiểm thử API (API Endpoint Testing)}
+\subsubsubsection{Kiểm thử API (API Endpoint Testing)}
 Kiểm thử các API endpoints là một phần quan trọng trong kiểm thử tích hợp, nhằm xác minh tính đúng đắn của giao diện giao tiếp giữa frontend và backend. Quá trình này bao gồm việc mô phỏng các yêu cầu HTTP đến các endpoint đã định nghĩa và kiểm tra không chỉ phản hồi trực tiếp mà còn cả các tác động lên trạng thái hệ thống.
 
 Một ví dụ điển hình là kiểm thử endpoint đăng ký người dùng mới (\texttt{/api/v1/auth/register/}). Sử dụng các công cụ như \texttt{rest\_framework.test.APIClient} (được cung cấp bởi \texttt{APITestCase} hoặc thông qua \texttt{pytest-django}), một yêu cầu HTTP POST được gửi đến endpoint này, mang theo dữ liệu đăng ký hợp lệ. Bài kiểm thử sẽ xác minh nhiều khía cạnh: mã trạng thái HTTP trả về (ví dụ: \texttt{201 CREATED}), sự thay đổi trong cơ sở dữ liệu (ví dụ: một đối tượng \texttt{User} mới được tạo, một \texttt{EmailVerificationToken} tương ứng được sinh ra), và việc các dịch vụ bên ngoài được gọi đúng như mong đợi (ví dụ: hàm gửi email xác thực). Kỹ thuật mocking, chẳng hạn sử dụng decorator \texttt{@patch} của thư viện \texttt{unittest.mock}, thường được áp dụng để cô lập và kiểm tra việc gọi các thành phần phụ thuộc này mà không cần thực thi chúng thực sự.
