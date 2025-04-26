@@ -1,0 +1,24 @@
+\subsubsection{Quản lý mã nguồn}
+Trong quá trình phát triển hệ thống tạo chatbot chăm sóc khách hàng, nhóm sử dụng Git - một hệ thống quản lý phiên bản phân tán phổ biến, nhằm đảm bảo việc kiểm soát và theo dõi quá trình thay đổi mã nguồn hiệu quả. Git cho phép các thành viên trong nhóm làm việc song song trên nhiều nhánh (branch), dễ dàng tích hợp mã (merge), theo dõi lịch sử thay đổi (commit history) và xử lý xung đột khi làm việc nhóm.
+
+Để lưu trữ và quản lý mã nguồn từ xa, nhóm lựa chọn GitHub - một nền tảng lưu trữ mã nguồn trực tuyến dựa trên Git. GitHub hỗ trợ nhiều tính năng hữu ích cho phát triển cộng tác như pull request, issue tracking, CI/CD tích hợp, và khả năng quản lý phân quyền truy cập theo từng repository.
+
+Để tổ chức cấu trúc mã nguồn một cách rõ ràng và dễ quản lý, nhóm đã tạo một GitHub Organization với tên là CoolChat. Trong đó, mã nguồn của hệ thống được chia thành ba repository riêng biệt tương ứng với từng thành phần chức năng:
+\begin{itemize}
+    \item CoolChat-FE: chứa mã nguồn frontend, được phát triển bằng React và Vite.
+    \item CoolChat-BE: chứa mã nguồn backend, được xây dựng bằng Django REST Framework.
+    \item CoolChat-AI: chứa mã nguồn liên quan đến xử lý AI và tích hợp chatbot, bao gồm mô hình xử lý ngôn ngữ tự nhiên.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Images/Implementation/git-org.png}
+	\vspace{0.5cm}
+	\caption{CoolChat Organization}
+	\label{fig:enter-label}
+\end{figure}
+
+Cấu trúc tổ chức này giúp nhóm phân tách rõ ràng trách nhiệm phát triển, triển khai và bảo trì các thành phần hệ thống, đồng thời thuận tiện cho việc phân quyền truy cập, kiểm soát phiên bản và triển khai CI/CD độc lập cho từng phần.
+\subsubsection{Cấu trúc mã nguồn}
+\subsubsubsection{Frontend}
+\subsubsubsection{Backend}
+\subsubsubsection{AI}
