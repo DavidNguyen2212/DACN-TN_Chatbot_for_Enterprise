@@ -20,7 +20,7 @@ Trong quá trình phát triển hệ thống tạo chatbot chăm sóc khách hà
 Cấu trúc tổ chức này giúp nhóm phân tách rõ ràng trách nhiệm phát triển, triển khai và bảo trì các thành phần hệ thống, đồng thời thuận tiện cho việc phân quyền truy cập, kiểm soát phiên bản và triển khai CI/CD độc lập cho từng phần.
 \subsubsection{Cấu trúc mã nguồn}
 \subsubsubsection{Frontend}
-Cấu trúc mã nguồn Frontedn như sau:
+Cấu trúc mã nguồn Frontend như sau:
 \begin{itemize}
     \item Các thư mục
     \begin{itemize}
@@ -62,3 +62,40 @@ Cấu trúc mã nguồn Frontedn như sau:
 \end{figure}
 \subsubsubsection{Backend}
 \subsubsubsection{AI}
+Cấu trúc mã nguồn của dịch vụ AI như sau:
+\begin{itemize}
+	\item Các thư mục
+	\begin{itemize}
+		\item .github: Chứa file .yml, đảm nhận việc CI/CD cho service trên Github Action.
+		\item .venv: Chứa các gói thư viện cài đặt trong service.
+		\item app: Là thư mục chính của service, chứa toàn bộ hiện thực mã nguồn.
+		\item test: Chứa các bài kiểm thử về độ tin cậy của phản hồi từ chatbot.
+	\end{itemize}
+
+	\item Các module bên trong app:
+	\begin{itemize}
+		\item api: Là nơi định nghĩa các route và controller cho service. Các route xác định cách service phản hồi với các yêu cầu HTTP, trong khi controller xử lý logic để xử lý các yêu cầu đó.
+		\item core: Là nơi khởi tạo các thiết lập, sự kết nối database. Đây là phần nền tảng để thiết lập môi trường cho service hoạt động.
+		\item dtos: Là nơi tập trung của các data transfer object (DTO), dùng để giao tiếp giữa backend với service này. DTOs giúp chuẩn hóa định dạng dữ liệu trao đổi giữa các phần của hệ thống.
+		\item middleware: Chứa các hàm middleware, có thể can thiệp vào yêu cầu và phản hồi để thực hiện xác thực trước khi yêu cầu đến controller.
+		\item models: Chứa các model, đại diện cho cấu trúc dữ liệu và logic nghiệp vụ của ứng dụng. Các model thường tương ứng với các bảng trong cơ sở dữ liệu và bao gồm các phương thức để thao tác và xác thực dữ liệu.
+		\item services: Chứa logic nghiệp vụ của service. Các service xử lý các hoạt động hoặc luồng công việc cụ thể, thường tương tác với các model để truy xuất hoặc cập nhật dữ liệu và thực hiện các tính toán hoặc xử lý cần thiết.
+		\item utils: Chứa các hàm và lớp tiện ích. Đây là các đoạn mã có thể tái sử dụng cung cấp các chức năng chung, chẳng hạn như hàm trợ giúp cho việc thao tác chuỗi, định dạng ngày tháng, hoặc xử lý lỗi, có thể được sử dụng trong toàn bộ ứng dụng.
+	\end{itemize}
+
+	\item Các file quan trọng
+	\begin{itemize}
+		\item Dockerfile: Đây là file chỉ định quy cách đóng gói ứng dụng. Nó chứa các lệnh cần thiết để xây dựng một hình ảnh Docker cho ứng dụng, giúp đơn giản hóa việc triển khai và chạy ứng dụng trong một container.
+		\item server.py: File khởi động server, đóng vai trò là điểm bắt đầu của ứng dụng.
+		\item uv.lock: File sinh bởi trình quản lý gói 'uv', đảm bảo rằng các phiên bản của phụ thuộc được sử dụng là nhất quán giữa các môi trường khác nhau.
+		\item pyproject.toml: File cấu hình cho dự án Python, thường được sử dụng bởi các công cụ như Poetry. File này chứa thông tin về phụ thuộc, cấu hình dự án, và metadata, giúp quản lý dự án khi không thể cài đặt uv.
+		\item \_\_init\_\_.py: File này được sử dụng để biến một thư mục thành một gói Python, cho phép import các module từ thư mục đó. Nó có thể để trống hoặc chứa mã khởi tạo cho gói.
+	\end{itemize}
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{Images/Implementation/aisource.png}
+	\vspace{0.5cm}
+	\caption{Cấu trúc mã nguồn AI Service}
+	\label{fig:enter-label}
+\end{figure}
