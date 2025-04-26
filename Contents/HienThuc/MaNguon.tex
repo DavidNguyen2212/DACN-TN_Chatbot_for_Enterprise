@@ -20,5 +20,45 @@ Trong quá trình phát triển hệ thống tạo chatbot chăm sóc khách hà
 Cấu trúc tổ chức này giúp nhóm phân tách rõ ràng trách nhiệm phát triển, triển khai và bảo trì các thành phần hệ thống, đồng thời thuận tiện cho việc phân quyền truy cập, kiểm soát phiên bản và triển khai CI/CD độc lập cho từng phần.
 \subsubsection{Cấu trúc mã nguồn}
 \subsubsubsection{Frontend}
+Cấu trúc mã nguồn Frontedn như sau:
+\begin{itemize}
+    \item Các thư mục
+    \begin{itemize}
+        \item assets: Lưu trữ tài nguyên tĩnh như hình ảnh, icon, font,...
+        \item components: Các thành phần UI tái sử dụng trong toàn bộ ứng dụng
+        \item constants: Chứa các hằng số được dùng chung trong dự án, ví dụ: các giá trị cố định, config,...
+        \item hooks: Các custom React hooks để tái sử dụng logic giữa các component
+        \item i18n: Cấu hình và dữ liệu liên quan đến đa ngôn ngữ
+        \item layouts: Các layout chung như layout cho trang chính, layout dashboard, layout xác thực,...
+        \item pages: Các trang chính tương ứng với route trong ứng dụng
+        \item services: Chứa các dịch vụ để giao tiếp với API với axios
+        \item store: Quản lý trạng thái toàn cục với Redux
+        \item utils: Các hàm tiện ích hỗ trợ cho nhiều phần trong dự án
+    \end{itemize}
+    \item Các file quan trọng
+    \begin{itemize}
+        \item App.jsx: File chính chứa cấu trúc cơ bản của ứng dụng (bao gồm router, provider,...)
+        \item main.jsx: Điểm khởi chạy của ứng dụng React (ReactDOM.render) - nơi mount App vào DOM
+        \item index.css: File CSS tổng cho toàn bộ app (chứa các style chung hoặc import từ Tailwind, ...)
+        \item .env: File lưu trữ các biến môi trường
+        \item .gitignore: Định nghĩa các file hoặc thư mục sẽ bị Git bỏ qua (không commit lên repository)
+        \item eslint.config.js: Cấu hình ESLint để kiểm tra chuẩn code và format tự động
+        \item index.html: File HTML gốc để React mount vào
+        \item package.json: Khai báo các dependency, script, metadata của dự án
+        \item package-lock.json: Ghi lại chính xác phiên bản các gói (dependencies) đã cài đặt để đảm bảo build đồng nhất
+        \item postcss.config.js: Cấu hình PostCSS để xử lý CSS (kết hợp với TailwindCSS)
+        \item README.md: Tài liệu hướng dẫn sử dụng, mô tả dự án
+        \item tailwind.config.js: Cấu hình riêng cho TailwindCSS như theme màu sắc, breakpoint, plugin,...
+        \item vercel.json: Cấu hình deploy trên nền tảng Vercel (hosting tự động)
+        \item vite.config.js: Cấu hình Vite - quản lý alias, server, optimize,...
+    \end{itemize}
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{Images/Implementation/fesource.png}
+	\vspace{0.5cm}
+	\caption{Cấu trúc mã nguồn Frontend}
+	\label{fig:enter-label}
+\end{figure}
 \subsubsubsection{Backend}
 \subsubsubsection{AI}
