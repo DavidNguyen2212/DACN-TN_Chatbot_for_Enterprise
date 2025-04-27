@@ -84,6 +84,16 @@ Bên cạnh các ứng dụng chức năng, cấu trúc dự án còn bao gồm 
     \item \texttt{static/}: Tập hợp các tệp tĩnh như tệp CSS, mã JavaScript, và các tệp hình ảnh. Các tài sản này được sử dụng để định dạng và bổ trợ chức năng cho giao diện quản trị Django và các tài nguyên đã được xây dựng cần thiết để hiển thị thành phần chat widget.
     \item \texttt{docs/}: Chứa tài liệu đặc tả API của hệ thống, tuân theo chuẩn OpenAPI (được trực quan hóa thông qua giao diện Swagger UI). Tài liệu này đóng vai trò then chốt, cung cấp hướng dẫn chi tiết cho đội ngũ phát triển frontend và các bên thứ ba trong việc tương tác và tích hợp với các API endpoints do backend cung cấp.
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{Images/Implementation/besource.png}
+	\vspace{0.5cm}
+	\caption{Cấu trúc mã nguồn Backend}
+	\label{fig:enter-label}
+\end{figure}
+
+
 Ở cấp độ root repository \texttt{CoolChat-BE}, các tệp và thư mục cấu hình, quản lý môi trường và phụ thuộc cũng được tổ chức một cách khoa học:
 \begin{itemize}
     \item \texttt{config/}: Thư mục chứa các tệp cấu hình chính của ứng dụng Django (ví dụ: \texttt{settings.py}, \texttt{urls.py} cấp dự án, \texttt{wsgi.py}, \texttt{asgi.py}).
