@@ -38,18 +38,14 @@
             1. Người dùng truy cập trang đăng ký/đăng nhập. \newline
             2. Người dùng chọn một trong hai lựa chọn: \newline
             \hspace{0.5cm}A. Tạo tổ chức mới: \newline
-                \hspace{1cm}A1. Điền thông tin tổ chức. \newline
-                \hspace{1cm}A2. Điền thông tin cá nhân. \newline
-                \hspace{1cm}A3. Hệ thống gửi email xác nhận. \newline
-                \hspace{1cm}A4. Người dùng xác minh email qua link trong thư. \newline
-                \hspace{1cm}A5. Hệ thống xác minh và lưu thông tin vào cơ sở dữ liệu. \newline
-                \hspace{1cm}A6. Hệ thống tự động gán vai trò nhân viên quản lý. \newline
+                \hspace{1cm}A1. Điền thông tin và chọn Đăng ký. \newline
+                \hspace{1cm}A2. Hệ thống gửi email xác nhận. \newline
+                \hspace{1cm}A3. Người dùng xác minh email qua link trong thư. \newline
+                \hspace{1cm}A4. Hệ thống xác minh thành công và lưu thông tin vào cơ sở dữ liệu. \newline
             \hspace{0.5cm}B. Tham gia tổ chức: \newline
-                \hspace{1cm}B1. Nhập mã mời nhận từ email. \newline
-                \hspace{1cm}B2. Điền thông tin cá nhân. \newline
-                \hspace{1cm}B3. Hệ thống xác thực mã mời và lưu thông tin. \newline
-                \hspace{1cm}B4. Hệ thống gán vai trò theo định nghĩa trong lời mời. \newline
-            3. Người dùng được chuyển đến trang chính theo vai trò được phân.
+                \hspace{1cm}B1. Nhập mã mời nhận từ email, thông tin cá nhân và chọn Đăng ký. \newline
+                \hspace{1cm}B2. Hệ thống xác thực mã mời và lưu thông tin. \newline
+            3. Hệ thống thông báo thành công và chuyển đến trang đăng nhập.
         } \\ 
         \hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có.} \\ 
         \hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
@@ -58,10 +54,7 @@
             \hspace{0.5cm}A1.2. Người dùng nhập thông tin khác hoặc chọn tham gia tổ chức. \newline
             \textbf{E2. Tại bước B1, mã mời không hợp lệ hoặc hết hạn:} \newline
             \hspace{0.5cm}B1.1. Hệ thống hiển thị thông báo lỗi. \newline
-            \hspace{0.5cm}B1.2. Người dùng nhập mã mời khác hoặc liên hệ nhân viên quản lý. \newline
-            \textbf{E3. Tại bước A4, người dùng không xác minh email:} \newline
-            \hspace{0.5cm}A4.1. Hệ thống hiển thị thông báo yêu cầu xác minh. \newline
-            \hspace{0.5cm}A4.2. Người dùng có thể yêu cầu gửi lại email xác minh.
+            \hspace{0.5cm}B1.2. Người dùng nhập mã mời khác hoặc liên hệ nhân viên quản lý. 
         } \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có.} \\ 
 		\hline
@@ -85,21 +78,21 @@
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{
 			1. Nhân viên điền đầy đủ email và mật khẩu trong trang nhập. \newline
 			2. Nhân viên ấn nút "Đăng nhập". \newline
-			3. Hệ thống lưu dữ liệu đăng nhập và chuyển đến trang chủ. 
+			3. Hệ thống thông báo thành công và chuyển đến trang chủ. 
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{
-			\textbf{A1. Tại bước 1, người dùng đăng nhập bằng Google OAuth.} \newline
-			\hspace{0.5cm}1.1. Người dùng cho phép Google OAuth xác minh thông tin Gmail của mình. \newline
-			\hspace{0.5cm}1.2. Use case tiếp tục bước 3. 
+			Không có
 		} \\ 
 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
-			\textbf{E1. Tại bước 2, hệ thống hiển thị cảnh báo "Email không tồn tại".} \newline
-			\hspace{0.5cm}2.1. Chuyển về use case "Đăng ký tài khoản mới". \newline
-			\textbf{E2. Tại bước 2, hệ thống hiển thị cảnh báo "Sai mật khẩu".} \newline
-			\hspace{0.5cm}2.1. Người dùng nhập lại mật khẩu. \newline
-			\hspace{0.5cm}2.2. Use case tiếp tục bước 2. \newline
-			\hspace{0.5cm}2.3. Nếu ngoại lệ E2 lại xảy ra, ấn vào nút "Quên mật khẩu". \newline
-			\hspace{0.5cm}2.4. Chuyển đến use case "Quên mật khẩu". 
+			\textbf{E1. Tại bước 3, có lỗi email không tồn tại.} \newline
+			\hspace{0.5cm}3.1. Hệ thống hiển thị cảnh báo "Email không tồn tại". \newline
+            \hspace{0.5cm}Kết thúc use case. \newline
+			\textbf{E2. Tại bước 3, có lỗi sai mật khẩu.} \newline
+            \hspace{0.5cm}2.1. Hệ thống hiển thị cảnh báo "Sai mật khẩu". \newline
+			\hspace{0.5cm}2.2. Người dùng nhập lại mật khẩu. \newline
+			\hspace{0.5cm}2.3. Use case tiếp tục bước 2. \newline
+			\hspace{0.5cm}2.4. Nếu ngoại lệ E2 lại xảy ra, ấn vào nút "Quên mật khẩu". \newline
+			\hspace{0.5cm}2.5. Chuyển đến use case "Quên mật khẩu". 
 		} \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline
@@ -122,20 +115,20 @@
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Đặt lại mật khẩu thành công. } \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
 			1. Nhân viên nhập email đã đăng ký. \newline 
-			2. Nhân viên ấn nút "Quên mật khẩu". \newline 
+			2. Nhân viên ấn nút "Tìm kiếm". \newline 
 			3. Hệ thống gửi mã khôi phục đến email của người dùng. \newline 
-			4. Người dùng mở email lấy mã và nhập vào hộp thoại trên web. \newline 
-			5. Hệ thống xác minh mã. \newline 
-			6. Nhân viên tạo mật khẩu mới và ấn nhấn "Tiếp tục". \newline 
-			7. Hệ thống lưu mật khẩu mới cho tài khoản này. \newline
-			8. Hệ thống chuyển đến trang đăng nhập, tiếp tục với use case "Đăng nhập". 
+			4. Người dùng mở email và nhấn vào link để xác minh. \newline 
+			5. Nhân viên nhập mật khẩu mới và ấn nhấn "Xác nhận". \newline 
+			6. Hệ thống lưu mật khẩu mới cho tài khoản này. \newline
+			7. Hệ thống chuyển đến trang đăng nhập, tiếp tục với use case "Đăng nhập". 
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
 			Không có.
 		} \\ 
 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
-			\textbf{E1. Tại bước 2, hệ thống hiển thị cảnh báo "Email không tồn tại".} \newline 
-			\hspace{0.5cm}2.1. Chuyển về use case "Đăng ký tài khoản mới". 
+			\textbf{E1. Tại bước 3, có lỗi email không tồn tại.} \newline 
+			\hspace{0.5cm}2.1. Hệ thống hiển thị cảnh báo "Email không tồn tại". \newline
+            \hspace{0.5cm}Kết thúc use case. 
 		} \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline
@@ -153,21 +146,19 @@
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $10 / 11 / 2024$\\ 
 		\hline Actors: & \multicolumn{3}{|p{12cm}|}{Nhân viên (gồm nhân viên chăm sóc khách hàng, nhân viên quản lý)} \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên chỉnh sửa các thông tin cá nhân. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào tab "Cá nhân" của mục "Tài khoản". } \\ 
-		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã ấn vào nút "Cài đặt" trên sidebar. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn "Cài đặt" trên thanh điều hướng. } \\ 
+		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã đăng nhập và đang ở trang "Cài đặt". } \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Chỉnh sửa thông tin cá nhân thành công. } \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Nhân viên tùy chỉnh các thông tin: họ tên, số điện thoại, ảnh đại diện. \newline 
+			1. Nhân viên chọn chỉnh sửa và tùy chỉnh các thông tin. \newline 
 			2. Nhân viên ấn nút "Lưu". \newline 
-			3. Hệ thống lưu các thông tin mới. 
+			3. Hệ thống hiển thị thông báo thành công và lưu các thông tin mới. 
 		} \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			\textbf{A1. Tại bước 1, nhân viên thay đổi mật khẩu.} \newline 
-			\hspace{0.5cm}1.1. Chuyển sang use case "Đổi mật khẩu". 
+		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có
 		} \\ 
 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
 			\textbf{E1. Tại bước 2, nhân viên ấn "Hủy bỏ".} \newline 
-			\hspace{0.5cm}2.1. Use case kết thúc. 
+			\hspace{0.5cm}2.1. Hệ thống khóa chỉnh sửa và use case kết thúc. 
 		} \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline
@@ -185,20 +176,19 @@
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
 		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên (gồm nhân viên chăm sóc khách hàng, nhân viên quản lý) } \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên chủ động thay đổi mật khẩu. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào tab "Mật khẩu" của mục "Tài khoản". } \\ 
-		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã ấn vào nút "Cài đặt" trên sidebar. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào tab "Mật khẩu" của mục "Tài khoản" trong trang "Cài đặt"} \\ 
+		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ Nhân viên đã đăng nhập vào hệ thống và đang ở trang "Cài đặt". } \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Đổi mật khẩu thành công. } \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
 			1. Nhân viên nhập mật khẩu hiện tại và mật khẩu mới. \newline 
 			2. Nhân viên ấn nút "Lưu". \newline 
-			3. Hệ thống lưu mật khẩu mới. 
+			3. Hệ thống lưu mật khẩu mới và đăng xuất tài khoản. 
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
-			\textbf{E1. Tại bước 2, nhân viên ấn "Hủy bỏ".} \newline 
-			\hspace{0.5cm}2.1. Use case kết thúc. \newline 
-			\textbf{E2. Tại bước 2, hệ thống báo "Sai mật khẩu hiện tại".} \newline 
-			\hspace{0.5cm}2.1. Use case kết thúc. 
+			\textbf{E1. Tại bước 3, lỗi sai mật khẩu hiện tại.} \newline 
+			\hspace{0.5cm}2.1. Hệ thống báo "Sai mật khẩu hiện tại" \newline
+            \hspace{0.5cm} Use case kết thúc. 
 		} \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline
@@ -223,115 +213,199 @@
 \end{figure}
 
 \subsubsubsection{Use case scenario}
-
-\textbf{Tải dữ liệu tri thức}
+\textbf{Thêm tri thức}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|} 
-		\hline Use case name: & \multicolumn{3}{|l|}{Tải dữ liệu tri thức} \\ 
+		\hline Use case name: & \multicolumn{3}{|l|}{Thêm tri thức} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
 		\hline Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép công ty nạp dữ liệu huấn luyện chatbot. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép công ty thêm tri thức để huấn luyện chatbot. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào mục "Cập nhật tri thức" ở trang "Đào tạo chatbot. } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Chủ sở hữu hoặc Nhân viên quản lý đã đăng nhập thành công. \newline 
+			Nhân viên quản lý đã đăng nhập thành công. \newline 
 			Người dùng đã chuẩn bị các dữ liệu huấn luyện. 
 		} \\ 
-		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Tải dữ liệu lên thành công. } \\ 
+		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Thêm tri thức thành công. } \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
 			1. Người dùng ấn vào biểu tượng tải file để tải tài liệu lên. \newline 
-			2. Hệ thống kiểm tra định dạng và loại bỏ các file không đúng định dạng. \newline 
-			3. Hệ thống hiển thị danh sách các file đã nhận lên trang web. 
+			2. Hệ thống hiển thị của sổ chọn file chứa các file phù hợp. \newline 
+            3. Người dùng chọn các file muốn tải lên. \newline 
+			4. Hệ thống hiển thị danh sách các file đã nhận lên trang web.  \newline
+            5. Người dùng chọn "Lưu". \newline
+            6. Hệ thống hiển thị thành công và cập nhật các tri thức mới.
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			A1. Tại bước 1, người dùng nhập các trang web để lấy dữ liệu. \newline 
-			\hspace{0.5cm}1.1. Chuyển đến use case "Trích xuất nội dung từ website". 
+			\textbf{A1. Tại bước 1, người dùng chọn tab Nhập tri thức.} \newline 
+			\hspace{0.5cm}1.1. Người dùng nhập văn bản. \newline
+			\hspace{0.5cm}Tiếp tục bước 5 trong normal flows. \newline
+            \textbf{A2. Tại bước 1, người dùng chọn tab Nhập tri thức web.} \newline 
+			\hspace{0.5cm}1.1. Người dùng điền các thông tin của website. \newline
+            \hspace{0.5cm}Tiếp tục bước 5 trong normal flows. 
 		} \\ 
-		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
+            \textbf{E1. Tại bước 6, có lỗi.} \newline 
+			\hspace{0.5cm}1.1. Hệ thống báo lỗi tương ứng \newline
+            \hspace{0.5cm}Kết thúc use case
+        } \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline
 	\end{tabular}
-	\caption{Use case scenario cho Tải dữ liệu tri thức}
+	\caption{Use case scenario cho Thêm tri thức}
 \end{table}
 
-\newpage
-\textbf{Cập nhật dữ liệu tri thức}
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|l|} 
-		\hline Use case name: & \multicolumn{3}{|l|}{Cập nhật dữ liệu tri thức} \\ 
-		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
-		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý chỉnh sửa tri thức của chatbot. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
-		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Nhân viên quản lý đăng nhập thành công. 
-		} \\ 
-		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Cập nhật dữ liệu tri thức thành công. 
-		} \\ 
-		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Nhân viên quản lý ấn vào biểu tượng tải file để tải tài liệu mới lên. \newline 
-			2. Hệ thống kiểm tra định dạng và loại bỏ các file không đúng định dạng. \newline 
-			3. Hệ thống hiển thị danh sách các file đã nhận lên trang web. 
-		} \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			\textbf{A1. Tại bước 1, người dùng muốn xóa một số file nào đó. }\newline 
-			\hspace{0.5cm}1.1. Ấn vào biểu tượng chữ x trên biểu tượng file. \newline 
-			\hspace{0.5cm}1.2. Popup hiển thị xác nhận quyết định xóa. \newline 
-			\hspace{0.5cm}1.3. Người dùng ấn "Xóa". \newline 
-			\hspace{0.5cm}1.4. Hệ thống xóa tệp. \newline 
-			\textbf{A2. Tại bước 1, người dùng thêm các trang web để lấy dữ liệu. }\newline 
-			\hspace{0.5cm}1.1. Chuyển đến use-case "Trích xuất dữ liệu trang web". 
-		} \\ 
-		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
-			Không có
-		} \\ 
-		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
-		\hline
-	\end{tabular}
-	\caption{Use case scenario cho Cập nhật dữ liệu tri thức}
-\end{table}
+% \textbf{Xóa tri thức}
+% \begin{table}[H]
+% 	\centering
+% 	\begin{tabular}{|l|l|l|l|} 
+% 		\hline Use case name: & \multicolumn{3}{|l|}{Xóa tri thức} \\ 
+% 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+% 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
+% 		\hline Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\ 
+% 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép công ty xóa tri thức trong kho lưu trữ. } \\ 
+% 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn nút xóa một tri thức ở trang "Đào tạo chatbot. } \\ 
+% 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Nhân viên quản lý đã đăng nhập thành công. \newline 
+% 			Danh sách tri thức không rỗng
+% 		} \\ 
+% 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Thêm tri thức thành công. } \\ 
+% 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			1. Người dùng ấn vào biểu tượng tải file để tải tài liệu lên. \newline 
+% 			2. Hệ thống hiển thị của sổ chọn file chứa các file phù hợp. \newline 
+%             3. Người dùng chọn các file muốn tải lên. \newline 
+% 			4. Hệ thống hiển thị danh sách các file đã nhận lên trang web.  \newline
+%             5. Người dùng chọn "Lưu". \newline
+%             6. Hệ thống hiển thị thành công và cập nhật các tri thức mới.
+% 		} \\ 
+% 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			\textbf{A1. Tại bước 1, người dùng chọn tab Nhập tri thức.} \newline 
+% 			\hspace{0.5cm}1.1. Người dùng nhập văn bản. \newline
+% 			\hspace{0.5cm}Tiếp tục bước 5 trong normal flows. \newline
+%             \textbf{A2. Tại bước 1, người dùng chọn tab Nhập tri thức web.} \newline 
+% 			\hspace{0.5cm}1.1. Người dùng điền các thông tin của website. \newline
+%             \hspace{0.5cm}Tiếp tục bước 5 trong normal flows. 
+% 		} \\ 
+% 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
+%             \textbf{E1. Tại bước 6, có lỗi.} \newline 
+% 			\hspace{0.5cm}1.1. Hệ thống báo lỗi tương ứng \newline
+%             \hspace{0.5cm}Kết thúc use case
+%         } \\ 
+% 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+% 		\hline
+% 	\end{tabular}
+% 	\caption{Use case scenario cho Thêm tri thức}
+% \end{table}
 
-\textbf{Trích xuất nội dung từ website}
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|l|} 
-		\hline Use case name: & \multicolumn{3}{|l|}{Trích xuất nội dung từ website} \\ 
-		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
-		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thêm website làm tri thức cho chatbot. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
-		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Nhân viên quản lý đăng nhập thành công. 
-		} \\ 
-		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Cập nhật tri thức website thành công. 
-		} \\ 
-		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Ấn vào biểu tượng Thêm, popup hiện ra cho phép người dùng nhập địa chỉ website. \newline 
-			2. Nhân viên quản lý nhập địa chỉ và ấn "OK". \newline 
-			3. Hệ thống lưu địa chỉ mới. 
-		} \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			\textbf{A1. Tại bước 1, người dùng muốn xóa một địa chỉ web.} \newline 
-			\hspace{0.5cm}1.1. Ấn vào biểu tượng chữ x trên dòng địa chỉ web. \newline 
-			\hspace{0.5cm}1.2. Người dùng ấn "Xóa". \newline 
-			\hspace{0.5cm}1.3. Hệ thống xóa địa chỉ này. \newline 
-			\textbf{A2. Tại bước 1, người dùng muốn cập nhật một địa chỉ web. }\newline 
-			\hspace{0.5cm}1.1. Ấn vào biểu tượng Chỉnh sửa trên dòng địa chỉ web. \newline 
-			\hspace{0.5cm}1.2. Người dùng chỉnh sửa và ấn Enter. \newline 
-			\hspace{0.5cm}1.3. Hệ thống lưu địa chỉ này. 
-		} \\ 
-		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
-		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
-		\hline
-	\end{tabular}
-	\caption{Use case scenario cho Trích xuất nội dung từ website}
-\end{table}
+
+% \textbf{Tải dữ liệu tri thức}
+% \begin{table}[H]
+% 	\centering
+% 	\begin{tabular}{|l|l|l|l|} 
+% 		\hline Use case name: & \multicolumn{3}{|l|}{Tải dữ liệu tri thức} \\ 
+% 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+% 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
+% 		\hline Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\ 
+% 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép công ty nạp dữ liệu huấn luyện chatbot. } \\ 
+% 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
+% 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Chủ sở hữu hoặc Nhân viên quản lý đã đăng nhập thành công. \newline 
+% 			Người dùng đã chuẩn bị các dữ liệu huấn luyện. 
+% 		} \\ 
+% 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Tải dữ liệu lên thành công. } \\ 
+% 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			1. Người dùng ấn vào biểu tượng tải file để tải tài liệu lên. \newline 
+% 			2. Hệ thống kiểm tra định dạng và loại bỏ các file không đúng định dạng. \newline 
+% 			3. Hệ thống hiển thị danh sách các file đã nhận lên trang web. 
+% 		} \\ 
+% 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			A1. Tại bước 1, người dùng nhập các trang web để lấy dữ liệu. \newline 
+% 			\hspace{0.5cm}1.1. Chuyển đến use case "Trích xuất nội dung từ website". 
+% 		} \\ 
+% 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+% 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+% 		\hline
+% 	\end{tabular}
+% 	\caption{Use case scenario cho Tải dữ liệu tri thức}
+% \end{table}
+
+% \newpage
+% \textbf{Cập nhật dữ liệu tri thức}
+% \begin{table}[H]
+% 	\centering
+% 	\begin{tabular}{|l|l|l|l|} 
+% 		\hline Use case name: & \multicolumn{3}{|l|}{Cập nhật dữ liệu tri thức} \\ 
+% 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+% 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
+% 		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+% 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý chỉnh sửa tri thức của chatbot. } \\ 
+% 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
+% 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Nhân viên quản lý đăng nhập thành công. 
+% 		} \\ 
+% 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Cập nhật dữ liệu tri thức thành công. 
+% 		} \\ 
+% 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			1. Nhân viên quản lý ấn vào biểu tượng tải file để tải tài liệu mới lên. \newline 
+% 			2. Hệ thống kiểm tra định dạng và loại bỏ các file không đúng định dạng. \newline 
+% 			3. Hệ thống hiển thị danh sách các file đã nhận lên trang web. 
+% 		} \\ 
+% 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			\textbf{A1. Tại bước 1, người dùng muốn xóa một số file nào đó. }\newline 
+% 			\hspace{0.5cm}1.1. Ấn vào biểu tượng chữ x trên biểu tượng file. \newline 
+% 			\hspace{0.5cm}1.2. Popup hiển thị xác nhận quyết định xóa. \newline 
+% 			\hspace{0.5cm}1.3. Người dùng ấn "Xóa". \newline 
+% 			\hspace{0.5cm}1.4. Hệ thống xóa tệp. \newline 
+% 			\textbf{A2. Tại bước 1, người dùng thêm các trang web để lấy dữ liệu. }\newline 
+% 			\hspace{0.5cm}1.1. Chuyển đến use-case "Trích xuất dữ liệu trang web". 
+% 		} \\ 
+% 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Không có
+% 		} \\ 
+% 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+% 		\hline
+% 	\end{tabular}
+% 	\caption{Use case scenario cho Cập nhật dữ liệu tri thức}
+% \end{table}
+
+% \textbf{Trích xuất nội dung từ website}
+% \begin{table}[H]
+% 	\centering
+% 	\begin{tabular}{|l|l|l|l|} 
+% 		\hline Use case name: & \multicolumn{3}{|l|}{Trích xuất nội dung từ website} \\ 
+% 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+% 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
+% 		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+% 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thêm website làm tri thức cho chatbot. } \\ 
+% 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
+% 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Nhân viên quản lý đăng nhập thành công. 
+% 		} \\ 
+% 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Cập nhật tri thức website thành công. 
+% 		} \\ 
+% 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			1. Ấn vào biểu tượng Thêm, popup hiện ra cho phép người dùng nhập địa chỉ website. \newline 
+% 			2. Nhân viên quản lý nhập địa chỉ và ấn "OK". \newline 
+% 			3. Hệ thống lưu địa chỉ mới. 
+% 		} \\ 
+% 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			\textbf{A1. Tại bước 1, người dùng muốn xóa một địa chỉ web.} \newline 
+% 			\hspace{0.5cm}1.1. Ấn vào biểu tượng chữ x trên dòng địa chỉ web. \newline 
+% 			\hspace{0.5cm}1.2. Người dùng ấn "Xóa". \newline 
+% 			\hspace{0.5cm}1.3. Hệ thống xóa địa chỉ này. \newline 
+% 			\textbf{A2. Tại bước 1, người dùng muốn cập nhật một địa chỉ web. }\newline 
+% 			\hspace{0.5cm}1.1. Ấn vào biểu tượng Chỉnh sửa trên dòng địa chỉ web. \newline 
+% 			\hspace{0.5cm}1.2. Người dùng chỉnh sửa và ấn Enter. \newline 
+% 			\hspace{0.5cm}1.3. Hệ thống lưu địa chỉ này. 
+% 		} \\ 
+% 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+% 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+% 		\hline
+% 	\end{tabular}
+% 	\caption{Use case scenario cho Trích xuất nội dung từ website}
+% \end{table}
 
 \newpage
 \textbf{Gán nhãn dữ liệu tri thức}
@@ -362,38 +436,38 @@
 	\caption{Use case scenario cho Gán nhãn dữ liệu tri thức}
 \end{table}
 
-\textbf{So sánh chatbot}
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|l|} 
-		\hline Use case name: & \multicolumn{3}{|l|}{So sánh chatbot} \\ 
-		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
-		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $12 / 11 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý xem trước chatbot để quyết định có lưu các cài đặt không. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào mục "Gán nhãn tri thức". } \\ 
-		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Nhân viên quản lý vừa thực hiện thay đổi với tri thức (thêm / xóa / sửa / đánh nhãn). 
-		} \\ 
-		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Ra quyết định được có nên nâng cấp chatbot hay không. 
-		} \\ 
-		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Ấn vào nút "So sánh chatbot", trang so sánh hiển thị cho phép người dùng thấy 2 phiên bản cùng một lúc. \newline 
-			2. Nhân viên quản lý nhập tin nhắn vào khung chat và xem 2 bot cùng trả lời. \newline 
-			3. Người dùng ấn "Lưu và training". 
-		} \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			Không có.
-		} \\ 
-		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
-		\textbf{E1. Tại bước 3, người dùng ấn biểu tượng trở về. Thay đổi chưa được lưu, use-case kết thúc} \newline 
-		} \\ 
-		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
-		\hline
-	\end{tabular}
-	\caption{Use case scenario cho Trích xuất nội dung từ website}
-\end{table}
+% \textbf{So sánh chatbot}
+% \begin{table}[H]
+% 	\centering
+% 	\begin{tabular}{|l|l|l|l|} 
+% 		\hline Use case name: & \multicolumn{3}{|l|}{So sánh chatbot} \\ 
+% 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+% 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $12 / 11 / 2024$\\ 
+% 		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+% 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý xem trước chatbot để quyết định có lưu các cài đặt không. } \\ 
+% 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào mục "Gán nhãn tri thức". } \\ 
+% 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Nhân viên quản lý vừa thực hiện thay đổi với tri thức (thêm / xóa / sửa / đánh nhãn). 
+% 		} \\ 
+% 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Ra quyết định được có nên nâng cấp chatbot hay không. 
+% 		} \\ 
+% 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			1. Ấn vào nút "So sánh chatbot", trang so sánh hiển thị cho phép người dùng thấy 2 phiên bản cùng một lúc. \newline 
+% 			2. Nhân viên quản lý nhập tin nhắn vào khung chat và xem 2 bot cùng trả lời. \newline 
+% 			3. Người dùng ấn "Lưu và training". 
+% 		} \\ 
+% 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+% 			Không có.
+% 		} \\ 
+% 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
+% 		\textbf{E1. Tại bước 3, người dùng ấn biểu tượng trở về. Thay đổi chưa được lưu, use-case kết thúc} \newline 
+% 		} \\ 
+% 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+% 		\hline
+% 	\end{tabular}
+% 	\caption{Use case scenario cho Trích xuất nội dung từ website}
+% \end{table}
 
 \textbf{Tùy chỉnh hành vi chatbot}
 \begin{table}[H]
