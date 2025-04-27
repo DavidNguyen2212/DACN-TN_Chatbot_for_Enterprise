@@ -16,12 +16,9 @@ Lược đồ này cung cấp góc nhìn tổng quát về cách các công ngh�
 \end{figure}
 
 Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao thức REST API (Post, HTTP API) và Websocket. Các hệ cơ sở dữ liệu sẽ đảm nhận các nhiệm vụ đọc, ghi những loại dữ liệu khác nhau. Ngoài ra, Django Server sử dụng Redis Caching Server để tăng tốc việc truy xuất dữ liệu sẵn có.
-
-
-\subsection{Công nghệ}
 \subsubsection{Frontend}
 \subsubsubsection{ReactJS}
-\renewcommand{\labelenumi}{\alph{enumi})}
+\renewcommand{\labelenumi}{\alph{enumi}}
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
@@ -161,74 +158,74 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 	\end{itemize}
 	
 \end{enumerate}
-\subsubsubsection{Vercel}
-\renewcommand{\labelenumi}{\alph{enumi})}
-\begin{enumerate}
-	\item \textbf{Giới thiệu}
+% \subsubsubsection{Vercel}
+% \renewcommand{\labelenumi}{\alph{enumi})}
+% \begin{enumerate}
+% 	\item \textbf{Giới thiệu}
 	
-	Vercel là nền tảng đám mây giúp triển khai các ứng dụng web frontend hiện đại một cách dễ dàng và nhanh chóng. Nó hỗ trợ các framework phổ biến như React.js, Next.js, Vue.js, Angular và Svelte. Vercel cung cấp giải pháp Serverless Deployment, đảm bảo ứng dụng luôn sẵn sàng với hiệu suất cao.
+% 	Vercel là nền tảng đám mây giúp triển khai các ứng dụng web frontend hiện đại một cách dễ dàng và nhanh chóng. Nó hỗ trợ các framework phổ biến như React.js, Next.js, Vue.js, Angular và Svelte. Vercel cung cấp giải pháp Serverless Deployment, đảm bảo ứng dụng luôn sẵn sàng với hiệu suất cao.
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.3\linewidth]{Images/vercel_logo.png}
-		\vspace{0.5cm}
-		\caption{Logo Vercel - Nguồn: Internet}
-		\label{fig:enter-label}
-	\end{figure}
+% 	\begin{figure}[H]
+% 		\centering
+% 		\includegraphics[width=0.3\linewidth]{Images/vercel_logo.png}
+% 		\vspace{0.5cm}
+% 		\caption{Logo Vercel - Nguồn: Internet}
+% 		\label{fig:enter-label}
+% 	\end{figure}
 	
-	\item \textbf{Đặc điểm công nghệ}
+% 	\item \textbf{Đặc điểm công nghệ}
 	
-	Vercel có các tính năng nổi bật như:
-	\begin{itemize}
-		\item Tự động triển khai: Tích hợp với GitHub, GitLab, Bitbucket để triển khai tự động.
-		\item Xây dựng không máy chủ (Serverless): Chạy ứng dụng mà không cần quản lý máy chủ vật lý.
-		\item CDN Toàn cầu: Ứng dụng được phân phối nhanh chóng thông qua mạng CDN toàn cầu.
-		\item Domain và SSL: Cung cấp tên miền tùy chỉnh và chứng chỉ SSL miễn phí.
-		\item Phân nhánh (Branch Deployments): Tạo các môi trường preview cho từng nhánh trong dự án.
-		\item Khả năng mở rộng: 
-		\begin{itemize}
-			\item Auto Scaling: Vercel tự động mở rộng dịch vụ khi lưu lượng truy cập tăng
-			\item Edge Functions: Xử lý yêu cầu nhanh chóng ở rìa mạng (edge) để giảm độ trễ.
-		\end{itemize}
-	\end{itemize}
+% 	Vercel có các tính năng nổi bật như:
+% 	\begin{itemize}
+% 		\item Tự động triển khai: Tích hợp với GitHub, GitLab, Bitbucket để triển khai tự động.
+% 		\item Xây dựng không máy chủ (Serverless): Chạy ứng dụng mà không cần quản lý máy chủ vật lý.
+% 		\item CDN Toàn cầu: Ứng dụng được phân phối nhanh chóng thông qua mạng CDN toàn cầu.
+% 		\item Domain và SSL: Cung cấp tên miền tùy chỉnh và chứng chỉ SSL miễn phí.
+% 		\item Phân nhánh (Branch Deployments): Tạo các môi trường preview cho từng nhánh trong dự án.
+% 		\item Khả năng mở rộng: 
+% 		\begin{itemize}
+% 			\item Auto Scaling: Vercel tự động mở rộng dịch vụ khi lưu lượng truy cập tăng
+% 			\item Edge Functions: Xử lý yêu cầu nhanh chóng ở rìa mạng (edge) để giảm độ trễ.
+% 		\end{itemize}
+% 	\end{itemize}
 	
-	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+% 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
 	
-	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
-	\begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
-		\hline
-		\textbf{Tiêu chí} & \textbf{Vercel} & \textbf{Netlify} & \textbf{Render} \\ 
-		\hline
-		Triển khai & Serverless, tự động với Git & Tự động, dễ tích hợp Git & Serverless, dễ triển khai \\ 
-		\hline
-		Hỗ trợ framework & Next.js, React.js, Vue.js & React.js, Angular,... & Fullstack, tùy chọn đa ngôn ngữ \\ 
-		\hline
-		CDN toàn cầu & Có & Có & Không tích hợp sẵn   \\ 
-		\hline
-		Tích hợp Git & Tự động với GitHub, GitLab & GitHub, GitLab, Bitbucket & GitHub, GitLab  \\ 
-		\hline
-		Domain và SSL & Miễn phí & Miễn phí & Miễn phí \\ 
-		\hline
-		Tính năng đặc biệt & Edge Functions, ISR, Preview & Serverless Functions & Background Jobs, WebSockets \\ 
-		\hline
-		Giá cả & Miễn phí, trả phí theo yêu cầu & Miễn phí, trả phí nâng cao & Miễn phí, trả phí mở rộng \\ 
-		\hline
-		Khả năng mở rộng & Tự động & Tự động & Tự động \\ 
-		\hline
-	\end{longtable}
+% 	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
+% 	\begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+% 		\hline
+% 		\textbf{Tiêu chí} & \textbf{Vercel} & \textbf{Netlify} & \textbf{Render} \\ 
+% 		\hline
+% 		Triển khai & Serverless, tự động với Git & Tự động, dễ tích hợp Git & Serverless, dễ triển khai \\ 
+% 		\hline
+% 		Hỗ trợ framework & Next.js, React.js, Vue.js & React.js, Angular,... & Fullstack, tùy chọn đa ngôn ngữ \\ 
+% 		\hline
+% 		CDN toàn cầu & Có & Có & Không tích hợp sẵn   \\ 
+% 		\hline
+% 		Tích hợp Git & Tự động với GitHub, GitLab & GitHub, GitLab, Bitbucket & GitHub, GitLab  \\ 
+% 		\hline
+% 		Domain và SSL & Miễn phí & Miễn phí & Miễn phí \\ 
+% 		\hline
+% 		Tính năng đặc biệt & Edge Functions, ISR, Preview & Serverless Functions & Background Jobs, WebSockets \\ 
+% 		\hline
+% 		Giá cả & Miễn phí, trả phí theo yêu cầu & Miễn phí, trả phí nâng cao & Miễn phí, trả phí mở rộng \\ 
+% 		\hline
+% 		Khả năng mở rộng & Tự động & Tự động & Tự động \\ 
+% 		\hline
+% 	\end{longtable}
 	
-	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+% 	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
 	
-	Nhóm chọn Vercel vì những lý do sau:
-	\begin{itemize}
-		\item Tối ưu hóa React.js: Vercel hỗ trợ mạnh mẽ Next.js, framework hàng đầu cho React.js.
-		\item Dễ sử dụng: Cung cấp giao diện người dùng đơn giản, dễ thao tác cho cả người mới bắt đầu và chuyên gia.
-		\item Hiệu suất cao: CDN toàn cầu giúp tải nhanh ứng dụng trên toàn thế giới.
-		\item Bảo mật: Chứng chỉ SSL miễn phí giúp bảo vệ dữ liệu.
-		\item Triển khai liên tục: Mỗi lần cập nhật mã nguồn sẽ tự động triển khai, giúp rút ngắn chu kỳ phát triển phần mềm.
-	\end{itemize}
+% 	Nhóm chọn Vercel vì những lý do sau:
+% 	\begin{itemize}
+% 		\item Tối ưu hóa React.js: Vercel hỗ trợ mạnh mẽ Next.js, framework hàng đầu cho React.js.
+% 		\item Dễ sử dụng: Cung cấp giao diện người dùng đơn giản, dễ thao tác cho cả người mới bắt đầu và chuyên gia.
+% 		\item Hiệu suất cao: CDN toàn cầu giúp tải nhanh ứng dụng trên toàn thế giới.
+% 		\item Bảo mật: Chứng chỉ SSL miễn phí giúp bảo vệ dữ liệu.
+% 		\item Triển khai liên tục: Mỗi lần cập nhật mã nguồn sẽ tự động triển khai, giúp rút ngắn chu kỳ phát triển phần mềm.
+% 	\end{itemize}
 	
-\end{enumerate}
+% \end{enumerate}
 \subsubsubsection{NextUI}
 NextUI là một thư viện giao diện người dùng (UI library) hiện đại được thiết kế để xây dựng các ứng dụng web với phong cách đẹp mắt và hiệu năng cao. NextUI sử dụng React làm nền tảng, giúp lập trình viên dễ dàng tạo ra các thành phần giao diện (components) tái sử dụng và nhanh chóng.
 
@@ -547,47 +544,48 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 
 
 \subsubsection{AI}
-\subsubsubsection{Mô hình Gemini-1.5-Flash}
+\subsubsubsection{Mô hình Gemini-2.5-Flash}
 \renewcommand{\labelenumi}{\alph{enumi})}
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
-	Gemini-1.5-Flash là một bước tiến trong lĩnh vực trí tuệ nhân tạo (AI) và xử lý ngôn ngữ tự nhiên (NLP), được phát triển bởi OpenAI. Đây là một phiên bản cải tiến từ dòng mô hình Gemini, tích hợp các kỹ thuật tối ưu hóa mới để tăng tốc độ xử lý và giảm tài nguyên tiêu thụ. Công nghệ này được tạo ra nhằm giải quyết nhu cầu ngày càng cao về hiệu suất và khả năng mở rộng của các dịch vụ dựa trên AI, đặc biệt là trong các ứng dụng chatbot và tương tác người-máy.
+Gemini 2.5 Flash là phiên bản mô hình ngôn ngữ (tầm trung) mới nhất của Google, kế thừa nền tảng Gemini 2.0 Flash với khả năng reasoning cải tiến, đồng thời ưu tiên tốc độ và tiết kiệm chi phí. Mô hình suy nghĩ lai này cho phép nhà phát triển bật hoặc tắt quá trình “thinking” để điều chỉnh độ phức tạp của nhiệm vụ. Thông qua tham số thinking\_budget, người dùng có thể kiểm soát ngân sách token dành cho reasoning, cân bằng chất lượng và độ trễ theo nhu cầu . Với tỷ lệ hiệu năng/chi phí vượt trội, Gemini 2.5 Flash mang đến giải pháp AI linh hoạt, giúp tối ưu chi phí và hiệu quả triển khai trong nhiều ứng dụng.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.6\textwidth]{Images/gemini.png}
+		\includegraphics[width=0.6\textwidth]{Images/gemini25.jpg}
 		\vspace{0.5cm}
-		\caption{Mô hình ngôn ngữ lớn Gemini-1.5-flash - Nguồn: Internet}
+		\caption{Mô hình ngôn ngữ lớn Gemini-2.5-flash preview. Nguồn: Internet}
 		\label{fig:enter-label}
 	\end{figure}
 	
-	\item \textbf{Đặc điểm công nghệ}
-	
-	Gemini-1.5-Flash cung cấp các tính năng nổi bật như:
-	\begin{itemize}
-		\item Xử lý ngôn ngữ tự nhiên nâng cao: Khả năng hiểu và tạo ngôn ngữ tự nhiên một cách chính xác và linh hoạt.
-		\item Hiệu năng cao: Cơ chế “Flash” giúp cải thiện tốc độ xử lý lên đến 2-3 lần so với các phiên bản trước.
-		\item Tối ưu hóa tài nguyên: Giảm đáng kể chi phí tính toán và sử dụng bộ nhớ, phù hợp với các ứng dụng đám mây.
-		\item Tích hợp dễ dàng: Dễ dàng triển khai vào các nền tảng đám mây và hệ thống hiện có thông qua API hoặc SDK.
-		\item Hỗ trợ đa ngôn ngữ: Có khả năng làm việc với nhiều ngôn ngữ, giúp mở rộng phạm vi ứng dụng trên toàn cầu.
-	\end{itemize}
-	
-	Ưu điểm:
-	\begin{itemize}
-		\item Hiệu suất cao: Tăng tốc độ phản hồi, giảm độ trễ trong giao tiếp với người dùng.
-		\item Tiết kiệm tài nguyên: Thích hợp với các dịch vụ đám mây nhờ khả năng tối ưu hóa tài nguyên tính toán.
-		\item Tính ứng dụng cao: Đáp ứng nhiều kịch bản sử dụng, từ hỗ trợ khách hàng, tạo nội dung đến giáo dục.
-		\item Bảo mật và kiểm soát: Hỗ trợ cơ chế kiểm soát quyền truy cập và bảo mật dữ liệu, đảm bảo tính an toàn cho người dùng.
-	\end{itemize}
-	
-	Nhược điểm: 
-	\begin{itemize}
-		\item Chi phí triển khai ban đầu cao: Đòi hỏi sự đầu tư đáng kể vào hạ tầng và tích hợp.
-		\item Hạn chế trong ngữ cảnh phức tạp: Dù hiệu suất tốt, đôi khi có thể gặp khó khăn trong việc xử lý ngữ cảnh cực kỳ phức tạp hoặc đặc thù.
-		\item Phụ thuộc vào kết nối: Yêu cầu môi trường kết nối đám mây ổn định để hoạt động hiệu quả.
-	\end{itemize}
-	
+\item \textbf{Đặc điểm công nghệ}
+
+Gemini 2.5 Flash cung cấp các tính năng nổi bật như:
+\begin{itemize}
+	\item Hybrid reasoning với khả năng bật/tắt quá trình “thinking” tùy theo độ phức tạp nhiệm vụ. % :contentReference[oaicite:4]{index=4}
+	\item Tham số `thinking\_budget` cho phép kiểm soát số token tối đa dành cho reasoning, cân bằng chất lượng và độ trễ. 
+	\item Tốc độ xử lý cao với độ trễ thấp, tối ưu chi phí cho các tác vụ khối lượng lớn. 
+	\item Hỗ trợ đa modal (văn bản, hình ảnh, âm thanh, video) cho các ứng dụng đa dạng. 
+	\item Tích hợp dễ dàng qua Gemini API, Google AI Studio và Vertex AI, giúp triển khai nhanh chóng. 
+\end{itemize}
+
+Ưu điểm:
+\begin{itemize}
+	\item Cân bằng chất lượng và chi phí tốt, dẫn đầu về hiệu năng/giá trong phân khúc Flash. % :contentReference[oaicite:9]{index=9}
+	\item Khả năng reasoning nâng cao giúp giải quyết các tác vụ phức tạp như toán học, phân tích và lập trình chính xác hơn. % :contentReference[oaicite:10]{index=10}
+	\item Mô hình lai linh hoạt cho phép tối ưu tham số và độ phức tạp cho từng use case. % :contentReference[oaicite:11]{index=11}
+	\item Độ trễ thấp, phù hợp cho kịch bản cần phản hồi nhanh như dịch vụ khách hàng hay xử lý thông tin theo thời gian thực. % :contentReference[oaicite:12]{index=12}
+\end{itemize}
+
+Nhược điểm:
+\begin{itemize}
+	\item Chi phí triển khai ban đầu có thể cao, đặc biệt khi sử dụng `thinking\_budget` lớn. % :contentReference[oaicite:13]{index=13}
+	\item Phụ thuộc vào kết nối đám mây ổn định, có thể gặp gián đoạn khi mạng yếu. % :contentReference[oaicite:14]{index=14}
+	\item Cấu hình reasoning nhiều tham số có thể phức tạp, đòi hỏi nhà phát triển làm quen. % :contentReference[oaicite:15]{index=15}
+	\item Trong những tác vụ đơn giản, nên tắt reasoning để tiết kiệm chi phí và thời gian. % :contentReference[oaicite:16]{index=16}
+\end{itemize}
+
 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
 	
 	Các thông số trong bảng sau được trích từ bài báo của White và cộng sự (2024) \cite{livebench}.
@@ -595,15 +593,15 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 		\hline
 		\textbf{Model} & \textbf{Global Average (point)} & \textbf{Reasoning Average (point)} & \textbf{Language Average (point)} & \textbf{Instruction Following (point)} \\ 
 		\hline
-		Gemini-1.5-flash-002 & 47.84 & 47.00 & 27.92 & 78.76 \\ 
+		Grok 3 Mini Beta & 68.33 & 87.61 & 59.09 & 78.70 \\ 
 		\hline
-		Meta-Llama-3.1-8B-Instruct-Turbo & 25.83 & 14.33 & 18.08 & 54.90 \\ 
+		Meta-Llama-3.1-8B-Instruct-Turbo & 24.95 & 14.78 & 21.10 & 54.90 \\ 
 		\hline
-		GPT-4o-2024-08-06 & 53.77 & 53.92 & 47.59 & 68.58 \\ 
+		Claude 3.5 Haiku & 38.49 & 26.19 & 39.71 & 61.88 \\ 
 		\hline
-		Gemini-1.5-pro-002 & 53.52 & 48.58 & 43.29 & 70.78 \\ 
+		Gemini 2.5 Flash Preview & 71.21 & 73.47 & 59.43 & 79.02 \\ 
 		\hline
-		GPT-4o-mini & 40.25 & 32.75 & 28.61 & 56.80 \\ 
+		GPT 4o mini & 37.63 & 25.64 & 29.88 & 56.80 \\ 
 		\hline
 	\end{longtable}
 	
@@ -618,18 +616,17 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 		\item IF Average (Instruction Following - Khả năng làm theo hướng dẫn): Đảm bảo rằng chatbot có thể hiểu và tuân theo các yêu cầu cụ thể từ khách hàng, chẳng hạn như "Liệt kê danh sách điểm đến" hoặc "Cập nhật thông tin liên lạc".
 	\end{itemize}
 	
-	Với Instruction Following cao nhất (78.76), Gemini-1.5-flash-002 đảm bảo chatbot có thể hiểu và đáp ứng chính xác yêu cầu của khách hàng, yếu tố quan trọng nhất cho chăm sóc khách hàng. Reasoning: Đạt mức cao (47.00), đủ để xử lý các tình huống cần suy luận.
-	Language: Mặc dù thấp hơn các model khác, nhưng có thể khắc phục bằng cách huấn luyện thêm hoặc sử dụng tập dữ liệu tùy chỉnh. So với GPT-4o-2024-08-06, GPT-4o-mini, hoặc Gemini-1.5-pro-002, Gemini-1.5-flash-002 có tiềm năng tiết kiệm chi phí triển khai hơn nhờ kích thước nhỏ hơn và khả năng xử lý tập trung vào Instruction Following.
-	
+	Với Instruction Following cao nhất (79.02), Gemini 2.5 Flash Preview đảm bảo chatbot có thể hiểu và đáp ứng chính xác yêu cầu của khách hàng, yếu tố quan trọng nhất cho chăm sóc khách hàng. Reasoning: Đạt mức cao (73.47), đủ để xử lý các tình huống cần suy luận.
+	Language: Đứng đầu, giúp chatbot giao tiếp tự nhiên, hiểu ý người dùng và bám sát yêu cầu.
 	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
 	
-	Gemini-1.5-Flash là mô hình phù hợp nhất cho dự án xây dựng dịch vụ cung cấp chatbot đám mây nhờ:
+	Gemini 2.5 Flash là mô hình phù hợp nhất cho dự án xây dựng dịch vụ cung cấp chatbot đám mây nhờ:
 	\begin{itemize}
-		\item Hiệu năng vượt trội: Khả năng phản hồi nhanh và mượt mà giúp cải thiện trải nghiệm người dùng.
-		\item Tối ưu chi phí vận hành: Với khả năng sử dụng tài nguyên hiệu quả, Gemini-1.5-Flash giúp giảm chi phí vận hành trên nền tảng đám mây (chi phí thấp nhất trong các model đối thủ).
-		\item Khả năng mở rộng: Hỗ trợ xử lý đồng thời nhiều yêu cầu, phù hợp với các dịch vụ có quy mô lớn.
+		\item Hiệu năng vượt trội: Khả năng phản hồi nhanh và mượt mà giúp cải thiện trải nghiệm người dùng, khả năng tư duy tốt hơn người tiền nhiệm 2.0 Flash.
+		\item Tối ưu chi phí vận hành: Với khả năng sử dụng tài nguyên hiệu quả, Gemini 2.5 Flash giúp giảm chi phí vận hành trên nền tảng đám mây (chi phí thấp nhất trong các model đối thủ có dùng api), đồng thời rẻ hơn 15 lần so với phiên bản cao cấp Gemini 2.5 Pro.
+		\item Khả năng mở rộng: Hỗ trợ xử lý đồng thời nhiều yêu cầu, phù hợp với các dịch vụ có quy mô lớn. 
 		\item Đa dạng ứng dụng: Thích hợp cho nhiều ngành công nghiệp, từ thương mại, giáo dục, y tế đến tài chính, giúp tăng tính cạnh tranh của dịch vụ.
-		\item Dễ dàng triển khai: Hỗ trợ công cụ và giao thức tích hợp mạnh mẽ, giảm thời gian và công sức phát triển, không cần các kỹ thuật onpremise hosting như Llama3.1.
+		\item Dễ dàng triển khai: Triển khai dễ dàng trên Google AI Studio, Vertex AI, và Firebase mà không cần cơ sở hạ tầng on-premise như chuỗi mô hình Llama.
 	\end{itemize}
 	
 \end{enumerate}
@@ -685,7 +682,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 		\hline
 		\textbf{Tiêu chí} & \textbf{LangChain} & \textbf{LlamaIndex} \\ 
 		\hline
-		\textbf{Ngôn ngữ hỗ trợ} & Python và TypeScript/JavaScript với mức độ phát triển mạnh mẽ; cập nhật thường xuyên trên cả hai nền tảng & Python là trọng tâm phát triển; TypeScript ít được cập nhật hơn và chậm so với phiên bản Python \\ 
+		\textbf{Ngôn ngữ hỗ trợ} & Python và TypeScript/JavaScript với mức độ phát triển mạnh mẽ; cập nhật thường xuyên trên cả hai nền tảng, vì thế cộng đồng support mạnh & Python là trọng tâm phát triển; TypeScript ít được cập nhật hơn và chậm so với phiên bản Python, cộng đồng support ít đa dạng hơn \\ 
 		\hline
 		\textbf{Chức năng chính} & Hỗ trợ xây dựng workflow phức tạp với các LLM, cung cấp công cụ quản lý chain, memory, agent và tích hợp các công nghệ khác như Pinecone, Weaviate & Tập trung vào quản lý và truy xuất dữ liệu phi cấu trúc thông qua index thông minh, hỗ trợ nhiều loại index như tree, list, và vector \\ 
 		\hline

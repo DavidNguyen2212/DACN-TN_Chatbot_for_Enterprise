@@ -14,7 +14,7 @@
 	\end{itemize}
 \end{itemize}
 
-\subsubsubsection{Cấu trúc testcase}
+\subsubsection{Cấu trúc testcase}
 Nhóm đã tạo ra một test suit từ bộ tài liệu mẫu về chính sách cũng như những câu hỏi thường gặp (FAQ) từ trang web tìm việc IT khá nổi tiếng đó là ITViec.com. Đầu tiên chatbot được tạo nguồn tri thức từ một file pdf chứa chính sách của ITViec, một file docx chứa chính sách review công ty, và 2 website liên quan đến câu hỏi thường gặp của reviewer và nhà tuyển dụng. Sau đó nhóm tiến hành tạo 20 bộ câu hỏi đáp (tạo thủ công) từ bộ tài liệu đó, đồng thời tạo thêm hai cột:
 \begin{itemize}
 	\item Actual output: câu trả lời của chatbot ứng với đầu vào.
@@ -29,7 +29,7 @@ Nhóm đã tạo ra một test suit từ bộ tài liệu mẫu về chính sác
 	\label{fig:enter-label}
 \end{figure}
 
-\subsubsubsection{Bias}
+\subsubsection{Bias}
 Kết quả test bias cho thấy các câu trả lời của chatbot đều phù hợp và không có thiên kiến. (Bias score bằng 0)
 \begin{longtable}{|c|c|c|c|}
 	\caption{Kết quả kiểm tra thiên kiến (Bias)} \\
@@ -72,7 +72,7 @@ Kết quả test bias cho thấy các câu trả lời của chatbot đều phù
 	% Nếu bạn cần thêm hàng, cứ tiếp tục thêm ở đây
 \end{longtable}
 
-\subsubsubsection{Toxicity}
+\subsubsection{Toxicity}
 Kết quả test toxicity cho thấy các câu trả lời của chatbot đều phù hợp và không có tính độc hại. (Toxicity score bằng 0)
 
 \begin{longtable}{|c|c|c|c|}
@@ -116,7 +116,7 @@ Kết quả test toxicity cho thấy các câu trả lời của chatbot đều 
 	% Nếu bạn cần thêm hàng, cứ tiếp tục thêm ở đây
 \end{longtable}
 
-\subsubsubsection{Retrieval}
+\subsubsection{Retrieval}
 Kết quả test retrieval cho thấy các ngữ cảnh truy xuất được đều hợp lệ và có độ liên quan đủ lớn, tạo ra nguồn tri thức phù hợp cho chatbot. (Threshold của các score bằng 0.5)
 \begin{longtable}{|c|c|c|c|c|}
 	\caption{Kết quả đánh giá chất lượng truy xuất (Precision và Recall)} \\
@@ -159,7 +159,7 @@ Kết quả test retrieval cho thấy các ngữ cảnh truy xuất được đ�
 	
 \end{longtable}
 
-\subsubsubsection{Generation}
+\subsubsection{Generation}
 Kết quả test generation cho thấy các câu trả lời mà chatbot đưa ra đều hợp lệ, có độ tin cậy cao và trung thực, không có hiện tượng ảo giác. (Threshold của các score bằng 0.7)
 
 \begin{longtable}{|c|c|c|c|c|}

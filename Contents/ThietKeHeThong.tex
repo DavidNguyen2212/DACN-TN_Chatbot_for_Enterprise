@@ -125,345 +125,366 @@ Lược đồ này cung cấp cái nhìn tổng quan về trải nghiệm ngư�
 
 % Trở về định dạng mặc định 1., 2., 3.
 \renewcommand{\labelenumi}{\arabic{enumi}.}
-
-
-\subsubsection{Trang Đích}
-\begin{figure}[H]
-    \centering
-    \fbox{\includegraphics[width=0.75\linewidth]{Figma/landing.png}}
-    \vspace{0.5cm}
-    \caption{Giao diện trang Đích}
-    \label{fig:enter-label}
-\end{figure}
-
-Giao diện Trang đích cung cấp một giao diện tổng thể giúp doanh nghiệp tiếp cận được những thông tin quan trọng và cần thiết nhất của hệ thống. Giao diện gồm các phần:
-
-% Định dạng tùy chỉnh a), b), c)
-\renewcommand{\labelenumi}{\alph{enumi})}
-
-\begin{enumerate}
-	\item \textbf{Thanh header}
-	Bao gồm một Logo của hệ thống và các nút điều hướng đến các phần Nội dung và điều hướng đến trang đăng nhập và đăng ký.
-	\item \textbf{Nội dung}
-	Phần nội dung được chia làm các phần nhỏ:
-	\begin{itemize}
-		\item Phần Chào đón: bao gồm câu khẩu hiệu, nút Dùng thử miễn phí và một slider các hình ảnh cùng với phông nền màu xanh đăng trưng.
-		\item Phần Các tính năng nổi bật: bao gồm một slider để hiển thị các tính năng đặc trưng và tiêu biểu của hệ thống, giúp người dùng nhận diện và tiếp cận một cách nhanh nhất. 
-		\item Phần Biểu phí: hiển thị các gói đăng ký mà hệ thống hỗ trợ, người dùng có thể bấm nút đăng ký gói hoặc nút đăng ký dùng thử miễn phí.
-		\item Phần Đăng ký: đây là phần giúp người dùng có thể điền email và chuyển đến trang đăng ký.
-	\end{itemize}
-	\item \textbf{Thanh footer}
-	Thanh footer là thanh nằm cuối cùng của hệ thống với các phần sau:
-	\begin{itemize}
-		\item Phần Logo và địa chỉ: cung cấp hình ảnh logo công ty và địa chỉ các chi nhánh của công ty.
-		\item Phần Giới thiệu: bao gồm các nút điều hướng đến các thông tin liên quan đến công ty như giới thiệu, giá trị, tuyển dụng, giải thưởng và blog.
-		\item Phần Biểu phí: hiển thị các loại biếu phí hỗ trợ như doanh nghiệp, trường đại học, cá nhân và nhóm và sinh viên.
-		\item Phần Liên hệ: hiển thị số hotline, địa chỉ email cũng như các liên kết đến các nền tảng xã hội của công ty.
-		\item Phần Bản quyền: hiển thị chủ sở hữu bản quyền hệ thống.
-	\end{itemize}
-\end{enumerate}
-
-% Trở về định dạng mặc định 1., 2., 3.
-\renewcommand{\labelenumi}{\arabic{enumi}.}
-
-\subsubsection{Trang Đăng ký}
-\setlength{\fboxsep}{0pt}
+\subsubsection{Thiết kế giao diện với Figma}
+Figma là một công cụ UI/UX trực tuyến được phát triển bởi Figma Inc. Công cụ này hỗ trợ các
+nhóm làm việc cộng tác trong việc tạo ra các sản phẩm thiết kế kỹ thuật số, và được sử dụng rất phổ
+biến trong thiết kế giao diện cho ứng dụng web hay mobile. Công cụ này nổi bật với khả năng làm việc
+trực tuyến, cho phép nhiều người dùng cùng lúc chỉnh sửa và tương tác với các bản thiết kế trong thời
+gian thực.
 \begin{figure}[H]
 	\centering
-	\fbox{\includesvg[width=\textwidth]{Figma/Signup - STEP 1.svg}}
+	\includegraphics[width=0.4\textwidth]{Figma/figma_logo.png}
 	\vspace{0.5cm}
-	\caption{Giao diện trang Đăng ký}
+	\caption{Công cụ Figma}
 	\label{fig:enter-label}
 \end{figure}
 
-Giao diện Đăng ký cung cấp một biểu mẫu để người dùng điền các thông tin cá nhân cần thiết và đặt mật khẩu cho tài khoản. Bố cục của trang đơn giản và chia làm 3 phần chính:
+Nhóm đã hoàn thiện bản thiết kế cho tất cả màn hình trên Figma để có thể thuận tiện cho quá trình hiện thực hệ thống.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figma/design_on_figma.png}
+	\vspace{0.5cm}
+	\caption{Các màn hình được thiết kế trên Figma}
+	\label{fig:enter-label}
+\end{figure}
 
-% Định dạng tùy chỉnh a), b), c)
-\renewcommand{\labelenumi}{\alph{enumi}}
+% \subsubsection{Trang Đích}
+% \begin{figure}[H]
+%     \centering
+%     \fbox{\includegraphics[width=0.75\linewidth]{Figma/landing.png}}
+%     \vspace{0.5cm}
+%     \caption{Giao diện trang Đích}
+%     \label{fig:enter-label}
+% \end{figure}
 
-\begin{enumerate}
-	\item \textbf{Tiêu đề}
-	\begin{itemize}
-		\item Logo của ứng dụng được đặt lên đầu tiên nhằm khắc ghi nhận diện thương hiệu vào tâm trí người dùng.
-		\item Phần lời dẫn nhằm giới thiệu mục tiêu của ứng dụng và nhấn mạnh sự tiện lợi CoolChat đem lại khi người sử dụng tiếp cận.
-	\end{itemize}
+% Giao diện Trang đích cung cấp một giao diện tổng thể giúp doanh nghiệp tiếp cận được những thông tin quan trọng và cần thiết nhất của hệ thống. Giao diện gồm các phần:
+
+% % Định dạng tùy chỉnh a), b), c)
+% \renewcommand{\labelenumi}{\alph{enumi})}
+
+% \begin{enumerate}
+% 	\item \textbf{Thanh header}
+% 	Bao gồm một Logo của hệ thống và các nút điều hướng đến các phần Nội dung và điều hướng đến trang đăng nhập và đăng ký.
+% 	\item \textbf{Nội dung}
+% 	Phần nội dung được chia làm các phần nhỏ:
+% 	\begin{itemize}
+% 		\item Phần Chào đón: bao gồm câu khẩu hiệu, nút Dùng thử miễn phí và một slider các hình ảnh cùng với phông nền màu xanh đăng trưng.
+% 		\item Phần Các tính năng nổi bật: bao gồm một slider để hiển thị các tính năng đặc trưng và tiêu biểu của hệ thống, giúp người dùng nhận diện và tiếp cận một cách nhanh nhất. 
+% 		\item Phần Biểu phí: hiển thị các gói đăng ký mà hệ thống hỗ trợ, người dùng có thể bấm nút đăng ký gói hoặc nút đăng ký dùng thử miễn phí.
+% 		\item Phần Đăng ký: đây là phần giúp người dùng có thể điền email và chuyển đến trang đăng ký.
+% 	\end{itemize}
+% 	\item \textbf{Thanh footer}
+% 	Thanh footer là thanh nằm cuối cùng của hệ thống với các phần sau:
+% 	\begin{itemize}
+% 		\item Phần Logo và địa chỉ: cung cấp hình ảnh logo công ty và địa chỉ các chi nhánh của công ty.
+% 		\item Phần Giới thiệu: bao gồm các nút điều hướng đến các thông tin liên quan đến công ty như giới thiệu, giá trị, tuyển dụng, giải thưởng và blog.
+% 		\item Phần Biểu phí: hiển thị các loại biếu phí hỗ trợ như doanh nghiệp, trường đại học, cá nhân và nhóm và sinh viên.
+% 		\item Phần Liên hệ: hiển thị số hotline, địa chỉ email cũng như các liên kết đến các nền tảng xã hội của công ty.
+% 		\item Phần Bản quyền: hiển thị chủ sở hữu bản quyền hệ thống.
+% 	\end{itemize}
+% \end{enumerate}
+
+% % Trở về định dạng mặc định 1., 2., 3.
+% \renewcommand{\labelenumi}{\arabic{enumi}.}
+
+% \subsubsection{Trang Đăng ký}
+% \setlength{\fboxsep}{0pt}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includesvg[width=\textwidth]{Figma/Signup - STEP 1.svg}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Đăng ký}
+% 	\label{fig:enter-label}
+% \end{figure}
+
+% Giao diện Đăng ký cung cấp một biểu mẫu để người dùng điền các thông tin cá nhân cần thiết và đặt mật khẩu cho tài khoản. Bố cục của trang đơn giản và chia làm 3 phần chính:
+
+% % Định dạng tùy chỉnh a), b), c)
+% \renewcommand{\labelenumi}{\alph{enumi}}
+
+% \begin{enumerate}
+% 	\item \textbf{Tiêu đề}
+% 	\begin{itemize}
+% 		\item Logo của ứng dụng được đặt lên đầu tiên nhằm khắc ghi nhận diện thương hiệu vào tâm trí người dùng.
+% 		\item Phần lời dẫn nhằm giới thiệu mục tiêu của ứng dụng và nhấn mạnh sự tiện lợi CoolChat đem lại khi người sử dụng tiếp cận.
+% 	\end{itemize}
 	
-	\item \textbf{Biểu mẫu}
-	\begin{itemize}
-		\item Cho phép người dùng điền các thông tin cá nhân cần thiết: tên, số điện thoại, email doanh nghiệp, vai trò.
-		\item Yêu cầu người dùng đặt mật khẩu và xác nhận mật khẩu lần nữa.
-		\item Đề nghị người dùng đồng ý với các điều khoản và chính sách khi sử dụng dịch vụ.
-	\end{itemize}
+% 	\item \textbf{Biểu mẫu}
+% 	\begin{itemize}
+% 		\item Cho phép người dùng điền các thông tin cá nhân cần thiết: tên, số điện thoại, email doanh nghiệp, vai trò.
+% 		\item Yêu cầu người dùng đặt mật khẩu và xác nhận mật khẩu lần nữa.
+% 		\item Đề nghị người dùng đồng ý với các điều khoản và chính sách khi sử dụng dịch vụ.
+% 	\end{itemize}
 	
-	\item \textbf{Điều hướng}
-	\begin{itemize}
-		\item Nút màu xanh 'Tạo tài khoản mới' giúp người dùng hoàn thành bước đăng ký sau khi đã điền xong biểu mẫu.
-		\item Người dùng có thể điều hướng sang trang đăng nhập nếu đã có sẵn tài khoản trước đó.
-	\end{itemize}
+% 	\item \textbf{Điều hướng}
+% 	\begin{itemize}
+% 		\item Nút màu xanh 'Tạo tài khoản mới' giúp người dùng hoàn thành bước đăng ký sau khi đã điền xong biểu mẫu.
+% 		\item Người dùng có thể điều hướng sang trang đăng nhập nếu đã có sẵn tài khoản trước đó.
+% 	\end{itemize}
 	
-\end{enumerate}
+% \end{enumerate}
 
-% Trở về định dạng mặc định 1., 2., 3.
-\renewcommand{\labelenumi}{\arabic{enumi}.}
+% % Trở về định dạng mặc định 1., 2., 3.
+% \renewcommand{\labelenumi}{\arabic{enumi}.}
 
 
-\subsubsection{Trang Đăng nhập}
+% \subsubsection{Trang Đăng nhập}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includesvg[width=\textwidth]{Figma/Login.svg}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Đăng nhập}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includesvg[width=\textwidth]{Figma/Login.svg}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Đăng nhập}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện Đăng nhập cung cấp cho người sử dụng nhiều phương thức khác nhau để truy cập tài khoản. Cụ thể:
-\begin{itemize}
-	\item Qua Google nếu tài khoản của bạn có vai trò admin.
-	\item Qua Google nếu tài khoản của bạn có vai trò nhân viên chăm sóc khách hàng.
-	\item Qua tài khoản và mật khẩu.
-\end{itemize}
+% Giao diện Đăng nhập cung cấp cho người sử dụng nhiều phương thức khác nhau để truy cập tài khoản. Cụ thể:
+% \begin{itemize}
+% 	\item Qua Google nếu tài khoản của bạn có vai trò admin.
+% 	\item Qua Google nếu tài khoản của bạn có vai trò nhân viên chăm sóc khách hàng.
+% 	\item Qua tài khoản và mật khẩu.
+% \end{itemize}
 
-Với cách thức thứ ba, người dùng có thể lấy lại mật khẩu qua lựa chọn 'Quên mật khẩu' bên dưới ô nhập email. Ngoài ra, người sử dụng cũng quay về được trang Đăng ký nếu muốn.
+% Với cách thức thứ ba, người dùng có thể lấy lại mật khẩu qua lựa chọn 'Quên mật khẩu' bên dưới ô nhập email. Ngoài ra, người sử dụng cũng quay về được trang Đăng ký nếu muốn.
 
-\subsubsection{Trang Đào tạo chatbot}
-Giao diện này gồm hai tiểu phần: Gán nhãn tri thức và cập nhật tri thức.
-\subsubsubsection{Gán nhãn tri thức}
+% \subsubsection{Trang Đào tạo chatbot}
+% Giao diện này gồm hai tiểu phần: Gán nhãn tri thức và cập nhật tri thức.
+% \subsubsubsection{Gán nhãn tri thức}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/GNTT.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện mục Gán nhãn tri thức}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/GNTT.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện mục Gán nhãn tri thức}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện Gán nhãn tri thức cung cấp cho người sử dụng một bảng liệt kê các tài liệu tri thức dành cho chatbot. Các chú thích dành cho quản trị viên nằm ở bên dưới - cung cấp thông tin ưu tiên thứ tự truy xuất cho chatbot khi trả lời một câu hỏi. Hai nút thao tác:
-\begin{itemize}
-	\item So sánh chatbot (màu đỏ): sử dụng khi quản trị viên muốn so sánh câu trả lời của chatbot cũ và mới (do thay đổi tài liệu, thứ tự ưu tiên, phong cách trả lời...) 
-	\item Lưu và training (màu xanh): nhấn nút này khi quản trị viên muốn cập nhật và training ngay chatbot mà không cần so sánh.
-\end{itemize}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/SSCB.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang So sánh chatbot}
-	\label{fig:enter-label}
-\end{figure}
+% Giao diện Gán nhãn tri thức cung cấp cho người sử dụng một bảng liệt kê các tài liệu tri thức dành cho chatbot. Các chú thích dành cho quản trị viên nằm ở bên dưới - cung cấp thông tin ưu tiên thứ tự truy xuất cho chatbot khi trả lời một câu hỏi. Hai nút thao tác:
+% \begin{itemize}
+% 	\item So sánh chatbot (màu đỏ): sử dụng khi quản trị viên muốn so sánh câu trả lời của chatbot cũ và mới (do thay đổi tài liệu, thứ tự ưu tiên, phong cách trả lời...) 
+% 	\item Lưu và training (màu xanh): nhấn nút này khi quản trị viên muốn cập nhật và training ngay chatbot mà không cần so sánh.
+% \end{itemize}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/SSCB.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang So sánh chatbot}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\subsubsubsection{Cập nhật tri thức}
-Giao diện Cập nhật tri thức cung cấp cho người sử dụng nhiều phương thức để thêm, xóa, sửa tài liệu tri thức dành cho chatbot. Hiện tại CoolChat hỗ trợ ba phương tiện tri thức:
-\begin{itemize}
-	\item Tệp (mục Tải lên phương tiện): hỗ trợ các loại tệp pdf, doc, docx, và txt.
-	\item Nhập từ bàn phím (ô Nhập tri thức): tự nhập hướng dẫn cho chatbot, sau đó các hướng dẫn sẽ được lưu ở dạng txt.
-	\item Trích xuất từ web (ô Nhập tri thức web): cần thiết khi không có sẵn tài liệu hoặc muốn lấy thông tin từ một trang web cụ thể.
-\end{itemize}
+% \subsubsubsection{Cập nhật tri thức}
+% Giao diện Cập nhật tri thức cung cấp cho người sử dụng nhiều phương thức để thêm, xóa, sửa tài liệu tri thức dành cho chatbot. Hiện tại CoolChat hỗ trợ ba phương tiện tri thức:
+% \begin{itemize}
+% 	\item Tệp (mục Tải lên phương tiện): hỗ trợ các loại tệp pdf, doc, docx, và txt.
+% 	\item Nhập từ bàn phím (ô Nhập tri thức): tự nhập hướng dẫn cho chatbot, sau đó các hướng dẫn sẽ được lưu ở dạng txt.
+% 	\item Trích xuất từ web (ô Nhập tri thức web): cần thiết khi không có sẵn tài liệu hoặc muốn lấy thông tin từ một trang web cụ thể.
+% \end{itemize}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/GNTT2.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện mục Cập nhật tri thức}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/GNTT2.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện mục Cập nhật tri thức}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\subsubsection{Trang Tùy chỉnh chatbot}
-Giao diện này gồm hai tiểu phần: Cấu hình hiển thị và tích hợp AI.
-\subsubsubsection{Cấu hình hiển thị}
+% \subsubsection{Trang Tùy chỉnh chatbot}
+% Giao diện này gồm hai tiểu phần: Cấu hình hiển thị và tích hợp AI.
+% \subsubsubsection{Cấu hình hiển thị}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/CHHT1.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện mục Cấu hình hiển thị - Giao diện}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/CHHT1.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện mục Cấu hình hiển thị - Giao diện}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện Cấu hình hiển thị cung cấp cho người sử dụng giao diện động linh hoạt chuyển đổi giữa hai loại cấu hình: Giao diện (Hình 73) và Phong cách (Hình 74). 
-\begin{itemize}
-	\item Về giao diện: ảnh đại diện, ảnh nền chat, tên hiển thị, phông chữ, tiêu đề phụ, độ bo góc của tin nhắn, màu nền, màu nền chat đều là các yếu tố có thể thay đổi bởi quản trị viên. Điều này mục đích tạo điểm nhấn và nhận diện thương hiệu trong mắt khách hàng.
+% Giao diện Cấu hình hiển thị cung cấp cho người sử dụng giao diện động linh hoạt chuyển đổi giữa hai loại cấu hình: Giao diện (Hình 73) và Phong cách (Hình 74). 
+% \begin{itemize}
+% 	\item Về giao diện: ảnh đại diện, ảnh nền chat, tên hiển thị, phông chữ, tiêu đề phụ, độ bo góc của tin nhắn, màu nền, màu nền chat đều là các yếu tố có thể thay đổi bởi quản trị viên. Điều này mục đích tạo điểm nhấn và nhận diện thương hiệu trong mắt khách hàng.
 	
-	Quản trị viên hoàn toàn xem trước được cấu hình (nút màu xanh "Xem trước") sau đó nhấn "Lưu cấu hình" (nút màu đỏ).
-	\item Về phong cách: Tạo ra trải nghiệm riêng biệt về doanh nghiệp trong quá trình tư vấn thông qua:
-	\begin{itemize}
-		\item Tông giọng bot: có 4 tông giọng có sẵn, và có thể nhiều hơn trong tương lai.
-		\item Tin nhắc mặc định: lời chào đầu, lời tạm biệt, và lời chuyển giao. 
-	\end{itemize}
+% 	Quản trị viên hoàn toàn xem trước được cấu hình (nút màu xanh "Xem trước") sau đó nhấn "Lưu cấu hình" (nút màu đỏ).
+% 	\item Về phong cách: Tạo ra trải nghiệm riêng biệt về doanh nghiệp trong quá trình tư vấn thông qua:
+% 	\begin{itemize}
+% 		\item Tông giọng bot: có 4 tông giọng có sẵn, và có thể nhiều hơn trong tương lai.
+% 		\item Tin nhắc mặc định: lời chào đầu, lời tạm biệt, và lời chuyển giao. 
+% 	\end{itemize}
 	
-	Quản trị viên có thể xem chatbot ngay tại giao diện này sau khi lưu các thay đổi bằng nút "Xem chatbot".
-\end{itemize}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/CHHT2.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện mục Cấu hình hiển thị - Phong cách}
-	\label{fig:enter-label}
-\end{figure}
+% 	Quản trị viên có thể xem chatbot ngay tại giao diện này sau khi lưu các thay đổi bằng nút "Xem chatbot".
+% \end{itemize}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/CHHT2.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện mục Cấu hình hiển thị - Phong cách}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\subsubsubsection{Tích hợp AI}
-Chatbot có thể kết nối được với nền tảng mạng xã hội (facebook chính thức của doanh nghiệp) hoặc trang web đều được. 
-\begin{itemize}
-	\item Kết nối facebook: Qua nút "Kết nối tới facebook".
-	\item Kết nối trang web: Sao chép mã nguồn từ tab mã nhúng và đưa vào mã nguồn trang web của doanh nghiệp.
-\end{itemize}
+% \subsubsubsection{Tích hợp AI}
+% Chatbot có thể kết nối được với nền tảng mạng xã hội (facebook chính thức của doanh nghiệp) hoặc trang web đều được. 
+% \begin{itemize}
+% 	\item Kết nối facebook: Qua nút "Kết nối tới facebook".
+% 	\item Kết nối trang web: Sao chép mã nguồn từ tab mã nhúng và đưa vào mã nguồn trang web của doanh nghiệp.
+% \end{itemize}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/THAIFB.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện Tích hợp qua Facebook}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/THAIFB.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện Tích hợp qua Facebook}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/THAIMN.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện Tích hợp qua mã nhúng}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/THAIMN.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện Tích hợp qua mã nhúng}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\subsubsection{Trang Hội thoại}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/chat_1.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Hội thoại}
-	\label{fig:enter-label}
-\end{figure}
+% \subsubsection{Trang Hội thoại}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/chat_1.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Hội thoại}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện trang Hội thoại để hiển thị danh sách các cuộc hội thoại, giao diện bao gồm theo thứ tự từ trên xuống dưới và trái sang phải:
-\begin{itemize}
-    \item Một nút để xem tất cả cuộc hội thoại và một nút để xem các cuộc hội thoại được gán nhãn cần hỗ trợ.
-    \item Thanh tìm kiếm và nút lọc giúp người dùng đi đến cuộc hội thoại cần tìm một cách nhanh nhất.
-    \item Danh sách các cuộc hội thoại, mỗi cuộc hội thoại sẽ hiển thị các thông tin cơ bản như là tên khách hàng, nội dung tin nhắn cuối và thời gian gửi gần nhất.
-    \item Thanh dưới bao gồm thông tin số cuộc hội thoại có trên màn hình và thanh phân trang.
-\end{itemize}
+% Giao diện trang Hội thoại để hiển thị danh sách các cuộc hội thoại, giao diện bao gồm theo thứ tự từ trên xuống dưới và trái sang phải:
+% \begin{itemize}
+%     \item Một nút để xem tất cả cuộc hội thoại và một nút để xem các cuộc hội thoại được gán nhãn cần hỗ trợ.
+%     \item Thanh tìm kiếm và nút lọc giúp người dùng đi đến cuộc hội thoại cần tìm một cách nhanh nhất.
+%     \item Danh sách các cuộc hội thoại, mỗi cuộc hội thoại sẽ hiển thị các thông tin cơ bản như là tên khách hàng, nội dung tin nhắn cuối và thời gian gửi gần nhất.
+%     \item Thanh dưới bao gồm thông tin số cuộc hội thoại có trên màn hình và thanh phân trang.
+% \end{itemize}
 
-Khi ấn vào một cuộc hội thoại, màn hình sẽ chuyển đến giao diện chi tiết của cuộc hội thoại đó.
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/chat_2.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Chi tiết hội thoại}
-	\label{fig:enter-label}
-\end{figure}
+% Khi ấn vào một cuộc hội thoại, màn hình sẽ chuyển đến giao diện chi tiết của cuộc hội thoại đó.
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/chat_2.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Chi tiết hội thoại}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện gồm có một cửa sổ chat với các tin nhắn hiển thị ở phần trung tâm, mỗi tin nhắn sẽ có nội dung, người gửi và thời gian. Đầu cửa sổ chat gồm có nút quay lại, tên khách hàng, loại hội thoại, nút bật/tắt tính năng tự động chat và nút tùy chọn khác. Đáy cửa sổ chat gồm có nút tải ảnh lên, khung nhập nội dung chat và nút gửi.
-\subsubsection{Trang Báo cáo}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/report.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Báo cáo}
-	\label{fig:enter-label}
-\end{figure}
+% Giao diện gồm có một cửa sổ chat với các tin nhắn hiển thị ở phần trung tâm, mỗi tin nhắn sẽ có nội dung, người gửi và thời gian. Đầu cửa sổ chat gồm có nút quay lại, tên khách hàng, loại hội thoại, nút bật/tắt tính năng tự động chat và nút tùy chọn khác. Đáy cửa sổ chat gồm có nút tải ảnh lên, khung nhập nội dung chat và nút gửi.
+% \subsubsection{Trang Báo cáo}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/report.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Báo cáo}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện trang Báo cáo để hiển thị một cái nhìn phân tích thông kê về việc sử dụng của chatbot của doanh nghiệp, giao diện gồm có:
-\begin{itemize}
-	\item Nút xuất dùng để xuất báo cáo ra tệp pdf hoặc xlsx. Khi ấn vào màn hình sẽ hiển lên bản xem trước của báo cáo.
-	\item Bên dưới sẽ là thống kê số liệu của 4 số liệu quan trọng bao gồm tổng số cuộc hội thoại, yêu cầu hỗ trợ chưa được xử lý, lịch hẹn trong tương lai, tỷ lệ giữ chân khách hàng. Mỗi số liệu sẽ được biểu thị con số và số phần trăm tăng giảm so với một khoảng thời gian.
-	\item Biểu đổ thống kê số cuộc hội thoại theo thời gian.
-	\item Bảng số cuộc hội thoại theo vị trí.
-	\item Bảng số cuộc hội thoại theo thiết bị.
-\end{itemize}
-\subsubsection{Trang Thanh toán}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/subscription.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Thanh toán}
-	\label{fig:enter-label}
-\end{figure}
+% Giao diện trang Báo cáo để hiển thị một cái nhìn phân tích thông kê về việc sử dụng của chatbot của doanh nghiệp, giao diện gồm có:
+% \begin{itemize}
+% 	\item Nút xuất dùng để xuất báo cáo ra tệp pdf hoặc xlsx. Khi ấn vào màn hình sẽ hiển lên bản xem trước của báo cáo.
+% 	\item Bên dưới sẽ là thống kê số liệu của 4 số liệu quan trọng bao gồm tổng số cuộc hội thoại, yêu cầu hỗ trợ chưa được xử lý, lịch hẹn trong tương lai, tỷ lệ giữ chân khách hàng. Mỗi số liệu sẽ được biểu thị con số và số phần trăm tăng giảm so với một khoảng thời gian.
+% 	\item Biểu đổ thống kê số cuộc hội thoại theo thời gian.
+% 	\item Bảng số cuộc hội thoại theo vị trí.
+% 	\item Bảng số cuộc hội thoại theo thiết bị.
+% \end{itemize}
+% \subsubsection{Trang Thanh toán}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/subscription.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Thanh toán}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện trang Thanh toán gồm 2 phần:
-\begin{itemize}
-	\item Phần Đang sử dụng: biểu thị gói dịch vụ đang sử dụng với số credit tiêu thụ hiện tại được thể hiện trên thanh phần trăm cũng như thời gian của gói.
-	\item Biểu phí các gói dịch vụ bao gồm tên gói, giá tiền, số credit, tính năng, nút đăng ký và nút dùng thử.
-\end{itemize}
-\subsubsection{Trang Cài đặt}
-Giao diện này gồm hai tiểu phần: Tài khoản và thông báo - cảnh báo.
-\subsubsubsection{Tài khoản}
+% Giao diện trang Thanh toán gồm 2 phần:
+% \begin{itemize}
+% 	\item Phần Đang sử dụng: biểu thị gói dịch vụ đang sử dụng với số credit tiêu thụ hiện tại được thể hiện trên thanh phần trăm cũng như thời gian của gói.
+% 	\item Biểu phí các gói dịch vụ bao gồm tên gói, giá tiền, số credit, tính năng, nút đăng ký và nút dùng thử.
+% \end{itemize}
+% \subsubsection{Trang Cài đặt}
+% Giao diện này gồm hai tiểu phần: Tài khoản và thông báo - cảnh báo.
+% \subsubsubsection{Tài khoản}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/CDTK1.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Tài khoản - Cá nhân}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/CDTK1.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Tài khoản - Cá nhân}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện Tài khoản cung cấp cho người sử dụng giao diện động linh hoạt chuyển đổi giữa hai loại cài đặt: Cá nhân và Mật khẩu. 
-\begin{itemize}
-	\item Cá nhân: hiển thị ảnh đại diện, họ và tên, số điện thoại, email và vai trò của người dùng. Email và vai trò là hai thành phần không thể thay đổi.
+% Giao diện Tài khoản cung cấp cho người sử dụng giao diện động linh hoạt chuyển đổi giữa hai loại cài đặt: Cá nhân và Mật khẩu. 
+% \begin{itemize}
+% 	\item Cá nhân: hiển thị ảnh đại diện, họ và tên, số điện thoại, email và vai trò của người dùng. Email và vai trò là hai thành phần không thể thay đổi.
 	
-	Người dùng có thể lưu cài đặt (nút đỏ "Hủy bỏ") hoặc ấn "Lưu" (nút màu xanh) để thiết lập thông tin mới.
-	\item Mật khẩu: Cho phép người dùng đổi mật khẩu một cách chủ động. Hệ thống yêu cầu nhập cả mật khẩu hiện tại và mật khẩu mới mới có thể thay đổi được mật khẩu.
-\end{itemize}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/CDTK2.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Tài khoản - Mật khẩu}
-	\label{fig:enter-label}
-\end{figure}
+% 	Người dùng có thể lưu cài đặt (nút đỏ "Hủy bỏ") hoặc ấn "Lưu" (nút màu xanh) để thiết lập thông tin mới.
+% 	\item Mật khẩu: Cho phép người dùng đổi mật khẩu một cách chủ động. Hệ thống yêu cầu nhập cả mật khẩu hiện tại và mật khẩu mới mới có thể thay đổi được mật khẩu.
+% \end{itemize}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/CDTK2.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Tài khoản - Mật khẩu}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\subsubsubsection{Thông báo và cảnh báo}
-Quản trị viên có quyền lựa chọn cách thức nhận thông báo, cảnh báo trong tab "Chung". Hiện tại có 3 phương thức: 
-\begin{itemize}
-	\item Email.
-	\item Trong chính ứng dụng CoolChat.
-	\item SMS (số điện thoại).
-\end{itemize}
+% \subsubsubsection{Thông báo và cảnh báo}
+% Quản trị viên có quyền lựa chọn cách thức nhận thông báo, cảnh báo trong tab "Chung". Hiện tại có 3 phương thức: 
+% \begin{itemize}
+% 	\item Email.
+% 	\item Trong chính ứng dụng CoolChat.
+% 	\item SMS (số điện thoại).
+% \end{itemize}
 
-Các ngưỡng cảnh báo có thể tắt / bật theo mong muốn của quản trị viên, đồng thời quản trị viên thiết lập được ngưỡng của các thông số sau: cảnh báo sử dụng token, bộ nhớ đã dùng, cảnh báo lưu lượng truy cập.
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/TB-CB1.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Thông báo và cảnh báo - Chung}
-	\label{fig:enter-label}
-\end{figure}
+% Các ngưỡng cảnh báo có thể tắt / bật theo mong muốn của quản trị viên, đồng thời quản trị viên thiết lập được ngưỡng của các thông số sau: cảnh báo sử dụng token, bộ nhớ đã dùng, cảnh báo lưu lượng truy cập.
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/TB-CB1.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Thông báo và cảnh báo - Chung}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/TB-CB2.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Thông báo và cảnh báo - Thiết lập ngưỡng}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/TB-CB2.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Thông báo và cảnh báo - Thiết lập ngưỡng}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\subsubsection{Trang Lịch hẹn}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/appointment.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Lịch hẹn}
-	\label{fig:enter-label}
-\end{figure}
+% \subsubsection{Trang Lịch hẹn}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/appointment.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Lịch hẹn}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Giao diện Lịch hẹn giúp nhân viên CSKH quản lý được các lịch hẹn, giao diện gồm có một thanh tìm kiếm, một nút lọc dữ liệu và một bảng danh sách các lịch hẹn với các trường mã, tên, số điện thoại, lời nhắn, thời gian hẹn và trạng thái, cùng với bên dưới là thanh phân trang cho bảng dữ liệu.
+% Giao diện Lịch hẹn giúp nhân viên CSKH quản lý được các lịch hẹn, giao diện gồm có một thanh tìm kiếm, một nút lọc dữ liệu và một bảng danh sách các lịch hẹn với các trường mã, tên, số điện thoại, lời nhắn, thời gian hẹn và trạng thái, cùng với bên dưới là thanh phân trang cho bảng dữ liệu.
 
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=0.5\linewidth]{Figma/lich_hen_detail.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện trang Lịch hẹn chi tiết}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=0.5\linewidth]{Figma/lich_hen_detail.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện trang Lịch hẹn chi tiết}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Khi ấn vào một lịch hẹn, ta có thể xem các thông tin chi tiết của lịch hẹn đó. Trong popup chi tiết, sẽ có nút Hỗ trợ để điều hướng người dùng đến đoạn chat.
+% Khi ấn vào một lịch hẹn, ta có thể xem các thông tin chi tiết của lịch hẹn đó. Trong popup chi tiết, sẽ có nút Hỗ trợ để điều hướng người dùng đến đoạn chat.
 
-\subsubsection{Giao diện phía khách hàng}
-\begin{figure}[H]
-	\centering
-	\fbox{\includegraphics[width=\textwidth]{Figma/customer.png}}
-	\vspace{0.5cm}
-	\caption{Giao diện phía khách hàng}
-	\label{fig:enter-label}
-\end{figure}
+% \subsubsection{Giao diện phía khách hàng}
+% \begin{figure}[H]
+% 	\centering
+% 	\fbox{\includegraphics[width=\textwidth]{Figma/customer.png}}
+% 	\vspace{0.5cm}
+% 	\caption{Giao diện phía khách hàng}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Khách hàng sẽ sử dụng chatbot thông qua một popup nằm ở góc phải dưới cùng của trang web mà doanh nghiệp tích hợp. Ban đầu nó chỉ là một nút tròn. Khi khách hàng bấm vào thì sẽ bật ra cửa sổ chat, ở đó người dùng có thể nhắn tin, tải ảnh, yêu cầu hỗ trợ và đặt lịch hẹn.
+% Khách hàng sẽ sử dụng chatbot thông qua một popup nằm ở góc phải dưới cùng của trang web mà doanh nghiệp tích hợp. Ban đầu nó chỉ là một nút tròn. Khi khách hàng bấm vào thì sẽ bật ra cửa sổ chat, ở đó người dùng có thể nhắn tin, tải ảnh, yêu cầu hỗ trợ và đặt lịch hẹn.
 
 \subsection{Cơ sở dữ liệu}
 \begin{figure}[p]
