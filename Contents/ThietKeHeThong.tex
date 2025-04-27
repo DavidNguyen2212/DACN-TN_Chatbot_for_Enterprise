@@ -3,7 +3,7 @@
     \thispagestyle{empty}
     \centering
     \rotatebox{90}{
-        \includegraphics[height=0.9\textwidth, width=0.9\textheight, keepaspectratio]{Dg_System/system-architecture.png}
+        \includegraphics[height=0.9\textwidth, width=0.9\textheight, keepaspectratio]{Dg_System/system.png}
     }
     \rotatebox{90}{
         \parbox{\textwidth}{
@@ -470,7 +470,7 @@ Khách hàng sẽ sử dụng chatbot thông qua một popup nằm ở góc ph�
     \thispagestyle{empty}
     \centering
     \rotatebox{90}{
-        \includegraphics[height=\textwidth, width=\textheight, keepaspectratio]{Dg_System/erd.png}
+        \includegraphics[height=\textwidth, width=\textheight, keepaspectratio]{Dg_System/ERD.png}
 %\includesvg[height=\textwidth, width=\textheight, keepaspectratio]{Dg_System/ERD.svg}
     }
     \rotatebox{90}{
@@ -481,284 +481,305 @@ Khách hàng sẽ sử dụng chatbot thông qua một popup nằm ở góc ph�
         }
     }
 \end{figure}
-\subsubsection{Quản lý công ty và người dùng}
-\subsubsubsection{Bảng companies:} Quản lý thông tin các công ty trong hệ thống.
 
+\subsubsection{Quản lý Người dùng}
+
+\subsubsubsection{Bảng \texttt{users\_user}:} Bảng cơ sở cho tất cả các người dùng trong hệ thống, kế thừa từ AbstractUser của Django. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất của công ty
-    \item \textbf{name} (VARCHAR(255)): Tên công ty
-    \item \textbf{domain} (VARCHAR(255)): Tên miền công ty, không được trùng lặp
-    \item \textbf{logo\_url} (VARCHAR(512)): Đường dẫn đến logo công ty
-    \item \textbf{subscription\_type} (VARCHAR(50)): Loại gói đăng ký (FREE, BASIC, PREMIUM)
-    \item \textbf{verification\_status} (VARCHAR(50)): Trạng thái xác thực (PENDING, VERIFIED, REJECTED)
-    \item \textbf{contact\_info} (JSONB): Thông tin liên hệ dạng JSON
-    \item \textbf{settings} (JSONB): Cấu hình công ty dạng JSON
-    \item \textbf{billing\_info} (JSONB): Thông tin thanh toán dạng JSON
-    \item \textbf{max\_chatbots} (INTEGER): Số lượng chatbot tối đa được phép tạo
+    \item \textbf{id} (PK): Định danh duy nhất của người dùng (mặc định là INTEGER auto-increment).
+    \item \textbf{password} (VARCHAR): Mật khẩu đã được mã hóa (kế thừa).
+    \item \textbf{last\_login} (TIMESTAMP WITH TIME ZONE): Thời điểm đăng nhập gần nhất (kế thừa).
+    \item \textbf{name} (VARCHAR(255)): Tên đầy đủ của người dùng.
+    \item \textbf{email} (VARCHAR): Địa chỉ email đăng nhập, không được trùng lặp.
+    \item \textbf{phone\_number} (VARCHAR(17)): Số điện thoại người dùng.
+    \item \textbf{avatar} (VARCHAR): Đường dẫn đến tệp ảnh đại diện người dùng (có thể null).
+    \item \textbf{is\_staff} (BOOLEAN): Trạng thái có quyền truy cập trang admin (kế thừa).
+    \item \textbf{is\_active} (BOOLEAN): Trạng thái tài khoản có đang hoạt động (kế thừa).
+    \item \textbf{date\_joined} (TIMESTAMP WITH TIME ZONE): Thời điểm người dùng tham gia hệ thống (kế thừa).
 \end{itemize}
-
-\subsubsubsection{Bảng user:} Bảng cơ sở cho tất cả các người dùng trong hệ thống.
-
-\textbf{Thuộc tính:}
-\begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất của người dùng
-    \item \textbf{company\_id} (UUID): Tham chiếu đến công ty
-    \item \textbf{email} (VARCHAR(255)): Địa chỉ email đăng nhập, không được trùng lặp
-    \item \textbf{password\_hash} (VARCHAR(255)): Mật khẩu đã được mã hóa
-    \item \textbf{full\_name} (VARCHAR(255)): Họ và tên đầy đủ
-    \item \textbf{last\_login\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm đăng nhập gần nhất
-    \item \textbf{failed\_login\_attempts} (INTEGER): Số lần đăng nhập thất bại
-    \item \textbf{status} (VARCHAR(50)): Trạng thái tài khoản (ACTIVE, INACTIVE, SUSPENDED)
-\end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Kế thừa từ bảng \texttt{base\_user}
-    \item Quan hệ nhiều-một với bảng \texttt{companies}
+    \item Kế thừa từ \texttt{django.contrib.auth.models.AbstractUser}.
+    \item Quan hệ một-một với bảng \texttt{organization\_organizationmember}.
+    \item Quan hệ một-nhiều với bảng \texttt{chat\_conversation} (vai trò agent).
+    \item Quan hệ một-nhiều với bảng \texttt{chat\_message} (vai trò sender là AGENT).
+    \item Quan hệ một-nhiều với bảng \texttt{document\_document} (vai trò uploader).
+    \item Quan hệ một-nhiều với bảng \texttt{organization\_organizationinvite} (vai trò invited\_by).
+    \item Quan hệ một-nhiều với bảng \texttt{subscription\_payment} (vai trò initiating\_user).
 \end{itemize}
 
-\subsubsubsection{Bảng system\_admins:} Quản lý thông tin quản trị viên hệ thống.
+\subsubsection{Quản lý Tổ chức}
 
+\subsubsubsection{Bảng \texttt{organization\_organization}:} Lưu trữ thông tin cơ bản về các tổ chức sử dụng hệ thống. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất, tham chiếu đến base\_user
-    \item \textbf{permissions} (TEXT[]): Mảng các quyền hạn
-    \item \textbf{last\_activity\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm hoạt động cuối
-    \item \textbf{login\_history} (JSONB): Lịch sử đăng nhập dạng JSON
+    \item \textbf{id} (PK): Định danh duy nhất của tổ chức (mặc định là INTEGER auto-increment).
+    \item \textbf{name} (VARCHAR(255)): Tên tổ chức.
+    \item \textbf{description} (TEXT): Mô tả về tổ chức (có thể trống).
+    \item \textbf{logo} (VARCHAR): Đường dẫn đến tệp logo của tổ chức (có thể null).
+    \item \textbf{contact\_email} (VARCHAR): Email liên hệ chính.
+    \item \textbf{contact\_phone} (VARCHAR(20)): Số điện thoại liên hệ (có thể trống).
+    \item \textbf{address} (TEXT): Địa chỉ tổ chức (có thể trống).
+    \item \textbf{knowledge\_database\_url} (VARCHAR(2000)): URL đến cơ sở tri thức (có thể null).
+    \item \textbf{knowledge\_database\_namespace} (VARCHAR(255)): Namespace trong cơ sở tri thức (có thể null).
+    \item \textbf{created\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm tạo tổ chức.
+    \item \textbf{updated\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm cập nhật tổ chức lần cuối.
 \end{itemize}
-
-\indent\textbf{Quan hệ:}
-\begin{itemize}
-    \item Kế thừa từ bảng \texttt{base\_user}
-\end{itemize}
-
-\subsubsubsection{Bảng agents:} 
-
-\par Quản lý thông tin nhân viên chăm sóc khách hàng.
-
-\indent\textbf{Thuộc tính:}
-\begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất, tham chiếu đến base\_user
-    \item \textbf{status} (VARCHAR(50)): Trạng thái làm việc (ONLINE, OFFLINE, BUSY)
-    \item \textbf{max\_concurrent\_chats} (INTEGER): Số cuộc hội thoại tối đa có thể xử lý
-    \item \textbf{active\_chats} (INTEGER): Số cuộc hội thoại đang xử lý
-    \item \textbf{availability\_status} (VARCHAR(50)): Trạng thái khả dụng
-\end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Kế thừa từ bảng \texttt{base\_user}
-    \item Quan hệ một-một với bảng \texttt{schedules}
+    \item Quan hệ một-nhiều với bảng \texttt{organization\_organizationmember}.
+    \item Quan hệ một-nhiều với bảng \texttt{organization\_organizationinvite}.
+    \item Quan hệ một-nhiều với bảng \texttt{chat\_conversation}.
+    \item Quan hệ một-nhiều với bảng \texttt{document\_document}.
+    \item Quan hệ một-một với bảng \texttt{chatbot\_chatbotconfig}.
+    \item Quan hệ một-một với bảng \texttt{document\_organizationtrainingstatus}.
+    \item Quan hệ một-nhiều với bảng \texttt{subscription\_organizationsubscription}.
+    \item Quan hệ một-nhiều với bảng \texttt{subscription\_payment}.
 \end{itemize}
 
-\subsubsection{Quản lý lịch làm việc}
-\subsubsubsection{Bảng schedules: } Quản lý lịch làm việc của nhân viên.
-
+\subsubsubsection{Bảng \texttt{organization\_organizationmember}:} Quản lý thành viên và vai trò của họ trong tổ chức. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{agent\_id} (UUID): Tham chiếu đến nhân viên
-    \item \textbf{timezone} (VARCHAR(50)): Múi giờ làm việc
-    \item \textbf{default\_hours} (JSONB): Cấu hình giờ làm việc mặc định
+    \item \textbf{id} (PK): Định danh duy nhất của bản ghi thành viên.
+    \item \textbf{organization\_id} (FK - \texttt{organization.Organization}): Tham chiếu đến tổ chức.
+    \item \textbf{user\_id} (OneToOne - \texttt{users.User}): Tham chiếu duy nhất đến người dùng là thành viên.
+    \item \textbf{role} (VARCHAR(10)): Vai trò của thành viên (OWNER, ADMIN, AGENT).
+    \item \textbf{joined\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm tham gia tổ chức.
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ một-một với bảng \texttt{agents}
-    \item Quan hệ một-nhiều với bảng \texttt{workdays}
-    \item Quan hệ một-nhiều với bảng \texttt{timeoffs}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ nhiều-một với bảng \texttt{organization\_organization}.
+    \item Quan hệ một-một với bảng \texttt{users\_user}.
+    \item Ràng buộc duy nhất kết hợp (\texttt{organization\_id}, \texttt{user\_id}).
 \end{itemize}
 
-\subsubsubsection{Bảng workday: }
-Quản lý chi tiết ngày làm việc của nhân viên.
-
+\subsubsubsection{Bảng \texttt{organization\_organizationinvite}:} Quản lý các lời mời tham gia tổ chức. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{schedule\_id} (UUID): Tham chiếu đến lịch làm việc
-    \item \textbf{date} (DATE): Ngày làm việc
-    \item \textbf{start\_time} (TIME): Giờ bắt đầu ca làm việc
-    \item \textbf{end\_time} (TIME): Giờ kết thúc ca làm việc
-    \item \textbf{status} (VARCHAR(50)): Trạng thái ngày làm việc (SCHEDULED, COMPLETED, CANCELLED)
+    \item \textbf{id} (PK): Định danh duy nhất của lời mời.
+    \item \textbf{organization\_id} (FK - \texttt{organization.Organization}): Tham chiếu đến tổ chức gửi lời mời.
+    \item \textbf{email} (VARCHAR): Email của người được mời.
+    \item \textbf{role} (VARCHAR(10)): Vai trò được mời (ADMIN, AGENT).
+    \item \textbf{invited\_by\_id} (FK - \texttt{users.User}): Tham chiếu đến người gửi lời mời (có thể null).
+    \item \textbf{invite\_code} (VARCHAR(12)): Mã mời duy nhất.
+    \item \textbf{created\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm tạo lời mời.
+    \item \textbf{expires\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm hết hạn lời mời (mặc định: 7 ngày sau khi tạo).
+    \item \textbf{is\_used} (BOOLEAN): Trạng thái lời mời đã được sử dụng hay chưa (mặc định: False).
+    \item \textbf{is\_revoked} (BOOLEAN): Trạng thái lời mời đã bị thu hồi hay chưa (mặc định: False).
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{schedules}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ nhiều-một với bảng \texttt{organization\_organization}.
+    \item Quan hệ nhiều-một với bảng \texttt{users\_user} (cho invited\_by).
 \end{itemize}
 
-\subsubsubsection{Bảng timeoff: }Quản lý thông tin nghỉ phép và nghỉ việc của nhân viên.
+\subsubsection{Quản lý Trò chuyện}
 
+\subsubsubsection{Bảng \texttt{chat\_conversation}:} Quản lý thông tin về các cuộc trò chuyện giữa khách hàng và hệ thống (AI hoặc nhân viên hỗ trợ). \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{schedule\_id} (UUID): Tham chiếu đến lịch làm việc
-    \item \textbf{start\_date} (DATE): Ngày bắt đầu nghỉ
-    \item \textbf{end\_date} (DATE): Ngày kết thúc nghỉ
-    \item \textbf{type} (VARCHAR(50)): Loại nghỉ phép (VACATION, SICK\_LEAVE, PERSONAL\_LEAVE)
-    \item \textbf{status} (VARCHAR(50)): Trạng thái đơn nghỉ (PENDING, APPROVED, REJECTED)
+    \item \textbf{id} (UUID): Định danh duy nhất của cuộc trò chuyện.
+    \item \textbf{organization\_id} (FK - \texttt{organization.Organization}): Tham chiếu đến tổ chức sở hữu cuộc trò chuyện.
+    \item \textbf{customer\_email} (VARCHAR): Địa chỉ email của khách hàng (có thể trống).
+    \item \textbf{customer\_name} (VARCHAR(255)): Tên khách hàng (có thể trống).
+    \item \textbf{customer\_session\_id} (VARCHAR(255)): Định danh phiên làm việc của khách hàng.
+    \item \textbf{agent\_id} (FK - \texttt{users.User}): Tham chiếu đến nhân viên hỗ trợ đang xử lý (nếu có).
+    \item \textbf{is\_active} (BOOLEAN): Trạng thái cuộc trò chuyện còn hoạt động hay không (mặc định: True).
+    \item \textbf{started\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm bắt đầu cuộc trò chuyện.
+    \item \textbf{ended\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm kết thúc cuộc trò chuyện (có thể null).
+    \item \textbf{last\_activity} (TIMESTAMP WITH TIME ZONE): Thời điểm hoạt động cuối cùng trong cuộc trò chuyện.
+    \item \textbf{mode} (VARCHAR(10)): Chế độ xử lý cuộc trò chuyện (AI, HUMAN, AI\_ONLY, mặc định: AI).
+    \item \textbf{ai\_session\_id} (VARCHAR(255)): Định danh phiên làm việc với AI (có thể trống).
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{schedules}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ nhiều-một với bảng \texttt{organization\_organization}.
+    \item Quan hệ nhiều-một với bảng \texttt{users\_user} (cho agent).
+    \item Quan hệ một-nhiều với bảng \texttt{chat\_message}.
+\end{itemize}
+
+\subsubsubsection{Bảng \texttt{chat\_message}:} Lưu trữ nội dung các tin nhắn trong mỗi cuộc trò chuyện. \\\\
+\indent\textbf{Thuộc tính:}
+\begin{itemize}
+    \item \textbf{id} (UUID): Định danh duy nhất của tin nhắn.
+    \item \textbf{conversation\_id} (FK - \texttt{chat.Conversation}): Tham chiếu đến cuộc trò chuyện chứa tin nhắn.
+    \item \textbf{content} (TEXT): Nội dung tin nhắn.
+    \item \textbf{sender\_type} (VARCHAR(10)): Loại người gửi (CUSTOMER, AGENT, AI, SYSTEM).
+    \item \textbf{sender\_id} (FK - \texttt{users.User}): Tham chiếu đến người gửi nếu là AGENT (có thể null).
+    \item \textbf{timestamp} (TIMESTAMP WITH TIME ZONE): Thời điểm tin nhắn được gửi.
+\end{itemize}
+\textbf{Quan hệ:}
+\begin{itemize}
+    \item Quan hệ nhiều-một với bảng \texttt{chat\_conversation}.
+    \item Quan hệ nhiều-một với bảng \texttt{users\_user} (cho sender nếu là AGENT).
 \end{itemize}
 
 \subsubsection{Quản lý Chatbot}
 
-\subsubsubsection{Bảng chatbot: }Quản lý thông tin và cấu hình chatbot.
-
+\subsubsubsection{Bảng \texttt{chatbot\_chatbotconfig}:} Lưu trữ cấu hình chi tiết cho chatbot của mỗi tổ chức. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{company\_id} (UUID): Tham chiếu đến công ty sở hữu
-    \item \textbf{name} (VARCHAR(255)): Tên chatbot
-    \item \textbf{description} (TEXT): Mô tả chức năng
-    \item \textbf{status} (VARCHAR(50)): Trạng thái hoạt động
-    \item \textbf{training\_status} (VARCHAR(50)): Trạng thái huấn luyện
-    \item \textbf{behavior\_config} (JSONB): Cấu hình hành vi
-    \item \textbf{appearance\_config} (JSONB): Cấu hình giao diện
-    \item \textbf{settings} (JSONB): Thiết lập chung
-    \item \textbf{integration\_code} (STRING): Mã nhúng tích hợp
+    \item \textbf{organization\_id} (OneToOne - \texttt{organization.Organization}): Tham chiếu duy nhất đến tổ chức sở hữu cấu hình.
+    \item \textbf{avatar} (VARCHAR): Đường dẫn đến tệp ảnh đại diện chatbot (có thể null, max 2MB, jpg/jpeg/png).
+    \item \textbf{background\_image} (VARCHAR): Đường dẫn đến tệp ảnh nền chatbot (có thể null, max 2MB, jpg/jpeg/png).
+    \item \textbf{primary\_background\_color} (VARCHAR(7)): Mã màu hex cho nền chính (mặc định: \#FFFFFF).
+    \item \textbf{secondary\_background\_color} (VARCHAR(7)): Mã màu hex cho nền phụ (mặc định: \#F0F0F0).
+    \item \textbf{primary\_font\_color} (VARCHAR(7)): Mã màu hex cho màu chữ chính (mặc định: \#000000).
+    \item \textbf{display\_name} (VARCHAR(50)): Tên hiển thị của chatbot (tối thiểu 2 ký tự).
+    \item \textbf{font} (VARCHAR(20)): Font chữ sử dụng (mặc định: ARIAL, lựa chọn từ danh sách định sẵn).
+    \item \textbf{description} (VARCHAR(200)): Mô tả ngắn về chatbot (có thể trống).
+    \item \textbf{border\_radius} (INTEGER): Bán kính bo góc của khung chat (mặc định: 8).
+    \item \textbf{message\_border\_radius} (INTEGER): Bán kính bo góc của bong bóng tin nhắn (mặc định: 12).
+    \item \textbf{font\_size} (VARCHAR(2)): Kích thước font chữ (mặc định: 16, lựa chọn từ danh sách định sẵn).
+    \item \textbf{sending\_message\_font\_color} (VARCHAR(7)): Màu chữ tin nhắn gửi đi (mặc định: \#000000).
+    \item \textbf{receiving\_message\_background\_color} (VARCHAR(7)): Màu nền tin nhắn nhận được (mặc định: \#FFFFFF).
+    \item \textbf{sending\_message\_background\_color} (VARCHAR(7)): Màu nền tin nhắn gửi đi (mặc định: \#E3E3E3).
+    \item \textbf{receiving\_message\_font\_color} (VARCHAR(7)): Màu chữ tin nhắn nhận được (mặc định: \#000000).
+    \item \textbf{chatbot\_tone} (VARCHAR(20)): Giọng điệu của chatbot (FRIENDLY, PROFESSIONAL, HUMOROUS, CONCISE, mặc định: PROFESSIONAL).
+    \item \textbf{welcome\_message} (VARCHAR(500)): Tin nhắn chào mừng (mặc định: "Xin chào! Tôi có thể giúp gì cho bạn?", 10-500 ký tự).
+    \item \textbf{goodbye\_message} (VARCHAR(500)): Tin nhắn tạm biệt (mặc định: "Cảm ơn bạn đã trò chuyện...", 10-500 ký tự).
+    \item \textbf{human\_switch\_message} (VARCHAR(500)): Tin nhắn khi chuyển sang nhân viên hỗ trợ (mặc định: "Tôi sẽ kết nối bạn...", 10-500 ký tự).
+    \item \textbf{allowed\_domains} (TEXT): Danh sách các tên miền được phép nhúng widget (phân tách bằng dấu phẩy, trống nghĩa là cho phép tất cả).
+    \item \textbf{embedding\_token} (UUID): Token duy nhất để nhúng (không thể chỉnh sửa).
+    \item \textbf{rate\_limit\_threshold} (INTEGER): Số lượng yêu cầu AI tối đa mỗi giờ (mặc định: 20).
+    \item \textbf{created\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm tạo cấu hình.
+    \item \textbf{updated\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm cập nhật cấu hình lần cuối.
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{companies}
-    \item Quan hệ một-nhiều với bảng \texttt{knowledge\_bases}
-    \item Quan hệ một-nhiều với bảng \texttt{conversations}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ một-một với bảng \texttt{organization\_organization}.
 \end{itemize}
 
-\subsubsubsection{Bảng knowledge\_bases: }Quản lý cơ sở kiến thức của chatbot.
+\subsubsection{Quản lý Tài liệu Huấn luyện}
 
+\subsubsubsection{Bảng \texttt{document\_document}:} Quản lý các tài liệu dùng để huấn luyện AI cho tổ chức. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{chatbot\_id} (UUID): Tham chiếu đến chatbot
-    \item \textbf{name} (VARCHAR(255)): Tên cơ sở kiến thức
-    \item \textbf{description} (TEXT): Mô tả nội dung
-    \item \textbf{type} (VARCHAR(50)): Loại kiến thức
-    \item \textbf{status} (VARCHAR(50)): Trạng thái hoạt động
-    \item \textbf{last\_training\_date} (TIMESTAMP WITH TIME ZONE): Thời điểm huấn luyện gần nhất
-    \item \textbf{vector\_store\_config} (JSONB): Cấu hình lưu trữ vector
+    \item \textbf{id} (PK): Định danh duy nhất của tài liệu (mặc định là INTEGER auto-increment).
+    \item \textbf{document\_type} (VARCHAR(4)): Loại tài liệu (FILE, TEXT, URL, mặc định: FILE).
+    \item \textbf{filename} (VARCHAR(255)): Tên tệp hoặc định danh tài liệu.
+    \item \textbf{priority} (VARCHAR(6)): Mức độ ưu tiên huấn luyện (HIGH, MEDIUM, LOW, NONE, mặc định: NONE).
+    \item \textbf{training\_status} (VARCHAR(10)): Trạng thái huấn luyện (UNTRAINED, PENDING, TRAINED, mặc định: UNTRAINED).
+    \item \textbf{is\_deleted} (BOOLEAN): Trạng thái tài liệu đã bị xóa mềm hay chưa (mặc định: False).
+    \item \textbf{file} (VARCHAR): Đường dẫn đến tệp tài liệu (nếu document\_type=FILE hoặc TEXT, max 20MB, pdf/doc/docx/txt).
+    \item \textbf{content\_type} (VARCHAR(100)): Kiểu nội dung của tệp (có thể null).
+    \item \textbf{size} (INTEGER): Kích thước tệp tính bằng byte (có thể null).
+    \item \textbf{url} (VARCHAR(2000)): Địa chỉ URL của tài liệu (nếu document\_type=URL, có thể null).
+    \item \textbf{url\_title} (VARCHAR(255)): Tiêu đề trang web từ URL (có thể null).
+    \item \textbf{url\_description} (TEXT): Mô tả trang web từ URL (có thể null).
+    \item \textbf{organization\_id} (FK - \texttt{organization.Organization}): Tham chiếu đến tổ chức sở hữu tài liệu.
+    \item \textbf{uploader\_id} (FK - \texttt{users.User}): Tham chiếu đến người tải lên tài liệu (có thể null nếu người dùng bị xóa).
+    \item \textbf{uploaded\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm tải lên tài liệu.
+    \item \textbf{updated\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm cập nhật tài liệu lần cuối.
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{chatbots}
-    \item Quan hệ một-nhiều với bảng \texttt{documents}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ nhiều-một với bảng \texttt{organization\_organization}.
+    \item Quan hệ nhiều-một với bảng \texttt{users\_user}.
 \end{itemize}
 
-\subsubsubsection{Bảng documents: }Quản lý tài liệu trong cơ sở kiến thức.
-
+\subsubsubsection{Bảng \texttt{document\_organizationtrainingstatus}:} Theo dõi trạng thái huấn luyện chung của tổ chức. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{knowledge\_base\_id} (UUID): Tham chiếu đến cơ sở kiến thức
-    \item \textbf{title} (VARCHAR(255)): Tiêu đề tài liệu
-    \item \textbf{content} (TEXT): Nội dung tài liệu
-    \item \textbf{format} (VARCHAR(50)): Định dạng file (PDF, DOC, TXT)
-    \item \textbf{file\_size} (BIGINT): Kích thước file
-    \item \textbf{status} (VARCHAR(50)): Trạng thái xử lý
-    \item \textbf{processing\_status} (VARCHAR(50)): Trạng thái xử lý
-    \item \textbf{uploaded\_by} (UUID): Tham chiếu đến người tải lên
+    \item \textbf{organization\_id} (OneToOne - \texttt{organization.Organization}): Tham chiếu duy nhất đến tổ chức.
+    \item \textbf{is\_training} (BOOLEAN): Trạng thái tổ chức có đang trong quá trình huấn luyện hay không (mặc định: False).
+    \item \textbf{training\_started\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm bắt đầu quá trình huấn luyện gần nhất (có thể null).
+    \item \textbf{training\_completed\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm hoàn thành quá trình huấn luyện gần nhất (có thể null).
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{knowledge\_bases}
-    \item Quan hệ một-nhiều với bảng \texttt{text\_chunks}
-    \item Quan hệ nhiều-một với bảng \texttt{base\_user}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ một-một với bảng \texttt{organization\_organization}.
 \end{itemize}
 
-\subsubsection{Xử lý ngôn ngữ tự nhiên}
+\subsubsection{Quản lý Gói đăng ký và Thanh toán}
 
-\subsubsubsection{Bảng text\_chunks: }Quản lý các đoạn văn bản đã được phân đoạn.
-
+\subsubsubsection{Bảng \texttt{subscription\_subscriptiontier}:} Định nghĩa các gói đăng ký (tiers) và giới hạn của chúng. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{document\_id} (UUID): Tham chiếu đến tài liệu gốc
-    \item \textbf{content} (TEXT): Nội dung đoạn văn bản
-    \item \textbf{start\_index} (INTEGER): Vị trí bắt đầu trong tài liệu
-    \item \textbf{end\_index} (INTEGER): Vị trí kết thúc trong tài liệu
-    \item \textbf{relevance\_score} (FLOAT): Điểm liên quan
-    \item \textbf{token\_count} (INTEGER): Số lượng token
+    \item \textbf{id} (PK): Định danh duy nhất của gói.
+    \item \textbf{name} (VARCHAR(20)): Tên gói (FREE, STARTER, PROFESSIONAL), duy nhất.
+    \item \textbf{description} (TEXT): Mô tả gói (có thể trống).
+    \item \textbf{price\_monthly} (INTEGER): Giá hàng tháng (VND, mặc định: 0).
+    \item \textbf{price\_yearly} (INTEGER): Giá hàng năm (VND, mặc định: 0).
+    \item \textbf{storage\_limit\_mb} (INTEGER): Giới hạn dung lượng lưu trữ (MB, mặc định: 100).
+    \item \textbf{ai\_queries\_limit} (INTEGER): Giới hạn truy vấn AI hàng tháng (mặc định: 500).
+    \item \textbf{human\_agents\_limit} (INTEGER): Giới hạn số lượng nhân viên hỗ trợ (mặc định: 2).
+    \item \textbf{is\_active} (BOOLEAN): Trạng thái gói có đang được cung cấp hay không (mặc định: True).
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{documents}
-    \item Quan hệ một-một với bảng \texttt{embeddings}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ một-nhiều với bảng \texttt{subscription\_organizationsubscription}.
 \end{itemize}
 
-\subsubsubsection{Bảng embeddings: }Quản lý các vector biểu diễn văn bản.
-
+\subsubsubsection{Bảng \texttt{subscription\_organizationsubscription}:} Quản lý gói đăng ký hiện tại của mỗi tổ chức và việc sử dụng tài nguyên. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{text\_chunk\_id} (UUID): Tham chiếu đến đoạn văn bản
-    \item \textbf{vector} (VECTOR(1536)): Vector biểu diễn
-    \item \textbf{dimension} (INTEGER): Số chiều vector
-    \item \textbf{model} (VARCHAR(255)): Mô hình tạo embedding
-    \item \textbf{similarity} (FLOAT): Độ tương đồng
-    \item \textbf{quality} (FLOAT): Chất lượng embedding
-    \item \textbf{model\_version} (VARCHAR(50)): Phiên bản mô hình
+    \item \textbf{id} (PK): Định danh duy nhất của bản ghi đăng ký.
+    \item \textbf{organization\_id} (FK - \texttt{organization.Organization}): Tham chiếu đến tổ chức.
+    \item \textbf{tier\_id} (FK - \texttt{subscription.SubscriptionTier}): Tham chiếu đến gói đăng ký.
+    \item \textbf{status} (VARCHAR(20)): Trạng thái thanh toán/đăng ký (ACTIVE, PENDING, FAILED, CANCELED, TRIAL, mặc định: ACTIVE).
+    \item \textbf{billing\_period} (VARCHAR(10)): Chu kỳ thanh toán (MONTHLY, YEARLY, mặc định: MONTHLY).
+    \item \textbf{current\_period\_start} (TIMESTAMP WITH TIME ZONE): Thời điểm bắt đầu chu kỳ hiện tại.
+    \item \textbf{current\_period\_end} (TIMESTAMP WITH TIME ZONE): Thời điểm kết thúc chu kỳ hiện tại.
+    \item \textbf{storage\_used\_mb} (INTEGER): Dung lượng đã sử dụng (MB, mặc định: 0).
+    \item \textbf{ai\_queries\_used} (INTEGER): Số lượng truy vấn AI đã sử dụng trong chu kỳ (mặc định: 0).
+    \item \textbf{additional\_storage\_mb} (INTEGER): Dung lượng lưu trữ bổ sung đã mua (MB, mặc định: 0).
+    \item \textbf{additional\_ai\_queries} (INTEGER): Số lượng truy vấn AI bổ sung đã mua (mặc định: 0).
+    \item \textbf{additional\_human\_agents} (INTEGER): Số lượng nhân viên hỗ trợ bổ sung đã mua (mặc định: 0).
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ một-một với bảng \texttt{text\_chunks}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ nhiều-một với bảng \texttt{organization\_organization}.
+    \item Quan hệ nhiều-một với bảng \texttt{subscription\_subscriptiontier}.
+    \item Quan hệ một-nhiều với bảng \texttt{subscription\_additionalusagecharge}.
+    \item Quan hệ một-nhiều với bảng \texttt{subscription\_payment}.
 \end{itemize}
 
-\subsubsection{Quản lý hội thoại}
-\subsubsubsection{Bảng conversations: }
-
-Quản lý các cuộc hội thoại.
-
+\subsubsubsection{Bảng \texttt{subscription\_additionalusagecharge}:} Ghi nhận các khoản phí phát sinh do sử dụng vượt mức gói đăng ký. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{chatbot\_id} (UUID): Tham chiếu đến chatbot
-    \item \textbf{agent\_id} (UUID): Tham chiếu đến nhân viên
-    \item \textbf{status} (VARCHAR(50)): Trạng thái hội thoại
-    \item \textbf{start\_time} (TIMESTAMP WITH TIME ZONE): Thời điểm bắt đầu
-    \item \textbf{end\_time} (TIMESTAMP WITH TIME ZONE): Thời điểm kết thúc
+    \item \textbf{id} (PK): Định danh duy nhất của khoản phí.
+    \item \textbf{organization\_subscription\_id} (FK - \texttt{subscription.OrganizationSubscription}): Tham chiếu đến bản ghi đăng ký liên quan.
+    \item \textbf{charge\_type} (VARCHAR(20)): Loại phí (AI\_QUERIES, STORAGE, HUMAN\_AGENTS).
+    \item \textbf{amount} (INTEGER): Số tiền phí (VND).
+    \item \textbf{quantity} (INTEGER): Số lượng tài nguyên vượt mức.
+    \item \textbf{unit\_price} (INTEGER): Đơn giá mỗi đơn vị tài nguyên (VND).
+    \item \textbf{status} (VARCHAR(20)): Trạng thái thanh toán phí (PENDING, PAID, FAILED, mặc định: PENDING).
+    \item \textbf{billing\_date} (TIMESTAMP WITH TIME ZONE): Ngày xuất hóa đơn/phí (mặc định: now).
+    \item \textbf{description} (TEXT): Mô tả chi tiết (có thể trống).
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{chatbots}
-    \item Quan hệ nhiều-một với bảng \texttt{agents}
-    \item Quan hệ một-nhiều với bảng \texttt{messages}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ nhiều-một với bảng \texttt{subscription\_organizationsubscription}.
+    \item Quan hệ một-nhiều với bảng \texttt{subscription\_payment}.
 \end{itemize}
 
-\subsubsubsection{Bảng messages:} Quản lý tin nhắn trong hội thoại.
-
+\subsubsubsection{Bảng \texttt{subscription\_payment}:} Lưu trữ lịch sử các giao dịch thanh toán. \\\\
 \indent\textbf{Thuộc tính:}
 \begin{itemize}
-    \item \textbf{id} (UUID): Định danh duy nhất
-    \item \textbf{conversation\_id} (UUID): Tham chiếu đến cuộc hội thoại
-    \item \textbf{content} (TEXT): Nội dung tin nhắn
-    \item \textbf{sender\_type} (VARCHAR(50)): Loại người gửi
-    \item \textbf{sent\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm gửi
-    \item \textbf{status} (VARCHAR(50)): Trạng thái tin nhắn
-    \item \textbf{attachments} (JSONB): Các tệp đính kèm
+    \item \textbf{id} (PK): Định danh duy nhất của giao dịch.
+    \item \textbf{organization\_id} (FK - \texttt{organization.Organization}): Tham chiếu đến tổ chức thực hiện thanh toán.
+    \item \textbf{initiating\_user\_id} (FK - \texttt{users.User}): Tham chiếu đến người dùng khởi tạo thanh toán (có thể null).
+    \item \textbf{payment\_type} (VARCHAR(20)): Loại thanh toán (SUBSCRIPTION, ADDITIONAL\_CHARGE).
+    \item \textbf{payment\_method} (VARCHAR(20)): Phương thức thanh toán (PAYOS, BANK\_TRANSFER, CREDIT\_CARD).
+    \item \textbf{amount} (INTEGER): Số tiền thanh toán (VND).
+    \item \textbf{subscription\_id} (FK - \texttt{subscription.OrganizationSubscription}): Tham chiếu đến đăng ký liên quan (có thể null).
+    \item \textbf{additional\_charge\_id} (FK - \texttt{subscription.AdditionalUsageCharge}): Tham chiếu đến phí bổ sung liên quan (có thể null).
+    \item \textbf{status} (VARCHAR(20)): Trạng thái giao dịch (PENDING, COMPLETED, FAILED, REFUNDED, mặc định: PENDING).
+    \item \textbf{payment\_date} (TIMESTAMP WITH TIME ZONE): Thời điểm thanh toán thành công (có thể null).
+    \item \textbf{payos\_transaction\_id} (VARCHAR(255)): ID giao dịch từ PayOS (có thể null).
+    \item \textbf{payos\_order\_id} (VARCHAR(255)): ID đơn hàng từ PayOS (có thể null).
+    \item \textbf{payos\_payment\_link} (VARCHAR(512)): Link thanh toán PayOS (có thể null).
+    \item \textbf{invoice\_number} (VARCHAR(50)): Số hóa đơn (có thể null).
+    \item \textbf{description} (TEXT): Mô tả giao dịch (có thể trống).
+    \item \textbf{created\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm tạo bản ghi giao dịch.
+    \item \textbf{updated\_at} (TIMESTAMP WITH TIME ZONE): Thời điểm cập nhật bản ghi giao dịch lần cuối.
 \end{itemize}
-
 \textbf{Quan hệ:}
 \begin{itemize}
-    \item Quan hệ nhiều-một với bảng \texttt{conversations}
-    \item Kế thừa từ bảng \texttt{base\_entity}
+    \item Quan hệ nhiều-một với bảng \texttt{organization\_organization}.
+    \item Quan hệ nhiều-một với bảng \texttt{users\_user} (cho initiating\_user).
+    \item Quan hệ nhiều-một với bảng \texttt{subscription\_organizationsubscription}.
+    \item Quan hệ nhiều-một với bảng \texttt{subscription\_additionalusagecharge}.
 \end{itemize}
-
