@@ -255,47 +255,44 @@
 	\caption{Use case scenario cho Thêm tri thức}
 \end{table}
 
-% \textbf{Xóa tri thức}
-% \begin{table}[H]
-% 	\centering
-% 	\begin{tabular}{|l|l|l|l|} 
-% 		\hline Use case name: & \multicolumn{3}{|l|}{Xóa tri thức} \\ 
-% 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
-% 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-% 		\hline Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\ 
-% 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép công ty xóa tri thức trong kho lưu trữ. } \\ 
-% 		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn nút xóa một tri thức ở trang "Đào tạo chatbot. } \\ 
-% 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-% 			Nhân viên quản lý đã đăng nhập thành công. \newline 
-% 			Danh sách tri thức không rỗng
-% 		} \\ 
-% 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Thêm tri thức thành công. } \\ 
-% 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-% 			1. Người dùng ấn vào biểu tượng tải file để tải tài liệu lên. \newline 
-% 			2. Hệ thống hiển thị của sổ chọn file chứa các file phù hợp. \newline 
-%             3. Người dùng chọn các file muốn tải lên. \newline 
-% 			4. Hệ thống hiển thị danh sách các file đã nhận lên trang web.  \newline
-%             5. Người dùng chọn "Lưu". \newline
-%             6. Hệ thống hiển thị thành công và cập nhật các tri thức mới.
-% 		} \\ 
-% 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
-% 			\textbf{A1. Tại bước 1, người dùng chọn tab Nhập tri thức.} \newline 
-% 			\hspace{0.5cm}1.1. Người dùng nhập văn bản. \newline
-% 			\hspace{0.5cm}Tiếp tục bước 5 trong normal flows. \newline
-%             \textbf{A2. Tại bước 1, người dùng chọn tab Nhập tri thức web.} \newline 
-% 			\hspace{0.5cm}1.1. Người dùng điền các thông tin của website. \newline
-%             \hspace{0.5cm}Tiếp tục bước 5 trong normal flows. 
-% 		} \\ 
-% 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
-%             \textbf{E1. Tại bước 6, có lỗi.} \newline 
-% 			\hspace{0.5cm}1.1. Hệ thống báo lỗi tương ứng \newline
-%             \hspace{0.5cm}Kết thúc use case
-%         } \\ 
-% 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
-% 		\hline
-% 	\end{tabular}
-% 	\caption{Use case scenario cho Thêm tri thức}
-% \end{table}
+\textbf{Xóa tri thức}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|} 
+		\hline Use case name: & \multicolumn{3}{|l|}{Xóa tri thức} \\ 
+		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
+		\hline Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép công ty xóa tri thức trong kho lưu trữ. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào trang "Đào tạo chatbot trên thanh điều hướng. } \\ 
+		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+			Nhân viên quản lý đã đăng nhập thành công. \newline 
+			Danh sách tri thức không rỗng
+		} \\ 
+		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ Tri thức được xóa vĩnh viễn. } \\ 
+		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+			1. Người dùng ấn vào biểu tượng xóa tại một tri thức. \newline 
+			2. Hệ thống hiển thị của sổ xác nhận. \newline 
+            3. Người dùng xác nhận xóa. \newline 
+			4. Hệ thống hiển thị thông báo xóa vĩnh viễn thành công, tri thức không còn hiển thị. 
+		} \\ 
+		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+			\textbf{A1. Tại bước 4, nếu tri thức có trạng thái chờ hoặc đã đào tạo.} \newline 
+			\hspace{0.5cm}1.1. Hệ thống báo xóa tạm thời thành công và tri thức bị làm mờ \newline
+            \hspace{0.5cm}1.2. Chuyển đến use case Đào tào \newline
+            \hspace{0.5cm}Tiếp tục bước 4 trong normal flows
+		} \\ 
+		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{
+            \textbf{E1. Tại bước 3, muốn hủy.} \newline 
+			\hspace{0.5cm}1.1. Người dùng chọn Hủy bỏ \newline
+			\hspace{0.5cm}1.1. Hệ thống đóng cửa sổ xác nhận \newline
+            \hspace{0.5cm}Kết thúc use case
+        } \\ 
+		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline
+	\end{tabular}
+	\caption{Use case scenario cho Xóa tri thức}
+\end{table}
 
 
 % \textbf{Tải dữ liệu tri thức}
@@ -408,32 +405,64 @@
 % \end{table}
 
 \newpage
-\textbf{Gán nhãn dữ liệu tri thức}
+\textbf{Sửa độ ưu tiên}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|} 
-		\hline Use case name: & \multicolumn{3}{|l|}{Gán nhãn dữ liệu tri thức} \\ 
+		\hline Use case name: & \multicolumn{3}{|l|}{Sửa độ ưu tiên} \\ 
 		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
 		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thêm nhãn cho các dữ liệu tri thức. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh tri thức". } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên sửa độ ưu tiên cho các tri thức. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn "Đào tạo chatbot" trên thanh điều hướng. } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Nhân viên quản lý đăng nhập thành công. 
+			Nhân viên quản lý đăng nhập thành công \newline
+            Tồn tại ít nhất một tri thức
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Cập nhật nhãn tri thức cho tài liệu thành công. 
+			Độ ưu tiên của tri thức được cập nhật
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Nhân viên quản lý kéo thả tệp vào nhãn tương ứng. \newline 
-			2. Hệ thống lưu các nhãn cho các tệp. 
+			1. Nhân viên quản lý thay đổi độ ưu tiên cho các tri thức. \newline 
+			2. Chuyển đến use case Đào tạo \newline
+            3. Hiển thị thông báo chỉnh sửa thành công, các độ ưu tiên mới được cập nhật
 		} \\ 
 		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline
 	\end{tabular}
-	\caption{Use case scenario cho Gán nhãn dữ liệu tri thức}
+	\caption{Use case scenario cho Sửa độ ưu tiên}
+\end{table}
+
+\textbf{Đào tạo}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|} 
+		\hline Use case name: & \multicolumn{3}{|l|}{Đào tạo} \\ 
+		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên đào tạo các tri thức. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn "Đào tạo chatbot" trên thanh điều hướng } \\ 
+		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+			Nhân viên quản lý đăng nhập thành công \newline
+            Tồn tại sự thay đổi tri thức (thêm, xóa, sửa)
+		} \\ 
+		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
+			Các tri thức được đào tạo thành công
+		} \\ 
+		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+			1. Nhân viên chọn Lưu và đào tạo \newline 
+			2. Hệ thống hiển thị Đang chờ đào tạo, các tri thức có trạng thái chờ \newline
+            3. Hệ thống hiển thị thông báo đào tạo thành công, các tri thức có trạng thái đã đào tạo
+		} \\ 
+		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline
+	\end{tabular}
+	\caption{Use case scenario cho Đào tạo}
 \end{table}
 
 % \textbf{So sánh chatbot}
@@ -469,40 +498,6 @@
 % 	\caption{Use case scenario cho Trích xuất nội dung từ website}
 % \end{table}
 
-\textbf{Tùy chỉnh hành vi chatbot}
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|l|} 
-		\hline Use case name: & \multicolumn{3}{|l|}{Tùy chỉnh hành vi chatbot} \\ 
-		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
-		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
-		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
-		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thay đổi một số đặc điểm ứng xử của chatbot. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh hành vi và giao diện". } \\ 
-		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Nhân viên quản lý đăng nhập thành công. 
-		} \\ 
-		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Cập nhật hành vi chatbot thành công. 
-		} \\ 
-		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Chỉnh sửa tin nhắn mặc định (lời chào, tạm biệt, câu cửa miệng) của chatbot. \newline 
-			2. Lựa chọn tông giọng cho chatbot (nghiêm túc / vui vẻ / thông thường). \newline 
-			3. Nhân viên quản lý xem trước các thay đổi. \newline
-			4. Nhân viên quản lý nhấn "Lưu". \newline
-			5. Hệ thống lưu lại các thiết lập.
-		} \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
-		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
-			\textbf{E1. Tại bước 4, người dùng ấn vào nút "Hủy bỏ". Use-case kết thúc. }
-		} \\ 
-		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
-		\hline
-	\end{tabular}
-	\caption{Use case scenario cho Tùy chỉnh hành vi chatbot.}
-\end{table}
-
-\newpage
 \textbf{Tùy chỉnh giao diện chatbot}
 \begin{table}[H]
 	\centering
@@ -512,28 +507,68 @@
 		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
 		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
 		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thay đổi một số đặc điểm giao diện của chatbot. } \\ 
-		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào nút "Tùy chỉnh hành vi và giao diện". } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào "Tùy chỉnh chatbot" trên thanh điều hướng. } \\ 
 		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
 			Nhân viên quản lý đăng nhập thành công. 
 		} \\ 
 		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
-			Cập nhật hành vi chatbot thành công. 
+			Cập nhật giao diện chatbot thành công. 
 		} \\ 
 		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
-			1. Nhân viên quản lý chỉnh sửa màu nền, màu chữ, ảnh nền khung chat, phông chữ, ảnh đại diện chatbot, độ bo góc của các tin nhắn. \newline 
-			2. Nhân viên quản lý xem trước các thay đổi. \newline
-			3. Nhân viên quản lý nhấn "Lưu". \newline
-			4. Hệ thống lưu lại các thiết lập.
+			1. Nhân viên quản lý chỉnh sửa các thành phần của giao diện chatbot \newline 
+			2. Nhân viên quản lý nhấn "Lưu". \newline
+			3. Hệ thống lưu lại các thiết lập.
 		} \\ 
-		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ 
+            \textbf{A1. Tại bước 2, nếu muốn xem trước.} \newline 
+			\hspace{0.5cm}1.1. Người dùng chọn Xem trước \newline
+            \hspace{0.5cm}1.2. Hệ thống hiển thị giao diện chatbot mới \newline
+            \hspace{0.5cm}Tiếp tục bước 2 trong normal flows
+         } \\ 
 		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
-			\textbf{E1. Tại bước 3, người dùng ấn vào nút "Hủy bỏ". Use-case kết thúc.  }
+			\textbf{E1. Tại bước 2, người dùng ấn vào nút "Hủy bỏ". Use-case kết thúc.  }
 		} \\ 
 		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
 		\hline
 	\end{tabular}
 	\caption{Use case scenario cho Tùy chỉnh giao diện chatbot.}
 \end{table}
+
+\textbf{Tùy chỉnh phong cách chatbot}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|} 
+		\hline Use case name: & \multicolumn{3}{|l|}{Tùy chỉnh phong cách chatbot} \\ 
+		\hline Created by: & Nguyễn Đức An & Last updated by: & Nguyễn Đức An \\ 
+		\hline Date created: & $19 / 10 / 2024$ & Date last updated: & $19 / 10 / 2024$\\ 
+		\hline Actors: & \multicolumn{3}{|l|}{ Nhân viên quản lý } \\ 
+		\hline Description: & \multicolumn{3}{|p{12cm}|}{ Cho phép nhân viên quản lý thay đổi một số đặc điểm ứng xử của chatbot. } \\ 
+		\hline Trigger: & \multicolumn{3}{|p{12cm}|}{ Chọn vào "Phong cách" trong mục Cấu hình chatbot. } \\ 
+		\hline Preconditions: & \multicolumn{3}{|p{12cm}|}{ 
+			Nhân viên quản lý đăng nhập thành công và đang ở trang Tùy chỉnh chatbot. 
+		} \\ 
+		\hline Postconditions: & \multicolumn{3}{|p{12cm}|}{ 
+			Phong cách được cập nhật.
+		} \\ 
+		\hline Normal Flows: & \multicolumn{3}{|p{12cm}|}{ 
+			1. Người dùng chọn tone giọng khác. \newline 
+			2. Hệ thống hiển thị thông báo thành công và tone giọng mới cập nhật. \newline 
+			3. Người dùng chỉnh sửa tin nhắn mặc định. 
+            \newline 
+            4. Người dùng chọn Lưu. \newline
+			5. Hệ thống hiển thị thông báo thành công và tin nhắn mới cập nhật. 
+		} \\ 
+		\hline Alternative Flows: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline Exceptions: & \multicolumn{3}{|p{12cm}|}{ 
+			\textbf{E1. Tại bước 5, người dùng ấn vào nút "Hủy bỏ". Use-case kết thúc. }
+		} \\ 
+		\hline Note and issues: & \multicolumn{3}{|p{12cm}|}{ Không có. } \\ 
+		\hline
+	\end{tabular}
+	\caption{Use case scenario cho Tùy chỉnh phong cách chatbot.}
+\end{table}
+
+
 
 %-------------------------------------------------------------------
 \subsubsection{Tích hợp}
@@ -575,7 +610,7 @@ Normal Flows: & \multicolumn{3}{|p{12cm}|}{
 1. Nhân viên quản lý đăng nhập vào hệ thống quản lý chatbot. \newline
 2. Điều hướng tới trang “Tùy chỉnh chatbot”. \newline
 3. Xem trước kích thước, màu sắc, vị trí hiển thị của chatbot. \newline
-4. Nhấn nút "Tạo mã nhúng". \newline
+4. Nhấn nút "Tích hợp". \newline
 5. Hệ thống tạo và hiển thị đoạn mã nhúng. \newline
 6. Nhân viên quản lý sao chép đoạn mã này để gán vào website.
 }\\
@@ -669,23 +704,17 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         - Thiết bị của nhân viên quản lý có kết nối mạng và kết nối với hệ thống. \newline
         - Nhân viên quản lý có quyền thực hiện chức năng.} \\
         \hline
-        Postconditions: & \multicolumn{3}{|p{12cm}|}{File báo cáo được tạo và tải về thiết bị của nhân viên quản lý.} \\
+        Postconditions: & \multicolumn{3}{|p{12cm}|}{File được tạo và tải về thiết bị của nhân viên quản lý.} \\
         \hline
         Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Nhân viên quản lý chọn "Xuất báo cáo" trong giao diện Xem báo cáo.\newline
-        2. Hệ thống hiển thị hai loại tệp (pdf, excel) cho nhân viên quản lý chọn.\newline
-        3. Nhân viên quản lý chọn một loại tệp và chọn "Xem trước".\newline
-        4. Hệ thống hiển thị chế độ xem trước file.\newline
-        5. Nhân viên quản lý chọn "Tải xuống". \newline
-        6. File báo cáo được tải về thiết bị của nhân viên quản lý.}\\
+        2. Hệ thống hiển thị các loại tệp cho nhân viên quản lý chọn.\newline
+        3. Nhân viên quản lý chọn một loại tệp.\newline
+        4. File được tải về thiết bị của nhân viên quản lý.}\\
         \hline
         Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Exceptions: & \multicolumn{3}{|p{12cm}|}{
-        \textbf{E1: Tại bước 5} \newline
-        5.1. Nhân viên quản lý chọn "Hủy bỏ".\newline
-        5.2. Hệ thống đóng chế độ xem trước file.\newline
-        Use case dừng lại.
-        } \\
+        Không có} \\
         \hline
         Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
@@ -746,109 +775,109 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
 \end{table}
 
 %-------------------------------------------------------------------
-\subsubsection{Thông báo và cảnh báo}
-\subsubsubsection{Biểu đồ use case}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{Dg_UC/thongbaocanhbao.png}
-    \vspace{0.5cm}
-    \caption{Biểu đồ use case cho Thông báo và cảnh báo}
-    \label{fig:enter-label}
-\end{figure}
-\subsubsubsection{Use case scenario}
+% \subsubsection{Thông báo và cảnh báo}
+% \subsubsubsection{Biểu đồ use case}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1\linewidth]{Dg_UC/thongbaocanhbao.png}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ use case cho Thông báo và cảnh báo}
+%     \label{fig:enter-label}
+% \end{figure}
+% \subsubsubsection{Use case scenario}
 
-\textbf{Chọn phương thức thông báo và cảnh báo}
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|}
-\hline
-Use case name: & \multicolumn{3}{|l|}{Chọn phương thức thông báo và cảnh báo} \\
-\hline
-Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \\
-\hline
-Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
-\hline
-Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý doanh nghiệp} \\
-\hline
-Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp có thể chọn cách họ muốn nhận thông báo và cảnh báo liên quan đến hệ thống chatbot.} \\
-\hline
-Trigger: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý muốn thay đổi phương thức nhận thông báo và cảnh báo.} \\
-\hline
-Preconditions: & \multicolumn{3}{|p{12cm}|}{Người dùng đã đăng nhập vào hệ thống.} \\
-\hline
-Postconditions: & \multicolumn{3}{|p{12cm}|}{Phương thức thông báo và cảnh báo được lưu và áp dụng cho tài khoản doanh nghiệp.} \\
-\hline
-Normal Flows: & \multicolumn{3}{|p{12cm}|}{
-1. Người dùng truy cập vào trang cài đặt thông báo và cảnh báo. \newline
-2. Hệ thống hiển thị các tùy chọn phương thức. \newline
-3. Người dùng chọn hoặc hủy chọn các phương thức nhận thông báo: email và trong ứng dụng. \newline
-4. Người dùng xác nhận lựa chọn. \newline
-5. Hệ thống lưu cài đặt và hiển thị thông báo xác nhận.
-}\\
-\hline
-Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-\hline
-Exceptions: & \multicolumn{3}{|p{12cm}|}{
-\textbf{E1. Hệ thống không thể lưu cài đặt} \newline
-5.1. Hệ thống hiển thị thông báo lỗi. \newline
-5.2. Người dùng có thể thử lại hoặc hủy bỏ thao tác.
-} \\
-\hline
-Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-\hline
-\end{tabular}
-\caption{Use case scenario cho Chọn phương thức thông báo và cảnh báo}
-\end{table}
+% \textbf{Chọn phương thức thông báo và cảnh báo}
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{|l|l|l|l|}
+% \hline
+% Use case name: & \multicolumn{3}{|l|}{Chọn phương thức thông báo và cảnh báo} \\
+% \hline
+% Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \\
+% \hline
+% Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
+% \hline
+% Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý doanh nghiệp} \\
+% \hline
+% Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp có thể chọn cách họ muốn nhận thông báo và cảnh báo liên quan đến hệ thống chatbot.} \\
+% \hline
+% Trigger: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý muốn thay đổi phương thức nhận thông báo và cảnh báo.} \\
+% \hline
+% Preconditions: & \multicolumn{3}{|p{12cm}|}{Người dùng đã đăng nhập vào hệ thống.} \\
+% \hline
+% Postconditions: & \multicolumn{3}{|p{12cm}|}{Phương thức thông báo và cảnh báo được lưu và áp dụng cho tài khoản doanh nghiệp.} \\
+% \hline
+% Normal Flows: & \multicolumn{3}{|p{12cm}|}{
+% 1. Người dùng truy cập vào trang cài đặt thông báo và cảnh báo. \newline
+% 2. Hệ thống hiển thị các tùy chọn phương thức. \newline
+% 3. Người dùng chọn hoặc hủy chọn các phương thức nhận thông báo: email và trong ứng dụng. \newline
+% 4. Người dùng xác nhận lựa chọn. \newline
+% 5. Hệ thống lưu cài đặt và hiển thị thông báo xác nhận.
+% }\\
+% \hline
+% Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+% \hline
+% Exceptions: & \multicolumn{3}{|p{12cm}|}{
+% \textbf{E1. Hệ thống không thể lưu cài đặt} \newline
+% 5.1. Hệ thống hiển thị thông báo lỗi. \newline
+% 5.2. Người dùng có thể thử lại hoặc hủy bỏ thao tác.
+% } \\
+% \hline
+% Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+% \hline
+% \end{tabular}
+% \caption{Use case scenario cho Chọn phương thức thông báo và cảnh báo}
+% \end{table}
 
-\textbf{Thiết lập ngưỡng cảnh báo}
+% \textbf{Thiết lập ngưỡng cảnh báo}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|}
-\hline
-Use case name: & \multicolumn{3}{|l|}{Thiết lập ngưỡng cảnh báo} \\
-\hline
-Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \\
-\hline
-Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
-\hline
-Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý doanh nghiệp} \\
-\hline
-Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp có thể thiết lập ngưỡng cảnh báo cho việc sử dụng token LLM và lưu lượng truy cập.} \\
-\hline
-Trigger: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý muốn thay đổi ngưỡng cảnh báo cho việc sử dụng token LLM và lưu lượng truy cập.} \\
-\hline
-Preconditions: & \multicolumn{3}{|p{12cm}|}{Người dùng đã đăng nhập vào hệ thống.} \\
-\hline
-Postconditions: & \multicolumn{3}{|p{12cm}|}{Ngưỡng cảnh báo được lưu và áp dụng cho tài khoản người dùng.} \\
-\hline
-Normal Flows: & \multicolumn{3}{|p{12cm}|}{
-1. Người dùng truy cập vào trang cài đặt thông báo và cảnh báo. \newline
-2. Hệ thống hiển thị các tùy chọn ngưỡng. \newline
-3. Người dùng thiết lập ngưỡng cảnh báo cho việc sử dụng token LLM. \newline
-4. Người dùng thiết lập ngưỡng cảnh báo cho lưu lượng truy cập. \newline
-5. Người dùng xác nhận các cài đặt. \newline
-6. Hệ thống lưu cài đặt và hiển thị thông báo xác nhận.
-}\\
-\hline
-Alternative Flows: & \multicolumn{3}{|p{12cm}|}{
-\textbf{A1. Người dùng tắt cảnh báo cho việc sử dụng token LLM} \newline
-3.1. Người dùng bấm nút tắt cảnh báo cho việc sử dụng token LLM \newline
-\textbf{A2. Người dùng tắt cảnh báo cho lưu lượng truy cập} \newline
-4.1. Người dùng bấm nút tắt cảnh báo cho lưu lượng truy cập
-} \\
-\hline
-Exceptions: & \multicolumn{3}{|p{12cm}|}{
-\textbf{E1. Hệ thống không thể lưu cài đặt} \newline
-6.1. Hệ thống hiển thị thông báo lỗi. \newline
-6.2. Người dùng có thể thử lại hoặc hủy bỏ thao tác.
-} \\
-\hline
-Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-\hline
-\end{tabular}
-\caption{Use case scenario cho Thiết lập ngưỡng cảnh báo}
-\end{table}
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{|l|l|l|l|}
+% \hline
+% Use case name: & \multicolumn{3}{|l|}{Thiết lập ngưỡng cảnh báo} \\
+% \hline
+% Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \\
+% \hline
+% Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
+% \hline
+% Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý doanh nghiệp} \\
+% \hline
+% Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp có thể thiết lập ngưỡng cảnh báo cho việc sử dụng token LLM và lưu lượng truy cập.} \\
+% \hline
+% Trigger: & \multicolumn{3}{|p{12cm}|}{Nhân viên quản lý muốn thay đổi ngưỡng cảnh báo cho việc sử dụng token LLM và lưu lượng truy cập.} \\
+% \hline
+% Preconditions: & \multicolumn{3}{|p{12cm}|}{Người dùng đã đăng nhập vào hệ thống.} \\
+% \hline
+% Postconditions: & \multicolumn{3}{|p{12cm}|}{Ngưỡng cảnh báo được lưu và áp dụng cho tài khoản người dùng.} \\
+% \hline
+% Normal Flows: & \multicolumn{3}{|p{12cm}|}{
+% 1. Người dùng truy cập vào trang cài đặt thông báo và cảnh báo. \newline
+% 2. Hệ thống hiển thị các tùy chọn ngưỡng. \newline
+% 3. Người dùng thiết lập ngưỡng cảnh báo cho việc sử dụng token LLM. \newline
+% 4. Người dùng thiết lập ngưỡng cảnh báo cho lưu lượng truy cập. \newline
+% 5. Người dùng xác nhận các cài đặt. \newline
+% 6. Hệ thống lưu cài đặt và hiển thị thông báo xác nhận.
+% }\\
+% \hline
+% Alternative Flows: & \multicolumn{3}{|p{12cm}|}{
+% \textbf{A1. Người dùng tắt cảnh báo cho việc sử dụng token LLM} \newline
+% 3.1. Người dùng bấm nút tắt cảnh báo cho việc sử dụng token LLM \newline
+% \textbf{A2. Người dùng tắt cảnh báo cho lưu lượng truy cập} \newline
+% 4.1. Người dùng bấm nút tắt cảnh báo cho lưu lượng truy cập
+% } \\
+% \hline
+% Exceptions: & \multicolumn{3}{|p{12cm}|}{
+% \textbf{E1. Hệ thống không thể lưu cài đặt} \newline
+% 6.1. Hệ thống hiển thị thông báo lỗi. \newline
+% 6.2. Người dùng có thể thử lại hoặc hủy bỏ thao tác.
+% } \\
+% \hline
+% Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+% \hline
+% \end{tabular}
+% \caption{Use case scenario cho Thiết lập ngưỡng cảnh báo}
+% \end{table}
 
 %-------------------------------------------------------------------
 \subsubsection{Quản lý thanh toán}
@@ -873,51 +902,39 @@ Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \
 \hline
 Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
 \hline
-Actors: & \multicolumn{3}{|l|}{Doanh nghiệp} \\
+Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\
 \hline
-Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp lựa chọn gói đăng ký phù hợp với nhu cầu sử dụng dịch vụ chatbot từ các gói có sẵn trên hệ thống.} \\
+Description: & \multicolumn{3}{|p{12cm}|}{Người dùng lựa chọn gói đăng ký phù hợp với nhu cầu sử dụng dịch vụ chatbot từ các gói có sẵn trên hệ thống.} \\
 \hline
-Trigger: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp muốn chọn hoặc thay đổi gói đăng ký dịch vụ chatbot.} \\
+Trigger: & \multicolumn{3}{|p{12cm}|}{Người dùng muốn chọn hoặc thay đổi gói đăng ký dịch vụ chatbot.} \\
 \hline
 Preconditions: & \multicolumn{3}{|p{12cm}|}{
-- Doanh nghiệp đã đăng ký và đăng nhập vào tài khoản của mình trên hệ thống. \newline
+- Người dùng đã đăng ký và đăng nhập vào tài khoản của mình trên hệ thống. \newline
 - Hệ thống đã có các gói đăng ký được cấu hình sẵn.
 } \\
 \hline
 Postconditions: & \multicolumn{3}{|p{12cm}|}{
-- Doanh nghiệp đã chọn và xác nhận gói đăng ký mới. \newline
+- Người dùng đã chọn và xác nhận gói đăng ký mới. \newline
 - Hệ thống đã cập nhật gói đăng ký của doanh nghiệp và thực hiện thanh toán nếu cần.
 } \\
 \hline
 Normal Flows: & \multicolumn{3}{|p{12cm}|}{
-1. Doanh nghiệp đăng nhập vào tài khoản của mình trên trang web hoặc ứng dụng. \newline
-2. Doanh nghiệp điều hướng vào trang "Gói đăng ký". \newline
+1. Người dùng đăng nhập vào tài khoản của mình trên trang web hoặc ứng dụng. \newline
+2. Người dùng điều hướng vào trang "Thanh toán" mục "Gói đăng ký. \newline
 3. Hệ thống hiển thị danh sách các gói đăng ký hiện có với các tính năng và giá cả tương ứng. \newline
-4. Doanh nghiệp chọn gói đăng ký mong muốn bằng cách nhấp vào nút "Mua". \newline
-5. Hệ thống hiển thị thông tin chi tiết của gói đăng ký đã chọn và yêu cầu xác nhận. \newline
-6. Doanh nghiệp xác nhận lựa chọn và tiến hành thanh toán. \newline
-7. Hệ thống xử lý giao dịch thanh toán và cập nhật trạng thái gói đăng ký cho doanh nghiệp. \newline
-8. Hệ thống hiển thị thông báo xác nhận thành công.
+4. Người dùng chọn gói đăng ký mong muốn bằng cách nhấp vào nút "Mua". \newline
+5. Hệ thống chuyển đến trang thanh toán chứa thông tin và mã QR. \newline
+6. Người dùng tiến hành thanh toán. \newline
+7. Hệ thống thanh toán xác nhận thanh toán thành công và quay về hệ thống. Các thông tin mới được cập nhật.
 }\\
 \hline
-Alternative Flows: & \multicolumn{3}{|p{12cm}|}{
-\textbf{A1: Thay đổi gói đăng ký} \newline
-4.1. Doanh nghiệp chọn gói đăng ký mới muốn nâng cấp hoặc giảm cấp. \newline
-4.2. Hệ thống tính toán sự khác biệt về giá cả. \newline
-4.3. Doanh nghiệp xác nhận lựa chọn và tiến hành thanh toán nếu cần. \newline
-4.4. Hệ thống cập nhật gói đăng ký mới cho doanh nghiệp và điều chỉnh các dịch vụ liên quan. \newline\newline
-\textbf{A2: Doanh nghiệp chọn xuất hóa đơn} \newline
-6.1. Sau khi thanh toán thành công, hệ thống cung cấp tùy chọn "Xuất Hóa Đơn". \newline
-6.2. Doanh nghiệp chọn "Xuất Hóa Đơn" để tải xuống hóa đơn hoặc gửi qua email. \newline
-6.3. Hệ thống tạo và gửi hóa đơn đến email đã đăng ký. \newline
-6.4. Doanh nghiệp nhận được hóa đơn để lưu trữ và quản lý chi tiêu.
-} \\
+Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
 \hline
 Exceptions: & \multicolumn{3}{|p{12cm}|}{
-\textbf{E1 Giao dịch thanh toán không thành công do lỗi thẻ tín dụng, thiếu tiền trong tài khoản hoặc sự cố mạng.} \newline
-7.1. Khi doanh nghiệp cố gắng thanh toán, hệ thống kiểm tra và phát hiện lỗi. \newline
-7.2. Hệ thống hiển thị thông báo lỗi: "Thanh toán không thành công. Vui lòng kiểm tra thông tin thanh toán hoặc thử lại sau." \newline
-7.3. Doanh nghiệp có thể thử lại giao dịch hoặc thay đổi thông tin thanh toán khác.
+\textbf{E1: Tại bước 6, người dùng hủy thanh toán.} \newline
+6.1. Người dùng chọn Hủy và xác nhận. \newline
+6.2. Hệ thống thanh toán xác nhận hủy và quay về hệ thống. \newline
+Kết thúc use case.
 } \\
 \hline
 Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
@@ -938,22 +955,22 @@ Created by: & Phạm Đức Thắng & Last updated by: & Phạm Đức Thắng \
 \hline
 Date created: & 19/10/2024 & Date last updated: & 19/10/2024 \\
 \hline
-Actors: & \multicolumn{3}{|l|}{Doanh nghiệp} \\
+Actors: & \multicolumn{3}{|l|}{Nhân viên quản lý} \\
 \hline
-Description: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp có thể theo dõi các thông số giới han của gói đã đăng ký, bao gồm thời hạn gói đăng ký, số lượng yêu cầu và bộ nhớ đã sử dụng.} \\
+Description: & \multicolumn{3}{|p{12cm}|}{Người dùng có thể theo dõi các thông số giới hạn của gói đã đăng ký, bao gồm thời hạn gói đăng ký, số lượng yêu cầu, bộ nhớ và tài khoản nhân viên CSKH đã sử dụng.} \\
 \hline
-Trigger: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp muốn xem thông tin về mức độ sử dụng dịch vụ chatbot.} \\
+Trigger: & \multicolumn{3}{|p{12cm}|}{Người dùng muốn xem thông tin về mức độ sử dụng dịch vụ chatbot.} \\
 \hline
 Preconditions: & \multicolumn{3}{|p{12cm}|}{
-- Doanh nghiệp đã đăng ký và sử dụng dịch vụ chatbot. \newline
+- Người dùng đã đăng ký và sử dụng dịch vụ chatbot. \newline
 - Hệ thống đã ghi nhận dữ liệu sử dụng dịch vụ của doanh nghiệp.
 } \\
 \hline
-Postconditions: & \multicolumn{3}{|p{12cm}|}{Doanh nghiệp đã xem được các thông số sử dụng dịch vụ chi tiết.} \\
+Postconditions: & \multicolumn{3}{|p{12cm}|}{Người dùng đã xem được các thông số sử dụng dịch vụ chi tiết.} \\
 \hline
 Normal Flows: & \multicolumn{3}{|p{12cm}|}{
-1. Doanh nghiệp đăng nhập vào tài khoản của mình. \newline
-2. Doanh nghiệp truy cập vào trang "Quản lý thanh toán". \newline
+1. Người dùng đăng nhập vào tài khoản của mình. \newline
+2. Người dùng truy cập vào trang "Thanh toán". \newline
 3. Hệ thống hiển thị các thông số sử dụng hiện tại như số lượng yêu cầu đã xử lý, thời gian gói còn lại và bộ nhớ đã sử dụng.
 }\\
 \hline
@@ -1013,8 +1030,7 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         4. Nhân viên CSKH chọn "Gửi". \newline
         5. Hệ thống lưu dữ liệu vào database và hiển thị tin nhắn vừa gửi lên màn hình.} \\
         \hline
-        Alternative Flows: & \multicolumn{3}{|p{12cm}|}{\textbf{A1: Tại bước 3 hoặc 4} \newline
-        Khi nhân viên CSKH muốn đính kèm tệp, chuyển đến use case Đính kèm tệp đa phương tiện. Sau đó tiếp tục tại bước đó trong Normal flows.} \\
+        Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Exceptions: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
@@ -1041,7 +1057,7 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào nút chatbot trên website của doanh nghiệp.} \\
         \hline
-        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Thiết bị của người dùng có kết nối mạng.} \\
+        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Thiết bị của người dùng có kết nối mạng. \newline - Cuộc hội thoại ở chế độ tự động.} \\
         \hline
         Postconditions: & \multicolumn{3}{|p{12cm}|}{Tin nhắn được gửi thành công và hiển thị trên màn hình. \newline
         Đồng thời, tin nhắn từ chatbot sẽ phản hồi lại trong một khoảng thời gian nhất định.} \\
@@ -1053,8 +1069,7 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         5. Hệ thống lưu dữ liệu vào database và hiển thị tin nhắn vừa gửi lên màn hình. \newline
         6. Hệ thống chatbot tạo và phản hồi người dùng trong một khoảng thời gian nhất định.} \\
         \hline
-        Alternative Flows: & \multicolumn{3}{|p{12cm}|}{\textbf{A1: Tại bước 3 hoặc 4} \newline
-        Khi người dùng muốn đính kèm tệp, chuyển đến use case Đính kèm tệp đa phương tiện. Sau đó tiếp tục tại bước đó trong Normal flows.} \\
+        Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Exceptions: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
@@ -1065,45 +1080,45 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
 \end{table}
 
 
-\textbf{Đính kèm tệp đa phương tiện}
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|l|l|l|l|} 
-        \hline
-        Use case name: & \multicolumn{3}{|l|}{Đính kèm tệp đa phương tiện} \\
-        \hline
-        Created by: & Lê Đình Huy & Last updated by: & Lê Đình Huy \\
-        \hline
-        Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
-        \hline
-        Actors: & \multicolumn{3}{|l|}{Nhân viên CSKH, người dùng cuối (Khách hàng)} \\
-        \hline
-        Description: & \multicolumn{3}{|p{12cm}|}{Cho phép nhân viên CSKH và người dùng cuối đính kèm tệp đa phương tiện.} \\ 
-        \hline
-        Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào nút "Đính kèm tệp đa phương tiện" trong khung chat.} \\
-        \hline
-        Preconditions: & \multicolumn{3}{|p{12cm}|}{Preconditions của tính năng Phản hồi tin nhắn khách hàng đối với nhân viên CSKH, tính năng Gửi tin nhắn đối với người dùng cuối.} \\
-        \hline
-        Postconditions: & \multicolumn{3}{|p{12cm}|}{Hệ thống hiển thị ảnh được chọn lên màn hình.} \\
-        \hline
-        Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Người dùng chọn vào nút "Đính kèm tệp đa phương tiện". \newline
-        2. Hệ thống hiển thị màn hình chọn ảnh. \newline
-        3. Người dùng chọn một bức ảnh trên thiết bị. \newline
-        4. Người dùng chọn "Tải lên". \newline
-        5. Hệ thống hiển thị ảnh được chọn lên màn hình.} \\
-        \hline
-        Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-        \hline
-        Exceptions: & \multicolumn{3}{|p{12cm}|}{\textbf{E1: Sau bước 5} \newline
-        6.1. Người dùng chọn nút "Xóa" ảnh vừa tải. \newline
-        6.2. Ảnh vừa tải bị xóa khỏi màn hình. \newline
-        Use case dừng lại.} \\
-        \hline
-        Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-        \hline
-    \end{tabular}
-    \caption{Use case scenario cho Đính kèm tệp đa phương tiện}
-\end{table}
+% \textbf{Đính kèm tệp đa phương tiện}
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|l|l|l|l|} 
+%         \hline
+%         Use case name: & \multicolumn{3}{|l|}{Đính kèm tệp đa phương tiện} \\
+%         \hline
+%         Created by: & Lê Đình Huy & Last updated by: & Lê Đình Huy \\
+%         \hline
+%         Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
+%         \hline
+%         Actors: & \multicolumn{3}{|l|}{Nhân viên CSKH, người dùng cuối (Khách hàng)} \\
+%         \hline
+%         Description: & \multicolumn{3}{|p{12cm}|}{Cho phép nhân viên CSKH và người dùng cuối đính kèm tệp đa phương tiện.} \\ 
+%         \hline
+%         Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào nút "Đính kèm tệp đa phương tiện" trong khung chat.} \\
+%         \hline
+%         Preconditions: & \multicolumn{3}{|p{12cm}|}{Preconditions của tính năng Phản hồi tin nhắn khách hàng đối với nhân viên CSKH, tính năng Gửi tin nhắn đối với người dùng cuối.} \\
+%         \hline
+%         Postconditions: & \multicolumn{3}{|p{12cm}|}{Hệ thống hiển thị ảnh được chọn lên màn hình.} \\
+%         \hline
+%         Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Người dùng chọn vào nút "Đính kèm tệp đa phương tiện". \newline
+%         2. Hệ thống hiển thị màn hình chọn ảnh. \newline
+%         3. Người dùng chọn một bức ảnh trên thiết bị. \newline
+%         4. Người dùng chọn "Tải lên". \newline
+%         5. Hệ thống hiển thị ảnh được chọn lên màn hình.} \\
+%         \hline
+%         Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+%         \hline
+%         Exceptions: & \multicolumn{3}{|p{12cm}|}{\textbf{E1: Sau bước 5} \newline
+%         6.1. Người dùng chọn nút "Xóa" ảnh vừa tải. \newline
+%         6.2. Ảnh vừa tải bị xóa khỏi màn hình. \newline
+%         Use case dừng lại.} \\
+%         \hline
+%         Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+%         \hline
+%     \end{tabular}
+%     \caption{Use case scenario cho Đính kèm tệp đa phương tiện}
+% \end{table}
 
 
 \textbf{Yêu cầu nhân viên hỗ trợ}
@@ -1129,15 +1144,13 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
         Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Người dùng chọn vào nút yêu cầu hỗ trợ trong khung chatbot. \newline
         2. Hệ thống hiển thị pop up Hỗ trợ khách hàng. \newline
-        3. Người dùng chọn "Gửi yêu cầu". \newline
+        3. Người dùng điền thông tin và chọn "Gửi yêu cầu". \newline
         4. Yêu cầu được gửi lên hệ thống và màn hình hiển thị thông báo thành công. Đồng thời, tính năng chat tự động sẽ được tạm dừng.} \\
         \hline
         Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
         \hline
-        Exceptions: & \multicolumn{3}{|p{12cm}|}{\textbf{E1: Tại bước 3} \newline
-        3.1. Người dùng chọn "Đặt lịch hẹn". \newline
-        Chuyển đến use case Đặt lịch hẹn hỗ trợ. Use case dừng lại. \newline
-        \textbf{E2: Tại bước 3} \newline
+        Exceptions: & \multicolumn{3}{|p{12cm}|}{
+        \textbf{E1: Tại bước 3} \newline
         3.1. Người dùng chọn "Đóng". \newline
         3.2. Pop up Hỗ trợ khách hàng được đóng. \newline
         Use case dừng lại.} \\
@@ -1149,109 +1162,109 @@ Notes and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
 \end{table}
 
 
-\textbf{Đặt lịch hẹn hỗ trợ}
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|l|l|l|l|} 
-        \hline
-        Use case name: & \multicolumn{3}{|l|}{Đặt lịch hẹn hỗ trợ} \\
-        \hline
-        Created by: & Lê Đình Huy & Last updated by: & Lê Đình Huy \\
-        \hline
-        Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
-        \hline
-        Actors: & \multicolumn{3}{|l|}{Người dùng cuối (Khách hàng)} \\
-        \hline
-        Description: & \multicolumn{3}{|p{12cm}|}{Cho phép người dùng cuối có thể đặt lịch hẹn hỗ trợ theo thời gian mình mong muốn.} \\ 
-        \hline
-        Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào nút "Đặt lịch hẹn" trong pop up Hỗ trợ khách hàng.} \\
-        \hline
-        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Thiết bị của người dùng có kết nối mạng.} \\
-        \hline
-        Postconditions: & \multicolumn{3}{|p{12cm}|}{Lịch hẹn được gửi lên hệ thống và màn hình hiển thị thông báo thành công.} \\
-        \hline
-        Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Người dùng chọn vào nút "Đặt lịch hẹn" trong pop up Hỗ trợ khách hàng. \newline
-        2. Hệ thống đóng pop up Hỗ trợ khách hàng và hiển thị pop up Đặt lịch hẹn. \newline
-        3. Người dùng điền đầy đủ thông tin (tên, số điện thoại, lời nhắn) và chọn lịch có sẵn. \newline
-        4. Người dùng chọn "Gửi". \newline
-        5. Lịch hẹn được gửi lên hệ thống và màn hình hiển thị thông báo thành công.} \\
-        \hline
-        Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-        \hline
-        Exceptions: & \multicolumn{3}{|p{12cm}|}{\textbf{E1: Tại bước 3 hoặc 4} \newline
-        3.1. Người dùng chọn "Đóng". \newline
-        3.2. Pop up Đặt lịch hẹn được đóng. \newline
-        Use case dừng lại.} \\
-        \hline
-        Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-        \hline
-    \end{tabular}
-    \caption{Use case scenario cho Đặt lịch hẹn hỗ trợ}
-\end{table}
+% \textbf{Đặt lịch hẹn hỗ trợ}
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|l|l|l|l|} 
+%         \hline
+%         Use case name: & \multicolumn{3}{|l|}{Đặt lịch hẹn hỗ trợ} \\
+%         \hline
+%         Created by: & Lê Đình Huy & Last updated by: & Lê Đình Huy \\
+%         \hline
+%         Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
+%         \hline
+%         Actors: & \multicolumn{3}{|l|}{Người dùng cuối (Khách hàng)} \\
+%         \hline
+%         Description: & \multicolumn{3}{|p{12cm}|}{Cho phép người dùng cuối có thể đặt lịch hẹn hỗ trợ theo thời gian mình mong muốn.} \\ 
+%         \hline
+%         Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn vào nút "Đặt lịch hẹn" trong pop up Hỗ trợ khách hàng.} \\
+%         \hline
+%         Preconditions: & \multicolumn{3}{|p{12cm}|}{- Thiết bị của người dùng có kết nối mạng.} \\
+%         \hline
+%         Postconditions: & \multicolumn{3}{|p{12cm}|}{Lịch hẹn được gửi lên hệ thống và màn hình hiển thị thông báo thành công.} \\
+%         \hline
+%         Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Người dùng chọn vào nút "Đặt lịch hẹn" trong pop up Hỗ trợ khách hàng. \newline
+%         2. Hệ thống đóng pop up Hỗ trợ khách hàng và hiển thị pop up Đặt lịch hẹn. \newline
+%         3. Người dùng điền đầy đủ thông tin (tên, số điện thoại, lời nhắn) và chọn lịch có sẵn. \newline
+%         4. Người dùng chọn "Gửi". \newline
+%         5. Lịch hẹn được gửi lên hệ thống và màn hình hiển thị thông báo thành công.} \\
+%         \hline
+%         Alternative Flows: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+%         \hline
+%         Exceptions: & \multicolumn{3}{|p{12cm}|}{\textbf{E1: Tại bước 3 hoặc 4} \newline
+%         3.1. Người dùng chọn "Đóng". \newline
+%         3.2. Pop up Đặt lịch hẹn được đóng. \newline
+%         Use case dừng lại.} \\
+%         \hline
+%         Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+%         \hline
+%     \end{tabular}
+%     \caption{Use case scenario cho Đặt lịch hẹn hỗ trợ}
+% \end{table}
 
 %-------------------------------------------------------------------
-\subsubsection{Quản lý lịch hẹn}
-\subsubsubsection{Biểu đồ use case}
-\begin{figure}[H]
-    \centering
-    % \includegraphics[width=1\linewidth]{Dg_UC/quanlylichhen.png}
-    \includesvg[width=1\textwidth]{Dg_UC/Usecase Diagram-AppointmentManagement.drawio.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ use case cho Quản lý lịch hẹn}
-    \label{fig:enter-label}
-\end{figure}
-\subsubsubsection{Use case scenario}
-\textbf{Truy cập chi tiết lịch hẹn}
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|l|l|l|l|} 
-        \hline
-        Use case name: & \multicolumn{3}{|l|}{Truy cập chi tiết lịch hẹn} \\
-        \hline
-        Created by: & Lê Đình Huy & Last updated by: & Lê Đình Huy \\
-        \hline
-        Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
-        \hline
-        Actors: & \multicolumn{3}{|l|}{Nhân viên chăm sóc khách hàng} \\
-        \hline
-        Description: & \multicolumn{3}{|p{12cm}|}{Cho phép nhân viên CSKH truy cập và xem chi tiết lịch hẹn.} \\ 
-        \hline
-        Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn "Lịch hẹn" trên thanh điều hướng.} \\
-        \hline
-        Preconditions: & \multicolumn{3}{|p{12cm}|}{- Nhân viên có tài khoản trên website. \newline
-        - Nhân viên đã đăng nhập thành công vào hệ thống. \newline
-        - Thiết bị của nhân viên có kết nối mạng và kết nối với hệ thống. \newline
-        - Nhân viên có quyền thực hiện chức năng.} \\
-        \hline
-        Postconditions: & \multicolumn{3}{|p{12cm}|}{Hệ thống hiển thị chi tiết thông tin lịch hẹn mà khách hàng đã đặt.} \\
-        \hline
-        Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Nhân viên CSKH chọn "Lịch hẹn" trên thanh điều hướng.\newline
-        2. Hệ thống hiển thị danh sách các lịch hẹn.\newline
-        3. Nhân viên CSKH chọn xem một lịch hẹn.\newline
-        4. Hệ thống hiển thị chi tiết thông tin lịch hẹn mà khách hàng đã đặt.}\\
-        \hline
-        Alternative Flows: & \multicolumn{3}{|p{12cm}|}{
-        \textbf{A1: Tại bước 3}\newline
-        3.1. Nhân viên CSKH chọn vào ô Tìm kiếm và nhập nội dung cần tìm.\newline
-        3.2. Nhân viên CSKH chọn "Tìm".\newline
-        Tiếp tục bước 2 trong Normal flows.\newline
-        \textbf{A2: Tại bước 3}\newline
-        3.1. Nhân viên CSKH chọn "Lọc".\newline
-        3.2. Hệ thống hiển thị các thông số cho phép của bộ lọc.\newline
-        3.3. Nhân viên CSKH chọn một thông số.\newline
-        Tiếp tục bước 2 trong Normal flows.} \\
-        \hline
-        Exceptions: & \multicolumn{3}{|p{12cm}|}{
-        \textbf{E1: Tại bước 3 hoặc sau bước 4}\newline
-        3.1. Nhân viên CSKH chọn "Hỗ trợ".\newline
-        3.2. Hệ thống chuyển đến trang hội thoại với khách hàng.\newline
-        Use case dừng lại.
-        } \\
-        \hline
-        Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
-        \hline
-    \end{tabular}
-    \caption{Use case scenario cho Truy cập chi tiết lịch hẹn}
-\end{table}
+% \subsubsection{Quản lý lịch hẹn}
+% \subsubsubsection{Biểu đồ use case}
+% \begin{figure}[H]
+%     \centering
+%     % \includegraphics[width=1\linewidth]{Dg_UC/quanlylichhen.png}
+%     \includesvg[width=1\textwidth]{Dg_UC/Usecase Diagram-AppointmentManagement.drawio.svg}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ use case cho Quản lý lịch hẹn}
+%     \label{fig:enter-label}
+% \end{figure}
+% \subsubsubsection{Use case scenario}
+% \textbf{Truy cập chi tiết lịch hẹn}
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|l|l|l|l|} 
+%         \hline
+%         Use case name: & \multicolumn{3}{|l|}{Truy cập chi tiết lịch hẹn} \\
+%         \hline
+%         Created by: & Lê Đình Huy & Last updated by: & Lê Đình Huy \\
+%         \hline
+%         Date created: & 19 / 10 / 2024 & Date last updated: & 19 / 10 / 2024 \\
+%         \hline
+%         Actors: & \multicolumn{3}{|l|}{Nhân viên chăm sóc khách hàng} \\
+%         \hline
+%         Description: & \multicolumn{3}{|p{12cm}|}{Cho phép nhân viên CSKH truy cập và xem chi tiết lịch hẹn.} \\ 
+%         \hline
+%         Trigger: & \multicolumn{3}{|p{12cm}|}{Chọn "Lịch hẹn" trên thanh điều hướng.} \\
+%         \hline
+%         Preconditions: & \multicolumn{3}{|p{12cm}|}{- Nhân viên có tài khoản trên website. \newline
+%         - Nhân viên đã đăng nhập thành công vào hệ thống. \newline
+%         - Thiết bị của nhân viên có kết nối mạng và kết nối với hệ thống. \newline
+%         - Nhân viên có quyền thực hiện chức năng.} \\
+%         \hline
+%         Postconditions: & \multicolumn{3}{|p{12cm}|}{Hệ thống hiển thị chi tiết thông tin lịch hẹn mà khách hàng đã đặt.} \\
+%         \hline
+%         Normal Flows: & \multicolumn{3}{|p{12cm}|}{1. Nhân viên CSKH chọn "Lịch hẹn" trên thanh điều hướng.\newline
+%         2. Hệ thống hiển thị danh sách các lịch hẹn.\newline
+%         3. Nhân viên CSKH chọn xem một lịch hẹn.\newline
+%         4. Hệ thống hiển thị chi tiết thông tin lịch hẹn mà khách hàng đã đặt.}\\
+%         \hline
+%         Alternative Flows: & \multicolumn{3}{|p{12cm}|}{
+%         \textbf{A1: Tại bước 3}\newline
+%         3.1. Nhân viên CSKH chọn vào ô Tìm kiếm và nhập nội dung cần tìm.\newline
+%         3.2. Nhân viên CSKH chọn "Tìm".\newline
+%         Tiếp tục bước 2 trong Normal flows.\newline
+%         \textbf{A2: Tại bước 3}\newline
+%         3.1. Nhân viên CSKH chọn "Lọc".\newline
+%         3.2. Hệ thống hiển thị các thông số cho phép của bộ lọc.\newline
+%         3.3. Nhân viên CSKH chọn một thông số.\newline
+%         Tiếp tục bước 2 trong Normal flows.} \\
+%         \hline
+%         Exceptions: & \multicolumn{3}{|p{12cm}|}{
+%         \textbf{E1: Tại bước 3 hoặc sau bước 4}\newline
+%         3.1. Nhân viên CSKH chọn "Hỗ trợ".\newline
+%         3.2. Hệ thống chuyển đến trang hội thoại với khách hàng.\newline
+%         Use case dừng lại.
+%         } \\
+%         \hline
+%         Note and issues: & \multicolumn{3}{|p{12cm}|}{Không có} \\
+%         \hline
+%     \end{tabular}
+%     \caption{Use case scenario cho Truy cập chi tiết lịch hẹn}
+% \end{table}
 
 %-------------------------------------------------------------------
