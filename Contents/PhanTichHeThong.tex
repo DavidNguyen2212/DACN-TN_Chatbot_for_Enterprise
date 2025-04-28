@@ -57,6 +57,7 @@ Các nhóm này xử lý các yêu cầu phức tạp của khách hàng và qu�
     \item \textbf{Ảnh hưởng:} Các nhóm hỗ trợ khách hàng có ảnh hưởng trung bình vì phản hồi và kinh nghiệm của họ ảnh hưởng đến khả năng sử dụng và hiệu quả của hệ thống.
 \end{itemize}
 
+
 \subsubsection{Người dùng cuối (Khách hàng của các doanh nghiệp khách hàng)}
 
 Đây là những cá nhân tương tác với chatbot trên trang web của doanh nghiệp nhằm tìm kiếm thông tin hoặc có nhu cầu hỗ trợ.
@@ -144,172 +145,71 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
 
 \subsection{Yêu cầu chức năng}
 
-\subsubsection{Quản lý tài khoản công ty}
-
-\subsubsubsection{Đăng ký và xác thực}
+\subsubsection{Đăng ký và xác thực}
 \begin{itemize}
-    \item Hệ thống sẽ cung cấp quy trình đăng ký tài khoản mới an toàn cho các công ty.
-    \item Hệ thống sẽ yêu cầu xác minh địa chỉ email trong quá trình đăng ký.
-    \item Hệ thống sẽ hỗ trợ chức năng đăng nhập an toàn bằng tên người dùng/email và mật khẩu.
+    \item Hệ thống phải cung cấp chức năng đăng ký tài khoản mới cho tổ chức, bao gồm bước xác thực địa chỉ email.
+    \item Hệ thống phải cho phép người dùng đăng nhập bằng email và mật khẩu đã đăng ký.
+    \item Hệ thống phải cung cấp chức năng đặt lại mật khẩu, trong đó người dùng nhận được một liên kết qua email có giới hạn thời gian hiệu lực.
 \end{itemize}
 
-\subsubsubsection{Quản lý hồ sơ}
+\subsubsection{Quản lý tài khoản tổ chức}
 \begin{itemize}
-    \item Hệ thống sẽ cho phép quản trị viên công ty quản lý thông tin chi tiết về hồ sơ công ty (tên, logo, thông tin liên hệ…).
-    \item Hệ thống sẽ cho phép công ty cập nhật hồ sơ cá nhân và cài đặt tài khoản của họ.
-    \item Hệ thống sẽ cho phép người dùng đặt lại mật khẩu an toàn.
+    \item Hệ thống phải cho phép quản trị viên tổ chức cập nhật thông tin hồ sơ của tổ chức, bao gồm: tên tổ chức, logo, thông tin liên hệ và địa chỉ.
+    \item Hệ thống phải cho phép quản trị viên tổ chức gửi lời mời tham gia tổ chức cho thành viên mới qua email.
+    \item Hệ thống phải hỗ trợ phân quyền truy cập cho thành viên tổ chức dựa trên các vai trò được định nghĩa, bao gồm 3 vai trò: Chủ sở hữu, Quản trị viên, và Nhân viên chăm sóc khách hàng.
+    \item Hệ thống phải cho phép quản trị viên tổ chức quản lý danh sách thành viên, bao gồm chức năng thêm và xóa thành viên.
 \end{itemize}
 
-\subsubsubsection{Quản lý thành viên tổ chức} 
-\begin{itemize} 
-    \item Hệ thống sẽ cho phép quản trị viên mời thành viên mới vào tổ chức thông qua email. 
-    \item Hệ thống sẽ hỗ trợ phân quyền cho các thành viên với các vai trò khác nhau. 
-    \item Hệ thống sẽ cho phép quản lý danh sách thành viên bao gồm thêm mới, xóa và cập nhật thông tin. 
-    \item Hệ thống sẽ cho phép thành viên rời khỏi tổ chức sau khi xác nhận. 
-\end{itemize}
-
-\subsubsection{Tạo và tùy chỉnh chatbot}
-
-\subsubsubsection{Cung cấp và quản lý tri thức}
+\subsubsection{Tùy chỉnh giao diện và hành vi chatbot}
 \begin{itemize}
-    \item Hệ thống sẽ cho phép các công ty tải dữ liệu của riêng họ lên, ví dụ như tài liệu, các câu hỏi thường gặp (FAQs) hay thông tin sản phẩm.
-    \item Hệ thống sẽ hỗ trợ nhiều định dạng tệp để tải dữ liệu lên, chẳng hạn như PDF, DOCX, TXT và CSV.
-    \item Hệ thống sẽ xử lý dữ liệu đã tải lên để tạo cơ sở tri thức cho chatbot.
-    \item Hệ thống sẽ cho phép các công ty thêm, chỉnh sửa hoặc xóa các tri thức thông qua giao diện.
-    \item Hệ thống sẽ cho phép phân loại và gắn thẻ nội dung cơ sở tri thức để truy vấn hiệu quả.
-    \item Nếu được sự đồng ý của công ty, hệ thống có thể đọc nội dung trực tiếp từ trang web của họ để xây dựng và cập nhật cơ sở kiến thức cho chatbot.
+    \item Hệ thống phải cho phép người dùng quản trị tùy chỉnh các yếu tố giao diện hiển thị của chatbot (ví dụ: bảng màu, logo, hình nền, phông chữ, kích thước) để đáp ứng nhận diện thương hiệu của tổ chức.
+    \item Hệ thống phải cung cấp cho người dùng quản trị lựa chọn ít nhất 4 phong cách hội thoại được định nghĩa trước cho chatbot.
+    \item Hệ thống phải cho phép người dùng quản trị tùy chỉnh các tin nhắn mặc định của chatbot, bao gồm lời chào và các phản hồi mặc định.
+    \item Hệ thống phải cung cấp chức năng xem trước cho phép người dùng quản trị đánh giá các thay đổi về giao diện và cấu hình trước khi áp dụng.
+    \item Hệ thống phải cho phép người dùng quản trị cấu hình giới hạn tần suất yêu cầu (rate limiting) đối với các tương tác của người dùng cuối với chatbot.
 \end{itemize}
-
-\subsubsubsection{Tùy chỉnh giao diện và hành vi chatbot}
+\subsubsection{Tạo mã nhúng chatbot}
 \begin{itemize}
-    \item Hệ thống sẽ cho phép các công ty điều chỉnh giọng điệu và tính cách của chatbot (ví dụ: trang trọng, giản dị, thân thiện).
-    \item Hệ thống sẽ cho phép tùy chỉnh lời chào và phản hồi mặc định của chatbot.
-    \item Hệ thống sẽ cung cấp các tùy chọn để tùy chỉnh giao diện của chatbot, bao gồm màu sắc, logo, hình đại diện để phù hợp với thương hiệu của công ty.
-    \item Hệ thống sẽ cung cấp chức năng xem trước để xem các thay đổi trước khi triển khai.
+    \item Hệ thống phải cung cấp chức năng tạo mã nhúng JavaScript để tích hợp chatbot, đảm bảo kích thước tải về ban đầu của script không vượt quá 100KB.
+    \item Hệ thống phải cho phép quản trị viên tổ chức cấu hình danh sách các tên miền được phép nhúng và hiển thị chatbot.
+    \item Giao diện chatbot nhúng phải đảm bảo hiển thị và hoạt động phù hợp trên các kích thước viewport khác nhau, tối thiểu từ 320px (thiết bị di động) đến 2560px (màn hình desktop lớn).
 \end{itemize}
 
-\subsubsection{Đào tạo AI và xử lý ngôn ngữ tự nhiên}
-
-\subsubsubsection{Đào tạo tự động}
+\subsubsection{Quản lý cơ sở tri thức}
 \begin{itemize}
-    \item Hệ thống sẽ tự động đào tạo mô hình AI bằng cách sử dụng dữ liệu công ty đã tải lên.
-    \item Hệ thống sẽ thông báo tiến độ trong quá trình đào tạo.
+    \item Hệ thống phải cho phép người dùng quản trị tải lên các tệp tài liệu với giới hạn kích thước tối đa 20MB cho mỗi tệp.
+    \item Chức năng tải lên tài liệu phải hỗ trợ các định dạng tệp phổ biến, bao gồm: PDF, DOC, DOCX, và TXT.
+    \item Hệ thống phải cung cấp các phương thức nhập liệu bổ sung cho cơ sở tri thức, bao gồm nhập văn bản trực tiếp qua giao diện và trích xuất nội dung từ địa chỉ URL được cung cấp.
+    \item Hệ thống phải cung cấp giao diện quản lý cho phép người dùng quản trị thực hiện các thao tác trên cơ sở tri thức, bao gồm: thêm, chỉnh sửa và xóa tri thức.
+    \item Giao diện quản lý cơ sở tri thức phải hỗ trợ chức năng tìm kiếm và lọc các đơn vị tri thức dựa trên các tiêu chí như: tên, loại hình, và mức độ ưu tiên.
+    \item Hệ thống phải cho phép người dùng quản trị tải về các tệp tài liệu đã được tải lên hệ thống trước đó.
+    \item Hệ thống phải đảm bảo rằng chỉ có một tiến trình huấn luyện được thực thi đồng thời cho mỗi tổ chức tại một thời điểm.
 \end{itemize}
 
-\subsubsubsection{Xử lý ngôn ngữ tự nhiên}
+\subsubsection{Trò chuyện với nhân viên hỗ trợ trực tiếp}
 \begin{itemize}
-    \item Hệ thống sẽ hỗ trợ tiếng Việt cho cả đầu vào và phản hồi.
-    \item Mô hình AI sẽ sử dụng hiểu ngôn ngữ tự nhiên (Natural-language understanding) để nhận dạng chính xác ý định người dùng.
-    \item Hệ thống sẽ cho phép các công ty xác định các intents và entities cụ thể có liên quan đến doanh nghiệp của họ.
+    \item Hệ thống phải hỗ trợ chức năng chuyển giao liền mạch cuộc trò chuyện từ chatbot sang nhân viên hỗ trợ trực tuyến khi có yêu cầu từ người dùng.
+    \item Hệ thống phải cung cấp giao diện cho phép nhân viên hỗ trợ tiếp nhận, theo dõi và phản hồi các cuộc trò chuyện được phân công cho họ.
+    \item Hệ thống phải cung cấp cho quản trị viên tổ chức quyền truy cập để xem  lịch sử hoặc nội dung các cuộc hội thoại, bao gồm cả các tương tác với chatbot và các phiên hỗ trợ trực tiếp bởi nhân viên.
+    \item Hệ thống phải phân phối các yêu cầu hỗ trợ trực tiếp tới các nhân viên hỗ trợ một cách cân bằng.
+    \item Hệ thống phải cho phép nhân viên hỗ trợ hoặc quản trị viên tổ chức kết thúc các phiên trò chuyện, ví dụ như khi vấn đề đã được giải quyết hoặc theo yêu cầu quản trị.
 \end{itemize}
 
-\subsubsection{Tích hợp với trang web doanh nghiệp}
-
-\subsubsubsection{Tích hợp mã nhúng}
+\subsubsection{Báo cáo và thống kê}
 \begin{itemize}
-    \item Hệ thống sẽ tạo mã nhúng JavaScript mà các công ty có thể chèn vào trang web của họ để triển khai chatbot.
-    \item Hệ thống sẽ cung cấp hướng dẫn từng bước để tích hợp chatbot với các nền tảng và trình xây dựng trang web phổ biến như WordPress, Wix, Shopify.
-    \item Mã nhúng sẽ được tối ưu hóa để tác động tối thiểu đến hiệu suất của trang web.
+    \item Hệ thống phải cung cấp một giao diện hiển thị các chỉ số hiệu suất và sử dụng chính, bao gồm: tổng số tin nhắn đã xử lý, tổng số phiên hội thoại (phân loại theo chatbot và nhân viên hỗ trợ), và tổng chi phí sử dụng dịch vụ. Giao diện này cần hỗ trợ lọc dữ liệu theo khoảng thời gian.
+    \item Hệ thống phải cho phép quản trị viên tổ chức xuất dữ liệu thống kê chi tiết hoặc các báo cáo tổng hợp từ giao diện báo cáo.
 \end{itemize}
 
-\subsubsubsection{Khả năng tương thích của nền tảng}
+\subsubsection{Quản lý Gói dịch vụ và Thanh toán}
 \begin{itemize}
-    \item Giao diện chatbot phải tương thích với tất cả các trình duyệt web hiện đại (Chrome, Firefox, Safari, Edge).
-    \item Chatbot phải phản hồi và hoạt động chính xác trên nhiều thiết bị khác nhau, bao gồm máy tính để bàn, máy tính bảng và điện thoại di động.
+    \item Hệ thống phải cung cấp ít nhất 2 gói dịch vụ trả phí, mỗi gói có các tính năng và giới hạn sử dụng riêng biệt được mô tả chi tiết và rõ ràng.
+    \item Ngoài các gói dịch vụ trả phí định kỳ, hệ thống cần hỗ trợ mô hình định giá theo mức sử dụng thực tế cho một số tài nguyên nhất định (ví dụ: dung lượng lưu trữ tài liệu, số lượng yêu cầu AI, số lượng tài khoản nhân viên hỗ trợ).
+    \item Hệ thống phải cung cấp cho quản trị viên tổ chức khả năng theo dõi mức sử dụng tài nguyên hiện tại so với giới hạn của gói dịch vụ đang đăng ký.
+    \item Hệ thống phải cung cấp tùy chọn đăng ký gói dùng thử miễn phí với thời hạn hoặc giới hạn sử dụng nhất định, đồng thời đảm bảo quy trình nâng cấp lên gói trả phí diễn ra thuận tiện và liền mạch cho người dùng.
+    \item Hệ thống phải cung cấp cho quản trị viên tổ chức quyền truy cập vào lịch sử giao dịch và hóa đơn thanh toán chi tiết, bao gồm ngày tháng, số tiền, gói dịch vụ tương ứng và trạng thái thanh toán.
 \end{itemize}
 
-\subsubsection{Bảng điều khiển quản lý Chatbot}
-
-\subsubsubsection{Giám sát thời gian thực}
-\begin{itemize}
-    \item Hệ thống sẽ cung cấp bảng điều khiển để các công ty xem dữ liệu theo thời gian thực về việc sử dụng chatbot, bao gồm số lượng người dùng đang hoạt động và các cuộc trò chuyện đang diễn ra.
-    \item Hệ thống sẽ hiển thị các chỉ số hiệu suất chính (KPI) như thời gian phản hồi và mức độ tương tác của người dùng.
-\end{itemize}
-
-\subsubsubsection{Phân tích và báo cáo}
-\begin{itemize}
-    \item Hệ thống sẽ tạo báo cáo phân tích chi tiết về các tương tác của chatbot, bao gồm tổng số cuộc trò chuyện, tỷ lệ giữ chân người dùng và các truy vấn phổ biến.
-    \item Hệ thống sẽ cho phép các công ty xuất báo cáo ở nhiều định dạng khác nhau (ví dụ: PDF, Excel).
-    \item Hệ thống sẽ cung cấp các công cụ trực quan hóa (biểu đồ, đồ thị) giúp trực quan hóa dữ liệu.
-\end{itemize}
-
-\subsubsubsection{Nhật ký hội thoại}
-\begin{itemize}
-    \item Hệ thống sẽ lưu trữ lịch sử cuộc trò chuyện một cách an toàn.
-    \item Hệ thống sẽ cho phép người dùng được ủy quyền tìm kiếm và lọc nhật ký hội thoại dựa trên phạm vi ngày, từ khóa hoặc chủ đề.
-    \item Hệ thống phải tuân thủ các quy định về quyền riêng tư liên quan đến việc lưu trữ và truy xuất các cuộc trò chuyện của người dùng.
-\end{itemize}
-
-\subsubsection{Tương tác với người dùng}
-
-\subsubsubsection{Hỗ trợ đa phương tiện}
-\begin{itemize}
-    \item Chatbot phải có khả năng nhận nội dung đa phương tiện, bao gồm hình ảnh, video và đường dẫn (hyperlinks).
-\end{itemize}
-
-\subsubsubsection{Đối thoại theo ngữ cảnh}
-\begin{itemize}
-    \item Chatbot phải duy trì ngữ cảnh trong suốt phiên của người dùng để cho phép các cuộc trò chuyện diễn ra mạch lạc.
-    \item Chatbot phải có khả năng xử lý các câu hỏi tiếp theo và tham chiếu đến các tương tác trước đó.
-\end{itemize}
-
-\subsubsubsection{Khôi phục và dự phòng}
-\begin{itemize}
-    \item Chatbot phải cung cấp các phản hồi mặc định phù hợp khi không hiểu nội dung đầu vào của người dùng.
-    \item Chatbot phải cung cấp các tùy chọn để người dùng diễn đạt lại truy vấn của họ hoặc cung cấp thêm thông tin.
-\end{itemize}
-
-\subsubsection{Phối hợp với con người}
-
-\subsubsubsection{Tích hợp với nhân viên hỗ trợ trực tiếp}
-\begin{itemize}
-    \item Hệ thống sẽ cho phép chuyển giao liền mạch các cuộc trò chuyện từ chatbot sang nhân viên hỗ trợ con người khi cần thiết.
-    \item Hệ thống sẽ thông báo cho nhân viên hỗ trợ theo thời gian thực khi cần chuyển giao.
-    \item Hệ thống sẽ cung cấp cho nhân viên lịch sử cuộc trò chuyện trước khi chuyển giao để đảm bảo duy trì ngữ cảnh.
-\end{itemize}
-
-\subsubsubsection{Đặt lịch hẹn}
-\begin{itemize}
-    \item Hệ thống sẽ cho phép các công ty cài đặt lịch làm việc của nhân viên để hỗ trợ con người.
-    \item Chatbot sẽ thông báo cho người dùng về lịch làm việc của nhân viên và thời gian phản hồi ước tính.
-    \item Ngoài giờ làm việc, chatbot sẽ đề nghị hẹn lịch hoặc cung cấp các thông tin liên hệ.
-\end{itemize}
-
-\subsubsection{Thông báo và cảnh báo}
-
-\begin{itemize}
-    \item Hệ thống sẽ gửi email hoặc thông báo đến doanh nghiệp khi cần thiết (hoàn thành đào tạo AI, nhắc gia hạn đăng ký).
-    \item Hệ thống sẽ cho phép các công ty tùy chỉnh phương thức thông báo.
-    \item Hệ thống sẽ cho phép các công ty thiết lập cảnh báo dựa trên số liệu hiệu suất (ví dụ: lưu lượng truy cập cao, tỷ lệ lỗi).
-    \item Hệ thống sẽ lập tức cảnh báo trong trường hợp hệ thống ngừng hoạt động hoặc các sự cố nghiêm trọng.
-\end{itemize}
-
-\subsubsection{Hỗ trợ doanh nghiệp}
-\begin{itemize}
-    \item Hệ thống sẽ cung cấp một trung tâm trợ giúp toàn diện với các tài liệu, câu hỏi thường gặp và hướng dẫn sử dụng nền tảng.
-    \item Hệ thống sẽ bao gồm chức năng tìm kiếm để giúp người dùng tìm thông tin hỗ trợ có liên quan một cách nhanh chóng.
-    \item Hệ thống sẽ cung cấp nhiều kênh hỗ trợ khách hàng, bao gồm trò chuyện trực tiếp, email và hỗ trợ qua điện thoại.
-\end{itemize}
-
-\subsubsection{Quản lý thanh toán}
-
-\subsubsubsection{Gói giá linh hoạt}
-\begin{itemize}
-    \item Hệ thống sẽ cung cấp nhiều cấp đăng ký với các tính năng và giới hạn sử dụng khác nhau.
-    \item Hệ thống sẽ cho phép các công ty nâng cấp hoặc hạ cấp các gói đăng ký của họ khi cần.
-\end{itemize}
-
-\subsubsubsection{Xử lý thanh toán}
-\begin{itemize}
-    \item Hệ thống sẽ tích hợp với các cổng thanh toán an toàn để xử lý các giao dịch bằng nhiều phương thức thanh toán khác nhau.
-    \item Hệ thống sẽ hỗ trợ thanh toán định kỳ tự động cho các lần gia hạn đăng ký.
-\end{itemize}
-
-\subsubsubsection{Theo dõi việc sử dụng và lập hóa đơn}
-\begin{itemize}
-    \item Hệ thống sẽ tạo hóa đơn và cung cấp hồ sơ giao dịch mà các công ty có thể truy cập.
-    \item Hệ thống sẽ theo dõi các số liệu sử dụng ảnh hưởng đến việc thanh toán, chẳng hạn như số lần tương tác hoặc dung lượng lưu trữ dữ liệu đã sử dụng.
-\end{itemize}
 
 \subsection{Yêu cầu phi chức năng}
 
