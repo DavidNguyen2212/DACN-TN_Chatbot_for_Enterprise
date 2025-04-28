@@ -274,29 +274,29 @@ Các bước trong quá trình tương tác như sau:
 		\end{itemize}
 	\end{itemize}
 \end{itemize}
-\subsubsection{Quản lý lịch hẹn}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-AppointmentManagement.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Quản lý lịch hẹn}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả: }
-\begin{itemize}
-	\item Nhân viên CSKH mở trang Lịch hẹn qua hàm onOpen(appointment).
-	\item Giao diện trang Lịch hẹn sẽ gọi hàm getAppointments() đến Hệ thống để lấy danh sách các lịch hẹn.
-	\item Hệ thống phản hồi và trả lại danh sách các lịch hẹn cho trang Lịch hẹn.
-	\item Có 3 tùy chọn khả dụng là nhân viên CSKH có thể chọn lọc hoặc tìm kiếm lịch hẹn:
-	\begin{itemize}
-		\item Lọc: nhân viên CSKH click nút Lọc với onClickFilterButton(), trang Lịch hẹn gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, nhân viên CSKH tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Lịch hẹn gọi hàm getAppointments(field) đến hệ thống để lấy dữ liệu lịch hẹn theo trường lọc đó, hệ thống trả lại các appointments tương ứng.
-		\item Tìm kiếm: nhân viên CSKH click khung Search với onClickSearchBox(), tiếp tục nhập và hoàn thành nội dung tìm kiếm với submit(searchInput), trang Lịch hẹn gọi hàm getAppointments(searchInput) đế hệ thống với biến searchInput từ nhân viên CSKH truyền tới để lấy dữ liệu lịch hẹn theo nội dung tìm kiếm đó, hệ thống trả lại các appointments tương ứng.
-	\end{itemize}
-	\item Nhân viên CSKH tiếp tục chọn xem 1 lịch hẹn với onClickChatItem(id).
-	\item Trang Lịch hẹn gọi hàm getAppointment(id) đến hệ thống với biến id truyền vào.
-	\item Hệ thống trả lại appointment tương ứng.
-	\item Có một tùy chọn với điều kiện nhân viên CSKH muốn hỗ trợ khách hàng: nhân viên CSKH click Hỗ trợ với onClickSupportButton(), trang Lịch hẹn gọi switchToChatPage(id) đến hệ thống với biến id để mở trang hội thoại tương ứng, hệ thống mở trang Hội thoại với onOpen(chat), trang Hội thoại gọi hàm getChat(id) để lấy thông tin cuộc hội thoại, hệ thống trả về chat tương ứng.
-\end{itemize}
+% \subsubsection{Quản lý lịch hẹn}
+% \begin{figure}[H]
+%     \centering
+%      \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-AppointmentManagement.svg}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ sequence cho Quản lý lịch hẹn}
+%     \label{fig:enter-label}
+% \end{figure}
+% \textbf{Mô tả: }
+% \begin{itemize}
+% 	\item Nhân viên CSKH mở trang Lịch hẹn qua hàm onOpen(appointment).
+% 	\item Giao diện trang Lịch hẹn sẽ gọi hàm getAppointments() đến Hệ thống để lấy danh sách các lịch hẹn.
+% 	\item Hệ thống phản hồi và trả lại danh sách các lịch hẹn cho trang Lịch hẹn.
+% 	\item Có 3 tùy chọn khả dụng là nhân viên CSKH có thể chọn lọc hoặc tìm kiếm lịch hẹn:
+% 	\begin{itemize}
+% 		\item Lọc: nhân viên CSKH click nút Lọc với onClickFilterButton(), trang Lịch hẹn gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, nhân viên CSKH tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Lịch hẹn gọi hàm getAppointments(field) đến hệ thống để lấy dữ liệu lịch hẹn theo trường lọc đó, hệ thống trả lại các appointments tương ứng.
+% 		\item Tìm kiếm: nhân viên CSKH click khung Search với onClickSearchBox(), tiếp tục nhập và hoàn thành nội dung tìm kiếm với submit(searchInput), trang Lịch hẹn gọi hàm getAppointments(searchInput) đế hệ thống với biến searchInput từ nhân viên CSKH truyền tới để lấy dữ liệu lịch hẹn theo nội dung tìm kiếm đó, hệ thống trả lại các appointments tương ứng.
+% 	\end{itemize}
+% 	\item Nhân viên CSKH tiếp tục chọn xem 1 lịch hẹn với onClickChatItem(id).
+% 	\item Trang Lịch hẹn gọi hàm getAppointment(id) đến hệ thống với biến id truyền vào.
+% 	\item Hệ thống trả lại appointment tương ứng.
+% 	\item Có một tùy chọn với điều kiện nhân viên CSKH muốn hỗ trợ khách hàng: nhân viên CSKH click Hỗ trợ với onClickSupportButton(), trang Lịch hẹn gọi switchToChatPage(id) đến hệ thống với biến id để mở trang hội thoại tương ứng, hệ thống mở trang Hội thoại với onOpen(chat), trang Hội thoại gọi hàm getChat(id) để lấy thông tin cuộc hội thoại, hệ thống trả về chat tương ứng.
+% \end{itemize}
 \subsubsection{Đào tạo và tùy chỉnh chatbot}
 \subsubsubsection{Tải dữ liệu tri thức}
 \begin{figure}[H]
