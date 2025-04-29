@@ -130,173 +130,6 @@ Các bước trong quá trình tương tác như sau:
 	\end{enumerate}
 \end{enumerate}
 
-
-\subsubsection{Quản lý chatbot}
-\subsubsubsection{Báo cáo}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Report.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Báo cáo}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả: }
-\begin{itemize}
-	\item Quản trị viên doanh nghiệp mở trang Báo cáo qua hàm onOpen(report).
-	\item Giao diện trang Báo cáo sẽ gọi hàm getStatistics() đến Hệ thống để lấy các dữ liệu thống kê.
-	\item Hệ thống phản hồi và trả lại các dữ liệu thống kê cho trang Báo cáo.
-	\item Có 2 tùy chọn khả dụng là quản trị viên có thể chọn lọc hoặc xuất:
-	\begin{itemize}
-		\item Lọc: quản trị viên click nút Lọc với onClickFilterButton(), trang Báo cáo gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, quản trị viên tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Báo cáo gọi hàm getStatistics(field) đến hệ thống để lấy dữ liệu thống kê theo trường lọc đó, hệ thống trả lại các figuresAndCharts tương ứng.
-		\item Xuất: quản trị viên click nút Xuất với onClickExportButton(), trang Báo cáo gọi hàm getFileTypes() đến hệ thống, hệ thống trả lại dữ liệu các loại file, quản trị viên tiếp tục chọn loại file với OnClickFileType(type) có biến type được truyền vào, trang Báo cáo gọi hàm getReport(type) đến hệ thống để lấy dữ liệu file báo cáo, hệ thống trả lại file báo cáo phù hợp. Tiếp tục có 2 tùy chọn là quản trị viên có thể chọn Tải xuống hoặc Hủy bỏ:
-		\begin{itemize}
-			\item Tải xuống: Quản trị viên click nút Tải xuống với onClickDownloadButton(), trang báo cáo gọi hàm requestDownloadFile() lên hệ thống, hệ thống gọi hàm downloadFile() lên thiết bị để file được tải xuống thiết bị, khi thành công thiết bị trả tin nhắn thành công lên hệ thống và hệ thống trả lại trang báo cáo.
-			\item Hủy bỏ: Quản trị viên click nút Hủy bỏ với onClickCancelButton(), trang báo cáo gọi hàm closeFilePreviewModal() lên hệ thống để đóng modal xem trước, hệ thống trả lại tin nhắn closeModal.
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
-\subsubsubsection{Lịch sử hội thoại}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Chat.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Lịch sử hội thoại}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả: }
-\begin{itemize}
-	\item Nhân viên doanh nghiệp mở trang Hội thoại qua hàm onOpen(chat).
-	\item Giao diện trang Hội thoại sẽ gọi hàm getChats() đến Hệ thống để lấy danh sách các cuộc hội thoại.
-	\item Hệ thống phản hồi và trả lại danh sách các cuộc hội thoại cho trang Hội thoại.
-	\item Có 3 tùy chọn khả dụng là nhân viên có thể chọn lọc, tìm kiếm hoặc chọn xem các cuộc hội thoại cần hỗ trợ:
-	\begin{itemize}
-		\item Lọc: nhân viên click nút Lọc với onClickFilterButton(), trang Hội thoại gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, nhân viên tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Hội thoại gọi hàm getChats(field) đến hệ thống để lấy dữ liệu hội thoại theo trường lọc đó, hệ thống trả lại các chats tương ứng.
-		\item Tìm kiếm: nhân viên click khung Search với onClickSearchBox(), tiếp tục nhập và hoàn thành nội dung tìm kiếm với submit(searchInput), trang Hội thoại gọi hàm getChats(searchInput) đế hệ thống với biến searchInput từ nhân viên truyền tới để lấy dữ liệu hội thoại theo nội dung tìm kiếm đó, hệ thống trả lại các chats tương ứng.
-		\item Xem các cuộc hội thoại cần hỗ trợ: nhân viên click nút Cần hỗ trợ với onClickNeedSupportBtn(), trang Hội thoại gọi hàm getChats(needSupport) đến hệ thống để lấy danh sách các cuộc hội thoại cần hỗ trợ, hệ thống trả lại các chats tương ứng.
-	\end{itemize}
-	\item Nhân viên tiếp tục chọn xem 1 cuộc hội thoại với onClickChatItem(id).
-	\item Trang Hội thoại gọi hàm getChat(id) đến hệ thống với biến id truyền vào.
-	\item Hệ thống trả lại chat tương ứng.
-\end{itemize}
-\subsubsection{Quản lý thanh toán}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Payment.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Quản lý thanh toán}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả: }
-\begin{itemize}
-	\item Người dùng điều hướng đến trang thanh toán.
-	\item Trang thanh toán sẽ gọi hàm getAvailablePlan() đến hệ thống để lấy các gói dịch vụ.
-	\item Hệ thống trả về danh sách các gói dịch vụ và hiển thị với người dùng.
-	\item Người dùng chọn một gói dịch vụ.
-	\item Trang thanh toán gọi hàm selectPlan() đến hệ thống.
-	\item Hệ thống gọi hàm initiatePayment() đến hệ thống thanh toán.
-	\item Hệ thống thanh toán trả về giao diện và giao diện trả về người dùng form thanh thanh toán.
-	\item Người dùng thực hiện nhập các thông tin và submit.
-	\item Trang thanh toán gọi hàm submitForm() đến hệ thống thanh toán.
-	\item Hệ thống thanh toán tự gọi hàm processPayment() để tiến hành quá trình thanh toán.
-	\item Tiếp theo ngừi dùng có thể gặp 2 tình huống
-	\begin{itemize}
-		\item Nếu thanh toán thành công: hệ thống thanh toán trả về hệ thống phản hồi thành công. Hệ thống gọi hàm updatePlan() để cập nhật và trả về phản hồi thành công cho giao diện và hiển thị với người dùng.
-		\item Nếu thnah toán thất bại: phản hồi thất bại sẽ được truyền từ hệ thống thanh toán đến hệ thống rồi đến giao diện rồi sẽ hiển thị đến người dùng.
-	\end{itemize}
-\end{itemize}
-\subsubsection{Tương tác với chatbot}
-\subsubsubsection{Phản hồi tin nhắn khách hàng}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-ReplyCustomerMessage.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Phản hồi tin nhắn khách hàng}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả: }
-\begin{itemize}
-	\item Nhân viên CSKH chọn xem 1 cuộc hội thoại với onClickChatItem(id).
-	\item Trang Hội thoại gọi hàm getChat(id) đến hệ thống với biến id truyền vào.
-	\item Hệ thống trả lại chat tương ứng.
-	\item Có một vòng lặp với điều kiện nhân viên CSKH tiếp tục quá trình nhập tin nhắn, trong vòng lặp có 3 lựa chọn là nhập/sửa tin nhắn, đính kèm tệp hoặc xóa tệp:
-	\begin{itemize}
-		\item Nhập/sửa tin nhắn: nhân viên CSKH click vào khung tin nhắn với onClickMessageBox(), tiếp tục nhập nội dung tin nhắn với enter(messageInput) có biến messageInput truyền vào.
-		\item Đính kèm tệp: nhân viên CSKH click vào nút Đính kèm tệp với onClickAttachFileButton(), trang Hội thoại gọi hàm getFiles(). đến thiết bị để lấy danh sách các file có thể tải lên, thiết bị tả lại các files cho trang Hội thoại, nhân viên CSKH chọn một file onClickFile(id), trang Hội thoại gọi hàm getFile(id) đến thiết bị với biến id truyền vào, thiết bị trả lại file tương ứng.
-		\item Xóa tệp: nhân viên CSKH click nút xóa cho tệp cần xóa với onClickDeleteFileButton(id), trang Hội thoại gọi hàm deleteFile(id) đến hệ thống với biến id truyền vào, hệ thống xóa tệp và trả lại tin nhắn deleteFile tương ứng.
-	\end{itemize}
-	\item Có một tùy chọn với điều kiện tin nhắn tồn tại: nhân viên CSKH click Gửi với onClickSendButton(), trang Hội thoại gọi hàm sendMessage() đến hệ thống, hệ thống trả lại tin nhắn sendMessage tương ứng.
-\end{itemize}
-\subsubsubsection{Gửi tin nhắn}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-SendMessage.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Gửi tin nhắn}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả: }
-\begin{itemize}
-	\item Khách hàng click vào nút Chatbot với onOpenChatbotPopup().
-	\item Giao diện gọi hàm getChat(id) đến hệ thống với biến id truyền vào.
-	\item Hệ thống trả lại chat tương ứng.
-	\item Có một vòng lặp với điều kiện khách hàng tiếp tục quá trình nhập tin nhắn, trong vòng lặp có 3 lựa chọn là nhập/sửa tin nhắn, đính kèm tệp hoặc xóa tệp:
-	\begin{itemize}
-		\item Nhập/sửa tin nhắn: khách hàng click vào khung tin nhắn với onClickMessageBox(), tiếp tục nhập nội dung tin nhắn với enter(messageInput) có biến messageInput truyền vào.
-		\item Đính kèm tệp: khách hàng click vào nút Đính kèm tệp với onClickAttachFileButton(), giao diện gọi hàm getFiles(). đến thiết bị để lấy danh sách các file có thể tải lên, thiết bị tả lại các files cho giao diện, khách hàng chọn một file onClickFile(id), giao diện gọi hàm getFile(id) đến thiết bị với biến id truyền vào, thiết bị trả lại file tương ứng.
-		\item Xóa tệp: khách hàng click nút xóa cho tệp cần xóa với onClickDeleteFileButton(id), giao diện gọi hàm deleteFile(id) đến hệ thống với biến id truyền vào, hệ thống xóa tệp và trả lại tin nhắn deleteFile tương ứng.
-	\end{itemize}
-	\item Có một tùy chọn với điều kiện tin nhắn tồn tại: khách hàng click Gửi với onClickSendButton(), giao diện gọi hàm sendMessage() đến hệ thống, hệ thống trả lại tin nhắn sendMessage tương ứng, hệ thống tự gọi hàm createAutoReplyMessage() để tạo tin nhắn tự động từ hệ thống chatbot, hệ thống trả lại giao diện autoReplyMessage.
-\end{itemize}
-\subsubsubsection{Yêu cầu hỗ trợ}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-NeedSupport.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Yêu cầu hỗ trợ}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả: }
-\begin{itemize}
-	\item Khách hàng click nút Hỗ trợ với hàm onOpenSupportPoppup().
-	\item Giao diện gọi hàm getSupportInro() đế hệ thống để lấy thông tin hỗ trợ.
-	\item Hệ thống trả về giao diện supportInfo.
-	\item Có 2 tùy chọn khả dụng là gửi yêu cầu hỗ trợ hoặc đặt lịch hẹn:
-	\begin{itemize}
-		\item Gửi yêu cầu hỗ trợ: khách hàng click Gửi yêu cầu với onClickSendRequestBtn(), giao diện gọi hàm sendRequest() đến hệ thống để gửi yêu cầu lên hệ thống, hệ thống trả lại về tin nhắn thành công successMessage, giao diện gọi hàm stopAutoReply() để tắt tính năng trả lời tự động.
-		\item Đặt lịch hẹn: khách hàng click Đặt lịch hẹn với onClickAppointmentBtn(), giao diện tự gọi hàm closeSupportPoppup() để đóng popup Hỗ trợ, giao diện tự gọi hàm openAppointmentPopup() để mở popup Đặt lịch hẹn, tiếp tục có 2 tùy chọn khả dụng là đóng popup hoặc tiếp tục:
-		\begin{itemize}
-			\item Đóng: khách hàng click Đóng với onClickCloseBtn(), giao diện tự gọi closeAppointmentPopup() để đóng popup Đặt lịch hẹn.
-			\item Tiếp tục: khách hàng nhập các thông tin cho cuộc hẹn với enterFornInfo(info), tiếp tục có 2 tùy chọn là đóng popup hoặc tiếp tục:
-			\begin{itemize}
-				\item Đóng: khách hàng click Đóng với onClickCloseBtn(), giao diện tự gọi closeAppointmentPopup() để đóng popup Đặt lịch hẹn.
-				\item Tiếp tục: khách hàng click Gửi với onClickSendBtn(), giao diện gọi hàm sendAppointment(info) đến hệ thống với biến info, hệ thống nhận và trả lại tin nhắn thành công successMessage.
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
-% \subsubsection{Quản lý lịch hẹn}
-% \begin{figure}[H]
-%     \centering
-%      \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-AppointmentManagement.svg}
-%     \vspace{0.5cm}
-%     \caption{Biểu đồ sequence cho Quản lý lịch hẹn}
-%     \label{fig:enter-label}
-% \end{figure}
-% \textbf{Mô tả: }
-% \begin{itemize}
-% 	\item Nhân viên CSKH mở trang Lịch hẹn qua hàm onOpen(appointment).
-% 	\item Giao diện trang Lịch hẹn sẽ gọi hàm getAppointments() đến Hệ thống để lấy danh sách các lịch hẹn.
-% 	\item Hệ thống phản hồi và trả lại danh sách các lịch hẹn cho trang Lịch hẹn.
-% 	\item Có 3 tùy chọn khả dụng là nhân viên CSKH có thể chọn lọc hoặc tìm kiếm lịch hẹn:
-% 	\begin{itemize}
-% 		\item Lọc: nhân viên CSKH click nút Lọc với onClickFilterButton(), trang Lịch hẹn gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, nhân viên CSKH tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Lịch hẹn gọi hàm getAppointments(field) đến hệ thống để lấy dữ liệu lịch hẹn theo trường lọc đó, hệ thống trả lại các appointments tương ứng.
-% 		\item Tìm kiếm: nhân viên CSKH click khung Search với onClickSearchBox(), tiếp tục nhập và hoàn thành nội dung tìm kiếm với submit(searchInput), trang Lịch hẹn gọi hàm getAppointments(searchInput) đế hệ thống với biến searchInput từ nhân viên CSKH truyền tới để lấy dữ liệu lịch hẹn theo nội dung tìm kiếm đó, hệ thống trả lại các appointments tương ứng.
-% 	\end{itemize}
-% 	\item Nhân viên CSKH tiếp tục chọn xem 1 lịch hẹn với onClickChatItem(id).
-% 	\item Trang Lịch hẹn gọi hàm getAppointment(id) đến hệ thống với biến id truyền vào.
-% 	\item Hệ thống trả lại appointment tương ứng.
-% 	\item Có một tùy chọn với điều kiện nhân viên CSKH muốn hỗ trợ khách hàng: nhân viên CSKH click Hỗ trợ với onClickSupportButton(), trang Lịch hẹn gọi switchToChatPage(id) đến hệ thống với biến id để mở trang hội thoại tương ứng, hệ thống mở trang Hội thoại với onOpen(chat), trang Hội thoại gọi hàm getChat(id) để lấy thông tin cuộc hội thoại, hệ thống trả về chat tương ứng.
-% \end{itemize}
 \subsubsection{Đào tạo và tùy chỉnh chatbot}
 \subsubsubsection{Tải dữ liệu tri thức}
 \begin{figure}[H]
@@ -520,3 +353,170 @@ Các bước trong quá trình tương tác như sau: Đầu tiên quản trị 
 		\item Giao diện hiển thị chatbot với UI mới.
 	\end{enumerate}
 \end{enumerate}
+
+\subsubsection{Quản lý chatbot}
+\subsubsubsection{Báo cáo}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Report.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ sequence cho Báo cáo}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Mô tả: }
+\begin{itemize}
+	\item Quản trị viên doanh nghiệp mở trang Báo cáo qua hàm onOpen(report).
+	\item Giao diện trang Báo cáo sẽ gọi hàm getStatistics() đến Hệ thống để lấy các dữ liệu thống kê.
+	\item Hệ thống phản hồi và trả lại các dữ liệu thống kê cho trang Báo cáo.
+	\item Có 2 tùy chọn khả dụng là quản trị viên có thể chọn lọc hoặc xuất:
+	\begin{itemize}
+		\item Lọc: quản trị viên click nút Lọc với onClickFilterButton(), trang Báo cáo gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, quản trị viên tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Báo cáo gọi hàm getStatistics(field) đến hệ thống để lấy dữ liệu thống kê theo trường lọc đó, hệ thống trả lại các figuresAndCharts tương ứng.
+		\item Xuất: quản trị viên click nút Xuất với onClickExportButton(), trang Báo cáo gọi hàm getFileTypes() đến hệ thống, hệ thống trả lại dữ liệu các loại file, quản trị viên tiếp tục chọn loại file với OnClickFileType(type) có biến type được truyền vào, trang Báo cáo gọi hàm getReport(type) đến hệ thống để lấy dữ liệu file báo cáo, hệ thống trả lại file báo cáo phù hợp. Tiếp tục có 2 tùy chọn là quản trị viên có thể chọn Tải xuống hoặc Hủy bỏ:
+		\begin{itemize}
+			\item Tải xuống: Quản trị viên click nút Tải xuống với onClickDownloadButton(), trang báo cáo gọi hàm requestDownloadFile() lên hệ thống, hệ thống gọi hàm downloadFile() lên thiết bị để file được tải xuống thiết bị, khi thành công thiết bị trả tin nhắn thành công lên hệ thống và hệ thống trả lại trang báo cáo.
+			\item Hủy bỏ: Quản trị viên click nút Hủy bỏ với onClickCancelButton(), trang báo cáo gọi hàm closeFilePreviewModal() lên hệ thống để đóng modal xem trước, hệ thống trả lại tin nhắn closeModal.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\subsubsubsection{Lịch sử hội thoại}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Chat.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ sequence cho Lịch sử hội thoại}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Mô tả: }
+\begin{itemize}
+	\item Nhân viên doanh nghiệp mở trang Hội thoại qua hàm onOpen(chat).
+	\item Giao diện trang Hội thoại sẽ gọi hàm getChats() đến Hệ thống để lấy danh sách các cuộc hội thoại.
+	\item Hệ thống phản hồi và trả lại danh sách các cuộc hội thoại cho trang Hội thoại.
+	\item Có 3 tùy chọn khả dụng là nhân viên có thể chọn lọc, tìm kiếm hoặc chọn xem các cuộc hội thoại cần hỗ trợ:
+	\begin{itemize}
+		\item Lọc: nhân viên click nút Lọc với onClickFilterButton(), trang Hội thoại gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, nhân viên tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Hội thoại gọi hàm getChats(field) đến hệ thống để lấy dữ liệu hội thoại theo trường lọc đó, hệ thống trả lại các chats tương ứng.
+		\item Tìm kiếm: nhân viên click khung Search với onClickSearchBox(), tiếp tục nhập và hoàn thành nội dung tìm kiếm với submit(searchInput), trang Hội thoại gọi hàm getChats(searchInput) đế hệ thống với biến searchInput từ nhân viên truyền tới để lấy dữ liệu hội thoại theo nội dung tìm kiếm đó, hệ thống trả lại các chats tương ứng.
+		\item Xem các cuộc hội thoại cần hỗ trợ: nhân viên click nút Cần hỗ trợ với onClickNeedSupportBtn(), trang Hội thoại gọi hàm getChats(needSupport) đến hệ thống để lấy danh sách các cuộc hội thoại cần hỗ trợ, hệ thống trả lại các chats tương ứng.
+	\end{itemize}
+	\item Nhân viên tiếp tục chọn xem 1 cuộc hội thoại với onClickChatItem(id).
+	\item Trang Hội thoại gọi hàm getChat(id) đến hệ thống với biến id truyền vào.
+	\item Hệ thống trả lại chat tương ứng.
+\end{itemize}
+\subsubsection{Quản lý thanh toán}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Sequence/Payment.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ sequence cho Quản lý thanh toán}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Mô tả: }
+\begin{itemize}
+	\item Người dùng điều hướng đến trang thanh toán.
+	\item Trang thanh toán sẽ gọi hàm getAvailablePlan() đến hệ thống để lấy các gói dịch vụ.
+	\item Hệ thống trả về danh sách các gói dịch vụ và hiển thị với người dùng.
+	\item Người dùng chọn một gói dịch vụ.
+	\item Trang thanh toán gọi hàm selectPlan() đến hệ thống.
+	\item Hệ thống gọi hàm initiatePayment() đến hệ thống thanh toán.
+	\item Hệ thống thanh toán trả về giao diện và giao diện trả về người dùng form thanh thanh toán.
+	\item Người dùng thực hiện nhập các thông tin và submit.
+	\item Trang thanh toán gọi hàm submitForm() đến hệ thống thanh toán.
+	\item Hệ thống thanh toán tự gọi hàm processPayment() để tiến hành quá trình thanh toán.
+	\item Tiếp theo ngừi dùng có thể gặp 2 tình huống
+	\begin{itemize}
+		\item Nếu thanh toán thành công: hệ thống thanh toán trả về hệ thống phản hồi thành công. Hệ thống gọi hàm updatePlan() để cập nhật và trả về phản hồi thành công cho giao diện và hiển thị với người dùng.
+		\item Nếu thnah toán thất bại: phản hồi thất bại sẽ được truyền từ hệ thống thanh toán đến hệ thống rồi đến giao diện rồi sẽ hiển thị đến người dùng.
+	\end{itemize}
+\end{itemize}
+\subsubsection{Tương tác với chatbot}
+\subsubsubsection{Phản hồi tin nhắn khách hàng}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-ReplyCustomerMessage.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ sequence cho Phản hồi tin nhắn khách hàng}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Mô tả: }
+\begin{itemize}
+	\item Nhân viên CSKH chọn xem 1 cuộc hội thoại với onClickChatItem(id).
+	\item Trang Hội thoại gọi hàm getChat(id) đến hệ thống với biến id truyền vào.
+	\item Hệ thống trả lại chat tương ứng.
+	\item Có một vòng lặp với điều kiện nhân viên CSKH tiếp tục quá trình nhập tin nhắn, trong vòng lặp có 3 lựa chọn là nhập/sửa tin nhắn, đính kèm tệp hoặc xóa tệp:
+	\begin{itemize}
+		\item Nhập/sửa tin nhắn: nhân viên CSKH click vào khung tin nhắn với onClickMessageBox(), tiếp tục nhập nội dung tin nhắn với enter(messageInput) có biến messageInput truyền vào.
+		\item Đính kèm tệp: nhân viên CSKH click vào nút Đính kèm tệp với onClickAttachFileButton(), trang Hội thoại gọi hàm getFiles(). đến thiết bị để lấy danh sách các file có thể tải lên, thiết bị tả lại các files cho trang Hội thoại, nhân viên CSKH chọn một file onClickFile(id), trang Hội thoại gọi hàm getFile(id) đến thiết bị với biến id truyền vào, thiết bị trả lại file tương ứng.
+		\item Xóa tệp: nhân viên CSKH click nút xóa cho tệp cần xóa với onClickDeleteFileButton(id), trang Hội thoại gọi hàm deleteFile(id) đến hệ thống với biến id truyền vào, hệ thống xóa tệp và trả lại tin nhắn deleteFile tương ứng.
+	\end{itemize}
+	\item Có một tùy chọn với điều kiện tin nhắn tồn tại: nhân viên CSKH click Gửi với onClickSendButton(), trang Hội thoại gọi hàm sendMessage() đến hệ thống, hệ thống trả lại tin nhắn sendMessage tương ứng.
+\end{itemize}
+\subsubsubsection{Gửi tin nhắn}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-SendMessage.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ sequence cho Gửi tin nhắn}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Mô tả: }
+\begin{itemize}
+	\item Khách hàng click vào nút Chatbot với onOpenChatbotPopup().
+	\item Giao diện gọi hàm getChat(id) đến hệ thống với biến id truyền vào.
+	\item Hệ thống trả lại chat tương ứng.
+	\item Có một vòng lặp với điều kiện khách hàng tiếp tục quá trình nhập tin nhắn, trong vòng lặp có 3 lựa chọn là nhập/sửa tin nhắn, đính kèm tệp hoặc xóa tệp:
+	\begin{itemize}
+		\item Nhập/sửa tin nhắn: khách hàng click vào khung tin nhắn với onClickMessageBox(), tiếp tục nhập nội dung tin nhắn với enter(messageInput) có biến messageInput truyền vào.
+		\item Đính kèm tệp: khách hàng click vào nút Đính kèm tệp với onClickAttachFileButton(), giao diện gọi hàm getFiles(). đến thiết bị để lấy danh sách các file có thể tải lên, thiết bị tả lại các files cho giao diện, khách hàng chọn một file onClickFile(id), giao diện gọi hàm getFile(id) đến thiết bị với biến id truyền vào, thiết bị trả lại file tương ứng.
+		\item Xóa tệp: khách hàng click nút xóa cho tệp cần xóa với onClickDeleteFileButton(id), giao diện gọi hàm deleteFile(id) đến hệ thống với biến id truyền vào, hệ thống xóa tệp và trả lại tin nhắn deleteFile tương ứng.
+	\end{itemize}
+	\item Có một tùy chọn với điều kiện tin nhắn tồn tại: khách hàng click Gửi với onClickSendButton(), giao diện gọi hàm sendMessage() đến hệ thống, hệ thống trả lại tin nhắn sendMessage tương ứng, hệ thống tự gọi hàm createAutoReplyMessage() để tạo tin nhắn tự động từ hệ thống chatbot, hệ thống trả lại giao diện autoReplyMessage.
+\end{itemize}
+\subsubsubsection{Yêu cầu hỗ trợ}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-NeedSupport.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ sequence cho Yêu cầu hỗ trợ}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Mô tả: }
+\begin{itemize}
+	\item Khách hàng click nút Hỗ trợ với hàm onOpenSupportPoppup().
+	\item Giao diện gọi hàm getSupportInro() đế hệ thống để lấy thông tin hỗ trợ.
+	\item Hệ thống trả về giao diện supportInfo.
+	\item Có 2 tùy chọn khả dụng là gửi yêu cầu hỗ trợ hoặc đặt lịch hẹn:
+	\begin{itemize}
+		\item Gửi yêu cầu hỗ trợ: khách hàng click Gửi yêu cầu với onClickSendRequestBtn(), giao diện gọi hàm sendRequest() đến hệ thống để gửi yêu cầu lên hệ thống, hệ thống trả lại về tin nhắn thành công successMessage, giao diện gọi hàm stopAutoReply() để tắt tính năng trả lời tự động.
+		\item Đặt lịch hẹn: khách hàng click Đặt lịch hẹn với onClickAppointmentBtn(), giao diện tự gọi hàm closeSupportPoppup() để đóng popup Hỗ trợ, giao diện tự gọi hàm openAppointmentPopup() để mở popup Đặt lịch hẹn, tiếp tục có 2 tùy chọn khả dụng là đóng popup hoặc tiếp tục:
+		\begin{itemize}
+			\item Đóng: khách hàng click Đóng với onClickCloseBtn(), giao diện tự gọi closeAppointmentPopup() để đóng popup Đặt lịch hẹn.
+			\item Tiếp tục: khách hàng nhập các thông tin cho cuộc hẹn với enterFornInfo(info), tiếp tục có 2 tùy chọn là đóng popup hoặc tiếp tục:
+			\begin{itemize}
+				\item Đóng: khách hàng click Đóng với onClickCloseBtn(), giao diện tự gọi closeAppointmentPopup() để đóng popup Đặt lịch hẹn.
+				\item Tiếp tục: khách hàng click Gửi với onClickSendBtn(), giao diện gọi hàm sendAppointment(info) đến hệ thống với biến info, hệ thống nhận và trả lại tin nhắn thành công successMessage.
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+% \subsubsection{Quản lý lịch hẹn}
+% \begin{figure}[H]
+%     \centering
+%      \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-AppointmentManagement.svg}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ sequence cho Quản lý lịch hẹn}
+%     \label{fig:enter-label}
+% \end{figure}
+% \textbf{Mô tả: }
+% \begin{itemize}
+% 	\item Nhân viên CSKH mở trang Lịch hẹn qua hàm onOpen(appointment).
+% 	\item Giao diện trang Lịch hẹn sẽ gọi hàm getAppointments() đến Hệ thống để lấy danh sách các lịch hẹn.
+% 	\item Hệ thống phản hồi và trả lại danh sách các lịch hẹn cho trang Lịch hẹn.
+% 	\item Có 3 tùy chọn khả dụng là nhân viên CSKH có thể chọn lọc hoặc tìm kiếm lịch hẹn:
+% 	\begin{itemize}
+% 		\item Lọc: nhân viên CSKH click nút Lọc với onClickFilterButton(), trang Lịch hẹn gọi hàm getFilterFields() đến hệ thống, hệ thống trả lại dữ liệu các filterFields, nhân viên CSKH tiếp tục chọn trường cần lọc với onClickFilterField(field) có biến field truyền vào, trang Lịch hẹn gọi hàm getAppointments(field) đến hệ thống để lấy dữ liệu lịch hẹn theo trường lọc đó, hệ thống trả lại các appointments tương ứng.
+% 		\item Tìm kiếm: nhân viên CSKH click khung Search với onClickSearchBox(), tiếp tục nhập và hoàn thành nội dung tìm kiếm với submit(searchInput), trang Lịch hẹn gọi hàm getAppointments(searchInput) đế hệ thống với biến searchInput từ nhân viên CSKH truyền tới để lấy dữ liệu lịch hẹn theo nội dung tìm kiếm đó, hệ thống trả lại các appointments tương ứng.
+% 	\end{itemize}
+% 	\item Nhân viên CSKH tiếp tục chọn xem 1 lịch hẹn với onClickChatItem(id).
+% 	\item Trang Lịch hẹn gọi hàm getAppointment(id) đến hệ thống với biến id truyền vào.
+% 	\item Hệ thống trả lại appointment tương ứng.
+% 	\item Có một tùy chọn với điều kiện nhân viên CSKH muốn hỗ trợ khách hàng: nhân viên CSKH click Hỗ trợ với onClickSupportButton(), trang Lịch hẹn gọi switchToChatPage(id) đến hệ thống với biến id để mở trang hội thoại tương ứng, hệ thống mở trang Hội thoại với onOpen(chat), trang Hội thoại gọi hàm getChat(id) để lấy thông tin cuộc hội thoại, hệ thống trả về chat tương ứng.
+% \end{itemize}
