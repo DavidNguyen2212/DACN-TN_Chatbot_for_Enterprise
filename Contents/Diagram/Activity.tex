@@ -20,32 +20,27 @@ Khi chọn "Tham gia tổ chức", người dùng cần nhập mã mời và đi
 
 Khi hoàn tất quá trình đăng ký theo một trong hai luồng trên, người dùng sẽ được điều hướng đến trang chính với các chức năng tương ứng với vai trò được phân trong tổ chức.
 
-\subsubsubsection{Đăng nhập}
+\subsubsubsection{Đăng nhập và quên mật khẩu}
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Login.svg}
     \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Đăng nhập}
+    \caption{Biểu đồ activity cho Đăng nhập và quên mật khẩu}
     \label{fig:enter-label}
 \end{figure}
 
-\textbf{Mô tả}: Biểu đồ hoạt động Đăng ký gồm 3 swimlane: OAuth, Người dùng và hệ thống.
+\textbf{Mô tả}: Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
 
-Đầu tiên, nhân viên chọn vào nút "Đăng nhập" ở trang chủ. Nhân viên sẽ có hai lựa chọn:
-
-\begin{itemize}
-	\item Qua Google OAuth: Nhân viên cần xác minh và ủy quyền email của mình cho Google OAuth. Các bước tiếp theo tuân thủ theo quá trình xác thực OAuth 2.0 của Google. Với lựa chọn này, nhân viên không cần đăng ký trước đó, miễn là sử dụng email doanh nghiệp để tiếp tục.
-	\item Qua tài khoản và mật khẩu: Nhân viên nhập hai thông tin này để đăng nhập (nếu đã đăng ký trước đó). Nếu người dùng quên mật khẩu:
+Đầu tiên, nhân viên chọn vào nút "Đăng nhập" ở trang chủ. Nhân viên nhập email và mật khẩu để đăng nhập (nếu đã đăng ký trước đó). Nếu người dùng quên mật khẩu:
 	\begin{enumerate}
 		\item Nhập email đã đăng ký.
-		\item Hệ thống gửi email chứa mã khôi phục đến người dùng.
-		\item Nhân viên nhập mã khôi phục.
-		\item Nếu hệ thống xác minh mã đã nhập là đúng, nhân viên sẽ được cho phép đổi mật khẩu.
+		\item Hệ thống gửi email chứa link khôi phục đến người dùng.
+		\item Nhân viên vào link khôi phục.
+		\item Nếu hệ thống xác minh là đúng, nhân viên sẽ được cho phép đổi mật khẩu.
 		\item Nhân viên đổi xong sẽ được chuyển về trang đăng nhập để tiếp tục.
 	\end{enumerate}
-\end{itemize}
 
-Dù bằng cách nào, sau khi đăng nhập thành công, hệ thống sẽ lưu dữ liệu đăng nhập và chuyển nhân viên về trang chủ.
+Sau khi đăng nhập thành công, hệ thống sẽ lưu dữ liệu đăng nhập và chuyển nhân viên về trang chủ.
 
 
 \subsubsubsection{Chỉnh sửa hồ sơ cá nhân}
@@ -57,16 +52,109 @@ Dù bằng cách nào, sau khi đăng nhập thành công, hệ thống sẽ lư
     \label{fig:enter-label}
 \end{figure}
 
-\textbf{Mô tả}: Biểu đồ hoạt động Đăng ký gồm 2 swimlane: Người dùng và hệ thống.
+\textbf{Mô tả}: Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
 
-Đầu tiên, nhân viên chọn vào nút "Cài đặt" ở thanh bên. Chọn tab "Tài khoản" để thực hiện chức năng này. Nhân viên có thể:
+Đầu tiên, nhân viên chọn vào nút "Cài đặt" ở thanh bên. Chọn mục "Tài khoản" để thực hiện chức năng này. Nhân viên có thể:
 
 \begin{itemize}
 	\item Chỉnh sửa thông tin cá nhân: Nhân viên thay đổi được ảnh đại diện, họ tên và số điện thoại. Tuy nhiên email và vai trò của tài khoản sẽ không thể thay đổi.
 	\item Thay đổi mật khẩu chủ động bằng cách nhập mật khẩu hiện tại và mật khẩu mới. Nếu mật khẩu hiện tại không đúng, người dùng không thể tiếp tục tiến trình.
 \end{itemize}
 
-Dù chỉnh sửa thông tin nào, sau khi thay đổi xong và nhấn lưu, hệ thống sẽ lưu lại các thông tin mới này.
+Dù chỉnh sửa thông tin nào, sau khi thay đổi xong và nhấn lưu, hệ thống sẽ lưu lại các thông tin mới này. Khi đổi mật khẩu thành công, hệ thống sẽ đăng xuất tài khoản và cho đăng nhập lại.
+
+\subsubsection{Đào tạo và tùy chỉnh chatbot}
+\subsubsubsection{Đào tạo chatbot}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram - Remake-daotao.drawio.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ activity cho Đào tạo chatbot}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Mô tả}: Biểu đồ hoạt động gồm 3 swimlane: Người dùng, hệ thống và thiết bị.
+
+Đầu tiên, người dùng vào trang "Đào tạo chatbot", hệ thống hiển thị danh sách tri thức. Tại trang này, nhân viên có thể có các lựa chọn:
+\begin{itemize}
+	\item Xóa tri thức, khi bấm xóa, màn hình hiển thị cửa sổ xác nhận, người dùng có 2 lựa chọn là xác nhận và hủy. Khi xác nhận, đối với tri thức chưa đào tạo sẽ được xóa vĩnh viễn, còn lại sẽ chỉ xóa tạm thời.
+	\item Thêm tri thức: người dùng chọn Cập nhật tri thức, sau đó có thể chọn một trong ba loại tri thức:
+	\begin{itemize}
+        \item Dạng tập tin: người dùng tải lên các tập tin và có thể thêm hoặc xóa các tập tin đã tải lên. 
+        \item Dạng văn bản: người dùng vào tab nhập tri thức và nhập văn bản.
+        \item Dạng website: người dùng vào tab nhập tri thức web và điền thông tin.
+    \end{itemize}
+    Khi chọn Lưu thì các tri thức mới sẽ được thêm.
+    \item Đổi độ ưu tiên: người dùng đổi độ ưu tiên cho tri thức
+\end{itemize} 
+
+Sau đó người dùng có thể lặp lại các bước trên hoặc chọn Lưu và đào tạo. Khi đó, nếu tồn tại tri thức xóa tạm, hệ thống sẽ xóa vĩnh viễn tri thức đó rồi mới lưu các thay đổi và đào tạo. Khi đào tạo xong, các tri thức sẽ có trạng thái đã đào tạo.
+
+
+% \subsubsubsection{Cập nhật dữ liệu tri thức}
+% \begin{figure}[H]
+%     \centering
+%      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-UpdateKnowledge.svg}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ activity cho Cập nhật dữ liệu tri thức}
+%     \label{fig:enter-label}
+% \end{figure}
+
+% \textbf{Mô tả}: Biểu đồ hoạt động Cập nhật dữ liệu tri thức gồm 2 swimlane: Người dùng và hệ thống.
+
+% Đầu tiên, nhân viên vào tab Cập nhật tri thức của mục "Đào tạo chatbot". Tại tab này, nhân viên có ba lựa chọn:
+% \begin{itemize}
+% 	\item Cập nhật tri thức là web: xóa / sửa địa chỉ web hiện tại. Như việc thêm, thì việc chỉnh sửa cũng cần trải qua bước kiểm tra sự hợp lệ của địa chỉ.
+% 	\item Cập nhật tài liệu: xóa tài liệu hiện tại.
+% 	\item Đối với hướng dẫn nhập liệu từ bản phím: có thể xóa, sửa.
+% \end{itemize} 
+
+% Sau khi người dùng nhấn Lưu ở mỗi cập nhật, hệ thống sẽ hiển thị các tệp, trang web, hướng dẫn mới.
+
+
+% \subsubsubsection{So sánh chatbot}
+% \begin{figure}[H]
+%     \centering
+%      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Comparebot.svg}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ activity cho So sánh chatbot}
+%     \label{fig:enter-label}
+% \end{figure}
+% \textbf{Mô tả}: Biểu đồ hoạt động So sánh chatbot gồm 2 swimlane: Người dùng và hệ thống.
+
+% Đầu tiên, quản trị viên vào tab Gán nhãn tri thức của mục "Đào tạo chatbot". Tại tab này, user có thể so sánh bằng cách ấn vào nút "So sánh chatbot". Cửa sổ mới hiện ra cho phép người dùng nhập liệu một câu hỏi và nhận về 2 câu trả lời. Sau đó, quản trị viên nhấn "Lưu và training" để hệ thống lưu tri thức và huấn luyện AI.
+
+% \subsubsubsection{Gán nhãn dữ liệu tri thức}
+% \begin{figure}[H]
+% 	\centering
+% 	\includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-LableKnowledge.svg}
+% 	\vspace{0.5cm}
+% 	\caption{Biểu đồ activity cho Gán nhãn dữ liệu tri thức}
+% 	\label{fig:enter-label}
+% \end{figure}
+
+% \textbf{Mô tả}: Biểu đồ hoạt động Gán nhãn dữ liệu tri thức gồm 2 swimlane: Người dùng và hệ thống.
+
+% Đầu tiên, quản trị viên vào tab Gán nhãn tri thức của mục "Đào tạo chatbot". Tại tab này, nhân viên gán nhãn bằng cách dụng chọn lựa từ bảng chọn drop-select bên cạnh tài liệu. Sau khi thao tác, hệ thống sẽ tự động lưu nhãn cho các tệp.
+
+
+\subsubsubsection{Tùy chỉnh chatbot}
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram - Remake-tuychinh.drawio.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ activity cho Tùy chỉnh chatbot}
+    \label{fig:enter-label}
+\end{figure}
+
+\textbf{Mô tả}: Biểu đồ hoạt động gồm 3 swimlane: Người dùng, hệ thống và thiết bị.
+
+Đầu tiên, nhân viên vào trang Tùy chỉnh chatbot. Tại trang này, nhân viên có 2 lựa chọn:
+\begin{itemize}
+	\item Tùy chỉnh phong cách: tin nhắn mặc định (lời chào, lời chuyển giao, lời tạm biệt) cùng với tông giọng (lịch sự, vui vẻ, thân thiện, trực tiếp).
+	\item Tùy chỉnh giao diện: ảnh nền chat, ảnh đại diện chatbot và một số đặc tính CSS: màu nền chat, phông chữ, màu chữ, độ bo góc tin nhắn,...
+\end{itemize} 
+
+Nhân viên nhấn Lưu để hoàn tất chỉnh sửa hoặc Hủy để hủy bỏ thao tác. Ở tùy chỉnh giao diện, nhân viên có thể xem trước giao diện đã chỉnh sửa trước khi Lưu.
 
 
 \subsubsection{Tích hợp}
@@ -78,7 +166,9 @@ Dù chỉnh sửa thông tin nào, sau khi thay đổi xong và nhấn lưu, h�
     \label{fig:enter-label}
 \end{figure}
 
-\par Quá trình tạo mã nhúng cho chatbot bắt đầu bằng việc người dùng điều hướng tới trang Tùy chỉnh chatbot. Sau khi truy cập thành công, hệ thống sẽ hiển thị giao diện Tùy chỉnh chatbot và cho phép xem trước giao diện chatbot để đảm bảo rằng thiết kế và các chức năng hoạt động như mong muốn trước khi triển khai. Khi đã hài lòng với bản xem trước, người dùng sẽ nhấn nút Tạo chatbot để hệ thống bắt đầu quá trình tạo mã nhúng. Sau khi hoàn thành, mã nhúng này sau đó sẽ được hiển thị trên giao diện người dùng, cho phép người dùng dễ dàng thao tác. Cuối cùng, người dùng chỉ cần sao chép mã nhúng và dán vào website doanh nghiệp của mình để hoàn tất quá trình tích hợp chatbot.
+\textbf{Mô tả}: Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
+
+\par Quá trình tạo mã nhúng cho chatbot bắt đầu bằng việc người dùng điều hướng tới trang Tùy chỉnh chatbot. Sau khi truy cập thành công, hệ thống sẽ hiển thị giao diện Tùy chỉnh chatbot và cho phép xem trước giao diện chatbot để đảm bảo rằng thiết kế và các chức năng hoạt động như mong muốn trước khi triển khai. Khi đã hài lòng với bản xem trước, người dùng sẽ nhấn mở mục Tích hợp để hệ thống bắt đầu quá trình tạo mã nhúng. Sau khi hoàn thành, mã nhúng này sau đó sẽ được hiển thị trên giao diện người dùng, cho phép người dùng dễ dàng thao tác. Cuối cùng, người dùng chỉ cần sao chép mã nhúng và dán vào website doanh nghiệp của mình để hoàn tất quá trình tích hợp chatbot.
 
 \subsubsection{Quản lý chatbot}
 \subsubsubsection{Báo cáo}
@@ -90,10 +180,12 @@ Dù chỉnh sửa thông tin nào, sau khi thay đổi xong và nhấn lưu, h�
     \label{fig:enter-label}
 \end{figure}
 \textbf{Mô tả:}
+Biểu đồ hoạt động gồm 3 swimlane: Người dùng, hệ thống và thiết bị.
+
 Ban đầu quản trị viên doanh nghiệp chọn vào nút "Báo cáo" trên thanh điều hướng. Khi đó màn hình sẽ chuyển qua trang Báo cáo và hiển thị các thông số và biểu đồ.
 \begin{itemize}
     \item Nếu quản trị viên chọn "Lọc", hệ thống sẽ hiển thị các thông số lọc và quản trị viên chọn một thông số. Khi đó, hệ thống sẽ hiển thị lại các thông số và biểu đồ tương ứng với thông số lọc đó. Rồi sau đó quản trị viên có thể chọn "Lọc" tiếp hoặc chọn "Xuất" hoặc dừng lại.
-    \item Nếu quản trị viên chọn "Xuất", hệ thống sẽ hiển thị 2 loại tệp. Sau đó người dùng sẽ phải chọn một và chọn "Xem trước". Hệ thống sẽ hiển thị chế độ xem trước file dưới dạng popup. Nếu người dùng chọn "Tải xuống" thì file sẽ được tải về thiết bị. Còn nếu người dùng chọn "Hủy bỏ" thì hệ thống sẽ đóng popup xem trước.
+    \item Nếu quản trị viên chọn "Xuất", hệ thống sẽ hiển thị các loại tệp. Sau đó người dùng sẽ phải chọn một. Khi đó, file sẽ được tải về thiết bị. 
     \item Nếu quản trị viên không chọn gì thì sẽ kết thúc.
 \end{itemize}
 \subsubsubsection{Lịch sử hội thoại}
@@ -105,28 +197,30 @@ Ban đầu quản trị viên doanh nghiệp chọn vào nút "Báo cáo" trên 
     \label{fig:enter-label}
 \end{figure}
 \textbf{Mô tả:}
+Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
+
 Ban đầu người dùng chọn vào nút "Chat" trên thanh điều hướng. Khi đó màn hình sẽ chuyển qua trang Chat và hiển thị danh sách các cuộc hội thoại của khách hàng.
 \begin{itemize}
-    \item Nếu người dùng chọn vào ô tìm kiếm, nhập nội dung tìm kiếm và chọn "Tìm" thì khi đó hệ thống sẽ hiển thị các cuộc hội thoại có tên tương ứng với nội dung tìm kiếm.
+    \item Nếu người dùng chọn vào ô tìm kiếm, nhập nội dung tìm kiếm thì khi đó hệ thống sẽ hiển thị các cuộc hội thoại có tên tương ứng với nội dung tìm kiếm.
     \item Nếu người dùng chọn "Lọc", hệ thống sẽ hiển thị các thông số lọc và người dùng chọn một thông số. Khi đó, hệ thống sẽ hiển thị lại các cuộc hội thoại tương ứng với thông số lọc đó. 
     \item Nếu người dùng chọn "Cần hỗ trợ" thì hệ thống sẽ chỉ hiển thị các cuộc hội thoại mà khách hàng đã gửi yêu cầu hỗ trợ.
 \end{itemize}
 
 Sau đó người dùng có thể lặp lại các bước trên hoặc chọn xem một cuộc hội thoại. Khi quản trị viên chọn xem một cuộc hội thoại thì hệ thống sẽ hiển thị chi tiết cuộc hội thoại đó.
-\subsubsection{Thông báo và cảnh báo}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Notifications and Alerts.drawio.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Thông báo và cảnh báo}
-    \label{fig:enter-label}
-\end{figure}
+% \subsubsection{Thông báo và cảnh báo}
+% \begin{figure}[H]
+%     \centering
+%      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Notifications and Alerts.drawio.svg}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ activity cho Thông báo và cảnh báo}
+%     \label{fig:enter-label}
+% \end{figure}
 
-\par Quá trình cài đặt thông báo cho người dùng bắt đầu bằng việc người dùng điều hướng tới trang cài đặt thông báo. Khi truy cập thành công, hệ thống sẽ hiển thị trang cài đặt thông báo, cung cấp giao diện để người dùng tùy chỉnh các thiết lập phù hợp với nhu cầu cá nhân.
+% \par Quá trình cài đặt thông báo cho người dùng bắt đầu bằng việc người dùng điều hướng tới trang cài đặt thông báo. Khi truy cập thành công, hệ thống sẽ hiển thị trang cài đặt thông báo, cung cấp giao diện để người dùng tùy chỉnh các thiết lập phù hợp với nhu cầu cá nhân.
 
-Tiếp theo, người dùng chọn phương thức nhận thông báo mà họ mong muốn, chẳng hạn như qua email, SMS, hoặc thông báo trực tiếp trên ứng dụng. Sau đó, người dùng thiết lập ngưỡng token LLM hoặc ngưỡng lưu lượng người dùng, nhằm xác định các điều kiện kích hoạt thông báo phù hợp với hoạt động của họ.
+% Tiếp theo, người dùng chọn phương thức nhận thông báo mà họ mong muốn, chẳng hạn như qua email, SMS, hoặc thông báo trực tiếp trên ứng dụng. Sau đó, người dùng thiết lập ngưỡng token LLM hoặc ngưỡng lưu lượng người dùng, nhằm xác định các điều kiện kích hoạt thông báo phù hợp với hoạt động của họ.
 
-Sau khi hoàn tất việc thiết lập các thông số trên, người dùng xác nhận các cài đặt. Hệ thống sẽ áp dụng các cài đặt đã được xác nhận, đảm bảo rằng các thông báo sẽ được gửi đi theo các tùy chọn và ngưỡng đã được thiết lập.
+% Sau khi hoàn tất việc thiết lập các thông số trên, người dùng xác nhận các cài đặt. Hệ thống sẽ áp dụng các cài đặt đã được xác nhận, đảm bảo rằng các thông báo sẽ được gửi đi theo các tùy chọn và ngưỡng đã được thiết lập.
 
 \subsubsection{Quản lý thanh toán}
 \begin{figure}[H]
@@ -137,13 +231,16 @@ Sau khi hoàn tất việc thiết lập các thông số trên, người dùng 
     \label{fig:enter-label}
 \end{figure}
 
+\textbf{Mô tả:}
+Biểu đồ hoạt động gồm 3 swimlane: Người dùng, hệ thống và hệ thống thanh toán PayOS.
+
 \par Quá trình đăng ký gói dịch vụ bắt đầu bằng việc người dùng điều hướng tới trang thanh toán. Khi truy cập thành công, hệ thống sẽ hiển thị các gói đăng ký hiện có, cho phép người dùng lựa chọn phù hợp với nhu cầu của mình.
 
-Tiếp theo, người dùng có thể thay đổi hoặc chọn gói đăng ký mới nếu muốn nâng cấp hoặc điều chỉnh dịch vụ. Sau khi lựa chọn gói phù hợp, hệ thống sẽ hiển thị màn hình xác nhận, yêu cầu người dùng xác nhận lựa chọn của mình trước khi tiến hành thanh toán.
+Tiếp theo, người dùng có thể thay đổi hoặc chọn gói đăng ký mới nếu muốn nâng cấp hoặc điều chỉnh dịch vụ. Sau khi lựa chọn gói phù hợp và chọn mua, hệ thống sẽ điều hướng tới hệ thống thanh toán để thực hiện giao dịch. Giao diện thanh toán sẽ được hiển thị, nơi người dùng có thể quét mã QR để thanh toán.
 
-Sau khi người dùng xác nhận gói đăng ký, hệ thống sẽ điều hướng tới hệ thống thanh toán để thực hiện giao dịch. Giao diện thanh toán sẽ được hiển thị, nơi người dùng nhập thông tin thanh toán cần thiết như thông tin cá nhân, thông tin thẻ tín dụng hoặc số tài khoản ngân hàng.
+Khi người dùng thực hiện thanh toán xong, hệ thống sẽ tiến hành xử lý thanh toán. Nếu thanh toán thành công, hệ thống sẽ kích hoạt gói đăng ký mà người dùng đã chọn, đảm bảo rằng dịch vụ được cung cấp đầy đủ theo gói đã mua. 
 
-Khi người dùng nhập thông tin thanh toán, hệ thống sẽ tiến hành xử lý thanh toán. Nếu thanh toán thành công, hệ thống sẽ kích hoạt gói đăng ký mà người dùng đã chọn, đảm bảo rằng dịch vụ được cung cấp đầy đủ theo gói đã mua. Trong trường hợp thanh toán thất bại, hệ thống sẽ báo lỗi và cho phép người dùng nhập lại thông tin thanh toán hoặc hủy bỏ giao dịch nếu họ quyết định không tiếp tục.
+Trong trường hợp người dùng không thanh toán mà muốn hủy, người dùng chọn Hủy bỏ và xác nhận. Hệ thống thanh toán sẽ xử lý yêu cầu hủy, khi thành công sẽ chuyển về hệ thống.
 
 
 \subsubsection{Tương tác với chatbot}
@@ -156,12 +253,12 @@ Khi người dùng nhập thông tin thanh toán, hệ thống sẽ tiến hành
     \label{fig:enter-label}
 \end{figure}
 \textbf{Mô tả:}
+Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
+
 Ban đầu nhân viên chăm sóc khách hàng chọn xem đoạn hội thoại của khách hàng tại trang Chat. Hệ thống sẽ hiển thị màn hình chat với khách hàng đó.
-\begin{itemize}
-    \item Nếu muốn điền hoặc chỉnh sửa tin nhắn, nhân viên chăm sóc khách hàng chọn vào khung điền tin nhắn và nhập nội dung tin nhắn. Khi đó hệ thống sẽ hiển thị đoạn tin nhắn mà nhân viên chăm sóc khách hàng đã nhập.
-    \item Nếu muốn đính kèm tệp, nhân viên chăm sóc khách hàng chọn "Đính kèm tệp đa phương tiện". Khi đó, khung chọn tệp từ thiết bị sẽ được hiển thị. nhân viên chăm sóc khách hàng chọn một tệp và chọn "Tải lên". Hệ thống hiển thị tệp được chọn trên màn hình.
-    \item Nếu muốn xóa tệp đã tải lên, nhân viên chăm sóc khách hàng chọn "Xóa". Khi đó tệp đó sẽ được xóa khỏi màn hình.
-\end{itemize}
+
+Nếu muốn điền hoặc chỉnh sửa tin nhắn, nhân viên chăm sóc khách hàng chọn vào khung điền tin nhắn và nhập nội dung tin nhắn. Khi đó hệ thống sẽ hiển thị đoạn tin nhắn mà nhân viên chăm sóc khách hàng đã nhập.
+ 
 Sau đó nhân viên chăm sóc khách hàng có thể lặp lại các bước trên. Hoặc nếu đã có tin nhắn và nhân viên chăm sóc khách hàng chọn gửi thì hệ thống sẽ hiển thị tin nhắn vừa gửi lên màn hình. Hoặc nếu chưa có tin nhắn thì sẽ dừng lại.
 \subsubsubsection{Gửi tin nhắn}
 \begin{figure}[H]
@@ -172,12 +269,12 @@ Sau đó nhân viên chăm sóc khách hàng có thể lặp lại các bước 
     \label{fig:enter-label}
 \end{figure}
 \textbf{Mô tả:}
+Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
+
 Ban đầu khách hàng chọn vào chatbot tại màn hình website của doanh nghiệp. Hệ thống sẽ hiển thị màn hình chatbot.
-\begin{itemize}
-    \item Nếu muốn điền hoặc chỉnh sửa tin nhắn, khách hàng chọn vào khung điền tin nhắn và nhập nội dung tin nhắn. Khi đó hệ thống sẽ hiển thị đoạn tin nhắn mà khách hàng đã nhập.
-    \item Nếu muốn đính kèm tệp, khách hàng chọn "Đính kèm tệp đa phương tiện". Khi đó, khung chọn tệp từ thiết bị sẽ được hiển thị. khách hàng chọn một tệp và chọn "Tải lên". Hệ thống hiển thị tệp được chọn trên màn hình.
-    \item Nếu muốn xóa tệp đã tải lên, khách hàng chọn "Xóa". Khi đó tệp đó sẽ được xóa khỏi màn hình.
-\end{itemize}
+
+Nếu muốn điền hoặc chỉnh sửa tin nhắn, khách hàng chọn vào khung điền tin nhắn và nhập nội dung tin nhắn. Khi đó hệ thống sẽ hiển thị đoạn tin nhắn mà khách hàng đã nhập.
+
 Sau đó khách hàng có thể lặp lại các bước trên. Hoặc nếu đã có tin nhắn và khách hàng chọn gửi thì hệ thống sẽ hiển thị tin nhắn vừa gửi lên màn hình. Đồng thời, hệ thống sẽ tạo và gửi lại tin nhắn phản hồi từ AI Chatbot. Hoặc nếu chưa có tin nhắn thì sẽ dừng lại.
 \subsubsubsection{Yêu cầu hỗ trợ}
 \begin{figure}[H]
@@ -188,121 +285,27 @@ Sau đó khách hàng có thể lặp lại các bước trên. Hoặc nếu đ�
     \label{fig:enter-label}
 \end{figure}
 \textbf{Mô tả:}
+Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
+
 Tại màn hình chatbot, khách hàng chọn "Yêu cầu hỗ trợ". Hệ thống sẽ hiển thị popup hỗ trợ khách hàng.
 \begin{itemize}
-    \item Nếu muốn gửi yêu cầu hỗ trợ, khách hàng chọn "Gửi yêu cầu". Hệ thống sẽ hiển thị thông báo thành công. Khi đó, tính năng tự động chat sẽ tạm dừng.
-    \item Nếu muốn đặt lịch hẹn, khách hàng chọn "Đặt lịch hẹn". Hệ thống sẽ đóng popup Hỗ trợ khách hàng và hiển thị popup Đặt lịch hẹn. 
-    \begin{itemize}
-        \item Nếu muốn tiếp tục, khách hàng điền thông tin và chọn lịch.
-        \begin{itemize}
-            \item Nếu muốn tiếp tục, khách hàng chọn "Gửi". Hệ thống sẽ hiển thị thông báo thành công.
-            \item Nếu không, khách hàng chọn "Đóng".
-        \end{itemize}
-        \item Nếu không, khách hàng chọn "Đóng".
-    \end{itemize}
-    Nếu khách hàng chọn "Đóng" thì hệ thống sẽ đóng popup Đặt lịch hẹn.
+    \item Nếu muốn gửi yêu cầu hỗ trợ, khách hàng điền thông tin và chọn "Gửi yêu cầu". Hệ thống sẽ hiển thị các tin nhắn thông báo, cuộc hội thoại chuyển sang chế độ hỗ trợ.
     \item Nếu khách hàng chọn "Đóng", hệ thống sẽ đóng popup Hỗ trợ khách hàng.
 \end{itemize}
-\subsubsection{Quản lý lịch hẹn}
-\begin{figure}[H]
-    \centering
-    \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-AppointmentManagement.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Quản lý lịch hẹn}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả:}
-Ban đầu nhân viên chăm sóc khách hàng chọn vào nút "Lịch hẹn" trên thanh điều hướng. Khi đó màn hình sẽ chuyển qua trang Lịch hẹn và hiển thị danh sách các lịch hẹn của khách hàng.
-\begin{itemize}
-    \item Nếu nhân viên chăm sóc khách hàng chọn vào ô tìm kiếm, nhập nội dung tìm kiếm và chọn "Tìm" thì khi đó hệ thống sẽ hiển thị các lịch hẹn có tên tương ứng với nội dung tìm kiếm.
-    \item Nếu nhân viên chăm sóc khách hàng chọn "Lọc", hệ thống sẽ hiển thị các thông số lọc và nhân viên chăm sóc khách hàng chọn một thông số. Khi đó, hệ thống sẽ hiển thị lại các lịch hẹn tương ứng với thông số lọc đó. 
-\end{itemize}
-Sau đó nhân viên chăm sóc khách hàng có thể lặp lại các bước trên hoặc chọn xem một lịch hẹn. Khi nhân viên chăm sóc khách hàng chọn xem một lịch hẹn thì hệ thống sẽ hiển thị chi tiết lịch hẹn đó. Ở đó, nếu quản trị viên chọn "Hỗ trợ", hệ thống sẽ chuyển đến cuộc hội thoại với khách hàng. Nếu không thì sẽ dừng lại.
+% \subsubsection{Quản lý lịch hẹn}
+% \begin{figure}[H]
+%     \centering
+%     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-AppointmentManagement.svg}
+%     \vspace{0.5cm}
+%     \caption{Biểu đồ activity cho Quản lý lịch hẹn}
+%     \label{fig:enter-label}
+% \end{figure}
+% \textbf{Mô tả:}
+% Ban đầu nhân viên chăm sóc khách hàng chọn vào nút "Lịch hẹn" trên thanh điều hướng. Khi đó màn hình sẽ chuyển qua trang Lịch hẹn và hiển thị danh sách các lịch hẹn của khách hàng.
+% \begin{itemize}
+%     \item Nếu nhân viên chăm sóc khách hàng chọn vào ô tìm kiếm, nhập nội dung tìm kiếm và chọn "Tìm" thì khi đó hệ thống sẽ hiển thị các lịch hẹn có tên tương ứng với nội dung tìm kiếm.
+%     \item Nếu nhân viên chăm sóc khách hàng chọn "Lọc", hệ thống sẽ hiển thị các thông số lọc và nhân viên chăm sóc khách hàng chọn một thông số. Khi đó, hệ thống sẽ hiển thị lại các lịch hẹn tương ứng với thông số lọc đó. 
+% \end{itemize}
+% Sau đó nhân viên chăm sóc khách hàng có thể lặp lại các bước trên hoặc chọn xem một lịch hẹn. Khi nhân viên chăm sóc khách hàng chọn xem một lịch hẹn thì hệ thống sẽ hiển thị chi tiết lịch hẹn đó. Ở đó, nếu quản trị viên chọn "Hỗ trợ", hệ thống sẽ chuyển đến cuộc hội thoại với khách hàng. Nếu không thì sẽ dừng lại.
 
 
-\subsubsection{Đào tạo và tùy chỉnh chatbot}
-\subsubsubsection{Tải dữ liệu tri thức}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-LoadKnowledge.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Tải dữ liệu tri thức}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả}: Biểu đồ hoạt động Đăng ký gồm 2 swimlane: Người dùng và hệ thống.
-
-Đầu tiên, quản trị viên vào tab Cập nhật tri thức của mục "Đào tạo chatbot". Tại tab này, nhân viên có ba lựa chọn:
-\begin{itemize}
-	\item Nhập tri thức là web: sau khi thêm, hệ thống sẽ kiểm tra định dạng website xem liệu có phù hợp, nếu không người dùng sẽ phải nhập lại.
-	\item Chọn tệp làm tri thức: tệp được tải lên sẽ được hệ thống kiểm tra và tự động loại bỏ các định dạng không phù hợp (khác pdf, doc, docx, txt).
-	\item Thêm hướng dẫn bằng cách nhập liệu từ bản phím.
-\end{itemize} 
-
-Sau khi hoàn tất, hệ thống sẽ hiển thị các tệp, hướng dẫn, trang web hợp lệ lên màn hình.
-
-
-\subsubsubsection{Cập nhật dữ liệu tri thức}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-UpdateKnowledge.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Cập nhật dữ liệu tri thức}
-    \label{fig:enter-label}
-\end{figure}
-
-\textbf{Mô tả}: Biểu đồ hoạt động Cập nhật dữ liệu tri thức gồm 2 swimlane: Người dùng và hệ thống.
-
-Đầu tiên, nhân viên vào tab Cập nhật tri thức của mục "Đào tạo chatbot". Tại tab này, nhân viên có ba lựa chọn:
-\begin{itemize}
-	\item Cập nhật tri thức là web: xóa / sửa địa chỉ web hiện tại. Như việc thêm, thì việc chỉnh sửa cũng cần trải qua bước kiểm tra sự hợp lệ của địa chỉ.
-	\item Cập nhật tài liệu: xóa tài liệu hiện tại.
-	\item Đối với hướng dẫn nhập liệu từ bản phím: có thể xóa, sửa.
-\end{itemize} 
-
-Sau khi người dùng nhấn Lưu ở mỗi cập nhật, hệ thống sẽ hiển thị các tệp, trang web, hướng dẫn mới.
-
-
-\subsubsubsection{So sánh chatbot}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Comparebot.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho So sánh chatbot}
-    \label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả}: Biểu đồ hoạt động So sánh chatbot gồm 2 swimlane: Người dùng và hệ thống.
-
-Đầu tiên, quản trị viên vào tab Gán nhãn tri thức của mục "Đào tạo chatbot". Tại tab này, user có thể so sánh bằng cách ấn vào nút "So sánh chatbot". Cửa sổ mới hiện ra cho phép người dùng nhập liệu một câu hỏi và nhận về 2 câu trả lời. Sau đó, quản trị viên nhấn "Lưu và training" để hệ thống lưu tri thức và huấn luyện AI.
-
-\subsubsubsection{Gán nhãn dữ liệu tri thức}
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-LableKnowledge.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ activity cho Gán nhãn dữ liệu tri thức}
-	\label{fig:enter-label}
-\end{figure}
-
-\textbf{Mô tả}: Biểu đồ hoạt động Gán nhãn dữ liệu tri thức gồm 2 swimlane: Người dùng và hệ thống.
-
-Đầu tiên, quản trị viên vào tab Gán nhãn tri thức của mục "Đào tạo chatbot". Tại tab này, nhân viên gán nhãn bằng cách dụng chọn lựa từ bảng chọn drop-select bên cạnh tài liệu. Sau khi thao tác, hệ thống sẽ tự động lưu nhãn cho các tệp.
-
-
-\subsubsubsection{Tùy chỉnh chatbot}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-AdjustBot.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Tùy chỉnh chatbot}
-    \label{fig:enter-label}
-\end{figure}
-
-\textbf{Mô tả}: Biểu đồ hoạt động Đăng ký gồm 2 swimlane: Người dùng và hệ thống.
-
-Đầu tiên, nhân viên vào tab Cập nhật tri thức của mục "Đào tạo chatbot". Tại tab này, nhân viên có ba lựa chọn:
-\begin{itemize}
-	\item Tùy chỉnh phong cách: tin nhắn mặc định (lời chào, lời chuyển giao, lời tạm biệt) cùng với tông giọng (lịch sự, vui vẻ, thân thiện, trực tiếp).
-	\item Tùy chỉnh giao diện: ảnh nền chat, ảnh đại diện chatbot và một số đặc tính CSS: màu nền chat, phông chữ, màu chữ, độ bo góc tin nhắn.
-\end{itemize} 
-
-Quản trị viên nhấn Lưu để hoàn tất chỉnh sửa.
