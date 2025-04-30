@@ -1,5 +1,6 @@
 \section{Thiết kế hệ thống}
-\begin{figure}[p]
+\subsection{Kiến trúc hệ thống}
+\begin{figure}[H]
     \thispagestyle{empty}
     \centering
     \rotatebox{90}{
@@ -14,7 +15,6 @@
     }
 \end{figure}
 
-\subsection{Kiến trúc hệ thống}
 \subsubsection{Tổng quan kiến trúc}
 Hệ thống được thiết kế dựa trên kiến trúc nguyên khối có cấu trúc lớp (Layered Monolithic Architecture) chủ đạo, kết hợp với các thành phần xử lý bất đồng bộ và tương tác với dịch vụ AI nội bộ chuyên biệt được triển khai độc lập. Trung tâm của hệ thống là một ứng dụng Django tập trung, đảm nhiệm vai trò xử lý các yêu cầu HTTP, triển khai logic nghiệp vụ cốt lõi và quản lý dữ liệu. Các thành phần chức năng chính được tổ chức dưới dạng các module bên trong ứng dụng này.
 

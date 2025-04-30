@@ -47,7 +47,7 @@ Các bước trong quá trình tương tác như sau:
 \subsubsubsection{Đăng nhập}
 \begin{figure}[H]
 	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Login.svg}
+	\includesvg[width=0.6\textwidth]{Dg_Sequence/Sequence Diagram-Login.svg}
 	\vspace{0.5cm}
 	\caption{Biểu đồ sequence cho Đăng nhập}
 	\label{fig:enter-label}
@@ -58,36 +58,35 @@ Các bước trong quá trình tương tác như sau:
 	\item Actor: Nhân viên (gồm cả quản trị viên và nhân viên chăm sóc khách hàng).
 	\item Giao diện trang web (Web interface).
 	\item Hệ thống.
-	\item Google OAuth.
 \end{itemize}
 Các bước trong quá trình tương tác như sau:
 \begin{enumerate}
 	\item Nhân viên ấn nút Đăng nhập.
 	\item Giao diện hiển thị trang Đăng nhập.
 	
-	\textbf{Trường hợp sử dụng tài khoản và mật khẩu:}
-	\begin{enumerate}
+	% \textbf{Trường hợp sử dụng tài khoản và mật khẩu:}
+	% \begin{enumerate}
 		\item Nhân viên nhập hai thông tin trên. Sau đó ấn nút "Đăng nhập" để gọi phương thức onClickLoginButton() trên giao diện. 
 		\item Phương thức handleSignInByAccount() của hệ thống được gọi.
 		\item Hệ thống trả về mã thông báo thành công cho giao diện web.
 		\item Nhân viên được điều hướng về trang chủ.
-	\end{enumerate}
+	% \end{enumerate}
 	
-	\textbf{Trường hợp sử dụng Google OAuth:}
-	\begin{enumerate}
-		\item Nhân viên ấn nút "Tiếp tục với Google" để gọi phương thức onClickGoogleButton() trên giao diện. 
-		\item Phương thức handleSignInByGoogle() của hệ thống được gọi.
-		\item Hàm verifyGmail() của Google OAuth được gọi, và một yêu cầu ủy quyền được gửi đến giao diện người dùng.
-		\item Nhân viên chọn "Đồng ý" (gọi phương thức onClickToAuthorize()) để ủy quyền.
-		\item OAuth trả về thông tin truy vấn cho hệ thống.
-		\item Hệ thống dùng thông tin này để gọi phương thức getTokens() từ OAuth.
-		\item OAuth trả về id\_token và refresh\_token cho hệ thống.
-		\item Hệ thống dùng các token này để gọi phương thức getUserInfo() từ OAuth.
-		\item OAuth trả về thông tin người dùng cho hệ thống.
-		\item Hệ thống dùng các thông tin này để tạo token đăng nhập (CreateLoginTokens()) và đăng nhập (LoginByTokens())
-		\item Hệ thống trả về thông báo thành công cho giao diện người dùng.
-		\item Nhân viên được điều hướng về trang chủ.
-	\end{enumerate}
+	% \textbf{Trường hợp sử dụng Google OAuth:}
+	% \begin{enumerate}
+	% 	\item Nhân viên ấn nút "Tiếp tục với Google" để gọi phương thức onClickGoogleButton() trên giao diện. 
+	% 	\item Phương thức handleSignInByGoogle() của hệ thống được gọi.
+	% 	\item Hàm verifyGmail() của Google OAuth được gọi, và một yêu cầu ủy quyền được gửi đến giao diện người dùng.
+	% 	\item Nhân viên chọn "Đồng ý" (gọi phương thức onClickToAuthorize()) để ủy quyền.
+	% 	\item OAuth trả về thông tin truy vấn cho hệ thống.
+	% 	\item Hệ thống dùng thông tin này để gọi phương thức getTokens() từ OAuth.
+	% 	\item OAuth trả về id\_token và refresh\_token cho hệ thống.
+	% 	\item Hệ thống dùng các token này để gọi phương thức getUserInfo() từ OAuth.
+	% 	\item OAuth trả về thông tin người dùng cho hệ thống.
+	% 	\item Hệ thống dùng các thông tin này để tạo token đăng nhập (CreateLoginTokens()) và đăng nhập (LoginByTokens())
+	% 	\item Hệ thống trả về thông báo thành công cho giao diện người dùng.
+	% 	\item Nhân viên được điều hướng về trang chủ.
+	% \end{enumerate}
 \end{enumerate}
 
 
@@ -131,192 +130,242 @@ Các bước trong quá trình tương tác như sau:
 \end{enumerate}
 
 \subsubsection{Đào tạo và tùy chỉnh chatbot}
-\subsubsubsection{Tải dữ liệu tri thức}
+\subsubsubsection{Đào tạo chatbot}
 \begin{figure}[H]
 	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-LoadKnowledge.svg}
+	\includesvg[width=1\textwidth]{Dg_Sequence/daotao.svg}
 	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Tải dữ liệu tri thức}
+	\caption{Biểu đồ sequence cho Đào tạo chatbot}
 	\label{fig:enter-label}
 \end{figure}
 
-\textbf{Mô tả}: Biểu đồ tuần tự Tải dữ liệu tri thức mô tả sự tương tác giữa các thực thể sau:
+\begin{figure}[H]
+	\centering
+	\includesvg[width=1\textwidth]{Dg_Sequence/xoatrithuc.svg}
+	\vspace{0.5cm}
+	\caption{Biểu đồ sequence cho Xóa tri thức}
+	\label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includesvg[width=1\textwidth]{Dg_Sequence/themtrithuc.svg}
+	\vspace{0.5cm}
+	\caption{Biểu đồ sequence cho Thêm tri thức}
+	\label{fig:enter-label}
+\end{figure}
+
+\textbf{Mô tả}: Biểu đồ tuần tự Đào tạo chatbot mô tả sự tương tác giữa các thực thể sau:
 \begin{itemize}
-	\item Actor: Quản trị viên.
-	\item Giao diện trang web (Web interface).
+	\item Actor: Nhân viên quản lý (chủ sở hữu/quản trị viên).
+	\item Giao diện trang web (trang chatbot training).
 	\item Hệ thống.
-	\item Cơ sở dữ liệu.
+	\item Thiết bị.
 \end{itemize}
 Các bước trong quá trình tương tác như sau:
 \begin{enumerate}
-	\item Nhân viên ấn vào tab "Cập nhật tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openUpdateKnowledgeTab())
-	\item Giao diện hiển thị trang tab Cập nhật tri thức.
-	\item Sau khi điền thông tin cần thiết, nhân viên tải file lên. (onClickFileButton() > handleLoadFile())
-	\item Một yêu cầu xử lý (phương thức verifyFileType() của hệ thống) được gọi. Hàm này chọn ra các file có định dạng phù hợp.
-	\item Các file được chấp nhận sẽ được chèn vào cơ sở dữ liệu, mã kết quả insert được trả về.
-	\item Hệ thống gửi mã thông báo thành công về giao diện web.
-	\item Giao diện hiển thị các file đã tải lên thành công.
+	\item Người dùng mở trang Đào tạo chatbot, khi đó Hệ thống sẽ gọi getDocuments() và trả về giao diện danh sách các tri thức.
+	\item Tiếp theo người dùng có thể thực hiện nhiều lần các lựa chọn sau:
+	\begin{itemize}
+		\item Xóa tri thức: người dùng chọn delete cho tri thức có id trên màn hình. Giao diện hiển thị confirmModal. Nếu người dùng chọn xác nhận, hệ thống gọi delete(id) để xóa tri thức, khi đó hệ thống sẽ gọi checkStatus(id) để kiểm tra trạng thái, nếu untrained thì gọi permanentDelete(id), còn không gọi temporaryDelete(id) sau đó sẽ trả về thông báo thành công. Nếu người dùng chọn Hủy, giao diện đóng modal và kết thúc.
+		\item Thêm tri thức: Người dùng mở Cập nhật tri thức. Khi đó có 3 lựa chọn để thêm tri thức:
+		\begin{itemize}
+			\item Tập tin: Người dùng nhấn tải file, thiết bị người dùng gọi displayFile() và trả files về giao diện. Người dùng chọn các file cần tải lên, thiết bị gọi hàm selectFiles(files) để chọn file và trả files là các file đã chọn. Người dùng có thể xóa các file đã tải và cuối cùng lưu, giao diện gọi onSubmit(files), hệ thống gọi addDocument(files) và trả về thông báo thành công.
+			\item Văn bản: Người dùng mở tab thêm tri thức, điền và lưu, giao diện gọi onSubmit(text), hệ thống gọi addDocument(text) và trả về thông báo thành công.
+			\item Website: Người dùng mở tab thêm tri thức web, điền thông tin và lưu, giao diện gọi onSubmit(infos), hệ thống gọi addDocument(infos) và trả về thông báo thành công. 
+		\end{itemize}
+		\item Sửa độ ưu tiên: người dùng sửa độ ưu tiên cho tri thức, giao diện gọi onChange(id, priority) với id là id của tri thức, priority là độ ưu tiên mới.
+	\end{itemize}
+	\item Sau khi hoàn thành quá trình chỉnh sửa, người dùng chọn Lưu và đào tạo. Trước hết, nếu tồn tại tri thức bị xóa tạm thời, hệ thống gọi permanentDelete(ids) để xóa các tri thức. Nếu tồn tại sự thay đổi độ ưu tiên, hệ thống gọi changePriority(ids, priorities) để đổi độ ưu tiên mới, sau đó hệ thống sẽ gọi hàm train() để bắt đầu đào tạo và pendingTrain() để đặt trạng thái chờ. Khi xong, hệ thống trả về thông báo thành công.
 \end{enumerate}
 
-\subsubsubsection{Cập nhật dữ liệu tri thức}
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-UpdateKnowledge.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Cập nhật dữ liệu tri thức}
-	\label{fig:enter-label}
-\end{figure}
 
-\textbf{Mô tả}: Biểu đồ tuần tự Cập nhật dữ liệu tri thức mô tả sự tương tác giữa các thực thể sau:
-\begin{itemize}
-	\item Actor: Quản trị viên.
-	\item Giao diện trang web (Web interface).
-	\item Hệ thống.
-	\item Cơ sở dữ liệu.
-\end{itemize}
-Các bước trong quá trình tương tác như sau:
-\begin{enumerate}
-	\item Nhân viên ấn vào tab "Cập nhật tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openUpdateKnowledgeTab())
-	\item Giao diện hiển thị trang tab Cập nhật tri thức.
-	\item Chọn file cần xóa (onClickDelete(fileID) trên giao diện web.)
-	\item Một yêu cầu xử lý (phương thức onDeleteFile(fileID) của hệ thống) được gọi để xóa tệp này.
-	\item Các truy vấn xóa được thực hiện trong cơ sở dữ liệu, trả về kết quả.
-	\item Hệ thống gửi mã thông báo thành công về giao diện web.
-	\item Giao diện hiển thị các file hiện có.
-\end{enumerate}
-Trường hợp quản trị viên muốn cập nhật websites, tham chiếu đến Biểu đồ tuần tự Cập nhật websites; tương tự, khi cập nhật tài liệu hướng dẫn tham chiếu đến Biểu đồ tuần tự Cập nhật hướng dẫn.
+% \subsubsubsection{Tải dữ liệu tri thức}
+% \begin{figure}[H]
+% 	\centering
+% 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-LoadKnowledge.svg}
+% 	\vspace{0.5cm}
+% 	\caption{Biểu đồ sequence cho Tải dữ liệu tri thức}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-UpdateWeb.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Cập nhật websites}
-	\label{fig:enter-label}
-\end{figure}
+% \textbf{Mô tả}: Biểu đồ tuần tự Tải dữ liệu tri thức mô tả sự tương tác giữa các thực thể sau:
+% \begin{itemize}
+% 	\item Actor: Quản trị viên.
+% 	\item Giao diện trang web (Web interface).
+% 	\item Hệ thống.
+% 	\item Cơ sở dữ liệu.
+% \end{itemize}
+% Các bước trong quá trình tương tác như sau:
+% \begin{enumerate}
+% 	\item Nhân viên ấn vào tab "Cập nhật tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openUpdateKnowledgeTab())
+% 	\item Giao diện hiển thị trang tab Cập nhật tri thức.
+% 	\item Sau khi điền thông tin cần thiết, nhân viên tải file lên. (onClickFileButton() > handleLoadFile())
+% 	\item Một yêu cầu xử lý (phương thức verifyFileType() của hệ thống) được gọi. Hàm này chọn ra các file có định dạng phù hợp.
+% 	\item Các file được chấp nhận sẽ được chèn vào cơ sở dữ liệu, mã kết quả insert được trả về.
+% 	\item Hệ thống gửi mã thông báo thành công về giao diện web.
+% 	\item Giao diện hiển thị các file đã tải lên thành công.
+% \end{enumerate}
 
-\textbf{Mô tả}: Biểu đồ tuần tự Cập nhật websites mô tả sự tương tác giữa các thực thể sau:
-\begin{itemize}
-	\item Actor: Quản trị viên.
-	\item Giao diện trang web (Web interface).
-	\item Hệ thống.
-	\item Cơ sở dữ liệu.
-\end{itemize}
-Các bước trong quá trình tương tác như sau:
-\begin{enumerate}
-	\item \textbf{Trường hợp cần xóa trang web:}
-	\begin{enumerate}
-		\item Người dùng chọn trang web cần xóa (gọi onDeleteWeb(address) của giao diện web).
-		\item Lời gọi onDeleteWeb(address) từ hệ thống để xóa trang web mục tiêu.
-		\item Các câu truy vấn xóa được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
-		\item Mã thông báo thành công được trả về cho giao diện web.
-	\end{enumerate}
-	\item \textbf{Trường hợp cần sửa địa chỉ web:}
-	\begin{enumerate}
-		\item Người dùng chọn địa chỉ web cần sửa (gọi onChangeCurrentWeb(newaddress) của giao diện web).
-		\item Lời gọi onChangeCurrentWeb(currentID, newaddress) từ hệ thống để chỉnh sửa trang web mục tiêu.
-		\item Hệ thống tiếp tục dùng phương thức verifyAddress(newAddress) để kiểm tra sự hợp lệ của địa chỉ.
-		\item Các câu truy vấn cập nhật được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
-		\item Mã thông báo thành công được trả về cho giao diện web.
-	\end{enumerate}
-\end{enumerate}
+% \subsubsubsection{Cập nhật dữ liệu tri thức}
+% \begin{figure}[H]
+% 	\centering
+% 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-UpdateKnowledge.svg}
+% 	\vspace{0.5cm}
+% 	\caption{Biểu đồ sequence cho Cập nhật dữ liệu tri thức}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-Cuối cùng, giao diện cập nhật hiển thị các trang web hiện có.
+% \textbf{Mô tả}: Biểu đồ tuần tự Cập nhật dữ liệu tri thức mô tả sự tương tác giữa các thực thể sau:
+% \begin{itemize}
+% 	\item Actor: Quản trị viên.
+% 	\item Giao diện trang web (Web interface).
+% 	\item Hệ thống.
+% 	\item Cơ sở dữ liệu.
+% \end{itemize}
+% Các bước trong quá trình tương tác như sau:
+% \begin{enumerate}
+% 	\item Nhân viên ấn vào tab "Cập nhật tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openUpdateKnowledgeTab())
+% 	\item Giao diện hiển thị trang tab Cập nhật tri thức.
+% 	\item Chọn file cần xóa (onClickDelete(fileID) trên giao diện web.)
+% 	\item Một yêu cầu xử lý (phương thức onDeleteFile(fileID) của hệ thống) được gọi để xóa tệp này.
+% 	\item Các truy vấn xóa được thực hiện trong cơ sở dữ liệu, trả về kết quả.
+% 	\item Hệ thống gửi mã thông báo thành công về giao diện web.
+% 	\item Giao diện hiển thị các file hiện có.
+% \end{enumerate}
+% Trường hợp quản trị viên muốn cập nhật websites, tham chiếu đến Biểu đồ tuần tự Cập nhật websites; tương tự, khi cập nhật tài liệu hướng dẫn tham chiếu đến Biểu đồ tuần tự Cập nhật hướng dẫn.
 
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-UpdateNote.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Cập nhật hướng dẫn}
-	\label{fig:enter-label}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-UpdateWeb.svg}
+% 	\vspace{0.5cm}
+% 	\caption{Biểu đồ sequence cho Cập nhật websites}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\textbf{Mô tả}: Biểu đồ tuần tự Cập nhật websites mô tả sự tương tác giữa các thực thể sau:
-\begin{itemize}
-	\item Actor: Quản trị viên.
-	\item Giao diện trang web (Web interface).
-	\item Hệ thống.
-	\item Cơ sở dữ liệu.
-\end{itemize}
-Các bước trong quá trình tương tác như sau:
-\begin{enumerate}
-	\item \textbf{Trường hợp cần xóa hướng dẫn:}
-	\begin{enumerate}
-		\item Người dùng chọn trang web cần xóa (gọi onDeleteNote(noteID) của giao diện web).
-		\item Lời gọi onDeleteNote(noteID) từ hệ thống để xóa trang web mục tiêu.
-		\item Các câu truy vấn xóa được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
-		\item Mã thông báo thành công được trả về cho giao diện web.
-	\end{enumerate}
-	\item \textbf{Trường hợp cần sửa địa chỉ web:}
-	\begin{enumerate}
-		\item Người dùng chọn hướng dẫn cần sửa (gọi onChangeCurrentWeb(newcontent) của giao diện web).
-		\item Lời gọi onChangeNote(noteID, newcontent) từ hệ thống để chỉnh sửa hướng dẫn.
-		\item Các câu truy vấn cập nhật được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
-		\item Mã thông báo thành công được trả về cho giao diện web.
-	\end{enumerate}
-\end{enumerate}
+% \textbf{Mô tả}: Biểu đồ tuần tự Cập nhật websites mô tả sự tương tác giữa các thực thể sau:
+% \begin{itemize}
+% 	\item Actor: Quản trị viên.
+% 	\item Giao diện trang web (Web interface).
+% 	\item Hệ thống.
+% 	\item Cơ sở dữ liệu.
+% \end{itemize}
+% Các bước trong quá trình tương tác như sau:
+% \begin{enumerate}
+% 	\item \textbf{Trường hợp cần xóa trang web:}
+% 	\begin{enumerate}
+% 		\item Người dùng chọn trang web cần xóa (gọi onDeleteWeb(address) của giao diện web).
+% 		\item Lời gọi onDeleteWeb(address) từ hệ thống để xóa trang web mục tiêu.
+% 		\item Các câu truy vấn xóa được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
+% 		\item Mã thông báo thành công được trả về cho giao diện web.
+% 	\end{enumerate}
+% 	\item \textbf{Trường hợp cần sửa địa chỉ web:}
+% 	\begin{enumerate}
+% 		\item Người dùng chọn địa chỉ web cần sửa (gọi onChangeCurrentWeb(newaddress) của giao diện web).
+% 		\item Lời gọi onChangeCurrentWeb(currentID, newaddress) từ hệ thống để chỉnh sửa trang web mục tiêu.
+% 		\item Hệ thống tiếp tục dùng phương thức verifyAddress(newAddress) để kiểm tra sự hợp lệ của địa chỉ.
+% 		\item Các câu truy vấn cập nhật được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
+% 		\item Mã thông báo thành công được trả về cho giao diện web.
+% 	\end{enumerate}
+% \end{enumerate}
 
-Cuối cùng, giao diện cập nhật hiển thị các hướng dẫn hiện có.
+% Cuối cùng, giao diện cập nhật hiển thị các trang web hiện có.
+
+% \begin{figure}[H]
+% 	\centering
+% 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-UpdateNote.svg}
+% 	\vspace{0.5cm}
+% 	\caption{Biểu đồ sequence cho Cập nhật hướng dẫn}
+% 	\label{fig:enter-label}
+% \end{figure}
+
+% \textbf{Mô tả}: Biểu đồ tuần tự Cập nhật websites mô tả sự tương tác giữa các thực thể sau:
+% \begin{itemize}
+% 	\item Actor: Quản trị viên.
+% 	\item Giao diện trang web (Web interface).
+% 	\item Hệ thống.
+% 	\item Cơ sở dữ liệu.
+% \end{itemize}
+% Các bước trong quá trình tương tác như sau:
+% \begin{enumerate}
+% 	\item \textbf{Trường hợp cần xóa hướng dẫn:}
+% 	\begin{enumerate}
+% 		\item Người dùng chọn trang web cần xóa (gọi onDeleteNote(noteID) của giao diện web).
+% 		\item Lời gọi onDeleteNote(noteID) từ hệ thống để xóa trang web mục tiêu.
+% 		\item Các câu truy vấn xóa được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
+% 		\item Mã thông báo thành công được trả về cho giao diện web.
+% 	\end{enumerate}
+% 	\item \textbf{Trường hợp cần sửa địa chỉ web:}
+% 	\begin{enumerate}
+% 		\item Người dùng chọn hướng dẫn cần sửa (gọi onChangeCurrentWeb(newcontent) của giao diện web).
+% 		\item Lời gọi onChangeNote(noteID, newcontent) từ hệ thống để chỉnh sửa hướng dẫn.
+% 		\item Các câu truy vấn cập nhật được thực hiện trong cơ sở dữ liệu và trả về thông tin kết quả.
+% 		\item Mã thông báo thành công được trả về cho giao diện web.
+% 	\end{enumerate}
+% \end{enumerate}
+
+% Cuối cùng, giao diện cập nhật hiển thị các hướng dẫn hiện có.
 
 
-\subsubsubsection{Gán nhãn dữ liệu tri thức}
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-LabelKnowledge.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Gán nhãn dữ liệu tri thức}
-	\label{fig:enter-label}
-\end{figure}
-\textbf{Mô tả}: Biểu đồ tuần tự Gán nhãn dữ liệu tri thức mô tả sự tương tác giữa các thực thể sau:
-\begin{itemize}
-	\item Actor: Quản trị viên.
-	\item Giao diện trang web (Web interface).
-	\item Hệ thống.
-	\item Cơ sở dữ liệu.
-\end{itemize}
-Các bước trong quá trình tương tác như sau:
-\begin{enumerate}
-	\item Nhân viên ấn vào tab "Gán nhãn tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openLabelKnowledgeTab())
-	\item Giao diện hiển thị trang tab Gán nhãn tri thức.
-	\item Quản trị viên lựa chọn hạng mục cho file tải lên qua bảng chọn select. (onDropSelection(file, topic))
-	\item Một yêu cầu xử lý (phương thức onAssignTopic(fileID, topic) của hệ thống) được gọi. 
-	\item Hạng mục của file được cập nhật vào cơ sở dữ liệu, kết quả update được trả về.
-	\item Hệ thống gửi mã thông báo thành công về giao diện web.
-	\item Giao diện hiển thị hạng mục mới của file.
-\end{enumerate}
+% \subsubsubsection{Gán nhãn dữ liệu tri thức}
+% \begin{figure}[H]
+% 	\centering
+% 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-LabelKnowledge.svg}
+% 	\vspace{0.5cm}
+% 	\caption{Biểu đồ sequence cho Gán nhãn dữ liệu tri thức}
+% 	\label{fig:enter-label}
+% \end{figure}
+% \textbf{Mô tả}: Biểu đồ tuần tự Gán nhãn dữ liệu tri thức mô tả sự tương tác giữa các thực thể sau:
+% \begin{itemize}
+% 	\item Actor: Quản trị viên.
+% 	\item Giao diện trang web (Web interface).
+% 	\item Hệ thống.
+% 	\item Cơ sở dữ liệu.
+% \end{itemize}
+% Các bước trong quá trình tương tác như sau:
+% \begin{enumerate}
+% 	\item Nhân viên ấn vào tab "Gán nhãn tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openLabelKnowledgeTab())
+% 	\item Giao diện hiển thị trang tab Gán nhãn tri thức.
+% 	\item Quản trị viên lựa chọn hạng mục cho file tải lên qua bảng chọn select. (onDropSelection(file, topic))
+% 	\item Một yêu cầu xử lý (phương thức onAssignTopic(fileID, topic) của hệ thống) được gọi. 
+% 	\item Hạng mục của file được cập nhật vào cơ sở dữ liệu, kết quả update được trả về.
+% 	\item Hệ thống gửi mã thông báo thành công về giao diện web.
+% 	\item Giao diện hiển thị hạng mục mới của file.
+% \end{enumerate}
 
-\subsubsubsection{So sánh chatbot}
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Compare.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho So sánh chatbot}
-	\label{fig:enter-label}
-\end{figure}
+% \subsubsubsection{So sánh chatbot}
+% \begin{figure}[H]
+% 	\centering
+% 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Compare.svg}
+% 	\vspace{0.5cm}
+% 	\caption{Biểu đồ sequence cho So sánh chatbot}
+% 	\label{fig:enter-label}
+% \end{figure}
 
-\textbf{Mô tả}: Biểu đồ tuần tự So sánh chatbot mô tả sự tương tác giữa các thực thể sau:
-\begin{itemize}
-	\item Actor: Quản trị viên.
-	\item Giao diện trang web (Web interface).
-	\item Hệ thống.
-	\item Cơ sở dữ liệu.
-\end{itemize}
-Các bước trong quá trình tương tác như sau:
-\begin{enumerate}
-	\item Nhân viên ấn vào tab "Gán nhãn tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openLabelKnowledgeTab())
-	\item Giao diện hiển thị trang tab Gán nhãn tri thức.
-	\item Quản trị viên ấn vào nút "So sánh chatbot". (onPreviewVersions() của giao diện)
-	\item Một yêu cầu xử lý (phương thức onLoadBots() của hệ thống) được gọi. 
-	\item Các tài liệu cũng như cấu hình được truy vấn trong cơ sở dữ liệu, sau đó được gửi về hệ thống.
-	\item Hệ thống gửi các cấu hình về giao diện web.
-	\item Giao diện hiển thị hai phiên bản của bot.
-	\item Người dùng nhập câu hỏi để hai bot trả lời (gọi phương thức onAskQuestion(question) của giao diện)
-	\item Phương thức onGenAnswers(question) của hệ thống được gọi và trả về câu trả lời cho trang web.
-	\item Hai câu trả lời được hiển thị trên giao diện.
-	\item Quản trị viên ấn "Lưu và training" để gọi phương thức onSaveBot() của giao diện.
-	\item Lời gọi onSaveBot() của hệ thống sau đó được thực hiện
-	\item Các lệnh truy vấn xóa các dữ liệu cũ, cập nhật được thực hiện và trả về kết quả cho hệ thống.
-	\item Kết quả được trả về tiếp tục cho giao diện web, đồng thời khóa nút "So sánh chatbot" (disableButton(previewBtn))
- \end{enumerate}
+% \textbf{Mô tả}: Biểu đồ tuần tự So sánh chatbot mô tả sự tương tác giữa các thực thể sau:
+% \begin{itemize}
+% 	\item Actor: Quản trị viên.
+% 	\item Giao diện trang web (Web interface).
+% 	\item Hệ thống.
+% 	\item Cơ sở dữ liệu.
+% \end{itemize}
+% Các bước trong quá trình tương tác như sau:
+% \begin{enumerate}
+% 	\item Nhân viên ấn vào tab "Gán nhãn tri thức" của mục "Đào tạo Chatbot". (gọi phương thức openLabelKnowledgeTab())
+% 	\item Giao diện hiển thị trang tab Gán nhãn tri thức.
+% 	\item Quản trị viên ấn vào nút "So sánh chatbot". (onPreviewVersions() của giao diện)
+% 	\item Một yêu cầu xử lý (phương thức onLoadBots() của hệ thống) được gọi. 
+% 	\item Các tài liệu cũng như cấu hình được truy vấn trong cơ sở dữ liệu, sau đó được gửi về hệ thống.
+% 	\item Hệ thống gửi các cấu hình về giao diện web.
+% 	\item Giao diện hiển thị hai phiên bản của bot.
+% 	\item Người dùng nhập câu hỏi để hai bot trả lời (gọi phương thức onAskQuestion(question) của giao diện)
+% 	\item Phương thức onGenAnswers(question) của hệ thống được gọi và trả về câu trả lời cho trang web.
+% 	\item Hai câu trả lời được hiển thị trên giao diện.
+% 	\item Quản trị viên ấn "Lưu và training" để gọi phương thức onSaveBot() của giao diện.
+% 	\item Lời gọi onSaveBot() của hệ thống sau đó được thực hiện
+% 	\item Các lệnh truy vấn xóa các dữ liệu cũ, cập nhật được thực hiện và trả về kết quả cho hệ thống.
+% 	\item Kết quả được trả về tiếp tục cho giao diện web, đồng thời khóa nút "So sánh chatbot" (disableButton(previewBtn))
+%  \end{enumerate}
 
 \subsubsubsection{Tùy chỉnh chatbot}
 \begin{figure}[H]
