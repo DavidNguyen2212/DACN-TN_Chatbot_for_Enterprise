@@ -8,206 +8,102 @@
         \parbox{\textwidth}{
             \centering
             \caption{Biểu đồ class các thực thể cho tầng dữ liệu}
-            \label{fig:enter-label}
+            \label{fig:class-diagram}
         }
     }
 \end{figure}
 
+Sơ đồ lớp được trình bày mô tả chi tiết kiến trúc các lớp phía backend của hệ thống. Sơ đồ này tuân theo mẫu thiết kế Model-Serializer-View, phân tách rõ ràng trách nhiệm giữa các thành phần: mô hình dữ liệu (Models), lớp tuần tự hóa/xác thực dữ liệu (Serializers), và lớp xử lý logic yêu cầu/phản hồi (Views).
 
-\begin{itemize}[leftmargin=*, labelsep=5mm] % Adjust margins if needed
+\subsubsection{Lớp Models}
+Đây là các lớp đại diện cho cấu trúc dữ liệu cốt lõi được lưu trữ và quản lý, thường tương ứng trực tiếp với các bảng trong cơ sở dữ liệu quan hệ.
 
-    % ========================================
-    \item \textbf{Quản lý Người dùng (User Management)}
-    % ========================================
-    \begin{itemize}[leftmargin=*, labelsep=4mm]
-        \item \textbf{User}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Quản lý các thông tin định danh và cơ bản của người dùng hệ thống.
-            \item \textit{Thuộc tính chính}: \texttt{id}, \texttt{name}, \texttt{email}, \texttt{phone\_number}, \texttt{avatar}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Liên kết đơn nhất tới một thực thể \texttt{OrganizationMember}.
-                \item Có thể đóng vai trò nhân viên hỗ trợ tham gia vào nhiều thực thể \texttt{Conversation}.
-                \item Là người khởi tạo của nhiều thực thể \texttt{Message}.
-                \item Là người khởi tạo nhiều thực thể \texttt{OrganizationInvite}.
-                \item Là người tải lên của nhiều thực thể \texttt{Document}.
-                \item Là người khởi tạo nhiều giao dịch \texttt{Payment}.
-            \end{itemize}
-            \item \textit{Chức năng chính}: Lưu trữ và quản lý thông tin định danh của người dùng.
-        \end{itemize}
-    \end{itemize}
-
-    % ========================================
-    \item \textbf{Quản lý Tổ chức (Organization Management)}
-    % ========================================
-    \begin{itemize}[leftmargin=*, labelsep=4mm]
-        \item \textbf{Organization}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Quản lý thông tin, cấu hình và các tài nguyên liên quan đến một tổ chức sử dụng hệ thống.
-            \item \textit{Thuộc tính chính}: \texttt{name}, \texttt{description}, \texttt{logo}, \texttt{contact\_email}, \texttt{contact\_phone}, \texttt{address}, \texttt{knowledge\_database\_url}, \texttt{knowledge\_database\_namespace}, \texttt{created\_at}, \texttt{updated\_at}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Bao gồm nhiều thành viên thông qua thực thể \texttt{OrganizationMember}.
-                \item Quản lý nhiều lời mời tham gia thông qua thực thể \texttt{OrganizationInvite}.
-                \item Liên kết đơn nhất tới một cấu hình chatbot (\texttt{ChatbotConfig}).
-                \item Bao gồm nhiều tài liệu huấn luyện (\texttt{Document}).
-                \item Liên kết đơn nhất tới một trạng thái huấn luyện (\texttt{OrganizationTrainingStatus}).
-                \item Quản lý nhiều gói đăng ký dịch vụ thông qua thực thể \texttt{OrganizationSubscription}.
-                \item Bao gồm nhiều cuộc hội thoại (\texttt{Conversation}).
-                \item Quản lý nhiều giao dịch thanh toán (\texttt{Payment}).
-            \end{itemize}
-            \item \textit{Chức năng chính}: Đóng vai trò trung tâm quản lý thông tin, cấu hình và tài nguyên liên quan đến tổ chức.
+\begin{itemize}[leftmargin=*, labelsep=4mm]
+    \item \texttt{Organization}: Thực thể trung tâm, đại diện cho một tổ chức khách hàng.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{name}, \texttt{description}, \texttt{contact\_email}, \texttt{knowledge\_database\_url}, \texttt{knowledge\_database\_namespace}.
+            \item \textbf{Quan hệ:} Quan hệ \textit{một-một} (1-1) với \texttt{OrganizationSubscription}, \texttt{OrganizationTrainingStatus}, \texttt{ChatbotConfig}. Quan hệ \textit{một-nhiều} (1-*) với \texttt{OrganizationMember}, \texttt{Document}, \texttt{Payment}, \texttt{AdditionalUsageCharge}, \texttt{OrganizationInvite}, \texttt{Conversation}.
         \end{itemize}
 
-        \item \textbf{OrganizationMember}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Quản lý vai trò và thông tin tham gia của một người dùng cụ thể trong tổ chức.
-            \item \textit{Thuộc tính chính}: \texttt{role} [OWNER, ADMIN, AGENT], \texttt{joined\_at}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Liên kết đơn nhất tới một thực thể \texttt{User}.
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-            \end{itemize}
-            \item \textit{Chức năng chính}: Xác định vai trò của thành viên và ghi nhận thời điểm bắt đầu tham gia tổ chức.
+    \item \texttt{User}: Đại diện cho người dùng hệ thống.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{UUID} (định danh duy nhất), \texttt{name}, \texttt{email}, \texttt{phone\_number}, \texttt{avatar}.
+            \item \textbf{Quan hệ:} Quan hệ \textit{nhiều-nhiều} (M2M) gián tiếp với \texttt{Organization} thông qua lớp liên kết \texttt{OrganizationMember}.
         \end{itemize}
 
-        \item \textbf{OrganizationInvite}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Quản lý các lời mời dành cho người dùng mới tham gia vào tổ chức.
-            \item \textit{Thuộc tính chính}: \texttt{email}, \texttt{role}, \texttt{invite\_code}, \texttt{created\_at}, \texttt{expires\_at}, \texttt{is\_used}, \texttt{is\_revoked}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-                \item Được tạo bởi một \texttt{User} (người mời).
-            \end{itemize}
-            \item \textit{Chức năng chính}: Cung cấp các chức năng tạo mã mời, truy xuất lời mời theo mã, và kiểm tra tính hợp lệ của lời mời.
-        \end{itemize}
-    \end{itemize}
-
-    % ========================================
-    \item \textbf{Quản lý Gói cước \& Thanh toán (Subscription \& Billing)}
-    % ========================================
-    \begin{itemize}[leftmargin=*, labelsep=4mm]
-        \item \textbf{SubscriptionTier}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Định nghĩa các cấp độ gói dịch vụ, bao gồm các giới hạn tài nguyên và chi phí tương ứng.
-            \item \textit{Thuộc tính chính}: \texttt{name} [FREE, STARTER, PROFESSIONAL], \texttt{description}, \texttt{price\_monthly}, \texttt{price\_yearly}, \texttt{storage\_limit\_mb}, \texttt{ai\_queries\_limit}, \texttt{human\_agents\_limit}, \texttt{is\_active}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Là cơ sở định nghĩa cho nhiều thực thể \texttt{OrganizationSubscription}.
-            \end{itemize}
-            \item \textit{Chức năng chính}: Cung cấp thông tin chi tiết về các gói dịch vụ khả dụng.
+    \item \texttt{OrganizationMember}: Lớp liên kết xác định vai trò và tư cách thành viên của \texttt{User} trong \texttt{Organization}.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{role}, \texttt{joined\_at}.
+            \item \textbf{Quan hệ:} Kết nối \texttt{User} (1) và \texttt{Organization} (1) qua khóa ngoại, hiện thực hóa quan hệ M2M.
         \end{itemize}
 
-        \item \textbf{OrganizationSubscription}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Quản lý gói dịch vụ hiện tại của một tổ chức, bao gồm trạng thái, chu kỳ thanh toán và mức độ sử dụng tài nguyên.
-            \item \textit{Thuộc tính chính}: \texttt{status}, \texttt{billing\_period}, \texttt{current\_period\_start}, \texttt{current\_period\_end}, \texttt{storage\_used\_mb}, \texttt{ai\_queries\_used}, \texttt{additional\_storage\_mb}, \texttt{additional\_ai\_queries}, \texttt{additional\_human\_agents}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-                \item Liên kết đơn nhất tới một thực thể \texttt{SubscriptionTier}.
-                \item Liên quan đến nhiều thực thể phí phát sinh (\texttt{AdditionalUsageCharge}).
-                \item Liên quan đến nhiều giao dịch thanh toán (\texttt{Payment}).
-            \end{itemize}
-            \item \textit{Chức năng chính}: Quản lý trạng thái đăng ký, xử lý gia hạn, kiểm tra giới hạn sử dụng và theo dõi tài nguyên đã tiêu thụ.
+    \item \texttt{OrganizationInvite}: Quản lý lời mời thành viên mới vào \texttt{Organization}.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{email}, \texttt{role}, \texttt{invite\_code}, \texttt{expires\_at}, \texttt{is\_used}, \texttt{is\_revoked}.
+            \item \textbf{Phương thức:} \texttt{generate\_invite\_code()}, \texttt{get\_by\_code()}, \texttt{is\_valid()}.
+            \item \textbf{Quan hệ:} Thuộc về một \texttt{Organization} (N-1), được tạo bởi một \texttt{User} (N-1).
         \end{itemize}
 
-        \item \textbf{AdditionalUsageCharge}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Ghi nhận các khoản phí phát sinh từ việc sử dụng tài nguyên vượt mức hoặc mua thêm tài nguyên bổ sung.
-            \item \textit{Thuộc tính chính}: \texttt{charge\_type}, \texttt{amount}, \texttt{quantity}, \texttt{unit\_price}, \texttt{status}, \texttt{billing\_date}, \texttt{description}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Liên kết tới một thực thể \texttt{OrganizationSubscription}.
-                \item Liên quan đến một hoặc nhiều giao dịch thanh toán (\texttt{Payment}).
-                \item Thuộc về một thực thể \texttt{Organization} (thông qua \texttt{OrganizationSubscription}).
-            \end{itemize}
-            \item \textit{Chức năng chính}: Ghi nhận chi tiết các khoản phí phát sinh, phục vụ cho việc tạo hóa đơn.
+    \item \texttt{Document}: Đại diện cho một đơn vị tài liệu được tải lên hệ thống để huấn luyện AI.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{document\_type} [FILE, TEXT, URL], \texttt{filename}, \texttt{priority}, \texttt{training\_status}, \texttt{is\_deleted}, \texttt{file}, \texttt{url}, \texttt{text\_content}, \texttt{uploaded\_at}, \texttt{updated\_at}. % Shortened for brevity, add back if needed
+            \item \textbf{Phương thức:} \texttt{save\_text\_content()}.
+            \item \textbf{Quan hệ:} Thuộc về một \texttt{Organization} (N-1), được tải lên bởi một \texttt{User} (N-1).
         \end{itemize}
 
-        \item \textbf{Payment}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Ghi nhận thông tin chi tiết về các giao dịch thanh toán được thực hiện.
-            \item \textit{Thuộc tính chính}: \texttt{payment\_type}, \texttt{payment\_method}, \texttt{amount}, \texttt{status}, \texttt{payment\_date}, \texttt{payos\_transaction\_id}, \texttt{payos\_order\_id}, \texttt{payos\_payment\_link}, \texttt{invoice\_number}, \texttt{description}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-                \item Có thể được khởi tạo bởi một \texttt{User}.
-                \item Liên quan đến một thực thể \texttt{OrganizationSubscription}.
-                \item Liên quan đến một hoặc nhiều bản ghi \texttt{AdditionalUsageCharge}.
-            \end{itemize}
-            \item \textit{Chức năng chính}: Lưu trữ lịch sử giao dịch và theo dõi trạng thái hoàn thành của các khoản thanh toán.
-        \end{itemize}
-    \end{itemize}
-
-    % ========================================
-    \item \textbf{Cấu hình Chatbot \& AI (Chatbot \& AI Configuration)}
-    % ========================================
-    \begin{itemize}[leftmargin=*, labelsep=4mm]
-        \item \textbf{ChatbotConfig}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Lưu trữ các thiết lập liên quan đến giao diện hiển thị và hành vi hoạt động của chatbot.
-            \item \textit{Thuộc tính chính}: \texttt{avatar}, \texttt{background\_image}, \texttt{colors}, \texttt{fonts}, \texttt{display\_name}, \texttt{messages}, \texttt{allowed\_domains}, \texttt{embedding\_token}, \texttt{rate\_limit\_threshold}. % Removed "etc."
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-            \end{itemize}
-            \item \textit{Chức năng chính}: Cho phép tùy chỉnh giao diện và hành vi chatbot, quản lý danh sách tên miền được phép nhúng, và hỗ trợ kiểm soát truy cập.
+    \item \texttt{Conversation}: Ghi lại một phiên hội thoại giữa khách hàng và hệ thống.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{uuid}, \texttt{customer\_session\_id}, \texttt{is\_active}, \texttt{started\_at}, \texttt{ended\_at}, \texttt{mode}, \texttt{ai\_session\_id}. % Shortened
+            \item \textbf{Quan hệ:} Quan hệ \textit{một-nhiều} (1-*) với \texttt{Message}. Liên kết với agent (\texttt{User}) có thể được quản lý ở tầng logic hoặc không trực tiếp trên model này.
         \end{itemize}
 
-        \item \textbf{Document}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Quản lý các tài liệu được sử dụng làm cơ sở tri thức để huấn luyện mô hình AI của chatbot.
-            \item \textit{Thuộc tính chính}: \texttt{document\_type} [FILE, TEXT, URL], \texttt{filename}, \texttt{priority}, \texttt{training\_status}, \texttt{is\_deleted}, \texttt{file}, \texttt{content\_type}, \texttt{size}, \texttt{url}, \texttt{url\_title}, \texttt{url\_description}, \texttt{uploaded\_at}, \texttt{updated\_at}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-                \item Được tải lên bởi một \texttt{User} (người tải lên).
-            \end{itemize}
-            \item \textit{Chức năng chính}: Lưu trữ tài liệu huấn luyện, quản lý trạng thái xử lý, và thực hiện các tác vụ liên quan đến nội dung.
+    \item \texttt{Message}: Đại diện cho một tin nhắn đơn lẻ trong \texttt{Conversation}.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{uuid}, \texttt{content}, \texttt{sender\_type} [CUSTOMER, AGENT, AI, SYSTEM], \texttt{timestamp}, \texttt{is\_read}.
+            \item \textbf{Quan hệ:} Thuộc về một \texttt{Conversation} (N-1).
         \end{itemize}
 
-        \item \textbf{OrganizationTrainingStatus}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Theo dõi trạng thái quá trình huấn luyện mô hình AI dựa trên cơ sở tri thức của toàn bộ tổ chức.
-            \item \textit{Thuộc tính chính}: \texttt{is\_training}, \texttt{training\_started\_at}, \texttt{training\_completed\_at}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-            \end{itemize}
-            \item \textit{Chức năng chính}: Cung cấp thông tin về trạng thái huấn luyện hiện tại và ghi nhận lịch sử các lần huấn luyện đã hoàn thành.
-        \end{itemize}
-    \end{itemize}
-
-    % ========================================
-    \item \textbf{Quản lý Hội thoại (Conversation Management)}
-    % ========================================
-    \begin{itemize}[leftmargin=*, labelsep=4mm]
-        \item \textbf{Conversation}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Đại diện và quản lý một phiên hội thoại hoàn chỉnh giữa khách hàng cuối và hệ thống chatbot hoặc nhân viên hỗ trợ.
-            \item \textit{Thuộc tính chính}: \texttt{id}, \texttt{customer\_email}, \texttt{customer\_name}, \texttt{customer\_session\_id}, \texttt{is\_active}, \texttt{started\_at}, \texttt{ended\_at}, \texttt{last\_activity}, \texttt{mode}, \texttt{ai\_session\_id}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Bao gồm một chuỗi các thực thể \texttt{Message} thể hiện nội dung trao đổi.
-                \item Thuộc về một thực thể \texttt{Organization} duy nhất.
-                \item Có thể được tiếp nhận và xử lý bởi một \texttt{User} đóng vai trò nhân viên hỗ trợ (agent).
-            \end{itemize}
-            \item \textit{Chức năng chính}: Lưu trữ thông tin định danh khách hàng, toàn bộ lịch sử tin nhắn, và quản lý trạng thái của cuộc hội thoại.
+    \item \texttt{SubscriptionTier} \& \texttt{OrganizationSubscription}: Quản lý gói dịch vụ và đăng ký của tổ chức.
+        \begin{itemize}
+            \item \texttt{SubscriptionTier}: Định nghĩa các gói (ví dụ: FREE, STARTER, PRO) với giới hạn (\texttt{storage\_limit\_mb}, \texttt{ai\_queries\_limit}) và giá.
+            \item \texttt{OrganizationSubscription}: Liên kết \texttt{Organization} (1-1) với \texttt{SubscriptionTier} (N-1), theo dõi trạng thái, chu kỳ thanh toán, và mức sử dụng tài nguyên.
+            \item \textbf{Phương thức (\texttt{OrgSub} - ví dụ):} \texttt{is\_active()}, \texttt{exceeds\_storage\_limit()}, \texttt{get\_human\_agents\_count()}.
         \end{itemize}
 
-        \item \textbf{Message}
-        \begin{itemize}[leftmargin=*, labelsep=3mm]
-            \item \textit{Mục đích}: Đại diện cho một tin nhắn trao đổi trong một cuộc hội thoại.
-            \item \textit{Thuộc tính chính}: \texttt{id}, \texttt{content}, \texttt{sender\_type} [CUSTOMER, AGENT, AI, SYSTEM], \texttt{timestamp}, \texttt{is\_read}.
-            \item \textit{Quan hệ (Relationships)}:
-            \begin{itemize}[leftmargin=*, labelsep=2mm]
-                \item Thuộc về một thực thể \texttt{Conversation} duy nhất.
-                \item Có thể được gửi bởi một \texttt{User} (khách hàng hoặc nhân viên hỗ trợ), hoặc được tạo bởi AI hoặc hệ thống.
-            \end{itemize}
-            \item \textit{Chức năng chính}: Lưu trữ nội dung tin nhắn, thông tin người gửi (khách hàng, nhân viên hỗ trợ, AI, hệ thống) và thời gian.
+    \item \texttt{Payment} \& \texttt{AdditionalUsageCharge}: Quản lý thông tin tài chính và thanh toán.
+        \begin{itemize}
+            \item \texttt{Payment}: Ghi lại giao dịch thanh toán (\texttt{payment\_type}, \texttt{amount}, \texttt{status}, \texttt{payos\_transaction\_id}, \texttt{invoice\_number}). % Corrected payos_
+            \item \texttt{AdditionalUsageCharge}: Ghi lại phí phát sinh do vượt giới hạn gói (\texttt{charge\_type}, \texttt{amount}, \texttt{status}, \texttt{billing\_date}).
+            \item \textbf{Quan hệ:} Cả hai đều thuộc về một \texttt{Organization} (N-1). \texttt{Payment} có thể liên quan đến \texttt{OrganizationSubscription} và \texttt{AdditionalUsageCharge}.
         \end{itemize}
-    \end{itemize}
 
+    \item \texttt{ChatbotConfig}: Lưu trữ cấu hình giao diện và hành vi của chatbot cho \texttt{Organization}.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{avatar}, \texttt{colors} (primary/secondary), \texttt{fonts}, \texttt{display\_name}, \texttt{welcome\_message}, \texttt{allowed\_domains}, \texttt{rate\_limit\_threshold}.
+            \item \textbf{Phương thức:} \texttt{get\_allowed\_domains\_list()}.
+             \item \textbf{Quan hệ:} Thuộc về một \texttt{Organization} (1-1).
+        \end{itemize}
+
+    \item \texttt{OrganizationTrainingStatus}: Theo dõi trạng thái huấn luyện AI cho \texttt{Organization}.
+        \begin{itemize}
+            \item \textbf{Thuộc tính chính:} \texttt{is\_training}, \texttt{training\_started\_at}, \texttt{training\_completed\_at}.
+            \item \textbf{Phương thức:} \texttt{is\_organization\_training()}.
+            \item \textbf{Quan hệ:} Thuộc về một \texttt{Organization} (1-1).
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Lớp Serializers}
+Các lớp Serializer là cầu nối giữa đối tượng Model Python và các định dạng dữ liệu thuần túy (như JSON) dùng trong API. Chúng có vai trò:
+\begin{itemize}
+    \item \textbf{Tuần tự hóa:} Chuyển đổi đối tượng Model thành định dạng JSON để trả về trong phản hồi API.
+    \item \textbf{Giải tuần tự hóa và xác thực:} Chuyển đổi dữ liệu JSON từ yêu cầu API thành dữ liệu Python, đồng thời kiểm tra tính hợp lệ trước khi tạo/cập nhật Model. Logic xác thực tùy chỉnh có thể nằm trong các phương thức \texttt{validate\_<field\_name>()} hoặc \texttt{validate()}. Các phương thức \texttt{create()} và \texttt{update()} xử lý việc lưu đối tượng vào CSDL.
+    \item \textbf{Định dạng/bổ sung dữ liệu:} Có thể thêm hoặc định dạng lại các trường dữ liệu trả về, không nhất thiết có trong Model.
+\end{itemize}
+
+\subsubsection{Lớp Views}
+Các lớp View xử lý các yêu cầu HTTP tại các API endpoints. Chúng có vai trò:
+\begin{itemize}
+    \item \textbf{Tiếp nhận và điều phối yêu cầu:} Ánh xạ các phương thức HTTP (GET, POST, PUT, DELETE) tới các hành động xử lý tương ứng trên tài nguyên.
+    \item \textbf{Tương tác V-S-M:} Sử dụng Serializer để xác thực đầu vào và tuần tự hóa đầu ra. Gọi các phương thức của Model hoặc các lớp dịch vụ để thực thi logic nghiệp vụ và thao tác dữ liệu.
+    \item \textbf{Xử lý logic nghiệp vụ và phản hồi:} Thực thi logic điều khiển luồng, kiểm tra quyền truy cập, và tạo đối tượng phản hồi HTTP Response với mã trạng thái phù hợp. Các hành động tùy chỉnh như ConversationView.end\_conversation(),OrganizationSubscriptionView.cancel() được định nghĩa tại đây.
 \end{itemize}
