@@ -57,6 +57,7 @@ Các nhóm này xử lý các yêu cầu phức tạp của khách hàng và qu�
     \item \textbf{Ảnh hưởng:} Các nhóm hỗ trợ khách hàng có ảnh hưởng trung bình vì phản hồi và kinh nghiệm của họ ảnh hưởng đến khả năng sử dụng và hiệu quả của hệ thống.
 \end{itemize}
 
+
 \subsubsection{Người dùng cuối (Khách hàng của các doanh nghiệp khách hàng)}
 
 Đây là những cá nhân tương tác với chatbot trên trang web của doanh nghiệp nhằm tìm kiếm thông tin hoặc có nhu cầu hỗ trợ.
@@ -144,333 +145,126 @@ Các nhóm này chịu trách nhiệm cung cấp dịch vụ hướng dẫn, đ�
 
 \subsection{Yêu cầu chức năng}
 
-\subsubsection{Quản lý tài khoản công ty}
-
-\subsubsubsection{Đăng ký và xác thực}
+\subsubsection{Đăng ký và xác thực}
 \begin{itemize}
-    \item Hệ thống sẽ cung cấp quy trình đăng ký tài khoản mới an toàn cho các công ty.
-    \item Hệ thống sẽ yêu cầu xác minh địa chỉ email trong quá trình đăng ký.
-    \item Hệ thống sẽ hỗ trợ chức năng đăng nhập an toàn bằng tên người dùng/email và mật khẩu.
+    \item Hệ thống phải cung cấp chức năng đăng ký tài khoản mới cho tổ chức, bao gồm bước xác thực địa chỉ email.
+    \item Hệ thống phải cho phép người dùng đăng nhập bằng email và mật khẩu đã đăng ký.
+    \item Hệ thống phải cung cấp chức năng đặt lại mật khẩu, trong đó người dùng nhận được một liên kết qua email có giới hạn thời gian hiệu lực.
 \end{itemize}
 
-\subsubsubsection{Quản lý hồ sơ}
+\subsubsection{Quản lý tài khoản tổ chức}
 \begin{itemize}
-    \item Hệ thống sẽ cho phép quản trị viên công ty quản lý thông tin chi tiết về hồ sơ công ty (tên, logo, thông tin liên hệ…).
-    \item Hệ thống sẽ cho phép công ty cập nhật hồ sơ cá nhân và cài đặt tài khoản của họ.
-    \item Hệ thống sẽ cho phép người dùng đặt lại mật khẩu an toàn.
+    \item Hệ thống phải cho phép quản trị viên tổ chức cập nhật thông tin hồ sơ của tổ chức, bao gồm: tên tổ chức, logo, thông tin liên hệ và địa chỉ.
+    \item Hệ thống phải cho phép quản trị viên tổ chức gửi lời mời tham gia tổ chức cho thành viên mới qua email.
+    \item Hệ thống phải hỗ trợ phân quyền truy cập cho thành viên tổ chức dựa trên các vai trò được định nghĩa, bao gồm 3 vai trò: Chủ sở hữu, Quản trị viên, và Nhân viên chăm sóc khách hàng.
+    \item Hệ thống phải cho phép quản trị viên tổ chức quản lý danh sách thành viên, bao gồm chức năng thêm và xóa thành viên.
 \end{itemize}
 
-\subsubsubsection{Quản lý thành viên tổ chức} 
-\begin{itemize} 
-    \item Hệ thống sẽ cho phép quản trị viên mời thành viên mới vào tổ chức thông qua email. 
-    \item Hệ thống sẽ hỗ trợ phân quyền cho các thành viên với các vai trò khác nhau. 
-    \item Hệ thống sẽ cho phép quản lý danh sách thành viên bao gồm thêm mới, xóa và cập nhật thông tin. 
-    \item Hệ thống sẽ cho phép thành viên rời khỏi tổ chức sau khi xác nhận. 
-\end{itemize}
-
-\subsubsection{Tạo và tùy chỉnh chatbot}
-
-\subsubsubsection{Cung cấp và quản lý tri thức}
+\subsubsection{Tùy chỉnh giao diện và hành vi chatbot}
 \begin{itemize}
-    \item Hệ thống sẽ cho phép các công ty tải dữ liệu của riêng họ lên, ví dụ như tài liệu, các câu hỏi thường gặp (FAQs) hay thông tin sản phẩm.
-    \item Hệ thống sẽ hỗ trợ nhiều định dạng tệp để tải dữ liệu lên, chẳng hạn như PDF, DOCX, TXT và CSV.
-    \item Hệ thống sẽ xử lý dữ liệu đã tải lên để tạo cơ sở tri thức cho chatbot.
-    \item Hệ thống sẽ cho phép các công ty thêm, chỉnh sửa hoặc xóa các tri thức thông qua giao diện.
-    \item Hệ thống sẽ cho phép phân loại và gắn thẻ nội dung cơ sở tri thức để truy vấn hiệu quả.
-    \item Nếu được sự đồng ý của công ty, hệ thống có thể đọc nội dung trực tiếp từ trang web của họ để xây dựng và cập nhật cơ sở kiến thức cho chatbot.
+    \item Hệ thống phải cho phép người dùng quản trị tùy chỉnh các yếu tố giao diện hiển thị của chatbot (ví dụ: bảng màu, logo, hình nền, phông chữ, kích thước) để đáp ứng nhận diện thương hiệu của tổ chức.
+    \item Hệ thống phải cung cấp cho người dùng quản trị lựa chọn ít nhất 4 phong cách hội thoại được định nghĩa trước cho chatbot.
+    \item Hệ thống phải cho phép người dùng quản trị tùy chỉnh các tin nhắn mặc định của chatbot, bao gồm lời chào và các phản hồi mặc định.
+    \item Hệ thống phải cung cấp chức năng xem trước cho phép người dùng quản trị đánh giá các thay đổi về giao diện và cấu hình trước khi áp dụng.
+    \item Hệ thống phải cho phép người dùng quản trị cấu hình giới hạn tần suất yêu cầu (rate limiting) đối với các tương tác của người dùng cuối với chatbot.
 \end{itemize}
-
-\subsubsubsection{Tùy chỉnh giao diện và hành vi chatbot}
+\subsubsection{Tạo mã nhúng chatbot}
 \begin{itemize}
-    \item Hệ thống sẽ cho phép các công ty điều chỉnh giọng điệu và tính cách của chatbot (ví dụ: trang trọng, giản dị, thân thiện).
-    \item Hệ thống sẽ cho phép tùy chỉnh lời chào và phản hồi mặc định của chatbot.
-    \item Hệ thống sẽ cung cấp các tùy chọn để tùy chỉnh giao diện của chatbot, bao gồm màu sắc, logo, hình đại diện để phù hợp với thương hiệu của công ty.
-    \item Hệ thống sẽ cung cấp chức năng xem trước để xem các thay đổi trước khi triển khai.
+    \item Hệ thống phải cung cấp chức năng tạo mã nhúng JavaScript để tích hợp chatbot, đảm bảo kích thước tải về ban đầu của script không vượt quá 100KB.
+    \item Hệ thống phải cho phép quản trị viên tổ chức cấu hình danh sách các tên miền được phép nhúng và hiển thị chatbot.
+    \item Giao diện chatbot nhúng phải đảm bảo hiển thị và hoạt động phù hợp trên các kích thước viewport khác nhau, tối thiểu từ 320px (thiết bị di động) đến 2560px (màn hình desktop lớn).
 \end{itemize}
 
-\subsubsection{Đào tạo AI và xử lý ngôn ngữ tự nhiên}
-
-\subsubsubsection{Đào tạo tự động}
+\subsubsection{Quản lý cơ sở tri thức}
 \begin{itemize}
-    \item Hệ thống sẽ tự động đào tạo mô hình AI bằng cách sử dụng dữ liệu công ty đã tải lên.
-    \item Hệ thống sẽ thông báo tiến độ trong quá trình đào tạo.
+    \item Hệ thống phải cho phép người dùng quản trị tải lên các tệp tài liệu với giới hạn kích thước tối đa 20MB cho mỗi tệp.
+    \item Chức năng tải lên tài liệu phải hỗ trợ các định dạng tệp phổ biến, bao gồm: PDF, DOC, DOCX, và TXT.
+    \item Hệ thống phải cung cấp các phương thức nhập liệu bổ sung cho cơ sở tri thức, bao gồm nhập văn bản trực tiếp qua giao diện và trích xuất nội dung từ địa chỉ URL được cung cấp.
+    \item Hệ thống phải cung cấp giao diện quản lý cho phép người dùng quản trị thực hiện các thao tác trên cơ sở tri thức, bao gồm: thêm, chỉnh sửa và xóa tri thức.
+    \item Giao diện quản lý cơ sở tri thức phải hỗ trợ chức năng tìm kiếm và lọc các đơn vị tri thức dựa trên các tiêu chí như: tên, loại hình, và mức độ ưu tiên.
+    \item Hệ thống phải cho phép người dùng quản trị tải về các tệp tài liệu đã được tải lên hệ thống trước đó.
+    \item Hệ thống phải đảm bảo rằng chỉ có một tiến trình huấn luyện được thực thi đồng thời cho mỗi tổ chức tại một thời điểm.
 \end{itemize}
 
-\subsubsubsection{Xử lý ngôn ngữ tự nhiên}
+\subsubsection{Trò chuyện với nhân viên hỗ trợ trực tiếp}
 \begin{itemize}
-    \item Hệ thống sẽ hỗ trợ tiếng Việt cho cả đầu vào và phản hồi.
-    \item Mô hình AI sẽ sử dụng hiểu ngôn ngữ tự nhiên (Natural-language understanding) để nhận dạng chính xác ý định người dùng.
-    \item Hệ thống sẽ cho phép các công ty xác định các intents và entities cụ thể có liên quan đến doanh nghiệp của họ.
+    \item Hệ thống phải hỗ trợ chức năng chuyển giao liền mạch cuộc trò chuyện từ chatbot sang nhân viên hỗ trợ trực tuyến khi có yêu cầu từ người dùng.
+    \item Hệ thống phải cung cấp giao diện cho phép nhân viên hỗ trợ tiếp nhận, theo dõi và phản hồi các cuộc trò chuyện được phân công cho họ.
+    \item Hệ thống phải cung cấp cho quản trị viên tổ chức quyền truy cập để xem  lịch sử hoặc nội dung các cuộc hội thoại, bao gồm cả các tương tác với chatbot và các phiên hỗ trợ trực tiếp bởi nhân viên.
+    \item Hệ thống phải phân phối các yêu cầu hỗ trợ trực tiếp tới các nhân viên hỗ trợ một cách cân bằng.
+    \item Hệ thống phải cho phép nhân viên hỗ trợ hoặc quản trị viên tổ chức kết thúc các phiên trò chuyện, ví dụ như khi vấn đề đã được giải quyết hoặc theo yêu cầu quản trị.
 \end{itemize}
 
-\subsubsection{Tích hợp với trang web doanh nghiệp}
-
-\subsubsubsection{Tích hợp mã nhúng}
+\subsubsection{Báo cáo và thống kê}
 \begin{itemize}
-    \item Hệ thống sẽ tạo mã nhúng JavaScript mà các công ty có thể chèn vào trang web của họ để triển khai chatbot.
-    \item Hệ thống sẽ cung cấp hướng dẫn từng bước để tích hợp chatbot với các nền tảng và trình xây dựng trang web phổ biến như WordPress, Wix, Shopify.
-    \item Mã nhúng sẽ được tối ưu hóa để tác động tối thiểu đến hiệu suất của trang web.
+    \item Hệ thống phải cung cấp một giao diện hiển thị các chỉ số hiệu suất và sử dụng chính, bao gồm: tổng số tin nhắn đã xử lý, tổng số phiên hội thoại (phân loại theo chatbot và nhân viên hỗ trợ), và tổng chi phí sử dụng dịch vụ. Giao diện này cần hỗ trợ lọc dữ liệu theo khoảng thời gian.
+    \item Hệ thống phải cho phép quản trị viên tổ chức xuất dữ liệu thống kê chi tiết hoặc các báo cáo tổng hợp từ giao diện báo cáo.
 \end{itemize}
 
-\subsubsubsection{Khả năng tương thích của nền tảng}
+\subsubsection{Quản lý Gói dịch vụ và Thanh toán}
 \begin{itemize}
-    \item Giao diện chatbot phải tương thích với tất cả các trình duyệt web hiện đại (Chrome, Firefox, Safari, Edge).
-    \item Chatbot phải phản hồi và hoạt động chính xác trên nhiều thiết bị khác nhau, bao gồm máy tính để bàn, máy tính bảng và điện thoại di động.
+    \item Hệ thống phải cung cấp ít nhất 2 gói dịch vụ trả phí, mỗi gói có các tính năng và giới hạn sử dụng riêng biệt được mô tả chi tiết và rõ ràng.
+    \item Ngoài các gói dịch vụ trả phí định kỳ, hệ thống cần hỗ trợ mô hình định giá theo mức sử dụng thực tế cho một số tài nguyên nhất định (ví dụ: dung lượng lưu trữ tài liệu, số lượng yêu cầu AI, số lượng tài khoản nhân viên hỗ trợ).
+    \item Hệ thống phải cung cấp cho quản trị viên tổ chức khả năng theo dõi mức sử dụng tài nguyên hiện tại so với giới hạn của gói dịch vụ đang đăng ký.
+    \item Hệ thống phải cung cấp tùy chọn đăng ký gói dùng thử miễn phí với thời hạn hoặc giới hạn sử dụng nhất định, đồng thời đảm bảo quy trình nâng cấp lên gói trả phí diễn ra thuận tiện và liền mạch cho người dùng.
+    \item Hệ thống phải cung cấp cho quản trị viên tổ chức quyền truy cập vào lịch sử giao dịch và hóa đơn thanh toán chi tiết, bao gồm ngày tháng, số tiền, gói dịch vụ tương ứng và trạng thái thanh toán.
 \end{itemize}
 
-\subsubsection{Bảng điều khiển quản lý Chatbot}
-
-\subsubsubsection{Giám sát thời gian thực}
-\begin{itemize}
-    \item Hệ thống sẽ cung cấp bảng điều khiển để các công ty xem dữ liệu theo thời gian thực về việc sử dụng chatbot, bao gồm số lượng người dùng đang hoạt động và các cuộc trò chuyện đang diễn ra.
-    \item Hệ thống sẽ hiển thị các chỉ số hiệu suất chính (KPI) như thời gian phản hồi và mức độ tương tác của người dùng.
-\end{itemize}
-
-\subsubsubsection{Phân tích và báo cáo}
-\begin{itemize}
-    \item Hệ thống sẽ tạo báo cáo phân tích chi tiết về các tương tác của chatbot, bao gồm tổng số cuộc trò chuyện, tỷ lệ giữ chân người dùng và các truy vấn phổ biến.
-    \item Hệ thống sẽ cho phép các công ty xuất báo cáo ở nhiều định dạng khác nhau (ví dụ: PDF, Excel).
-    \item Hệ thống sẽ cung cấp các công cụ trực quan hóa (biểu đồ, đồ thị) giúp trực quan hóa dữ liệu.
-\end{itemize}
-
-\subsubsubsection{Nhật ký hội thoại}
-\begin{itemize}
-    \item Hệ thống sẽ lưu trữ lịch sử cuộc trò chuyện một cách an toàn.
-    \item Hệ thống sẽ cho phép người dùng được ủy quyền tìm kiếm và lọc nhật ký hội thoại dựa trên phạm vi ngày, từ khóa hoặc chủ đề.
-    \item Hệ thống phải tuân thủ các quy định về quyền riêng tư liên quan đến việc lưu trữ và truy xuất các cuộc trò chuyện của người dùng.
-\end{itemize}
-
-\subsubsection{Tương tác với người dùng}
-
-\subsubsubsection{Hỗ trợ đa phương tiện}
-\begin{itemize}
-    \item Chatbot phải có khả năng nhận nội dung đa phương tiện, bao gồm hình ảnh, video và đường dẫn (hyperlinks).
-\end{itemize}
-
-\subsubsubsection{Đối thoại theo ngữ cảnh}
-\begin{itemize}
-    \item Chatbot phải duy trì ngữ cảnh trong suốt phiên của người dùng để cho phép các cuộc trò chuyện diễn ra mạch lạc.
-    \item Chatbot phải có khả năng xử lý các câu hỏi tiếp theo và tham chiếu đến các tương tác trước đó.
-\end{itemize}
-
-\subsubsubsection{Khôi phục và dự phòng}
-\begin{itemize}
-    \item Chatbot phải cung cấp các phản hồi mặc định phù hợp khi không hiểu nội dung đầu vào của người dùng.
-    \item Chatbot phải cung cấp các tùy chọn để người dùng diễn đạt lại truy vấn của họ hoặc cung cấp thêm thông tin.
-\end{itemize}
-
-\subsubsection{Phối hợp với con người}
-
-\subsubsubsection{Tích hợp với nhân viên hỗ trợ trực tiếp}
-\begin{itemize}
-    \item Hệ thống sẽ cho phép chuyển giao liền mạch các cuộc trò chuyện từ chatbot sang nhân viên hỗ trợ con người khi cần thiết.
-    \item Hệ thống sẽ thông báo cho nhân viên hỗ trợ theo thời gian thực khi cần chuyển giao.
-    \item Hệ thống sẽ cung cấp cho nhân viên lịch sử cuộc trò chuyện trước khi chuyển giao để đảm bảo duy trì ngữ cảnh.
-\end{itemize}
-
-\subsubsubsection{Đặt lịch hẹn}
-\begin{itemize}
-    \item Hệ thống sẽ cho phép các công ty cài đặt lịch làm việc của nhân viên để hỗ trợ con người.
-    \item Chatbot sẽ thông báo cho người dùng về lịch làm việc của nhân viên và thời gian phản hồi ước tính.
-    \item Ngoài giờ làm việc, chatbot sẽ đề nghị hẹn lịch hoặc cung cấp các thông tin liên hệ.
-\end{itemize}
-
-\subsubsection{Thông báo và cảnh báo}
-
-\begin{itemize}
-    \item Hệ thống sẽ gửi email hoặc thông báo đến doanh nghiệp khi cần thiết (hoàn thành đào tạo AI, nhắc gia hạn đăng ký).
-    \item Hệ thống sẽ cho phép các công ty tùy chỉnh phương thức thông báo.
-    \item Hệ thống sẽ cho phép các công ty thiết lập cảnh báo dựa trên số liệu hiệu suất (ví dụ: lưu lượng truy cập cao, tỷ lệ lỗi).
-    \item Hệ thống sẽ lập tức cảnh báo trong trường hợp hệ thống ngừng hoạt động hoặc các sự cố nghiêm trọng.
-\end{itemize}
-
-\subsubsection{Hỗ trợ doanh nghiệp}
-\begin{itemize}
-    \item Hệ thống sẽ cung cấp một trung tâm trợ giúp toàn diện với các tài liệu, câu hỏi thường gặp và hướng dẫn sử dụng nền tảng.
-    \item Hệ thống sẽ bao gồm chức năng tìm kiếm để giúp người dùng tìm thông tin hỗ trợ có liên quan một cách nhanh chóng.
-    \item Hệ thống sẽ cung cấp nhiều kênh hỗ trợ khách hàng, bao gồm trò chuyện trực tiếp, email và hỗ trợ qua điện thoại.
-\end{itemize}
-
-\subsubsection{Quản lý thanh toán}
-
-\subsubsubsection{Gói giá linh hoạt}
-\begin{itemize}
-    \item Hệ thống sẽ cung cấp nhiều cấp đăng ký với các tính năng và giới hạn sử dụng khác nhau.
-    \item Hệ thống sẽ cho phép các công ty nâng cấp hoặc hạ cấp các gói đăng ký của họ khi cần.
-\end{itemize}
-
-\subsubsubsection{Xử lý thanh toán}
-\begin{itemize}
-    \item Hệ thống sẽ tích hợp với các cổng thanh toán an toàn để xử lý các giao dịch bằng nhiều phương thức thanh toán khác nhau.
-    \item Hệ thống sẽ hỗ trợ thanh toán định kỳ tự động cho các lần gia hạn đăng ký.
-\end{itemize}
-
-\subsubsubsection{Theo dõi việc sử dụng và lập hóa đơn}
-\begin{itemize}
-    \item Hệ thống sẽ tạo hóa đơn và cung cấp hồ sơ giao dịch mà các công ty có thể truy cập.
-    \item Hệ thống sẽ theo dõi các số liệu sử dụng ảnh hưởng đến việc thanh toán, chẳng hạn như số lần tương tác hoặc dung lượng lưu trữ dữ liệu đã sử dụng.
-\end{itemize}
 
 \subsection{Yêu cầu phi chức năng}
-
-\subsubsection{Hiệu suất}
-
-\subsubsubsection{Thời gian phản hồi} 
-\begin{itemize} 
-    \item Hệ thống phải đảm bảo rằng chatbot phản hồi người dùng trong vòng trung bình 2 giây trong điều kiện tải bình thường (dưới 100 người dùng đồng thời), với 95\% các yêu cầu được xử lý trong khung thời gian này. 
-    \item Hệ thống phải duy trì thời gian phản hồi tối đa là 4 giây trong thời gian tải cao điểm (200-300 người dùng đồng thời), với ít nhất 90\% các yêu cầu đáp ứng ngưỡng này. 
-    \item Hệ thống sẽ xử lý việc trích xuất nội dung trang web với thời gian xử lý trung bình không quá 3 giây cho mỗi trang, và sử dụng không quá 256MB bộ nhớ cho mỗi phiên trích xuất. 
-\end{itemize}
-
-\subsubsubsection{Khả năng tải}
-\begin{itemize} 
-    \item Hệ thống phải hỗ trợ 300 người dùng đồng thời với độ trễ tăng không quá 25\% so với tải thông thường. 
-    \item Hệ thống phải xử lý tối thiểu 50 giao dịch mỗi giây (TPS) trong thời gian cao điểm với tỷ lệ lỗi không vượt quá 0.1\%. 
-\end{itemize}
-
-\subsubsubsection{Khả năng mở rộng}
+\subsubsection{Hiệu suất (Performance)}
 \begin{itemize}
-    \item Hệ thống phải có khả năng mở rộng để đáp ứng mức tăng 15\% số lượng người dùng hàng năm, với thời gian phản hồi tăng không quá 10\%.
-    \item Hệ thống phải hỗ trợ việc bổ sung tài nguyên khi CPU đạt ngưỡng 70\%, với thời gian triển khai node mới không quá 3 phút.
+    \item \textbf{Thời gian phản hồi Chatbot:} Dưới điều kiện tải thông thường (10-20 người dùng đồng thời), 90\% phản hồi của chatbot đối với truy vấn người dùng phải được hoàn thành trong vòng 3 giây.
+    \item \textbf{Thời gian xử lý tác vụ nền:} Thời gian trung bình để hệ thống trích xuất và xử lý nội dung từ một URL được cung cấp làm nguồn tri thức không được vượt quá 15 giây cho các trang web có kích thước thông thường (dưới 2MB HTML).
+    \item \textbf{Khả năng chịu tải:} Hệ thống phải có khả năng xử lý đồng thời ít nhất 30 người dùng tương tác mà không làm tăng thời gian phản hồi trung bình của chatbot quá 50\% so với điều kiện tải thông thường.
+    \item \textbf{Khả năng mở rộng:} Kiến trúc hệ thống phải được thiết kế sử dụng các thành phần có khả năng mở rộng theo chiều ngang để cho phép xử lý tải tăng lên trong tương lai bằng cách bổ sung tài nguyên máy chủ, thay vì yêu cầu thiết kế lại toàn bộ hệ thống.
 \end{itemize}
 
-\subsubsubsection{Tính khả dụng}
+\subsubsection{Tính khả dụng (Availability)}
 \begin{itemize}
-    \item Hệ thống phải duy trì thời gian hoạt động 99.9\% hàng tháng, không bao gồm bảo trì theo lịch trình.
-    \item Thời gian bảo trì theo lịch trình không được vượt quá 4 giờ mỗi tháng, phải được thông báo trước 24 giờ, và được thực hiện trong khung giờ 22:00-04:00 khi lưu lượng truy cập thấp nhất.
+    \item \textbf{Độ sẵn sàng:} Hệ thống được thiết kế hướng tới mục tiêu độ sẵn sàng 99.5\% trong giờ hoạt động dự kiến, không bao gồm thời gian bảo trì theo lịch trình.    
+    \item \textbf{Bảo trì theo lịch trình:} Mọi hoạt động bảo trì yêu cầu ngừng hệ thống phải được thông báo trước ít nhất 24 giờ và thực hiện trong khung giờ có lượng truy cập thấp. Tổng thời gian bảo trì theo lịch trình không vượt quá 4 giờ mỗi tháng.
 \end{itemize}
 
-\subsubsection{Bảo mật}
-
-\subsubsubsection{Xác thực và ủy quyền}
+\subsubsection{Bảo mật (Security)}
 \begin{itemize}
-    \item Mật khẩu phải có độ dài tối thiểu 8 ký tự, bao gồm ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt, và phải được thay đổi mỗi 90 ngày. 
-    \item 100\% tài khoản quản trị viên và 80\% tài khoản người dùng phải kích hoạt xác thực đa yếu tố (MFA) trong vòng 30 ngày sau khi tạo tài khoản.
-    \item Kiểm soát truy cập dựa trên vai trò (RBAC) phải được triển khai với tối thiểu 3 cấp độ phân quyền (Admin, User, Guest), với kiểm tra phân quyền được thực hiện trong 100ms.
+    \item \textbf{Chính sách mật khẩu:} Hệ thống phải thực thi chính sách mật khẩu mạnh, đảm bảo mật khẩu có độ dài tối thiểu 8 ký tự, không quá giống với thuộc tính người dùng, không nằm trong danh sách mật khẩu phổ biến, và không chỉ chứa toàn số. Hệ thống phải băm mật khẩu trước khi lưu trữ.
+    \item \textbf{Kiểm soát truy cập:} Hệ thống phải triển khai Kiểm soát truy cập dựa trên vai trò với ít nhất 3 vai trò được định nghĩa (ví dụ: Chủ sở hữu, Quản trị viên, Nhân viên), đảm bảo người dùng chỉ có thể truy cập các chức năng và dữ liệu phù hợp với vai trò được gán.
+    \item \textbf{Mã hóa dữ liệu truyền:} Toàn bộ giao tiếp giữa trình duyệt người dùng và máy chủ hệ thống phải được mã hóa bằng TLS 1.2 hoặc cao hơn.
+    \item \textbf{Mã hóa dữ liệu lưu trữ:} Tất cả thông tin định danh cá nhân của người dùng và thông tin nhạy cảm của tổ chức phải được mã hóa khi lưu trữ trong cơ sở dữ liệu sử dụng thuật toán mã hóa đối xứng mạnh.
+    \item \textbf{Ghi log bảo mật:} Hệ thống phải ghi log các sự kiện bảo mật quan trọng, bao gồm: đăng nhập thành công/thất bại, thay đổi mật khẩu, thay đổi quyền, tạo/xóa tài khoản quản trị. Log phải bao gồm dấu thời gian, định danh người dùng, địa chỉ IP nguồn, và mô tả sự kiện. Log phải được lưu trữ an toàn trong tối thiểu 90 ngày.
 \end{itemize}
 
-\subsubsubsection{Bảo mật dữ liệu}
+\subsubsection{Khả năng sử dụng (Usability)}
 \begin{itemize}
-    \item 100\% dữ liệu truyền tải phải được mã hóa bằng TLS 1.3 trở lên, với chứng chỉ SSL được cập nhật 30 ngày trước khi hết hạn.
-    \item Dữ liệu nhạy cảm phải được mã hóa bằng AES-256 khi lưu trữ.
-    \item Quét lỗ hổng bảo mật phải được thực hiện hàng quý với độ bao phủ 100\% các thành phần hệ thống, và các lỗ hổng nghiêm trọng phải được khắc phục trong vòng 48 giờ.
+    \item \textbf{Hiệu quả tác vụ:} Mục tiêu là ít nhất 80\% người dùng quản trị lần đầu, sau khi xem tài liệu hoặc video hướng dẫn dưới 15 phút, có thể hoàn thành thành công các tác vụ cốt lõi sau đây trong vòng 10 phút cho mỗi tác vụ: Tải lên thành công một tệp tài liệu và khởi tạo quá trình xử lý/huấn luyện; thay đổi thành công các thuộc tính giao diện chatbot và lưu lại cấu hình; và hoàn tất việc gửi lời mời tham gia tổ chức đến một địa chỉ email mới.
+    \item \textbf{Tính nhất quán giao diện:} Các yếu tố điều hướng chính, thuật ngữ, và giao diện phải nhất quán trên tất cả các màn hình quản trị của hệ thống.
+    \item \textbf{Khả năng truy cập:} Giao diện chatbot nhúng và các trang quản trị chính phải tuân thủ Web Content Accessibility Guidelines (WCAG) 2.1 Mức AA cho các tiêu chí sau: độ tương phản màu (4.5:1 cho văn bản thường, 3:1 cho văn bản lớn).
 \end{itemize}
 
-\subsubsubsection{Phản hồi sự cố}
+\subsubsection{Độ tin cậy (Reliability)}
 \begin{itemize}
-    \item Thời gian phát hiện sự cố không quá 15 phút cho các sự cố nghiêm trọng và 60 phút cho các sự cố thông thường. 
-    \item Thời gian khôi phục sau sự cố không quá 4 giờ cho sự cố nghiêm trọng và 8 giờ cho sự cố thông thường. 
-    \item 100\% sự cố bảo mật phải được ghi nhận và phân loại trong vòng 30 phút kể từ khi phát hiện.
+    \item \textbf{Kiểm tra tính hợp lệ đầu vào:} Hệ thống phải thực hiện kiểm tra tính hợp lệ cho tất cả các dữ liệu đầu vào từ người dùng trước khi xử lý. Phải ngăn chặn dữ liệu không hợp lệ hoặc không đúng định dạng gây ra lỗi hoặc làm hỏng dữ liệu. Các lỗi xác thực phải được trả về rõ ràng cho người dùng.
+    \item \textbf{Xử lý lỗi và ghi log:} 100\% các lỗi không mong muốn ở phía máy chủ phải được ghi log với đầy đủ thông tin stack trace và ngữ cảnh để phục vụ việc sửa chữa. Người dùng cuối không được nhìn thấy thông tin lỗi chi tiết hoặc stack trace, thay vào đó là một thông báo lỗi thân thiện và mã tham chiếu.
 \end{itemize}
 
-\subsubsection{Khả năng sử dụng}
-
-\subsubsubsection{Giao diện người dùng}
+\subsubsection{Khả năng bảo trì (Maintainability)}
 \begin{itemize}
-    \item Điểm đánh giá trải nghiệm người dùng (UX) phải đạt tối thiểu 4/5 điểm trong một khảo sát người dùng với ít nhất 200 phản hồi. 
-    \item Tỷ lệ hoàn thành nhiệm vụ thành công của người dùng phải đạt ít nhất 90\% trong lần đầu sử dụng. 
-    \item Thời gian trung bình để hoàn thành các tác vụ cơ bản không được vượt quá 30 giây cho người dùng mới.
+    \item \textbf{Chất lượng mã nguồn:} Mã nguồn phía máy chủ phải tuân thủ theo hướng dẫn về phong cách lập trình của ngôn ngữ/framework được sử dụng. Phải sử dụng công cụ phân tích mã tĩnh tích hợp trong quy trình phát triển để phát hiện các vấn đề về phong cách và lỗi tiềm ẩn.
+    \item \textbf{Tính mô-đun:} Hệ thống phải được cấu trúc thành các mô-đun logic rõ ràng (ví dụ: quản lý tài khoản, quản lý tri thức, xử lý hội thoại, giao diện nhúng) với các giao diện được định nghĩa tốt giữa chúng để giảm thiểu sự phụ thuộc chéo.
+    \item \textbf{Độ bao phủ kiểm thử:} Các unit test tự động phải đạt được độ bao phủ mã nguồn tối thiểu 70\% cho các mô-đun logic nghiệp vụ cốt lõi.
 \end{itemize}
 
-\subsubsubsection{Khả năng truy cập}
+\subsubsection{Tính di động (Portability)}
 \begin{itemize}
-    \item 100\% các trang phải đạt điểm kiểm tra WCAG 2.0 mức A, được xác nhận qua công cụ kiểm tra tự động hàng tháng. 
-    \item 95\% chức năng phải có thể truy cập được bằng bàn phím, với thời gian điều hướng không quá 5 giây giữa các thành phần. 
-    \item Tương phản màu sắc tối thiểu 4.5:1 cho văn bản thông thường và 3:1 cho văn bản lớn.
+    \item \textbf{Tương thích trình duyệt:} Giao diện quản trị và chatbot nhúng phải hiển thị và hoạt động chính xác trên các phiên bản ổn định mới nhất của Google Chrome, Mozilla Firefox, Apple Safari, và Microsoft Edge tại thời điểm kiểm thử cuối cùng.
+    \item \textbf{Thiết kế responsive:} Giao diện quản trị và chatbot nhúng phải tự động điều chỉnh bố cục để có thể sử dụng được trên các kích thước màn hình từ 360px chiều rộng đến 1920px chiều rộng.
 \end{itemize}
 
-\subsubsubsection{Trợ giúp và tài liệu hướng dẫn}
+\subsubsection{Yêu cầu Pháp lý và Đạo đức (Legal \& Ethical Requirements)}
 \begin{itemize}
-    \item Tài liệu hướng dẫn phải bao phủ 100\% chức năng hệ thống, với mỗi chức năng có ít nhất 1 ví dụ minh họa. 
-    \item Thời gian tìm kiếm thông tin trong tài liệu không quá 30 giây với độ chính xác tìm kiếm 90\%. 
-    \item Tài liệu phải được cập nhật trong vòng 48 giờ sau mỗi lần cập nhật hệ thống.
-\end{itemize}
-
-\subsubsection{Độ tin cậy}
-
-\subsubsubsection{Khả năng chịu lỗi}
-\begin{itemize}
-    \item Hệ thống phải duy trì hoạt động khi 30\% các service không quan trọng bị lỗi, với thời gian phát hiện lỗi không quá 30 giây. 
-    \item 99\% các lỗi nghiêm trọng phải được phát hiện và thông báo cho quản trị viên trong vòng 5 phút thông qua ít nhất 2 kênh liên lạc khác nhau. 
-\end{itemize}
-
-\subsubsubsection{Sao lưu và phục hồi}
-\begin{itemize}
-    \item Sao lưu toàn bộ phải được thực hiện hàng tuần với thời gian hoàn thành không quá 4 giờ và tỷ lệ thành công 99.9\%. 
-    \item Thời gian phục hồi dữ liệu không quá 4 giờ với điểm phục hồi dữ liệu không quá 6 giờ. 
-\end{itemize}
-
-\subsubsubsection{Xử lý lỗi}
-\begin{itemize}
-    \item 100\% thông báo lỗi phải được hiển thị cho người dùng trong vòng 2 giây kể từ khi phát sinh lỗi. 
-    \item Tối thiểu 95\% các lỗi phải được ghi log với đầy đủ thông tin context để phục vụ việc debug. 
-\end{itemize}
-
-\subsubsection{Khả năng bảo trì}
-
-\subsubsubsection{Tính mô-đun}
-\begin{itemize}
-    \item Tỷ lệ code comment phải đạt tối thiểu 20\% cho code logic phức tạp và 80\% cho các API public. 
-    \item Độ phức tạp của mã nguồn đo bằng maintainability index phải đạt tối thiểu 70 điểm trên thang 100.
-\end{itemize}
-
-\subsubsubsection{Kiểm thử}
-\begin{itemize}
-    \item Độ bao phủ code của unit test phải đạt tối thiểu 80\% cho logic nghiệp vụ và 70\% cho toàn bộ hệ thống. 
-    \item Tất cả test case phải được thực thi trong CI/CD pipeline với thời gian chạy không quá 30 phút. 
-    \item Tỷ lệ test case thành công phải đạt 100\% trước mỗi lần deploy lên môi trường production. 
-\end{itemize}
-
-\subsubsection{Tính di động}
-
-\subsubsubsection{Độc lập với nền tảng}
-\begin{itemize}
-    \item Hệ thống phải hoạt động ổn định trên ít nhất 3 hệ điều hành phổ biến (Windows 10+, macOS 10.15+, Ubuntu 20.04+) với hiệu suất chênh lệch không quá 10\%. 
-    \item Mã nhúng chatbot phải tương thích với 95\% các CMS phổ biến và framework web hiện đại. 
-    \item Thời gian khởi động ứng dụng không được chênh lệch quá 20\% giữa các nền tảng khác nhau.
-\end{itemize}
-
-\subsubsubsection{Khả năng tương thích với trình duyệt}
-\begin{itemize}
-    \item Giao diện phải hiển thị và hoạt động đồng nhất trên 4 trình duyệt phổ biến nhất (Chrome, Firefox, Safari, Edge) với phiên bản n-1. 
-    \item Thời gian tải trang không được chênh lệch quá 15\% giữa các trình duyệt khác nhau. 
-    \item 100\% chức năng phải hoạt động trên các thiết bị di động với màn hình từ 320px trở lên.
-\end{itemize}
-
-\subsubsection{Yêu cầu về mặt pháp lý}
-
-\subsubsubsection{Quyền riêng tư dữ liệu}
-\begin{itemize}
-    \item 100\% người dùng mới phải được yêu cầu đồng ý với điều khoản sử dụng và chính sách bảo mật trước khi sử dụng hệ thống. 
-    \item Yêu cầu xóa dữ liệu cá nhân phải được xử lý trong vòng 72 giờ với tỷ lệ hoàn thành 100\%.
-\end{itemize}
-
-\subsubsubsection{Kiểm toán và báo cáo}
-\begin{itemize}
-    \item 100\% các hoạt động quản trị phải được ghi log với thời gian lưu trữ tối thiểu 180 ngày. 
-    \item Khả năng truy xuất log phải đảm bảo thời gian tìm kiếm không quá 30 giây cho dữ liệu trong vòng 30 ngày gần nhất. 
-\end{itemize}
-
-\subsubsubsection{Sở hữu trí tuệ}
-\begin{itemize}
-    \item 100\% thư viện và công cụ bên thứ ba phải được kiểm tra giấy phép và tuân thủ trước khi tích hợp. 
-    \item Kiểm tra tuân thủ bản quyền phải được thực hiện mỗi quý với tỷ lệ tuân thủ 100\%.
-\end{itemize}
-
-\subsubsection{Đạo đức}
-
-\subsubsubsection{Minh bạch AI}
-\begin{itemize}
-    \item Thông báo về việc tương tác với AI phải xuất hiện trong 100\% lần đầu tương tác và được hiển thị trong vòng 1 giây. 
-    \item Tỷ lệ người dùng xác nhận hiểu rõ đang tương tác với AI phải đạt tối thiểu 95\% qua khảo sát. 
-    \item Độ chính xác trong việc phân biệt phản hồi của AI và con người phải đạt tối thiểu 98\%. 
-\end{itemize}
-
-\subsubsubsection{Bảo vệ người dùng}
-\begin{itemize}
-    \item Bộ lọc nội dung phải chặn 99.9\% nội dung không phù hợp với thời gian phản hồi không quá 100ms. 
-    \item 100\% cảnh báo về bảo mật thông tin phải được hiển thị khi phát hiện người dùng có xu hướng chia sẻ thông tin nhạy cảm. 
-    \item Thời gian phản hồi cho báo cáo nội dung không phù hợp không được vượt quá 24 giờ, với tỷ lệ xử lý đạt 100\%.
+    \item \textbf{Tuân thủ Quyền riêng tư:} Hệ thống phải tuân thủ các yêu cầu của Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân của Việt Nam. Điều này bao gồm việc cung cấp chính sách bảo mật rõ ràng, cơ chế lấy sự đồng ý của người dùng trước khi thu thập dữ liệu cá nhân, và quy trình xử lý yêu cầu của chủ thể dữ liệu trong vòng 30 ngày.
+    \item \textbf{Minh bạch AI:} Giao diện chatbot phải hiển thị rõ ràng cho người dùng rằng họ đang tương tác với một hệ thống trí tuệ nhân tạo chứ không phải con người, ví dụ thông qua một thông báo ban đầu hoặc nhãn hiệu cố định trong giao diện trò chuyện.
 \end{itemize}
 
 \subsection{Biểu đồ Use case}

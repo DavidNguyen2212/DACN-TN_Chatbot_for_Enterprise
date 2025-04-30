@@ -5,4 +5,53 @@
 
 % Nội dung phụ lục ở đây
 \subsection*{1. Cơ sở lý thuyết}
+\subsubsection*{1.1. Mô hình ngôn ngữ lớn}
+
+Một Large Langue Model (LLM) là một loại mô hình học máy có khả năng thực hiện nhiều nhiệm vụ xử lý ngôn ngữ tự nhiên (Natural Laguage Processing) như tạo và phân loại văn bản, trả lời câu hỏi trong một cuộc đối thoại, và dịch văn bản từ một ngôn ngữ sang ngôn ngữ khác. Từ "Lớn" dùng  chỉ số lượng giá trị (tham số) mà mô hình ngôn ngữ có thể thay đổi tự động khi nó học. Một số LLM thành công nhất có hàng trăm tỷ tham số (GPT-4, Deepseek-R1...).
+
+LLM được huấn luyện với lượng dữ liệu khổng lồ, sử dụng phương pháp học tự giám sát (self-supervised learning) để dự đoán token - có thể hiểu đơn giản nó là từ, cụm từ, địa điểm,... tiếp theo trong một câu, dựa trên ngữ cảnh xung quanh. Quá trình này được lặp đi lặp lại cho đến khi mô hình đạt được một mức độ chính xác chấp nhận được.
+
+Khi một LLM đã được huấn luyện, nó có thể được điều chỉnh chuyên biệt cho một loạt các nhiệm vụ NLP, bao gồm:
+\begin{itemize}
+	\item Xây dựng trò chuyện với chatbot như ChatGPT.
+	\item Tạo văn bản cho mô tả sản phẩm, bài đăng trên blog và bài báo.
+	\item Trả lời các câu hỏi thường gặp (FAQs) và điều hướng các yêu cầu của khách hàng đến người hoặc bộ phận phù hợp nhất: hầu hết các doanh nghiệp lớn rất quan tâm đến vấn đề này, nhằm cắt giảm số lượng nhân sự cũng như là thời gian hỗ trợ khách hàng.
+	\item Phân tích/Phân loại phản hồi của khách hàng từ email, bài đăng trên mạng xã hội và đánh giá sản phẩm: phân loại phàn nàn hay góp ý của khách hàng với sản phẩm của mình đã không còn là vấn đề xa lạ với hâù hết các doanh nghiệp, việt tóm tắt và phân loại chúng không phải là một vấn đề dễ dàng, hiện tại nhờ LLM chúng ta đã có thể không cần phải làm các công việc này bằng tay, mất khá nhiều thời gian và công sức.
+	\item Dịch nội dung kinh doanh sang các ngôn ngữ khác nhau.
+\end{itemize}
+
+\subsubsection*{1.2. Kỹ thuật Retrieval-Augmented Generation (RAG) và RAG nâng cao}
+Kỹ thuật Tạo sinh tăng cường truy xuất (RAG) thuần túy có thể được hiểu là một framework 'Retrieval-Read' - một quy trình bao gồm tạo index, truy xuất, và tạo sinh \cite{gao2024retrievalaugmentedgenerationlargelanguage}.
+
+\begin{itemize}
+	\item Tạo index: Việc lập index bắt đầu bằng việc dọn dẹp và trích xuất dữ liệu thô ở nhiều định dạng khác nhau như PDF, HTML, Word và Markdown, sau đó được chuyển đổi thành định dạng văn bản thuần túy thống nhất. Để phù hợp với các hạn chế về ngữ cảnh của mô hình ngôn ngữ, văn bản được phân đoạn thành các phần nhỏ hơn, dễ hiểu hơn (gọi là các chunk). Sau đó, các chunk được mã hóa thành biểu diễn vectơ bằng mô hình nhúng và được lưu trữ trong cơ sở dữ liệu vectơ. 
+	
+	\item Truy xuất: Khi nhận được truy vấn của người dùng, hệ thống RAG sử dụng cùng một mô hình mã hóa được sử dụng trong giai đoạn lập index để chuyển đổi truy vấn thành biểu diễn vectơ. Sau đó, hệ thống tính toán điểm tương đồng giữa vectơ truy vấn và vectơ của các chunk trong ngữ liệu được lập chỉ mục. Hệ thống sẽ truy xuất $k$ văn bản thể hiện điểm tương đồng lớn nhất với truy vấn. 
+	
+	\item Tạo: Truy vấn của người dùng cùng với k văn bản thu được ở bước truy xuất được tổng hợp lại thành một lệnh (prompt) mạch lạc để LLM xử lý. Cách trả lời của mô hình có thể khác nhau, tùy vào tiêu chí của nhiệm vụ, định dạng trả về, hoặc phong cách đối thoại do người dùng đặt ra. Ngoài ra, lịch sử hội thoại cũng có thể được chèn vào prompt, cho phép mô hình ứng xử đúng khi tham gia cuộc đối đáp nhiều lượt.
+
+\end{itemize}
+
+Để tăng chất lượng phản hồi cho câu hỏi, kỹ thuật RAG nâng cao ra đời từ việc cải thiện kỹ thuật RAG truyền thống. Hai giai đoạn sau được thêm vào:
+
+\begin{itemize}
+	\item Tiền truy xuất (Pre-retrieval process): Ở giai đoạn này, trọng tâm chính là tối ưu hóa cấu trúc index và truy vấn gốc. Mục tiêu của việc tối ưu hóa lập chỉ mục là nâng cao chất lượng nội dung được lập chỉ mục, gồm: tăng cường độ chi tiết của dữ liệu, tối ưu hóa cấu trúc chỉ mục, thêm metadata, tối ưu hóa căn chỉnh và truy xuất hỗn hợp. Trong khi mục tiêu của việc tối ưu hóa truy vấn là làm cho câu hỏi gốc của người dùng rõ ràng hơn và phù hợp hơn với tác vụ truy xuất, bao gồm: viết lại truy vấn, chuyển đổi truy vấn, mở rộng truy vấn...
+	
+	\item Hậu truy xuất (Post-retrieval process): Sau khi ngữ cảnh có liên quan được truy xuất, điều quan trọng là phải tích hợp hiệu quả với truy vấn. Các phương pháp chính trong quy trình sau truy xuất bao gồm xếp hạng lại các chunk và nén ngữ cảnh. Xếp hạng lại thông tin đã truy xuất để di chuyển nội dung có liên quan nhất dành cho prompt là một chiến lược quan trọng, bởi việc đưa tất cả các tài liệu có liên quan trực tiếp vào LLM có thể dẫn đến tình trạng quá tải thông tin, làm loãng sự tập trung vào các chi tiết chính.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Images/rag2.png}
+	\vspace{0.5cm}
+	\caption{So sánh giữa hai mô hình RAG. (Bên trái) RAG truyền thống chủ yếu bao gồm ba phần: lập index, truy xuất và tạo. (Bên phải) RAG nâng cao đề xuất nhiều chiến lược tối ưu hóa xung quanh quá trình tiền và hậu truy xuất, với quy trình tương tự như RAG truyền thống, vẫn tuân theo cấu trúc dạng chuỗi. Nguồn: \cite{gao2024retrievalaugmentedgenerationlargelanguage}}
+	\label{fig:enter-label}
+\end{figure}
+
+
+
+
+
+
+
 \subsection*{2. Phân công nhiệm vụ}
