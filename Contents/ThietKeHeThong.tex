@@ -16,12 +16,54 @@
 \end{figure}
 
 \subsubsection{Tổng quan kiến trúc}
-Hệ thống được thiết kế dựa trên kiến trúc nguyên khối có cấu trúc lớp (Layered Monolithic Architecture) chủ đạo, kết hợp với các thành phần xử lý bất đồng bộ và tương tác với dịch vụ AI nội bộ chuyên biệt được triển khai độc lập. Trung tâm của hệ thống là một ứng dụng Django tập trung, đảm nhiệm vai trò xử lý các yêu cầu HTTP, triển khai logic nghiệp vụ cốt lõi và quản lý dữ liệu. Các thành phần chức năng chính được tổ chức dưới dạng các module bên trong ứng dụng này.
+Hệ thống được thiết kế và triển khai theo kiến trúc Client-Server, phân tách rõ ràng giữa thành phần giao diện người dùng (Client) và thành phần xử lý logic nghiệp vụ và dữ liệu phía máy chủ (Server). Thành phần Client chịu trách nhiệm hiển thị giao diện và quản lý tương tác người dùng, trong khi thành phần Server đảm nhận việc xử lý logic nghiệp vụ, quản lý dữ liệu và cung cấp các dịch vụ nền tảng. \\
 
-Lựa chọn kiến trúc này mang lại một số lợi ích chính. Thứ nhất, việc áp dụng kiến trúc nguyên khối cùng với hệ sinh thái toàn diện của Django cho phép tối ưu hóa hiệu quả phát triển và đẩy nhanh tốc độ triển khai tính năng. Thứ hai, hệ thống tích hợp Django Channels và công nghệ WebSocket để đáp ứng yêu cầu giao tiếp thời gian thực, đặc biệt là cho chức năng trò chuyện, mà không đòi hỏi sự phức tạp của một kiến trúc phân tán hoàn toàn. Cuối cùng, mặc dù duy trì một lõi nguyên khối, kiến trúc vẫn đảm bảo khả năng mở rộng thông qua việc sử dụng Celery và Redis để xử lý các tác vụ nền và tác vụ định kỳ một cách bất đồng bộ, cho phép mở rộng quy mô của các tiến trình xử lý một cách độc lập khi tải tăng cao.
+\textbf{Thành phần Client (React Frontend):} Ứng dụng React phía Client thực hiện các nhiệm vụ chính sau:
+\begin{itemize}
+    \item \textit{Hiển thị giao diện người dùng:} Hiển thị và cập nhật các thành phần giao diện dựa trên dữ liệu nhận từ Server và trạng thái cục bộ của ứng dụng.
+    \item \textit{Quản lý trạng thái phía Client:} Sử dụng các thư viện hoặc cơ chế quản lý trạng thái để duy trì dữ liệu và trạng thái của giao diện người dùng.
+    \item \textit{Xử lý tương tác người dùng:} Ghi nhận các hành động của người dùng và khởi tạo các yêu cầu tương ứng đến Server thông qua API.
+    \item \textit{Tối ưu hóa trải nghiệm người dùng:} Áp dụng các kỹ thuật như tải từng phần, phân tách mã nguồn và định tuyến phía Client nhằm cải thiện thời gian tải trang và độ phản hồi của ứng dụng.
+\end{itemize}
 
-Giao tiếp với các ứng dụng phía người dùng được thực hiện chủ yếu thông qua API Gateway dựa trên Django REST Framework cho các yêu cầu REST API và WebSocket Gateway dựa trên Django Channels cho giao tiếp thời gian thực. Hệ thống được triển khai trên nền tảng Heroku, sử dụng Gunicorn/Uvicorn làm máy chủ WSGI/ASGI và Whitenoise để phục vụ các tệp tĩnh.
-\subsubsection{Chi tiết các thành phần chính}
+\textbf{Thành phần Server (Backend):} Thành phần Server đảm nhiệm các chức năng trung tâm sau:
+\begin{itemize}
+    \item \textit{Xử lý logic nghiệp vụ cốt lõi:} Thực thi các quy tắc, quy trình và luồng xử lý nghiệp vụ đặc thù của hệ thống.
+    \item \textit{Quản lý và truy xuất dữ liệu:} Tương tác với Hệ quản trị Cơ sở dữ liệu để thực hiện các hoạt động lưu trữ, truy vấn, cập nhật và xóa dữ liệu.
+    \item \textit{Cung cấp API:} Định nghĩa, triển khai và bảo trì các API, tuân theo kiến trúc RESTful, đóng vai trò là hợp đồng giao tiếp cho phép Client yêu cầu tài nguyên và thực thi các tác vụ thông qua JSON.
+    \item \textit{Xác thực và phân quyền:} Thực hiện xác minh danh tính người dùng và kiểm soát quyền truy cập của người dùng đã xác thực vào các tài nguyên và chức năng cụ thể.
+\end{itemize}
+
+\textbf{Lợi ích của Kiến trúc Client-Server:} Việc lựa chọn kiến trúc này mang lại các ưu điểm chính sau:
+\begin{itemize}
+    \item \textit{Phân tách trách nhiệm rõ ràng:} Logic liên quan đến giao diện người dùng và logic xử lý nghiệp vụ/dữ liệu được phân tách một cách rạch ròi. Điều này tạo điều kiện thuận lợi cho việc phát triển song song, kiểm thử độc lập, cũng như bảo trì và nâng cấp từng thành phần với tác động tối thiểu đến các thành phần khác.
+    \item \textit{Khả năng mở rộng linh hoạt và tối ưu tài nguyên:} Hệ thống có các yêu cầu về xử lý đa dạng và tiềm ẩn tải cao, bao gồm xử lý thời gian thực cho chat, các tác vụ nền nặng cho xử lý tài liệu, huấn luyện AI, và đặc biệt là các tính toán phức tạp của dịch vụ AI. Kiến trúc Client-Server cho phép mở rộng quy mô các thành phần backend (máy chủ ứng dụng Django, Celery workers, dịch vụ AI) một cách độc lập dựa trên nhu cầu thực tế, mà không ảnh hưởng hoặc yêu cầu thay đổi lớn ở phía client. Các client (React SPA, Chat Widget) được thiết kế tương đối nhẹ, chủ yếu đảm nhận việc hiển thị giao diện và tương tác người dùng, giảm thiểu yêu cầu về tài nguyên phía người dùng cuối.
+    \item \textit{Nâng cao khả năng bảo trì và linh hoạt công nghệ:} Logic nghiệp vụ, quy tắc xử lý, hoặc thậm chí các mô hình AI có thể thay đổi và cập nhật thường xuyên. Với kiến trúc Client-Server, các thay đổi này chủ yếu diễn ra ở phía backend. Miễn là giao diện API được duy trì ổn định hoặc có kế hoạch nâng cấp rõ ràng, các client có thể tiếp tục hoạt động mà không cần cập nhật ngay lập tức. Điều này đặc biệt quan trọng đối với Chat Widget được nhúng trên các trang của bên thứ ba. Kiến trúc này cũng cho phép lựa chọn công nghệ phù hợp nhất cho từng phần mà không bị ràng buộc vào một stack công nghệ duy nhất.
+    \item \textit{Đáp ứng yêu cầu giao tiếp thời gian thực:} Chức năng cốt lõi là trò chuyện đòi hỏi giao tiếp hai chiều, độ trễ thấp. Kiến trúc Client-Server với WebSocket Gateway tập trung phía backend là mô hình phù hợp để quản lý hiệu quả hàng ngàn kết nối đồng thời, điều phối việc gửi và nhận tin nhắn giữa các client và các dịch vụ backend.
+\end{itemize}
+
+\subsubsection{Thành phần phía Người dùng cuối (Frontend)}
+\subsubsubsection{Ứng dụng Quản trị (React Frontend)}
+
+Đây là một ứng dụng web đơn trang được xây dựng bằng thư viện React. Giao diện này chủ yếu dành cho quản trị viên hệ thống và nhân viên hỗ trợ. Nó cung cấp các chức năng toàn diện để:
+\begin{itemize}
+    \item Quản lý người dùng, tổ chức, và phân quyền.
+    \item Cấu hình và tùy chỉnh các chatbot (giao diện, hành vi, kịch bản).
+    \item Quản lý tài liệu tri thức (tải lên, phân loại, xem trạng thái huấn luyện).
+    \item Theo dõi và quản lý các gói dịch vụ, thanh toán.
+    \item Xem báo cáo và phân tích hiệu suất hoạt động.
+    \item Cung cấp giao diện cho nhân viên hỗ trợ tham gia và quản lý các cuộc hội thoại.
+\end{itemize}
+Ứng dụng React Frontend tương tác với backend thông qua REST API (qua API Gateway) để truy xuất và cập nhật dữ liệu, và sử dụng WebSocket (qua WebSocket Gateway) để nhận các cập nhật trạng thái và tin nhắn theo thời gian thực, đặc biệt là trong giao diện quản lý hội thoại. Kiến trúc dựa trên thành phần của React giúp quản lý giao diện người dùng phức tạp một cách hiệu quả, đồng thời mang lại trải nghiệm người dùng mượt mà và đáp ứng nhanh.
+
+\subsubsubsection{Tiện ích trò chuyện (Chat Widget)}
+Đây là một thành phần giao diện người dùng nhẹ, độc lập và có thể nhúng, thường được tích hợp vào các trang web của khách hàng. Mục đích chính của Chat Widget là cung cấp cửa sổ giao tiếp trực tiếp cho người dùng để tương tác với Chatbot AI để nhận thông tin tức thì hoặc với nhân viên hỗ trợ khi cần sự can thiệp của con người.
+
+Chat Widget chịu trách nhiệm hiển thị luồng tin nhắn, cho phép người dùng nhập và gửi tin nhắn, hiển thị các thành phần tương tác, và hiển thị các phản hồi từ chatbot hoặc nhân viên. Nó kết nối trực tiếp với WebSocket Gateway của backend để đảm bảo việc gửi và nhận tin nhắn diễn ra tức thì, mang lại trải nghiệm trò chuyện thời gian thực. Ngoài ra, widget có thể được tùy chỉnh về giao diện bởi quản trị viên thông qua ứng dụng React Frontend để phù hợp với thương hiệu và giao diện của trang web tích hợp nó. Widget được thiết kế để dễ dàng tích hợp vào các nền tảng web khác nhau chỉ với một đoạn mã nhúng đơn giản.
+
+\subsubsection{Thành phần phía Máy chủ (Backend)}
+
+Đây là tập hợp các thành phần xử lý logic nghiệp vụ cốt lõi, quản lý dữ liệu và cung cấp API cho các client tương tác.
 
 \subsubsubsection{Lớp ứng dụng (Application Layer)}
 Trung tâm của hệ thống là ứng dụng Django đóng vai trò điều phối chính. Bên trong ứng dụng này, các chức năng nghiệp vụ được phân tách thành các module dịch vụ chuyên biệt, bao gồm:
@@ -78,8 +120,6 @@ Ngoài các thành phần nội bộ, hệ thống còn tích hợp với các d
     \item \textbf{PayOS:} Một cổng thanh toán của bên thứ ba, cung cấp giao diện và xử lý các giao dịch thanh toán trực tuyến một cách an toàn, hỗ trợ nhiều phương thức thanh toán khác nhau, phục vụ cho việc quản lý đăng ký và thuê bao dịch vụ.
     \item \textbf{SendGrid:} Dịch vụ chuyên dụng cho việc gửi email, đảm bảo khả năng gửi email giao dịch (ví dụ: xác nhận đăng ký, đặt lại mật khẩu) và email thông báo đến người dùng với tỉ lệ gửi thành công cao và tuân thủ các tiêu chuẩn về email.
 \end{itemize}
-
-Tóm lại, kiến trúc nguyên khối có cấu trúc lớp này cân bằng giữa hiệu quả phát triển, khả năng bảo trì và các yêu cầu về hiệu năng, thời gian thực. Việc tích hợp các thành phần xử lý bất đồng bộ và các dịch vụ bên ngoài chuyên biệt giúp hệ thống giải quyết các bài toán phức tạp về xử lý nền, lưu trữ và trí tuệ nhân tạo mà vẫn duy trì được sự đơn giản tương đối trong cấu trúc lõi.
 
 \subsection{Giao diện}
 \subsubsection{Lược đồ Screen-flow}

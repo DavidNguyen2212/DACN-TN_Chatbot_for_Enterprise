@@ -1,0 +1,53 @@
+\begin{figure}[H]
+    \thispagestyle{empty}
+    \centering
+    \rotatebox{90}{
+        \includegraphics[height=0.9\textwidth, width=0.9\textheight, keepaspectratio]{Dg_System/deployment.png}
+    }
+    \rotatebox{90}{
+        \parbox{\textwidth}{
+            \centering
+            \caption{Sơ đồ triển khai hệ thống}
+        }
+    }
+\end{figure}
+
+Sơ đồ triển khai mô tả cách các thành phần phần mềm của hệ thống được phân bổ và thực thi trên các nút hạ tầng vật lý hoặc ảo trong môi trường vận hành.
+
+\begin{itemize}
+    \item \textbf{Giao diện người dùng (Frontend Client):} Nút này đại diện cho môi trường thực thi phía người dùng cuối. Nó chứa các thành phần giao diện chính:
+        \begin{itemize}
+            \item \textbf{React Frontend:} Ứng dụng quản trị dạng SPA (Single Page Application), giao tiếp với Backend thông qua giao diện REST API.
+            \item \textbf{Chat Widget:} Tiện ích trò chuyện dạng nhúng, giao tiếp với Backend chủ yếu qua kết nối WebSocket để đảm bảo tương tác thời gian thực.
+        \end{itemize}
+
+    \item \textbf{Nền tảng Heroku (Heroku Platform):} Nền tảng dưới dạng dịch vụ (Platform as a Service) được sử dụng để triển khai ứng dụng Backend chính. Bên trong Heroku, ứng dụng được thực thi trên hai loại quy trình (dynos):
+        \begin{itemize}
+            \item \textbf{Web Server Dyno:} Chịu trách nhiệm xử lý các yêu cầu HTTP đến từ React Frontend và quản lý các kết nối WebSocket từ Chat Widget. Dyno này thực thi ứng dụng Django, bao gồm các module dịch vụ cốt lõi: User Service, Organization Service, Chat Service, Chatbot Service, Subscription Service, Document Service, Report Service.
+            \item \textbf{Worker Dyno:} Chứa các tiến trình xử lý nền, chịu trách nhiệm thực thi các tác vụ bất đồng bộ được gửi từ Web Server Dyno thông qua hàng đợi tin nhắn Redis.
+        \end{itemize}
+
+    \item \textbf{Máy chủ Dịch vụ AI (AI Service Server):} Máy chủ được triển khai độc lập dành riêng cho việc thực thi các các thành phần và tác vụ trí tuệ nhân tạo.
+        \begin{itemize}
+            \item \textbf{Dịch vụ Mô hình AI (AI Model Service):} Chứa các mô hình AI đã huấn luyện và logic xử lý ngôn ngữ tự nhiên (NLP). Dịch vụ này tương tác với Backend (Web/Worker Dynos), Knowledge Index, MongoDB Server, và dịch vụ OpenAI Service bên ngoài.
+            \item \textbf{Chỉ mục Tri thức (Knowledge Index):} Thành phần chịu trách nhiệm quản lý và truy cập chỉ mục tri thức vector hóa, có khả năng tương tác với Pinecone Server để lưu trữ và truy vấn embeddings.
+        \end{itemize}
+
+    \item \textbf{Máy chủ PostgreSQL (PostgreSQL Server):} Nút máy chủ cơ sở dữ liệu, triển khai Hệ quản trị CSDL quan hệ PostgreSQL. Đây là nơi lưu trữ dữ liệu có cấu trúc chính của hệ thống. Web Server Dyno kết nối trực tiếp đến máy chủ này để thực hiện các thao tác dữ liệu.
+
+    \item \textbf{Máy chủ Redis (Redis Server):} Nút máy chủ triển khai dịch vụ Redis. Nó đóng vai trò đa nhiệm: làm bộ nhớ đệm, backend cho lớp Channels, và làm message broker cho Celery, phục vụ cho cả Web Server Dyno và Worker Dyno trên Heroku.
+
+    \item \textbf{Máy chủ MongoDB (MongoDB Server):} Nút máy chủ triển khai cơ sở dữ liệu NoSQL dạng tài liệu MongoDB, thường được sử dụng để lưu trữ dữ liệu phi cấu trúc hoặc bán cấu trúc liên quan đến các tính năng AI hoặc các bản ghi linh hoạt khác.
+
+    \item \textbf{Lưu trữ AWS S3 (AWS S3 Storage):} Dịch vụ lưu trữ đối tượng (object storage) trên nền tảng đám mây của Amazon Web Services, được sử dụng để lưu trữ các tệp lớn hoặc dữ liệu nhị phân. Dịch vụ này được truy cập bởi Web Server Dyno nhằm lưu trữ các tài liệu, hình ảnh do người dùng tải lên.
+
+    \item \textbf{Máy chủ Pinecone (Pinecone Server):} Nút máy chủ triển khai cơ sở dữ liệu vector Pinecone, được sử dụng bởi AI Service Server để lưu trữ và thực hiện truy vấn hiệu quả trên các vector embedding, phục vụ cho các tác vụ tìm kiếm tương đồng ngữ nghĩa.
+
+    \item \textbf{Các dịch vụ bên ngoài (External Service Providers):} Đại diện cho các dịch vụ của bên thứ ba được tích hợp vào hệ thống thông qua API:
+        \begin{itemize}
+            \item \textbf{Dịch vụ PayOS (PayOS Service):} Cổng thanh toán điện tử, tương tác với Subscription Service trên Web Server Dyno để xử lý giao dịch.
+            \item \textbf{Dịch vụ SendGrid (SendGrid Service):} Dịch vụ gửi email giao dịch và thông báo, được gọi bởi các thành phần trên Web Server Dyno.
+            \item \textbf{Dịch vụ Firecrawl (Firecrawl Service):} Dịch vụ thu thập dữ liệu web (web crawling), tương tác với AI Service Server (có thể để cung cấp dữ liệu cho Knowledge Index).
+            \item \textbf{Dịch vụ OpenAI (OpenAI Service):} Dịch vụ cung cấp các mô hình ngôn ngữ lớn (LLMs) hoặc các API AI khác, được sử dụng bởi AI Model Service trên AI Service Server.
+        \end{itemize}
+\end{itemize}

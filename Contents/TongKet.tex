@@ -34,8 +34,12 @@ Dựa vào các quy tắc nghiệp vụ, các yêu cầu phân tích được c�
     \item Thiết kế được lược đồ cơ sở dữ liệu ERD cho hệ thống bao gồm các thực thể và các thuộc tính, quan hệ của nó.
     \item Hoàn thiện bản thiết kế các mockup, prototype giao diện cho toàn hệ thống nhằm tạo điều kiện cho việc hiện thực trở nên dễ dàng và tốt nhất.
 \end{itemize}
+
 \subsubsection{Đối với việc hiện thực và triển khai hệ thống}
-Ở giai đoạn đồ án chuyên ngành, nhóm đã thực hiện hiện thực một số tính năng bước đầu như các tính năng xác thực (đăng nhập, đăng ký tổ chức, tham gia tổ chức, quên mật khẩu), quản lý tải khoản cá nhân và quản lý tổ chức (thông tin và thành viên của tổ chức). Đồng thời, nhóm đã triển khai hệ thống với công nghệ đã lựa chọn.
+Trong khuôn khổ đồ án chuyên ngành và đồ án tốt nghiệp, nhóm đã hoàn thành việc hiện thực và tích hợp toàn diện các chức năng cốt lõi của hệ thống CoolChat, bám sát theo các yêu cầu đã được phân tích và thiết kế trong các chương trước. Hệ thống đã đáp ứng đầy đủ các quy trình nghiệp vụ chính, từ quản lý người dùng và tổ chức, cấu hình và huấn luyện chatbot dựa trên cơ sở tri thức, quản lý hội thoại, đến tích hợp các dịch vụ bên ngoài như lưu trữ và thanh toán.
+
+Đồng thời, hệ thống đã được triển khai thành công và vận hành ổn định trên các nền tảng đám mây đã lựa chọn: ứng dụng frontend trên Vercel, ứng dụng backend trên Heroku, và ứng dụng AI trên Render. Việc triển khai thành công này đã chứng minh tính khả thi của kiến trúc hệ thống và các công nghệ được áp dụng.
+
 \subsubsection{Đối với quá trình thực hiện đồ án}
 Trong giai đoạn đồ án chuyên ngành, nhóm đã làm việc thông qua một quy trình rõ ràng và có kế hoạch.
 \begin{itemize}
@@ -46,132 +50,54 @@ Trong giai đoạn đồ án chuyên ngành, nhóm đã làm việc thông qua m
     nhóm.
     \item Thường xuyên tổ chức các cuộc meeting hàng tuần, cũng như tạo nhóm chat để trao đổi cũng như đưa ra giải pháp cho các vấn đề gặp phải trong quá trình hiện thực. Đồng thời, nhóm tham gia đầy đủ các cuộc họp với giảng viên hướng dẫn để có thể nắm bắt và hoàn thành nhiệm vụ đúng tiến độ.
 \end{itemize}
-\subsection{Hướng phát triển và kế hoạch trong tương lai}
-\subsubsection{Hướng phát triển}
+
+\vspace{\baselineskip}
+Sau quá trình phân tích, thiết kế và hiện thực, hệ thống chatbot AI dành cho tổ chức Coolchat đã hoàn thành các chức năng cốt lõi, mang lại những giá trị thiết thực cho cả người dùng cuối tương tác trực tiếp với chatbot và các tổ chức đăng ký sử dụng nền tảng. Các kết quả nổi bật bao gồm:\\
+
+\textbf{Đối với tổ chức (Khách hàng sử dụng nền tảng CoolChat):}
 \begin{itemize}
-    \item Mở rộng tính năng: phát triển các tính năng còn lại của hệ thống.
-    \item Tích hợp AI: tích hợp AI chatbot vào hệ thống.
-    \item Tích hợp với website tổ chức và facebook: tích hợp chatbot vào website của tổ chức đăng ký và trang facebook.
-    \item Tối ưu hóa hiệu suất: cải thiện tốc độ xử lý và phản hồi, tối ưu hóa việc sử dụng tài nguyên và nâng cao khả năng chịu tải.
+    \item \textbf{Tự động hóa quy trình hỗ trợ khách hàng:} Giảm tải đáng kể khối lượng công việc cho đội ngũ nhân viên hỗ trợ bằng cách tự động hóa việc trả lời các câu hỏi lặp đi lặp lại và xử lý các yêu cầu đơn giản, cho phép nhân viên tập trung vào các vấn đề phức tạp và giá trị cao hơn.
+    \item \textbf{Nâng cao sự hài lòng của khách hàng:} Cung cấp dịch vụ hỗ trợ liên tục, tức thì và nhất quán, góp phần cải thiện trải nghiệm tổng thể của khách hàng và tăng cường lòng trung thành.
+    \item \textbf{Tiết kiệm chi phí vận hành:} Giảm chi phí liên quan đến nhân sự hỗ trợ khách hàng, chi phí đào tạo và quản lý vận hành so với việc duy trì một đội ngũ hỗ trợ lớn hoạt động 24/7.
+    \item \textbf{Tăng cường nhận diện thương hiệu:} Khả năng tùy chỉnh giao diện (logo, màu sắc, font chữ) và giọng điệu của chatbot giúp tổ chức duy trì sự nhất quán về hình ảnh thương hiệu trong mắt khách hàng.
+    \item \textbf{Quản lý tri thức tập trung và hiệu quả:} Cung cấp công cụ để tổ chức dễ dàng tải lên, quản lý và cập nhật cơ sở tri thức cho chatbot, đảm bảo chatbot luôn có thông tin mới nhất và chính xác nhất.
+    \item \textbf{Triển khai đơn giản và nhanh chóng:} Dễ dàng tích hợp chatbot vào website hiện có thông qua mã nhúng JavaScript, không đòi hỏi thay đổi cấu trúc website hay đầu tư hạ tầng máy chủ phức tạp.
 \end{itemize}
 
-\subsubsection{Kế hoạch thực hiện}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{Images/future_plan.png}
-    \vspace{0.5cm}
-    \caption{Biểu đồ Gantt kế hoạch triển khai dự án}
-    \label{fig:gantt-chart}
-\end{figure}
-
-\textbf{1. Nhân sự thực hiện:}
+\textbf{Đối với Người dùng cuối (Khách hàng của tổ chức):}
 \begin{itemize}
-    \item Frontend Engineer: Lê Đình Huy
-    \begin{itemize}
-        \item Phụ trách phát triển giao diện người dùng
-        \item Đảm bảo trải nghiệm người dùng (UX/UI)
-    \end{itemize}
-    \item Backend Engineer: Phạm Đức Thắng
-    \begin{itemize}
-        \item Phụ trách phát triển API và xử lý logic nghiệp vụ
-        \item Quản lý cơ sở dữ liệu và bảo mật hệ thống
-    \end{itemize}
-    \item AI Engineer: Nguyễn Đức An
-    \begin{itemize}
-        \item Phụ trách phát triển và tích hợp các mô hình AI
-        \item Tối ưu hóa hiệu suất xử lý ngôn ngữ tự nhiên
-    \end{itemize}
+    \item \textbf{Hỗ trợ tức thì 24/7:} Người dùng có thể nhận được phản hồi cho các câu hỏi và yêu cầu cơ bản bất kỳ lúc nào, kể cả ngoài giờ hành chính, giúp giải đáp thắc mắc nhanh chóng và cải thiện trải nghiệm chờ đợi.
+    \item \textbf{Thông tin chính xác và nhất quán:} Chatbot trả lời dựa trên cơ sở tri thức được tổ chức cung cấp và kiểm duyệt, đảm bảo tính đồng nhất và độ tin cậy của thông tin, tránh các sai lệch do yếu tố con người.
+    \item \textbf{Trải nghiệm tương tác tự nhiên:} Nhờ ứng dụng mô hình ngôn ngữ lớn và các kỹ thuật xử lý ngôn ngữ tự nhiên, người dùng có thể giao tiếp với chatbot bằng ngôn ngữ đời thường, đặt câu hỏi linh hoạt và nhận được câu trả lời mạch lạc, dễ hiểu.
+    \item \textbf{Giải quyết vấn đề hiệu quả:} Chatbot có khả năng xử lý các yêu cầu thông thường như cung cấp thông tin sản phẩm/dịch vụ, trả lời câu hỏi thường gặp, hướng dẫn quy trình cơ bản, giúp người dùng tự giải quyết vấn đề mà không cần chờ đợi nhân viên.
+    \item \textbf{Tùy chọn kết nối với nhân viên hỗ trợ:} Khi gặp các vấn đề phức tạp hoặc yêu cầu hỗ trợ chuyên sâu hơn, người dùng có thể dễ dàng yêu cầu hoặc được tự động chuyển giao đến nhân viên hỗ trợ trực tiếp, đảm bảo mọi vấn đề đều được giải quyết triệt để.
+    \item \textbf{Giao diện trò chuyện thân thiện:} Người dùng tương tác thông qua một cửa sổ trò chuyện trực quan, dễ sử dụng, được tích hợp liền mạch vào trang web của tổ chức.
 \end{itemize}
 
 
-\textbf{2. Kế hoạch chi tiết theo giai đoạn:} \\
+\subsection{Hướng phát triển trong tương lai}
+Dựa trên nền tảng hệ thống CoolChat đã xây dựng và các kết quả đạt được, có nhiều hướng tiềm năng để tiếp tục phát triển và hoàn thiện đề tài trong tương lai, nhằm nâng cao giá trị và khả năng cạnh tranh của sản phẩm:
 
-\textbf{Giai đoạn 1: Phát triển module đào tạo chatbot} (6/1-2/2/2025)
 \begin{itemize}
-    \item Nội dung và phân công:
-    \begin{itemize}
-        \item Frontend Engineer: Hiện thực giao diện đào tạo chatbot
-        \item Backend Engineer: Phát triển API đào tạo chatbot
-        \item AI Engineer: Tích hợp và tối ưu mô hình AI cho chatbot
-    \end{itemize}
-    \item Kết quả mong đợi:
-    \begin{itemize}
-        \item Hoàn thiện module đào tạo chatbot có khả năng tương tác với AI
-        \item Giao diện người dùng thân thiện và dễ sử dụng
-    \end{itemize}
-\end{itemize}
+    \item \textbf{Nâng cao năng lực hiểu và phản hồi của AI:}
+        \begin{itemize}
+            \item \textit{Tinh chỉnh mô hình ngôn ngữ:} Thực hiện tinh chỉnh mô hình Gemini hoặc các mô hình tương tự trên tập dữ liệu chuyên biệt về chăm sóc khách hàng hoặc theo từng lĩnh vực ngành nghề cụ thể để cải thiện độ chính xác, sự phù hợp ngữ cảnh và khả năng xử lý các thuật ngữ chuyên ngành.
+            \item \textit{Quản lý hội thoại phức tạp:} Cải thiện khả năng duy trì ngữ cảnh trong các cuộc hội thoại dài và phức tạp, xử lý các câu hỏi nhiều ý hoặc các tình huống cần suy luận đa bước; phát triển khả năng để AI trả lời dựa trên nội dung các cuộc hội thoại trước đó với nhân viên chăm sóc khách hàng.
+            \item \textit{Phân tích cảm xúc:} Tích hợp khả năng nhận diện cảm xúc của người dùng cuối trong tin nhắn để chatbot có thể điều chỉnh giọng điệu phản hồi phù hợp hơn, hoặc tự động cảnh báo/ưu tiên chuyển giao cho nhân viên hỗ trợ khi phát hiện khách hàng không hài lòng.
+        \end{itemize}
 
-\textbf{Giai đoạn 2: Xây dựng tính năng tùy chỉnh và tương tác với chatbot} (3/2-2/3/2025)
-\begin{itemize}
-    \item Nội dung và phân công:
-    \begin{itemize}
-        \item Frontend Engineer: Phát triển giao diện tùy chỉnh chatbot và hội thoại
-        \item Backend Engineer: Xây dựng API tùy chỉnh chatbot và hội thoại, cho phép tích hợp với website và Facebook
-        \item AI Engineer: Tối ưu hóa khả năng xử lý ngôn ngữ tự nhiên
-    \end{itemize}
-    \item Kết quả mong đợi:
-    \begin{itemize}
-        \item Hệ thống chatbot tích hợp đa nền tảng
-        \item Khả năng tùy chỉnh linh hoạt theo nhu cầu người dùng
-    \end{itemize}
-\end{itemize}
+    \item \textbf{Mở rộng tính năng nền tảng cho tổ chức:}
+        \begin{itemize}
+            \item \textit{Tích hợp đa kênh:} Mở rộng hỗ trợ sang các nền tảng giao tiếp phổ biến khác tại Việt Nam như Zalo, Facebook Messenger. Phát triển một hộp thư hợp nhất cho phép nhân viên hỗ trợ quản lý tất cả các cuộc hội thoại từ nhiều kênh tại một giao diện duy nhất, nâng cao hiệu quả làm việc và trải nghiệm khách hàng liền mạch.
+            \item \textit{Hệ thống báo cáo và phân tích nâng cao:} Xây dựng dashboard phân tích chi tiết hơn, cung cấp các chỉ số sâu sắc về hiệu quả hoạt động của chatbot (ví dụ: tỷ lệ giải quyết thành công, tỷ lệ chuyển giao, thời gian xử lý trung bình), hành trình khách hàng, các chủ đề/vấn đề phổ biến, và hiệu suất của nhân viên hỗ trợ.
+            \item \textit{Quản lý cơ sở tri thức thông minh hơn:} Phát triển tính năng tự động phát hiện các "lỗ hổng" tri thức, đề xuất nội dung cần bổ sung, quản lý phiên bản tài liệu, và cho phép đánh giá/phản hồi về chất lượng câu trả lời của chatbot để cải thiện cơ sở tri thức.
+            \item \textit{Tự động hóa quy trình:} Cho phép tổ chức xây dựng các quy trình tự động đơn giản kết hợp giữa chatbot và các hành động khác (ví dụ: tự động tạo ticket hỗ trợ, gửi email follow-up, cập nhật thông tin khách hàng trong CRM thông qua tích hợp API).
+        \end{itemize}
 
-\textbf{Giai đoạn 3: Phát triển hệ thống báo cáo và thanh toán} (3-16/3/2025)
-\begin{itemize}
-    \item Nội dung và phân công:
-    \begin{itemize}
-        \item Frontend Engineer: Xây dựng giao diện báo cáo và thanh toán
-        \item Backend Engineer: Phát triển API thanh toán và tích hợp cổng thanh toán
-        \item AI Engineer: Phát triển các thuật toán phân tích dữ liệu cho báo cáo
-    \end{itemize}
-    \item Kết quả mong đợi:
-    \begin{itemize}
-        \item Hệ thống báo cáo chi tiết và trực quan
-        \item Tích hợp thanh toán an toàn và đa dạng
-    \end{itemize}
-\end{itemize}
-
-\textbf{Giai đoạn 4: Xây dựng tính năng thông báo và lịch hẹn} (17-30/3/2025)
-\begin{itemize}
-    \item Nội dung và phân công:
-    \begin{itemize}
-        \item Frontend Engineer: Phát triển giao diện quản lý thông báo và lịch hẹn
-        \item Backend Engineer: Xây dựng API quản lý thông báo và lịch hẹn
-        \item AI Engineer: Tích hợp thuật toán gợi ý thời gian hẹn tối ưu
-    \end{itemize}
-    \item Kết quả mong đợi:
-    \begin{itemize}
-        \item Hệ thống thông báo thời gian thực
-        \item Quản lý lịch hẹn hiệu quả
-    \end{itemize}
-\end{itemize}
-
-\textbf{Giai đoạn 5: Kiểm thử và tối ưu hóa} (31/3-20/4/2025)
-\begin{itemize}
-    \item Nội dung và phân công:
-    \begin{itemize}
-        \item Frontend Engineer: Kiểm thử UI/UX và tối ưu giao diện
-        \item Backend Engineer: Kiểm thử API và tối ưu hiệu suất hệ thống
-        \item AI Engineer: Tối ưu hóa các mô hình AI và đánh giá độ chính xác
-    \end{itemize}
-    \item Kết quả mong đợi:
-    \begin{itemize}
-        \item Độ ổn định và hiệu suất cao của hệ thống
-        \item Phát hiện và khắc phục các lỗi tiềm ẩn
-    \end{itemize}
-\end{itemize}
-
-\textbf{Giai đoạn 6: Triển khai và hoàn thiện} (21/4-4/5/2025)
-\begin{itemize}
-    \item Nội dung và phân công:
-    \begin{itemize}
-        \item Frontend Engineer: Triển khai giao diện người dùng
-        \item Backend Engineer: Triển khai hệ thống backend lên cloud
-        \item AI Engineer: Triển khai các mô hình AI và monitoring
-    \end{itemize}
-    \item Kết quả mong đợi:
-    \begin{itemize}
-        \item Hệ thống hoạt động ổn định trên môi trường thực tế
-        \item Báo cáo đồ án hoàn chỉnh và chuyên nghiệp
-    \end{itemize}
+    \item \textbf{Tối ưu hóa kỹ thuật và kiến trúc:}
+        \begin{itemize}
+            \item \textit{Tối ưu hiệu năng và khả năng chịu tải:} Tiếp tục rà soát và tối ưu hóa các truy vấn cơ sở dữ liệu, chiến lược caching, hiệu quả xử lý tác vụ nền, và khả năng mở rộng của các thành phần hệ thống (đặc biệt là WebSocket Gateway và dịch vụ AI) để đáp ứng lượng truy cập lớn hơn.
+            \item \textit{Khám phá các mô hình AI thay thế/bổ sung:} Đánh giá hiệu quả và chi phí của các mô hình ngôn ngữ lớn khác hoặc các mô hình nhỏ hơn, chuyên biệt hóa cho các tác vụ cụ thể để tối ưu hóa chi phí và độ trễ.
+            \item \textit{Tăng cường giám sát và cảnh báo:} Xây dựng hệ thống giám sát, ghi log và truy vết toàn diện hơn nữa trên tất cả các thành phần để nhanh chóng phát hiện và chẩn đoán sự cố.
+        \end{itemize}
 \end{itemize}
