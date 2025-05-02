@@ -15,7 +15,7 @@ Lược đồ này cung cấp góc nhìn tổng quát về cách các công ngh�
 	\label{fig:enter-label}
 \end{figure}
 
-Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao thức REST API (Post, HTTP API) và Websocket. Các hệ cơ sở dữ liệu sẽ đảm nhận các nhiệm vụ đọc, ghi những loại dữ liệu khác nhau. Ngoài ra, Django Server sử dụng Redis Caching Server để tăng tốc việc truy xuất dữ liệu sẵn có.
+Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao thức REST API (Post, HTTP API) và Server-Sent Event (Streaming). Các hệ cơ sở dữ liệu sẽ đảm nhận các nhiệm vụ đọc, ghi những loại dữ liệu khác nhau. Ngoài ra, Django Server sử dụng Redis Caching Server để tăng tốc việc truy xuất dữ liệu sẵn có.
 \subsubsection{Frontend}
 \subsubsubsection{ReactJS}
 \renewcommand{\labelenumi}{\alph{enumi}}
@@ -788,6 +788,69 @@ Nhược điểm:
 % Trở về định dạng mặc định 1., 2., 3.
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 
+\subsubsubsection{MongoDB}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	MongoDB là một hệ quản trị cơ sở dữ liệu NoSQL mã nguồn mở, được phát triển bởi MongoDB Inc. Đây là một trong những cơ sở dữ liệu NoSQL phổ biến nhất hiện nay, cho phép lưu trữ dữ liệu dưới dạng tài liệu BSON (Binary JSON), giúp tăng tính linh hoạt và khả năng mở rộng của hệ thống.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{Images/mongodb.png}
+		\vspace{0.5cm}
+		\caption{Logo MongoDB - Nguồn Internet}
+		\label{fig:mongodb-logo}
+	\end{figure}
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	MongoDB có một số đặc điểm công nghệ nổi bật như:
+	\begin{itemize}
+		\item Lưu trữ dữ liệu theo dạng tài liệu (document-based), sử dụng cấu trúc BSON – gần giống JSON nhưng có hỗ trợ kiểu dữ liệu mở rộng hơn.
+		\item Schema-less: Không yêu cầu định nghĩa cấu trúc dữ liệu cố định, phù hợp với hệ thống có dữ liệu thay đổi thường xuyên.
+		\item Hỗ trợ truy vấn linh hoạt, bao gồm truy vấn theo điều kiện, sắp xếp, phân trang, v.v.
+		\item Khả năng mở rộng cao theo chiều ngang (horizontal scaling) nhờ sharding.
+		\item Hỗ trợ replication thông qua mô hình replica set, đảm bảo tính sẵn sàng và an toàn dữ liệu.
+	\end{itemize}
+	
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Bảng dưới đây so sánh MongoDB với một số hệ quản trị cơ sở dữ liệu phổ biến khác:
+	
+	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+		\hline
+		\textbf{Tiêu chí} & \textbf{MySQL} & \textbf{PostgreSQL} & \textbf{MongoDB} \\
+		\hline
+		Kiểu dữ liệu & Quan hệ (bảng) & Quan hệ (bảng) & Tài liệu (document) \\
+		\hline
+		Tính linh hoạt dữ liệu & Thấp & Trung bình & Cao \\
+		\hline
+		Tốc độ truy vấn (với dữ liệu phi cấu trúc) & Chậm & Trung bình & Nhanh \\
+		\hline
+		Khả năng mở rộng & Tốt & Tốt & Rất tốt \\
+		\hline
+		Hỗ trợ phân tán & Có giới hạn & Có giới hạn & Mạnh \\
+		\hline
+		Cộng đồng & Rộng lớn & Rộng lớn & Phát triển nhanh \\
+		\hline
+	\end{longtable}
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	Nhóm chọn MongoDB vì những lý do sau:
+	\begin{itemize}
+		\item Phù hợp để lưu trữ dữ liệu linh hoạt và không có cấu trúc cố định như \texttt{chatSession} trong các hệ thống AI chatbot.
+		\item Cho phép thao tác ghi và truy vấn nhanh, phù hợp với yêu cầu thời gian thực của chatbot service.
+		\item Hỗ trợ TTL index (Time-To-Live), cho phép tự động xoá các session hết hạn mà không cần xử lý thủ công, giúp giảm tải cho hệ thống.
+		\item Cú pháp truy vấn dễ sử dụng, tương thích tốt với các ứng dụng sử dụng Node.js hoặc Python.
+		\item Dễ tích hợp với các framework phổ biến (Express, FastAPI, v.v.) và thư viện ORM như Mongoose, Beanie.
+		\item Có khả năng mở rộng theo chiều ngang, phù hợp với các ứng dụng cần xử lý lượng lớn người dùng đồng thời.
+	\end{itemize}
+	
+\end{enumerate}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
 %Kỹ thuật, công nghệ, tóm tắt mô tả
 %
 %Vẽ, Mô tả kiến trúc khi hiện thực, thành phần chức năng gì khi tương tác vs nhau
