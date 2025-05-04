@@ -102,7 +102,7 @@ Bên cạnh các ứng dụng chức năng, cấu trúc dự án còn bao gồm 
     \item \texttt{.env}, \texttt{.env.example}: Các tệp dùng để quản lý biến môi trường, chứa các thông tin nhạy cảm như khóa API, thông tin kết nối cơ sở dữ liệu.
 \end{itemize}
 
-Ngoài ra, dự án còn có thư mục \texttt{widget/}, chứa mã nguồn cho thành phần widget trò chuyện có thể nhúng trực tiếp vào trang web của khách hàng. Mặc dù được đặt trong repository backend, cấu trúc bên trong của nó (\texttt{src/}, \texttt{components/}, \texttt{styles/}, \texttt{utils/}) gợi ý đây có thể là một ứng dụng frontend độc lập (ví dụ: xây dựng bằng JavaScript thuần hoặc một thư viện/framework nhẹ) được phát triển và đóng gói riêng biệt để dễ dàng tích hợp.
+Bên cạnh các thành phần cốt lõi của hệ thống backend, cấu trúc mã nguồn của dự án còn bao gồm thư mục \texttt{widget/} chứa toàn bộ mã nguồn cho việc xây dựng thành phần giao diện người dùng của cửa sổ chatbot. Mục tiêu thiết kế của widget này là cho phép nhúng một cách dễ dàng và trực tiếp vào các trang web của doanh nghiệp sử dụng hệ thống chatbot.
 
 \subsubsubsection{AI}
 Cấu trúc mã nguồn của dịch vụ AI được thể hiện ở hình 70 gồm các thư mục, các module và file như sau:

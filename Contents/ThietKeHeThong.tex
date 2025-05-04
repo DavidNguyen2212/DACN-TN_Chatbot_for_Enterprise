@@ -56,7 +56,7 @@ Theo hình 51, hệ thống được thiết kế và triển khai theo kiến t
 \end{itemize}
 Ứng dụng React Frontend tương tác với backend thông qua REST API (qua API Gateway) để truy xuất và cập nhật dữ liệu, và sử dụng WebSocket (qua WebSocket Gateway) để nhận các cập nhật trạng thái và tin nhắn theo thời gian thực, đặc biệt là trong giao diện quản lý hội thoại. Kiến trúc dựa trên thành phần của React giúp quản lý giao diện người dùng phức tạp một cách hiệu quả, đồng thời mang lại trải nghiệm người dùng mượt mà và đáp ứng nhanh.
 
-\subsubsubsection{Tiện ích trò chuyện (Chat Widget)}
+\subsubsubsection{Cửa sổ chatbot (Chat Widget)}
 Đây là một thành phần giao diện người dùng nhẹ, độc lập và có thể nhúng, thường được tích hợp vào các trang web của khách hàng. Mục đích chính của Chat Widget là cung cấp cửa sổ giao tiếp trực tiếp cho người dùng để tương tác với Chatbot AI để nhận thông tin tức thì hoặc với nhân viên hỗ trợ khi cần sự can thiệp của con người.
 
 Chat Widget chịu trách nhiệm hiển thị luồng tin nhắn, cho phép người dùng nhập và gửi tin nhắn, hiển thị các thành phần tương tác, và hiển thị các phản hồi từ chatbot hoặc nhân viên. Nó kết nối trực tiếp với WebSocket Gateway của backend để đảm bảo việc gửi và nhận tin nhắn diễn ra tức thì, mang lại trải nghiệm trò chuyện thời gian thực. Ngoài ra, widget có thể được tùy chỉnh về giao diện bởi quản trị viên thông qua ứng dụng React Frontend để phù hợp với thương hiệu và giao diện của trang web tích hợp nó. Widget được thiết kế để dễ dàng tích hợp vào các nền tảng web khác nhau chỉ với một đoạn mã nhúng đơn giản.
