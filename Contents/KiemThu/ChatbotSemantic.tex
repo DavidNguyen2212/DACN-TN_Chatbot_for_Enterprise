@@ -21,6 +21,8 @@ Nhóm đã tạo ra một test suit từ bộ tài liệu mẫu về chính sác
 	\item Context: các tài liệu mà bộ truy xuất đã thu thập được, được log từ server qua quá trình thu thập trong cơ sở dữ liệu vector.
 \end{itemize}
 
+Một testcase được thể hiện như hình 104.
+
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{Images/llm_tc.png}
@@ -30,7 +32,7 @@ Nhóm đã tạo ra một test suit từ bộ tài liệu mẫu về chính sác
 \end{figure}
 
 \subsubsection{Bias}
-Kết quả test bias cho thấy các câu trả lời của chatbot đều phù hợp và không có thiên kiến. (Bias score bằng 0)
+Kết quả test bias cho thấy các câu trả lời của chatbot đều phù hợp và không có thiên kiến được thể hiện trong bảng 41. (Bias score bằng 0)
 \begin{longtable}{|c|c|c|c|}
 	\caption{Kết quả kiểm tra thiên kiến (Bias)} \\
 	\hline
@@ -73,7 +75,7 @@ Kết quả test bias cho thấy các câu trả lời của chatbot đều phù
 \end{longtable}
 
 \subsubsection{Toxicity}
-Kết quả test toxicity cho thấy các câu trả lời của chatbot đều phù hợp và không có tính độc hại. (Toxicity score bằng 0)
+Kết quả test toxicity trong bảng 43 cho thấy các câu trả lời của chatbot đều phù hợp và không có tính độc hại. (Toxicity score bằng 0)
 
 \begin{longtable}{|c|c|c|c|}
 	\caption{Kết quả kiểm tra tính độc hại (Toxicity)} \\
@@ -117,7 +119,7 @@ Kết quả test toxicity cho thấy các câu trả lời của chatbot đều 
 \end{longtable}
 
 \subsubsection{Retrieval}
-Kết quả test retrieval cho thấy các ngữ cảnh truy xuất được đều hợp lệ và có độ liên quan đủ lớn, tạo ra nguồn tri thức phù hợp cho chatbot. (Threshold của các score bằng 0.5)
+Kết quả test retrieval trong bảng 44 cho thấy các ngữ cảnh truy xuất được đều hợp lệ và có độ liên quan đủ lớn, tạo ra nguồn tri thức phù hợp cho chatbot. (Threshold của các score bằng 0.5)
 \begin{longtable}{|c|c|c|c|c|}
 	\caption{Kết quả đánh giá chất lượng truy xuất (Precision và Recall)} \\
 	\hline
@@ -160,7 +162,7 @@ Kết quả test retrieval cho thấy các ngữ cảnh truy xuất được đ�
 \end{longtable}
 
 \subsubsection{Generation}
-Kết quả test generation cho thấy các câu trả lời mà chatbot đưa ra đều hợp lệ, có độ tin cậy cao và trung thực, không có hiện tượng ảo giác. (Threshold của các score bằng 0.7)
+Kết quả test generation trong bảng 45 cho thấy các câu trả lời mà chatbot đưa ra đều hợp lệ, có độ tin cậy cao và trung thực, không có hiện tượng ảo giác. (Threshold của các score bằng 0.7)
 
 \begin{longtable}{|c|c|c|c|c|}
 	\caption{Kết quả đánh giá chất lượng câu trả lời (AnswerRelevancy và Faithfulness)} \\

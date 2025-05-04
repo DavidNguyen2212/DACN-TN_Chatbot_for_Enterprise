@@ -1,12 +1,6 @@
 \subsubsection{Quản lý tài khoản}
 \subsubsubsection{Đăng ký}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Signup.png}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Đăng ký}
-	\label{fig:enter-label}
-\end{figure}
+Hình 37 biểu diễn biểu đồ tuần tự cho tính năng Đăng ký.
 
 \textbf{Mô tả}: Biểu đồ tuần tự Đăng ký mô tả sự tương tác giữa các thực thể sau:
 \begin{itemize}
@@ -43,15 +37,16 @@ Các bước trong quá trình tương tác như sau:
     \item[6.] Giao diện nhận thông báo thành công và chuyển hướng người dùng đến trang chính theo vai trò.
 \end{enumerate}
 
-
-\subsubsubsection{Đăng nhập}
 \begin{figure}[H]
 	\centering
-	\includesvg[width=0.6\textwidth]{Dg_Sequence/Sequence Diagram-Login.svg}
+	\includegraphics[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Signup.png}
 	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Đăng nhập}
+	\caption{Biểu đồ sequence cho Đăng ký}
 	\label{fig:enter-label}
 \end{figure}
+
+\subsubsubsection{Đăng nhập}
+Hình 38 biểu diễn biểu đồ tuần tự cho tính năng Đăng nhập.
 
 \textbf{Mô tả}: Biểu đồ tuần tự Đăng nhập mô tả sự tương tác giữa các thực thể sau:
 \begin{itemize}
@@ -89,15 +84,19 @@ Các bước trong quá trình tương tác như sau:
 	% \end{enumerate}
 \end{enumerate}
 
-
-\subsubsubsection{Chỉnh sửa hồ sơ cá nhân}
 \begin{figure}[H]
 	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Profile.svg}
+	\includesvg[width=0.6\textwidth]{Dg_Sequence/Sequence Diagram-Login.svg}
 	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Chỉnh sửa hồ sơ cá nhân}
+	\caption{Biểu đồ sequence cho Đăng nhập}
 	\label{fig:enter-label}
 \end{figure}
+
+
+
+
+\subsubsubsection{Chỉnh sửa hồ sơ cá nhân}
+Hình 39 biểu diễn biểu đồ tuần tự cho tính năng Chỉnh sửa hồ sơ cá nhân.
 
 \textbf{Mô tả}: Biểu đồ tuần tự Chỉnh sửa hồ sơ cá nhân mô tả sự tương tác giữa các thực thể sau:
 \begin{itemize}
@@ -129,31 +128,19 @@ Các bước trong quá trình tương tác như sau:
 	\end{enumerate}
 \end{enumerate}
 
+\begin{figure}[H]
+	\centering
+	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Profile.svg}
+	\vspace{0.5cm}
+	\caption{Biểu đồ sequence cho Chỉnh sửa hồ sơ cá nhân}
+	\label{fig:enter-label}
+\end{figure}
+
+
+
 \subsubsection{Đào tạo và tùy chỉnh chatbot}
 \subsubsubsection{Đào tạo chatbot}
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/daotao.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Đào tạo chatbot}
-	\label{fig:enter-label}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/xoatrithuc.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Xóa tri thức}
-	\label{fig:enter-label}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includesvg[width=1\textwidth]{Dg_Sequence/themtrithuc.svg}
-	\vspace{0.5cm}
-	\caption{Biểu đồ sequence cho Thêm tri thức}
-	\label{fig:enter-label}
-\end{figure}
+Hình 40, 41 và 42 biểu diễn biểu đồ tuần tự cho tính năng Đào tạo chatbot.
 
 \textbf{Mô tả}: Biểu đồ tuần tự Đào tạo chatbot mô tả sự tương tác giữa các thực thể sau:
 \begin{itemize}
@@ -178,6 +165,67 @@ Các bước trong quá trình tương tác như sau:
 	\end{itemize}
 	\item Sau khi hoàn thành quá trình chỉnh sửa, người dùng chọn Lưu và đào tạo. Trước hết, nếu tồn tại tri thức bị xóa tạm thời, hệ thống gọi permanentDelete(ids) để xóa các tri thức. Nếu tồn tại sự thay đổi độ ưu tiên, hệ thống gọi changePriority(ids, priorities) để đổi độ ưu tiên mới, sau đó hệ thống sẽ gọi hàm train() để bắt đầu đào tạo và pendingTrain() để đặt trạng thái chờ. Khi xong, hệ thống trả về thông báo thành công.
 \end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includesvg[width=1\textwidth]{Dg_Sequence/daotao.svg}
+	\vspace{0.5cm}
+	\caption{Biểu đồ sequence cho Đào tạo chatbot}
+	\label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includesvg[width=1\textwidth]{Dg_Sequence/xoatrithuc.svg}
+	\vspace{0.5cm}
+	\caption{Biểu đồ sequence cho Xóa tri thức}
+	\label{fig:enter-label}
+\end{figure}
+
+\subsubsubsection{Tùy chỉnh chatbot}
+Hình 43 biểu diễn biểu đồ tuần tự cho tính năng Tùy chỉnh chatbot.
+
+\textbf{Mô tả}: Biểu đồ tuần tự Tùy chỉnh chatbot mô tả sự tương tác giữa các thực thể sau:
+\begin{itemize}
+	\item Actor: Nhân viên quản lý (chủ sở hữu/quản trị viên).
+	\item Giao diện trang web (trang tùy chỉnh chatbot).
+	\item Hệ thống.
+	\item Thiết bị.
+\end{itemize}
+Các bước trong quá trình tương tác như sau: 
+
+\begin{enumerate}
+	\item Đầu tiên quản trị viên vào mục Tùy chỉnh chatbot. Khi đó hệ thống sẽ gọi hàm getConfigs() để lấy cấu hình hiện tại và trả về cho giao diện. 
+	\item Tiếp theo người dùng có 2 lựa chọn:
+	\begin{itemize}
+		\item Chỉnh sửa giao diện: Người dùng có thể thực hiện các lựa chọn sau nhiều lần.
+		\begin{itemize}
+			\item Đổi ảnh: Người dùng chọn tải file, hệ thống gọi displayFile() và các về các files hợp lệ. Người dùng chọn file, hệ thống gọi selectFile(file) và trả về file được chọn lên giao diện.
+			\item Đổi thông tin: Người dùng thay đổi thông tin của một thành phần giao diện onChange(value).
+		\end{itemize}
+		Tiếp đến nếu không chỉnh sửa gì thêm, người dùng có thể xem trước giao diện, hệ thống gọi preview(configs) với configs là cấu hình đã sửa và trả về previewInterface.
+
+		Cuối cùng người dùng có 2 lựa chọn:
+		\begin{itemize}
+			\item Lưu: chọn Lưu, hệ thống save(configs) và trả về thông báo thành công.
+			\item Hủy: chọn Hủy, giao diện gọi reset() để khôi phục lại cấu hình hiện tại.
+		\end{itemize}
+		\item Chỉnh sửa phong cách: Người dùng tiếp tục có 2 lựa chọn:
+		\begin{itemize}
+			\item Tông giọng: Người dùng thay đổi tông giọng, hệ thống gọi change(tone) và trả về thông báo thành công.
+			\item Tin nhắn mặc định: Người dùng chọn loại tin nhắn và điền nội dung. Nếu người dùng chọn Lưu, hệ thống gọi change(type, message) (với type là loại tin nhắn, message là nội dung mới) và trả về thông báo thành công. Nếu hủy, giao diện reset() để khôi phục lại giá trị hiện tại.
+		\end{itemize}
+	\end{itemize}
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includesvg[width=1\textwidth]{Dg_Sequence/themtrithuc.svg}
+	\vspace{0.5cm}
+	\caption{Biểu đồ sequence cho Thêm tri thức}
+	\label{fig:enter-label}
+\end{figure}
+
 
 
 % \subsubsubsection{Tải dữ liệu tri thức}
@@ -367,7 +415,8 @@ Các bước trong quá trình tương tác như sau:
 % 	\item Kết quả được trả về tiếp tục cho giao diện web, đồng thời khóa nút "So sánh chatbot" (disableButton(previewBtn))
 %  \end{enumerate}
 
-\subsubsubsection{Tùy chỉnh chatbot}
+
+
 \begin{figure}[H]
 	\centering
 	\includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-AdjustBot.svg}
@@ -375,48 +424,12 @@ Các bước trong quá trình tương tác như sau:
 	\caption{Biểu đồ sequence cho Tùy chỉnh chatbot}
 	\label{fig:enter-label}
 \end{figure}
-\textbf{Mô tả}: Biểu đồ tuần tự Tùy chỉnh chatbot mô tả sự tương tác giữa các thực thể sau:
-\begin{itemize}
-	\item Actor: Nhân viên quản lý (chủ sở hữu/quản trị viên).
-	\item Giao diện trang web (trang tùy chỉnh chatbot).
-	\item Hệ thống.
-	\item Thiết bị.
-\end{itemize}
-Các bước trong quá trình tương tác như sau: 
 
-\begin{enumerate}
-	\item Đầu tiên quản trị viên vào mục Tùy chỉnh chatbot. Khi đó hệ thống sẽ gọi hàm getConfigs() để lấy cấu hình hiện tại và trả về cho giao diện. 
-	\item Tiếp theo người dùng có 2 lựa chọn:
-	\begin{itemize}
-		\item Chỉnh sửa giao diện: Người dùng có thể thực hiện các lựa chọn sau nhiều lần.
-		\begin{itemize}
-			\item Đổi ảnh: Người dùng chọn tải file, hệ thống gọi displayFile() và các về các files hợp lệ. Người dùng chọn file, hệ thống gọi selectFile(file) và trả về file được chọn lên giao diện.
-			\item Đổi thông tin: Người dùng thay đổi thông tin của một thành phần giao diện onChange(value).
-		\end{itemize}
-		Tiếp đến nếu không chỉnh sửa gì thêm, người dùng có thể xem trước giao diện, hệ thống gọi preview(configs) với configs là cấu hình đã sửa và trả về previewInterface.
-
-		Cuối cùng người dùng có 2 lựa chọn:
-		\begin{itemize}
-			\item Lưu: chọn Lưu, hệ thống save(configs) và trả về thông báo thành công.
-			\item Hủy: chọn Hủy, giao diện gọi reset() để khôi phục lại cấu hình hiện tại.
-		\end{itemize}
-		\item Chỉnh sửa phong cách: Người dùng tiếp tục có 2 lựa chọn:
-		\begin{itemize}
-			\item Tông giọng: Người dùng thay đổi tông giọng, hệ thống gọi change(tone) và trả về thông báo thành công.
-			\item Tin nhắn mặc định: Người dùng chọn loại tin nhắn và điền nội dung. Nếu người dùng chọn Lưu, hệ thống gọi change(type, message) (với type là loại tin nhắn, message là nội dung mới) và trả về thông báo thành công. Nếu hủy, giao diện reset() để khôi phục lại giá trị hiện tại.
-		\end{itemize}
-	\end{itemize}
-\end{enumerate}
 
 \subsubsection{Quản lý chatbot}
 \subsubsubsection{Báo cáo}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Report.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Báo cáo}
-    \label{fig:enter-label}
-\end{figure}
+Hình 44 biểu diễn biểu đồ tuần tự cho tính năng Báo cáo.
+
 \textbf{Mô tả: }
 \begin{itemize}
 	\item Quản trị viên doanh nghiệp mở trang Báo cáo qua hàm onOpen(report).
@@ -428,14 +441,18 @@ Các bước trong quá trình tương tác như sau:
 		\item Xuất: quản trị viên click nút Xuất với onClickExportButton(), trang Báo cáo gọi hàm getFileTypes() và hiển thị các loại file, quản trị viên tiếp tục chọn loại file với onClickFileType(type) có biến type được truyền vào, hệ thống gọi hàm downloadFile(type) lên thiết bị để file được tải xuống thiết bị, khi thành công thiết bị trả tin nhắn thành công lại trang báo cáo.
 	\end{itemize}
 \end{itemize}
-\subsubsubsection{Lịch sử hội thoại}
+
 \begin{figure}[H]
     \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Chat.svg}
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Report.svg}
     \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Lịch sử hội thoại}
+    \caption{Biểu đồ sequence cho Báo cáo}
     \label{fig:enter-label}
 \end{figure}
+
+\subsubsubsection{Lịch sử hội thoại}
+Hình 45 biểu diễn biểu đồ tuần tự cho tính năng Lịch sử hội thoại.
+
 \textbf{Mô tả: }
 \begin{itemize}
 	\item Nhân viên doanh nghiệp mở trang Hội thoại qua hàm onOpen(chat).
@@ -451,14 +468,18 @@ Các bước trong quá trình tương tác như sau:
 	\item Trang Hội thoại gọi hàm getChat(id) đến hệ thống với biến id truyền vào.
 	\item Hệ thống trả lại chat tương ứng.
 \end{itemize}
-\subsubsection{Quản lý thanh toán}
+
 \begin{figure}[H]
     \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Payment.svg}
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-Chat.svg}
     \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Quản lý thanh toán}
+    \caption{Biểu đồ sequence cho Lịch sử hội thoại}
     \label{fig:enter-label}
 \end{figure}
+
+\subsubsection{Quản lý thanh toán}
+Hình 46 biểu diễn biểu đồ tuần tự cho tính năng Quản lý thanh toán.
+
 \textbf{Mô tả: }
 \begin{itemize}
 	\item Người dùng điều hướng đến trang thanh toán.
@@ -474,15 +495,19 @@ Các bước trong quá trình tương tác như sau:
 		\item Hủy: Người dùng hủy thanh toán, hệ thống gọi hàm cancel() và trả về thông báo hủy thành công.
 	\end{itemize}
 \end{itemize}
-\subsubsection{Tương tác với chatbot}
-\subsubsubsection{Phản hồi tin nhắn khách hàng}
+
 \begin{figure}[H]
     \centering
-     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-ReplyCustomerMessage.svg}
+     \includesvg[width=1\textwidth]{Dg_Sequence/Payment.svg}
     \vspace{0.5cm}
-    \caption{Biểu đồ sequence cho Phản hồi tin nhắn khách hàng}
+    \caption{Biểu đồ sequence cho Quản lý thanh toán}
     \label{fig:enter-label}
 \end{figure}
+
+\subsubsection{Tương tác với chatbot}
+\subsubsubsection{Phản hồi tin nhắn khách hàng}
+Hình 47 biểu diễn biểu đồ tuần tự cho tính năng Phản hồi tin nhắn khách hàng.
+
 \textbf{Mô tả: }
 \begin{itemize}
 	\item Nhân viên CSKH chọn xem 1 cuộc hội thoại với onClickChatItem(id).
@@ -491,7 +516,18 @@ Các bước trong quá trình tương tác như sau:
 	\item Có một vòng lặp với điều kiện nhân viên CSKH tiếp tục quá trình nhập tin nhắn: nhân viên CSKH click vào khung tin nhắn với onClickMessageBox(), tiếp tục nhập nội dung tin nhắn với enter(messageInput) có biến messageInput truyền vào.
 	\item Có một tùy chọn với điều kiện tin nhắn tồn tại: nhân viên CSKH click Gửi với onClickSendButton(), trang Hội thoại gọi hàm sendMessage() đến hệ thống, hệ thống trả lại tin nhắn sentMessage tương ứng.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-ReplyCustomerMessage.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ sequence cho Phản hồi tin nhắn khách hàng}
+    \label{fig:enter-label}
+\end{figure}
+
 \subsubsubsection{Gửi tin nhắn}
+Hình 48 biểu diễn biểu đồ tuần tự cho tính năng Gửi tin nhắn.
+
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-SendMessage.svg}
@@ -499,6 +535,8 @@ Các bước trong quá trình tương tác như sau:
     \caption{Biểu đồ sequence cho Gửi tin nhắn}
     \label{fig:enter-label}
 \end{figure}
+
+
 \textbf{Mô tả: }
 \begin{itemize}
 	\item Khách hàng click vào nút Chatbot với onOpenChatbotPopup().
@@ -507,7 +545,12 @@ Các bước trong quá trình tương tác như sau:
 	\item Có một vòng lặp với điều kiện khách hàng tiếp tục quá trình nhập tin nhắn: khách hàng click vào khung tin nhắn với onClickMessageBox(), tiếp tục nhập nội dung tin nhắn với enter(messageInput) có biến messageInput truyền vào.
 	\item Có một tùy chọn với điều kiện tin nhắn tồn tại: khách hàng click Gửi với onClickSendButton(), giao diện gọi hàm sendMessage() đến hệ thống, hệ thống trả lại tin nhắn sentMessage tương ứng, hệ thống tự gọi hàm createAutoReplyMessage() để tạo tin nhắn tự động từ hệ thống chatbot, hệ thống trả lại giao diện autoReplyMessage.
 \end{itemize}
+
+
+
 \subsubsubsection{Yêu cầu hỗ trợ}
+Hình 49 biểu diễn biểu đồ tuần tự cho tính năng Yêu cầu hỗ trợ.
+
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Sequence/Sequence Diagram-NeedSupport.svg}

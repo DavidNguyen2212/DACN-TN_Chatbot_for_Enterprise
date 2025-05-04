@@ -3,7 +3,7 @@ Trong quá trình phát triển hệ thống tạo chatbot chăm sóc khách hà
 
 Để lưu trữ và quản lý mã nguồn từ xa, nhóm lựa chọn GitHub - một nền tảng lưu trữ mã nguồn trực tuyến dựa trên Git. GitHub hỗ trợ nhiều tính năng hữu ích cho phát triển cộng tác như pull request, issue tracking, CI/CD tích hợp, và khả năng quản lý phân quyền truy cập theo từng repository.
 
-Để tổ chức cấu trúc mã nguồn một cách rõ ràng và dễ quản lý, nhóm đã tạo một GitHub Organization với tên là CoolChat. Trong đó, mã nguồn của hệ thống được chia thành ba repository riêng biệt tương ứng với từng thành phần chức năng:
+Để tổ chức cấu trúc mã nguồn một cách rõ ràng và dễ quản lý, nhóm đã tạo một GitHub Organization với tên là CoolChat như hình 67. Trong đó, mã nguồn của hệ thống được chia thành ba repository riêng biệt tương ứng với từng thành phần chức năng:
 \begin{itemize}
     \item CoolChat-FE: chứa mã nguồn frontend, được phát triển bằng React và Vite.
     \item CoolChat-BE: chứa mã nguồn backend, được xây dựng bằng Django REST Framework.
@@ -20,7 +20,7 @@ Trong quá trình phát triển hệ thống tạo chatbot chăm sóc khách hà
 Cấu trúc tổ chức này giúp nhóm phân tách rõ ràng trách nhiệm phát triển, triển khai và bảo trì các thành phần hệ thống, đồng thời thuận tiện cho việc phân quyền truy cập, kiểm soát phiên bản và triển khai CI/CD độc lập cho từng phần.
 \subsubsection{Cấu trúc mã nguồn}
 \subsubsubsection{Frontend}
-Cấu trúc mã nguồn Frontend như sau:
+Cấu trúc mã nguồn Frontend được thể hiện ở hình 68 gồm các thư mục và file như sau:
 \begin{itemize}
     \item Các thư mục
     \begin{itemize}
@@ -65,7 +65,7 @@ Cấu trúc mã nguồn Frontend như sau:
 \subsubsubsection{Backend}
 Phần mã nguồn backend của hệ thống, được lưu trữ trong repository \texttt{CoolChat-BE}, được phát triển dựa trên framework Django, một framework web Python mạnh mẽ và phổ biến, cùng với Django REST Framework để xây dựng các API hiệu quả. Cấu trúc dự án được tổ chức theo mô hình "app-per-feature", giúp tăng tính module hoá, dễ quản lý và bảo trì.
 
-Cấu trúc thư mục chính của dự án backend (\texttt{coolchat\_be/}) bao gồm các ứng dụng (apps) Django riêng biệt, mỗi ứng dụng đảm nhiệm một nhóm chức năng cụ thể:
+Cấu trúc thư mục chính của dự án backend (\texttt{coolchat\_be/}) bao gồm các ứng dụng (apps) Django riêng biệt như hình 69, mỗi ứng dụng đảm nhiệm một nhóm chức năng cụ thể:
 \begin{itemize}
     \item \texttt{authentication/}: Chịu trách nhiệm xử lý các quy trình liên quan đến xác thực và phân quyền người dùng (ví dụ: đăng nhập, đăng ký, quản lý token).
     \item \texttt{users/}: Quản lý thông tin chi tiết của người dùng trong hệ thống.
@@ -105,7 +105,7 @@ Bên cạnh các ứng dụng chức năng, cấu trúc dự án còn bao gồm 
 Ngoài ra, dự án còn có thư mục \texttt{widget/}, chứa mã nguồn cho thành phần widget trò chuyện có thể nhúng trực tiếp vào trang web của khách hàng. Mặc dù được đặt trong repository backend, cấu trúc bên trong của nó (\texttt{src/}, \texttt{components/}, \texttt{styles/}, \texttt{utils/}) gợi ý đây có thể là một ứng dụng frontend độc lập (ví dụ: xây dựng bằng JavaScript thuần hoặc một thư viện/framework nhẹ) được phát triển và đóng gói riêng biệt để dễ dàng tích hợp.
 
 \subsubsubsection{AI}
-Cấu trúc mã nguồn của dịch vụ AI như sau:
+Cấu trúc mã nguồn của dịch vụ AI được thể hiện ở hình 70 gồm các thư mục, các module và file như sau:
 \begin{itemize}
 	\item Các thư mục
 	\begin{itemize}

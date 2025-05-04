@@ -1,3 +1,4 @@
+\newpage
 \section{Phân tích hệ thống}
 
 \subsection{Các bên liên quan (Stakeholders)}
@@ -236,12 +237,21 @@ Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyệ
     \item \textbf{Tính mô-đun:} Hệ thống phải được cấu trúc thành các mô-đun logic rõ ràng (ví dụ: quản lý tài khoản, quản lý tri thức, xử lý hội thoại, giao diện nhúng) với các giao diện được định nghĩa tốt giữa chúng để giảm thiểu sự phụ thuộc chéo.
     \item \textbf{Độ bao phủ kiểm thử:} Các unit test tự động phải đạt được độ bao phủ mã nguồn tối thiểu 70\% cho các mô-đun logic nghiệp vụ cốt lõi.
 \end{itemize}
-
 \subsubsection{Tính di động (Portability)}
 \begin{itemize}
     \item \textbf{Tương thích trình duyệt:} Giao diện quản trị và chatbot nhúng phải hiển thị và hoạt động chính xác trên các phiên bản ổn định mới nhất của Google Chrome, Mozilla Firefox, Apple Safari, và Microsoft Edge tại thời điểm kiểm thử cuối cùng.
     \item \textbf{Thiết kế responsive:} Giao diện quản trị và chatbot nhúng phải tự động điều chỉnh bố cục để có thể sử dụng được trên các kích thước màn hình từ 360px chiều rộng đến 1920px chiều rộng.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_UC/Usecase Diagram-General.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ use case tổng}
+    \label{fig:enter-label}
+\end{figure}
+
+
 
 \subsubsection{Yêu cầu Pháp lý và Đạo đức (Legal \& Ethical Requirements)}
 \begin{itemize}
