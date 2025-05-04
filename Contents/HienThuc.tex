@@ -543,27 +543,26 @@ Hình 61 bên dưới là logo của TailwindCSS.
 \end{enumerate}
 
 % --- PayOS ---
-\subsubsubsection{PayOS}
+\subsubsubsection{Celery}
 
 \begin{enumerate}[label=\arabic*., font=\bfseries]
     \item Giới thiệu
 
-    PayOS [14] là một nhà cung cấp dịch vụ cổng thanh toán tại Việt Nam, cung cấp giải pháp tích hợp đa dạng các phương thức thanh toán trực tuyến phổ biến trong nước vào các ứng dụng web và di động. Dịch vụ này tập trung vào việc đơn giản hóa quy trình tích hợp thanh toán cho các doanh nghiệp và nhà phát triển, hỗ trợ các phương thức như thẻ ATM nội địa, thẻ tín dụng quốc tế, và các ví điện tử thông dụng tại Việt Nam. Trong bối cảnh dự án chatbot này, PayOS được lựa chọn để xử lý các giao dịch tài chính liên quan, ví dụ như quản lý gói đăng ký dịch vụ hoặc các thanh toán phát sinh khác.
+    Celery [14] là một hệ thống hàng đợi tác vụ phân tán mã nguồn mở, dựa trên việc truyền thông điệp bất đồng bộ. Nó cho phép các ứng dụng thực thi các tác vụ bên ngoài luồng xử lý chính, thường là các tác vụ tốn thời gian hoặc cần được thực thi định kỳ. Celery được xây dựng bằng Python nhưng có thể giao tiếp qua các giao thức khác nhau, giúp tích hợp với các ngôn ngữ lập trình khác. Trong kiến trúc của hệ thống chatbot này, Celery được xem xét sử dụng để quản lý và thực thi các tác vụ nền như xử lý yêu cầu tới AI hay gửi email thông báo.
 
     \item Đặc điểm Công nghệ và Dịch vụ Nổi bật 
     \begin{itemize}
-        \item \textbf{API tích hợp linh hoạt:} Cung cấp bộ giao diện lập trình ứng dụng (API) và tài liệu kỹ thuật (documentation) cho phép lập trình viên tích hợp cổng thanh toán vào backend (ví dụ: Django) để khởi tạo giao dịch, xử lý kết quả thanh toán, và truy vấn lịch sử giao dịch.
-        \item \textbf{Quy trình thanh toán an toàn:} Tuân thủ các tiêu chuẩn bảo mật ngành thanh toán (ví dụ: PCI DSS), áp dụng các cơ chế mã hóa và xác thực để bảo vệ thông tin giao dịch nhạy cảm.
-        \item \textbf{Giao diện thanh toán tùy chỉnh:} Cung cấp tùy chọn hiển thị cổng thanh toán dưới dạng redirect sang trang của PayOS hoặc tích hợp trực tiếp trên website/ứng dụng của người bán.
-        \item \textbf{Dashboard quản lý giao dịch:} Cung cấp giao diện quản trị cho phép theo dõi, quản lý các giao dịch, đối soát và rút tiền.
+		\item \textbf{Thực thi tác vụ bất đồng bộ và định kỳ:} Cho phép định nghĩa các hàm Python dưới dạng các tác vụ và gọi chúng để thực thi bất đồng bộ. Celery cũng hỗ trợ lập lịch thực thi tác vụ theo thời gian định kỳ thông qua Celery Beat.
+        \item \textbf{Kiến trúc phân tán và khả năng mở rộng:} Hoạt động dựa trên mô hình producer-consumer với các thành phần chính: client (nơi gửi yêu cầu tác vụ), message broker (hàng đợi trung gian như RabbitMQ, Redis), và worker (tiến trình thực thi tác vụ). Kiến trúc này cho phép dễ dàng mở rộng số lượng worker để tăng khả năng xử lý.
+        \item \textbf{Độ tin cậy:} Hỗ trợ các cơ chế đảm bảo tác vụ được thực thi, bao gồm thử lại tự động khi có lỗi, giới hạn thời gian thực thi, và các chiến lược xử lý lỗi linh hoạt.
     \end{itemize}
 	
-    \item Cơ sở Lựa chọn (hoặc xem xét) PayOS cho Dự án
-    Việc tích hợp PayOS vào hệ thống chatbot được cân nhắc dựa trên các yếu tố sau:
+    \item Cơ sở lựa chọn Celery cho Dự án
+    Việc tích hợp Celery vào hệ thống chatbot được cân nhắc dựa trên các yếu tố sau:
     \begin{itemize}
-        \item \textbf{Phù hợp thị trường Việt Nam:} Cung cấp các phương thức thanh toán quen thuộc và được ưa chuộng bởi người dùng trong nước, tăng khả năng tiếp cận và tỷ lệ thành công của giao dịch.
-        \item \textbf{Đáp ứng nhu cầu chức năng:} Cung cấp các tính năng cần thiết cho việc xử lý thanh toán của dự án.
-        \item \textbf{Đơn giản hóa tích hợp:} Mục tiêu của các cổng thanh toán như PayOS là cung cấp API và quy trình tích hợp tương đối đơn giản, giúp giảm thời gian và độ phức tạp khi triển khai chức năng thanh toán.
+        \item \textbf{Cải thiện hiệu năng và trải nghiệm người dùng:} Giúp giải phóng luồng xử lý chính của ứng dụng chatbot khỏi các tác vụ nặng hoặc chậm, đảm bảo chatbot luôn phản hồi nhanh chóng các tương tác của người dùng.
+        \item \textbf{Đáp ứng nhu cầu xử lý nền:} Phù hợp để giải quyết các yêu cầu chức năng cần xử lý ngầm hoặc định kỳ trong hệ thống, ví dụ như gọi API bên ngoài có độ trễ cao, xử lý dữ liệu lớn, hoặc gửi thông báo hàng loạt.
+        \item \textbf{Hệ sinh thái:} Có sự tích hợp tốt với các framework web Python phổ biến (như Django, Flask), cộng đồng hỗ trợ lớn và tài liệu hướng dẫn phong phú, giúp việc triển khai và vận hành tương đối thuận lợi.
     \end{itemize}
 \end{enumerate}
 
@@ -828,14 +827,6 @@ Nhược điểm:
 	\item \textbf{Giới thiệu}
 	
 	MongoDB là một hệ quản trị cơ sở dữ liệu NoSQL mã nguồn mở, được phát triển bởi MongoDB Inc. Đây là một trong những cơ sở dữ liệu NoSQL phổ biến nhất hiện nay, cho phép lưu trữ dữ liệu dưới dạng tài liệu BSON (Binary JSON), giúp tăng tính linh hoạt và khả năng mở rộng của hệ thống.
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.3\linewidth]{Images/mongodb.png}
-		\vspace{0.5cm}
-		\caption{Logo MongoDB - Nguồn Internet}
-		\label{fig:mongodb-logo}
-	\end{figure}
 	
 	\item \textbf{Đặc điểm công nghệ}
 	

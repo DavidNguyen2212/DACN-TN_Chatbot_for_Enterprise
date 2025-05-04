@@ -1,7 +1,7 @@
 \newpage
 \section{Phân tích hệ thống}
 
-\subsection{Các bên liên quan (Stakeholders)}
+\subsection{Các bên liên quan}
 
 Phần này xác định các nhóm hoặc cá nhân có lợi ích hoặc chịu ảnh hưởng bởi dự án phát triển hệ thống chatbot AI. Nhu cầu và mức độ ảnh hưởng của mỗi bên liên quan được phân tích để định hướng quá trình phát triển và đảm bảo sự thành công của dự án.
 
@@ -29,7 +29,6 @@ Là các tổ chức hoặc cá nhân đăng ký sử dụng hệ thống để 
         \item Khả năng tùy chỉnh giao diện và hành vi của chatbot để phù hợp với nhận diện thương hiệu và quy trình nghiệp vụ của tổ chức.
         \item Hệ thống chatbot vận hành ổn định, đáng tin cậy và có hiệu năng cao để đảm bảo trải nghiệm tốt cho người dùng cuối và duy trì hoạt động kinh doanh.
         \item Đảm bảo an toàn, bảo mật dữ liệu và tuân thủ các quy định pháp lý liên quan về quyền riêng tư dữ liệu.
-        \item Kênh hỗ trợ kỹ thuật phản hồi nhanh chóng và tài liệu hướng dẫn sử dụng chi tiết, dễ hiểu để khai thác hiệu quả các tính năng của nền tảng.
         \item Chính sách giá cả minh bạch, hợp lý và các gói dịch vụ phù hợp với quy mô và nhu cầu sử dụng, giúp quản lý ngân sách hiệu quả.
         \item Khả năng quản lý tài khoản tổ chức, phân quyền và quản lý thành viên trong tổ chức.
     \end{itemize}
@@ -43,7 +42,7 @@ Là những người dùng được chủ tổ chức ủy quyền, chịu trác
 \begin{itemize}
     \item \textbf{Nhu cầu:}
     \begin{itemize}
-        \item Tương tự như chủ tổ chức về các khía cạnh vận hành: giao diện trực quan, hệ thống ổn định, khả năng tùy chỉnh chatbot, truy cập tài liệu và hỗ trợ kỹ thuật.
+        \item Tương tự như chủ tổ chức về các khía cạnh vận hành: giao diện trực quan, hệ thống ổn định, khả năng tùy chỉnh chatbot và truy cập tài liệu.
         \item Không yêu cầu quyền quản lý cấp cao nhất của tổ chức. Cần có cơ chế phân quyền rõ ràng.
     \end{itemize}
     \item \textbf{Ảnh hưởng:} Cao. Quản trị viên tổ chức là người dùng thường xuyên và trực tiếp tương tác với hệ thống để thực hiện các tác vụ vận hành quan trọng. Do đó, phản hồi của họ về tính dễ sử dụng, hiệu quả và các tính năng cụ thể có ảnh hưởng đáng kể đến việc cải thiện và tối ưu hóa hệ thống.
@@ -80,52 +79,6 @@ Là các cá nhân (khách hàng của các tổ chức sử dụng hệ thống
     \item \textbf{Ảnh hưởng:} Trung bình. Mặc dù không trực tiếp tham gia vào quá trình phát triển, hành vi sử dụng, mức độ hài lòng của người dùng cuối là thước đo quan trọng về hiệu quả của chatbot. Dữ liệu tương tác của họ là nguồn thông tin giá trị để cải tiến hệ thống và huấn luyện mô hình AI. Sự hài lòng của người dùng cuối ảnh hưởng gián tiếp đến giá trị mà hệ thống mang lại cho khách hàng tổ chức.
 \end{itemize}
 
-
-\subsection{User Stories}
-
-Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyện người dùng, mô tả cách các vai trò người dùng khác nhau tương tác với hệ thống để đạt được mục tiêu cụ thể. Mỗi câu chuyện theo cấu trúc: "Là [vai trò], tôi muốn [thực hiện hành động/có tính năng], để [đạt được giá trị/lợi ích]".
-
-\subsubsection{Chủ sở hữu tổ chức}
-\begin{itemize}
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} thực hiện quy trình đăng ký tài khoản và đăng nhập an toàn, có xác minh qua email và cơ chế xác thực mạnh, \textbf{để} bảo vệ tài khoản và dữ liệu của tổ chức khỏi truy cập trái phép.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} quản lý và cập nhật thông tin hồ sơ của tổ chức (tên, logo, thông tin liên hệ), \textbf{để} duy trì thông tin định danh chính xác và nhất quán với thương hiệu trên hệ thống.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} quản lý thành viên trong tổ chức (thêm, xóa, phân quyền), \textbf{để} phân công vai trò và quản lý quyền truy cập cho các thành viên sẽ hỗ trợ quản lý chatbot và tương tác với khách hàng.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} tải lên, quản lý và phân loại các nguồn tri thức, \textbf{để} xây dựng, cập nhật và quản lý hiệu quả cơ sở tri thức cho chatbot.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} tùy chỉnh giao diện, lời chào và giọng điệu phản hồi của chatbot, \textbf{để} phù hợp với nhận diện thương hiệu của tổ chức và tối ưu hóa trải nghiệm người dùng cuối.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} kích hoạt quá trình huấn luyện lại mô hình AI của chatbot với dữ liệu mới, \textbf{để} chatbot được cập nhật kiến thức và cải thiện khả năng phản hồi dựa trên cơ sở tri thức mới nhất.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} dễ dàng nhúng chatbot vào trang web của tổ chức thông qua đoạn mã JavaScript được cung cấp, \textbf{để} nhanh chóng triển khai chatbot trên trang web mà không làm ảnh hưởng tiêu cực đến hiệu năng tải trang.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} truy cập bảng điều khiển hiển thị các số liệu thống kê sử dụng chatbot theo thời gian thực và tạo các báo cáo phân tích chi tiết, \textbf{để} theo dõi hiệu quả hoạt động của chatbot, đánh giá mức độ tương tác của người dùng và đưa ra quyết định cải thiện dịch vụ.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} quản lý gói dịch vụ, xem lịch sử thanh toán và theo dõi mức sử dụng tài nguyên, \textbf{để} quản lý hiệu quả chi phí sử dụng dịch vụ.
-    \item \textbf{Là} chủ sở hữu tổ chức, \textbf{tôi muốn} cấu hình giới hạn số lượng truy vấn hoặc tương tác từ người dùng cuối, \textbf{để} bảo vệ tài nguyên hệ thống.
-\end{itemize}
-
-\subsubsection{Quản trị viên tổ chức}
-\begin{itemize}
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} thực hiện quy trình đăng ký tài khoản và đăng nhập an toàn, có xác minh qua email, \textbf{để} bảo vệ quyền truy cập vào hệ thống quản lý của tổ chức.
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} tải lên, quản lý và phân loại các nguồn tri thức, \textbf{để} hỗ trợ xây dựng và duy trì cơ sở tri thức cho chatbot của tổ chức.
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} tùy chỉnh giao diện, lời chào và giọng điệu phản hồi của chatbot, \textbf{để} đảm bảo chatbot phù hợp với các yêu cầu và thay đổi từ phía tổ chức.
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} kích hoạt quá trình huấn luyện lại mô hình AI của chatbot, \textbf{để} cập nhật kiến thức cho chatbot theo yêu cầu của tổ chức.
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} lấy mã nhúng JavaScript, \textbf{để} hỗ trợ bộ phận kỹ thuật của tổ chức trong việc triển khai hoặc cập nhật chatbot trên trang web.
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} truy cập bảng điều khiển và xem các báo cáo phân tích, \textbf{để} theo dõi hiệu quả hoạt động của chatbot và báo cáo cho chủ sở hữu tổ chức.
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} xem thông tin gói dịch vụ đang sử dụng và theo dõi mức sử dụng tài nguyên, \textbf{để} nắm bắt tình hình sử dụng và hỗ trợ chủ sở hữu tổ chức trong việc quản lý chi phí.
-    \item \textbf{Là} quản trị viên tổ chức, \textbf{tôi muốn} cấu hình giới hạn số lượng truy vấn hoặc tương tác từ người dùng cuối, \textbf{để} bảo vệ tài nguyên hệ thống.
-\end{itemize}
-
-\subsubsection{Nhân viên hỗ trợ khách hàng}
-\begin{itemize}
-    \item \textbf{Là} nhân viên hỗ trợ khách hàng, \textbf{tôi muốn} nhận thông báo và tiếp nhận các cuộc hội thoại được chuyển giao từ chatbot một cách liền mạch, với đầy đủ ngữ cảnh và lịch sử trò chuyện trước đó, \textbf{để} cung cấp hỗ trợ hiệu quả cho người dùng cuối đối với các yêu cầu phức tạp hoặc ngoài khả năng xử lý của chatbot.
-    \item \textbf{Là} nhân viên hỗ trợ khách hàng, \textbf{tôi muốn} có giao diện làm việc hiệu quả để tương tác với người dùng cuối theo thời gian thực, \textbf{để} giải quyết vấn đề của họ một cách kịp thời.
-    \item \textbf{Là} nhân viên hỗ trợ khách hàng, \textbf{tôi muốn} truy cập và tìm kiếm lịch sử các cuộc hội thoại đã xử lý, \textbf{để} tham khảo thông tin, phân tích các trường hợp hỗ trợ trước đây và cải thiện chất lượng dịch vụ.
-\end{itemize}
-
-\subsubsection{Người dùng cuối (khách hàng của tổ chức)}
-\begin{itemize}
-    \item \textbf{Là} người dùng cuối, \textbf{tôi muốn} tương tác với chatbot bằng tiếng Việt một cách tự nhiên, với khả năng chatbot duy trì ngữ cảnh và hiểu đúng ý định truy vấn, \textbf{để} có được trải nghiệm trò chuyện hiệu quả và nhận được thông tin hoặc hỗ trợ liên quan.
-    \item \textbf{Là} người dùng cuối, \textbf{tôi muốn} nhận được phản hồi nhanh chóng và chính xác từ chatbot cho các câu hỏi của mình \textbf{để} nhanh chóng nhận được thông tin cần thiết hoặc giải quyết được vấn đề cơ bản.
-    \item \textbf{Là} người dùng cuối, \textbf{tôi muốn} có tùy chọn yêu cầu hoặc được tự động chuyển giao đến nhân viên hỗ trợ khi chatbot không thể giải quyết yêu cầu hoặc khi tôi mong muốn được nói chuyện với người, \textbf{để} đảm bảo vấn đề của tôi được giải quyết một cách triệt để bởi người có chuyên môn.
-\end{itemize}
-
-
 \subsection{Yêu cầu chức năng}
 
 \subsubsection{Đăng ký và xác thực}
@@ -133,6 +86,7 @@ Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyệ
     \item Hệ thống phải cung cấp chức năng đăng ký tài khoản mới cho tổ chức, bao gồm bước xác thực địa chỉ email.
     \item Hệ thống phải cho phép người dùng đăng nhập bằng email và mật khẩu đã đăng ký.
     \item Hệ thống phải cung cấp chức năng đặt lại mật khẩu, trong đó người dùng nhận được một liên kết qua email có giới hạn thời gian hiệu lực.
+    \item Hệ thống phải cung cấp quy trình cho người dùng được mời qua email để chấp nhận lời mời, thiết lập mật khẩu và kích hoạt tài khoản thành viên của họ trong tổ chức.
 \end{itemize}
 
 \subsubsection{Quản lý tài khoản tổ chức}
@@ -166,15 +120,23 @@ Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyệ
     \item Hệ thống phải cung cấp giao diện quản lý cho phép người dùng quản trị thực hiện các thao tác trên cơ sở tri thức, bao gồm: thêm, chỉnh sửa và xóa tri thức.
     \item Giao diện quản lý cơ sở tri thức phải hỗ trợ chức năng tìm kiếm và lọc các đơn vị tri thức dựa trên các tiêu chí như: tên, loại hình, và mức độ ưu tiên.
     \item Hệ thống phải cho phép người dùng quản trị tải về các tệp tài liệu đã được tải lên hệ thống trước đó.
-    \item Hệ thống phải đảm bảo rằng chỉ có một tiến trình huấn luyện được thực thi đồng thời cho mỗi tổ chức tại một thời điểm.
+    \item Hệ thống phải cung cấp giao diện cho phép người dùng quản trị kích hoạt quá trình huấn luyện chatbot dựa trên cơ sở tri thức hiện có và đảm bảo rằng chỉ có một tiến trình huấn luyện được thực thi đồng thời cho mỗi tổ chức tại một thời điểm.
+\end{itemize}
+
+\subsubsection{Cửa sổ chatbot nhúng}
+\begin{itemize}
+    \item Cửa sổ chatbot phải có khả năng lưu trữ và hiển thị đầy đủ, liên tục lịch sử của toàn bộ cuộc hội thoại, bao gồm các tương tác với cả chatbot tự động và nhân viên hỗ trợ
+    \item Giao diện phải cho phép người dùng nhập và gửi tin nhắn văn bản tới chatbot hoặc nhân viên hỗ trợ
+    \item Giao diện phải cung cấp một cơ chế rõ ràng để người dùng có thể yêu cầu chuyển đổi phiên tương tác từ chatbot sang nhân viên hỗ trợ trực tiếp, hoặc ngược lại.
 \end{itemize}
 
 \subsubsection{Trò chuyện với nhân viên hỗ trợ trực tiếp}
 \begin{itemize}
     \item Hệ thống phải hỗ trợ chức năng chuyển giao liền mạch cuộc trò chuyện từ chatbot sang nhân viên hỗ trợ trực tuyến khi có yêu cầu từ người dùng.
+    \item Khi chuyển giao hội thoại từ chatbot sang nhân viên hỗ trợ, hệ thống phải đảm bảo cung cấp đầy đủ lịch sử trò chuyện trước đó của người dùng cuối với chatbot trong cùng phiên làm việc cho nhân viên tiếp nhận.
     \item Hệ thống phải cung cấp giao diện cho phép nhân viên hỗ trợ tiếp nhận, theo dõi và phản hồi các cuộc trò chuyện được phân công cho họ.
-    \item Hệ thống phải cung cấp cho quản trị viên tổ chức quyền truy cập để xem  lịch sử hoặc nội dung các cuộc hội thoại, bao gồm cả các tương tác với chatbot và các phiên hỗ trợ trực tiếp bởi nhân viên.
-    \item Hệ thống phải phân phối các yêu cầu hỗ trợ trực tiếp tới các nhân viên hỗ trợ một cách cân bằng.
+    \item Hệ thống phải cung cấp cho quản trị viên tổ chức quyền truy cập để xem lịch sử hoặc nội dung các cuộc hội thoại, bao gồm cả các tương tác với chatbot và các phiên hỗ trợ trực tiếp bởi nhân viên.
+    \item Hệ thống phải chuyển giao các cuộc hội thoại sao cho phân bổ đều khối lượng công việc giữa các nhân viên.
     \item Hệ thống phải cho phép nhân viên hỗ trợ hoặc quản trị viên tổ chức kết thúc các phiên trò chuyện, ví dụ như khi vấn đề đã được giải quyết hoặc theo yêu cầu quản trị.
 \end{itemize}
 
@@ -184,7 +146,7 @@ Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyệ
     \item Hệ thống phải cho phép quản trị viên tổ chức xuất dữ liệu thống kê chi tiết hoặc các báo cáo tổng hợp từ giao diện báo cáo.
 \end{itemize}
 
-\subsubsection{Quản lý Gói dịch vụ và Thanh toán}
+\subsubsection{Quản lý gói dịch vụ và thanh toán}
 \begin{itemize}
     \item Hệ thống phải cung cấp ít nhất 2 gói dịch vụ trả phí, mỗi gói có các tính năng và giới hạn sử dụng riêng biệt được mô tả chi tiết và rõ ràng.
     \item Ngoài các gói dịch vụ trả phí định kỳ, hệ thống cần hỗ trợ mô hình định giá theo mức sử dụng thực tế cho một số tài nguyên nhất định (ví dụ: dung lượng lưu trữ tài liệu, số lượng yêu cầu AI, số lượng tài khoản nhân viên hỗ trợ).
@@ -195,9 +157,10 @@ Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyệ
 
 
 \subsection{Yêu cầu phi chức năng}
+
 \subsubsection{Hiệu suất (Performance)}
 \begin{itemize}
-    \item \textbf{Thời gian phản hồi Chatbot:} Dưới điều kiện tải thông thường (10-20 người dùng đồng thời), 90\% phản hồi của chatbot đối với truy vấn người dùng phải được hoàn thành trong vòng 3 giây.
+    \item \textbf{Thời gian phản hồi chatbot:} Dưới điều kiện tải thông thường (10-20 người dùng đồng thời), 90\% phản hồi của chatbot đối với truy vấn người dùng phải được hoàn thành trong vòng 8 giây.
     \item \textbf{Thời gian xử lý tác vụ nền:} Thời gian trung bình để hệ thống trích xuất và xử lý nội dung từ một URL được cung cấp làm nguồn tri thức không được vượt quá 15 giây cho các trang web có kích thước thông thường (dưới 2MB HTML).
     \item \textbf{Khả năng chịu tải:} Hệ thống phải có khả năng xử lý đồng thời ít nhất 30 người dùng tương tác mà không làm tăng thời gian phản hồi trung bình của chatbot quá 50\% so với điều kiện tải thông thường.
     \item \textbf{Khả năng mở rộng:} Kiến trúc hệ thống phải được thiết kế sử dụng các thành phần có khả năng mở rộng theo chiều ngang để cho phép xử lý tải tăng lên trong tương lai bằng cách bổ sung tài nguyên máy chủ, thay vì yêu cầu thiết kế lại toàn bộ hệ thống.
@@ -240,7 +203,7 @@ Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyệ
 \subsubsection{Tính di động (Portability)}
 \begin{itemize}
     \item \textbf{Tương thích trình duyệt:} Giao diện quản trị và chatbot nhúng phải hiển thị và hoạt động chính xác trên các phiên bản ổn định mới nhất của Google Chrome, Mozilla Firefox, Apple Safari, và Microsoft Edge tại thời điểm kiểm thử cuối cùng.
-    \item \textbf{Thiết kế responsive:} Giao diện quản trị và chatbot nhúng phải tự động điều chỉnh bố cục để có thể sử dụng được trên các kích thước màn hình từ 360px chiều rộng đến 1920px chiều rộng.
+    \item \textbf{Thiết kế responsive:} Giao diện quản trị và giao diện chatbot nhúng phải tự động điều chỉnh bố cục để có thể sử dụng được trên các kích thước màn hình từ 360px chiều rộng đến 1920px chiều rộng.
 \end{itemize}
 
 \begin{figure}[H]
@@ -255,7 +218,7 @@ Phần này trình bày các yêu cầu chức năng dưới dạng câu chuyệ
 
 \subsubsection{Yêu cầu Pháp lý và Đạo đức (Legal \& Ethical Requirements)}
 \begin{itemize}
-    \item \textbf{Tuân thủ Quyền riêng tư:} Hệ thống phải tuân thủ các yêu cầu của Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân của Việt Nam. Điều này bao gồm việc cung cấp chính sách bảo mật rõ ràng, cơ chế lấy sự đồng ý của người dùng trước khi thu thập dữ liệu cá nhân, và quy trình xử lý yêu cầu của chủ thể dữ liệu trong vòng 30 ngày.
+    \item \textbf{Tuân thủ quyền riêng tư:} Hệ thống phải tuân thủ các yêu cầu của Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân của Việt Nam. Điều này bao gồm việc cung cấp chính sách bảo mật rõ ràng, cơ chế lấy sự đồng ý của người dùng trước khi thu thập dữ liệu cá nhân, và quy trình xử lý yêu cầu của chủ thể dữ liệu trong vòng 30 ngày.
     \item \textbf{Minh bạch AI:} Giao diện chatbot phải hiển thị rõ ràng cho người dùng rằng họ đang tương tác với một hệ thống trí tuệ nhân tạo chứ không phải con người, ví dụ thông qua một thông báo ban đầu hoặc nhãn hiệu cố định trong giao diện trò chuyện.
 \end{itemize}
 
