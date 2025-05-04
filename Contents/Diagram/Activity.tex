@@ -1,12 +1,6 @@
 \subsubsection{Quản lý tài khoản}
 \subsubsubsection{Đăng ký}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Dg_Activity/Activity Diagram-ManageAccount.png}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Đăng ký}
-    \label{fig:enter-label}
-\end{figure}
+Hình 25 biểu diễn biểu đồ hoạt động cho tính năng Đăng ký.
 
 \textbf{Mô tả}: Biểu đồ hoạt động Đăng ký gồm 2 swimlane: Người dùng và Hệ thống.
 
@@ -21,13 +15,7 @@ Khi chọn "Tham gia tổ chức", người dùng cần nhập mã mời và đi
 Khi hoàn tất quá trình đăng ký theo một trong hai luồng trên, người dùng sẽ được điều hướng đến trang chính với các chức năng tương ứng với vai trò được phân trong tổ chức.
 
 \subsubsubsection{Đăng nhập và quên mật khẩu}
-\begin{figure}[H]
-    \centering
-     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Login.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Đăng nhập và quên mật khẩu}
-    \label{fig:enter-label}
-\end{figure}
+Hình 26 biểu diễn biểu đồ hoạt động cho tính năng Đăng nhập và quên mật khẩu.
 
 \textbf{Mô tả}: Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
 
@@ -42,8 +30,25 @@ Khi hoàn tất quá trình đăng ký theo một trong hai luồng trên, ngư�
 
 Sau khi đăng nhập thành công, hệ thống sẽ lưu dữ liệu đăng nhập và chuyển nhân viên về trang chủ.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Dg_Activity/Activity Diagram-ManageAccount.png}
+    \vspace{0.5cm}
+    \caption{Biểu đồ activity cho Đăng ký}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Login.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ activity cho Đăng nhập và quên mật khẩu}
+    \label{fig:enter-label}
+\end{figure}
 
 \subsubsubsection{Chỉnh sửa hồ sơ cá nhân}
+Hình 27 biểu diễn biểu đồ hoạt động cho tính năng Chỉnh sửa hồ sơ cá nhân.
+
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-ManageProfile.svg}
@@ -65,6 +70,8 @@ Dù chỉnh sửa thông tin nào, sau khi thay đổi xong và nhấn lưu, h�
 
 \subsubsection{Đào tạo và tùy chỉnh chatbot}
 \subsubsubsection{Đào tạo chatbot}
+Hình 28 biểu diễn biểu đồ hoạt động cho tính năng Đào tạo chatbot.
+
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram - Remake-daotao.drawio.svg}
@@ -138,6 +145,8 @@ Sau đó người dùng có thể lặp lại các bước trên hoặc chọn L
 
 
 \subsubsubsection{Tùy chỉnh chatbot}
+Hình 29 biểu diễn biểu đồ hoạt động cho tính năng Tùy chỉnh chatbot.
+
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram - Remake-tuychinh.drawio.svg}
@@ -158,6 +167,8 @@ Nhân viên nhấn Lưu để hoàn tất chỉnh sửa hoặc Hủy để hủy
 
 
 \subsubsection{Tích hợp}
+Hình 30 biểu diễn biểu đồ hoạt động cho tính năng Tích hợp.
+
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Integration.drawio.svg}
@@ -169,9 +180,6 @@ Nhân viên nhấn Lưu để hoàn tất chỉnh sửa hoặc Hủy để hủy
 \textbf{Mô tả}: Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
 
 \par Quá trình tạo mã nhúng cho chatbot bắt đầu bằng việc người dùng điều hướng tới trang Tùy chỉnh chatbot. Sau khi truy cập thành công, hệ thống sẽ hiển thị giao diện Tùy chỉnh chatbot và cho phép xem trước giao diện chatbot để đảm bảo rằng thiết kế và các chức năng hoạt động như mong muốn trước khi triển khai. Khi đã hài lòng với bản xem trước, người dùng sẽ nhấn mở mục Tích hợp để hệ thống bắt đầu quá trình tạo mã nhúng. Sau khi hoàn thành, mã nhúng này sau đó sẽ được hiển thị trên giao diện người dùng, cho phép người dùng dễ dàng thao tác. Cuối cùng, người dùng chỉ cần sao chép mã nhúng và dán vào website doanh nghiệp của mình để hoàn tất quá trình tích hợp chatbot.
-
-\subsubsection{Quản lý chatbot}
-\subsubsubsection{Báo cáo}
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Report.svg}
@@ -179,6 +187,11 @@ Nhân viên nhấn Lưu để hoàn tất chỉnh sửa hoặc Hủy để hủy
     \caption{Biểu đồ activity cho Báo cáo}
     \label{fig:enter-label}
 \end{figure}
+
+\subsubsection{Quản lý chatbot}
+\subsubsubsection{Báo cáo}
+Hình 31 biểu diễn biểu đồ hoạt động cho tính năng Báo cáo.
+
 \textbf{Mô tả:}
 Biểu đồ hoạt động gồm 3 swimlane: Người dùng, hệ thống và thiết bị.
 
@@ -189,13 +202,16 @@ Ban đầu quản trị viên doanh nghiệp chọn vào nút "Báo cáo" trên 
     \item Nếu quản trị viên không chọn gì thì sẽ kết thúc.
 \end{itemize}
 \subsubsubsection{Lịch sử hội thoại}
+Hình 32 biểu diễn biểu đồ hoạt động cho tính năng Lịch sử hội thoại.
+
 \begin{figure}[H]
     \centering
-     \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Chat.svg}
+     \includesvg[width=0.9\textwidth]{Dg_Activity/Activity Diagram-Chat.svg}
     \vspace{0.5cm}
     \caption{Biểu đồ activity cho Lịch sử hội thoại}
     \label{fig:enter-label}
 \end{figure}
+
 \textbf{Mô tả:}
 Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
 
@@ -207,6 +223,7 @@ Ban đầu người dùng chọn vào nút "Chat" trên thanh điều hướng. 
 \end{itemize}
 
 Sau đó người dùng có thể lặp lại các bước trên hoặc chọn xem một cuộc hội thoại. Khi quản trị viên chọn xem một cuộc hội thoại thì hệ thống sẽ hiển thị chi tiết cuộc hội thoại đó.
+
 % \subsubsection{Thông báo và cảnh báo}
 % \begin{figure}[H]
 %     \centering
@@ -223,6 +240,7 @@ Sau đó người dùng có thể lặp lại các bước trên hoặc chọn x
 % Sau khi hoàn tất việc thiết lập các thông số trên, người dùng xác nhận các cài đặt. Hệ thống sẽ áp dụng các cài đặt đã được xác nhận, đảm bảo rằng các thông báo sẽ được gửi đi theo các tùy chọn và ngưỡng đã được thiết lập.
 
 \subsubsection{Quản lý thanh toán}
+Hình 33 biểu diễn biểu đồ hoạt động cho tính năng Quản lý thanh toán.
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-Subscription.drawio.svg}
@@ -245,6 +263,7 @@ Trong trường hợp người dùng không thanh toán mà muốn hủy, ngư�
 
 \subsubsection{Tương tác với chatbot}
 \subsubsubsection{Phản hồi tin nhắn khách hàng}
+Hình 34 biểu diễn biểu đồ hoạt động cho tính năng Phản hồi tin nhắn khách hàng.
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-ReplyCustomerMessage.svg}
@@ -261,6 +280,7 @@ Nếu muốn điền hoặc chỉnh sửa tin nhắn, nhân viên chăm sóc kh�
  
 Sau đó nhân viên chăm sóc khách hàng có thể lặp lại các bước trên. Hoặc nếu đã có tin nhắn và nhân viên chăm sóc khách hàng chọn gửi thì hệ thống sẽ hiển thị tin nhắn vừa gửi lên màn hình. Hoặc nếu chưa có tin nhắn thì sẽ dừng lại.
 \subsubsubsection{Gửi tin nhắn}
+Hình 35 biểu diễn biểu đồ hoạt động cho tính năng Gửi tin nhắn.
 \begin{figure}[H]
     \centering
      \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-SendMessage.svg}
@@ -277,13 +297,8 @@ Nếu muốn điền hoặc chỉnh sửa tin nhắn, khách hàng chọn vào k
 
 Sau đó khách hàng có thể lặp lại các bước trên. Hoặc nếu đã có tin nhắn và khách hàng chọn gửi thì hệ thống sẽ hiển thị tin nhắn vừa gửi lên màn hình. Đồng thời, hệ thống sẽ tạo và gửi lại tin nhắn phản hồi từ AI Chatbot. Hoặc nếu chưa có tin nhắn thì sẽ dừng lại.
 \subsubsubsection{Yêu cầu hỗ trợ}
-\begin{figure}[H]
-    \centering
-    \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-NeedSupport.svg}
-    \vspace{0.5cm}
-    \caption{Biểu đồ activity cho Yêu cầu hỗ trợ}
-    \label{fig:enter-label}
-\end{figure}
+Hình 36 biểu diễn biểu đồ hoạt động cho tính năng Yêu cầu hỗ trợ.
+
 \textbf{Mô tả:}
 Biểu đồ hoạt động gồm 2 swimlane: Người dùng và hệ thống.
 
@@ -292,6 +307,15 @@ Tại màn hình chatbot, khách hàng chọn "Yêu cầu hỗ trợ". Hệ th�
     \item Nếu muốn gửi yêu cầu hỗ trợ, khách hàng điền thông tin và chọn "Gửi yêu cầu". Hệ thống sẽ hiển thị các tin nhắn thông báo, cuộc hội thoại chuyển sang chế độ hỗ trợ.
     \item Nếu khách hàng chọn "Đóng", hệ thống sẽ đóng popup Hỗ trợ khách hàng.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1\textwidth]{Dg_Activity/Activity Diagram-NeedSupport.svg}
+    \vspace{0.5cm}
+    \caption{Biểu đồ activity cho Yêu cầu hỗ trợ}
+    \label{fig:enter-label}
+\end{figure}
+
 % \subsubsection{Quản lý lịch hẹn}
 % \begin{figure}[H]
 %     \centering
