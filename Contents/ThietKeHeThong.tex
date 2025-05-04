@@ -103,15 +103,34 @@ Cách tổ chức theo module này, tận dụng cấu trúc ứng dụng của 
 \end{itemize}
 
 \subsubsubsection{Dịch vụ AI}
-Hệ thống bao gồm một dịch vụ AI chuyên biệt, triển khai độc lập và tách biệt với backend. Dịch vụ này chuyên trách việc cung cấp các khả năng xử lý ngôn ngữ tự nhiên và trí tuệ đối thoại tiên tiến, tận dụng các mô hình ngôn ngữ lớn. Module chat bên trong ứng dụng lõi sẽ giao tiếp với Dịch vụ AI này thông qua giao diện REST API.
+Hệ thống bao gồm một dịch vụ AI chuyên biệt, triển khai độc lập và tách biệt với backend. Dịch vụ này chuyên trách việc cung cấp các khả năng xử lý ngôn ngữ tự nhiên và trí tuệ đối thoại tiên tiến, tận dụng các mô hình ngôn ngữ lớn (LLM) và cơ chế Retrieval-Augmented Generation (RAG). Module chat bên trong ứng dụng lõi sẽ giao tiếp với Dịch vụ AI này thông qua giao diện REST API.
 
 Việc lựa chọn triển khai Dịch vụ AI một cách độc lập mang lại một số lợi ích về mặt kiến trúc và vận hành:
 \begin{itemize}
-    \item \textbf{Tối ưu tài nguyên:} Cho phép dịch vụ AI chạy trên hạ tầng phần cứng chuyên biệt và được cấp phát tài nguyên tối ưu cho các tác vụ tính toán nặng của AI.
-    \item \textbf{Khả năng mở rộng độc lập:} Quy mô của Dịch vụ AI có thể được điều chỉnh một cách linh hoạt dựa trên tải xử lý AI, độc lập với việc mở rộng quy mô của ứng dụng web lõi.
-    \item \textbf{Linh hoạt về công nghệ và cập nhật:} Cho phép sử dụng các thư viện, framework, hoặc thậm chí ngôn ngữ lập trình khác (phù hợp hơn cho AI/ML) và có thể cập nhật các mô hình AI thường xuyên mà không cần phải triển khai lại toàn bộ ứng dụng lõi.
-    \item \textbf{Tách biệt lỗi:} Sự cố tiềm ẩn trong dịch vụ AI ít có khả năng ảnh hưởng trực tiếp đến sự ổn định của ứng dụng web chính và ngược lại.
+	\item \textbf{Tối ưu tài nguyên:} Cho phép dịch vụ AI chạy trên hạ tầng phần cứng chuyên biệt (GPU/TPU) và được cấp phát tài nguyên tối ưu cho các tác vụ tính toán nặng như huấn luyện và suy luận của mô hình ngôn ngữ lớn.
+	\item \textbf{Khả năng mở rộng độc lập:} Quy mô của Dịch vụ AI có thể được điều chỉnh linh hoạt dựa trên khối lượng truy vấn RAG và tốc độ suy luận, tách biệt hoàn toàn với việc mở rộng quy mô của ứng dụng web lõi.
+	\item \textbf{Linh hoạt về công nghệ và cập nhật:} Cho phép sử dụng các thư viện, framework, hoặc ngôn ngữ lập trình phù hợp cho AI/ML (Python, TensorFlow, PyTorch) và cập nhật các mô hình AI như Gemini 2.5 Flash mà không cần triển khai lại toàn bộ ứng dụng lõi.
+	\item \textbf{Tách biệt lỗi:} Sự cố trong Dịch vụ AI sẽ ít ảnh hưởng đến tính ổn định của ứng dụng web chính, và ngược lại.
 \end{itemize}
+
+\paragraph{Thành phần chính của Dịch vụ AI}
+\begin{itemize}
+	\item \textbf{Vector Database (Pinecone):} Lưu trữ và truy vấn nhanh các vector nhúng (embeddings) do \textit{OpenAI Embedding API} sinh ra. Pinecone hỗ trợ chỉ mục ANN (Approximate Nearest Neighbors) với khả năng mở rộng quy mô và độ trễ thấp, đảm bảo tốc độ tra cứu ngữ cảnh trong RAG.
+	\item \textbf{Pipeline điều phối (LangChain):} Sử dụng LangChain để xây dựng và tổ chức các bước RAG: từ tạo nhúng, truy vấn vector DB, kéo dữ liệu ngữ cảnh liên quan, cho đến đúc kết thông tin và tạo phản hồi bằng mô hình LLM.
+	\item \textbf{Mô hình LLM (Gemini 2.5 Flash):} Mô hình tiên tiến của Google với khả năng suy luận nhanh, chi phí tiết kiệm và hỗ trợ đòn bẩy RAG để tạo ra phản hồi giàu ngữ cảnh. Gemini 2.5 Flash tối ưu cho việc triển khai theo chiều ngang và dung lượng bộ nhớ thấp hơn so với các biến thể lớn hơn.
+	\item \textbf{OpenAI Embeddings:} Sử dụng endpoint embeddings của OpenAI để chuyển đổi văn bản thô thành vector số, phục vụ cho bước tìm kiếm tương tự (similarity search) trong Pinecone.
+	\item \textbf{Retrieval-Augmented Generation (RAG):} Kết hợp việc truy xuất dữ liệu ngữ cảnh từ Pinecone với khả năng sinh văn bản của Gemini 2.5 Flash. Quy trình bao gồm: tạo embedding cho truy vấn, tìm kiếm top-k tài liệu tương tự, kết hợp thông tin thu thập được, sau đó gọi mô hình LLM để sinh phản hồi cuối cùng.
+\end{itemize}
+
+\paragraph{Quy trình xử lý}
+\begin{enumerate}
+	\item Nhận truy vấn từ REST API của module chat.
+	\item Tạo embedding cho truy vấn bằng OpenAI Embedding API.
+	\item Truy vấn Pinecone để lấy top-k vector tương tự.
+	\item Thu thập nội dung gốc từ các tài liệu tương ứng.
+	\item Dùng LangChain orchestration để gắn ngữ cảnh và gọi Gemini 2.5 Flash, cấu hình tham số (temperature, max\_tokens,...).
+	\item Trả về kết quả đã xử lý cho module chat qua REST API.
+\end{enumerate}
 
 \subsubsubsection{Tích hợp dịch vụ bên ngoài}
 Ngoài các thành phần nội bộ, hệ thống còn tích hợp với các dịch vụ của bên thứ ba chuyên biệt để mở rộng chức năng và tận dụng các giải pháp đã được tối ưu hóa trên thị trường:
