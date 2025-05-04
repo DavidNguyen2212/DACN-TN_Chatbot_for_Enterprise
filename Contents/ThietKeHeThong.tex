@@ -16,7 +16,7 @@
 \end{figure}
 
 \subsubsection{Tổng quan kiến trúc}
-Hệ thống được thiết kế và triển khai theo kiến trúc Client-Server, phân tách rõ ràng giữa thành phần giao diện người dùng (Client) và thành phần xử lý logic nghiệp vụ và dữ liệu phía máy chủ (Server). Thành phần Client chịu trách nhiệm hiển thị giao diện và quản lý tương tác người dùng, trong khi thành phần Server đảm nhận việc xử lý logic nghiệp vụ, quản lý dữ liệu và cung cấp các dịch vụ nền tảng. \\
+Theo hình 51, hệ thống được thiết kế và triển khai theo kiến trúc Client-Server, phân tách rõ ràng giữa thành phần giao diện người dùng (Client) và thành phần xử lý logic nghiệp vụ và dữ liệu phía máy chủ (Server). Thành phần Client chịu trách nhiệm hiển thị giao diện và quản lý tương tác người dùng, trong khi thành phần Server đảm nhận việc xử lý logic nghiệp vụ, quản lý dữ liệu và cung cấp các dịch vụ nền tảng. \\
 
 \textbf{Thành phần Client (React Frontend):} Ứng dụng React phía Client thực hiện các nhiệm vụ chính sau:
 \begin{itemize}
@@ -123,7 +123,7 @@ Ngoài các thành phần nội bộ, hệ thống còn tích hợp với các d
 
 \subsection{Giao diện}
 \subsubsection{Lược đồ Screen-flow}
-Lược đồ này cung cấp cái nhìn tổng quan về trải nghiệm người dùng: cách các trang giao diện kết nối với nhau, thứ tự hiển thị, và ai là người kiểm soát trang giao diện đó (phân chia vai trò). Cụ thể, quản trị viên và các nhân viên chăm sóc khách hàng quản lý hầu hết các trang, và người dùng khi tiếp cận với trang web doanh nghiệp, chỉ cần tương tác với chatbot popup là đủ.
+Lược đồ này được thể hiện trong hình 52. Lược đồ cung cấp cái nhìn tổng quan về trải nghiệm người dùng: cách các trang giao diện kết nối với nhau, thứ tự hiển thị, và ai là người kiểm soát trang giao diện đó (phân chia vai trò). Cụ thể, quản trị viên và các nhân viên chăm sóc khách hàng quản lý hầu hết các trang, và người dùng khi tiếp cận với trang web doanh nghiệp, chỉ cần tương tác với chatbot popup là đủ.
 
 \begin{figure}[H]
 	\centering
@@ -134,6 +134,7 @@ Lược đồ này cung cấp cái nhìn tổng quan về trải nghiệm ngư�
 \end{figure}
 
 \subsubsection{Logo ứng dụng}
+Hình 53 là logo của ứng dụng CoolChat do nhóm thiết kế.
 
 \begin{figure}[H]
 	\centering
@@ -171,6 +172,9 @@ nhóm làm việc cộng tác trong việc tạo ra các sản phẩm thiết k�
 biến trong thiết kế giao diện cho ứng dụng web hay mobile. Công cụ này nổi bật với khả năng làm việc
 trực tuyến, cho phép nhiều người dùng cùng lúc chỉnh sửa và tương tác với các bản thiết kế trong thời
 gian thực.
+
+Hình 54 bên dưới là logo của công cụ thiết kế Figma.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Figma/figma_logo.png}
@@ -179,7 +183,7 @@ gian thực.
 	\label{fig:enter-label}
 \end{figure}
 
-Nhóm đã hoàn thiện bản thiết kế cho tất cả màn hình trên Figma để có thể thuận tiện cho quá trình hiện thực hệ thống.
+Nhóm đã hoàn thiện bản thiết kế cho tất cả màn hình trên Figma như trong hình 55 để có thể thuận tiện cho quá trình hiện thực hệ thống.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Figma/design_on_figma.png}
@@ -527,6 +531,8 @@ Nhóm đã hoàn thiện bản thiết kế cho tất cả màn hình trên Figm
 % Khách hàng sẽ sử dụng chatbot thông qua một popup nằm ở góc phải dưới cùng của trang web mà doanh nghiệp tích hợp. Ban đầu nó chỉ là một nút tròn. Khi khách hàng bấm vào thì sẽ bật ra cửa sổ chat, ở đó người dùng có thể nhắn tin, tải ảnh, yêu cầu hỗ trợ và đặt lịch hẹn.
 
 \subsection{Cơ sở dữ liệu}
+Hình 56 biểu diễn biểu đồ ERD của hệ thống.
+
 \begin{figure}[p]
     \thispagestyle{empty}
     \centering

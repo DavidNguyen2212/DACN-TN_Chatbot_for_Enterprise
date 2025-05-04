@@ -2,13 +2,83 @@
 \subsection{Sơ đồ triển khai}
 \input{Contents/HienThuc/TrienKhai.tex}
 \subsection{Triển khai Frontend}
+\subsubsection{Công nghệ}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+	\item \textbf{Giới thiệu}
+	
+	Vercel [18] có logo ở hình 115 là nền tảng đám mây giúp triển khai các ứng dụng web frontend hiện đại một cách dễ dàng và nhanh chóng. Nó hỗ trợ các framework phổ biến như React.js, Next.js, Vue.js, Angular và Svelte. Vercel cung cấp giải pháp Serverless Deployment, đảm bảo ứng dụng luôn sẵn sàng với hiệu suất cao.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{Images/vercel_logo.png}
+		\vspace{0.5cm}
+		\caption{Logo Vercel - Nguồn: Internet}
+		\label{fig:enter-label}
+	\end{figure}
+	
+	\item \textbf{Đặc điểm công nghệ}
+	
+	Vercel có các tính năng nổi bật như:
+	\begin{itemize}
+		\item Tự động triển khai: Tích hợp với GitHub, GitLab, Bitbucket để triển khai tự động.
+		\item Xây dựng không máy chủ (Serverless): Chạy ứng dụng mà không cần quản lý máy chủ vật lý.
+		\item CDN Toàn cầu: Ứng dụng được phân phối nhanh chóng thông qua mạng CDN toàn cầu.
+		\item Domain và SSL: Cung cấp tên miền tùy chỉnh và chứng chỉ SSL miễn phí.
+		\item Phân nhánh (Branch Deployments): Tạo các môi trường preview cho từng nhánh trong dự án.
+		\item Khả năng mở rộng: 
+		\begin{itemize}
+			\item Auto Scaling: Vercel tự động mở rộng dịch vụ khi lưu lượng truy cập tăng
+			\item Edge Functions: Xử lý yêu cầu nhanh chóng ở rìa mạng (edge) để giảm độ trễ.
+		\end{itemize}
+	\end{itemize}
+	
+	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Bảng 46 bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
+	\begin{longtable}{|>{\raggedright\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+		\hline
+		\textbf{Tiêu chí} & \textbf{Vercel} & \textbf{Netlify} & \textbf{Render} \\ 
+		\hline
+		Triển khai & Serverless, tự động với Git & Tự động, dễ tích hợp Git & Serverless, dễ triển khai \\ 
+		\hline
+		Hỗ trợ framework & Next.js, React.js, Vue.js & React.js, Angular,... & Fullstack, tùy chọn đa ngôn ngữ \\ 
+		\hline
+		CDN toàn cầu & Có & Có & Không tích hợp sẵn   \\ 
+		\hline
+		Tích hợp Git & Tự động với GitHub, GitLab & GitHub, GitLab, Bitbucket & GitHub, GitLab  \\ 
+		\hline
+		Domain và SSL & Miễn phí & Miễn phí & Miễn phí \\ 
+		\hline
+		Tính năng đặc biệt & Edge Functions, ISR, Preview & Serverless Functions & Background Jobs, WebSockets \\ 
+		\hline
+		Giá cả & Miễn phí, trả phí theo yêu cầu & Miễn phí, trả phí nâng cao & Miễn phí, trả phí mở rộng \\ 
+		\hline
+		Khả năng mở rộng & Tự động & Tự động & Tự động \\ 
+		\hline
+		\caption{So sánh Vercel và các công nghệ tương tự}
+	\end{longtable}
+	
+	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
+	
+	Nhóm chọn Vercel vì những lý do sau:
+	\begin{itemize}
+		\item Tối ưu hóa React.js: Vercel hỗ trợ mạnh mẽ Next.js, framework hàng đầu cho React.js.
+		\item Dễ sử dụng: Cung cấp giao diện người dùng đơn giản, dễ thao tác cho cả người mới bắt đầu và chuyên gia.
+		\item Hiệu suất cao: CDN toàn cầu giúp tải nhanh ứng dụng trên toàn thế giới.
+		\item Bảo mật: Chứng chỉ SSL miễn phí giúp bảo vệ dữ liệu.
+		\item Triển khai liên tục: Mỗi lần cập nhật mã nguồn sẽ tự động triển khai, giúp rút ngắn chu kỳ phát triển phần mềm.
+	\end{itemize}
+	
+\end{enumerate}
+\subsubsection{Triển khai}
 \textbf{Bước 1: Đăng nhập Vercel}
 
 Truy vập vercel.com và sử dụng tài khoản GitHub để đăng nhập
 
 \textbf{Bước 2: Tạo dự án mới}
 
-Chọn \textbf{Add New} -> \textbf{Project}
+Chọn \textbf{Add New} -> \textbf{Project} như hình 116
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Images/Deployment/vercel1.png}
@@ -19,7 +89,7 @@ Chọn \textbf{Add New} -> \textbf{Project}
 
 \textbf{Bước 3: Nhập repository}  
 
-Nhập Git repository cần triển khai, ở đây nhóm sẽ chọn CoolChat-FE
+Nhập Git repository cần triển khai, ở đây nhóm sẽ chọn CoolChat-FE như hình 117
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Images/Deployment/vercel2.png}
@@ -35,6 +105,8 @@ Bao gồm
     \item Thiết lập build và output
     \item Cài đặt các biến môi trường (environment variables)
 \end{itemize}
+
+Hình 118 mô tả bước cấu hình cài đặt.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Images/Deployment/vercel3.png}
@@ -49,7 +121,7 @@ Chọn \textbf{Deploy} để triển khai dự án. Vercel sẽ tạo Dự án v
 
 \textbf{Bước 6: Triển khai thành công}
 
-Màn hình hiển thị Domain cho dự án. Trang này sẽ có thể thấy bởi bất cứ ai có URL.
+Màn hình hiển thị Domain cho dự án. Trang này sẽ có thể thấy bởi bất cứ ai có URL như hình 119. Hình 120 là trang web đã được triển khai.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Images/Deployment/vercel4.png}
@@ -70,6 +142,8 @@ Màn hình hiển thị Domain cho dự án. Trang này sẽ có thể thấy b�
     \item Tự động cập nhật: Khi push code lên GitHub nhánh main, Vercel sẽ tự build và cập nhật phiên bản mới.
     \item Kiểm tra trạng thái: Quản lý dự án tại trang Dashboard của Vercel.
 \end{itemize}
+
+Bước cập nhật và quản lý được mô tả trong hình 121.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Images/Deployment/vercel6.png}

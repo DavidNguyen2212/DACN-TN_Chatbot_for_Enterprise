@@ -1,7 +1,8 @@
+\newpage
 \section{Hiện thực}
 \subsection{Công nghệ}
 \subsubsection{Lược đồ tổng quan}
-Lược đồ này cung cấp góc nhìn tổng quát về cách các công nghệ được ứng dụng trong hệ thống dịch vụ chatbot, bao gồm Frontend (nhân viên và người dùng), Backend, AI, và hệ cơ sở dữ liệu (SQL và Vector). Có hai luồng đi chính được mô tả trên hình:
+Lược đồ tổng quan công nghệ được biểu diễn trong hình 57. Lược đồ này cung cấp góc nhìn tổng quát về cách các công nghệ được ứng dụng trong hệ thống dịch vụ chatbot, bao gồm Frontend (nhân viên và người dùng), Backend, AI, và hệ cơ sở dữ liệu (SQL và Vector). Có hai luồng đi chính được mô tả trên hình:
 \begin{enumerate}
 	\item Luồng thứ nhất (các mũi tên có dòng miêu tả bắt đầu bằng chữ số 1): quy trình thực hiện lưu và đánh chỉ mục dữ liệu tri thức.
 	\item Luồng thứ hai (các mũi tên có dòng miêu tả bắt đầu bằng chữ số 2): quy trình giao tiếp giữa người dùng thực tế và chatbot của doanh nghiệp. 
@@ -22,7 +23,9 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
-	React (hay còn được gọi là React.js hoặc ReactJS) là một thư viện JavaScript front-end mã nguồn mở và miễn phí để xây dựng giao diện người dùng dựa trên các thành phần UI riêng lẻ. Nó được phát triển và duy trì bởi Meta (trước đây là Facebook) và cộng đồng các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở để phát triển các ứng dụng SPA (Single page application), thiết bị di động hoặc ứng dụng được kết xuất bằng máy chủ với các thư viện khác như Next.js. Tuy nhiên, React chỉ hướng tới việc quản lý trạng thái và hiển thị trạng thái đó cho DOM, vì vậy việc tạo ứng dụng bằng React thường yêu cầu sử dụng thêm các thư viện bổ sung để thực hiện định tuyến trang, cũng như thêm một số chức năng ở phía máy khách.
+	React [6] (hay còn được gọi là React.js hoặc ReactJS) là một thư viện JavaScript front-end mã nguồn mở và miễn phí để xây dựng giao diện người dùng dựa trên các thành phần UI riêng lẻ. Nó được phát triển và duy trì bởi Meta (trước đây là Facebook) và cộng đồng các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở để phát triển các ứng dụng SPA (Single page application), thiết bị di động hoặc ứng dụng được kết xuất bằng máy chủ với các thư viện khác như Next.js. Tuy nhiên, React chỉ hướng tới việc quản lý trạng thái và hiển thị trạng thái đó cho DOM, vì vậy việc tạo ứng dụng bằng React thường yêu cầu sử dụng thêm các thư viện bổ sung để thực hiện định tuyến trang, cũng như thêm một số chức năng ở phía máy khách.
+
+	Hình 58 bên dưới là logo của React.
 	
 	\begin{figure}[H]
 		\centering
@@ -65,7 +68,7 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 	
 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
 	
-	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự React theo các tiêu chí cụ thể do nhóm tự đánh giá.
+	Bảng 24 bên dưới là bảng so sánh sách công nghệ tương tự React theo các tiêu chí cụ thể do nhóm tự đánh giá.
 	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
 		\hline
 		\textbf{Tiêu chí} & \textbf{React} & \textbf{Angular} & \textbf{Vue} & \textbf{Svelte} \\ 
@@ -82,6 +85,7 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 		\hline
 		Khả năng mở rộng & Tốt & Tốt & Tốt & Tốt \\ 
 		\hline
+		\caption{So sánh ReactJS với các công nghệ tương tự}
 	\end{longtable}
 	
 	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
@@ -103,7 +107,9 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
-	Vite là một công cụ xây dựng (build tool) hiện đại, được phát triển bởi Evan You, người sáng lập Vue.js. Vite được thiết kế để cải thiện trải nghiệm phát triển frontend bằng cách cung cấp tốc độ cao và hiệu quả vượt trội so với các công cụ truyền thống như Webpack.
+	Vite [7] là một công cụ xây dựng (build tool) hiện đại, được phát triển bởi Evan You, người sáng lập Vue.js. Vite được thiết kế để cải thiện trải nghiệm phát triển frontend bằng cách cung cấp tốc độ cao và hiệu quả vượt trội so với các công cụ truyền thống như Webpack.
+
+	Hình 59 bên dưới là logo của Vite.
 	
 	\begin{figure}[H]
 		\centering
@@ -126,7 +132,7 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 	
 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
 	
-	Bên dưới sẽ là bảng so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
+	Bảng 25 bên dưới sẽ so sánh sách công nghệ tương tự Vite theo các tiêu chí cụ thể do nhóm tự đánh giá.
 	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
 		\hline
 		\textbf{Tiêu chí} & \textbf{Webpack} & \textbf{Parcel} & \textbf{Vite} \\ 
@@ -143,6 +149,7 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 		\hline
 		Khả năng mở rộng & Tốt & Tốt & Tốt \\ 
 		\hline
+		\caption{So sánh Vite với các công nghệ tương tự}
 	\end{longtable}
 	
 	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
@@ -227,7 +234,9 @@ Các bộ phận của hệ thống trao đổi dữ liệu thông qua các giao
 	
 % \end{enumerate}
 \subsubsubsection{NextUI}
-NextUI là một thư viện giao diện người dùng (UI library) hiện đại được thiết kế để xây dựng các ứng dụng web với phong cách đẹp mắt và hiệu năng cao. NextUI sử dụng React làm nền tảng, giúp lập trình viên dễ dàng tạo ra các thành phần giao diện (components) tái sử dụng và nhanh chóng.
+NextUI [8] là một thư viện giao diện người dùng (UI library) hiện đại được thiết kế để xây dựng các ứng dụng web với phong cách đẹp mắt và hiệu năng cao. NextUI sử dụng React làm nền tảng, giúp lập trình viên dễ dàng tạo ra các thành phần giao diện (components) tái sử dụng và nhanh chóng.
+
+Hình 60 bên dưới là logo của NextUI.
 
 \begin{figure}[H]
 	\centering
@@ -237,7 +246,9 @@ NextUI là một thư viện giao diện người dùng (UI library) hiện đ�
 	\label{fig:enter-label}
 \end{figure}
 \subsubsubsection{TailwindCSS}
-Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên xây dựng giao diện trực tiếp bằng cách sử dụng các lớp tiện ích (utility classes) thay vì viết mã CSS tùy chỉnh. Framework này không cung cấp các thành phần giao diện dựng sẵn mà tập trung vào việc tối ưu hóa quá trình tạo và tùy chỉnh giao diện.
+Tailwind CSS [9] là một utility-first CSS framework, cho phép lập trình viên xây dựng giao diện trực tiếp bằng cách sử dụng các lớp tiện ích (utility classes) thay vì viết mã CSS tùy chỉnh. Framework này không cung cấp các thành phần giao diện dựng sẵn mà tập trung vào việc tối ưu hóa quá trình tạo và tùy chỉnh giao diện.
+
+Hình 61 bên dưới là logo của TailwindCSS.
 
 \begin{figure}[H]
 	\centering
@@ -253,7 +264,9 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \begin{enumerate}[label=\arabic*., font=\bfseries]
     \item Giới thiệu
 
-    Django là một framework phát triển web bậc cao, mã nguồn mở, được xây dựng trên ngôn ngữ lập trình Python, tuân thủ theo biến thể của kiến trúc MVC (Model-View-Controller) là MVT (Model-View-Template). Kiến trúc này phân tách rõ ràng giữa logic nghiệp vụ, logic xử lý yêu cầu và phản hồi, và logic trình bày, thúc đẩy việc phát triển module hóa và tái sử dụng mã nguồn. Django REST Framework là một bộ công cụ mạnh mẽ và linh hoạt được xây dựng dựa trên Django, chuyên biệt hóa cho việc xây dựng các giao diện lập trình ứng dụng Web. Sự kết hợp giữa Django và DRF không chỉ được cộng đồng phát triển phần mềm quốc tế công nhận về hiệu quả và tính bảo mật, mà còn đặc biệt phù hợp cho việc xây dựng backend của các ứng dụng phức tạp như hệ thống chatbot, nơi đòi hỏi khả năng mở rộng, quản lý dữ liệu linh hoạt và tích hợp dễ dàng với các dịch vụ khác.
+    Django [10] là một framework phát triển web bậc cao, mã nguồn mở, được xây dựng trên ngôn ngữ lập trình Python, tuân thủ theo biến thể của kiến trúc MVC (Model-View-Controller) là MVT (Model-View-Template). Kiến trúc này phân tách rõ ràng giữa logic nghiệp vụ, logic xử lý yêu cầu và phản hồi, và logic trình bày, thúc đẩy việc phát triển module hóa và tái sử dụng mã nguồn. Django REST Framework là một bộ công cụ mạnh mẽ và linh hoạt được xây dựng dựa trên Django, chuyên biệt hóa cho việc xây dựng các giao diện lập trình ứng dụng Web. Sự kết hợp giữa Django và DRF không chỉ được cộng đồng phát triển phần mềm quốc tế công nhận về hiệu quả và tính bảo mật, mà còn đặc biệt phù hợp cho việc xây dựng backend của các ứng dụng phức tạp như hệ thống chatbot, nơi đòi hỏi khả năng mở rộng, quản lý dữ liệu linh hoạt và tích hợp dễ dàng với các dịch vụ khác.
+
+	Hình 62 bên dưới là logo của Django.
 
     \begin{figure}[H]
         \centering
@@ -276,6 +289,8 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
     \end{itemize}
 
     \item So sánh với các Framework Backend Tương tự
+    
+	Bảng 26 bên dưới sẽ so sánh Django/DRF với các framework backend phổ biến.
 
     \begin{longtable}{|>{\raggedright\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
         \caption{So sánh Django/DRF với các framework backend phổ biến}\\
@@ -329,7 +344,9 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \begin{enumerate}[label=\arabic*., font=\bfseries]
     \item Giới thiệu
 
-    PostgreSQL, thường được gọi là "Postgres", là một hệ quản trị cơ sở dữ liệu quan hệ đối tượng (Object-Relational Database Management System - ORDBMS) mã nguồn mở tiên tiến. Được phát triển và bảo trì bởi một cộng đồng toàn cầu đa dạng trong hơn 30 năm, PostgreSQL nổi bật với kiến trúc vững chắc, độ tin cậy đã được kiểm chứng, tính toàn vẹn dữ liệu cao và sự tuân thủ chặt chẽ các chuẩn SQL. Không chỉ hỗ trợ đầy đủ các tính năng của cơ sở dữ liệu quan hệ truyền thống và đảm bảo các thuộc tính ACID (Atomicity, Consistency, Isolation, Durability), PostgreSQL còn cung cấp các khả năng xử lý dữ liệu phức tạp và phi cấu trúc mạnh mẽ, bao gồm hỗ trợ kiểu dữ liệu JSON/JSONB, dữ liệu không gian với PostGIS extension, và tìm kiếm toàn văn (full-text search). Các tính năng nâng cao như materialized views, table inheritance, và cơ chế kiểm soát tương tranh đa phiên bản (Multi-Version Concurrency Control - MVCC) làm cho PostgreSQL trở thành lựa chọn hàng đầu cho nhiều ứng dụng đòi hỏi cao.
+    PostgreSQL [11], thường được gọi là "Postgres", là một hệ quản trị cơ sở dữ liệu quan hệ đối tượng (Object-Relational Database Management System - ORDBMS) mã nguồn mở tiên tiến. Được phát triển và bảo trì bởi một cộng đồng toàn cầu đa dạng trong hơn 30 năm, PostgreSQL nổi bật với kiến trúc vững chắc, độ tin cậy đã được kiểm chứng, tính toàn vẹn dữ liệu cao và sự tuân thủ chặt chẽ các chuẩn SQL. Không chỉ hỗ trợ đầy đủ các tính năng của cơ sở dữ liệu quan hệ truyền thống và đảm bảo các thuộc tính ACID (Atomicity, Consistency, Isolation, Durability), PostgreSQL còn cung cấp các khả năng xử lý dữ liệu phức tạp và phi cấu trúc mạnh mẽ, bao gồm hỗ trợ kiểu dữ liệu JSON/JSONB, dữ liệu không gian với PostGIS extension, và tìm kiếm toàn văn (full-text search). Các tính năng nâng cao như materialized views, table inheritance, và cơ chế kiểm soát tương tranh đa phiên bản (Multi-Version Concurrency Control - MVCC) làm cho PostgreSQL trở thành lựa chọn hàng đầu cho nhiều ứng dụng đòi hỏi cao.
+
+	Hình 63 biểu thị logo chính thức của PostgreSQL.
 
     \begin{figure}[htbp]
         \centering
@@ -352,6 +369,8 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
     \end{itemize}
 
     \item So sánh với các Hệ Quản trị Cơ sở dữ liệu Tương tự
+    
+	Bảng 27 là bảng so sánh PostgreSQL với các hệ quản trị CSDL khác.
 
     \begin{longtable}{|>{\raggedright\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
         \caption{So sánh PostgreSQL với các hệ quản trị CSDL khác}\\
@@ -403,7 +422,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \begin{enumerate}[label=\arabic*., font=\bfseries]
     \item Giới thiệu
 
-    Redis là một kho lưu trữ cấu trúc dữ liệu trong bộ nhớ (in-memory data structure store) mã nguồn mở, hiệu năng cao, thường được sử dụng làm cơ sở dữ liệu key-value, bộ đệm (cache), và trình môi giới thông điệp (message broker). Redis nổi bật với tốc độ truy cập dữ liệu cực nhanh do hoạt động chủ yếu trên RAM, đồng thời hỗ trợ nhiều loại cấu trúc dữ liệu phức tạp (như strings, hashes, lists, sets, sorted sets) và cung cấp các tính năng như persistence (lưu trữ bền vững tùy chọn), replication (sao chép), và clustering (phân cụm).
+    Redis [12] là một kho lưu trữ cấu trúc dữ liệu trong bộ nhớ (in-memory data structure store) mã nguồn mở, hiệu năng cao, thường được sử dụng làm cơ sở dữ liệu key-value, bộ đệm (cache), và trình môi giới thông điệp (message broker). Redis nổi bật với tốc độ truy cập dữ liệu cực nhanh do hoạt động chủ yếu trên RAM, đồng thời hỗ trợ nhiều loại cấu trúc dữ liệu phức tạp (như strings, hashes, lists, sets, sorted sets) và cung cấp các tính năng như persistence (lưu trữ bền vững tùy chọn), replication (sao chép), và clustering (phân cụm).
 
     \item Đặc điểm Công nghệ Nổi bật
     \begin{itemize}
@@ -416,6 +435,9 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
     \end{itemize}
 
     \item So sánh với các Công nghệ Tương tự
+    
+	Bảng 28 là bảng so sánh Redis với Memcached.
+
     \begin{longtable}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3.5cm}|}
         \caption{So sánh Redis với Memcached}\\
         \hline
@@ -464,7 +486,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \begin{enumerate}[label=\arabic*., font=\bfseries]
     \item Giới thiệu
 
-    Amazon S3 (Simple Storage Service) là một dịch vụ lưu trữ đối tượng trên nền tảng đám mây của Amazon Web Services (AWS). S3 cung cấp khả năng lưu trữ và truy xuất dữ liệu với độ bền, tính sẵn sàng, hiệu năng và khả năng mở rộng hàng đầu trong ngành. Dịch vụ này được thiết kế để lưu trữ gần như không giới hạn số lượng đối tượng với kích thước từ vài byte đến hàng terabyte, phù hợp cho nhiều trường hợp sử dụng như lưu trữ website tĩnh, sao lưu và phục hồi dữ liệu, lưu trữ dữ liệu lớn, và đặc biệt là lưu trữ các tệp đa phương tiện cho các ứng dụng web và di động.
+    Amazon S3 (Simple Storage Service) [13] là một dịch vụ lưu trữ đối tượng trên nền tảng đám mây của Amazon Web Services (AWS). S3 cung cấp khả năng lưu trữ và truy xuất dữ liệu với độ bền, tính sẵn sàng, hiệu năng và khả năng mở rộng hàng đầu trong ngành. Dịch vụ này được thiết kế để lưu trữ gần như không giới hạn số lượng đối tượng với kích thước từ vài byte đến hàng terabyte, phù hợp cho nhiều trường hợp sử dụng như lưu trữ website tĩnh, sao lưu và phục hồi dữ liệu, lưu trữ dữ liệu lớn, và đặc biệt là lưu trữ các tệp đa phương tiện cho các ứng dụng web và di động.
 
     \item Đặc điểm Công nghệ Nổi bật
     \begin{itemize}
@@ -478,6 +500,9 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
     \end{itemize}
 
     \item So sánh với các Giải pháp Lưu trữ Tương tự
+    
+	Bảng 29 so sánh Amazon S3 với các giải pháp lưu trữ tương tự.
+
 	\begin{longtable}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
 		\caption{So sánh Amazon S3 với các dịch vụ lưu trữ đối tượng khác}\\
 		\hline
@@ -523,7 +548,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \begin{enumerate}[label=\arabic*., font=\bfseries]
     \item Giới thiệu
 
-    PayOS là một nhà cung cấp dịch vụ cổng thanh toán tại Việt Nam, cung cấp giải pháp tích hợp đa dạng các phương thức thanh toán trực tuyến phổ biến trong nước vào các ứng dụng web và di động. Dịch vụ này tập trung vào việc đơn giản hóa quy trình tích hợp thanh toán cho các doanh nghiệp và nhà phát triển, hỗ trợ các phương thức như thẻ ATM nội địa, thẻ tín dụng quốc tế, và các ví điện tử thông dụng tại Việt Nam. Trong bối cảnh dự án chatbot này, PayOS được lựa chọn để xử lý các giao dịch tài chính liên quan, ví dụ như quản lý gói đăng ký dịch vụ hoặc các thanh toán phát sinh khác.
+    PayOS [14] là một nhà cung cấp dịch vụ cổng thanh toán tại Việt Nam, cung cấp giải pháp tích hợp đa dạng các phương thức thanh toán trực tuyến phổ biến trong nước vào các ứng dụng web và di động. Dịch vụ này tập trung vào việc đơn giản hóa quy trình tích hợp thanh toán cho các doanh nghiệp và nhà phát triển, hỗ trợ các phương thức như thẻ ATM nội địa, thẻ tín dụng quốc tế, và các ví điện tử thông dụng tại Việt Nam. Trong bối cảnh dự án chatbot này, PayOS được lựa chọn để xử lý các giao dịch tài chính liên quan, ví dụ như quản lý gói đăng ký dịch vụ hoặc các thanh toán phát sinh khác.
 
     \item Đặc điểm Công nghệ và Dịch vụ Nổi bật 
     \begin{itemize}
@@ -549,7 +574,7 @@ Tailwind CSS là một utility-first CSS framework, cho phép lập trình viên
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
-Gemini 2.5 Flash là phiên bản mô hình ngôn ngữ (tầm trung) mới nhất của Google, kế thừa nền tảng Gemini 2.0 Flash với khả năng reasoning cải tiến, đồng thời ưu tiên tốc độ và tiết kiệm chi phí. Mô hình suy nghĩ lai này cho phép nhà phát triển bật hoặc tắt quá trình “thinking” để điều chỉnh độ phức tạp của nhiệm vụ. Thông qua tham số thinking\_budget, người dùng có thể kiểm soát ngân sách token dành cho reasoning, cân bằng chất lượng và độ trễ theo nhu cầu . Với tỷ lệ hiệu năng/chi phí vượt trội, Gemini 2.5 Flash mang đến giải pháp AI linh hoạt, giúp tối ưu chi phí và hiệu quả triển khai trong nhiều ứng dụng.
+Gemini 2.5 Flash [15] được thể hiện trong hình 64 là phiên bản mô hình ngôn ngữ (tầm trung) mới nhất của Google, kế thừa nền tảng Gemini 2.0 Flash với khả năng reasoning cải tiến, đồng thời ưu tiên tốc độ và tiết kiệm chi phí. Mô hình suy nghĩ lai này cho phép nhà phát triển bật hoặc tắt quá trình “thinking” để điều chỉnh độ phức tạp của nhiệm vụ. Thông qua tham số thinking\_budget, người dùng có thể kiểm soát ngân sách token dành cho reasoning, cân bằng chất lượng và độ trễ theo nhu cầu . Với tỷ lệ hiệu năng/chi phí vượt trội, Gemini 2.5 Flash mang đến giải pháp AI linh hoạt, giúp tối ưu chi phí và hiệu quả triển khai trong nhiều ứng dụng.
 	
 	\begin{figure}[H]
 		\centering
@@ -588,7 +613,7 @@ Nhược điểm:
 
 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
 	
-	Các thông số trong bảng sau được trích từ bài báo của White và cộng sự (2024) \cite{livebench}.
+	Bảng 30 so sánh Gemini 2.5 Flash với các công nghệ tương tự. Các thông số trong bảng được trích từ bài báo của White và cộng sự (2024) \cite{livebench}.
 	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
 		\hline
 		\textbf{Model} & \textbf{Global Average (point)} & \textbf{Reasoning Average (point)} & \textbf{Language Average (point)} & \textbf{Instruction Following (point)} \\ 
@@ -603,6 +628,7 @@ Nhược điểm:
 		\hline
 		GPT 4o mini & 37.63 & 25.64 & 29.88 & 56.80 \\ 
 		\hline
+		\caption{So sánh Gemini 2.5 Flash với các công nghệ tương tự}
 	\end{longtable}
 	
 	trong đó:
@@ -639,7 +665,7 @@ Nhược điểm:
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
-	LangChain là một framework mã nguồn mở, được phát triển nhằm tối ưu hóa việc xây dựng ứng dụng sử dụng Large Language Models (LLMs) như GPT-4 hoặc các mô hình tương tự. Ra đời vào năm 2022 bởi Harrison Chase, LangChain tập trung vào việc đơn giản hóa các quy trình tích hợp LLMs vào ứng dụng bằng cách cung cấp các công cụ hỗ trợ lập trình viên xử lý luồng hội thoại, quản lý bộ nhớ, và truy cập dữ liệu ngoài. LangChain đã nhanh chóng trở thành một công cụ phổ biến trong lĩnh vực AI nhờ khả năng trừu tượng hóa nhiều thành phần phức tạp khi làm việc với LLMs.
+	LangChain [16] có logo ở hình 65 là một framework mã nguồn mở, được phát triển nhằm tối ưu hóa việc xây dựng ứng dụng sử dụng Large Language Models (LLMs) như GPT-4 hoặc các mô hình tương tự. Ra đời vào năm 2022 bởi Harrison Chase, LangChain tập trung vào việc đơn giản hóa các quy trình tích hợp LLMs vào ứng dụng bằng cách cung cấp các công cụ hỗ trợ lập trình viên xử lý luồng hội thoại, quản lý bộ nhớ, và truy cập dữ liệu ngoài. LangChain đã nhanh chóng trở thành một công cụ phổ biến trong lĩnh vực AI nhờ khả năng trừu tượng hóa nhiều thành phần phức tạp khi làm việc với LLMs.
 	
 	\begin{figure}[H]
 		\centering
@@ -678,6 +704,9 @@ Nhược điểm:
 	\end{itemize}
 	
 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Bảng 31 là bảng so sánh LangChain với LlamaIndex.
+
 	\begin{longtable}{|>{\raggedright\arraybackslash}m{4cm}|>{\raggedright\arraybackslash}m{5.5cm}|>{\raggedright\arraybackslash}m{5.5cm}|}
 		\hline
 		\textbf{Tiêu chí} & \textbf{LangChain} & \textbf{LlamaIndex} \\ 
@@ -692,6 +721,7 @@ Nhược điểm:
 		\hline
 		\textbf{Hiệu suất} & Cao khi làm việc với workflow phức tạp, nhờ khả năng quản lý memory và agents hiệu quả & Cao khi làm việc với dữ liệu phi cấu trúc và truy vấn qua index; tuy nhiên, hiệu suất có thể giảm nếu dữ liệu quá lớn \\ 
 		\hline
+		\caption{So sánh LangChain với LlamaIndex}
 	\end{longtable}
 	
 	
@@ -715,7 +745,7 @@ Nhược điểm:
 \begin{enumerate}
 	\item \textbf{Giới thiệu}
 	
-	Pinecone là một nền tảng cơ sở dữ liệu vector được phát triển bởi công ty Pinecone Systems, Inc., ra mắt vào năm 2021. Công nghệ này được thiết kế để giải quyết nhu cầu lưu trữ và tìm kiếm hiệu quả trong các ứng dụng sử dụng biểu diễn dữ liệu dưới dạng vector (vector embeddings). Pinecone tập trung vào việc đơn giản hóa quy trình triển khai hệ thống tìm kiếm vector, hỗ trợ các ứng dụng AI như tìm kiếm ngữ nghĩa, gợi ý nội dung, và chatbot.
+	Pinecone [17] có logo là hình 66 là một nền tảng cơ sở dữ liệu vector được phát triển bởi công ty Pinecone Systems, Inc., ra mắt vào năm 2021. Công nghệ này được thiết kế để giải quyết nhu cầu lưu trữ và tìm kiếm hiệu quả trong các ứng dụng sử dụng biểu diễn dữ liệu dưới dạng vector (vector embeddings). Pinecone tập trung vào việc đơn giản hóa quy trình triển khai hệ thống tìm kiếm vector, hỗ trợ các ứng dụng AI như tìm kiếm ngữ nghĩa, gợi ý nội dung, và chatbot.
 	
 	\begin{figure}[H]
 		\centering
@@ -754,6 +784,9 @@ Nhược điểm:
 	
 		
 	\item \textbf{So sánh các công nghệ tương tự trên thị trường}
+	
+	Bảng 32 so sánh Pinecone với các công nghệ tương tự.
+
 		\begin{longtable}{|>{\raggedright\arraybackslash}m{2cm}|>{\raggedright\arraybackslash}m{3cm}|>{\raggedright\arraybackslash}m{3cm}|>{\raggedright\arraybackslash}m{3cm}|>{\raggedright\arraybackslash}m{3cm}|}
 			\hline
 			\textbf{Tiêu chí} & \textbf{Pinecone} & \textbf{Weaviate} & \textbf{Milvus} & \textbf{ChromaDB} \\ 
@@ -770,6 +803,7 @@ Nhược điểm:
 			\hline
 			\textbf{Chi phí} & Cao, do là dịch vụ SaaS & Miễn phí, nhưng cần chi phí triển khai & Miễn phí, cần chi phí hạ tầng & Miễn phí, yêu cầu ít tài nguyên \\ 
 			\hline
+			\caption{So sánh Pinecone với các công nghệ tương tự}
 		\end{longtable} 
 	
 	\item \textbf{Tại sao chọn công nghệ này cho dự án?}
