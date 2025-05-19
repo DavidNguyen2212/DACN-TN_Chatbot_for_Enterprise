@@ -43,29 +43,22 @@ Theo hình 51, hệ thống được thiết kế và triển khai theo kiến t
 \end{itemize}
 
 \subsubsection{Thành phần phía Người dùng cuối (Frontend)}
-\subsubsubsection{Ứng dụng Quản trị (React Frontend)}
+\subsubsubsection{Ứng dụng Quản trị (Frontend Application)}
 
-Đây là một ứng dụng web đơn trang được xây dựng bằng thư viện React. Giao diện này chủ yếu dành cho quản trị viên hệ thống và nhân viên hỗ trợ. Nó cung cấp các chức năng toàn diện để:
-\begin{itemize}
-    \item Quản lý người dùng, tổ chức, và phân quyền.
-    \item Cấu hình và tùy chỉnh các chatbot (giao diện, hành vi, kịch bản).
-    \item Quản lý tài liệu tri thức (tải lên, phân loại, xem trạng thái huấn luyện).
-    \item Theo dõi và quản lý các gói dịch vụ, thanh toán.
-    \item Xem báo cáo và phân tích hiệu suất hoạt động.
-    \item Cung cấp giao diện cho nhân viên hỗ trợ tham gia và quản lý các cuộc hội thoại.
-\end{itemize}
-Ứng dụng React Frontend tương tác với backend thông qua REST API (qua API Gateway) để truy xuất và cập nhật dữ liệu, và sử dụng WebSocket (qua WebSocket Gateway) để nhận các cập nhật trạng thái và tin nhắn theo thời gian thực, đặc biệt là trong giao diện quản lý hội thoại. Kiến trúc dựa trên thành phần của React giúp quản lý giao diện người dùng phức tạp một cách hiệu quả, đồng thời mang lại trải nghiệm người dùng mượt mà và đáp ứng nhanh.
+Ứng dụng Quản trị là một giao diện web đơn trang, phát triển dựa trên thư viện React, được thiết kế chủ yếu cho đội ngũ quản trị viên hệ thống và nhân viên hỗ trợ khách hàng. Giao diện này cung cấp một bộ công cụ quản lý toàn diện, bao gồm: quản lý thông tin người dùng, cơ cấu tổ chức và cơ chế phân quyền truy cập; cấu hình và tùy chỉnh chi tiết các chatbot; quản lý kho tài liệu tri thức, hỗ trợ các thao tác tải lên, phân loại và theo dõi trạng thái huấn luyện mô hình; giám sát và quản lý các gói dịch vụ cùng quy trình thanh toán; và truy xuất các báo cáo thống kê. Ngoài ra, ứng dụng này cung cấp một không gian làm việc chuyên biệt cho nhân viên hỗ trợ, cho phép họ trực tiếp tham gia và quản lý các cuộc hội thoại với người dùng cuối.
+
+Ứng dụng React Frontend tương tác với backend thông qua REST API để truy xuất và cập nhật dữ liệu, và sử dụng WebSocket để nhận các cập nhật trạng thái và tin nhắn theo thời gian thực, đặc biệt là trong giao diện quản lý hội thoại. Kiến trúc dựa trên thành phần của React giúp quản lý giao diện người dùng phức tạp một cách hiệu quả, đồng thời mang lại trải nghiệm người dùng mượt mà và đáp ứng nhanh.
 
 \subsubsubsection{Cửa sổ chatbot (Chat Widget)}
-Đây là một thành phần giao diện người dùng nhẹ, độc lập và có thể nhúng, thường được tích hợp vào các trang web của khách hàng. Mục đích chính của Chat Widget là cung cấp cửa sổ giao tiếp trực tiếp cho người dùng để tương tác với Chatbot AI để nhận thông tin tức thì hoặc với nhân viên hỗ trợ khi cần sự can thiệp của con người.
+Đây là một thành phần giao diện người dùng nhẹ, độc lập và có thể nhúng, thường được tích hợp vào các trang web của khách hàng. Mục đích chính của Chat Widget là tạo ra một kênh giao tiếp trực tiếp, cho phép người dùng cuối tương tác với chatbot AI để nhận được thông tin và hỗ trợ một cách nhanh chóng, hoặc kết nối với nhân viên hỗ trợ khi cần sự can thiệp của con người.
 
 Chat Widget chịu trách nhiệm hiển thị luồng tin nhắn, cho phép người dùng nhập và gửi tin nhắn, hiển thị các thành phần tương tác, và hiển thị các phản hồi từ chatbot hoặc nhân viên. Nó kết nối trực tiếp với WebSocket Gateway của backend để đảm bảo việc gửi và nhận tin nhắn diễn ra tức thì, mang lại trải nghiệm trò chuyện thời gian thực. Ngoài ra, widget có thể được tùy chỉnh về giao diện bởi quản trị viên thông qua ứng dụng React Frontend để phù hợp với thương hiệu và giao diện của trang web tích hợp nó. Widget được thiết kế để dễ dàng tích hợp vào các nền tảng web khác nhau chỉ với một đoạn mã nhúng đơn giản.
 
 \subsubsection{Thành phần phía Máy chủ (Backend)}
 
-Đây là tập hợp các thành phần xử lý logic nghiệp vụ cốt lõi, quản lý dữ liệu và cung cấp API cho các client tương tác.
+Hệ thống Backend là tập hợp các thành phần máy chủ đảm nhiệm việc xử lý logic nghiệp vụ cốt lõi, quản lý toàn bộ dữ liệu của hệ thống, và cung cấp API cho phép các thành phần phía client và các dịch vụ khác tương tác.
 
-\subsubsubsection{Lớp ứng dụng (Application Layer)}
+\subsubsubsection{Ứng dụng Backend Chính (Backend Application)}
 Trung tâm của hệ thống là ứng dụng Django đóng vai trò điều phối chính. Bên trong ứng dụng này, các chức năng nghiệp vụ được phân tách thành các module dịch vụ chuyên biệt, bao gồm:
 \begin{itemize}
     \item \textbf{Module quản lý người dùng (User Service):} Chịu trách nhiệm xác thực, đăng ký, quản lý thông tin hồ sơ người dùng (bao gồm cả quản trị viên và nhân viên hỗ trợ), và thực thi cơ chế phân quyền truy cập trong toàn hệ thống.
@@ -78,29 +71,10 @@ Trung tâm của hệ thống là ứng dụng Django đóng vai trò điều ph
 \end{itemize}
 Cách tổ chức theo module này, tận dụng cấu trúc ứng dụng của Django, giúp duy trì sự tách biệt rõ ràng về chức năng trong một mã nguồn thống nhất, thuận lợi cho việc phát triển, kiểm thử và bảo trì.
 
+\subsubsubsection{Thành phần xử lý tác vụ nền (Background Task Processing)}
 
-\subsubsubsection{Lớp giao tiếp (Interface Layer)}
-\begin{itemize}
-    \item \textbf{API Gateway:} Được xây dựng trên nền tảng Django REST Framework, cung cấp giao diện REST API chuẩn hóa cho các frontend tương tác với backend.
-    \item \textbf{WebSocket Gateway:} Sử dụng Django Channels, thiết lập kênh giao tiếp hai chiều, thời gian thực, chủ yếu phục vụ cho tính năng trò chuyện.
-\end{itemize}
+Để đảm bảo hiệu năng và độ phản hồi cao cho ứng dụng backend chính, các tác vụ tốn nhiều thời gian xử lý hoặc tiêu tốn nhiều tài nguyên được thực thi một cách bất đồng bộ bởi các \textbf{Celery Workers}. Đây là các tiến trình độc lập, hoạt động tách biệt với luồng xử lý chính của ứng dụng web. Việc phân tách này giúp giải phóng tài nguyên cho máy chủ, cho phép nó phản hồi nhanh chóng hơn với các yêu cầu từ người dùng. Các tác vụ được đưa vào một hàng đợi tin nhắn, cụ thể là \textbf{Redis}, đóng vai trò là \textbf{Message Broker}. Redis hoạt động như một trung gian giao tiếp, lưu trữ các yêu cầu tác vụ từ ứng dụng backend và phân phối chúng đến các workers để xử lý.
 
-\subsubsubsection{Xử lý tác vụ nền (Background Processing)}
-\begin{itemize}
-    \item \textbf{Celery Workers:} Các tiến trình độc lập thực thi các tác vụ tốn thời gian hoặc tài nguyên một cách bất đồng bộ, giúp giải phóng luồng xử lý chính của ứng dụng web và cải thiện độ phản hồi.
-    \item \textbf{Redis Message Queue:} Đóng vai trò là hàng đợi tin nhắn, trung gian giao tiếp giữa ứng dụng Django và các Celery workers.
-\end{itemize}
-
-\subsubsubsection{Lớp dữ liệu (Data Layer)}
-\begin{itemize}
-    \item \textbf{PostgreSQL:} Hệ quản trị cơ sở dữ liệu quan hệ chính, lưu trữ hầu hết dữ liệu có cấu trúc của hệ thống như thông tin người dùng, tổ chức, lịch sử trò chuyện, cấu hình chatbot, thông tin thuê bao, và dữ liệu tài liệu.
-    item \textbf{Redis:} Đóng vai trò đa năng quan trọng trong hệ thống, phục vụ ba mục đích chính:
-        \begin{itemize}
-            \item Làm \textbf{bộ nhớ đệm} để tối ưu hóa tốc độ truy xuất các dữ liệu thường dùng.
-            \item Làm \textbf{backend cho lớp channels} của Django Channels, hỗ trợ việc quản lý và truyền tải tin nhắn hiệu quả cho giao tiếp thời gian thực qua WebSocket.
-            \item Làm \textbf{hàng đợi tin nhắn} cho hệ thống xử lý tác vụ nền Celery, điều phối việc thực thi các tác vụ bất đồng bộ.
-        \end{itemize}
-\end{itemize}
 
 \subsubsubsection{Dịch vụ AI}
 Hệ thống bao gồm một dịch vụ AI chuyên biệt, triển khai độc lập và tách biệt với backend. Dịch vụ này chuyên trách việc cung cấp các khả năng xử lý ngôn ngữ tự nhiên và trí tuệ đối thoại tiên tiến, tận dụng các mô hình ngôn ngữ lớn (LLM) và cơ chế Retrieval-Augmented Generation (RAG). Module chat bên trong ứng dụng lõi sẽ giao tiếp với Dịch vụ AI này thông qua giao diện REST API.
@@ -132,12 +106,17 @@ Việc lựa chọn triển khai Dịch vụ AI một cách độc lập mang l�
 	\item Trả về kết quả đã xử lý cho module chat qua REST API.
 \end{enumerate}
 
-\subsubsubsection{Tích hợp dịch vụ bên ngoài}
-Ngoài các thành phần nội bộ, hệ thống còn tích hợp với các dịch vụ của bên thứ ba chuyên biệt để mở rộng chức năng và tận dụng các giải pháp đã được tối ưu hóa trên thị trường:
+\subsubsection{Hạ tầng dữ liệu (Data Infrastructure)}
+Hệ thống sử dụng một tập hợp các giải pháp lưu trữ dữ liệu chuyên biệt, được lựa chọn để đáp ứng các yêu cầu khác nhau về hiệu năng, tính nhất quán và khả năng mở rộng:
+
 \begin{itemize}
-    \item \textbf{AWS S3 (Simple Storage Service):} Dịch vụ lưu trữ đối tượng trên nền tảng đám mây của Amazon Web Services, được sử dụng để lưu trữ bền vững và có khả năng mở rộng cao cho các tệp tài liệu, hình ảnh, video và các dữ liệu media khác do người dùng tải lên hoặc hệ thống tạo ra.
-    \item \textbf{PayOS:} Một cổng thanh toán của bên thứ ba, cung cấp giao diện và xử lý các giao dịch thanh toán trực tuyến một cách an toàn, hỗ trợ nhiều phương thức thanh toán khác nhau, phục vụ cho việc quản lý đăng ký và thuê bao dịch vụ.
-    \item \textbf{SendGrid:} Dịch vụ chuyên dụng cho việc gửi email, đảm bảo khả năng gửi email giao dịch (ví dụ: xác nhận đăng ký, đặt lại mật khẩu) và email thông báo đến người dùng với tỉ lệ gửi thành công cao và tuân thủ các tiêu chuẩn về email.
+    \item \textbf{Cơ sở dữ liệu PostgreSQL:} Là hệ quản trị cơ sở dữ liệu quan hệ chính của hệ thống. PostgreSQL chịu trách nhiệm lưu trữ hầu hết các dữ liệu có cấu trúc cao, bao gồm thông tin chi tiết về người dùng và tổ chức, lịch sử các cuộc hội thoại, cấu hình của các chatbot, dữ liệu về các gói thuê bao và thanh toán, cùng với metadatacủa các tài liệu tri thức. Thành phần này chủ yếu được truy cập bởi ứng dụng Backend chính.
+    
+    \item \textbf{Hệ thống Redis:} Đóng vai trò đa năng và quan trọng trong việc tối ưu hóa hiệu suất và hỗ trợ giao tiếp thời gian thực. Redis được ứng dụng backend sử dụng làm bộ nhớ đệm để tăng tốc độ truy xuất các dữ liệu thường xuyên sử dụng. Đồng thời, Redis hoạt động như một message broker cho thành phần xử lý tác vụ nền, điều phối việc thực thi các tác vụ bất đồng bộ. Ngoài ra, Redis cũng có thể hỗ trợ lớp channels của Django Channels trong việc quản lý và truyền tải tin nhắn hiệu quả cho giao tiếp WebSocket thời gian thực, nếu cấu hình hệ thống yêu cầu.
+    
+    \item \textbf{Cơ sở dữ liệu MongoDB:} Được sử dụng bởi dịch vụ AI để lưu trữ các thông tin liên quan đến các phiên trò chuyện được xử lý bởi trí tuệ nhân tạo.
+    
+    \item \textbf{Cơ sở dữ liệu Vector Pinecone:} Pinecone là một giải pháp cơ sở dữ liệu vector chuyên dụng, được AI Service sử dụng để lưu trữ và truy vấn các vector nhúng văn bản, phục vụ cho cơ chế tìm kiếm ngữ nghĩa trong kiến trúc RAG.
 \end{itemize}
 
 \subsection{Giao diện}
